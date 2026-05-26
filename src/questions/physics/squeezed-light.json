@@ -1,0 +1,100 @@
+[
+  {
+    "id": "sq001",
+    "path": ["physics", "quantum-mechanics", "quantum-optics", "squeezed-light"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "A quadrature-squeezed state of light has reduced uncertainty in one quadrature at the expense of increased uncertainty in the conjugate. For field quadratures $\\hat{X} = (\\hat{a}+\\hat{a}^\\dagger)/2$ and $\\hat{P} = (\\hat{a}-\\hat{a}^\\dagger)/(2i)$:",
+    "equation": "\\Delta X \\cdot \\Delta P \\geq \\frac{1}{4}",
+    "passive": {
+      "options": [
+        "Squeezed vacuum: $\\Delta X = e^{-r}/2 < 1/2$ and $\\Delta P = e^{+r}/2 > 1/2$ (squeezing parameter $r > 0$); product saturates the uncertainty relation",
+        "Squeezed light violates the Heisenberg uncertainty principle",
+        "Both quadratures are reduced simultaneously in a squeezed state",
+        "The coherent state has $\\Delta X = \\Delta P = 1$ (not $1/2$)"
+      ],
+      "correct": 0,
+      "explanation": "The coherent state (vacuum) has $\\Delta X = \\Delta P = 1/2$ (shot noise). Squeezing by $r$ reduces noise in $X$ by $e^{-r}$ and amplifies $P$ noise by $e^{+r}$. The state is a minimum uncertainty state ($\\Delta X\\Delta P = 1/4$). Squeezing in dB: $-20r\\log_{10}e \\approx 8.7r$ dB. 15 dB squeezing has been demonstrated. LIGO uses $\\sim 10$ dB squeezed light to improve shot-noise-limited sensitivity at high frequencies."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each quadrature state to its noise ellipse description:",
+      "pairs": [
+        {"id": "p1", "term": "Vacuum / coherent state", "definition": "Circular noise ellipse: $\\Delta X = \\Delta P = 1/2$ — equal shot noise in both quadratures"},
+        {"id": "p2", "term": "Amplitude-squeezed state", "definition": "Ellipse squeezed along $X$: reduced photon number noise, enhanced phase noise — useful for intensity sensing"},
+        {"id": "p3", "term": "Phase-squeezed state", "definition": "Ellipse squeezed along $P$: reduced phase noise, enhanced amplitude noise — useful for interferometry"},
+        {"id": "p4", "term": "Squeezed vacuum", "definition": "Zero mean field but non-circular noise ellipse — pure non-classical fluctuations"}
+      ],
+      "explanation": "The Wigner function of a squeezed state is a Gaussian ellipse. Homodyne detection with a strong local oscillator measures the variance in a selected quadrature direction $\\hat{X}_\\theta = \\hat{X}\\cos\\theta + \\hat{P}\\sin\\theta$, revealing the full noise ellipse by rotating the local oscillator phase $\\theta$."
+    }
+  },
+  {
+    "id": "sq002",
+    "path": ["physics", "quantum-mechanics", "quantum-optics", "squeezed-light"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Squeezed states are most commonly generated via optical parametric amplification (OPA) or parametric down-conversion (PDC). In a nonlinear crystal with $\\chi^{(2)}$ nonlinearity, a pump photon at $2\\omega$ generates two correlated photons at $\\omega$. The squeezing interaction Hamiltonian is:",
+    "equation": "H_{\\rm sq} = i\\hbar\\frac{\\kappa}{2}(\\hat{a}^{\\dagger 2}e^{-i\\phi} - \\hat{a}^2 e^{i\\phi})",
+    "passive": {
+      "options": [
+        "This two-photon interaction creates correlated pairs and squeezes the $X_\\phi$ quadrature; the squeezing parameter $r = \\kappa t$ grows with interaction time $t$ and nonlinear coupling $\\kappa$",
+        "The Hamiltonian creates a coherent state from the vacuum",
+        "Squeezing is only possible with $\\chi^{(3)}$ (Kerr) nonlinearity",
+        "The pump photon frequency must equal $\\omega$ for parametric amplification"
+      ],
+      "correct": 0,
+      "explanation": "Evolution under $H_{\\rm sq}$: $\\hat{a}(t) = \\hat{a}(0)\\cosh r - \\hat{a}^\\dagger(0)e^{i\\phi}\\sinh r$ — a Bogoliubov transformation that squeezes the vacuum. The squeezed vacuum state $|\\xi\\rangle = S(\\xi)|0\\rangle$ where $S(\\xi) = e^{(\\xi^*\\hat{a}^2 - \\xi\\hat{a}^{\\dagger 2})/2}$ is the squeezing operator. OPAs are also used for quantum teleportation of coherent states and for continuous-variable quantum key distribution."
+    }
+  },
+  {
+    "id": "sq003",
+    "path": ["physics", "quantum-mechanics", "quantum-optics", "squeezed-light"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Homodyne detection measures a quadrature of the field. A squeezed input beam interferes on a 50:50 beamsplitter with a strong local oscillator (LO) at the same frequency. The photocurrent difference $i_- = i_1 - i_2$ is proportional to:",
+    "passive": {
+      "options": [
+        "The field quadrature $\\hat{X}_\\theta$ at phase $\\theta$ set by the LO phase — by scanning $\\theta$, the noise in each quadrature is measured; variance below shot noise confirms squeezing",
+        "The total photon number of the signal beam",
+        "The LO power squared",
+        "The field $\\hat{X}_\\theta$ only when the LO and signal have the same polarisation and spatial mode but different frequencies"
+      ],
+      "correct": 0,
+      "explanation": "Balanced homodyne detection: $i_- \\propto \\alpha_{\\rm LO}(\\hat{a}e^{-i\\theta} + \\hat{a}^\\dagger e^{i\\theta}) = 2\\alpha_{\\rm LO}\\hat{X}_\\theta$ where $\\alpha_{\\rm LO}$ is the LO amplitude. The variance $\\langle(\\Delta i_-)^2\\rangle$ maps out the noise ellipse as $\\theta$ is scanned. Shot noise level calibrated by blocking the signal (vacuum input). Squeezing appears as variance below this shot noise floor. Standard technique in quantum optics labs."
+    }
+  },
+  {
+    "id": "sq004",
+    "path": ["physics", "quantum-mechanics", "quantum-optics", "squeezed-light"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "LIGO (Laser Interferometer Gravitational-Wave Observatory) is limited by quantum noise in two frequency bands. Frequency-dependent squeezing addresses both limits:",
+    "passive": {
+      "options": [
+        "At low frequencies: radiation pressure noise dominates (amplitude fluctuations push mirrors); at high frequencies: shot noise dominates (phase fluctuations limit phase readout). Frequency-dependent squeezing injects phase-squeezed light at high $f$ and amplitude-squeezed at low $f$",
+        "LIGO is limited only by shot noise at all frequencies",
+        "Squeezing increases radiation pressure noise while reducing shot noise at all frequencies",
+        "The standard quantum limit (SQL) cannot be surpassed with squeezed light"
+      ],
+      "correct": 0,
+      "explanation": "The SQL is reached when shot noise equals radiation pressure noise. LIGO O3 used 6 dB broadband squeezing (phase-squeezed) to reduce shot noise, improving sensitivity at $> 50$ Hz. Future detectors (A+, Einstein Telescope) plan frequency-dependent squeezing via filter cavities: a detuned cavity rotates the squeezing angle vs frequency, optimally matching the noise ellipse to the interferometer's response. This pushes below the SQL across a wide bandwidth."
+    }
+  },
+  {
+    "id": "sq005",
+    "path": ["physics", "quantum-mechanics", "quantum-optics", "squeezed-light"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "Two-mode squeezing creates entangled pairs of light beams ('EPR beams'). The two-mode squeezed state has correlations:",
+    "passive": {
+      "options": [
+        "$\\hat{X}_1 + \\hat{X}_2 \\to 0$ and $\\hat{P}_1 - \\hat{P}_2 \\to 0$ as squeezing $r\\to\\infty$ — perfect EPR correlations; measuring $X_1$ gives $-X_2$ precisely",
+        "The two modes have identical quadrature values ($X_1 = X_2$) for all squeezing",
+        "Two-mode squeezing cannot produce entanglement",
+        "The correlations violate energy conservation when $r > 1$"
+      ],
+      "correct": 0,
+      "explanation": "Two-mode squeezing: $H = i\\hbar\\kappa(\\hat{a}_1^\\dagger\\hat{a}_2^\\dagger - \\hat{a}_1\\hat{a}_2)$ generates the state $|\\text{TMSV}\\rangle = \\sqrt{1-\\lambda^2}\\sum_n \\lambda^n|n,n\\rangle$ where $\\lambda = \\tanh r$. This is the continuous-variable EPR state (Reid 1989). For large $r$: $\\Delta(X_1+X_2) = \\Delta(P_1-P_2) = e^{-r}/\\sqrt{2} \\to 0$. Used in continuous-variable quantum teleportation, quantum key distribution, and as the input to CV quantum computing architectures."
+    }
+  }
+]

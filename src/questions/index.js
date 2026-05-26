@@ -27,6 +27,13 @@ import complexAnalysis from './mathematics/complex-analysis.json'
 import vectorCalculus from './mathematics/vector-calculus.json'
 import probability    from './mathematics/probability.json'
 import multivariable  from './mathematics/multivariable.json'
+import cavityQed      from './physics/cavity-qed.json'
+import squeezedLight  from './physics/squeezed-light.json'
+import fermiGases     from './physics/fermi-gases.json'
+import pdes           from './mathematics/pdes.json'
+import groupTheory    from './mathematics/group-theory.json'
+import linearTransforms from './mathematics/linear-transforms.json'
+import innerProducts  from './mathematics/inner-products.json'
 
 export const allQuestions = [
   ...dopplerCooling,
@@ -58,6 +65,13 @@ export const allQuestions = [
   ...vectorCalculus,
   ...probability,
   ...multivariable,
+  ...cavityQed,
+  ...squeezedLight,
+  ...fermiGases,
+  ...pdes,
+  ...groupTheory,
+  ...linearTransforms,
+  ...innerProducts,
 ]
 
 export function filterQuestions(selectedIds, selectedLevels, mode) {

@@ -1,0 +1,118 @@
+[
+  {
+    "id": "pd001",
+    "path": ["mathematics", "pdes"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "PDEs are classified by the sign of the discriminant $B^2 - 4AC$ of the second-order operator $Au_{xx} + Bu_{xy} + Cu_{yy} + \\ldots = 0$. The three canonical types and their physical prototypes are:",
+    "passive": {
+      "options": [
+        "Elliptic ($B^2 < 4AC$): Laplace/Poisson equation, smooth solutions; Parabolic ($B^2 = 4AC$): heat/diffusion equation, irreversible; Hyperbolic ($B^2 > 4AC$): wave equation, propagating characteristics",
+        "Elliptic equations model wave propagation; hyperbolic equations model steady states",
+        "All three types require boundary conditions on all four sides of a rectangle",
+        "The heat equation is hyperbolic because heat propagates"
+      ],
+      "correct": 0,
+      "explanation": "Laplace $\\nabla^2 u = 0$ (elliptic): no propagation, boundary value problem. Heat $u_t = \\alpha u_{xx}$ (parabolic): initial + boundary conditions, irreversible smoothing. Wave $u_{tt} = c^2 u_{xx}$ (hyperbolic): initial conditions only, information propagates along characteristics at speed $c$. Schrödinger equation $i\\hbar\\partial_t\\psi = H\\psi$ is formally parabolic (first order in time) but conserves norm — it's a special case."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each PDE to its type and physical interpretation:",
+      "pairs": [
+        {"id": "p1", "term": "Laplace equation $\\nabla^2\\phi = 0$", "definition": "Elliptic: electrostatic potential in charge-free region, steady-state temperature"},
+        {"id": "p2", "term": "Heat equation $u_t = \\alpha\\nabla^2 u$", "definition": "Parabolic: temperature diffusion, quantum propagator in imaginary time"},
+        {"id": "p3", "term": "Wave equation $u_{tt} = c^2\\nabla^2 u$", "definition": "Hyperbolic: sound, EM waves, gravitational waves; characteristics at $\\pm c$"},
+        {"id": "p4", "term": "Schrödinger equation $i\\hbar\\psi_t = -\\hbar^2/(2m)\\nabla^2\\psi + V\\psi$", "definition": "Dispersive PDE: quantum wavefunction, unitary evolution, $E = \\hbar\\omega$ dispersion"}
+      ],
+      "explanation": "Analytic continuation $t \\to -i\\tau$ turns the Schrödinger equation into the heat equation: $\\partial_\\tau\\psi = (\\hbar/2m)\\nabla^2\\psi - V\\psi/\\hbar$. This is the basis for path integral Monte Carlo and imaginary-time evolution to find ground states."
+    }
+  },
+  {
+    "id": "pd002",
+    "path": ["mathematics", "pdes"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Separation of variables solves linear PDEs by assuming $u(x,t) = X(x)T(t)$. For the 1D heat equation $u_t = \\alpha u_{xx}$ with boundary conditions $u(0,t) = u(L,t) = 0$:",
+    "passive": {
+      "options": [
+        "$X_n(x) = \\sin(n\\pi x/L)$ and $T_n(t) = e^{-\\alpha(n\\pi/L)^2 t}$; general solution is a Fourier series $u = \\sum_n a_n X_n T_n$ with $a_n$ from initial conditions",
+        "Separation gives $X_n = \\cos(n\\pi x/L)$ for the given boundary conditions",
+        "Each mode grows exponentially for the heat equation",
+        "Separation of variables requires $u$ to be periodic in time"
+      ],
+      "correct": 0,
+      "explanation": "Substituting $u = X(x)T(t)$: $T'/\\alpha T = X''/X = -\\lambda$ (separation constant). Boundary conditions force $\\lambda_n = (n\\pi/L)^2$, giving sine eigenfunctions. The complete solution: $u(x,t) = \\sum_{n=1}^\\infty a_n\\sin(n\\pi x/L)e^{-\\alpha(n\\pi/L)^2 t}$ where $a_n = (2/L)\\int_0^L u(x,0)\\sin(n\\pi x/L)dx$. Higher modes decay faster — long-time solution is dominated by $n=1$ mode."
+    }
+  },
+  {
+    "id": "pd003",
+    "path": ["mathematics", "pdes"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The d'Alembert solution for the 1D wave equation $u_{tt} = c^2 u_{xx}$ on $(-\\infty, \\infty)$ with initial conditions $u(x,0) = f(x)$ and $u_t(x,0) = g(x)$ is:",
+    "equation": "u(x,t) = \\frac{f(x+ct)+f(x-ct)}{2} + \\frac{1}{2c}\\int_{x-ct}^{x+ct}g(s)\\,ds",
+    "passive": {
+      "options": [
+        "The solution is a superposition of a right-moving wave $f(x-ct)/2$ and left-moving wave $f(x+ct)/2$ — the wave splits into two identical half-amplitude pulses travelling in opposite directions at speed $c$",
+        "d'Alembert's solution requires periodic initial conditions",
+        "The solution only holds for $g(x) = 0$",
+        "The wavefronts travel faster than $c$ if $f$ has sharp edges"
+      ],
+      "correct": 0,
+      "explanation": "The general solution of the wave equation is $u = F(x-ct) + G(x+ct)$ — any function of $x\\pm ct$ propagates without distortion at speed $c$. This is the hallmark of hyperbolicity: signals travel along characteristics $x \\pm ct = \\text{const}$. In 3D, Huygens' principle holds: sharp wavefronts (no 'afterglow') only in odd spatial dimensions. EM waves in 3D obey Huygens exactly; Schrödinger waves do not."
+    }
+  },
+  {
+    "id": "pd004",
+    "path": ["mathematics", "pdes"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Green's functions solve inhomogeneous linear PDEs by representing the solution as a convolution with a point-source response. For $Lu = f(\\mathbf{x})$ where $L$ is a linear operator:",
+    "equation": "u(\\mathbf{x}) = \\int G(\\mathbf{x}, \\mathbf{x}')f(\\mathbf{x}')\\,d^3x'",
+    "passive": {
+      "options": [
+        "$G(\\mathbf{x},\\mathbf{x}')$ satisfies $LG = \\delta^3(\\mathbf{x}-\\mathbf{x}')$ — the response to a unit point source; the solution is the superposition of responses to all sources",
+        "The Green's function is the homogeneous solution of $Lu = 0$",
+        "Green's functions only exist for elliptic operators",
+        "The convolution $u = G * f$ only works when $f$ is spatially uniform"
+      ],
+      "correct": 0,
+      "explanation": "Electrostatics: $-\\nabla^2 G = \\delta^3(\\mathbf{r}-\\mathbf{r}')$ gives $G = 1/(4\\pi|\\mathbf{r}-\\mathbf{r}'|)$ — the Coulomb Green's function; $V(\\mathbf{r}) = \\int \\rho(\\mathbf{r}')/(4\\pi\\varepsilon_0|\\mathbf{r}-\\mathbf{r}'|)d^3r'$. In quantum mechanics, the retarded Green's function $G^+(\\mathbf{r},\\mathbf{r}',E) = \\sum_n\\psi_n(\\mathbf{r})\\psi_n^*(\\mathbf{r}')/(E-E_n+i\\eta)$ encodes the full spectrum and is the basis of the Born series for scattering."
+    }
+  },
+  {
+    "id": "pd005",
+    "path": ["mathematics", "pdes"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Fourier transform method solves PDEs with constant coefficients on unbounded domains. Applying the FT $\\hat{u}(k,t) = \\int u(x,t)e^{-ikx}dx$ to the heat equation $u_t = \\alpha u_{xx}$ converts it to:",
+    "passive": {
+      "options": [
+        "An ODE in $t$: $\\partial_t\\hat{u} = -\\alpha k^2\\hat{u}$, with solution $\\hat{u}(k,t) = \\hat{u}(k,0)e^{-\\alpha k^2 t}$ — then invert the FT to get $u(x,t)$",
+        "An algebraic equation in both $k$ and $t$",
+        "$\\partial_t\\hat{u} = \\alpha k\\hat{u}$ (one factor of $k$, not $k^2$)",
+        "The FT method requires $u(x,0) = 0$ initially"
+      ],
+      "correct": 0,
+      "explanation": "The FT converts $\\partial^n/\\partial x^n \\to (ik)^n$, turning the heat PDE into $\\partial_t\\hat{u} = -\\alpha k^2\\hat{u}$. The Green's function emerges: initial condition $u(x,0) = \\delta(x)$ gives $\\hat{u}(k,0) = 1$, so $\\hat{u}(k,t) = e^{-\\alpha k^2 t}$, and inverting gives the Gaussian heat kernel $G(x,t) = e^{-x^2/(4\\alpha t)}/\\sqrt{4\\pi\\alpha t}$. The general solution is $u(x,t) = G(x,t) * u(x,0)$ — diffusion spreads the initial profile."
+    }
+  },
+  {
+    "id": "pd006",
+    "path": ["mathematics", "pdes"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The Gross-Pitaevskii equation (GPE) is a nonlinear PDE describing a BEC mean-field wavefunction $\\psi(\\mathbf{r},t)$:",
+    "equation": "i\\hbar\\frac{\\partial\\psi}{\\partial t} = \\left(-\\frac{\\hbar^2\\nabla^2}{2m} + V_{\\rm trap} + g|\\psi|^2\\right)\\psi",
+    "passive": {
+      "options": [
+        "The nonlinear term $g|\\psi|^2 = 4\\pi\\hbar^2 a_s n/m$ represents mean-field interaction; it shifts the chemical potential and supports soliton solutions and vortices",
+        "The GPE is a linear PDE because $\\psi$ satisfies the superposition principle",
+        "The nonlinear term $g|\\psi|^2$ appears only at finite temperature",
+        "The GPE reduces to the free Schrödinger equation when $V_{\\rm trap} = 0$, regardless of $g$"
+      ],
+      "correct": 0,
+      "explanation": "The GPE is formally a nonlinear Schrödinger equation (NLSE). For $g > 0$ (repulsive, $a_s > 0$): the BEC is stable and has a healing length $\\xi = \\hbar/\\sqrt{2mgn}$ that sets the core size of vortices. For $g < 0$ (attractive): collapse instability for $N > N_{\rm crit}$. In 1D with $g < 0$: bright solitons $\\psi \\propto \\text{sech}(x/\\xi)$ are stable, demonstrated with $^7$Li and $^{85}$Rb. The Thomas-Fermi approximation neglects $\\nabla^2\\psi$ and gives $n(\\mathbf{r}) = \\max[(\\mu - V)/g, 0]$."
+    }
+  }
+]

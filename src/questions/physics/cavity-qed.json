@@ -1,0 +1,100 @@
+[
+  {
+    "id": "cq001",
+    "path": ["physics", "quantum-mechanics", "quantum-optics", "cavity-qed"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "In cavity QED, the strong coupling regime requires the vacuum Rabi frequency $g$ to exceed both the cavity field decay rate $\\kappa$ and the atomic spontaneous emission rate $\\gamma$. The cooperativity parameter is:",
+    "equation": "C = \\frac{g^2}{\\kappa\\gamma}",
+    "passive": {
+      "options": [
+        "$C \\gg 1$ defines strong coupling: a single photon coherently exchanges with the atom $\\sim\\sqrt{C}$ times before either the atom or cavity decays",
+        "$C > 1$ means the cavity has more loss than the atom",
+        "Strong coupling requires $g > \\kappa + \\gamma$, not $g^2 > \\kappa\\gamma$",
+        "The cooperativity equals the cavity finesse for any cavity-atom system"
+      ],
+      "correct": 0,
+      "explanation": "The vacuum Rabi splitting $2g$ is observable when $g > \\kappa, \\gamma$. $C = g^2/(\\kappa\\gamma)$ is also the single-atom cavity Purcell factor: it enhances (or suppresses) the atomic emission rate. Purcell enhancement: $F_P = 3/(4\\pi^2)(\\lambda/n)^3 Q/V$ where $Q = \\omega/\\kappa$ and $V$ is the mode volume. Achieved in microwave cavities (Rydberg atoms), optical cavities (Cs, Rb), and circuit QED (transmon qubits in transmission line resonators)."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each cavity-QED parameter to its physical meaning:",
+      "pairs": [
+        {"id": "p1", "term": "Vacuum Rabi frequency $g$", "definition": "Coherent atom-photon coupling rate: $g = d\\sqrt{\\omega/(2\\varepsilon_0\\hbar V)}$ where $d$ is dipole moment and $V$ mode volume"},
+        {"id": "p2", "term": "Cavity decay rate $\\kappa$", "definition": "Photon field decay rate from the cavity: $\\kappa = \\omega/(2Q) = \\Delta\\nu_{\\rm FSR}/\\mathcal{F}$"},
+        {"id": "p3", "term": "Atomic linewidth $\\gamma$", "definition": "Spontaneous emission rate from the excited state outside the cavity"},
+        {"id": "p4", "term": "Cooperativity $C = g^2/(\\kappa\\gamma)$", "definition": "Figure of merit: $C \\gg 1$ means coherent coupling dominates over loss — strong coupling regime"}
+      ],
+      "explanation": "Small mode volume $V$ and high finesse $\\mathcal{F}$ both increase $C$. Fabry-Pérot microcavities achieve $V \\sim (\\lambda/2)^3$. Circuit QED (superconducting qubits in coplanar waveguides) reaches $C \\sim 10^4$, far into strong coupling, enabling single-photon nonlinearities."
+    }
+  },
+  {
+    "id": "cq002",
+    "path": ["physics", "quantum-mechanics", "quantum-optics", "cavity-qed"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Purcell effect modifies the spontaneous emission rate of an atom placed inside a resonant cavity. The Purcell-enhanced emission rate relative to free space is:",
+    "passive": {
+      "options": [
+        "Enhanced by the Purcell factor $F_P = (3\\lambda^3/4\\pi^2)(Q/V)$ when the atom is resonant and at the field antinode — and suppressed in a photonic bandgap",
+        "The cavity always suppresses emission by reflecting photons back",
+        "Purcell enhancement applies only to electric quadrupole transitions",
+        "The emission rate is enhanced by $Q^2/V$ rather than $Q/V$"
+      ],
+      "correct": 0,
+      "explanation": "Fermi's golden rule: spontaneous emission rate $\\propto$ density of states at the transition frequency. A cavity enhances the density of states on resonance (Purcell factor $F_P > 1$) and suppresses it off-resonance or in a photonic bandgap ($F_P < 1$). Applications: high-efficiency single-photon sources (emit into cavity mode with probability $F_P/(1+F_P)$), LED efficiency enhancement, and deterministic photon-atom interfaces for quantum networks."
+    }
+  },
+  {
+    "id": "cq003",
+    "path": ["physics", "quantum-mechanics", "quantum-optics", "cavity-qed"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The input-output theory for a cavity with coupling rate $\\kappa_{\\rm ext}$ to an external field relates the transmitted/reflected field amplitude to the intracavity field. The steady-state cavity transmission on resonance (input from one mirror only) is:",
+    "passive": {
+      "options": [
+        "$T = \\kappa_{\\rm ext}^2/(\\kappa/2)^2$ — overcoupled cavities ($\\kappa_{\\rm ext} \\approx \\kappa$) have near-unity transmission; impedance-matched at $\\kappa_{\\rm ext} = \\kappa/2$",
+        "Transmission is always $< 50\\%$ regardless of cavity parameters",
+        "On resonance, all input power is reflected for a high-finesse cavity",
+        "Transmission equals $\\mathcal{F}/\\pi$ for any mirror reflectivity"
+      ],
+      "correct": 0,
+      "explanation": "A symmetric two-mirror cavity: internal loss rate $\\kappa_0$, each mirror coupling $\\kappa_1 = \\kappa_2$, total $\\kappa = \\kappa_0 + 2\\kappa_1$. On resonance, transmission $T = (2\\kappa_1)^2/(\\kappa^2/4 + \\kappa^2/4) \\to $ max when $\\kappa_1 \\gg \\kappa_0$ (overcoupled). An impedance-matched one-sided cavity ($\\kappa_{\\rm ext} = \\kappa_{\\rm loss}$) gives zero reflection on resonance — used for photon routing and quantum memory. The cavity transfer function is Lorentzian in frequency."
+    }
+  },
+  {
+    "id": "cq004",
+    "path": ["physics", "quantum-mechanics", "quantum-optics", "cavity-qed"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "In the dispersive regime of cavity QED ($|\\Delta| = |\\omega_{\\rm atom} - \\omega_{\\rm cav}| \\gg g$), the atom-cavity coupling shifts the cavity frequency rather than causing resonant exchange. The dispersive Hamiltonian is:",
+    "equation": "H_{\\rm disp} = \\hbar\\chi\\hat{a}^\\dagger\\hat{a}\\sigma_z, \\quad \\chi = g^2/\\Delta",
+    "passive": {
+      "options": [
+        "The cavity resonance shifts by $\\pm\\chi$ depending on the qubit state $|0\\rangle$ or $|1\\rangle$ — measuring the cavity frequency determines the qubit state without driving transitions (QND readout)",
+        "The dispersive coupling causes photon number to decay at rate $\\chi$",
+        "The dispersive regime requires $g \\gg \\Delta$ (opposite of stated)",
+        "$\\chi$ is independent of detuning $\\Delta$ in the dispersive limit"
+      ],
+      "correct": 0,
+      "explanation": "The dispersive interaction is the basis for qubit readout in circuit QED: a microwave tone sent into the cavity acquires a phase shift of $\\pm\\chi/\\kappa$ per photon depending on the qubit state, enabling single-shot high-fidelity readout ($> 99\\%$ with quantum-limited amplifiers). It is also used for quantum non-demolition (QND) photon number measurement — counting photons without absorbing them (Haroche Nobel 2012)."
+    }
+  },
+  {
+    "id": "cq005",
+    "path": ["physics", "quantum-mechanics", "quantum-optics", "cavity-qed"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "A photon number state $|n\\rangle$ stored in a cavity can be detected non-destructively using Rydberg atoms traversing the cavity. The atom-field interaction for an atom detuned from resonance imprints a phase on the atom's internal state. After $n_{\\rm atoms}$ atoms each acquiring phase $\\phi_n = n\\phi_0$:",
+    "passive": {
+      "options": [
+        "Homodyne detection of the atomic phase distribution distinguishes $|n\\rangle$ states without absorbing photons — demonstrated by Haroche's group measuring Fock states $|0\\rangle$ to $|7\\rangle$ and tracking their quantum jumps",
+        "The atoms absorb photons one by one, destroying the field state",
+        "The phase $\\phi_n$ is independent of photon number $n$ in the dispersive regime",
+        "QND measurement requires the atoms to be in resonance with the cavity"
+      ],
+      "correct": 0,
+      "explanation": "Haroche et al. (Paris, Nobel 2012): Rydberg atoms in a circular state act as 'flying qubits'. Each traverses a high-$Q$ microwave cavity ($Q \\sim 4\\times 10^{10}$, $\\kappa^{-1} \\sim 130$ ms, longer than the atom transit time). The dispersive shift $n\\phi_0$ is measured via Ramsey spectroscopy on the atom. With $\\sim 10$ atoms, photon numbers 0–7 are resolved. Quantum jumps between Fock states (photon-by-photon decay) are observed in real time — the most direct demonstration of photon quantisation."
+    }
+  }
+]

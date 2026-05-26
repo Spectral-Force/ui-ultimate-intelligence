@@ -1,0 +1,131 @@
+[
+  {
+    "id": "lt001",
+    "path": ["mathematics", "linear-transforms"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "A linear transformation $T: V \\to W$ satisfies $T(\\alpha u + \\beta v) = \\alpha T(u) + \\beta T(v)$ for all scalars $\\alpha, \\beta$ and vectors $u, v$. The kernel (null space) and image (range) satisfy:",
+    "equation": "\\dim(\\ker T) + \\dim(\\text{im}\\,T) = \\dim(V)",
+    "passive": {
+      "options": [
+        "The rank-nullity theorem: the dimension of the domain splits between the dimensions of the kernel and image",
+        "The kernel and image together form the domain $V$",
+        "$\\dim(\\ker T) = \\dim(\\text{im}\\,T)$ always",
+        "The rank-nullity theorem only applies when $T$ is invertible"
+      ],
+      "correct": 0,
+      "explanation": "Example: a $3\\times 2$ matrix $A$ maps $\\mathbb{R}^2 \\to \\mathbb{R}^3$. If $\\text{rank}(A) = 2$ (full column rank), then $\\dim(\\ker) = 0$ (injective). A $2\\times 3$ matrix maps $\\mathbb{R}^3 \\to \\mathbb{R}^2$: if rank 2, $\\dim(\\ker) = 1$ (one-dimensional null space). In quantum mechanics, projectors $P = |\\psi\\rangle\\langle\\psi|$ have $\\ker P = \\{$states orthogonal to $|\\psi\\rangle\\}$ and $\\text{im}\\, P = \\text{span}\\{|\\psi\\rangle\\}$."
+    },
+    "active": {
+      "type": "fill-blanks",
+      "prompt": "The rank-nullity theorem: $\\dim(V) = \\dim(\\ker T) +$ ___:",
+      "template": ["$\\dim V = \\dim(\\ker T) +$", null],
+      "tokens": [
+        {"id": "t1", "latex": "\\dim(\\operatorname{im}\\, T)"},
+        {"id": "t2", "latex": "\\dim(T)"},
+        {"id": "t3", "latex": "\\dim(W)"},
+        {"id": "t4", "latex": "\\operatorname{rank}(T^{-1})"}
+      ],
+      "solution": ["t1"],
+      "explanation": "$\\dim V = \\dim(\\ker T) + \\dim(\\text{im}\\,T)$. The image dimension is the rank of $T$. If $T$ is represented by matrix $A$, rank equals the number of linearly independent columns (= rows after reduction)."
+    }
+  },
+  {
+    "id": "lt002",
+    "path": ["mathematics", "linear-transforms"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "A change of basis transforms matrix representations of linear operators. If $P$ is the matrix whose columns are the new basis vectors expressed in the old basis, then an operator $A$ in the old basis becomes in the new basis:",
+    "equation": "A' = P^{-1}AP",
+    "passive": {
+      "options": [
+        "This is a similarity transformation; eigenvalues are preserved under similarity transformations, and the matrix $A$ is diagonalised if $P$ contains the eigenvectors of $A$ as columns",
+        "$A' = PAP^{-1}$ (order reversed)",
+        "The transformation changes the eigenvalues of $A$",
+        "A change of basis changes the trace of $A$"
+      ],
+      "correct": 0,
+      "explanation": "If $P$ has eigenvectors as columns: $P^{-1}AP = \\text{diag}(\\lambda_1, \\lambda_2, \\ldots)$. The trace $\\text{tr}(A) = \\text{tr}(A')$ and determinant $\\det(A) = \\det(A')$ are invariant under similarity transformations. In quantum mechanics, changing from position to momentum basis is a Fourier transform (the infinite-dimensional analogue). The spectral representation $A = \\sum_i \\lambda_i |i\\rangle\\langle i|$ is the diagonalised form."
+    }
+  },
+  {
+    "id": "lt003",
+    "path": ["mathematics", "linear-transforms"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "Singular Value Decomposition (SVD) factors any $m\\times n$ matrix $A$ as $A = U\\Sigma V^\\dagger$ where $U$ is $m\\times m$ unitary, $V$ is $n\\times n$ unitary, and $\\Sigma$ is $m\\times n$ diagonal with non-negative singular values $\\sigma_i$. Key properties:",
+    "passive": {
+      "options": [
+        "The singular values $\\sigma_i = \\sqrt{\\lambda_i(A^\\dagger A)}$; the rank of $A$ equals the number of non-zero singular values; the condition number $\\sigma_{\\rm max}/\\sigma_{\\rm min}$ measures sensitivity to perturbations",
+        "SVD requires $A$ to be square and invertible",
+        "The singular values equal the eigenvalues of $A$",
+        "SVD is only defined for real matrices"
+      ],
+      "correct": 0,
+      "explanation": "SVD is the most numerically stable matrix factorisation. Applications: pseudoinverse $A^+ = V\\Sigma^+U^\\dagger$ (least-squares solution even for singular $A$); principal component analysis (PCA, the top $k$ singular vectors explain most variance); image compression (truncate to top $k$ singular values). In quantum mechanics: Schmidt decomposition of a bipartite state is exactly SVD of the coefficient matrix $c_{ij}$."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each matrix decomposition to its primary use:",
+      "pairs": [
+        {"id": "p1", "term": "SVD: $A = U\\Sigma V^\\dagger$", "definition": "Pseudoinverse, PCA, Schmidt decomposition of quantum states, image compression"},
+        {"id": "p2", "term": "Eigendecomposition: $A = P\\Lambda P^{-1}$", "definition": "Diagonalising normal matrices; computing $e^{At}$, $A^n$; quantum spectrum"},
+        {"id": "p3", "term": "LU decomposition: $A = LU$", "definition": "Solving linear systems $Ax = b$ by forward/back substitution — Gaussian elimination"},
+        {"id": "p4", "term": "QR decomposition: $A = QR$", "definition": "Orthonormalising columns (Gram-Schmidt), least-squares fitting, QR algorithm for eigenvalues"}
+      ],
+      "explanation": "The eigendecomposition requires $A$ to be diagonalisable (fails for defective matrices). SVD always exists. The QR algorithm iteratively computes SVD/eigenvalues numerically. For quantum density matrices $\\rho$ (Hermitian, PSD): eigendecomposition gives probabilities $\\lambda_i$ and eigenstates."
+    }
+  },
+  {
+    "id": "lt004",
+    "path": ["mathematics", "linear-transforms"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "A projection operator $P$ on a vector space satisfies $P^2 = P$ (idempotent). For an orthogonal projection onto subspace $W$:",
+    "passive": {
+      "options": [
+        "$P$ is also Hermitian ($P^\\dagger = P$); any vector $v$ decomposes as $v = Pv + (I-P)v$ — the component in $W$ and its orthogonal complement",
+        "Orthogonal projections have $P^2 = P^{1/2}$",
+        "The eigenvalues of a projection operator are $\\{0, \\pm 1\\}$",
+        "Non-orthogonal projections satisfy $P^\\dagger = P$ but $P^2 \\neq P$"
+      ],
+      "correct": 0,
+      "explanation": "Eigenvalues of a projector: only $0$ (vectors orthogonal to $W$) and $1$ (vectors in $W$). The trace $\\text{tr}(P) = \\dim(W)$ — the number of basis vectors in $W$. In quantum mechanics, measurement projectors $P_n = |n\\rangle\\langle n|$ are rank-1 orthogonal projectors. The probability of outcome $n$ is $\\langle\\psi|P_n|\\psi\\rangle = |\\langle n|\\psi\\rangle|^2$ — Born rule. POVMs generalise projective measurements to non-Hermitian operators."
+    }
+  },
+  {
+    "id": "lt005",
+    "path": ["mathematics", "linear-transforms"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Unitary transformations $U$ satisfy $U^\\dagger U = UU^\\dagger = I$. Their key properties are:",
+    "passive": {
+      "options": [
+        "All eigenvalues lie on the unit circle $|\\lambda| = 1$; unitary operators preserve inner products $\\langle Ux, Uy\\rangle = \\langle x,y\\rangle$; in finite dimensions, unitary $\\Leftrightarrow$ isometry",
+        "Unitary matrices have determinant $+1$ always",
+        "Unitary operators have real eigenvalues",
+        "A product of two unitary matrices is not necessarily unitary"
+      ],
+      "correct": 0,
+      "explanation": "Eigenvalues of $U$: $Uv = \\lambda v$ gives $|\\lambda|^2\\|v\\|^2 = \\|Uv\\|^2 = \\|v\\|^2$, so $|\\lambda| = 1$. Unitary matrices form the Lie group $U(n)$. In quantum mechanics, time evolution $U(t) = e^{-iHt/\\hbar}$ is unitary (conserves norm). Single-qubit gates are $2\\times 2$ unitary matrices (up to global phase, elements of $SU(2)$). The Fourier transform matrix is unitary (Parseval's theorem follows)."
+    }
+  },
+  {
+    "id": "lt006",
+    "path": ["mathematics", "linear-transforms"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The tensor product $V \\otimes W$ of two vector spaces has dimension $\\dim(V)\\times\\dim(W)$. For operators $A$ on $V$ and $B$ on $W$, the tensor product operator $(A\\otimes B)$ acts as:",
+    "equation": "(A\\otimes B)(|v\\rangle\\otimes|w\\rangle) = (A|v\\rangle)\\otimes(B|w\\rangle)",
+    "passive": {
+      "options": [
+        "$(A\\otimes B)$ is a $\\dim(V)\\cdot\\dim(W)$ dimensional operator; for qubits, $\\sigma_x\\otimes\\sigma_z$ is a $4\\times 4$ matrix acting on the 2-qubit space",
+        "$(A\\otimes B) = A + B$ as matrices",
+        "The tensor product of two Hermitian operators is always Hermitian",
+        "$(A\\otimes B)$ has eigenvalues $\\lambda_A + \\lambda_B$ (sums, not products)"
+      ],
+      "correct": 0,
+      "explanation": "Eigenvalues of $A\\otimes B$: if $A|v\\rangle = \\lambda_A|v\\rangle$ and $B|w\\rangle = \\lambda_B|w\\rangle$, then $(A\\otimes B)|vw\\rangle = \\lambda_A\\lambda_B|vw\\rangle$ — eigenvalues are products. The Hamiltonian of a two-qubit system with coupling: $H = H_1\\otimes I_2 + I_1\\otimes H_2 + J\\sigma_z\\otimes\\sigma_z$. Entangled states cannot be written as $|v\\rangle\\otimes|w\\rangle$ — they live in the full tensor product space."
+    }
+  }
+]

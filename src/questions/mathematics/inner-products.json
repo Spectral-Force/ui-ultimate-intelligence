@@ -1,0 +1,119 @@
+[
+  {
+    "id": "ip001",
+    "path": ["mathematics", "inner-products"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "An inner product $\\langle \\cdot, \\cdot \\rangle$ on a complex vector space satisfies three axioms. Together they make the space a Hilbert space (when complete). The inner product on $L^2(\\mathbb{R})$ of two functions is:",
+    "equation": "\\langle f, g\\rangle = \\int_{-\\infty}^\\infty f^*(x)\\,g(x)\\,dx",
+    "passive": {
+      "options": [
+        "Conjugate-linear in the first argument: $\\langle\\alpha f, g\\rangle = \\alpha^*\\langle f,g\\rangle$; linear in the second: $\\langle f,\\alpha g\\rangle = \\alpha\\langle f,g\\rangle$; and $\\langle f,f\\rangle \\geq 0$ with equality iff $f = 0$",
+        "The inner product is linear in both arguments for complex spaces",
+        "$\\langle f,g\\rangle = \\langle g,f\\rangle$ always (without complex conjugation)",
+        "The inner product is only defined on finite-dimensional spaces"
+      ],
+      "correct": 0,
+      "explanation": "The three inner product axioms: (1) conjugate symmetry $\\langle f,g\\rangle = \\langle g,f\\rangle^*$; (2) linearity in second argument; (3) positive definiteness. The induced norm $\\|f\\| = \\sqrt{\\langle f,f\\rangle}$. In quantum mechanics: $\\langle\\psi,\\phi\\rangle = \\langle\\psi|\\phi\\rangle$ is the Dirac bra-ket notation. Normalisation requires $\\langle\\psi|\\psi\\rangle = 1$. The orthogonality of energy eigenstates: $\\langle E_n|E_m\\rangle = \\delta_{nm}$."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each inner product property to its consequence in quantum mechanics:",
+      "pairs": [
+        {"id": "p1", "term": "Positive definiteness $\\langle\\psi|\\psi\\rangle \\geq 0$", "definition": "Probability interpretation: $|\\langle\\psi|\\phi\\rangle|^2 \\in [0,1]$ is a valid probability"},
+        {"id": "p2", "term": "Cauchy-Schwarz: $|\\langle f|g\\rangle|^2 \\leq \\langle f|f\\rangle\\langle g|g\\rangle$", "definition": "Heisenberg uncertainty: $\\Delta A\\,\\Delta B \\geq |\\langle[\\hat{A},\\hat{B}]\\rangle|/2$ follows from Cauchy-Schwarz"},
+        {"id": "p3", "term": "Completeness (Hilbert space)", "definition": "Every Cauchy sequence converges in the space; necessary for well-defined quantum dynamics"},
+        {"id": "p4", "term": "Orthonormal basis $\\langle e_n|e_m\\rangle = \\delta_{nm}$", "definition": "Resolution of identity: $\\sum_n|e_n\\rangle\\langle e_n| = I$; any state $|\\psi\\rangle = \\sum_n c_n|e_n\\rangle$"}
+      ],
+      "explanation": "The Cauchy-Schwarz inequality $|\\langle f|g\\rangle| \\leq \\|f\\|\\,\\|g\\|$ is the key inequality of Hilbert spaces. It gives the Robertson uncertainty relation when applied to $|f\\rangle = \\Delta\\hat{A}|\\psi\\rangle$ and $|g\\rangle = \\Delta\\hat{B}|\\psi\\rangle$."
+    }
+  },
+  {
+    "id": "ip002",
+    "path": ["mathematics", "inner-products"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "The Gram-Schmidt process orthonormalises a set of linearly independent vectors $\\{v_1, v_2, \\ldots\\}$ into an orthonormal set $\\{e_1, e_2, \\ldots\\}$. The first two steps are:",
+    "passive": {
+      "options": [
+        "$e_1 = v_1/\\|v_1\\|$; $u_2 = v_2 - \\langle e_1, v_2\\rangle e_1$ (remove component along $e_1$), then $e_2 = u_2/\\|u_2\\|$",
+        "$e_1 = v_1$; $e_2 = v_2 - v_1$ without normalisation",
+        "$e_1 = v_1/\\|v_2\\|$; $e_2 = (v_1 + v_2)/\\|v_1 + v_2\\|$",
+        "The process normalises each vector independently without removing parallel components"
+      ],
+      "correct": 0,
+      "explanation": "Gram-Schmidt generates an orthonormal basis for the subspace spanned by $\\{v_i\\}$. The matrix $QR$ decomposition arises from applying Gram-Schmidt to the columns of $A$: $Q$ has the orthonormal columns, $R = Q^T A$ is upper triangular. In quantum chemistry, Gram-Schmidt orthogonalises atomic orbital basis functions to form Hartree-Fock molecular orbitals."
+    }
+  },
+  {
+    "id": "ip003",
+    "path": ["mathematics", "inner-products"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The adjoint (Hermitian conjugate) $A^\\dagger$ of an operator $A$ on a Hilbert space is defined by $\\langle A^\\dagger f, g\\rangle = \\langle f, Ag\\rangle$ for all $f, g$. Key classes:",
+    "passive": {
+      "options": [
+        "Hermitian (self-adjoint): $A^\\dagger = A$ → real eigenvalues, orthogonal eigenvectors (observables in QM); Anti-Hermitian: $A^\\dagger = -A$ → purely imaginary eigenvalues; Unitary: $A^\\dagger A = I$ → eigenvalues on unit circle",
+        "Hermitian operators have complex eigenvalues",
+        "Unitary operators are a special case of Hermitian operators",
+        "Anti-Hermitian operators cannot have eigenvalues"
+      ],
+      "correct": 0,
+      "explanation": "For a matrix $A$: $(A^\\dagger)_{ij} = A^*_{ji}$ (conjugate transpose). The spectrum theorem: a Hermitian operator on a finite-dimensional Hilbert space has a complete orthonormal eigenbasis. For infinite-dimensional spaces (quantum mechanics), self-adjoint operators require careful domain considerations (Stone-von Neumann theorem). Anti-Hermitian operators generate unitary groups: $U(t) = e^{iHt/\\hbar}$ where $H = H^\\dagger$ (Hermitian) makes $U$ unitary."
+    }
+  },
+  {
+    "id": "ip004",
+    "path": ["mathematics", "inner-products"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The spectral theorem for Hermitian operators states that a Hermitian operator $H$ on a finite-dimensional inner product space has an orthonormal eigenbasis $\\{|n\\rangle\\}$. The resolution of identity and spectral decomposition are:",
+    "equation": "\\sum_n |n\\rangle\\langle n| = I, \\quad H = \\sum_n E_n|n\\rangle\\langle n|",
+    "passive": {
+      "options": [
+        "Any function of $H$ is $f(H) = \\sum_n f(E_n)|n\\rangle\\langle n|$; the time evolution operator $e^{-iHt/\\hbar} = \\sum_n e^{-iE_n t/\\hbar}|n\\rangle\\langle n|$",
+        "The spectral decomposition requires $H$ to be positive definite",
+        "$f(H) = f(\\sum_n E_n)|n\\rangle\\langle n|$ — $f$ is applied to the sum, not individual eigenvalues",
+        "The spectral theorem fails for degenerate eigenvalues"
+      ],
+      "correct": 0,
+      "explanation": "The spectral decomposition allows computing $e^H$, $\\ln H$, $\\sqrt{H}$, and any function of a Hermitian matrix by acting on eigenvalues. The resolution of identity (completeness relation) $\\sum_n|n\\rangle\\langle n| = I$ is used to insert complete sets of states in quantum calculations. For continuous spectra (position/momentum): $\\int|x\\rangle\\langle x|dx = I$ and $\\langle x|p\\rangle = e^{ipx/\\hbar}/\\sqrt{2\\pi\\hbar}$."
+    }
+  },
+  {
+    "id": "ip005",
+    "path": ["mathematics", "inner-products"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The commutator $[A, B] = AB - BA$ of two operators on a Hilbert space measures their non-commutativity. The canonical commutation relation for position $\\hat{x}$ and momentum $\\hat{p}$ is:",
+    "equation": "[\\hat{x}, \\hat{p}] = i\\hbar",
+    "passive": {
+      "options": [
+        "This relation is the foundation of quantum mechanics; it implies $\\hat{p} = -i\\hbar\\partial/\\partial x$ in position representation and leads to the Heisenberg uncertainty principle $\\Delta x\\,\\Delta p \\geq \\hbar/2$",
+        "$[\\hat{x},\\hat{p}] = \\hbar$ (without the factor of $i$)",
+        "The commutation relation holds only for free particles",
+        "$[\\hat{x},\\hat{p}] = 0$ in the classical limit $\\hbar \\to 0$"
+      ],
+      "correct": 0,
+      "explanation": "$[\\hat{x},\\hat{p}] = i\\hbar$ follows from $\\hat{p} = -i\\hbar\\partial/\\partial x$: $[x, -i\\hbar\\partial_x]f = -i\\hbar(x\\partial_x f - \\partial_x(xf)) = -i\\hbar(x\\partial_x f - f - x\\partial_x f) = i\\hbar f$. The Robertson uncertainty: $\\Delta A\\Delta B \\geq |\\langle[A,B]\\rangle|/2 = \\hbar/2$ for $A = \\hat{x}$, $B = \\hat{p}$. The Poisson bracket $\\{x,p\\} = 1$ is the classical limit ($[\\cdot,\\cdot] \\to i\\hbar\\{\\cdot,\\cdot\\}$ as $\\hbar \\to 0$)."
+    }
+  },
+  {
+    "id": "ip006",
+    "path": ["mathematics", "inner-products"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "A Hilbert-Schmidt operator $A$ on a Hilbert space satisfies $\\text{tr}(A^\\dagger A) < \\infty$. The Hilbert-Schmidt inner product between two operators is:",
+    "equation": "\\langle A, B\\rangle_{\\rm HS} = \\text{tr}(A^\\dagger B)",
+    "passive": {
+      "options": [
+        "This makes the space of Hilbert-Schmidt operators itself a Hilbert space; density matrices (trace-class, positive semidefinite) form a convex subset; the Hilbert-Schmidt distance $\\|\\rho_1 - \\rho_2\\|_{\\rm HS}$ measures distinguishability",
+        "The Hilbert-Schmidt inner product equals the usual vector inner product for matrices",
+        "All operators on a finite-dimensional Hilbert space are Hilbert-Schmidt",
+        "Hilbert-Schmidt operators must be invertible"
+      ],
+      "correct": 0,
+      "explanation": "On finite-dimensional spaces, all operators are Hilbert-Schmidt. For infinite-dimensional spaces (e.g., harmonic oscillator), the position operator is unbounded and not Hilbert-Schmidt. In quantum information, the Hilbert-Schmidt inner product $\\text{tr}(A^\\dagger B)$ measures the overlap between quantum processes (quantum process tomography). The Frobenius norm $\\|A\\|_F = \\sqrt{\\text{tr}(A^\\dagger A)}$ is the matrix analogue of the $L^2$ norm."
+    }
+  }
+]
