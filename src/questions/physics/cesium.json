@@ -1,0 +1,81 @@
+[
+  {
+    "id": "cs001",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "elements", "cesium"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "Cesium-133 ($^{133}$Cs) is the only stable isotope and a boson (even mass number). The hyperfine splitting of the $6S_{1/2}$ ground state defines the SI second:",
+    "passive": {
+      "options": [
+        "The $F=3 \\to F=4$ hyperfine transition at 9.192 631 770 GHz — the primary frequency standard since 1967",
+        "The cesium clock uses an optical transition at 852 nm",
+        "The hyperfine splitting is 6.834 GHz (same as $^{87}$Rb)",
+        "Cs has two stable isotopes: $^{133}$Cs and $^{135}$Cs"
+      ],
+      "correct": 0,
+      "explanation": "The SI second is defined as 9 192 631 770 periods of the hyperfine transition in $^{133}$Cs. Cesium fountain clocks (Cs atoms launched vertically through a microwave cavity, falling back under gravity) achieve fractional frequency uncertainties of $10^{-16}$. The Cs D1 line ($6S_{1/2} \\to 6P_{1/2}$, $\\lambda = 894.6$ nm) and D2 line ($6S_{1/2} \\to 6P_{1/2}$, $\\lambda = 852.3$ nm) are used for laser cooling. MOTs of Cs typically operate on D2."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each Cs-133 property to its value:",
+      "pairs": [
+        {"id": "p1", "term": "Hyperfine clock frequency", "definition": "9.192 631 770 GHz — defines the SI second"},
+        {"id": "p2", "term": "D2 cooling wavelength", "definition": "852.3 nm ($6S_{1/2} \\to 6P_{3/2}$)"},
+        {"id": "p3", "term": "D2 natural linewidth $\\Gamma/2\\pi$", "definition": "5.22 MHz; excited state lifetime $\\tau = 30.5$ ns"},
+        {"id": "p4", "term": "Nuclear spin", "definition": "$I = 7/2$; ground state $F = 3$ and $F = 4$ hyperfine levels"}
+      ],
+      "explanation": "Cs has a large nuclear spin $I = 7/2$, giving a rich hyperfine structure and making it sensitive to stray magnetic fields. Its heavy mass ($m = 133$ u) means lower recoil velocity than Rb: $v_r = \\hbar k/m \\approx 3.5$ mm/s on D2. Cs is used in atomic fountain clocks, EDM searches, and as a second-stage coolant in sympathetic cooling experiments."
+    }
+  },
+  {
+    "id": "cs002",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "elements", "cesium"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Cesium has a large negative s-wave scattering length $a_{Cs} \\approx -2400\\,a_0$ at zero magnetic field (largest among alkali atoms). This creates challenges for BEC:",
+    "passive": {
+      "options": [
+        "Large negative $a$ causes an attractive mean-field interaction that leads to collapse of the condensate above a critical atom number — Cs BEC required tuning $a$ positive via a Feshbach resonance",
+        "Large positive scattering length prevents BEC formation",
+        "The scattering length of Cs cannot be tuned by magnetic field",
+        "Negative scattering length always leads to a stable BEC"
+      ],
+      "correct": 0,
+      "explanation": "Cs BEC was achieved in 2002 (Grimm group, Innsbruck) by using Feshbach resonances to tune $a > 0$. At zero field, the enormous $|a|$ causes catastrophic three-body losses at the densities needed for BEC. With Feshbach tuning to $a \\approx 200\\,a_0$: BEC with $N \\sim 10^4$ atoms. Cs also has a wealth of Feshbach resonances and was the first system where universality in three-body physics (Efimov states) was observed."
+    }
+  },
+  {
+    "id": "cs003",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "elements", "cesium"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Sub-Doppler cooling of Cs by polarisation-gradient cooling (Sisyphus) reaches temperatures well below the Doppler limit. For Cs on the D2 line, the Sisyphus temperature limit is approximately:",
+    "passive": {
+      "options": [
+        "A few $\\mu$K — limited by photon recoil, with $T_{\\rm min} \\approx (\\hbar k)^2/(2m k_B) \\cdot $few$\\,\\approx 2\\,\\mu$K for Cs (lower than Rb due to heavier mass)",
+        "The Doppler limit $T_D = \\hbar\\Gamma/2k_B \\approx 125\\,\\mu$K for Cs",
+        "Sub-Doppler cooling does not work for Cs due to its large ground-state hyperfine splitting",
+        "The minimum temperature for Cs is the same as for Rb: $\\sim 3\\,\\mu$K"
+      ],
+      "correct": 0,
+      "explanation": "The single-photon recoil temperature $T_r = (\\hbar k)^2/(mk_B) \\approx 200$ nK for Cs. Sisyphus cooling reaches $\\sim 5{-}10$ $T_r \\approx 1{-}2\\,\\mu$K. Cs has a large hyperfine splitting (9.2 GHz) that can cause issues with Sisyphus when the excited-state hyperfine splitting is unresolved, but the Cs D2 $F=4 \\to F'=5$ cycling transition supports efficient Sisyphus cooling. DRSC (degenerate Raman sideband cooling) can reach 50–100 nK in lattices."
+    }
+  },
+  {
+    "id": "cs004",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "elements", "cesium"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Efimov states in Cs arise near a Feshbach resonance. Three-body bound states appear at geometrically spaced scattering lengths:",
+    "passive": {
+      "options": [
+        "Efimov states appear at $a_n^- = \\lambda^n a_0^-$ where $\\lambda = e^{\\pi/s_0} \\approx 22.7$ for identical bosons — a geometric (discrete scale-invariant) spectrum with ratio $\\sim 22.7$ between successive states",
+        "Efimov states are equally spaced in $a$ like Bohr levels in hydrogen",
+        "Efimov states only occur for fermions with resonant interactions",
+        "The Efimov parameter $\\lambda = 2\\pi$ for all atomic systems"
+      ],
+      "correct": 0,
+      "explanation": "Efimov (1970) predicted three-body bound states near a two-body zero-energy resonance: as $|a| \\to \\infty$, infinitely many three-body states appear. First observed experimentally in $^{133}$Cs by Grimm group (2006): enhanced three-body loss at a specific magnetic field (Efimov resonance), with subsequent resonances at fields corresponding to $a$ ratios of $\\sim 22.7$. The Efimov spectrum is governed by a universal parameter $\\kappa_*$ (three-body parameter) that has been measured to be nearly universal ($\\kappa_* r_{\\rm vdW} \\approx 1$)."
+    }
+  }
+]

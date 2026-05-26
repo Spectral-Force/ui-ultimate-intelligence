@@ -34,6 +34,14 @@ import pdes           from './mathematics/pdes.json'
 import groupTheory    from './mathematics/group-theory.json'
 import linearTransforms from './mathematics/linear-transforms.json'
 import innerProducts  from './mathematics/inner-products.json'
+import cesium         from './physics/cesium.json'
+import lithium        from './physics/lithium.json'
+import strontium      from './physics/strontium.json'
+import ytterbium      from './physics/ytterbium.json'
+import phaseTransitions from './physics/phase-transitions.json'
+import emWaves        from './physics/em-waves.json'
+import oscillations   from './physics/oscillations.json'
+import radiation      from './physics/radiation.json'
 
 export const allQuestions = [
   ...dopplerCooling,
@@ -72,6 +80,14 @@ export const allQuestions = [
   ...groupTheory,
   ...linearTransforms,
   ...innerProducts,
+  ...cesium,
+  ...lithium,
+  ...strontium,
+  ...ytterbium,
+  ...phaseTransitions,
+  ...emWaves,
+  ...oscillations,
+  ...radiation,
 ]
 
 export function filterQuestions(selectedIds, selectedLevels, mode) {

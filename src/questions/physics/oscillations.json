@@ -1,0 +1,101 @@
+[
+  {
+    "id": "os001",
+    "path": ["physics", "classical-mechanics", "oscillations"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "A damped harmonic oscillator with natural frequency $\\omega_0$ and damping coefficient $\\gamma$ has equation of motion $\\ddot{x} + \\gamma\\dot{x} + \\omega_0^2 x = 0$. The three regimes are:",
+    "passive": {
+      "options": [
+        "Underdamped ($\\gamma < 2\\omega_0$): oscillatory decay $x \\propto e^{-\\gamma t/2}\\cos(\\omega_1 t)$ with $\\omega_1 = \\sqrt{\\omega_0^2 - \\gamma^2/4}$; Critically damped: fastest return, no oscillation; Overdamped ($\\gamma > 2\\omega_0$): slow exponential return",
+        "Underdamped: pure exponential decay; Overdamped: oscillatory",
+        "All three regimes have the same quality factor $Q = \\omega_0/\\gamma$",
+        "Critical damping occurs when $\\gamma = \\omega_0$"
+      ],
+      "correct": 0,
+      "explanation": "Quality factor $Q = \\omega_0/\\gamma$ measures oscillations per damping time. $Q \\gg 1$: high-$Q$ oscillator (pendulum clock, atomic transition). Critical damping: $\\gamma = 2\\omega_0$, $Q = 1/2$ — used in door closers and instrument needle dampers. In AMO physics, the atomic transition $Q = \\omega_0/\\Gamma \\sim 10^8$ for optical and $10^{17}$ for clock transitions. Mechanical oscillators in optomechanics achieve $Q \\sim 10^6{-}10^9$."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each damping regime to its time-domain behaviour:",
+      "pairs": [
+        {"id": "p1", "term": "Underdamped ($Q > 1/2$)", "definition": "$x(t) = Ae^{-\\gamma t/2}\\cos(\\omega_1 t + \\phi)$: decaying oscillations at frequency $\\omega_1 < \\omega_0$"},
+        {"id": "p2", "term": "Critically damped ($Q = 1/2$)", "definition": "$x(t) = (A + Bt)e^{-\\omega_0 t}$: fastest non-oscillatory return to equilibrium"},
+        {"id": "p3", "term": "Overdamped ($Q < 1/2$)", "definition": "$x(t) = Ae^{-\\lambda_1 t} + Be^{-\\lambda_2 t}$: two exponential decay rates, $\\lambda_{1,2} = \\gamma/2 \\pm \\sqrt{\\gamma^2/4 - \\omega_0^2}$"},
+        {"id": "p4", "term": "Quality factor $Q = \\omega_0/\\gamma$", "definition": "Number of radians of oscillation per $1/e$ amplitude decay; also $\\approx$ number of oscillations before energy drops by $e^{2\\pi}$"}
+      ],
+      "explanation": "At resonance, the oscillator's energy stored to power dissipated ratio equals $Q/\\omega_0$. A high-$Q$ oscillator is sensitive to small driving forces — the basis of AFM cantilevers, MEMS resonators, and optical/microwave cavities used in precision sensing."
+    }
+  },
+  {
+    "id": "os002",
+    "path": ["physics", "classical-mechanics", "oscillations"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "A driven harmonic oscillator $\\ddot{x} + \\gamma\\dot{x} + \\omega_0^2 x = F_0\\cos(\\omega t)/m$ has steady-state amplitude response:",
+    "equation": "A(\\omega) = \\frac{F_0/m}{\\sqrt{(\\omega_0^2 - \\omega^2)^2 + \\gamma^2\\omega^2}}",
+    "passive": {
+      "options": [
+        "Resonance at $\\omega_{\\rm res} = \\sqrt{\\omega_0^2 - \\gamma^2/2}$ with peak amplitude $A_{\\rm max} = F_0/(m\\gamma\\omega_0)$ for $Q \\gg 1$; the FWHM of the resonance is $\\Delta\\omega = \\gamma = \\omega_0/Q$",
+        "The resonance always occurs at exactly $\\omega = \\omega_0$ regardless of damping",
+        "The steady-state amplitude is infinite at exact resonance",
+        "The resonance FWHM equals $\\omega_0$ for any damping"
+      ],
+      "correct": 0,
+      "explanation": "At resonance ($\\omega \\approx \\omega_0$, $Q \\gg 1$): $A_{\\rm max} = QF_0/(m\\omega_0^2) = QA_{\rm static}$. The quality factor amplifies the static displacement by $Q$. Phase lag: $\\phi = 0$ at $\\omega \\ll \\omega_0$, $\\phi = \\pi/2$ at resonance, $\\phi = \\pi$ at $\\omega \\gg \\omega_0$. The driven oscillator is the classical analogue of a two-level atom driven by light — the same Lorentzian resonance shape (power spectrum is a Lorentzian with FWHM $\\Gamma$)."
+    }
+  },
+  {
+    "id": "os003",
+    "path": ["physics", "classical-mechanics", "oscillations"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Two coupled harmonic oscillators with equal frequency $\\omega_0$ and coupling $\\kappa$ have normal mode frequencies:",
+    "equation": "\\omega_\\pm = \\sqrt{\\omega_0^2 \\pm \\kappa}",
+    "passive": {
+      "options": [
+        "The normal modes are symmetric ($\\omega_-$: both masses move in phase) and antisymmetric ($\\omega_+$: out of phase); the coupling splits the frequencies by $\\Delta\\omega = \\omega_+ - \\omega_- \\approx \\kappa/\\omega_0$ for small coupling",
+        "The two normal modes always have the same frequency as the uncoupled oscillators",
+        "The antisymmetric mode has lower frequency than the symmetric mode",
+        "Coupling always increases both mode frequencies relative to $\\omega_0$"
+      ],
+      "correct": 0,
+      "explanation": "Normal modes are the eigenvectors of the dynamical matrix. Any initial condition is a superposition of normal modes. If only one mode is excited, it stays in that mode forever (no energy exchange). If both are excited with the right amplitude and phase, energy oscillates between the two oscillators at the beat frequency $\\Delta\\omega/2\\pi = (\\omega_+ - \\omega_-)/2\\pi$. In coupled atom-cavity system: vacuum Rabi splitting $2g$ is exactly the normal mode splitting of the coupled oscillator."
+    }
+  },
+  {
+    "id": "os004",
+    "path": ["physics", "classical-mechanics", "oscillations"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Optomechanics studies the radiation pressure coupling between photons in a cavity and a mechanical oscillator. The optomechanical coupling Hamiltonian is:",
+    "equation": "H = \\hbar\\omega_c(x)a^\\dagger a + \\frac{p^2}{2m} + \\frac{1}{2}m\\omega_m^2 x^2",
+    "passive": {
+      "options": [
+        "Radiation pressure from the intracavity field $\\propto a^\\dagger a$ shifts the mechanical equilibrium; sideband cooling drives the mechanical oscillator to its quantum ground state by driving the red sideband ($\\omega_{\\rm drive} = \\omega_c - \\omega_m$)",
+        "The coupling heats the mechanical oscillator regardless of the drive frequency",
+        "The mechanical oscillator must be resonant with the cavity for optomechanical coupling",
+        "Sideband cooling works only when the mechanical frequency exceeds the cavity linewidth"
+      ],
+      "correct": 0,
+      "explanation": "In the resolved-sideband regime ($\\omega_m > \\kappa$), driving the red sideband removes one phonon per absorbed photon. Mechanical ground state cooling ($\\langle n\\rangle < 1$) was achieved in 2010 by two groups simultaneously (Caltech and NIST). Optomechanics enables macroscopic quantum superpositions, quantum transduction between microwave and optical domains (for quantum networks), and ultrasensitive force/mass sensing below the standard quantum limit using squeezed light."
+    }
+  },
+  {
+    "id": "os005",
+    "path": ["physics", "classical-mechanics", "oscillations"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Standing waves on a string of length $L$ (fixed ends) form a harmonic series. The $n$-th normal mode has frequency $f_n = nv/2L$ where $v = \\sqrt{T/\\mu}$ is the wave speed. For a quantum particle in a 1D box of length $L$:",
+    "passive": {
+      "options": [
+        "The allowed wavelengths $\\lambda_n = 2L/n$ give energies $E_n = n^2\\pi^2\\hbar^2/(2mL^2) = n^2 E_1$ — quadratic in $n$, unlike a harmonic oscillator ($E_n \\propto n$) or classical string harmonics ($f_n \\propto n$, linear)",
+        "The particle in a box has energies equally spaced like a harmonic oscillator",
+        "The ground state energy $E_1 = 0$ (no zero-point energy)",
+        "The energy levels are $E_n = n\\hbar\\omega_0$ for a particle in a box"
+      ],
+      "correct": 0,
+      "explanation": "Comparison: harmonic oscillator $E_n = (n+1/2)\\hbar\\omega$, particle in box $E_n = n^2 E_1$, hydrogen $E_n = -E_{\\rm Ry}/n^2$. The $n^2$ scaling of box energies comes from the quadratic dispersion $E = \\hbar^2 k^2/2m$ with discrete $k_n = n\\pi/L$. A 3D cubic box gives $E_{n_x,n_y,n_z} = (\\pi^2\\hbar^2/2mL^2)(n_x^2 + n_y^2 + n_z^2)$ — degeneracy (multiple states with the same total $n_x^2+n_y^2+n_z^2$) is a precursor to the band structure of solids."
+    }
+  }
+]

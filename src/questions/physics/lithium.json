@@ -1,0 +1,64 @@
+[
+  {
+    "id": "li001",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "elements", "lithium"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "Lithium has two stable isotopes with very different quantum statistics: $^6$Li (fermion, nuclear spin $I=1$) and $^7$Li (boson, $I=3/2$). The D2 cooling transition for both is:",
+    "passive": {
+      "options": [
+        "$2S_{1/2} \\to 2P_{3/2}$ at $\\lambda = 671$ nm (red), natural linewidth $\\Gamma/2\\pi = 5.87$ MHz — the excited state hyperfine structure is unresolved because $\\Delta E_{\\rm hfs}' \\sim \\Gamma$",
+        "The D2 line is at 780 nm for both Li isotopes",
+        "$^6$Li and $^7$Li have different D2 wavelengths due to the mass difference",
+        "Li has no D2 line because of its small nuclear spin"
+      ],
+      "correct": 0,
+      "explanation": "Li's excited $2P_{3/2}$ state has unresolved hyperfine structure (splitting $\\sim 2\\Gamma$), making standard MOT and sub-Doppler techniques less efficient than for Rb. The Doppler limit is $T_D = \\hbar\\Gamma/2k_B \\approx 140\\,\\mu$K. Single-photon recoil velocity: $v_r = \\hbar k/m \\approx 9.9$ cm/s — the largest of the alkalis, leading to significant recoil heating. $^6$Li is the primary platform for studying degenerate Fermi gases and the BCS-BEC crossover."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each Li isotope to its quantum properties:",
+      "pairs": [
+        {"id": "p1", "term": "$^7$Li (mass 7)", "definition": "Boson ($I = 3/2$); $F = 1$ and $F = 2$ ground states; BEC achieved 1995 (Rice); attractive interactions at low field ($a < 0$)"},
+        {"id": "p2", "term": "$^6$Li (mass 6)", "definition": "Fermion ($I = 1$); fermionic quantum degeneracy; primary species for BCS-BEC crossover experiments"},
+        {"id": "p3", "term": "Broad Feshbach resonance in $^6$Li", "definition": "~300 G wide resonance near 832 G in the lowest two hyperfine states — allows precise tuning across BEC-BCS crossover"},
+        {"id": "p4", "term": "Large recoil velocity in Li", "definition": "$v_r \\approx 10$ cm/s (vs $\\sim 6$ mm/s for Rb) — significant recoil heating limits sub-Doppler performance"}
+      ],
+      "explanation": "$^7$Li was one of the first BECs (Rice, 1995), notable for having negative scattering length at zero field (attractive interactions) — the condensate is stabilised below a critical number $N_c \\approx 1250$. The eventual collapse ('bosenova') was observed spectacularly in 2001 (JILA, $^{85}$Rb). $^6$Li remains the premier Fermi gas platform."
+    }
+  },
+  {
+    "id": "li002",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "elements", "lithium"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The broad Feshbach resonance in $^6$Li near $B = 832$ G allows tuning the s-wave scattering length from $a \\to +\\infty$ (BEC side) through unitarity to $a \\to -\\infty$ (BCS side). At the resonance centre:",
+    "passive": {
+      "options": [
+        "The unitarity regime: $|a| \\to \\infty$, mean free path $\\lambda_{\\rm mfp} \\sim 1/(n\\sigma) \\to 0$ as $\\sigma = 4\\pi a^2 \\to \\infty$ — the gas is maximally interacting and universal (properties depend only on density and temperature)",
+        "At the Feshbach resonance, the gas becomes non-interacting ($a = 0$)",
+        "The BCS gap $\\Delta$ diverges at the resonance centre",
+        "At unitarity, the scattering cross-section is $\\sigma = 4\\pi/k^2$ (saturated at the quantum limit)"
+      ],
+      "correct": 0,
+      "explanation": "At unitarity, the scattering cross-section reaches the quantum limit $\\sigma = 4\\pi/k^2$ (unitarity limit) — the gas is as strongly interacting as quantum mechanics allows. All thermodynamic quantities are universal: $E/E_F = (3/5)\\xi E_F$ where $\\xi \\approx 0.376$ (Bertsch parameter from QMC). The broad Li resonance ($\\Delta B \\approx 300$ G) allows precise field positioning to within 1 mG on the crossover. $^6$Li is the system where fermionic superfluidity was first confirmed (vortex lattices observed in 2005, MIT)."
+    }
+  },
+  {
+    "id": "li003",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "elements", "lithium"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "In $^6$Li, the three lowest hyperfine states $|1\\rangle$, $|2\\rangle$, $|3\\rangle$ (at high field: $m_J = -1/2$, $m_I = +1, 0, -1$) exhibit SU(3) symmetry near Feshbach resonances. Three independently tunable interactions $a_{12}, a_{13}, a_{23}$ allow:",
+    "passive": {
+      "options": [
+        "Realisation of SU(3) symmetric matter and Efimov physics with three distinguishable components — analogues of three-colour quarks in QCD can be simulated",
+        "SU(3) symmetry is broken by the hyperfine structure and cannot be restored by magnetic fields",
+        "The three states always have equal scattering lengths at any magnetic field",
+        "Three-component fermions cannot undergo pairing because Pauli exclusion forbids it"
+      ],
+      "correct": 0,
+      "explanation": "At certain magnetic fields, $a_{12} \\approx a_{13} \\approx a_{23}$, giving approximate SU(3) symmetry. This system maps to a 3-component (3-colour) Fermi gas — a table-top quantum simulation of QCD-like physics. Efimov states involving three different components have been observed. Three-component Fermi gases may exhibit exotic phases: colour superfluidity, trion formation ($^6$Li bound state of all three), and phases analogous to colour-superconducting quark matter."
+    }
+  }
+]

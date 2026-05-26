@@ -1,0 +1,100 @@
+[
+  {
+    "id": "pt001",
+    "path": ["physics", "statistical-mechanics", "phase-transitions"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "A second-order (continuous) phase transition is characterised by a diverging correlation length $\\xi$ and power-law behaviour near the critical temperature $T_c$. The order parameter $m$ vanishes as:",
+    "equation": "m \\sim |T - T_c|^\\beta, \\quad \\xi \\sim |T - T_c|^{-\\nu}",
+    "passive": {
+      "options": [
+        "Critical exponents $\\beta$, $\\nu$, $\\gamma$ (susceptibility), $\\delta$ (field dependence) are universal — independent of microscopic details, depending only on dimensionality and symmetry of the order parameter",
+        "Critical exponents are material-specific and must be measured for each system",
+        "First-order transitions also have diverging correlation lengths at $T_c$",
+        "The mean-field exponents ($\\beta = 1/2$, $\\nu = 1/2$) are exact in all dimensions"
+      ],
+      "correct": 0,
+      "explanation": "Universality classes: 3D Ising ($\\beta = 0.326$, $\\nu = 0.630$), 3D Heisenberg ($\\beta = 0.365$, $\\nu = 0.705$), mean field ($\\beta = 1/2$, valid for $d > 4$). The renormalisation group (Wilson, Nobel 1982) explains universality: different microscopic systems flow to the same fixed point under RG. BEC transition in 3D belongs to the 3D XY universality class. The $\\lambda$-transition in $^4$He (3D XY) has $\\alpha \\approx -0.013$ — the specific heat barely diverges."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each phase transition type to its hallmark:",
+      "pairs": [
+        {"id": "p1", "term": "First-order transition", "definition": "Latent heat; discontinuous order parameter; phase coexistence; Maxwell construction"},
+        {"id": "p2", "term": "Second-order (continuous) transition", "definition": "No latent heat; continuous order parameter; diverging $\\xi$; universal critical exponents"},
+        {"id": "p3", "term": "Kosterlitz-Thouless (BKT) transition", "definition": "Topological transition in 2D; no symmetry breaking; vortex binding/unbinding; quasi-long-range order"},
+        {"id": "p4", "term": "Quantum phase transition", "definition": "At $T = 0$: driven by quantum fluctuations at critical coupling $g_c$; dynamic exponent $z$ relates energy to length scales"}
+      ],
+      "explanation": "In AMO physics: BEC is a second-order transition (3D XY class for homogeneous systems). The Mott-insulator/superfluid transition in optical lattices is a quantum phase transition (studied at $T \\to 0$). The BKT transition is realised in 2D atomic films. First-order transitions appear in spinor condensates between different magnetic phases."
+    }
+  },
+  {
+    "id": "pt002",
+    "path": ["physics", "statistical-mechanics", "phase-transitions"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Landau theory of second-order phase transitions expands the free energy in powers of the order parameter $m$ (assumed small near $T_c$):",
+    "equation": "F = F_0 + a(T)m^2 + bm^4 + \\ldots, \\quad a(T) = a_0(T-T_c)",
+    "passive": {
+      "options": [
+        "For $T > T_c$: $a > 0$, minimum at $m = 0$ (disordered); for $T < T_c$: $a < 0$, minimum at $m = \\pm\\sqrt{-a/2b}$ (ordered); the transition at $T_c$ gives $\\beta = 1/2$ (mean-field)",
+        "For $b < 0$ the transition is still second-order with the same exponents",
+        "Landau theory predicts the exact critical exponents in all dimensions",
+        "The $m^3$ term is allowed by symmetry for an Ising-like transition"
+      ],
+      "correct": 0,
+      "explanation": "If the $\\mathbb{Z}_2$ symmetry $m \\to -m$ is present (Ising), odd powers of $m$ are forbidden. With $b > 0$: second-order transition. If $b < 0$ (allowed for more complex symmetries), a sixth-order term $cm^6$ ($c > 0$) is needed to stabilise — this gives a first-order transition. The Landau mean-field theory gives $\\beta = 1/2$, $\\nu = 1/2$, $\\gamma = 1$ — exact above the upper critical dimension $d_c = 4$. Below $d_c$, fluctuations change the exponents."
+    }
+  },
+  {
+    "id": "pt003",
+    "path": ["physics", "statistical-mechanics", "phase-transitions"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Ising model on a 2D square lattice is exactly solvable (Onsager, 1944). The exact critical temperature and exponents are:",
+    "passive": {
+      "options": [
+        "$k_BT_c = 2J/\\ln(1+\\sqrt{2})$; $\\beta = 1/8$, $\\nu = 1$, $\\gamma = 7/4$ — exact values confirming the universality of the 2D Ising universality class",
+        "The 2D Ising model has the same exponents as mean-field theory",
+        "The exact critical temperature in 2D is $k_BT_c = J$ regardless of lattice geometry",
+        "The 2D Ising model has no phase transition at finite temperature"
+      ],
+      "correct": 0,
+      "explanation": "Onsager's solution (1944) was a landmark: the free energy is exactly computed via transfer matrices. The specific heat diverges logarithmically ($\\alpha = 0$, not a power law). The magnetisation exponent $\\beta = 1/8$ is far from mean-field ($1/2$). In 1D, the Ising model has no phase transition at $T > 0$ (Peierls argument). The 3D Ising model has no exact solution and exponents are computed numerically ($\\beta \\approx 0.326$)."
+    }
+  },
+  {
+    "id": "pt004",
+    "path": ["physics", "statistical-mechanics", "phase-transitions"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The renormalisation group (RG) approach to phase transitions works by integrating out short-wavelength fluctuations to obtain effective long-wavelength theories. The RG flow near a fixed point determines critical exponents via:",
+    "passive": {
+      "options": [
+        "Relevant operators ($\\lambda > 0$, growing under RG) drive the system away from the fixed point; irrelevant operators decay; marginal operators ($\\lambda = 0$) lead to logarithmic corrections. Critical exponents come from the eigenvalues of the RG linearisation",
+        "The RG fixed point always corresponds to a non-interacting (Gaussian) theory",
+        "Relevant operators correspond to positive-mass terms in the field theory",
+        "The RG trajectory always flows to the Ising fixed point regardless of symmetry"
+      ],
+      "correct": 0,
+      "explanation": "The $\\epsilon$-expansion (Wilson-Fisher, 1972): expand around the upper critical dimension $d = 4$ in $\\epsilon = 4-d$. At one loop: $\\eta = 0$, $\\nu = 1/2 + \\epsilon/12 + O(\\epsilon^2)$, $\\beta = 1/2 - \\epsilon/6 + O(\\epsilon^2)$. At $\\epsilon = 1$ (3D): first approximation to non-mean-field exponents. The anomalous dimension $\\eta$ and the exponent $\\nu$ are the two independent critical exponents (others follow from scaling relations like $\\gamma = \\nu(2-\\eta)$)."
+    }
+  },
+  {
+    "id": "pt005",
+    "path": ["physics", "statistical-mechanics", "phase-transitions"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The superfluid-to-Mott insulator quantum phase transition in a Bose-Hubbard model (optical lattice) is driven by the ratio of tunnelling $J$ to on-site interaction $U$. The phase boundary between the superfluid and Mott lobes is:",
+    "passive": {
+      "options": [
+        "At $(J/U)_c \\approx 0.034$ for unit filling in 3D: for $J/U > (J/U)_c$ the system is superfluid; for $J/U < (J/U)_c$ it's a Mott insulator with a fixed integer number of atoms per site",
+        "The transition occurs at $J/U = 1$ regardless of filling",
+        "Increasing lattice depth increases $J/U$ and drives the system to the Mott phase",
+        "The Mott insulator phase has superfluid off-diagonal long-range order"
+      ],
+      "correct": 0,
+      "explanation": "Increasing lattice depth: $J = J_0 e^{-a\\sqrt{V_0/E_r}}$ decreases exponentially; $U = (4\\pi\\hbar^2 a_s/m)\\int|w(r)|^4 d^3r$ grows. So deeper lattice drives Mott transition. First observed by Greiner et al. (Munich, 2002) with $^{87}$Rb: time-of-flight images show loss of interference fringes (superfluid → Mott insulator). The Mott lobes have integer filling $n = 1, 2, 3, \\ldots$; each lobe has a gap $\\propto U$ to adding or removing a particle."
+    }
+  }
+]

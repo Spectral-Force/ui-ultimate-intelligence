@@ -1,0 +1,64 @@
+[
+  {
+    "id": "yb001",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "elements", "ytterbium"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "Ytterbium ($Z = 70$) is a lanthanide with two valence electrons (like Sr). It has seven stable isotopes: five bosons ($^{168}$Yb, $^{170}$Yb, $^{172}$Yb, $^{174}$Yb, $^{176}$Yb) and two fermions ($^{171}$Yb, $I=1/2$; $^{173}$Yb, $I=5/2$). The primary cooling transitions are:",
+    "passive": {
+      "options": [
+        "$^1S_0 \\to ^1P_1$ at 399 nm (broad, $\\Gamma/2\\pi = 29$ MHz) and $^1S_0 \\to ^3P_1$ at 556 nm (narrow intercombination, $\\Gamma/2\\pi = 182$ kHz), reaching $\\mu$K temperatures",
+        "Yb is cooled using D2 line at 671 nm, same as Li",
+        "The primary transition is at 556 nm only; the 399 nm transition is too fast to use",
+        "Yb has no narrow-line transition and cannot be sub-Doppler cooled"
+      ],
+      "correct": 0,
+      "explanation": "Two-stage MOT for Yb: (1) blue MOT at 399 nm cools to $\\sim 0.5$ mK; (2) green MOT at 556 nm ($T_D = \\hbar\\Gamma/2k_B \\approx 4.4\\,\\mu$K) gives temperatures of $10{-}50\\,\\mu$K — much colder than alkalis. Yb has no nuclear quadrupole moment (pure magnetic dipole hyperfine interaction), making it clean for precision measurements. The Yb $^1S_0 \\to ^3P_0$ clock transition at 578 nm rivals Sr for optical clock precision."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each Yb isotope to its special properties or applications:",
+      "pairs": [
+        {"id": "p1", "term": "$^{174}$Yb (boson, most abundant)", "definition": "Most commonly used for BEC studies; large positive scattering length $a = 105\\,a_0$"},
+        {"id": "p2", "term": "$^{173}$Yb (fermion, $I=5/2$)", "definition": "SU(6) symmetric Fermi gas ($2I+1 = 6$ components) — quantum simulation of SU(6) Hubbard model"},
+        {"id": "p3", "term": "$^{171}$Yb (fermion, $I=1/2$)", "definition": "Two-component Fermi gas; spin-$1/2$ qubit in clock transition; long coherence times"},
+        {"id": "p4", "term": "Clock transition $^1S_0 \\to ^3P_0$ at 578 nm", "definition": "Ultra-narrow ($\\Gamma/2\\pi \\approx 10$ mHz for $^{174}$Yb); optical lattice clock with $10^{-18}$ accuracy"}
+      ],
+      "explanation": "Yb is particularly attractive because all its isotopes can be laser cooled with the same lasers (399 nm and 556 nm), enabling simultaneous trapping of multiple isotopes. This allows sympathetic cooling of $^{173}$Yb (fermion) with $^{174}$Yb (boson) and double-species experiments. The SU($N$) symmetry of $^{173}$Yb ($N = 6$) makes it ideal for quantum simulation of multi-orbital Hubbard models."
+    }
+  },
+  {
+    "id": "yb002",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "elements", "ytterbium"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Yb optical lattice clocks use the $^1S_0 \\to ^3P_0$ transition. For $^{171}$Yb ($I=1/2$), the two-level clock transition has the magic wavelength at $\\lambda_m = 759$ nm. Current systematic uncertainties reach:",
+    "passive": {
+      "options": [
+        "$\\sim 3\\times 10^{-18}$ fractional frequency uncertainty — probing gravitational redshift across millimetre height differences, relativistic geodesy, and dark matter detection via oscillating constants",
+        "$\\sim 10^{-15}$, comparable to Cs fountain clocks",
+        "Yb clocks are less accurate than Sr clocks due to the larger nuclear charge",
+        "The uncertainty is limited to $10^{-17}$ by photon recoil from the lattice laser"
+      ],
+      "correct": 0,
+      "explanation": "Yb clocks (NIST, PTB, RIKEN) and Sr clocks (JILA, SYRTE) are currently the world's most accurate frequency standards, with $\\sim 10^{-18}$ fractional uncertainty. They can measure the gravitational redshift $\\Delta f/f = gh/c^2 \\approx 10^{-18}$/cm — probing Einstein's general relativity at centimetre scales. Future applications: redefinition of the SI second, relativistic geodesy (measuring height differences from clock comparisons), and searching for ultralight dark matter that oscillates fundamental constants."
+    }
+  },
+  {
+    "id": "yb003",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "elements", "ytterbium"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The orbital degree of freedom in Yb enables 'orbital' quantum magnetism in an optical lattice. The $^1S_0$ (g) and $^3P_0$ (e) states act as two orbitals, and combined with nuclear spin $I=5/2$ (for $^{173}$Yb), the system realises an SU(2) $\\times$ SU(6) structure. The Kondo lattice model is realised because:",
+    "passive": {
+      "options": [
+        "Clock-state atoms ($|e\\rangle$, localised by deep lattice) interact with ground-state atoms ($|g\\rangle$, mobile) via spin-exchange, directly mapping to the Kondo model of localised magnetic impurities in a metal",
+        "The Kondo model requires two fermionic species with different masses",
+        "The Kondo effect appears only when $^{173}$Yb is paired with Rb",
+        "Orbital magnetism in Yb requires a Feshbach resonance to enhance interactions"
+      ],
+      "correct": 0,
+      "explanation": "The Kondo coupling constant $J_\\perp$ in Yb is set by the $|eg\\rangle$ scattering length difference $a^- = (a_{eg}^- - a_{eg}^+)/2$ where $a_{eg}^\\pm$ are triplet/singlet scattering lengths. For $^{173}$Yb: $a_{eg}^- \\approx -3000\\,a_0$ — extraordinarily large, enabling strong Kondo coupling. The physics: localised $|e\\rangle$ atoms act as 'magnetic impurities'; itinerant $|g\\rangle$ atoms form the 'electron gas'. This is one of the closest realisations of the Kondo lattice model — relevant to heavy-fermion materials."
+    }
+  }
+]

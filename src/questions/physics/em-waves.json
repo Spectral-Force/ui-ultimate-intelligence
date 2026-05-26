@@ -1,0 +1,102 @@
+[
+  {
+    "id": "ew001",
+    "path": ["physics", "electromagnetism", "em-waves"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "Electromagnetic waves in vacuum satisfy the wave equation derived from Maxwell's equations. A plane wave propagating in the $z$-direction has the form:",
+    "equation": "\\mathbf{E}(z,t) = E_0\\hat{x}\\cos(kz - \\omega t), \\quad c = \\omega/k = 1/\\sqrt{\\mu_0\\varepsilon_0}",
+    "passive": {
+      "options": [
+        "EM waves are transverse ($ \\mathbf{E}$ and $\\mathbf{B}$ perpendicular to propagation direction), with $|\\mathbf{B}| = |\\mathbf{E}|/c$ and $\\mathbf{E}\\times\\mathbf{B}$ pointing along the propagation direction",
+        "EM waves are longitudinal in vacuum",
+        "The magnetic field is parallel to the electric field in a plane wave",
+        "The speed of light $c$ depends on the polarisation of the wave"
+      ],
+      "correct": 0,
+      "explanation": "Transversality follows from $\\nabla\\cdot\\mathbf{E} = 0$ and $\\nabla\\cdot\\mathbf{B} = 0$ in vacuum: $k\\cdot E_0 = 0$ for a plane wave. $|\\mathbf{B}| = E_0/c$ follows from Faraday's law. The energy flux (Poynting vector) $\\mathbf{S} = \\mathbf{E}\\times\\mathbf{B}/\\mu_0 = \\varepsilon_0 c E_0^2\\hat{z}$ gives intensity $I = \\varepsilon_0 c E_0^2/2$ (time-averaged). This is the basis of radiation pressure: $P_{\\rm rad} = I/c$."
+    },
+    "active": {
+      "type": "fill-blanks",
+      "prompt": "The speed of light in vacuum in terms of $\\mu_0$ and $\\varepsilon_0$ is $c =$:",
+      "template": ["$c =$", null],
+      "tokens": [
+        {"id": "t1", "latex": "1/\\sqrt{\\mu_0\\varepsilon_0}"},
+        {"id": "t2", "latex": "\\sqrt{\\mu_0\\varepsilon_0}"},
+        {"id": "t3", "latex": "\\mu_0\\varepsilon_0"},
+        {"id": "t4", "latex": "1/(\\mu_0\\varepsilon_0)"}
+      ],
+      "solution": ["t1"],
+      "explanation": "$c = 1/\\sqrt{\\mu_0\\varepsilon_0} \\approx 3\\times 10^8$ m/s. This follows from combining the wave equations for $\\mathbf{E}$ and $\\mathbf{B}$ derived from Maxwell's equations: $\\nabla^2\\mathbf{E} = \\mu_0\\varepsilon_0 \\partial^2\\mathbf{E}/\\partial t^2$, giving speed $1/\\sqrt{\\mu_0\\varepsilon_0}$."
+    }
+  },
+  {
+    "id": "ew002",
+    "path": ["physics", "electromagnetism", "em-waves"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "The electromagnetic spectrum spans many orders of magnitude in frequency. The approximate boundaries and key properties of each region are:",
+    "passive": {
+      "options": [
+        "Radio ($< 300$ MHz), microwave ($300$ MHz $- 300$ GHz), infrared ($300$ GHz $- 400$ THz), visible ($400{-}800$ THz), UV ($800$ THz $- 30$ PHz), X-ray, $\\gamma$-ray — each region has characteristic interactions with matter",
+        "Visible light is the highest-frequency EM radiation we can detect",
+        "Radio waves and gamma rays travel at different speeds because they have different frequencies",
+        "Infrared light is below visible frequency and above microwave"
+      ],
+      "correct": 0,
+      "explanation": "Visible light: 400 nm (violet) to 700 nm (red), corresponding to 430–750 THz. Photon energy $E = h\\nu$: visible $\\sim 2{-}3$ eV; X-ray $\\sim 1{-}100$ keV; $\\gamma$-ray $> 100$ keV. AMO physics spans a wide range: microwave for hyperfine transitions ($\\sim$ GHz), near-IR for alkali D-lines (780 nm, 852 nm, 671 nm), blue-violet for Sr/Yb cooling (399 nm, 461 nm), UV for Ca$^+$ qubit at 397 nm. CO$_2$ lasers (10.6 $\\mu$m, mid-IR) are used for far-off-resonance dipole traps."
+    }
+  },
+  {
+    "id": "ew003",
+    "path": ["physics", "electromagnetism", "em-waves"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "A linearly polarised EM wave can be decomposed into left and right circular polarisation components. In a medium with different refractive indices $n_+$ and $n_-$ for the two circular components (circular birefringence), the polarisation direction rotates. This is the Faraday effect:",
+    "passive": {
+      "options": [
+        "The rotation angle $\\theta = \\pi(n_- - n_+)L/\\lambda = VBL$ where $V$ is the Verdet constant, $B$ the applied magnetic field, and $L$ the path length — rotation is non-reciprocal (depends on propagation direction)",
+        "The Faraday effect is the same as Rayleigh scattering",
+        "The polarisation rotation reverses when the beam is reflected backwards",
+        "The Faraday effect requires a biaxial crystal"
+      ],
+      "correct": 0,
+      "explanation": "Non-reciprocity of the Faraday effect is its key property: a beam rotated by $\\theta$ going forward is rotated by $\\theta$ again (same direction) coming back — total $2\\theta$ after a round trip. This is the basis of optical isolators (Faraday rotators + polarisers), essential in laser labs to prevent back-reflections from destabilising the laser. Magneto-optical trapping uses the differential absorption of $\\sigma^+$ and $\\sigma^-$ light by Zeeman-shifted atoms — the same physical origin."
+    }
+  },
+  {
+    "id": "ew004",
+    "path": ["physics", "electromagnetism", "em-waves"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The dispersion relation of EM waves in a medium with permittivity $\\varepsilon(\\omega)$ and permeability $\\mu \\approx 1$ (optical frequencies) is $k = \\omega n/c$ where $n = \\sqrt{\\varepsilon_r}$. Near an atomic resonance, the complex susceptibility gives:",
+    "passive": {
+      "options": [
+        "Anomalous dispersion ($dn/d\\omega < 0$) near resonance, where absorption is strongest — the refractive index drops with frequency near the peak of an absorption line (Kramers-Kronig); normal dispersion ($dn/d\\omega > 0$) away from resonance",
+        "The refractive index is always real for atomic vapours",
+        "Near resonance, the group velocity equals the phase velocity",
+        "The medium becomes transparent exactly at resonance"
+      ],
+      "correct": 0,
+      "explanation": "The complex refractive index $\\tilde{n} = n + i\\kappa$: $n$ gives phase velocity ($v_{\\rm ph} = c/n$), $\\kappa$ gives absorption coefficient $\\alpha = 2\\omega\\kappa/c$. The Kramers-Kronig relations connect $n(\\omega)$ and $\\kappa(\\omega)$: near resonance, $\\kappa$ peaks (strong absorption) and $n$ has an S-shaped anomalous dispersion. Electromagnetically induced transparency (EIT) creates a transparency window inside an absorption peak by quantum interference, with extreme dispersion ($dn/d\\omega$ huge) giving slow light (group velocity $v_g = c/(n + \\omega dn/d\\omega) \\ll c$)."
+    }
+  },
+  {
+    "id": "ew005",
+    "path": ["physics", "electromagnetism", "em-waves"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Rayleigh scattering of light from particles much smaller than $\\lambda$ scales as $\\sigma \\propto \\omega^4$ (or $\\lambda^{-4}$). For a dipole oscillating at angular frequency $\\omega$, the power radiated is:",
+    "equation": "P = \\frac{\\omega^4 d_0^2}{12\\pi\\varepsilon_0 c^3}",
+    "passive": {
+      "options": [
+        "The $\\omega^4$ dependence means blue light scatters $\\sim (\\lambda_{\\rm red}/\\lambda_{\\rm blue})^4 \\approx 5.5\\times$ more than red — explaining the blue sky and red sunsets",
+        "Rayleigh scattering is wavelength-independent",
+        "The $\\omega^4$ dependence makes long-wavelength radiation dominant",
+        "The scattering cross-section equals the geometric cross-section of the particle"
+      ],
+      "correct": 0,
+      "explanation": "A small particle (radius $r \\ll \\lambda$) acquires an induced dipole $d_0 = \\alpha E_0$ where $\\alpha$ is the polarisability. The scattered power $P \\propto \\omega^4$. For atoms: off-resonance photon scattering rate $\\Gamma_{\\rm sc} = (\\omega/\\omega_0)^4 \\Gamma (I/I_{\\rm sat})/2$ grows rapidly as the laser approaches resonance. Rayleigh scattering is also the heating mechanism in far-off-resonance optical traps (FORTs) — the limiting factor for coherence times at large detuning."
+    }
+  }
+]

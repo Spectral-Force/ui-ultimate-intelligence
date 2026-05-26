@@ -82,7 +82,7 @@
   },
   {
     "id": "dc005",
-    "path": ["physics", "quantum-mechanics", "quantum-information", "decoheherence"],
+    "path": ["physics", "quantum-mechanics", "quantum-information", "decoherence"],
     "level": "P",
     "modes": ["passive"],
     "question": "Dynamical decoupling (DD) suppresses decoherence by applying fast pulse sequences that average out slowly fluctuating environmental noise. The simplest scheme, the Hahn spin echo, consists of:",
