@@ -1,0 +1,111 @@
+[
+  {
+    "id": "vp001",
+    "path": ["physics", "equipment", "vacuum-systems", "vacuum-physics"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "Vacuum quality is described by pressure measured in pascals (Pa) or millibar (mbar). The vacuum ranges relevant to AMO experiments are:",
+    "passive": {
+      "options": [
+        "Rough/low vacuum: $10^5{-}10^2$ Pa; medium vacuum: $10^2{-}0.1$ Pa; high vacuum (HV): $0.1{-}10^{-4}$ Pa; ultra-high vacuum (UHV): $10^{-4}{-}10^{-10}$ Pa; extreme high vacuum (XHV): $< 10^{-10}$ Pa",
+        "UHV is defined as any pressure below $10^{-3}$ mbar",
+        "Atmospheric pressure is $10^5$ Pa and UHV starts at $10^{-5}$ Pa",
+        "All laser cooling experiments operate at medium vacuum ($10^2$ Pa)"
+      ],
+      "correct": 0,
+      "explanation": "Conversions: 1 atm = $1.013 \\times 10^5$ Pa = 1013 mbar = 760 Torr = 760 mmHg. AMO experiments: MOT loading uses background Rb vapour at $10^{-7}{-}10^{-9}$ mbar (HV); for long trap lifetimes (> 1 s), UHV $< 10^{-10}$ mbar is required. At $10^{-10}$ mbar, the mean free path $\\lambda_{\\rm mfp} \\approx 500$ km — the vacuum contains $\\sim 2.7 \\times 10^{12}$ molecules/m$^3$ (vs $\\sim 2.7 \\times 10^{25}$/m$^3$ at 1 atm)."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each vacuum regime to its typical application:",
+      "pairs": [
+        {"id": "p1", "term": "Rough vacuum ($1{-}10^3$ mbar)", "definition": "Rotary/scroll pump output; fore-vacuum for turbo pumps; initial chamber pump-down"},
+        {"id": "p2", "term": "High vacuum (HV, $10^{-3}{-}10^{-7}$ mbar)", "definition": "Electron microscopes, CVD deposition, Rb MOTs with short trap lifetime"},
+        {"id": "p3", "term": "Ultra-high vacuum (UHV, $< 10^{-9}$ mbar)", "definition": "Long-lifetime atom traps (ODT, BEC), surface science, ion traps"},
+        {"id": "p4", "term": "Extreme HV (XHV, $< 10^{-12}$ mbar)", "definition": "Space simulators, storage rings, Sr/Yb optical clocks, proton radius experiments"}
+      ],
+      "explanation": "Background gas collisions are the dominant trap loss mechanism in most AMO experiments. At $p = 10^{-9}$ mbar, the collision rate for a trapped Rb atom is $\\sim 1$ s$^{-1}$ — setting the minimum evaporation ramp speed. At $10^{-11}$ mbar: trap lifetime $> 100$ s, enabling long evaporation ramps and quantum simulation experiments."
+    }
+  },
+  {
+    "id": "vp002",
+    "path": ["physics", "equipment", "vacuum-systems", "vacuum-physics"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "The mean free path $\\lambda_{\\rm mfp}$ of a gas molecule at pressure $p$ and temperature $T$ is the average distance between collisions. For a gas of molecules with diameter $d$:",
+    "equation": "\\lambda_{\\rm mfp} = \\frac{k_BT}{\\sqrt{2}\\pi d^2 p}",
+    "passive": {
+      "options": [
+        "At UHV ($p \\approx 10^{-9}$ mbar), $\\lambda_{\\rm mfp} \\sim 50{-}500$ km — much larger than any chamber dimension, so gas flow is molecular (no molecule-molecule collisions), and pumping speed is determined by geometry (conductance), not pump capacity",
+        "At UHV, molecules still collide frequently since there are many of them",
+        "The mean free path is independent of pressure",
+        "At rough vacuum, $\\lambda_{\\rm mfp}$ exceeds the chamber dimensions (Knudsen regime)"
+      ],
+      "correct": 0,
+      "explanation": "Flow regimes: (1) Viscous flow ($\\lambda_{\\rm mfp} \\ll$ chamber size): molecule-molecule collisions dominate; pumping works by viscous drag. (2) Transition flow. (3) Molecular flow ($\\lambda_{\\rm mfp} \\gg$ chamber size): molecules collide only with walls; conductance is geometry-determined. AMO chambers always operate in molecular flow regime at final pressures. The Knudsen number $K_n = \\lambda_{\\rm mfp}/L$ characterises the regime: $K_n \\gg 1$ → molecular flow."
+    }
+  },
+  {
+    "id": "vp003",
+    "path": ["physics", "equipment", "vacuum-systems", "vacuum-physics"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "Vacuum gauges measure pressure over different ranges using different physical principles. The main gauge types for AMO labs are:",
+    "passive": {
+      "options": [
+        "Pirani gauge ($10^{-4}$ to $10$ mbar, thermal conductivity); convection gauge (rough to 1 mbar); Penning/inverted magnetron gauge ($10^{-3}$ to $10^{-11}$ mbar, ionisation); Bayard-Alpert (BA) gauge ($10^{-4}$ to $10^{-11}$ mbar, hot filament ionisation)",
+        "A single ion gauge measures all pressures from atmospheric to $10^{-12}$ mbar",
+        "Pirani gauges work by ionising residual gas molecules",
+        "BA gauges cannot be used below $10^{-8}$ mbar because the signal is too small"
+      ],
+      "correct": 0,
+      "explanation": "Operating principles: Pirani — heated filament, thermal conductivity of gas removes heat (pressure-dependent cooling). BA gauge — hot tungsten filament emits electrons; electrons ionise residual gas; ion current $\\propto$ pressure. The BA gauge has a lower limit $\\sim 10^{-11}$ mbar due to X-ray-induced photocurrent. Extractor gauges (inverted BA) can reach $10^{-12}$ mbar. Residual Gas Analyser (RGA): quadrupole mass spectrometer identifies partial pressures of each gas species — essential for troubleshooting leaks (water, nitrogen, helium, hydrogen)."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each vacuum gauge to its working principle and operating range:",
+      "pairs": [
+        {"id": "p1", "term": "Pirani gauge", "definition": "Heated filament — heat loss via gas thermal conductivity; range $10^{-4}$ to 10 mbar"},
+        {"id": "p2", "term": "Bayard-Alpert (BA) ionisation gauge", "definition": "Electron ionisation of residual gas; ion current ∝ pressure; range $10^{-4}$ to $10^{-11}$ mbar"},
+        {"id": "p3", "term": "Penning/inverted magnetron gauge", "definition": "Cold cathode — magnetic field sustains plasma discharge at low pressure; robust, no filament; range $10^{-3}$ to $10^{-11}$ mbar"},
+        {"id": "p4", "term": "RGA (residual gas analyser)", "definition": "Quadrupole mass filter — partial pressure of each gas species by mass; identifies contamination sources"}
+      ],
+      "explanation": "Key pitfalls: (1) Never expose a BA gauge filament to atmospheric pressure (burns out). (2) Ion gauges must be degassed (outgassed by electron bombardment) after exposure to air. (3) Penning gauges can underestimate pressure and may not ignite below $10^{-8}$ mbar without an ionisation source. (4) RGA must be UHV-compatible (its own pump or differential pumping)."
+    }
+  },
+  {
+    "id": "vp004",
+    "path": ["physics", "equipment", "vacuum-systems", "vacuum-physics"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Vacuum pumps remove gas from a chamber. The pumping speed $S$ (L/s) and the chamber throughput $Q = pS$ (mbar·L/s) determine the ultimate pressure. The main pump types and their roles:",
+    "passive": {
+      "options": [
+        "Rotary/scroll pump (rough, backs turbomolecular pumps); turbomolecular pump (HV/UHV, compression of molecular flow); ion pump (UHV, ionises and buries gas in getter material); NEG (non-evaporable getter, adsorbs reactive gases at high temperature activation); TSP (titanium sublimation pump, titanium film adsorbs reactive gases)",
+        "A single turbo pump can achieve XHV without any backing or supplementary pumps",
+        "Ion pumps work by physically compressing gas like a piston pump",
+        "NEG pumps require continuous power consumption to maintain their pumping action"
+      ],
+      "correct": 0,
+      "explanation": "Typical pump sequence for a UHV chamber: (1) Rotary/scroll pump to 10 mbar (rough). (2) Turbomolecular pump (turbo) to $10^{-7}$ mbar (with bakeout: $10^{-9}$ mbar). (3) Ion pump activated at $< 5\\times10^{-8}$ mbar. (4) NEG activated by heating to 350–450°C — after cooling, it pumps reactive gases (H$_2$O, N$_2$, CO, CO$_2$) with very high speed and no power needed. (5) TSP provides bursts of high pumping speed. At UHV, H$_2$ typically dominates the residual gas spectrum (outgasses from stainless steel walls)."
+    }
+  },
+  {
+    "id": "vp005",
+    "path": ["physics", "equipment", "vacuum-systems", "vacuum-physics"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The conductance $C$ of a vacuum component (tube, valve, orifice) in molecular flow regime limits the effective pumping speed seen by the chamber. For a tube of radius $r$ and length $L$:",
+    "equation": "C_{\\rm tube} = \\frac{4r^3}{3L}\\sqrt{\\frac{2\\pi k_BT}{m}}, \\quad \\frac{1}{S_{\\rm eff}} = \\frac{1}{S_{\\rm pump}} + \\frac{1}{C}",
+    "passive": {
+      "options": [
+        "Short, wide tubes maximise conductance; the effective pumping speed is limited by whichever is smaller: the pump speed or the conductance. For a long, narrow tube (e.g., a viewport tube), conductance can be the bottleneck",
+        "Conductance in molecular flow is proportional to tube length $L$",
+        "Pump speed always equals the conductance for a properly designed system",
+        "Conductance is pressure-dependent in the molecular flow regime"
+      ],
+      "correct": 0,
+      "explanation": "Practical example: a turbo pump with $S = 300$ L/s connected via a 20 cm long, 4 cm diameter tube has $C = 280$ L/s, giving $S_{\\rm eff} = 145$ L/s — half the pump speed is lost. Conversely, a 2 cm diameter tube 50 cm long has $C \\approx 20$ L/s, making the effective speed pump-limited to 19 L/s regardless of pump size. Always maximise the diameter of tubes connecting pumps to chambers. Valves (right-angle or straight-through) must also have sufficient conductance."
+    }
+  }
+]

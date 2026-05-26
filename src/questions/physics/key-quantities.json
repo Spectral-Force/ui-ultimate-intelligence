@@ -1,0 +1,199 @@
+[
+  {
+    "id": "kq001",
+    "path": ["physics", "key-quantities"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "The natural linewidth $\\Gamma$ (decay rate) is the most fundamental parameter of an atomic transition. For the $^{87}$Rb D2 line ($5S_{1/2} \\to 5P_{3/2}$, 780 nm):",
+    "passive": {
+      "options": [
+        "$\\Gamma/2\\pi = 6.067$ MHz, $\\tau = 1/\\Gamma = 26.2$ ns, saturation intensity $I_{\\rm sat} = 1.67$ mW/cm$^2$, Doppler temperature $T_D = \\hbar\\Gamma/2k_B = 146\\,\\mu$K",
+        "$\\Gamma/2\\pi = 9.193$ GHz (the hyperfine splitting, not the linewidth)",
+        "$\\Gamma/2\\pi = 5.22$ MHz, $\\tau = 30.5$ ns (these are the Cs D2 values)",
+        "$\\Gamma/2\\pi = 32$ MHz (this is the Sr 461 nm blue transition)"
+      ],
+      "correct": 0,
+      "explanation": "Key Rb D2 numbers to know: $\\lambda = 780.24$ nm, $\\Gamma/2\\pi = 6.07$ MHz, $\\tau = 26.2$ ns, $I_{\\rm sat} = 1.67$ mW/cm$^2$, $T_D = 146\\,\\mu$K, $T_r = (\\hbar k)^2/(2mk_B) = 362$ nK, $v_r = 5.88$ mm/s, $|g_F| = 1/2$ for both $F=1$ and $F=2$ states. These numbers are used in every calculation in an Rb laser cooling experiment."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each key quantity to its physical meaning and formula:",
+      "pairs": [
+        {"id": "p1", "term": "Natural linewidth $\\Gamma = 1/\\tau$", "definition": "Spontaneous decay rate of the excited state [rad/s]; sets the minimum laser cooling linewidth and Doppler temperature"},
+        {"id": "p2", "term": "Saturation intensity $I_{\\rm sat} = \\pi hc\\Gamma/(3\\lambda^3)$", "definition": "Intensity at which stimulated emission rate equals $\\Gamma/2$; scattering rate saturates to $\\Gamma/2$ above $I_{\\rm sat}$"},
+        {"id": "p3", "term": "Doppler temperature $T_D = \\hbar\\Gamma/2k_B$", "definition": "Minimum temperature of Doppler cooling; set by equilibrium between cooling and recoil heating from photon emission"},
+        {"id": "p4", "term": "Recoil temperature $T_r = (\\hbar k)^2/(mk_B)$", "definition": "Energy of a single photon recoil converted to temperature; $T_r \\ll T_D$ for optical transitions"}
+      ],
+      "explanation": "For Rb D2: $T_D = 146\\,\\mu$K, $T_r = 362$ nK, so $T_D/T_r \\approx 400$ — Doppler limit is 400 recoil energies. Sub-Doppler cooling approaches $\\sim 10\\,T_r$. BEC requires temperatures below $T_c \\sim 100$ nK, well below even the recoil temperature."
+    }
+  },
+  {
+    "id": "kq002",
+    "path": ["physics", "key-quantities"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "The photon scattering rate $\\Gamma_{\\rm sc}$ for a two-level atom driven by intensity $I$ at detuning $\\delta = \\omega_L - \\omega_0$ is a central quantity in laser cooling:",
+    "equation": "\\Gamma_{\\rm sc} = \\frac{\\Gamma}{2}\\cdot\\frac{I/I_{\\rm sat}}{1 + I/I_{\\rm sat} + (2\\delta/\\Gamma)^2}",
+    "passive": {
+      "options": [
+        "On resonance ($\\delta=0$) and at saturation ($I \\gg I_{\\rm sat}$): $\\Gamma_{\\rm sc} \\to \\Gamma/2$ — the maximum possible scattering rate is half the natural linewidth; the radiation pressure force is $F = \\hbar k \\Gamma_{\\rm sc}$",
+        "At saturation, $\\Gamma_{\\rm sc} \\to \\Gamma$ (the full decay rate)",
+        "At large detuning, $\\Gamma_{\\rm sc}$ increases because the atom is less saturated",
+        "The factor of 2 in $(2\\delta/\\Gamma)^2$ comes from the two polarisation modes"
+      ],
+      "correct": 0,
+      "explanation": "Key numbers for Rb D2 at saturation ($I = I_{\\rm sat}$, $\\delta=0$): $\\Gamma_{\\rm sc} = \\Gamma/4 = 9.5 \\times 10^6$ s$^{-1}$; radiation pressure $F = 1.7 \\times 10^{-20}$ N; deceleration $a = F/m = 5.8 \\times 10^5$ m/s$^2 \\approx 60{,}000\\ g$. A 300 m/s Rb atom is stopped in $\\sim 0.5$ ms over $\\sim 7$ cm — this is why Zeeman slowers are only $\\sim 50$ cm long."
+    }
+  },
+  {
+    "id": "kq003",
+    "path": ["physics", "key-quantities"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "The Rabi frequency $\\Omega$ characterises the coupling between a coherent driving field and a two-level atom. For an electric dipole transition with matrix element $d_{eg}$ driven by field amplitude $E_0$:",
+    "equation": "\\Omega = \\frac{d_{eg}E_0}{\\hbar} = \\frac{d_{eg}}{\\hbar}\\sqrt{\\frac{2I}{\\varepsilon_0 c}}",
+    "passive": {
+      "options": [
+        "$\\Omega$ is the frequency of population oscillation between $|g\\rangle$ and $|e\\rangle$ (Rabi oscillation); on resonance, population inverts with period $\\pi/\\Omega$ ($\\pi$-pulse); $\\Omega/\\Gamma$ is the saturation parameter",
+        "$\\Omega = \\Gamma$ always for any laser at $I_{\\rm sat}$",
+        "$\\Omega$ is independent of field amplitude for a two-level atom",
+        "The Rabi frequency equals the transition frequency $\\omega_0$ for resonant driving"
+      ],
+      "correct": 0,
+      "explanation": "At $I = I_{\\rm sat}$: $\\Omega = \\Gamma/\\sqrt{2}$ (by definition of $I_{\\rm sat}$). For Rb D2 at $I = I_{\\rm sat} = 1.67$ mW/cm$^2$: $\\Omega/2\\pi = 4.3$ MHz. A $\\pi$-pulse time is $t_\\pi = \\pi/\\Omega \\approx 116$ ns. Typical MOT intensities ($I \\sim 10 I_{\\rm sat}$) give $\\Omega \\approx 3\\Gamma$. The generalised Rabi frequency on resonance: $\\Omega_0 = \\sqrt{\\Omega^2 + \\delta^2}$."
+    }
+  },
+  {
+    "id": "kq004",
+    "path": ["physics", "key-quantities"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The optical depth (OD) of an atomic cloud measures how strongly it absorbs a resonant probe beam. For a cloud with peak column density $\\tilde{n}$ (atoms per unit area) and on-resonance cross-section $\\sigma_0 = 3\\lambda^2/(2\\pi)$:",
+    "equation": "\\text{OD} = \\tilde{n}\\sigma_0 = \\frac{3\\lambda^2}{2\\pi}\\tilde{n}",
+    "passive": {
+      "options": [
+        "OD is the exponent in Beer's law: $I_{\\rm trans} = I_0 e^{-\\rm OD}$; a cloud with OD = 1 transmits $1/e \\approx 37\\%$ of resonant light; OD = 100 is opaque",
+        "OD is proportional to $\\lambda$ (not $\\lambda^2$)",
+        "The cross-section $\\sigma_0 = \\pi r_{\\rm atom}^2$ is the geometric cross-section",
+        "OD increases with detuning because more atoms are in the excited state"
+      ],
+      "correct": 0,
+      "explanation": "For Rb D2: $\\sigma_0 = 3\\lambda^2/(2\\pi) = 2.91 \\times 10^{-9}$ cm$^2 = 0.29\\,\\mu$m$^2$. An absorption image at $I \\ll I_{\\rm sat}$ maps $\\tilde{n} = -\\ln(I/I_0)/\\sigma_0$. At saturation: $\\sigma_{\\rm eff} = \\sigma_0/(1+I/I_{\\rm sat})$ — the column density must account for saturation at high probe intensity. Typical MOT: $N \\sim 10^9$, size $R \\sim 1$ mm, $\\tilde{n} \\sim N/(\\pi R^2) \\sim 3 \\times 10^{11}$ cm$^{-2}$, OD $\\sim 100$. BEC: much smaller, $R \\ sim 10\\,\\mu$m, OD $\\sim 1{-}10$ (in situ)."
+    }
+  },
+  {
+    "id": "kq005",
+    "path": ["physics", "key-quantities"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The phase-space density (PSD) is the key figure of merit tracking progress from a hot gas to BEC. It is the number of atoms per quantum volume:",
+    "equation": "\\rho_{\\rm PSD} = n\\lambda_{\\rm dB}^3, \\quad \\lambda_{\\rm dB} = \\sqrt{\\frac{2\\pi\\hbar^2}{mk_BT}}",
+    "passive": {
+      "options": [
+        "BEC occurs when $\\rho_{\\rm PSD} \\approx 2.612$ (the Riemann $\\zeta(3/2)$ function value); a hot gas has $\\rho_{\\rm PSD} \\ll 1$; a MOT typically achieves $\\rho \\sim 10^{-6}$; BEC requires increasing $\\rho$ by a factor of $\\sim 10^6$",
+        "BEC occurs when $\\rho_{\\rm PSD} = 1$",
+        "The phase-space density is independent of temperature at fixed atom number",
+        "Phase-space density can only increase during evaporative cooling, not laser cooling"
+      ],
+      "correct": 0,
+      "explanation": "Cooling/compression journey to BEC: hot oven ($T \\sim 500$ K, $\\rho \\sim 10^{-15}$) → Zeeman slower ($T \\sim 1$ mK, $\\rho \\sim 10^{-9}$) → MOT ($T \\sim 100\\,\\mu$K, $\\rho \\sim 10^{-6}$) → molasses ($T \\sim 10\\,\\mu$K, $\\rho \\sim 10^{-5}$) → ODT + evaporation ($T \\sim 100$ nK, $\\rho \\sim 2.6$) → BEC. Each stage increases $\\rho$ by a few orders of magnitude. The thermal de Broglie wavelength for $^{87}$Rb at 100 nK: $\\lambda_{\\rm dB} \\approx 0.5\\,\\mu$m — comparable to inter-particle spacing in a BEC."
+    }
+  },
+  {
+    "id": "kq006",
+    "path": ["physics", "key-quantities"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "The key length scales in atomic physics span many orders of magnitude. Matching them to their physical definitions:",
+    "passive": {
+      "options": [
+        "Bohr radius $a_0 = 0.529$ Å (atomic size scale); van der Waals range $r_{\\rm vdW} = (mC_6/\\hbar^2)^{1/4}/2 \\sim 50{-}200\\,a_0$ (collision range); healing length $\\xi = \\hbar/\\sqrt{2mgn} \\sim \\mu$m (BEC vortex core); trap size $\\ell_{\\rm ho} = \\sqrt{\\hbar/m\\omega} \\sim 1{-}10\\,\\mu$m (harmonic trap ground state)",
+        "All length scales in AMO physics are of order nanometres",
+        "The healing length $\\xi$ is always larger than the trap size $\\ell_{\\rm ho}$",
+        "The van der Waals range is independent of atomic species"
+      ],
+      "correct": 0,
+      "explanation": "Scale hierarchy: $a_0$ (0.05 nm) < scattering length $a_s$ (typically $1{-}200\\,a_0 = 0.05{-}10$ nm) < $r_{\\rm vdW}$ (3–10 nm) < $\\lambda_{\\rm light}$ (780 nm for Rb) < $\\ell_{\\rm ho}$ (1–10 $\\mu$m) < $\\xi$ BEC (0.1–1 $\\mu$m) < cloud size (10 $\\mu$m–1 mm). Understanding which length scale dominates a given physical effect is essential for intuition in AMO physics."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each quantity to its approximate value for $^{87}$Rb:",
+      "pairs": [
+        {"id": "p1", "term": "D2 wavelength $\\lambda$", "definition": "780.24 nm — near-infrared, standard diode laser wavelength"},
+        {"id": "p2", "term": "Hyperfine splitting $\\nu_{\\rm hfs}$", "definition": "6.834 682 GHz — $|F=1\\rangle \\leftrightarrow |F=2\\rangle$ ground state splitting; microwave clock transition"},
+        {"id": "p3", "term": "Ground-state scattering length $a_s$", "definition": "$+109\\,a_0 = 5.77$ nm (repulsive) — positive, allows stable BEC without Feshbach tuning"},
+        {"id": "p4", "term": "Doppler temperature $T_D$", "definition": "146 $\\mu$K — limit of Doppler cooling on D2; $\\hbar\\Gamma/2k_B$"}
+      ],
+      "explanation": "Memorising these numbers for $^{87}$Rb is as fundamental to AMO physics as knowing $k_B$ and $h$. They appear in every experimental calculation. For comparison: Cs D2 $\\Gamma/2\\pi = 5.22$ MHz, $T_D = 125\\,\\mu$K; Li D2 $\\Gamma/2\\pi = 5.87$ MHz, $T_D = 141\\,\\mu$K — all quite similar since these are all strongly-allowed dipole transitions."
+    }
+  },
+  {
+    "id": "kq007",
+    "path": ["physics", "key-quantities"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The detuning $\\delta = \\omega_L - \\omega_0$ is signed: $\\delta < 0$ is 'red detuned' (laser below resonance), $\\delta > 0$ is 'blue detuned'. Key physical effects of detuning:",
+    "passive": {
+      "options": [
+        "Red detuning: Doppler cooling force (moving atoms feel laser closer to resonance in opposing beam); dipole force toward intensity maxima ($U_{\\rm dip} < 0$); dispersive index > 1 below resonance",
+        "Red detuning causes atoms to be repelled from intensity maxima",
+        "The sign of detuning does not affect the dipole force direction",
+        "Blue detuning provides Doppler cooling just as effectively as red detuning"
+      ],
+      "correct": 0,
+      "explanation": "Physical effects: (1) Radiation pressure force — always in propagation direction, maximised on resonance. (2) Doppler cooling — requires red detuning (moving toward beam sees bluer frequency, closer to resonance → more force). (3) Dipole force — red detuned: $F_{\\rm dip} = -\\nabla U_{\\rm dip} \\propto -\\nabla I/\\delta$ attracts atoms to intensity maxima; blue detuned: repels from intensity maxima. (4) Light shift of energy levels — red: lowers energy; blue: raises energy. All these effects scale as $I/\\delta$, $I/\\delta^2$ (scattering), allowing independent optimisation."
+    }
+  },
+  {
+    "id": "kq008",
+    "path": ["physics", "key-quantities"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Lamb-Dicke parameter $\\eta$ determines the strength of the coupling between an atom's internal and motional states in a trap. It is the ratio of the zero-point motion to the optical wavelength:",
+    "equation": "\\eta = k\\sqrt{\\frac{\\hbar}{2m\\omega_{\\rm trap}}} = k\\,x_{\\rm zpf}",
+    "passive": {
+      "options": [
+        "$\\eta \\ll 1$ (Lamb-Dicke regime): sideband transitions are suppressed by $\\eta$; sideband cooling and resolved-sideband spectroscopy require this regime. For Ca$^+$ in a 1 MHz trap probed at 729 nm: $\\eta \\approx 0.1$",
+        "$\\eta > 1$ is required for sideband cooling",
+        "$\\eta$ is independent of trap frequency",
+        "The Lamb-Dicke regime requires $\\eta \\ll k_BT/\\hbar\\omega$"
+      ],
+      "correct": 0,
+      "explanation": "For $^{40}$Ca$^+$: $x_{\\rm zpf} = \\sqrt{\\hbar/(2m\\omega_z)} = 12$ nm at $\\omega_z/2\\pi = 1$ MHz; $k = 2\\pi/729$ nm$^{-1} = 8.6 \\times 10^6$ m$^{-1}$; $\\eta = kx_{\\rm zpf} \\approx 0.10$. Carrier transition matrix element: $\\langle n|\\hat{d}|n\\rangle = 1 - \\eta^2(2n+1)/2 + O(\\eta^4)$. Red sideband: $\\langle n-1|\\hat{d}|n\\rangle = \\eta\\sqrt{n}$. The sideband coupling scales as $\\eta\\sqrt{n}$ — essential for quantum gate speed."
+    }
+  },
+  {
+    "id": "kq009",
+    "path": ["physics", "key-quantities"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The fine structure constant $\\alpha = e^2/(4\\pi\\varepsilon_0\\hbar c) \\approx 1/137$ sets the strength of the electromagnetic interaction. It appears throughout atomic physics:",
+    "passive": {
+      "options": [
+        "$\\alpha$ determines the ratio of the electron orbital velocity to $c$ ($v/c \\approx \\alpha$ in hydrogen ground state), the ratio of atomic transition energies to the electron rest mass energy, and the size of fine structure splittings ($\\Delta E_{\\rm fs} \\sim \\alpha^2 E_n$)",
+        "$\\alpha$ is the ratio of the proton mass to the electron mass",
+        "The fine structure constant equals $e^2/\\hbar c$ without the $4\\pi\\varepsilon_0$ factor",
+        "$\\alpha \\approx 1/137$ implies the electromagnetic interaction is very strong compared to gravity"
+      ],
+      "correct": 0,
+      "explanation": "Key role of $\\alpha$: energy levels $E_n = -\\alpha^2 m_e c^2/(2n^2) = -13.6/n^2$ eV; fine structure splitting $\\sim \\alpha^4 m_e c^2$; hyperfine splitting $\\sim \\alpha^4 (m_e/m_p)$; Bohr radius $a_0 = \\alpha^{-1} \\hbar/(m_e c)$; classical electron radius $r_e = \\alpha a_0 = \\alpha^2 \\hbar/(m_e c) = 2.82$ fm. The hierarchy: $r_e \\ll a_0 \\ll$ Compton wavelength. Measuring $\\alpha$ is one of the most precise tests of QED: current value $\\alpha^{-1} = 137.035999084(21)$, consistent with QED predictions to $10^{-12}$ fractional accuracy."
+    }
+  },
+  {
+    "id": "kq010",
+    "path": ["physics", "key-quantities"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The van der Waals coefficient $C_6$ characterises the long-range interaction between neutral atoms ($V(r) = -C_6/r^6$). For the collision between two ground-state $^{87}$Rb atoms, $C_6 \\approx 4707$ a.u. ($E_h a_0^6$). Key consequences:",
+    "passive": {
+      "options": [
+        "The van der Waals range $r_{\\rm vdW} = (2mC_6/\\hbar^2)^{1/4}/2 \\approx 164\\,a_0$ for Rb sets the scale beyond which the $s$-wave scattering length is determined by the number of bound states in the potential",
+        "A larger $C_6$ always implies a larger positive scattering length",
+        "The $C_6$ coefficient is determined solely by the electronic ground state polarisability",
+        "The van der Waals range $r_{\\rm vdW}$ is the same for all alkali atoms"
+      ],
+      "correct": 0,
+      "explanation": "$r_{\\rm vdW}$ sets the characteristic length of the $s$-wave scattering problem. The scattering length can be anywhere from $-\\infty$ to $+\\infty$ depending on the exact potential (number of bound states), but its root-mean-square value is $\\bar{a} = 4\\pi(1-1/\\sqrt{2})r_{\\rm vdW}/\\Gamma(1/4)^2 \\approx 0.956\\,r_{\\rm vdW}$ (mean-field estimate). For Rb: $a_s = +109\\,a_0$ — close to $r_{\\rm vdW} = 164\\,a_0$, suggesting nearly a half-integer number of bound states. The three-body recombination rate $K_3 \\propto C_6^2\\,a^4$ — larger $C_6$ and larger $a$ both increase inelastic losses."
+    }
+  }
+]

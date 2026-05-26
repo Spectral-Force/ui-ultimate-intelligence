@@ -1,0 +1,101 @@
+[
+  {
+    "id": "me001",
+    "path": ["physics", "electromagnetism", "mathieu-equations"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "The Mathieu equation governs the motion of an ion in a Paul trap. In dimensionless form it is:",
+    "equation": "\\frac{d^2u}{d\\tau^2} + (a_u - 2q_u\\cos 2\\tau)\\,u = 0",
+    "passive": {
+      "options": [
+        "The parameter $a_u$ represents a DC component of the trapping field and $q_u$ represents the RF amplitude; $\\tau = \\Omega_{\\rm RF}t/2$ is the scaled time. Stable solutions (bounded $u(\\tau)$) exist only for specific regions of $(a_u, q_u)$ space",
+        "The Mathieu equation is only valid for $a_u = 0$ (pure RF trapping)",
+        "$a_u$ and $q_u$ must both be positive for stable trapping",
+        "The solution is always oscillatory for any positive $q_u$"
+      ],
+      "correct": 0,
+      "explanation": "The Mathieu equation arises from Newton's law for an ion of charge $e$ and mass $m$ in a quadrupole field $\\Phi = (U - V\\cos\\Omega_{\\rm RF}t)(x^2 - y^2)/r_0^2$, giving $a_u = 4eU/(m\\Omega_{\\rm RF}^2 r_0^2)$ and $q_u = 2eV/(m\\Omega_{\\rm RF}^2 r_0^2)$. The Floquet theorem guarantees that stable solutions are quasi-periodic: $u(\\tau) = e^{i\\beta_u\\tau}\\sum_n c_n e^{2in\\tau}$, where $\\beta_u$ is the characteristic exponent."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each Mathieu parameter to its physical origin in a Paul trap:",
+      "pairs": [
+        {"id": "p1", "term": "Parameter $a_u = 4eU/(m\\Omega^2 r_0^2)$", "definition": "DC voltage $U$: creates static quadrupole bias — shifts the stability region up/down in $a$"},
+        {"id": "p2", "term": "Parameter $q_u = 2eV/(m\\Omega^2 r_0^2)$", "definition": "RF amplitude $V$: depth of the oscillating ponderomotive potential — moves the operating point along $q$"},
+        {"id": "p3", "term": "Stability region (first zone)", "definition": "Region in $(a, q)$ space with $0 < q \\lesssim 0.908$ (at $a=0$) where ion motion is bounded in both $x$ and $y$"},
+        {"id": "p4", "term": "Characteristic exponent $\\beta_u$", "definition": "Determines the secular oscillation frequency $\\omega_{\\rm sec} = \\beta_u\\Omega_{\\rm RF}/2$; depends on operating point $(a, q)$"}
+      ],
+      "explanation": "For operation near the tip of the first stability zone ($a \\approx 0.237$, $q \\approx 0.706$): mass selectivity is maximised (quadrupole mass filter). For ion trapping, one typically operates at smaller $q$ (e.g., $q \\approx 0.3$) for a larger stability region and lower rf heating."
+    }
+  },
+  {
+    "id": "me002",
+    "path": ["physics", "electromagnetism", "mathieu-equations"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The stability diagram for the Mathieu equation in the $(a, q)$ plane has regions of stable (bounded) and unstable solutions. For $a = 0$ (no DC), the stability boundary in $q$ is:",
+    "passive": {
+      "options": [
+        "The first stability region extends to $q_u \\approx 0.908$ at $a = 0$ — beyond this the motion becomes exponentially unbounded; the boundary curves for $x$ and $y$ stability intersect to form a 'tongue' shape",
+        "Stability exists for all $q > 0$ when $a = 0$",
+        "The stability boundary is exactly $q = 1$ for all values of $a$",
+        "At $a = 0$, the Mathieu equation reduces to simple harmonic motion for any $q$"
+      ],
+      "correct": 0,
+      "explanation": "The stability boundary curves are computed numerically from the Mathieu equation's characteristic values. At $a = 0$: stable for $0 < q < 0.908$ (approximately). The $x$ and $y$ motions require separate stability, and a linear Paul trap confines both by choosing $(a, q)$ within the overlap region. Higher stability zones (second, third, etc.) exist at larger $q$ but are rarely used in practice. The stability tongues narrow as $q$ increases, requiring more precise field control."
+    }
+  },
+  {
+    "id": "me003",
+    "path": ["physics", "electromagnetism", "mathieu-equations"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "In the adiabatic (pseudopotential) approximation valid for small $q_u \\ll 1$, the ion's motion separates into slow secular oscillation and fast driven micromotion. The secular frequency is approximately:",
+    "equation": "\\omega_{u,\\rm sec} \\approx \\frac{\\Omega_{\\rm RF}}{2}\\sqrt{a_u + \\frac{q_u^2}{2}}",
+    "passive": {
+      "options": [
+        "For $a = 0$: $\\omega_{\\rm sec} \\approx q\\Omega_{\\rm RF}/(2\\sqrt{2})$ — the secular frequency is much slower than the RF drive ($q \\ll 1$), and the ion experiences an effective harmonic pseudopotential $V^* = e^2V^2/(4m\\Omega_{\\rm RF}^2 r_0^2) \\cdot u^2$",
+        "The secular frequency equals the RF drive frequency $\\Omega_{\\rm RF}$",
+        "The pseudopotential approximation improves as $q \\to 1$",
+        "Micromotion is negligible even for large $q$"
+      ],
+      "correct": 0,
+      "explanation": "The pseudopotential $U^*(r) = e^2|\\mathbf{E}_{\\rm RF}(r)|^2/(4m\\Omega_{\\rm RF}^2)$ describes the time-averaged ponderomotive force on the ion, acting like a harmonic trap. Micromotion occurs at $\\Omega_{\\rm RF}$ and its harmonics: $u_{\\rm mm}(t) \\approx (q_u/2)u_0\\cos\\Omega_{\\rm RF}t$ where $u_0$ is the secular amplitude. Excess micromotion (due to stray DC fields pushing the ion away from the RF null) must be minimised by applying compensation voltages — critical for ion clock experiments."
+    }
+  },
+  {
+    "id": "me004",
+    "path": ["physics", "electromagnetism", "mathieu-equations"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The quadrupole mass filter (QMF) uses Mathieu stability to select a specific mass-to-charge ratio $m/e$. It operates near the tip of the first stability zone where the $x$ and $y$ stability regions just overlap. Ions with the selected $m/e$ are transmitted while others are expelled:",
+    "passive": {
+      "options": [
+        "At the stability tip ($a \\approx 0.237$, $q \\approx 0.706$), only a narrow mass band is stable; the mass resolution $m/\\Delta m$ increases as the operating point moves closer to the tip, but transmission decreases",
+        "The QMF transmits all masses when $a = 0$",
+        "Higher-mass ions require larger RF amplitude $V$ to be selected at fixed $U/V$ ratio",
+        "The mass resolution is independent of the number of RF cycles the ion spends in the filter"
+      ],
+      "correct": 0,
+      "explanation": "QMF operation: the $U/V$ ratio (slope of the scan line through the origin in $(a,q)$ space) determines mass resolution. A steeper slope (closer to the stability tip) gives higher resolution but lower transmission. In a residual gas analyser (RGA), QMFs measure partial pressures at each mass. In ion trap loading, a QMF can pre-select isotopes. Mass resolution $m/\\Delta m \\sim 100{-}1000$ is typical for RF quadrupoles used in AMO labs."
+    }
+  },
+  {
+    "id": "me005",
+    "path": ["physics", "electromagnetism", "mathieu-equations"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "The Floquet solution of the Mathieu equation can be written as a Fourier series. For the stable solution in the first zone:",
+    "equation": "u(\\tau) = A\\sum_{n=-\\infty}^{\\infty} C_{2n}\\cos[(\\beta + 2n)\\tau] + B\\sum_{n=-\\infty}^{\\infty} C_{2n}\\sin[(\\beta + 2n)\\tau]",
+    "passive": {
+      "options": [
+        "The ion's motion contains sidebands at $\\omega_{\\rm sec} \\pm 2n\\Omega_{\\rm RF}/2$ — resolved sideband spectroscopy of a trapped ion probes these motional sidebands to perform sideband cooling and quantum state manipulation",
+        "The Fourier series has only one term ($n=0$) in the pseudopotential limit",
+        "The Floquet solution applies only to unstable solutions of the Mathieu equation",
+        "The sidebands at $n \\neq 0$ are always negligible for $q < 0.5$"
+      ],
+      "correct": 0,
+      "explanation": "The motional spectrum of a trapped ion has components at $\\omega = |\\beta \\pm 2n|\\Omega_{\\rm RF}/2$ for all integers $n$. For small $q$: only $n=0$ (secular) is significant; for larger $q$: sidebands at $\\Omega_{\\rm RF} \\pm \\omega_{\\rm sec}$ grow. In resolved-sideband cooling, lasers address the red sideband ($\\omega_{\\rm laser} = \\omega_0 - \\omega_{\\rm sec}$), removing one phonon per photon. The Lamb-Dicke parameter $\\eta = k\\sqrt{\\hbar/(2m\\omega_{\\rm sec})}$ characterises the coupling strength — $\\eta \\ll 1$ is required for resolved-sideband cooling."
+    }
+  }
+]

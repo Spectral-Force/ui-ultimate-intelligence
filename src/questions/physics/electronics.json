@@ -1,0 +1,143 @@
+[
+  {
+    "id": "el001",
+    "path": ["physics", "equipment", "electronics"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "A PID (Proportional-Integral-Derivative) controller is the backbone of feedback loops in AMO labs — laser frequency locks, temperature stabilisation, and intensity servos all use PID controllers. The three terms and their roles:",
+    "passive": {
+      "options": [
+        "P (proportional): output $\\propto$ error $e(t)$, sets loop gain, reduces but does not eliminate steady-state error; I (integral): output $\\propto \\int e\\,dt$, eliminates steady-state offset, adds phase lag; D (derivative): output $\\propto de/dt$, damps oscillations, amplifies noise",
+        "The P term eliminates steady-state error; the I term provides fast corrections; the D term sets the overall gain",
+        "PID controllers can only be implemented in analogue electronics, not digitally",
+        "Increasing all three gains simultaneously always improves lock performance"
+      ],
+      "correct": 0,
+      "explanation": "PID transfer function: $G(s) = K_p + K_i/s + K_d s$. Loop stability: the Bode criterion requires gain $< 1$ at the phase-crossover frequency. Common tuning: Ziegler-Nichols (increase $K_p$ until oscillation, then set $K_i, K_d$ from the oscillation period). In laser locking: P sets capture range, I corrects drift, D is often omitted (adds noise). Integrator wind-up (integrator saturates when the error is large) is a common problem — add anti-windup clamping. Unity-gain bandwidth: the frequency at which $|G(j\\omega)| = 1$; must be below the phase margin for stability."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each PID term to its Laplace-domain action and effect on the loop:",
+      "pairs": [
+        {"id": "p1", "term": "Proportional ($K_p$)", "definition": "Gain $K_p \\cdot e(t)$; increases loop gain; reduces (but does not zero) steady-state error; can cause oscillation if too large"},
+        {"id": "p2", "term": "Integral ($K_i/s$)", "definition": "Integrates error over time; eliminates steady-state offset; adds $-90°$ phase lag; risk of integrator wind-up"},
+        {"id": "p3", "term": "Derivative ($K_d s$)", "definition": "Responds to rate of change of error; adds phase lead; damps ringing; amplifies high-frequency noise"},
+        {"id": "p4", "term": "Unity-gain bandwidth", "definition": "Frequency at which loop gain = 1; must lie below phase crossover ($< 180°$ phase shift) for stability; sets correction speed"}
+      ],
+      "explanation": "Practical laser locking: typical PDH servo has UGB $\\sim 1$ MHz (limited by cavity pole and EOM bandwidth). For intensity stabilisation: AOM or EOM as actuator; servo UGB $\\sim 100$ kHz. For current locking: diode current as actuator, UGB $\\sim 1$ MHz. Phase margin $> 45°$ recommended for robust lock. Digital PID (FPGA-based, e.g., Koheron, Vescent D2-125): update rate $\\sim 100$ MHz; 16-bit precision; easy parameter tuning."
+    }
+  },
+  {
+    "id": "el002",
+    "path": ["physics", "equipment", "electronics"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "A lock-in amplifier (LIA) extracts a signal at a known reference frequency from a noisy background, enabling phase-sensitive detection. The key principle and performance metric are:",
+    "passive": {
+      "options": [
+        "The LIA multiplies the input signal by a reference $\\cos(\\omega_r t + \\phi)$, then low-pass filters the result — only components at exactly $\\omega_r$ survive the multiplication; the output is proportional to the signal amplitude at $\\omega_r$; the noise bandwidth is set by the time constant $\\tau$ of the low-pass filter",
+        "A lock-in amplifier uses a bandpass filter centred at the reference frequency to select the signal",
+        "Lock-in amplifiers only work with signals above 1 kHz reference frequency",
+        "The time constant $\\tau$ must be shorter than the modulation period for the LIA to function"
+      ],
+      "correct": 0,
+      "explanation": "Lock-in SNR advantage: $\\text{SNR}_{\\rm LIA} = \\text{SNR}_{\\rm direct} \\cdot \\sqrt{B_{\\rm in} / B_{\\rm LIA}}$ where $B_{\\rm in}$ is the input noise bandwidth and $B_{\\rm LIA} = 1/(4\\tau)$ is the LIA bandwidth. Example: measuring a 1 nV signal at 10 kHz in 10 Hz detection bandwidth rejects noise from 1 Hz to 100 kHz — $10^4$ bandwidth ratio → 40 dB SNR improvement. Time constant: $\\tau = 100$ ms → bandwidth $\\sim 2.5$ Hz. Dual phase detection (X and Y channels): $X = V\\cos\\phi$, $Y = V\\sin\\phi$, $R = \\sqrt{X^2+Y^2}$ (amplitude), $\\theta = \\arctan(Y/X)$ (phase). AMO applications: absorption spectroscopy SNR enhancement; PDH error signal demodulation; noise floor characterisation."
+    }
+  },
+  {
+    "id": "el003",
+    "path": ["physics", "equipment", "electronics"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Electronic noise in AMO lab circuits — photodetector amplifiers, voltage references, servo circuits — limits signal-to-noise ratios. The fundamental noise sources and their frequency dependences:",
+    "passive": {
+      "options": [
+        "Johnson-Nyquist (thermal) noise: $S_V = 4k_BT R$ (white, V$^2$/Hz); shot noise on photocurrent: $S_I = 2eI$ (white, A$^2$/Hz); $1/f$ (flicker) noise: $S \\propto 1/f$ dominant at low frequency; all sources add in quadrature",
+        "Johnson noise depends on the signal frequency, not just the resistance and temperature",
+        "Shot noise is always smaller than Johnson noise in practical circuits",
+        "$1/f$ noise is only present in digital circuits, not analogue"
+      ],
+      "correct": 0,
+      "explanation": "Johnson noise RMS voltage: $V_n = \\sqrt{4k_BT R B}$. At $R = 1$ k$\\Omega$, $T = 300$ K, $B = 1$ MHz: $V_n = 4$ nV/$\\sqrt{\\rm Hz}$ (typical op-amp noise floor). Shot noise on photocurrent: at $I = 1$ mA, $I_n = \\sqrt{2eIB} = 18$ pA/$\\sqrt{\\rm Hz}$. Standard quantum limit (SQL): photon shot noise sets the fundamental sensitivity in homodyne detection. Above the shot-noise limit requires squeezed states of light. Op-amp voltage noise: typical $\\sim 1{-}5$ nV/$\\sqrt{\\rm Hz}$ (e.g., LT1028: 0.9 nV/$\\sqrt{\\rm Hz}$). Ground loops: capacitively-coupled $50$ Hz/60 Hz pick-up — eliminate by single-point grounding and star-wiring topology."
+    }
+  },
+  {
+    "id": "el004",
+    "path": ["physics", "equipment", "electronics"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Electro-optic modulators (EOMs) and acousto-optic modulators (AOMs) are the primary tools for controlling laser frequency, intensity, and phase. Key differences in operation and bandwidth:",
+    "passive": {
+      "options": [
+        "EOM: electro-optic crystal changes refractive index with applied voltage; bandwidth DC to several GHz; no frequency shift; used for phase modulation/PDH sidebands/fast switching. AOM: sound wave creates a travelling diffraction grating; bandwidth $\\sim 1{-}100$ MHz; shifts frequency by the RF drive frequency; used for frequency shifting, intensity control, and pulsing",
+        "AOMs can modulate at GHz frequencies; EOMs are limited to $< 1$ MHz",
+        "EOMs shift the laser frequency by the applied voltage; AOMs do not change the frequency",
+        "Both AOMs and EOMs require the laser beam to pass through a crystal at Brewster angle"
+      ],
+      "correct": 0,
+      "explanation": "AOM parameters: diffraction efficiency 70–90% into first order; rise time $\\sim d/v_s$ where $d$ is the beam diameter and $v_s \\sim 4$ km/s (sound speed in TeO$_2$); at $d = 0.5$ mm, rise time $\\sim 125$ ns. Centre frequency 40–400 MHz (most common: 80 MHz for Rb). Double-pass AOM: beam passes through twice, frequency shift doubles ($2\\times$ RF), and pointing remains fixed when RF frequency is tuned. EOM usage: resonant EOMs have high sideband efficiency at a fixed modulation frequency; broadband EOMs allow arbitrary modulation. Half-wave voltage ($V_\\pi$): $\\sim 100$ V for bulk KDP at 780 nm; $\\sim 10$ V for waveguide EOMs — high voltage op-amps or RF amplifiers required."
+    }
+  },
+  {
+    "id": "el005",
+    "path": ["physics", "equipment", "electronics"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "Photodetectors in AMO labs convert optical power to electrical signal. The main figures of merit for a photodiode transimpedance amplifier (TIA) circuit are:",
+    "passive": {
+      "options": [
+        "Responsivity $\\mathcal{R}$ (A/W); transimpedance gain $R_f$ ($\\Omega$); bandwidth $f_{-3\\rm dB} = 1/(2\\pi\\sqrt{R_f C_f})$ (set by feedback RC); noise-equivalent power NEP = $V_{n,\\rm out}/(R_f\\mathcal{R})$; unity-gain bandwidth of op-amp limits achievable $R_f \\cdot f_{-3\\rm dB}$ product",
+        "Responsivity is measured in V/W and is independent of the op-amp gain",
+        "Higher transimpedance gain always increases the bandwidth of the detector",
+        "The bandwidth of a TIA is limited only by the photodiode capacitance"
+      ],
+      "correct": 0,
+      "explanation": "TIA design: $R_f$ sets gain, $C_f$ is a small feedback capacitor for stability ($C_f \\sim 1$ pF for $R_f = 10$ k$\\Omega$). Bandwidth: $f_{-3\\rm dB} \\approx \\sqrt{\\rm GBW}/(2\\pi R_f C_d)^{1/2}$ where $C_d$ is diode capacitance. At $R_f = 10$ k$\\Omega$ and Si photodiode $C_d = 10$ pF with GBW = 200 MHz: bandwidth $\\sim 100$ kHz. Trade-off: $R_f \\uparrow$ → more gain, more Johnson noise, lower bandwidth. Si photodiode: $\\mathcal{R} \\approx 0.5$ A/W at 780 nm (Rb). InGaAs: 1.0 A/W at 1560 nm. Balanced photodetection: subtract two photodiodes in balanced homodyne → common-mode noise (intensity fluctuations) cancelled to $\\sim 40$ dB below shot noise."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each detector/amplifier parameter to its definition and typical value for an 780 nm Si photodetector:",
+      "pairs": [
+        {"id": "p1", "term": "Responsivity $\\mathcal{R}$", "definition": "Photocurrent per optical power: $\\mathcal{R} = \\eta e\\lambda/(hc)$; for Si at 780 nm: $\\sim 0.5$ A/W (quantum efficiency $\\eta \\approx 80\\%$)"},
+        {"id": "p2", "term": "Transimpedance gain", "definition": "Output voltage per photocurrent: $V_{\\rm out}/I_{\\rm pd} = R_f$; typical values 1 k$\\Omega$–1 M$\\Omega$ depending on signal level and bandwidth needed"},
+        {"id": "p3", "term": "Noise-equivalent power (NEP)", "definition": "Minimum detectable optical power per $\\sqrt{\\rm Hz}$; dominated by Johnson noise of $R_f$: NEP $= \\sqrt{4k_BT/R_f}/\\mathcal{R}$; at $R_f = 10$ k$\\Omega$: $\\sim 80$ pW/$\\sqrt{\\rm Hz}$"},
+        {"id": "p4", "term": "Saturation power", "definition": "Maximum optical input before op-amp saturates: $P_{\\rm sat} = V_{\\rm supply}/(R_f \\mathcal{R})$; at $R_f = 10$ k$\\Omega$, $\\pm 12$ V supply: $\\sim 2.4$ mW"}
+      ],
+      "explanation": "Practical tips: (1) Use a low-noise op-amp (e.g., OPA847, ADA4898) for high-bandwidth TIA. (2) Keep PCB traces from photodiode to TIA input as short as possible to minimise stray capacitance. (3) Shield the photodiode from stray light. (4) For single-photon detection: use avalanche photodiode (APD) in Geiger mode or SPAD — quantum efficiency 50–70% at 700–900 nm, dead time $\\sim 50$ ns, dark count rate $\\sim 100$ s$^{-1}$."
+    }
+  },
+  {
+    "id": "el006",
+    "path": ["physics", "equipment", "electronics"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "RF signal generation is essential for driving AOMs, EOMs, and ion trap RF electrodes. A direct digital synthesis (DDS) chip and a phase-locked loop (PLL) serve complementary roles:",
+    "passive": {
+      "options": [
+        "DDS: numerically controlled oscillator with DAC; arbitrary frequency with fine resolution ($\\Delta f \\sim$ mHz); fast frequency switching ($< 1$ $\\mu$s); limited output frequency ($< 500$ MHz); phase coherent switching. PLL: multiplies a reference (e.g., 10 MHz OCXO) to high frequency ($>$ GHz); low phase noise but slower tuning",
+        "DDS chips generate frequencies only by integer multiples of a fixed reference",
+        "PLLs cannot be used above 1 GHz because the phase detector fails at high frequencies",
+        "DDS and PLL cannot be combined in the same RF signal chain"
+      ],
+      "correct": 0,
+      "explanation": "DDS example: AD9959 (4-channel, 500 MSPS, 32-bit frequency word) → frequency resolution $\\sim 0.1$ Hz at 100 MHz. Phase noise: $-130$ dBc/Hz at 1 kHz offset (limited by DAC quantisation). Spurious free dynamic range (SFDR): $\\sim 75$ dBc. Common usage: drive AOM at 80 MHz for detuning control, update frequency word every shot to sweep atom cloud. PLL example: HMC835 (25 MHz–3 GHz, fractional-N, $< -100$ dBc/Hz phase noise). Ion trap RF: typically 10–100 MHz at $\\sim 10$ W — requires RF amplifier (e.g., Mini-Circuits ZHL series) and helical resonator to transform 50 $\\Omega$ to trap impedance ($\\sim$ k$\\Omega$). Trap drive at $\\Omega = 2\\pi \\times 25$ MHz needs $V_{\\rm rf} \\sim 100{-}1000$ V$_{\\rm pk-pk}$ depending on trap geometry."
+    }
+  },
+  {
+    "id": "el007",
+    "path": ["physics", "equipment", "electronics"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "A helical resonator is used to impedance-match an RF amplifier (50 $\\Omega$) to the high-impedance capacitive load of an ion trap electrode. The key design parameters are:",
+    "passive": {
+      "options": [
+        "Quality factor $Q = \\omega L/R_{\\rm coil}$; resonant frequency $\\omega_0 = 1/\\sqrt{LC}$ (where $C$ includes trap capacitance); voltage step-up ratio $\\sim \\sqrt{Q}$; loaded $Q$ reduced by the trap resistance; bandwidth $\\Delta\\omega = \\omega_0/Q$",
+        "A helical resonator is a bandpass filter with no voltage amplification",
+        "The resonant frequency depends only on the trap electrode capacitance, not the coil",
+        "Increasing the coil resistance improves the voltage step-up ratio"
+      ],
+      "correct": 0,
+      "explanation": "Helical resonator design: $Q \\sim 200{-}500$ for a well-designed coil (silver or copper on Teflon former, inside copper can). Voltage gain: $V_{\\rm trap}/V_{\\rm in} = Q/2 \\approx 100{-}250$ for $Q = 200{-}500$, so 10 W input ($\\sim 45$ V$_{\\rm pk}$) → trap voltage $\\sim 4000{-}11000$ V$_{\\rm pk}$. Trap capacitance: typically 5–50 pF; determines coil inductance $L = 1/(\\omega_0^2 C)$. Tuning: movable copper slug inside coil core. Monitoring: pickup coil (one turn) near the main coil; capacitive divider on the electrode. Practical: thermally mount the coil can to the vacuum chamber for temperature stability of the drive frequency."
+    }
+  }
+]

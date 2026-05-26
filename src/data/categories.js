@@ -72,6 +72,8 @@ export const CATEGORIES = [
           { id: 'maxwells-equations', label: "Maxwell's Equations" },
           { id: 'em-waves',           label: 'EM Waves & Propagation' },
           { id: 'radiation',          label: 'Radiation & Antennas' },
+          { id: 'mathieu-equations',  label: 'Mathieu Equations' },
+          { id: 'paul-traps',         label: 'Paul Traps & Ion Trapping' },
         ],
       },
       {
@@ -93,6 +95,24 @@ export const CATEGORIES = [
         ],
       },
       { id: 'optics', label: 'Optics' },
+      { id: 'key-quantities', label: 'Key Quantities & Constants' },
+      {
+        id: 'equipment',
+        label: 'Lab Equipment & Techniques',
+        children: [
+          {
+            id: 'vacuum-systems',
+            label: 'Vacuum Systems',
+            children: [
+              { id: 'vacuum-physics', label: 'Vacuum Physics & Gauges' },
+              { id: 'uhv',            label: 'Ultra-High Vacuum' },
+              { id: 'bakeout',        label: 'Bakeout Procedures' },
+            ],
+          },
+          { id: 'laser-systems',  label: 'Laser Systems & Locking' },
+          { id: 'electronics',    label: 'Electronics & Signal Processing' },
+        ],
+      },
     ],
   },
   {

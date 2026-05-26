@@ -42,6 +42,14 @@ import phaseTransitions from './physics/phase-transitions.json'
 import emWaves        from './physics/em-waves.json'
 import oscillations   from './physics/oscillations.json'
 import radiation      from './physics/radiation.json'
+import mathieuEquations from './physics/mathieu-equations.json'
+import paulTraps      from './physics/paul-traps.json'
+import keyQuantities  from './physics/key-quantities.json'
+import vacuumPhysics  from './physics/vacuum-physics.json'
+import uhv            from './physics/uhv.json'
+import bakeout        from './physics/bakeout.json'
+import laserSystems   from './physics/laser-systems.json'
+import electronics    from './physics/electronics.json'
 
 export const allQuestions = [
   ...dopplerCooling,
@@ -88,6 +96,14 @@ export const allQuestions = [
   ...emWaves,
   ...oscillations,
   ...radiation,
+  ...mathieuEquations,
+  ...paulTraps,
+  ...keyQuantities,
+  ...vacuumPhysics,
+  ...uhv,
+  ...bakeout,
+  ...laserSystems,
+  ...electronics,
 ]
 
 export function filterQuestions(selectedIds, selectedLevels, mode) {
