@@ -1,0 +1,167 @@
+[
+  {
+    "id": "dc001",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "laser-cooling", "doppler-cooling"],
+    "level": "P",
+    "modes": ["passive", "active"],
+    "question": "The Doppler cooling limit arises from competition between the cooling force and momentum diffusion due to spontaneous emission. The Doppler temperature is given by the equation below. For $^{87}$Rb with $\\Gamma/2\\pi = 6.07$ MHz, what is $T_D$ approximately?",
+    "equation": "T_D = \\frac{\\hbar\\Gamma}{2k_B}",
+    "passive": {
+      "options": ["145 μK", "1.45 mK", "14.5 μK", "580 nK"],
+      "correct": 0,
+      "explanation": "Substituting $\\Gamma/2\\pi = 6.07\\times10^6$ Hz gives $T_D = \\hbar\\cdot2\\pi\\cdot6.07\\times10^6 / (2k_B) \\approx 145\\,\\mu$K. This is the fundamental limit of Doppler cooling; sub-Doppler mechanisms are needed to go lower."
+    },
+    "active": {
+      "type": "equation-order",
+      "prompt": "Arrange the tokens to form the Doppler temperature formula:",
+      "tokens": [
+        {"id": "t1", "latex": "T_D"},
+        {"id": "t2", "latex": "="},
+        {"id": "t3", "latex": "\\hbar\\Gamma"},
+        {"id": "t4", "latex": "/"},
+        {"id": "t5", "latex": "2k_B"}
+      ],
+      "solution": ["t1", "t2", "t3", "t4", "t5"],
+      "explanation": "The Doppler temperature $T_D = \\hbar\\Gamma/2k_B$ sets the lowest temperature achievable with Doppler cooling alone. For $^{87}$Rb with $\\Gamma/2\\pi = 6.07$ MHz, this gives $\\approx 145\\,\\mu$K."
+    }
+  },
+  {
+    "id": "dc002",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "laser-cooling", "doppler-cooling"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "At high laser intensity (saturation parameter $s_0 \\gg 1$), the scattering force on a two-level atom approaches a maximum value. What is this maximum?",
+    "passive": {
+      "options": [
+        "$\\hbar k\\,\\Gamma/2$",
+        "$\\hbar k\\,\\Gamma$",
+        "$\\hbar k\\,\\Gamma/4$",
+        "$\\hbar^2 k^2/2m$"
+      ],
+      "correct": 0,
+      "explanation": "The scattering rate saturates at $\\Gamma/2$ (the excited state population approaches $1/2$), so $F_{\\text{max}} = \\hbar k \\cdot \\Gamma/2$. This sets the maximum deceleration an atom can experience from a single laser beam."
+    }
+  },
+  {
+    "id": "dc003",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "laser-cooling", "doppler-cooling"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "Which physical mechanism makes Doppler cooling velocity-selective?",
+    "passive": {
+      "options": [
+        "The Doppler shift tunes atoms moving toward a red-detuned beam closer to resonance, increasing the absorption rate",
+        "The magnetic field gradient shifts energy levels depending on the atom's position",
+        "Stimulated emission transfers momentum antiparallel to the atom's velocity",
+        "The AC Stark shift creates a velocity-dependent potential well"
+      ],
+      "correct": 0,
+      "explanation": "An atom moving toward a red-detuned laser ($\\delta < 0$) sees the beam blue-shifted by $kv$ in its rest frame, bringing it closer to resonance. It therefore absorbs more photons from the opposing beam than from the co-propagating one, giving a net retarding force."
+    },
+    "active": {
+      "type": "step-order",
+      "prompt": "Order the steps explaining why Doppler cooling is velocity-selective:",
+      "steps": [
+        {"id": "s1", "text": "Atom moves toward a counter-propagating red-detuned beam ($\\delta < 0$)"},
+        {"id": "s2", "text": "Doppler shift blue-shifts the beam in the atom's rest frame: $\\delta_{\\rm eff} = \\delta + kv$"},
+        {"id": "s3", "text": "$|\\delta_{\\rm eff}|$ decreases — the beam moves closer to resonance and the scattering rate from this beam increases"},
+        {"id": "s4", "text": "Net radiation pressure force opposes the atom's motion, producing viscous damping"}
+      ],
+      "solution": ["s1", "s2", "s3", "s4"],
+      "explanation": "The Doppler shift $\\delta_{\\rm eff} = \\delta + kv$ is the key: a red-detuned beam seen by an atom moving toward it is shifted closer to resonance, so that atom preferentially absorbs from the opposing beam and decelerates."
+    }
+  },
+  {
+    "id": "dc004",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "laser-cooling", "doppler-cooling"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "For a 1D optical molasses, the damping coefficient $\\alpha$ (where $F = -\\alpha v$) is maximised at which laser detuning $\\delta$?",
+    "passive": {
+      "options": [
+        "$\\delta = -\\Gamma/2$",
+        "$\\delta = -\\Gamma$",
+        "$\\delta = -\\Gamma/4$",
+        "$\\delta = +\\Gamma/2$"
+      ],
+      "correct": 0,
+      "explanation": "Differentiating the damping coefficient with respect to detuning shows the maximum cooling force gradient occurs at $\\delta = -\\Gamma/2$. At this detuning the scattering rate vs velocity curve has maximum slope."
+    }
+  },
+  {
+    "id": "dc005",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "laser-cooling", "doppler-cooling"],
+    "level": "P",
+    "modes": ["passive", "active"],
+    "question": "The recoil temperature $T_{\\text{rec}}$ for $^{87}$Rb on the 780 nm D$_2$ line ($m = 1.44\\times10^{-25}$ kg) is approximately:",
+    "passive": {
+      "options": ["360 nK", "3.6 μK", "36 nK", "145 μK"],
+      "correct": 0,
+      "explanation": "$T_{\\text{rec}} = \\hbar^2 k^2 / (mk_B)$ where $k = 2\\pi/780\\,\\text{nm}$. Substituting gives $T_{\\text{rec}} \\approx 360$ nK. This is roughly 400 times smaller than the Doppler limit and is approached by sub-recoil cooling techniques such as velocity-selective coherent population trapping (VSCPT)."
+    },
+    "active": {
+      "type": "fill-blanks",
+      "prompt": "Complete the recoil temperature formula (where $k = 2\\pi/\\lambda$):",
+      "template": ["$T_{\\text{rec}} =$", null, "$/(m\\,k_B)$"],
+      "tokens": [
+        {"id": "t1", "latex": "\\hbar^2 k^2"},
+        {"id": "t2", "latex": "\\hbar k"},
+        {"id": "t3", "latex": "\\hbar^2/k^2"},
+        {"id": "t4", "latex": "m^2 k^2"}
+      ],
+      "solution": ["t1"],
+      "explanation": "$T_{\\text{rec}} = \\hbar^2 k^2/(m k_B)$, where each spontaneous emission imparts recoil energy $E_{\\text{rec}} = \\hbar^2 k^2/2m$. For $^{87}$Rb at 780 nm this gives $\\approx 360$ nK — the floor approached by sub-recoil techniques."
+    }
+  },
+  {
+    "id": "dc006",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "laser-cooling", "doppler-cooling"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "In polarisation-gradient (Sisyphus) cooling, what sets the sub-Doppler temperature limit?",
+    "passive": {
+      "options": [
+        "The photon recoil energy — the atom loses at most one photon's worth of kinetic energy per cycle",
+        "The natural linewidth $\\Gamma$ of the transition",
+        "The laser intensity through the AC Stark shift",
+        "The ground-state hyperfine splitting"
+      ],
+      "correct": 0,
+      "explanation": "In Sisyphus cooling the atom climbs a light-shift potential hill, losing kinetic energy, then is optically pumped back to the bottom. Each cycle removes energy of order $E_{\\text{rec}} = \\hbar^2 k^2/2m$. The minimum temperature is therefore $T \\sim T_{\\text{rec}}$, far below the Doppler limit."
+    }
+  },
+  {
+    "id": "dc007",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "laser-cooling", "doppler-cooling"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The radiation pressure (scattering) force on a two-level atom is $F = \\hbar k\\,\\Gamma\\,\\rho_{ee}$, where $\\rho_{ee}$ is the steady-state excited-state population. For a weak field ($s_0 \\ll 1$) on resonance ($\\delta = 0$), $\\rho_{ee}$ is approximately:",
+    "passive": {
+      "options": [
+        "$s_0/2$",
+        "$s_0$",
+        "$s_0/4$",
+        "$1/2$"
+      ],
+      "correct": 0,
+      "explanation": "At low intensity $\\rho_{ee} \\approx s_0/2$ where $s_0 = I/I_{\\text{sat}}$. The excited population is linear in intensity below saturation. At saturation ($s_0 = 1$, $\\delta = 0$) we get $\\rho_{ee} = 1/4$, not $1/2$ — the $1/2$ limit is only reached asymptotically for $s_0 \\to \\infty$."
+    }
+  },
+  {
+    "id": "dc008",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "laser-cooling", "doppler-cooling"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "In a 3D optical molasses, what is the dominant heating mechanism that competes with Doppler cooling?",
+    "passive": {
+      "options": [
+        "Random momentum kicks from spontaneous emission in random directions",
+        "Stimulated emission returning photons along the beam axis",
+        "Photon absorption from the co-propagating beam",
+        "Thermal re-emission from the vacuum chamber walls"
+      ],
+      "correct": 0,
+      "explanation": "Each absorbed photon imparts $\\hbar k$ of momentum in the beam direction (controllable), but the spontaneous emission recoil is in a random direction. This random walk in momentum space is the momentum diffusion coefficient $D_p \\propto \\hbar^2 k^2 \\Gamma \\rho_{ee}$, which in equilibrium with the cooling force gives the Doppler temperature."
+    }
+  }
+]

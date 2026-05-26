@@ -1,0 +1,110 @@
+[
+  {
+    "id": "mt001",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "laser-cooling", "mot"],
+    "level": "P",
+    "modes": ["passive", "active"],
+    "question": "In a magneto-optical trap, the spatially dependent restoring force arises from:",
+    "passive": {
+      "options": [
+        "Zeeman shifts that imbalance the scattering forces from $\\sigma^+$ and $\\sigma^-$ beams depending on atomic position",
+        "The magnetic gradient directly decelerating atoms via the Lorentz force",
+        "A conservative dipole potential created by the quadrupole field",
+        "The Meissner effect from superconducting coils preventing atoms from escaping"
+      ],
+      "correct": 0,
+      "explanation": "The anti-Helmholtz coils create a quadrupole field $B(z) \\approx bz$ near the centre. An atom displaced by $z$ has its $m_F$ sublevels Zeeman-shifted, which tunes them closer to resonance with the $\\sigma^+$ or $\\sigma^-$ beam from the appropriate direction, producing an imbalanced radiation pressure that pushes the atom back to the centre."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each MOT component to its role:",
+      "pairs": [
+        {"id": "p1", "term": "Anti-Helmholtz coils", "definition": "Generate a quadrupole magnetic field zero at the centre"},
+        {"id": "p2", "term": "$\\sigma^+/\\sigma^-$ polarisation", "definition": "Selects which beam couples to Zeeman-shifted sublevels at each position"},
+        {"id": "p3", "term": "Red detuning ($\\delta < 0$)", "definition": "Ensures atoms moving toward a beam scatter more photons (Doppler)"},
+        {"id": "p4", "term": "Zeeman shift", "definition": "Provides the position-dependent resonance that creates the restoring force"}
+      ],
+      "explanation": "A MOT combines velocity-selective Doppler cooling with position-selective Zeeman trapping. The quadrupole field shifts sublevels $\\propto m_F B(z)$; the $\\sigma^\\pm$ polarisation ensures the displaced atom couples preferentially to the beam pushing it back."
+    }
+  },
+  {
+    "id": "mt002",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "laser-cooling", "mot"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "A standard 3D MOT uses which beam configuration?",
+    "passive": {
+      "options": [
+        "3 pairs of counter-propagating beams ($\\pm x$, $\\pm y$, $\\pm z$) with $\\sigma^+/\\sigma^-$ polarisations and an anti-Helmholtz quadrupole field",
+        "4 beams arranged tetrahedrally with linear polarisation",
+        "6 beams all with the same circular polarisation and a uniform magnetic field",
+        "2 orthogonal beams and a static homogeneous field"
+      ],
+      "correct": 0,
+      "explanation": "The three pairs of counter-propagating beams provide cooling and confinement in all three spatial dimensions. The anti-Helmholtz coils generate a quadrupole field that is zero at the centre and linear nearby, and the alternating $\\sigma^+/\\sigma^-$ polarisation pattern ensures the correct Zeeman pumping for a net restoring force."
+    }
+  },
+  {
+    "id": "mt003",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "laser-cooling", "mot"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "The maximum trapped atom density in a MOT is typically limited by:",
+    "passive": {
+      "options": [
+        "Radiation trapping — reabsorption of fluorescence photons creates an effective repulsive pressure between atoms",
+        "Insufficient laser intensity to cool at high densities",
+        "Gravity pulling atoms below the beam waist",
+        "The magnetic field gradient not being strong enough to confine a dense cloud"
+      ],
+      "correct": 0,
+      "explanation": "At high density, photons emitted by one atom can be absorbed by a neighbour before escaping the cloud. This 'radiation trapping' exerts an outward radiation pressure that scales with density, capping the peak density at $\\sim10^{10}$–$10^{11}$ cm$^{-3}$ in a standard MOT. The density-dependent loss can be reduced using dark-state MOTs or compressed MOT stages."
+    }
+  },
+  {
+    "id": "mt004",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "laser-cooling", "mot"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The loading rate of a MOT from a background vapour is primarily determined by:",
+    "passive": {
+      "options": [
+        "The vapour pressure of the atomic species — more atoms in the gas phase means a higher flux entering the capture volume",
+        "The laser beam diameter — larger beams capture more volume",
+        "The laser detuning — closer to resonance captures faster atoms",
+        "The magnetic field gradient — steeper gradients cool atoms faster"
+      ],
+      "correct": 0,
+      "explanation": "The loading rate $R \\propto n_{\\text{vapour}}\\,v_c^4/v_{\\text{th}}^3$ where $n_{\\text{vapour}}$ is the vapour density and $v_c$ is the capture velocity. Since $n_{\\text{vapour}}$ scales with vapour pressure (controllable by temperature), this is the dominant handle. Increasing the beam size or $v_c$ also helps, but vapour pressure is typically the key parameter tuned via a dispensing current."
+    }
+  },
+  {
+    "id": "mt005",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "laser-cooling", "mot"],
+    "level": "P",
+    "modes": ["passive", "active"],
+    "question": "In a MOT for $^{87}$Rb, which transition is typically used as the cooling transition, and why is a repump laser required?",
+    "passive": {
+      "options": [
+        "$|F=2\\rangle \\to |F'=3\\rangle$ cooling; repump on $|F=1\\rangle \\to |F'=2\\rangle$ because off-resonant pumping to $|F'=2\\rangle$ decays to the dark $F=1$ state",
+        "$|F=1\\rangle \\to |F'=2\\rangle$ cooling; repump on $|F=2\\rangle \\to |F'=3\\rangle$ to prevent hyperfine-state loss",
+        "$|F=2\\rangle \\to |F'=2\\rangle$ cooling; repump on $|F=1\\rangle \\to |F'=1\\rangle$ to recycle population",
+        "No repump is needed because the D$_2$ line is a closed two-level transition"
+      ],
+      "correct": 0,
+      "explanation": "The cooling laser drives $5S_{1/2}\\,F=2 \\to 5P_{3/2}\\,F'=3$, which is nearly closed. However, there is a small probability of off-resonant excitation to $F'=2$, which can decay to $F=1$. Once in $F=1$, the atom is dark to the cooling laser. The repump laser on $F=1 \\to F'=2$ immediately recycles the population back to $F=2$."
+    },
+    "active": {
+      "type": "step-order",
+      "prompt": "Order the steps of the repump cycle in a $^{87}$Rb MOT:",
+      "steps": [
+        {"id": "s1", "text": "Cooling laser occasionally off-resonantly excites $|F=2\\rangle \\to |F'=2\\rangle$"},
+        {"id": "s2", "text": "Excited $|F'=2\\rangle$ state decays to the dark $|F=1\\rangle$ ground state"},
+        {"id": "s3", "text": "Atom is invisible to the cooling laser — no radiation pressure, no trapping"},
+        {"id": "s4", "text": "Repump laser drives $|F=1\\rangle \\to |F'=2\\rangle$, returning atom to $|F=2\\rangle$"}
+      ],
+      "solution": ["s1", "s2", "s3", "s4"],
+      "explanation": "Without repumping, atoms accumulate in $F=1$ and fall out of the trap. The repump laser closes this leak by immediately recycling dark-state population back to the cycling transition $F=2 \\to F'=3$."
+    }
+  }
+]

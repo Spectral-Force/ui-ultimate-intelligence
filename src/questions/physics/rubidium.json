@@ -1,0 +1,78 @@
+[
+  {
+    "id": "rb001",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "elements", "rubidium"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "The D$_2$ line of $^{87}$Rb (the $5S_{1/2} \\to 5P_{3/2}$ transition used in laser cooling) has a vacuum wavelength of approximately:",
+    "passive": {
+      "options": ["780 nm", "852 nm", "670 nm", "461 nm"],
+      "correct": 0,
+      "explanation": "The $^{87}$Rb D$_2$ line is at 780.24 nm. For comparison: 852 nm is the Cs D$_2$ line, 670 nm is Li, and 461 nm is the $^{88}$Sr intercombination line. The 780 nm wavelength is conveniently accessible with low-cost GaAlAs diode lasers."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each alkali atom to its D$_2$ laser-cooling wavelength:",
+      "pairs": [
+        {"id": "p1", "term": "$^{87}$Rb", "definition": "780 nm"},
+        {"id": "p2", "term": "$^{133}$Cs", "definition": "852 nm"},
+        {"id": "p3", "term": "$^{7}$Li", "definition": "671 nm"},
+        {"id": "p4", "term": "$^{23}$Na", "definition": "589 nm"}
+      ],
+      "explanation": "These D$_2$ transitions ($s \\to p$) are the workhorses of laser cooling. Rb (780 nm) and Cs (852 nm) are accessible with inexpensive GaAlAs diode lasers; Li (671 nm) needs dye or tapered amplifiers; Na (589 nm) requires a dye laser or frequency-doubled solid-state source."
+    }
+  },
+  {
+    "id": "rb002",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "elements", "rubidium"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The ground-state hyperfine splitting of $^{87}$Rb between the $F=1$ and $F=2$ levels is:",
+    "passive": {
+      "options": ["6.835 GHz", "9.193 GHz", "1.772 GHz", "0.816 GHz"],
+      "correct": 0,
+      "explanation": "The $^{87}$Rb ground-state hyperfine splitting is 6.834682611 GHz — one of the most precisely measured quantities in atomic physics. It is used as the frequency standard in many atomic clocks. For comparison, $^{133}$Cs has a splitting of 9.193 GHz, which defines the SI second."
+    }
+  },
+  {
+    "id": "rb003",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "elements", "rubidium"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The nuclear spin of $^{87}$Rb is:",
+    "passive": {
+      "options": ["$I = 3/2$", "$I = 1$", "$I = 5/2$", "$I = 7/2$"],
+      "correct": 0,
+      "explanation": "$^{87}$Rb (37 protons, 50 neutrons) has nuclear spin $I = 3/2$. Combined with the electronic ground state $J = 1/2$, this gives total angular momenta $F = I \\pm J = 1$ and $F = 2$. Its heavier isotope $^{85}$Rb has $I = 5/2$."
+    }
+  },
+  {
+    "id": "rb004",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "elements", "rubidium"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "The natural isotopic abundance of $^{87}$Rb relative to $^{85}$Rb is approximately:",
+    "passive": {
+      "options": [
+        "$^{87}$Rb 28%, $^{85}$Rb 72%",
+        "$^{87}$Rb 50%, $^{85}$Rb 50%",
+        "$^{87}$Rb 72%, $^{85}$Rb 28%",
+        "$^{87}$Rb 10%, $^{85}$Rb 90%"
+      ],
+      "correct": 0,
+      "explanation": "Natural Rb is 27.83% $^{87}$Rb and 72.17% $^{85}$Rb. Despite being the minority isotope, $^{87}$Rb is heavily favoured in BEC experiments due to its positive $s$-wave scattering length (repulsive interactions) and conveniently large hyperfine splitting."
+    }
+  },
+  {
+    "id": "rb005",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "elements", "rubidium"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The natural linewidth $\\Gamma/2\\pi$ of the $^{87}$Rb D$_2$ line is approximately:",
+    "passive": {
+      "options": ["6.07 MHz", "0.607 MHz", "60.7 MHz", "1.52 MHz"],
+      "correct": 0,
+      "explanation": "The D$_2$ line linewidth is $\\Gamma/2\\pi = 6.065$ MHz, corresponding to an excited-state lifetime of $\\tau = 1/\\Gamma \\approx 26.2$ ns. This relatively short lifetime reflects the strong electric-dipole coupling of the $s \\to p$ transition and makes Rb ideal for laser cooling."
+    }
+  }
+]

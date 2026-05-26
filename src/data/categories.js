@@ -1,0 +1,155 @@
+export const CATEGORIES = [
+  {
+    id: 'physics',
+    label: 'Physics',
+    children: [
+      {
+        id: 'quantum-mechanics',
+        label: 'Quantum Mechanics',
+        children: [
+          {
+            id: 'atomic-physics',
+            label: 'Atomic Physics',
+            children: [
+              {
+                id: 'laser-cooling',
+                label: 'Laser Cooling',
+                children: [
+                  { id: 'doppler-cooling',  label: 'Doppler Cooling' },
+                  { id: 'sub-doppler',      label: 'Sub-Doppler Cooling' },
+                  { id: 'mot',              label: 'Magneto-Optical Traps' },
+                  { id: 'laser-trapping',   label: 'Optical Dipole Traps' },
+                ],
+              },
+              {
+                id: 'ultracold-atoms',
+                label: 'Ultracold Atoms',
+                children: [
+                  { id: 'bec',         label: 'Bose-Einstein Condensation' },
+                  { id: 'fermi-gases', label: 'Degenerate Fermi Gases' },
+                ],
+              },
+              {
+                id: 'elements',
+                label: 'Specific Elements',
+                children: [
+                  { id: 'rubidium',  label: 'Rubidium' },
+                  { id: 'cesium',    label: 'Cesium' },
+                  { id: 'lithium',   label: 'Lithium' },
+                  { id: 'strontium', label: 'Strontium' },
+                  { id: 'ytterbium', label: 'Ytterbium' },
+                ],
+              },
+              { id: 'spectroscopy', label: 'Spectroscopy' },
+            ],
+          },
+          {
+            id: 'quantum-optics',
+            label: 'Quantum Optics',
+            children: [
+              { id: 'cavity-qed',      label: 'Cavity QED' },
+              { id: 'squeezed-light',  label: 'Squeezed Light' },
+              { id: 'photon-stats',    label: 'Photon Statistics' },
+            ],
+          },
+          {
+            id: 'quantum-info',
+            label: 'Quantum Information',
+            children: [
+              { id: 'qubits',       label: 'Qubits & Gates' },
+              { id: 'entanglement', label: 'Entanglement' },
+              { id: 'decoherence',  label: 'Decoherence' },
+            ],
+          },
+          { id: 'scattering-theory', label: 'Scattering Theory' },
+          { id: 'perturbation',      label: 'Perturbation Theory' },
+        ],
+      },
+      {
+        id: 'electromagnetism',
+        label: 'Electromagnetism',
+        children: [
+          { id: 'maxwells-equations', label: "Maxwell's Equations" },
+          { id: 'em-waves',           label: 'EM Waves & Propagation' },
+          { id: 'radiation',          label: 'Radiation & Antennas' },
+        ],
+      },
+      {
+        id: 'classical-mechanics',
+        label: 'Classical Mechanics',
+        children: [
+          { id: 'lagrangian',  label: 'Lagrangian Mechanics' },
+          { id: 'hamiltonian', label: 'Hamiltonian Mechanics' },
+          { id: 'oscillations', label: 'Oscillations & Waves' },
+        ],
+      },
+      {
+        id: 'statistical-mechanics',
+        label: 'Statistical Mechanics',
+        children: [
+          { id: 'entropy',    label: 'Entropy & Thermodynamics' },
+          { id: 'ensembles',  label: 'Statistical Ensembles' },
+          { id: 'phase-transitions', label: 'Phase Transitions' },
+        ],
+      },
+      { id: 'optics', label: 'Optics' },
+    ],
+  },
+  {
+    id: 'mathematics',
+    label: 'Mathematics',
+    children: [
+      {
+        id: 'calculus',
+        label: 'Calculus',
+        children: [
+          { id: 'integration',       label: 'Integration' },
+          { id: 'differentiation',   label: 'Differentiation' },
+          { id: 'multivariable',     label: 'Multivariable Calculus' },
+          { id: 'vector-calculus',   label: 'Vector Calculus' },
+        ],
+      },
+      {
+        id: 'linear-algebra',
+        label: 'Linear Algebra',
+        children: [
+          { id: 'eigenvalues',      label: 'Eigenvalues & Eigenvectors' },
+          { id: 'linear-transforms', label: 'Linear Transformations' },
+          { id: 'inner-products',   label: 'Inner Product Spaces' },
+        ],
+      },
+      {
+        id: 'differential-equations',
+        label: 'Differential Equations',
+        children: [
+          { id: 'odes',  label: 'Ordinary DEs' },
+          { id: 'pdes',  label: 'Partial DEs' },
+        ],
+      },
+      { id: 'fourier-analysis',  label: 'Fourier Analysis' },
+      { id: 'group-theory',      label: 'Group Theory' },
+      { id: 'complex-analysis',  label: 'Complex Analysis' },
+      { id: 'probability',       label: 'Probability & Statistics' },
+    ],
+  },
+]
+
+export const LEVELS = [
+  { id: 'U', label: 'Undergrad',  full: 'Undergraduate' },
+  { id: 'M', label: 'Masters',    full: "Master's" },
+  { id: 'P', label: 'PhD',        full: 'PhD' },
+  { id: 'A', label: 'Academic',   full: 'Academic / Postdoc' },
+]
+
+export function getAllDescendantIds(node) {
+  if (!node.children) return [node.id]
+  return [node.id, ...node.children.flatMap(getAllDescendantIds)]
+}
+
+export function getNodeSelectionState(node, selectedIds) {
+  if (!node.children) return selectedIds.has(node.id) ? 'selected' : 'unselected'
+  const childStates = node.children.map(c => getNodeSelectionState(c, selectedIds))
+  if (childStates.every(s => s === 'selected')) return 'selected'
+  if (childStates.some(s => s !== 'unselected')) return 'partial'
+  return 'unselected'
+}

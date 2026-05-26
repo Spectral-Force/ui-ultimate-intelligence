@@ -1,0 +1,193 @@
+[
+  {
+    "id": "in001",
+    "path": ["mathematics", "calculus", "integration"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "Evaluate the Gaussian integral:",
+    "equation": "\\int_{-\\infty}^{\\infty} e^{-x^2}\\,dx",
+    "passive": {
+      "options": ["$\\sqrt{\\pi}$", "$\\pi$", "$1$", "$\\sqrt{2\\pi}$"],
+      "correct": 0,
+      "explanation": "The standard Gaussian integral equals $\\sqrt{\\pi}$. This is proved by squaring the integral, converting to polar coordinates, and integrating: $I^2 = \\int\\!\\int e^{-(x^2+y^2)}dx\\,dy = \\int_0^{2\\pi}d\\theta\\int_0^\\infty e^{-r^2}r\\,dr = \\pi$, so $I = \\sqrt{\\pi}$."
+    },
+    "active": {
+      "type": "step-order",
+      "prompt": "Order the steps to evaluate $\\int_{-\\infty}^{\\infty} e^{-x^2}\\,dx = I$:",
+      "steps": [
+        {"id": "s1", "text": "Write $I^2 = \\bigl(\\int_{-\\infty}^{\\infty} e^{-x^2}dx\\bigr)\\bigl(\\int_{-\\infty}^{\\infty} e^{-y^2}dy\\bigr) = \\iint e^{-(x^2+y^2)}\\,dx\\,dy$"},
+        {"id": "s2", "text": "Switch to polar coordinates: $x = r\\cos\\theta$, $y = r\\sin\\theta$, area element $dA = r\\,dr\\,d\\theta$"},
+        {"id": "s3", "text": "Integrate: $I^2 = \\int_0^{2\\pi}d\\theta\\int_0^{\\infty} e^{-r^2}r\\,dr = 2\\pi \\cdot \\tfrac{1}{2} = \\pi$"},
+        {"id": "s4", "text": "Since $I > 0$, conclude $I = \\sqrt{\\pi}$"}
+      ],
+      "solution": ["s1", "s2", "s3", "s4"],
+      "explanation": "Squaring the 1D Gaussian produces a 2D Gaussian over the whole plane. In polar coordinates the integrand depends only on $r$, making it separable and exactly integrable. Taking the positive square root gives the famous result $\\sqrt{\\pi}$."
+    }
+  },
+  {
+    "id": "in002",
+    "path": ["mathematics", "calculus", "integration"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "Using integration by parts, evaluate:",
+    "equation": "\\int x\\,e^x\\,dx",
+    "passive": {
+      "options": [
+        "$(x-1)e^x + C$",
+        "$x\\,e^x + C$",
+        "$(x+1)e^x + C$",
+        "$\\frac{x^2}{2}e^x + C$"
+      ],
+      "correct": 0,
+      "explanation": "Setting $u = x$ and $dv = e^x dx$, so $du = dx$ and $v = e^x$: $\\int xe^x dx = xe^x - \\int e^x dx = xe^x - e^x + C = (x-1)e^x + C$."
+    },
+    "active": {
+      "type": "fill-blanks",
+      "prompt": "Set $u = x$, $dv = e^x\\,dx$. Complete the integration by parts result:",
+      "template": ["$\\int x\\,e^x\\,dx = x\\,e^x -$", null, "$+ C$"],
+      "tokens": [
+        {"id": "t1", "latex": "e^x"},
+        {"id": "t2", "latex": "x\\,e^x"},
+        {"id": "t3", "latex": "e^{-x}"},
+        {"id": "t4", "latex": "x\\,e^{-x}"}
+      ],
+      "solution": ["t1"],
+      "explanation": "With $u = x$ and $v = e^x$: $\\int xe^x dx = xe^x - \\int e^x dx = xe^x - e^x + C = (x-1)e^x + C$. The blank is $\\int e^x dx = e^x$, so the final answer factors as $(x-1)e^x + C$."
+    }
+  },
+  {
+    "id": "in003",
+    "path": ["mathematics", "calculus", "integration"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "Evaluate:",
+    "equation": "\\int \\frac{dx}{1 + x^2}",
+    "passive": {
+      "options": [
+        "$\\arctan(x) + C$",
+        "$\\arcsin(x) + C$",
+        "$\\frac{1}{2}\\ln(1+x^2) + C$",
+        "$-\\frac{1}{(1+x^2)^2} + C$"
+      ],
+      "correct": 0,
+      "explanation": "This is a standard result: $\\int dx/(1+x^2) = \\arctan(x) + C$. It follows from the substitution $x = \\tan\\theta$. The $\\ln(1+x^2)/2$ result comes from differentiating, not the integral of $1/(1+x^2)$."
+    }
+  },
+  {
+    "id": "in004",
+    "path": ["mathematics", "calculus", "integration"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "For $a > 0$, the generalised Gaussian integral evaluates to:",
+    "equation": "\\int_{-\\infty}^{\\infty} e^{-ax^2}\\,dx = ?",
+    "passive": {
+      "options": [
+        "$\\sqrt{\\pi/a}$",
+        "$\\pi/a$",
+        "$\\sqrt{\\pi}/a$",
+        "$1/\\sqrt{a}$"
+      ],
+      "correct": 0,
+      "explanation": "Substitute $u = \\sqrt{a}\\,x$: $\\int e^{-ax^2}dx = \\frac{1}{\\sqrt{a}}\\int e^{-u^2}du = \\sqrt{\\pi}/\\sqrt{a} = \\sqrt{\\pi/a}$. This form appears constantly in quantum mechanics (Gaussian wavefunctions) and statistical mechanics (partition functions)."
+    },
+    "active": {
+      "type": "fill-blanks",
+      "prompt": "Use the substitution $u = \\sqrt{a}\\,x$ to complete the result:",
+      "template": ["$\\int_{-\\infty}^{\\infty} e^{-ax^2}\\,dx = \\dfrac{1}{\\sqrt{a}}\\int e^{-u^2}\\,du =$", null],
+      "tokens": [
+        {"id": "t1", "latex": "\\sqrt{\\pi/a}"},
+        {"id": "t2", "latex": "\\sqrt{\\pi}\\,a"},
+        {"id": "t3", "latex": "\\pi/a"},
+        {"id": "t4", "latex": "1/\\sqrt{a}"}
+      ],
+      "solution": ["t1"],
+      "explanation": "The substitution $u = \\sqrt{a}\\,x$ gives $dx = du/\\sqrt{a}$, so the integral becomes $(1/\\sqrt{a})\\int e^{-u^2}du = \\sqrt{\\pi}/\\sqrt{a} = \\sqrt{\\pi/a}$. This is a ubiquitous result in physics — it underlies Gaussian integrals in QM, stat mech, and signal processing."
+    }
+  },
+  {
+    "id": "in005",
+    "path": ["mathematics", "calculus", "integration"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Evaluate using partial fractions:",
+    "equation": "\\int \\frac{dx}{(x-1)(x+2)}",
+    "passive": {
+      "options": [
+        "$\\frac{1}{3}\\ln|x-1| - \\frac{1}{3}\\ln|x+2| + C$",
+        "$\\ln|x-1| - \\ln|x+2| + C$",
+        "$\\frac{1}{2}\\ln|(x-1)(x+2)| + C$",
+        "$\\frac{1}{(x-1)(x+2)} + C$"
+      ],
+      "correct": 0,
+      "explanation": "Decompose: $\\frac{1}{(x-1)(x+2)} = \\frac{A}{x-1} + \\frac{B}{x+2}$. Solving: $A(x+2)+B(x-1)=1$ gives $A=1/3$ (set $x=1$) and $B=-1/3$ (set $x=-2$). Integrating gives $\\frac{1}{3}\\ln|x-1| - \\frac{1}{3}\\ln|x+2| + C$."
+    }
+  },
+  {
+    "id": "in006",
+    "path": ["mathematics", "calculus", "integration"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "By the Fundamental Theorem of Calculus, if $F(x) = \\int_0^x \\sin(t^2)\\,dt$, then $F'(x)$ equals:",
+    "passive": {
+      "options": [
+        "$\\sin(x^2)$",
+        "$\\cos(x^2)$",
+        "$2x\\cos(x^2)$",
+        "$\\sin(x^2)/(2x)$"
+      ],
+      "correct": 0,
+      "explanation": "The first part of the Fundamental Theorem of Calculus states that if $F(x) = \\int_a^x f(t)dt$, then $F'(x) = f(x)$. Here $f(t) = \\sin(t^2)$, so $F'(x) = \\sin(x^2)$. No chain rule is needed since the upper limit is simply $x$ (not a composite function)."
+    }
+  },
+  {
+    "id": "in007",
+    "path": ["mathematics", "calculus", "integration"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The improper integral $\\int_1^{\\infty} x^{-p}\\,dx$ converges if and only if:",
+    "passive": {
+      "options": [
+        "$p > 1$",
+        "$p > 0$",
+        "$p \\geq 1$",
+        "$p > 1/2$"
+      ],
+      "correct": 0,
+      "explanation": "$\\int_1^\\infty x^{-p}dx = [x^{1-p}/(1-p)]_1^\\infty$ for $p \\neq 1$. For $p > 1$ the upper limit vanishes and the integral $= 1/(p-1)$. For $p \\leq 1$ the integral diverges. At $p=1$: $\\int_1^\\infty dx/x = [\\ln x]_1^\\infty = \\infty$. Contrast with $\\int_0^1 x^{-p}dx$, which converges iff $p < 1$."
+    }
+  },
+  {
+    "id": "in008",
+    "path": ["mathematics", "calculus", "integration"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "To convert a double integral $\\iint_D f(x,y)\\,dA$ over the unit disk to polar coordinates, the correct area element is:",
+    "passive": {
+      "options": [
+        "$r\\,dr\\,d\\theta$",
+        "$dr\\,d\\theta$",
+        "$r^2\\,dr\\,d\\theta$",
+        "$(1/r)\\,dr\\,d\\theta$"
+      ],
+      "correct": 0,
+      "explanation": "The Jacobian of the transformation $(x,y) \\to (r,\\theta)$ is $r$, so $dx\\,dy = r\\,dr\\,d\\theta$. The extra $r$ factor is geometrically obvious: an annular sector of width $dr$ and angle $d\\theta$ at radius $r$ has area $r\\,dr\\,d\\theta$."
+    }
+  },
+  {
+    "id": "in009",
+    "path": ["mathematics", "calculus", "integration"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Using the residue theorem, the integral $\\int_{-\\infty}^{\\infty} \\frac{dx}{1+x^4}$ evaluates to:",
+    "passive": {
+      "options": [
+        "$\\pi/\\sqrt{2}$",
+        "$\\pi/2$",
+        "$\\pi$",
+        "$\\pi\\sqrt{2}$"
+      ],
+      "correct": 0,
+      "explanation": "The poles of $1/(1+z^4)$ in the upper half-plane are at $z = e^{i\\pi/4}$ and $z = e^{3i\\pi/4}$. Computing the residues and applying the residue theorem: $\\int_{-\\infty}^\\infty dx/(1+x^4) = 2\\pi i\\sum \\text{Res} = \\pi/\\sqrt{2}$. This technique applies broadly to rational functions with no real poles."
+    }
+  }
+]

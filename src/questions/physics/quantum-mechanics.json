@@ -1,0 +1,105 @@
+[
+  {
+    "id": "qm001",
+    "path": ["physics", "quantum-mechanics"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "The Heisenberg uncertainty principle for position and momentum states:",
+    "passive": {
+      "options": [
+        "$\\Delta x\\,\\Delta p \\geq \\hbar/2$",
+        "$\\Delta x\\,\\Delta p \\geq \\hbar$",
+        "$\\Delta x\\,\\Delta p \\geq h$",
+        "$\\Delta x\\,\\Delta p = 0$ for a coherent state"
+      ],
+      "correct": 0,
+      "explanation": "The Robertson uncertainty relation gives $\\Delta x\\,\\Delta p \\geq \\hbar/2$ for any quantum state. The minimum-uncertainty (coherent) states saturate this bound. The factor of $1/2$ is often misquoted — it arises from the definition $\\Delta A = \\sqrt{\\langle A^2\\rangle - \\langle A\\rangle^2}$."
+    }
+  },
+  {
+    "id": "qm002",
+    "path": ["physics", "quantum-mechanics"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "The canonical commutation relation between the position operator $\\hat{x}$ and momentum operator $\\hat{p}$ is:",
+    "passive": {
+      "options": [
+        "$[\\hat{x},\\,\\hat{p}] = i\\hbar$",
+        "$[\\hat{x},\\,\\hat{p}] = \\hbar$",
+        "$[\\hat{x},\\,\\hat{p}] = 0$",
+        "$[\\hat{x},\\,\\hat{p}] = -i\\hbar$"
+      ],
+      "correct": 0,
+      "explanation": "$[\\hat{x},\\hat{p}] = i\\hbar$ is the fundamental commutator from which the Heisenberg uncertainty principle follows directly via the Robertson inequality. It reflects the non-commutativity of position and momentum measurements."
+    }
+  },
+  {
+    "id": "qm003",
+    "path": ["physics", "quantum-mechanics"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "A two-level atom initially in $|g\\rangle$ is driven on resonance with Rabi frequency $\\Omega$. The probability of finding it in the excited state $|e\\rangle$ at time $t$ is:",
+    "passive": {
+      "options": [
+        "$\\sin^2(\\Omega t/2)$",
+        "$\\cos^2(\\Omega t/2)$",
+        "$\\sin^2(\\Omega t)$",
+        "$\\tfrac{1}{2}(1 - e^{-\\Omega t})$"
+      ],
+      "correct": 0,
+      "explanation": "For resonant driving with no decoherence, $P_e(t) = \\sin^2(\\Omega t/2)$. The system oscillates between $|g\\rangle$ and $|e\\rangle$ at the Rabi frequency — a $\\pi$-pulse ($\\Omega t = \\pi$) inverts the population completely, while a $\\pi/2$-pulse creates an equal superposition."
+    }
+  },
+  {
+    "id": "qm004",
+    "path": ["physics", "quantum-mechanics"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "For a particle in a 1D box of length $L$ with infinite walls, the allowed energy levels are:",
+    "equation": "E_n = \\frac{n^2\\pi^2\\hbar^2}{2mL^2}, \\quad n = 1, 2, 3, \\ldots",
+    "passive": {
+      "options": [
+        "Proportional to $n^2$ — the spacing between levels increases with $n$",
+        "Equally spaced — constant energy step between levels",
+        "Proportional to $n$ — linear spectrum like a harmonic oscillator",
+        "Proportional to $1/n^2$ — levels get closer together at high $n$"
+      ],
+      "correct": 0,
+      "explanation": "The $n^2$ dependence means energy levels are quadratically spaced: $E_2 - E_1 = 3E_1$, $E_3 - E_1 = 8E_1$, etc. This contrasts with the harmonic oscillator (equal spacing $\\hbar\\omega$) and the hydrogen atom ($-E_0/n^2$, converging to zero)."
+    }
+  },
+  {
+    "id": "qm005",
+    "path": ["physics", "quantum-mechanics"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "First-order time-independent perturbation theory gives the energy correction to state $|n\\rangle$ due to a perturbation $\\hat{H}'$ as:",
+    "passive": {
+      "options": [
+        "$E_n^{(1)} = \\langle n|\\hat{H}'|n\\rangle$",
+        "$E_n^{(1)} = \\sum_{m\\neq n} |\\langle m|\\hat{H}'|n\\rangle|^2 / (E_n - E_m)$",
+        "$E_n^{(1)} = \\langle n|\\hat{H}'|n\\rangle^2$",
+        "$E_n^{(1)} = \\text{Tr}(\\hat{H}')$"
+      ],
+      "correct": 0,
+      "explanation": "The first-order energy correction is the expectation value of the perturbation in the unperturbed state: $E_n^{(1)} = \\langle n|\\hat{H}'|n\\rangle$. The second-order correction involves the off-diagonal matrix elements (option B). This is the starting point for understanding Zeeman shifts, Stark shifts, and hyperfine structure."
+    }
+  },
+  {
+    "id": "qm006",
+    "path": ["physics", "quantum-mechanics"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "In the dressed-state picture, an atom–laser system on resonance ($\\delta = 0$) splits into two dressed states separated in energy by:",
+    "passive": {
+      "options": [
+        "$\\hbar\\Omega_R$ (the Rabi frequency splitting)",
+        "$\\hbar\\omega_0$ (the atomic transition frequency)",
+        "$\\hbar\\Gamma$ (the natural linewidth)",
+        "$\\hbar\\delta$ (the detuning, which is zero on resonance)"
+      ],
+      "correct": 0,
+      "explanation": "Diagonalising the Jaynes-Cummings Hamiltonian at resonance gives two dressed states $|\\pm\\rangle = (|g,n+1\\rangle \\pm |e,n\\rangle)/\\sqrt{2}$ separated by the vacuum Rabi splitting $\\hbar\\Omega_R \\propto \\sqrt{n+1}$. This is observable as the Autler-Townes doublet in the fluorescence spectrum."
+    }
+  }
+]
