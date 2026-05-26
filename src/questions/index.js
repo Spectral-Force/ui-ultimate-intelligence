@@ -106,9 +106,35 @@ export const allQuestions = [
   ...electronics,
 ]
 
+/**
+ * Runtime-merged question bank: built-in JSON + user-authored from Dexie.
+ * Components should prefer `useAllQuestions()` (from hooks/useAllQuestions.js)
+ * to get the live-updating list; `allQuestions` here is the static fallback.
+ */
+let _userQuestions = []
+const _listeners = new Set()
+
+export function setUserQuestions(list) {
+  _userQuestions = Array.isArray(list) ? list : []
+  _listeners.forEach(l => l(getAllQuestionsLive()))
+}
+
+export function getAllQuestionsLive() {
+  if (_userQuestions.length === 0) return allQuestions
+  // De-dupe by id: user-authored wins
+  const byId = new Map(allQuestions.map(q => [q.id, q]))
+  for (const q of _userQuestions) byId.set(q.id, q)
+  return [...byId.values()]
+}
+
+export function subscribeQuestions(fn) {
+  _listeners.add(fn)
+  return () => _listeners.delete(fn)
+}
+
 export function filterQuestions(selectedIds, selectedLevels, mode) {
   if (selectedIds.size === 0) return []
-  return allQuestions.filter(q => {
+  return getAllQuestionsLive().filter(q => {
     if (!selectedLevels.has(q.level)) return false
     if (!q.path.some(id => selectedIds.has(id))) return false
     if (!q.modes.includes(mode)) return false

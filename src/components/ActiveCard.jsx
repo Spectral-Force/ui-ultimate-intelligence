@@ -2,6 +2,10 @@ import { useState, useEffect, useRef, forwardRef, useImperativeHandle } from 're
 import MathDisplay from './Math.jsx'
 import RichText from './RichText.jsx'
 import LevelBadge from './LevelBadge.jsx'
+import Figure from './Figure.jsx'
+import HintBlock from './HintBlock.jsx'
+import ConfidencePicker from './ConfidencePicker.jsx'
+import QuestionActions from './QuestionActions.jsx'
 
 // ── helpers ───────────────────────────────────────────────────────────────────
 
@@ -334,6 +338,68 @@ const FillBlanks = forwardRef(function FillBlanks({ active, checked, onReadyChan
   )
 })
 
+// ── NumericInput ──────────────────────────────────────────────────────────────
+// User types a numeric answer; accepted within ±tolerance of `active.answer`.
+// tolerance defaults to 0.05 (5%). Supports scientific notation.
+
+const NumericInput = forwardRef(function NumericInput({ active, checked, onReadyChange }, ref) {
+  const [text, setText] = useState('')
+
+  useEffect(() => { onReadyChange(text.trim().length > 0) }, [text])
+
+  function parseNumber(s) {
+    if (!s) return NaN
+    // Allow "1.5e-6", "1.5×10^-6", "1.5*10^-6", "1.5 × 10⁻⁶"
+    const normalised = s
+      .replace(/\s+/g, '')
+      .replace(/×/g, '*')
+      .replace(/·/g, '*')
+      .replace(/\^/g, '**')
+      .replace(/⁻/g, '-').replace(/⁰/g, '0').replace(/¹/g, '1').replace(/²/g, '2').replace(/³/g, '3')
+      .replace(/⁴/g, '4').replace(/⁵/g, '5').replace(/⁶/g, '6').replace(/⁷/g, '7').replace(/⁸/g, '8').replace(/⁹/g, '9')
+    // Replace "*10**" → "e", "*10" → "e"
+    const sci = normalised
+      .replace(/\*10\*\*([+-]?\d+)/g, 'e$1')
+      .replace(/\*10\^([+-]?\d+)/g, 'e$1')
+    const n = Number(sci)
+    return Number.isFinite(n) ? n : NaN
+  }
+
+  useImperativeHandle(ref, () => ({
+    evaluate: () => {
+      const user = parseNumber(text)
+      const ans  = Number(active.answer)
+      if (!Number.isFinite(user) || !Number.isFinite(ans)) return false
+      const tol = active.tolerance ?? 0.05  // 5% relative tolerance
+      const margin = Math.max(Math.abs(ans) * tol, active.absTolerance ?? 0)
+      return Math.abs(user - ans) <= margin
+    },
+  }), [text, active])
+
+  return (
+    <div className="numeric-input-wrap">
+      <input
+        type="text"
+        className={`numeric-input${checked ? ' checked' : ''}`}
+        value={text}
+        onChange={e => setText(e.target.value)}
+        placeholder={active.placeholder ?? 'Enter your answer'}
+        disabled={checked}
+        autoFocus
+        inputMode="decimal"
+        aria-label="Numeric answer"
+      />
+      {active.unit && <span className="numeric-unit">{active.unit}</span>}
+      {checked && (
+        <div className="numeric-truth">
+          Accepted answer: <strong>{active.displayAnswer ?? active.answer}{active.unit ? ` ${active.unit}` : ''}</strong>
+          {active.tolerance && <span> (±{Math.round(active.tolerance * 100)}%)</span>}
+        </div>
+      )}
+    </div>
+  )
+})
+
 // ── type map ──────────────────────────────────────────────────────────────────
 
 const TYPE_MAP = {
@@ -341,14 +407,21 @@ const TYPE_MAP = {
   'term-match':     TermMatch,
   'step-order':     StepOrder,
   'fill-blanks':    FillBlanks,
+  'numeric':        NumericInput,
 }
 
 // ── main export ───────────────────────────────────────────────────────────────
 
-export default function ActiveCard({ question, questionIndex, total, onAnswer, onNext, onSkip }) {
-  const [checked,   setChecked]   = useState(false)
-  const [isCorrect, setIsCorrect] = useState(false)
-  const [canCheck,  setCanCheck]  = useState(false)
+export default function ActiveCard({
+  question, questionIndex, total,
+  onAnswer, onNext, onSkip,
+  meta, onToggleBookmark, onToggleFlag, onSetNote,
+}) {
+  const [checked,    setChecked]    = useState(false)
+  const [isCorrect,  setIsCorrect]  = useState(false)
+  const [canCheck,   setCanCheck]   = useState(false)
+  const [confidence, setConfidence] = useState(null)
+  const [usedHint,   setUsedHint]   = useState(false)
   const subRef = useRef(null)
 
   const SubComp = TYPE_MAP[question.active?.type]
@@ -358,7 +431,7 @@ export default function ActiveCard({ question, questionIndex, total, onAnswer, o
     const correct = subRef.current.evaluate()
     setIsCorrect(correct)
     setChecked(true)
-    onAnswer(correct)
+    onAnswer({ correct, confidence, usedHint })
   }
 
   return (
@@ -368,7 +441,23 @@ export default function ActiveCard({ question, questionIndex, total, onAnswer, o
         <LevelBadge level={question.level} />
       </div>
 
+      <QuestionActions
+        question={question}
+        meta={meta}
+        onToggleBookmark={onToggleBookmark}
+        onToggleFlag={onToggleFlag}
+        onSetNote={onSetNote}
+      />
+
       <p className="question-text"><RichText text={question.question} /></p>
+
+      {question.equation && (
+        <div className="question-math">
+          <MathDisplay latex={question.equation} display />
+        </div>
+      )}
+
+      {question.figure && <Figure figure={question.figure} />}
 
       {question.active?.prompt && (
         <p className="question-subscript" style={{ marginBottom: 20 }}>
@@ -380,6 +469,13 @@ export default function ActiveCard({ question, questionIndex, total, onAnswer, o
         ? <SubComp ref={subRef} active={question.active} checked={checked} onReadyChange={setCanCheck} />
         : <div className="chart-placeholder-body">Unknown question type: {question.active?.type}</div>
       }
+
+      {!checked && (
+        <>
+          <HintBlock sourceText={question.active?.explanation ?? question.passive?.explanation} onReveal={() => setUsedHint(true)} />
+          <ConfidencePicker value={confidence} onChange={setConfidence} disabled={checked} />
+        </>
+      )}
 
       {checked && (
         <div className="explanation">

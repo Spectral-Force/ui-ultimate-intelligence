@@ -1,12 +1,31 @@
-import { LEVELS } from '../data/categories.js'
+import { useState } from 'react'
 import LevelBadge from './LevelBadge.jsx'
 
-export default function SessionStart({ questionCount, selectedLeafCount, selectedLevels, mode, onStart }) {
+const GOAL_OPTIONS = [
+  { id: null, label: 'All available' },
+  { id: 5,    label: '5 questions'   },
+  { id: 10,   label: '10 questions'  },
+  { id: 20,   label: '20 questions'  },
+  { id: 50,   label: '50 questions'  },
+]
+
+export default function SessionStart({
+  questionCount, selectedLeafCount, selectedLevels, mode,
+  onStart, hasInProgress, onResume,
+}) {
+  const [goal, setGoal] = useState(null)
   const hasQuestions = questionCount > 0
   const topicCount = selectedLeafCount ?? 0
 
   return (
     <div className="question-card" style={{ textAlign: 'center', padding: '36px 28px' }}>
+
+      {hasInProgress && (
+        <div className="resume-banner" role="status">
+          <div className="resume-banner-title">You have an unfinished session</div>
+          <button className="btn btn-primary" onClick={onResume}>Resume →</button>
+        </div>
+      )}
 
       {hasQuestions ? (
         <>
@@ -19,11 +38,32 @@ export default function SessionStart({ questionCount, selectedLeafCount, selecte
             {topicCount > 0 && <> in <strong style={{ color: 'var(--text-primary)' }}>{topicCount}</strong> {topicCount === 1 ? 'topic' : 'topics'}</>}
           </div>
 
-          <div style={{ display: 'flex', justifyContent: 'center', gap: 6, flexWrap: 'wrap', marginBottom: 28 }}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: 6, flexWrap: 'wrap', marginBottom: 18 }}>
             {[...selectedLevels].map(l => <LevelBadge key={l} level={l} />)}
           </div>
 
-          <button className="btn btn-primary" onClick={onStart} style={{ padding: '10px 28px', fontSize: '0.9rem' }}>
+          <div className="session-goal">
+            <span className="session-goal-label">Session length</span>
+            <div className="session-goal-options">
+              {GOAL_OPTIONS.map(opt => (
+                <button
+                  key={String(opt.id)}
+                  className={`session-goal-btn${goal === opt.id ? ' active' : ''}`}
+                  onClick={() => setGoal(opt.id)}
+                  disabled={opt.id !== null && opt.id > questionCount}
+                  title={opt.id !== null && opt.id > questionCount ? 'Not enough questions in pool' : null}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <button
+            className="btn btn-primary"
+            onClick={() => onStart(goal)}
+            style={{ padding: '10px 28px', fontSize: '0.9rem', marginTop: 10 }}
+          >
             Start session →
           </button>
         </>
