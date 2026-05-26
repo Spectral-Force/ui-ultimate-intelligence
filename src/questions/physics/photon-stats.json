@@ -1,0 +1,117 @@
+[
+  {
+    "id": "ps001",
+    "path": ["physics", "quantum-mechanics", "quantum-optics", "photon-stats"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "The Mandel $Q$ parameter characterises the photon statistics of a light field relative to Poissonian (coherent state) statistics:",
+    "equation": "Q = \\frac{\\langle(\\Delta n)^2\\rangle - \\langle n\\rangle}{\\langle n\\rangle}",
+    "passive": {
+      "options": [
+        "$Q < 0$: sub-Poissonian (non-classical, squeezed number); $Q = 0$: Poissonian (coherent); $Q > 0$: super-Poissonian (thermal/bunched)",
+        "$Q > 0$ is non-classical; $Q = 0$ is thermal",
+        "$Q$ is always positive for quantum light",
+        "Thermal light has $Q = 0$"
+      ],
+      "correct": 0,
+      "explanation": "A coherent state $|\\alpha\\rangle$ has Poissonian statistics: $\\langle(\\Delta n)^2\\rangle = \\langle n\\rangle$, so $Q = 0$. Thermal light: $\\langle(\\Delta n)^2\\rangle = \\langle n\\rangle + \\langle n\\rangle^2$, giving $Q = \\langle n\\rangle > 0$. Fock states $|n\\rangle$ have $Q = -1$ (minimum). Sub-Poissonian light ($Q < 0$) has no classical analogue and requires a quantum description. It is produced by antibunched single-photon emitters."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each light state to its photon statistics:",
+      "pairs": [
+        {"id": "p1", "term": "Coherent state $|\\alpha\\rangle$", "definition": "Poissonian: $Q = 0$, $\\langle(\\Delta n)^2\\rangle = \\langle n\\rangle$"},
+        {"id": "p2", "term": "Thermal (blackbody) light", "definition": "Super-Poissonian: $Q = \\langle n\\rangle > 0$, photon bunching"},
+        {"id": "p3", "term": "Fock state $|n\\rangle$", "definition": "Sub-Poissonian: $Q = -1$, zero number fluctuation"},
+        {"id": "p4", "term": "Squeezed vacuum", "definition": "Sub-Poissonian photon number but non-zero vacuum fluctuations in phase quadrature"}
+      ],
+      "explanation": "The Hanbury Brown–Twiss experiment measures $g^{(2)}(\\tau)$ to distinguish these cases: $g^{(2)}(0) = 0$ for Fock state, $g^{(2)}(0) = 1$ for coherent, $g^{(2)}(0) = 2$ for thermal. Sub-Poissonian requires $g^{(2)}(0) < 1$."
+    }
+  },
+  {
+    "id": "ps002",
+    "path": ["physics", "quantum-mechanics", "quantum-optics", "photon-stats"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The second-order coherence function $g^{(2)}(\\tau)$ for a field is defined as:",
+    "equation": "g^{(2)}(\\tau) = \\frac{\\langle:\\hat{n}(t)\\hat{n}(t+\\tau):\\rangle}{\\langle\\hat{n}\\rangle^2}",
+    "passive": {
+      "options": [
+        "$g^{(2)}(0) < 1$: photon antibunching (non-classical); $g^{(2)}(0) = 1$: coherent; $g^{(2)}(0) = 2$: thermal (Hanbury Brown-Twiss effect)",
+        "$g^{(2)}(0) = 2$ always for quantum fields",
+        "Classical fields always have $g^{(2)}(0) < 1$",
+        "$g^{(2)}(\\tau)$ is always constant for monochromatic light"
+      ],
+      "correct": 0,
+      "explanation": "The HBT experiment (1956) measured $g^{(2)}(\\tau) > 1$ for thermal starlight — photon bunching. Mandel (1977) demonstrated antibunching from a single atom: $g^{(2)}(0) = 0$, a hallmark of a single-photon source. Single-photon emitters (quantum dots, NV centres, single atoms) are characterised by this measurement. Antibunching has no classical wave explanation and is definitive evidence for photon quantisation."
+    }
+  },
+  {
+    "id": "ps003",
+    "path": ["physics", "quantum-mechanics", "quantum-optics", "photon-stats"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "A coherent state $|\\alpha\\rangle$ is defined as an eigenstate of the annihilation operator: $\\hat{a}|\\alpha\\rangle = \\alpha|\\alpha\\rangle$. Its photon number distribution is:",
+    "passive": {
+      "options": [
+        "Poissonian: $P(n) = e^{-|\\alpha|^2}|\\alpha|^{2n}/n!$ with mean $\\bar{n} = |\\alpha|^2$ and variance equal to mean",
+        "Binomial with parameter $|\\alpha|$",
+        "Uniform over all $n$",
+        "Thermal Bose-Einstein with mean $|\\alpha|^2$"
+      ],
+      "correct": 0,
+      "explanation": "A coherent state $|\\alpha\\rangle = e^{-|\\alpha|^2/2}\\sum_n (\\alpha^n/\\sqrt{n!})|n\\rangle$ has Poissonian photon statistics because successive photons are emitted independently. Coherent states are the quantum states closest to classical radiation fields — they satisfy the Heisenberg minimum uncertainty and have equal amplitude and phase fluctuations. Laser light above threshold is well described as a coherent state."
+    }
+  },
+  {
+    "id": "ps004",
+    "path": ["physics", "quantum-mechanics", "quantum-optics", "photon-stats"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The Wigner function $W(x, p)$ is a quasiprobability distribution on phase space. For a coherent state it is a Gaussian, for a Fock state $|n\\rangle$:",
+    "passive": {
+      "options": [
+        "The Wigner function takes negative values — a signature of non-classicality that has no classical phase-space analogue",
+        "The Wigner function is always positive for any quantum state",
+        "The Wigner function of $|1\\rangle$ is a ring (donut) that is always positive",
+        "The Wigner function equals the classical probability distribution for Fock states"
+      ],
+      "correct": 0,
+      "explanation": "The Wigner function for $|n\\rangle$ is $W(r,\\phi) = (-1)^n (2/\\pi) L_n(4r^2) e^{-2r^2}$ where $L_n$ are Laguerre polynomials. For $n \\geq 1$ this takes negative values near the origin. Wigner negativity is a necessary condition for non-classicality and a resource in quantum computation. Tomographic reconstruction of $W$ via homodyne detection is standard in quantum optics experiments."
+    }
+  },
+  {
+    "id": "ps005",
+    "path": ["physics", "quantum-mechanics", "quantum-optics", "photon-stats"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Shot noise in optical measurements arises from Poissonian photon detection statistics. The shot-noise-limited signal-to-noise ratio for detecting $N$ photons is:",
+    "passive": {
+      "options": [
+        "$\\rm SNR = \\sqrt{N}$ — detection of $N$ photons gives noise $\\sqrt{N}$, setting the standard quantum limit for optical measurements",
+        "$\\rm SNR = N$ for coherent detection",
+        "$\\rm SNR = N^2$ for homodyne detection",
+        "Shot noise can be fully eliminated with coherent states"
+      ],
+      "correct": 0,
+      "explanation": "For Poissonian detection of $N$ photons: signal $\\propto N$, noise $\\propto \\sqrt{N}$, $\\rm SNR = \\sqrt{N}$. Shot noise sets the standard quantum limit (SQL) for interferometry. Squeezed light redistributes quantum noise between quadratures: reduced noise in the signal quadrature at the cost of excess noise in the conjugate. LIGO uses squeezed light injection to push below the SQL at high frequencies, improving gravitational wave sensitivity."
+    }
+  },
+  {
+    "id": "ps006",
+    "path": ["physics", "quantum-mechanics", "quantum-optics", "photon-stats"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "The Jaynes-Cummings model describes a two-level atom coupled to a single cavity mode. The vacuum Rabi frequency $g$ sets the coupling strength. In the resonant case ($\\omega_{\\rm atom} = \\omega_{\\rm cavity}$), starting from $|e,0\\rangle$ (atom excited, no photons), the state evolves as:",
+    "passive": {
+      "options": [
+        "$|\\psi(t)\\rangle = \\cos(gt)|e,0\\rangle - i\\sin(gt)|g,1\\rangle$ — vacuum Rabi oscillations between atom and cavity",
+        "The atom decays irreversibly into the cavity with rate $g$",
+        "The state oscillates at frequency $\\omega_{\\rm cavity}$ regardless of $g$",
+        "The coupling creates a steady thermal state after one Rabi period"
+      ],
+      "correct": 0,
+      "explanation": "Vacuum Rabi oscillations are a uniquely quantum effect: the atom periodically emits and reabsorbs a single photon from the vacuum field. The dressed states (polaritons) are split by $2g$ (vacuum Rabi splitting). Strong coupling regime requires $g \\gg \\kappa, \\gamma$ (cavity loss rate and spontaneous emission rate). Demonstrated with Rydberg atoms in microwave cavities (Haroche, Nobel 2012) and superconducting qubits in circuit QED."
+    }
+  }
+]

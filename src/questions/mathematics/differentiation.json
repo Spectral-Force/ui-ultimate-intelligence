@@ -1,0 +1,149 @@
+[
+  {
+    "id": "df001",
+    "path": ["mathematics", "calculus", "differentiation"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "The chain rule for differentiating a composite function $f(g(x))$ states:",
+    "equation": "\\frac{d}{dx}f(g(x)) = f'(g(x))\\cdot g'(x)",
+    "passive": {
+      "options": [
+        "Differentiate the outer function (evaluated at the inner), multiply by the derivative of the inner function",
+        "Differentiate both functions and add",
+        "Differentiate the inner function, then substitute into the outer function",
+        "The chain rule only applies when $g(x)$ is linear"
+      ],
+      "correct": 0,
+      "explanation": "Example: $\\frac{d}{dx}\\sin(x^2) = \\cos(x^2) \\cdot 2x$. The outer function is $\\sin(\\cdot)$, derivative $\\cos(\\cdot)$; the inner function is $x^2$, derivative $2x$. In physics the chain rule underlies virtually every calculation: $dE/dt = (\\partial E/\\partial x)(dx/dt) + (\\partial E/\\partial p)(dp/dt)$, the total derivative of a Hamiltonian."
+    },
+    "active": {
+      "type": "equation-order",
+      "prompt": "Arrange to form the chain rule:",
+      "tokens": [
+        {"id": "t1", "latex": "\\frac{d}{dx}f(g(x))"},
+        {"id": "t2", "latex": "="},
+        {"id": "t3", "latex": "f'(g(x))"},
+        {"id": "t4", "latex": "\\cdot"},
+        {"id": "t5", "latex": "g'(x)"}
+      ],
+      "solution": ["t1", "t2", "t3", "t4", "t5"],
+      "explanation": "Chain rule: $\\frac{d}{dx}f(g(x)) = f'(g(x))\\cdot g'(x)$. Outer function derivative times inner function derivative."
+    }
+  },
+  {
+    "id": "df002",
+    "path": ["mathematics", "calculus", "differentiation"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "The product rule for differentiating $f(x)g(x)$ is:",
+    "passive": {
+      "options": [
+        "$(fg)' = f'g + fg'$",
+        "$(fg)' = f'g'$",
+        "$(fg)' = f'g - fg'$",
+        "$(fg)' = (f+g)'$"
+      ],
+      "correct": 0,
+      "explanation": "$(fg)' = f'g + fg'$ — 'first times derivative of second plus derivative of first times second'. The quotient rule $(f/g)' = (f'g - fg')/g^2$ follows from applying the product rule to $f \\cdot (1/g)$ with the chain rule for $1/g$. In quantum mechanics: $d\\langle A\\rangle/dt = \\langle\\dot{A}\\rangle + i\\langle[H,A]\\rangle/\\hbar$ is essentially the product rule applied to $\\langle\\psi|A|\\psi\\rangle$."
+    }
+  },
+  {
+    "id": "df003",
+    "path": ["mathematics", "calculus", "differentiation"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "L'Hôpital's rule resolves indeterminate forms of type $0/0$ or $\\infty/\\infty$. If $\\lim_{x\\to a} f(x)/g(x)$ is indeterminate, then:",
+    "passive": {
+      "options": [
+        "$\\lim_{x\\to a}\\dfrac{f(x)}{g(x)} = \\lim_{x\\to a}\\dfrac{f'(x)}{g'(x)}$ provided the limit on the right exists",
+        "$\\lim_{x\\to a}\\dfrac{f(x)}{g(x)} = \\dfrac{f'(a)}{g'(a)}$ always",
+        "$\\lim_{x\\to a}\\dfrac{f(x)}{g(x)} = \\lim_{x\\to a}(f'(x)\\cdot g'(x))$",
+        "$\\lim_{x\\to a}\\dfrac{f(x)}{g(x)} = 0$ whenever $f(a) = 0$"
+      ],
+      "correct": 0,
+      "explanation": "Example: $\\lim_{x\\to 0}(\\sin x/x) = \\lim_{x\\to 0}(\\cos x/1) = 1$. L'Hôpital can be applied repeatedly if the result is still indeterminate. Other indeterminate forms ($0 \\cdot \\infty$, $1^\\infty$, $0^0$) can be converted to $0/0$ or $\\infty/\\infty$ by algebraic manipulation. In physics, sinc functions and similar appear constantly in Fourier transforms and diffraction."
+    }
+  },
+  {
+    "id": "df004",
+    "path": ["mathematics", "calculus", "differentiation"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "The Taylor series expansion of $f(x)$ around $x = a$ is:",
+    "equation": "f(x) = \\sum_{n=0}^{\\infty}\\frac{f^{(n)}(a)}{n!}(x-a)^n",
+    "passive": {
+      "options": [
+        "Truncated to first order: $f(x) \\approx f(a) + f'(a)(x-a)$ — linear approximation valid when $|x-a| \\ll 1$",
+        "The series always converges for all $x$",
+        "$f^{(n)}(a)$ is the $n$-th integral of $f$",
+        "The series requires $f$ to be periodic"
+      ],
+      "correct": 0,
+      "explanation": "The linear approximation $f(x) \\approx f(a) + f'(a)(x-a)$ is the basis of small-angle approximations (pendulum: $\\sin\\theta \\approx \\theta$), linearisation of ODEs around fixed points, and the harmonic approximation to interatomic potentials. The quadratic term gives the effective spring constant $k = f''(a)$ for small oscillations."
+    },
+    "active": {
+      "type": "fill-blanks",
+      "prompt": "The general term of the Taylor series is:",
+      "template": ["$a_n = $", null, "$(x-a)^n$"],
+      "tokens": [
+        {"id": "t1", "latex": "f^{(n)}(a)/n!"},
+        {"id": "t2", "latex": "f^{(n)}(a)"},
+        {"id": "t3", "latex": "f(a)/n!"},
+        {"id": "t4", "latex": "n!\\,f^{(n)}(a)"}
+      ],
+      "solution": ["t1"],
+      "explanation": "The $n$-th Taylor coefficient is $f^{(n)}(a)/n!$. The $n!$ factorial arises because differentiating $(x-a)^n$ $n$ times gives $n!$, which must be divided out to recover $f^{(n)}(a)$."
+    }
+  },
+  {
+    "id": "df005",
+    "path": ["mathematics", "calculus", "differentiation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Implicit differentiation is used when $y$ is defined implicitly by $F(x, y) = 0$. The derivative $dy/dx$ is:",
+    "passive": {
+      "options": [
+        "$dy/dx = -(\\partial F/\\partial x)/(\\partial F/\\partial y)$",
+        "$dy/dx = (\\partial F/\\partial y)/(\\partial F/\\partial x)$",
+        "$dy/dx = \\partial F/\\partial x$",
+        "$dy/dx = -\\partial F/\\partial y$"
+      ],
+      "correct": 0,
+      "explanation": "Differentiating $F(x,y)=0$ with respect to $x$ and using the chain rule: $F_x + F_y\\,(dy/dx) = 0$, giving $dy/dx = -F_x/F_y$. Example: for $x^2 + y^2 = r^2$ (circle), $F_x = 2x$, $F_y = 2y$, so $dy/dx = -x/y$. This formula is the precursor to the implicit function theorem and appears in thermodynamic triple products: $(\\partial x/\\partial y)_z(\\partial y/\\partial z)_x(\\partial z/\\partial x)_y = -1$."
+    }
+  },
+  {
+    "id": "df006",
+    "path": ["mathematics", "calculus", "differentiation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The derivative of $e^x$ is $e^x$. This unique self-referential property means the exponential function is an eigenfunction of the derivative operator $d/dx$ with eigenvalue 1. More generally, for $e^{ax}$:",
+    "passive": {
+      "options": [
+        "$d/dx(e^{ax}) = ae^{ax}$ — eigenfunction of $d/dx$ with eigenvalue $a$",
+        "$d/dx(e^{ax}) = e^{ax}/a$",
+        "$d/dx(e^{ax}) = ae^{ax-1}$",
+        "$d/dx(e^{ax}) = a^2 e^{ax}$"
+      ],
+      "correct": 0,
+      "explanation": "Exponential functions are eigenfunctions of the derivative operator: $d/dx\\,e^{ax} = a\\,e^{ax}$. This is why exponential (and trigonometric) ansätze work for linear ODEs with constant coefficients — substituting $y = e^{ax}$ turns a differential equation into an algebraic one in $a$. In quantum mechanics, plane waves $e^{ikx}$ are eigenfunctions of $\\hat{p} = -i\\hbar\\,d/dx$ with eigenvalue $\\hbar k$."
+    }
+  },
+  {
+    "id": "df007",
+    "path": ["mathematics", "calculus", "differentiation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "At a critical point $x_c$ where $f'(x_c) = 0$, the second derivative test classifies the critical point. If $f''(x_c) > 0$ then:",
+    "passive": {
+      "options": [
+        "Local minimum — the function is concave up at $x_c$",
+        "Local maximum — the function is concave down at $x_c$",
+        "Inflection point — the function changes concavity",
+        "The test is inconclusive"
+      ],
+      "correct": 0,
+      "explanation": "$f''(x_c) > 0$: concave up → local minimum; $f''(x_c) < 0$: concave down → local maximum; $f''(x_c) = 0$: test inconclusive (may be inflection, or higher-order extremum). In physics, this is the criterion for stable equilibrium: a potential energy minimum ($V'' > 0$) gives a restoring force and oscillatory motion; a maximum ($V'' < 0$) is unstable."
+    }
+  }
+]

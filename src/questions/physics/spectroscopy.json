@@ -1,0 +1,148 @@
+[
+  {
+    "id": "sp001",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "spectroscopy"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "The selection rules for electric dipole (E1) transitions between atomic states $|n,l,m_l,m_s\\rangle$ require:",
+    "passive": {
+      "options": [
+        "$\\Delta l = \\pm 1$, $\\Delta m_l = 0, \\pm 1$, and $\\Delta s = 0$ (spin unchanged by E1)",
+        "$\\Delta l = 0, \\pm 1, \\pm 2$ and $\\Delta m_l = \\pm 1$ only",
+        "$\\Delta n = \\pm 1$ and $\\Delta l = \\pm 1$",
+        "$\\Delta l = 0$ is forbidden; $\\Delta l = \\pm 2$ is allowed"
+      ],
+      "correct": 0,
+      "explanation": "E1 selection rules come from the matrix element $\\langle f|\\mathbf{r}|i\\rangle \\neq 0$. The dipole operator $\\mathbf{r}$ has odd parity, so initial and final states must have opposite parity ($\\Delta l = \\pm 1$ satisfies this). $|\\Delta m_l| \\leq 1$ comes from the spherical harmonic selection rules. Spin is unaffected because the dipole operator does not act on spin. The $5S \\to 5P$ transition in Rb obeys all these rules."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each transition type to its selection rules:",
+      "pairs": [
+        {"id": "p1", "term": "Electric dipole (E1)", "definition": "$\\Delta l = \\pm 1$, $\\Delta m_l = 0,\\pm 1$, $\\Delta s = 0$"},
+        {"id": "p2", "term": "Magnetic dipole (M1)", "definition": "$\\Delta l = 0$, $\\Delta m_l = 0,\\pm 1$, $\\Delta s = 0,\\pm 1$"},
+        {"id": "p3", "term": "Electric quadrupole (E2)", "definition": "$\\Delta l = 0,\\pm 2$, $\\Delta m_l = 0,\\pm 1,\\pm 2$"},
+        {"id": "p4", "term": "Forbidden transition", "definition": "Violates E1 but may be allowed by M1 or E2 — much weaker, longer lifetime"}
+      ],
+      "explanation": "E1 transitions are fastest (ns lifetimes). M1 and E2 are slower by factors of $(v/c)^2 \\sim 10^{-5}$. Clock transitions in Sr ($^1S_0 \\to ^3P_0$, doubly forbidden) are so narrow ($Q \\sim 10^{17}$) they make the world's best frequency standards."
+    }
+  },
+  {
+    "id": "sp002",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "spectroscopy"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "The natural linewidth $\\Gamma$ of an atomic transition is related to the excited-state lifetime $\\tau$ by:",
+    "equation": "\\Gamma = 1/\\tau",
+    "passive": {
+      "options": [
+        "By the energy-time uncertainty principle: $\\Delta E \\cdot \\tau \\sim \\hbar$, giving a Lorentzian lineshape with FWHM $= \\Gamma/2\\pi$",
+        "The linewidth is determined by the ground-state lifetime",
+        "Longer-lived states have broader linewidths",
+        "$\\Gamma = 2\\pi/\\tau$"
+      ],
+      "correct": 0,
+      "explanation": "The excited state decays exponentially $\\rho_{ee}(t) \\propto e^{-\\Gamma t}$, and the Fourier transform of this exponential is a Lorentzian with FWHM $= \\Gamma$ (in rad/s) or $\\Gamma/2\\pi$ (in Hz). For $^{87}$Rb D$_2$: $\\tau = 26.2$ ns, $\\Gamma/2\\pi = 6.07$ MHz. For the Sr clock transition: $\\tau \\sim 160$ s, $\\Gamma/2\\pi \\sim 1$ mHz — an extraordinary quality factor."
+    }
+  },
+  {
+    "id": "sp003",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "spectroscopy"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Doppler broadening of a spectral line for atoms with a Maxwell-Boltzmann velocity distribution produces a Gaussian lineshape with FWHM:",
+    "equation": "\\Delta\\nu_D = \\frac{\\nu_0}{c}\\sqrt{\\frac{8k_BT\\ln 2}{m}}",
+    "passive": {
+      "options": [
+        "Doppler broadening is inhomogeneous — different atoms contribute at different frequencies depending on their velocity",
+        "Doppler broadening produces a Lorentzian lineshape",
+        "The FWHM is independent of atomic mass",
+        "Doppler broadening is suppressed at higher laser intensities"
+      ],
+      "correct": 0,
+      "explanation": "Inhomogeneous broadening: each velocity class $v$ absorbs at $\\nu = \\nu_0(1 + v/c)$, and the Maxwell-Boltzmann distribution of $v$ maps to a Gaussian distribution of $\\nu$. For Rb at 300 K: $\\Delta\\nu_D \\approx 500$ MHz — much larger than $\\Gamma/2\\pi = 6$ MHz. Techniques like saturation spectroscopy and two-photon spectroscopy eliminate Doppler broadening to reach the natural linewidth."
+    }
+  },
+  {
+    "id": "sp004",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "spectroscopy"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "In saturated absorption spectroscopy, a weak probe and strong counter-propagating pump beam are used to eliminate Doppler broadening. A Lamb dip appears at line centre because:",
+    "passive": {
+      "options": [
+        "At $\\nu = \\nu_0$, both beams address the $v = 0$ velocity class; the pump saturates the transition, reducing probe absorption",
+        "The two beams interfere constructively at line centre",
+        "The Doppler shift cancels only at the Nyquist frequency",
+        "The pump heats atoms at line centre, depleting the resonant velocity class"
+      ],
+      "correct": 0,
+      "explanation": "Off resonance, each beam addresses a different velocity class (pump at $v$, probe at $-v$). At line centre ($\\nu = \\nu_0$), both beams interact with $v = 0$ atoms. The pump bleaches the $v = 0$ population, leaving fewer atoms to absorb the probe — a dip in probe transmission (Lamb dip). This gives Doppler-free spectroscopy at a fraction of the natural linewidth, used to lock laser frequencies to atomic transitions."
+    },
+    "active": {
+      "type": "step-order",
+      "prompt": "Order the steps explaining the Lamb dip in saturated absorption spectroscopy:",
+      "steps": [
+        {"id": "s1", "text": "Scan probe laser frequency through the Doppler-broadened absorption profile"},
+        {"id": "s2", "text": "Off-resonance: pump and probe address different velocity classes ($\\pm v$) — pump doesn't affect probe absorption"},
+        {"id": "s3", "text": "At line centre ($\\nu = \\nu_0$): both beams resonant with $v = 0$ atoms; pump saturates this velocity class"},
+        {"id": "s4", "text": "Fewer $v = 0$ atoms available to absorb probe → dip in probe absorption at $\\nu_0$ (Lamb dip)"}
+      ],
+      "solution": ["s1", "s2", "s3", "s4"],
+      "explanation": "The Lamb dip has width $\\sim \\Gamma$ (natural linewidth) sitting on top of the broad Doppler profile. It is used as a frequency reference for locking lasers to better than 1 MHz. Crossover resonances occur at the average frequency of two transitions and are often the strongest features."
+    }
+  },
+  {
+    "id": "sp005",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "spectroscopy"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Zeeman effect splits atomic energy levels in an external magnetic field $B$. For a state with total angular momentum $F$ and $g$-factor $g_F$, the energy shift of sublevel $m_F$ is:",
+    "equation": "\\Delta E = g_F\\mu_B m_F B",
+    "passive": {
+      "options": [
+        "The linear Zeeman effect gives $2F+1$ equally spaced sublevels; $g_F$ depends on the coupling of $L$, $S$, and $I$",
+        "The energy shift is quadratic in $B$ for all field strengths",
+        "$g_F = 1$ for all states",
+        "The Zeeman shift is independent of the nuclear spin"
+      ],
+      "correct": 0,
+      "explanation": "The linear Zeeman effect holds when $\\Delta E_{\\rm Zeeman} \\ll \\Delta E_{\\rm hfs}$ (weak field). For $^{87}$Rb $F=2$, $g_F \\approx +1/2$, giving a shift of $\\sim 0.7$ MHz/G per $m_F$. At high fields (Paschen-Back regime), $J$ and $I$ decouple. The Zeeman effect is exploited in MOTs (position-dependent restoring force) and magnetic traps (trapping weak-field-seeking states with $g_Fm_F > 0$)."
+    }
+  },
+  {
+    "id": "sp006",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "spectroscopy"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Beer-Lambert law describes the attenuation of laser intensity $I$ passing through an absorbing medium of number density $n$ and cross-section $\\sigma$:",
+    "equation": "\\frac{dI}{dz} = -n\\sigma I \\implies I(z) = I_0 e^{-n\\sigma z}",
+    "passive": {
+      "options": [
+        "At saturation ($I \\gg I_{\\rm sat}$), the effective cross-section $\\sigma_{\\rm eff} = \\sigma/(1 + I/I_{\\rm sat})$ is reduced and the medium becomes transparent",
+        "The Beer-Lambert law is exact for all intensities",
+        "The absorption coefficient $n\\sigma$ increases with intensity",
+        "$\\sigma$ is independent of laser detuning from resonance"
+      ],
+      "correct": 0,
+      "explanation": "The on-resonance absorption cross-section is $\\sigma_0 = \\hbar\\omega\\Gamma/2I_{\\rm sat}$. At saturation, stimulated emission balances absorption and the medium bleaches. The saturation intensity $I_{\\rm sat} = \\pi hc\\Gamma/3\\lambda^3$ for a two-level atom. For Rb at 780 nm: $I_{\\rm sat} \\approx 1.67$ mW/cm$^2$. This bleaching is exploited in saturated absorption spectroscopy and optical trapping."
+    }
+  },
+  {
+    "id": "sp007",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "spectroscopy"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "The Lamb shift in hydrogen arises from QED vacuum fluctuations. Its most famous manifestation is the splitting between the $2S_{1/2}$ and $2P_{1/2}$ levels, which are degenerate in the Dirac theory. The Lamb shift is approximately:",
+    "passive": {
+      "options": [
+        "1057 MHz — measurable by microwave spectroscopy and a landmark test of QED",
+        "6.07 MHz — equal to the D$_2$ natural linewidth",
+        "1.42 GHz — the hyperfine splitting of hydrogen",
+        "13.6 eV — the ionisation energy of hydrogen"
+      ],
+      "correct": 0,
+      "explanation": "The Lamb shift (1947, Lamb and Retherford) was the first direct evidence for quantum vacuum fluctuations modifying the electron's interaction with the nucleus. The dominant contribution comes from the electron's interaction with virtual photons, effectively smearing the electron's charge over a region $\\delta r \\sim \\alpha(\\hbar/mc)\\ln(1/\\alpha)$. This reduces the $2S_{1/2}$ binding energy (which samples the nucleus at short range) relative to $2P_{1/2}$. It launched the development of renormalised QED by Bethe, Schwinger, Feynman, and Tomonaga."
+    }
+  }
+]

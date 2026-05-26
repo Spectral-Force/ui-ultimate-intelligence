@@ -1,0 +1,100 @@
+[
+  {
+    "id": "dc001",
+    "path": ["physics", "quantum-mechanics", "quantum-information", "decoherence"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "Decoherence occurs when a quantum system $S$ becomes entangled with its environment $E$, causing the reduced density matrix of $S$ to lose its off-diagonal coherences. For a qubit superposition $|\\psi\\rangle = \\alpha|0\\rangle + \\beta|1\\rangle$, the density matrix evolves from:",
+    "passive": {
+      "options": [
+        "Pure state $|\\alpha|^2|0\\rangle\\langle 0| + \\alpha\\beta^*|0\\rangle\\langle 1| + \\alpha^*\\beta|1\\rangle\\langle 0| + |\\beta|^2|1\\rangle\\langle 1|$ to diagonal mixture $|\\alpha|^2|0\\rangle\\langle 0| + |\\beta|^2|1\\rangle\\langle 1|$",
+        "From a mixture to a pure state as the environment is traced out",
+        "Decoherence increases the off-diagonal elements over time",
+        "The diagonal elements change but off-diagonal elements are preserved"
+      ],
+      "correct": 0,
+      "explanation": "When $S$ and $E$ entangle: $|\\psi\\rangle_S|0\\rangle_E \\to \\alpha|0\\rangle_S|e_0\\rangle_E + \\beta|1\\rangle_S|e_1\\rangle_E$. Tracing over $E$: $\\rho_S = |\\alpha|^2|0\\rangle\\langle 0| + |\\beta|^2|1\\rangle\\langle 1| + \\alpha\\beta^*\\langle e_1|e_0\\rangle|0\\rangle\\langle 1| + \\text{h.c.}$ If $|e_0\\rangle, |e_1\\rangle$ become orthogonal (environment 'measures'), coherences vanish. The pointer basis (decoherence basis) is the one that survives — typically energy eigenstates."
+    },
+    "active": {
+      "type": "step-order",
+      "prompt": "Order the stages of decoherence for a qubit coupled to a measurement environment:",
+      "steps": [
+        {"id": "s1", "text": "Qubit prepared in superposition $|\\psi\\rangle = (|0\\rangle + |1\\rangle)/\\sqrt{2}$ — pure state, Bloch vector on equator"},
+        {"id": "s2", "text": "System-environment interaction entangles qubit with environment: $|\\psi\\rangle|E_0\\rangle \\to (|0\\rangle|E_0\\rangle + |1\\rangle|E_1\\rangle)/\\sqrt{2}$"},
+        {"id": "s3", "text": "Environment states $|E_0\\rangle, |E_1\\rangle$ become approximately orthogonal as environment evolves"},
+        {"id": "s4", "text": "Reduced density matrix of qubit becomes $I/2$ — Bloch vector shrinks to origin, coherences lost"}
+      ],
+      "solution": ["s1", "s2", "s3", "s4"],
+      "explanation": "Decoherence is fast: for a macroscopic object, $T_\\phi \\sim \\hbar/(k_BT) \\sim 10^{-13}$ s at room temperature, explaining why Schrödinger cat states are never observed macroscopically. For carefully isolated qubits (ion traps, superconductors at mK), $T_2$ can reach seconds."
+    }
+  },
+  {
+    "id": "dc002",
+    "path": ["physics", "quantum-mechanics", "quantum-information", "decoherence"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Lindblad master equation describes Markovian open quantum system dynamics. For a system with Lindblad operators $L_k$ and Hamiltonian $H$:",
+    "equation": "\\dot{\\rho} = -\\frac{i}{\\hbar}[H,\\rho] + \\sum_k\\left(L_k\\rho L_k^\\dagger - \\frac{1}{2}L_k^\\dagger L_k\\rho - \\frac{1}{2}\\rho L_k^\\dagger L_k\\right)",
+    "passive": {
+      "options": [
+        "The Lindblad form guarantees $\\rho$ remains positive-definite and trace-preserving — the most general Markovian quantum channel",
+        "The Lindblad equation requires the system to be in thermal equilibrium with the environment",
+        "The jump operators $L_k$ must be Hermitian",
+        "The Lindblad equation only applies when the environment has a flat spectrum"
+      ],
+      "correct": 0,
+      "explanation": "Physical examples of Lindblad operators: $L = \\sqrt{\\Gamma}|g\\rangle\\langle e|$ (spontaneous emission with rate $\\Gamma$); $L = \\sqrt{\\Gamma_{\\rm dep}}\\sigma_z$ (dephasing); $L = \\sqrt{n_{\\rm th}\\kappa}a^\\dagger, \\sqrt{(1+n_{\\rm th})\\kappa}a$ (cavity with thermal bath). The Markovian approximation holds when the environment correlation time $\\tau_E \\ll$ system relaxation time — valid for optical cavities and atoms in free space."
+    }
+  },
+  {
+    "id": "dc003",
+    "path": ["physics", "quantum-mechanics", "quantum-information", "decoherence"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The $T_1$ and $T_2$ relaxation times characterise qubit decoherence. For a qubit with energy splitting $\\hbar\\omega_0$:",
+    "passive": {
+      "options": [
+        "$T_1$ (longitudinal, energy relaxation) describes decay of $\\langle\\sigma_z\\rangle$; $T_2$ (transverse, dephasing) describes decay of $\\langle\\sigma_x\\rangle$ and $\\langle\\sigma_y\\rangle$; always $T_2 \\leq 2T_1$",
+        "$T_2 \\geq 2T_1$ always by the uncertainty principle",
+        "$T_1$ is always shorter than $T_2$ for atomic qubits",
+        "$T_1 = T_2$ for a two-level atom in free space"
+      ],
+      "correct": 0,
+      "explanation": "$1/T_2 = 1/(2T_1) + 1/T_\\phi$ where $T_\\phi$ is the pure dephasing time. Energy relaxation ($T_1$) requires energy exchange with the environment (real transitions); dephasing ($T_\\phi$) comes from phase noise without energy exchange (e.g., magnetic field fluctuations). For the $^{87}$Rb ground-state hyperfine qubit in a magnetic trap: $T_1 \\sim$ minutes (no energy loss channel), $T_2 \\sim$ seconds (magnetic field noise). For a superconducting transmon: $T_1 \\sim T_2 \\sim 100\\,\\mu$s."
+    }
+  },
+  {
+    "id": "dc004",
+    "path": ["physics", "quantum-mechanics", "quantum-information", "decoherence"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Quantum error correction (QEC) encodes one logical qubit into multiple physical qubits to protect against errors. The 3-qubit bit-flip code uses:",
+    "passive": {
+      "options": [
+        "Logical $|\\bar{0}\\rangle = |000\\rangle$, $|\\bar{1}\\rangle = |111\\rangle$; syndrome measurement detects single bit flips without disturbing the logical state",
+        "Three qubits in a product state to protect against all single-qubit errors",
+        "The code can correct both bit-flip and phase-flip errors with 3 qubits",
+        "Error correction requires measuring the logical qubit directly"
+      ],
+      "correct": 0,
+      "explanation": "Syndrome measurement: measure $Z_1Z_2$ and $Z_2Z_3$ (parity checks). Outcomes: $(+1,+1)$ = no error; $(-1,+1)$ = qubit 1 flipped; $(+1,-1)$ = qubit 3 flipped; $(-1,-1)$ = qubit 2 flipped. The measurement tells you which qubit to correct without collapsing the logical superposition. To correct arbitrary single-qubit errors (including phase flips), the 9-qubit Shor code or 5-qubit perfect code is needed. The threshold theorem: if physical error rate $p < p_{\\rm th} \\sim 1\\%$, encoded error rate can be made arbitrarily small by concatenation."
+    }
+  },
+  {
+    "id": "dc005",
+    "path": ["physics", "quantum-mechanics", "quantum-information", "decoheherence"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Dynamical decoupling (DD) suppresses decoherence by applying fast pulse sequences that average out slowly fluctuating environmental noise. The simplest scheme, the Hahn spin echo, consists of:",
+    "passive": {
+      "options": [
+        "A $\\pi/2$ pulse, free evolution for time $\\tau$, a $\\pi$ pulse, free evolution for $\\tau$, then $\\pi/2$ readout — refocusing inhomogeneous dephasing to form an echo at $t = 2\\tau$",
+        "Continuous driving at the qubit frequency to suppress all noise",
+        "A sequence of $\\pi$ pulses applied every $T_1$ to reset the qubit",
+        "The spin echo works by entangling the qubit with the environment to cancel noise"
+      ],
+      "correct": 0,
+      "explanation": "The Hahn echo refocuses static or slowly varying phase errors: after the $\\pi$ pulse, each spin accumulates the negative of its prior phase error, so all spins refocus at $t = 2\\tau$. This extends $T_2^*$ (inhomogeneous dephasing time) toward $T_2$ (homogeneous limit). Carr-Purcell-Meiboom-Gill (CPMG) uses $N$ equally spaced $\\pi$ pulses to filter noise at frequency $1/2\\tau$. Used in NMR, trapped ions, and nitrogen-vacancy (NV) centres in diamond for quantum sensing."
+    }
+  }
+]

@@ -1,0 +1,128 @@
+[
+  {
+    "id": "qb001",
+    "path": ["physics", "quantum-mechanics", "quantum-information", "qubits"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "A qubit is a two-level quantum system with basis states $|0\\rangle$ and $|1\\rangle$. The general pure state on the Bloch sphere is:",
+    "equation": "|\\psi\\rangle = \\cos(\\theta/2)|0\\rangle + e^{i\\phi}\\sin(\\theta/2)|1\\rangle",
+    "passive": {
+      "options": [
+        "$\\theta \\in [0,\\pi]$ is the polar angle, $\\phi \\in [0,2\\pi]$ the azimuthal; the north/south poles are $|0\\rangle$/$|1\\rangle$, the equator contains equal superpositions",
+        "The global phase $e^{i\\phi}$ is physically observable",
+        "A qubit can only be in $|0\\rangle$ or $|1\\rangle$, not superpositions",
+        "The Bloch sphere has radius $1/2$ for spin-1/2 particles"
+      ],
+      "correct": 0,
+      "explanation": "The Bloch sphere provides a one-to-one map between pure single-qubit states and points on the unit sphere. Mixed states map to points inside the sphere. The three Pauli operators $\\sigma_x, \\sigma_y, \\sigma_z$ rotate the Bloch vector about the $x$, $y$, $z$ axes. $|+\\rangle = (|0\\rangle+|1\\rangle)/\\sqrt{2}$ is on the equator at $\\phi=0$; $|R\\rangle = (|0\\rangle+i|1\\rangle)/\\sqrt{2}$ at $\\phi = \\pi/2$."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each Bloch sphere point to its quantum state:",
+      "pairs": [
+        {"id": "p1", "term": "North pole ($\\theta=0$)", "definition": "$|0\\rangle$ — eigenstate of $\\sigma_z$ with eigenvalue $+1$"},
+        {"id": "p2", "term": "South pole ($\\theta=\\pi$)", "definition": "$|1\\rangle$ — eigenstate of $\\sigma_z$ with eigenvalue $-1$"},
+        {"id": "p3", "term": "$+x$ equator ($\\theta=\\pi/2, \\phi=0$)", "definition": "$|+\\rangle = (|0\\rangle+|1\\rangle)/\\sqrt{2}$ — eigenstate of $\\sigma_x$"},
+        {"id": "p4", "term": "$+y$ equator ($\\theta=\\pi/2, \\phi=\\pi/2$)", "definition": "$|R\\rangle = (|0\\rangle+i|1\\rangle)/\\sqrt{2}$ — eigenstate of $\\sigma_y$"}
+      ],
+      "explanation": "Single-qubit gates are rotations of the Bloch vector. The Hadamard gate maps $|0\\rangle \\to |+\\rangle$ (north pole to $+x$ equator). The $T$ gate adds a $\\pi/4$ phase, rotating around the $z$-axis."
+    }
+  },
+  {
+    "id": "qb002",
+    "path": ["physics", "quantum-mechanics", "quantum-information", "qubits"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "The Pauli matrices $\\sigma_x, \\sigma_y, \\sigma_z$ and identity $I$ form a basis for single-qubit operators. The Hadamard gate $H$ is:",
+    "passive": {
+      "options": [
+        "$H = (\\sigma_x + \\sigma_z)/\\sqrt{2}$ — maps $|0\\rangle \\to |+\\rangle$ and $|1\\rangle \\to |-\\rangle$, creating superpositions",
+        "$H = \\sigma_x$ — the bit-flip gate",
+        "$H = e^{i\\pi\\sigma_z/4}$ — a phase rotation",
+        "$H$ maps $|0\\rangle$ to $|1\\rangle$ and vice versa"
+      ],
+      "correct": 0,
+      "explanation": "$H = \\frac{1}{\\sqrt{2}}\\begin{pmatrix}1 & 1 \\\\ 1 & -1\\end{pmatrix}$. It is its own inverse ($H^2 = I$). The key gates: $X = \\sigma_x$ (NOT, bit flip), $Z = \\sigma_z$ (phase flip), $Y = i\\sigma_x\\sigma_z$, $S = \\sqrt{Z}$ ($\\pi/2$ phase), $T = \\sqrt{S}$ ($\\pi/4$ phase). Together $\\{H, T, \\rm CNOT\\}$ form a universal gate set for quantum computation."
+    }
+  },
+  {
+    "id": "qb003",
+    "path": ["physics", "quantum-mechanics", "quantum-information", "qubits"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The density matrix $\\rho$ for a qubit can be written in terms of the Bloch vector $\\mathbf{r} = (r_x, r_y, r_z)$ as:",
+    "equation": "\\rho = \\frac{1}{2}(I + \\mathbf{r}\\cdot\\boldsymbol{\\sigma})",
+    "passive": {
+      "options": [
+        "$|\\mathbf{r}| = 1$ for pure states, $|\\mathbf{r}| < 1$ for mixed states; $|\\mathbf{r}| = 0$ is the maximally mixed state $\\rho = I/2$",
+        "$|\\mathbf{r}| > 1$ is required for quantum states",
+        "All physical qubit states have $|\\mathbf{r}| = 1$",
+        "The Bloch vector $\\mathbf{r}$ is always real-valued for mixed states only"
+      ],
+      "correct": 0,
+      "explanation": "The purity is $\\text{tr}(\\rho^2) = (1 + |\\mathbf{r}|^2)/2 \\in [1/2, 1]$, with 1 for pure states and 1/2 for the maximally mixed state. Decoherence shrinks the Bloch vector towards the origin. The three components $r_i = \\text{tr}(\\rho\\sigma_i) = \\langle\\sigma_i\\rangle$ are the expectation values of the Pauli operators, measurable by repeated state tomography."
+    }
+  },
+  {
+    "id": "qb004",
+    "path": ["physics", "quantum-mechanics", "quantum-information", "qubits"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "Physical qubit implementations include atomic hyperfine levels, electron spins, superconducting circuits, and trapped ions. The key figure of merit is the ratio of coherence time $T_2$ to gate time $t_{\\rm gate}$:",
+    "passive": {
+      "options": [
+        "More gate operations before decoherence is better; state-of-the-art trapped ions achieve $T_2/t_{\\rm gate} \\sim 10^6$ and superconducting qubits $\\sim 10^4$",
+        "Faster gate time is always better regardless of coherence time",
+        "Superconducting qubits have longer coherence times than trapped ions",
+        "The ratio $T_2/t_{\\rm gate}$ is always greater than 1 for any qubit"
+      ],
+      "correct": 0,
+      "explanation": "Trapped ion qubits (e.g., $^{40}$Ca$^+$, $^{171}$Yb$^+$): $T_2 \\sim$ seconds, gate times $\\sim$ microseconds, giving $\\sim 10^6$ gates. Superconducting transmon qubits: $T_2 \\sim 100$ $\\mu$s, gate times $\\sim 10{-}100$ ns. Neutral atom arrays (Rydberg qubits): $T_2 \\sim$ seconds, gate times $\\sim$ microseconds. Surface codes for error correction require $\\sim 10^3$ physical qubits per logical qubit and gate error rates below $\\sim 10^{-3}$."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each qubit platform to its defining characteristic:",
+      "pairs": [
+        {"id": "p1", "term": "Trapped ion qubit", "definition": "Hyperfine/optical states; long $T_2$ ($\\sim$ s); slow gates ($\\mu$s); fully connected via phonon bus"},
+        {"id": "p2", "term": "Superconducting transmon", "definition": "Anharmonic LC oscillator; fast gates (ns); shorter $T_2$ ($\\sim 100\\,\\mu$s); modular chip layout"},
+        {"id": "p3", "term": "Neutral atom Rydberg qubit", "definition": "Optical tweezer arrays; long $T_2$; Rydberg blockade enables entangling gates; scalable 2D arrays"},
+        {"id": "p4", "term": "Photonic qubit", "definition": "Polarisation or path encoding; room temperature; no decoherence; difficult two-qubit gates without nonlinearity"}
+      ],
+      "explanation": "Each platform has different trade-offs. Trapped ions and neutral atoms excel in coherence; superconductors in speed and integration. The field is converging on hybrid approaches and error correction to reach fault-tolerant quantum computation."
+    }
+  },
+  {
+    "id": "qb005",
+    "path": ["physics", "quantum-mechanics", "quantum-information", "qubits"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The CNOT (controlled-NOT) gate flips the target qubit if and only if the control qubit is $|1\\rangle$. Its action on the computational basis is:",
+    "passive": {
+      "options": [
+        "$|00\\rangle \\to |00\\rangle$, $|01\\rangle \\to |01\\rangle$, $|10\\rangle \\to |11\\rangle$, $|11\\rangle \\to |10\\rangle$ — the target bit is XORed with the control",
+        "$|00\\rangle \\to |11\\rangle$, $|11\\rangle \\to |00\\rangle$",
+        "The CNOT always creates entanglement regardless of input",
+        "The CNOT gate has a $4\\times 4$ unitary matrix with determinant $-1$"
+      ],
+      "correct": 0,
+      "explanation": "CNOT matrix: $\\begin{pmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&0&1\\\\0&0&1&0\\end{pmatrix}$. Applying CNOT to $|+\\rangle|0\\rangle = \\frac{1}{\\sqrt{2}}(|0\\rangle+|1\\rangle)|0\\rangle$ gives $\\frac{1}{\\sqrt{2}}(|00\\rangle+|11\\rangle)$ — a Bell state. This shows that CNOT + Hadamard generates entanglement and forms a universal gate set together with single-qubit rotations."
+    }
+  },
+  {
+    "id": "qb006",
+    "path": ["physics", "quantum-mechanics", "quantum-information", "qubits"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The no-cloning theorem states that an unknown quantum state cannot be perfectly copied. The proof follows directly from linearity of quantum mechanics:",
+    "passive": {
+      "options": [
+        "If $U|\\psi\\rangle|0\\rangle = |\\psi\\rangle|\\psi\\rangle$ and $U|\\phi\\rangle|0\\rangle = |\\phi\\rangle|\\phi\\rangle$, then $U(|\\psi\\rangle+|\\phi\\rangle)|0\\rangle$ cannot equal $(|\\psi\\rangle+|\\phi\\rangle)^{\\otimes 2}$ by linearity",
+        "Cloning is forbidden only for entangled states",
+        "The no-cloning theorem applies only to mixed states",
+        "A quantum state can be cloned if measured first"
+      ],
+      "correct": 0,
+      "explanation": "Linearity gives $U(|\\psi\\rangle+|\\phi\\rangle)|0\\rangle = |\\psi\\rangle|\\psi\\rangle + |\\phi\\rangle|\\phi\\rangle$, but perfect cloning would require $(|\\psi\\rangle+|\\phi\\rangle)^{\\otimes 2} = |\\psi\\rangle|\\psi\\rangle + |\\psi\\rangle|\\phi\\rangle + |\\phi\\rangle|\\psi\\rangle + |\\phi\\rangle|\\phi\\rangle$. These are not equal for $\\langle\\psi|\\phi\\rangle \\neq 0, 1$. No-cloning underpins quantum key distribution security: an eavesdropper cannot copy a qubit without disturbing it."
+    }
+  }
+]

@@ -1,0 +1,130 @@
+[
+  {
+    "id": "pr001",
+    "path": ["mathematics", "probability"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "Bayes' theorem relates posterior probability to likelihood and prior. For hypotheses $H$ and evidence $E$:",
+    "equation": "P(H|E) = \\frac{P(E|H)\\,P(H)}{P(E)}",
+    "passive": {
+      "options": [
+        "The posterior $P(H|E)$ is proportional to the likelihood $P(E|H)$ times the prior $P(H)$; the denominator $P(E) = \\sum_i P(E|H_i)P(H_i)$ normalises over all hypotheses",
+        "Bayes' theorem only applies to frequentist probability",
+        "$P(H|E) = P(E|H)$ if $H$ and $E$ are independent",
+        "The prior $P(H)$ is always uniform in Bayesian inference"
+      ],
+      "correct": 0,
+      "explanation": "Example: a medical test for a rare disease (prevalence 0.1%) has sensitivity 99% and false positive rate 1%. A positive result gives $P(\\text{disease}|+) = (0.99 \\times 0.001)/(0.99 \\times 0.001 + 0.01 \\times 0.999) \\approx 9\\%$ — much lower than intuition suggests. Bayesian inference is the foundation of quantum state tomography, signal processing, and machine learning."
+    },
+    "active": {
+      "type": "fill-blanks",
+      "prompt": "The numerator of Bayes' theorem $P(H|E) = \\ldots/P(E)$ is:",
+      "template": ["$P(H|E) = $", null, "$/P(E)$"],
+      "tokens": [
+        {"id": "t1", "latex": "P(E|H)\\,P(H)"},
+        {"id": "t2", "latex": "P(E)\\,P(H)"},
+        {"id": "t3", "latex": "P(H)/P(E|H)"},
+        {"id": "t4", "latex": "P(E|H) + P(H)"}
+      ],
+      "solution": ["t1"],
+      "explanation": "$P(H|E) = P(E|H)P(H)/P(E)$. Rearranged from $P(E,H) = P(H|E)P(E) = P(E|H)P(H)$ — the joint probability written two ways."
+    }
+  },
+  {
+    "id": "pr002",
+    "path": ["mathematics", "probability"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "The Gaussian (normal) distribution $\\mathcal{N}(\\mu, \\sigma^2)$ has probability density:",
+    "equation": "p(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}}\\exp\\left(-\\frac{(x-\\mu)^2}{2\\sigma^2}\\right)",
+    "passive": {
+      "options": [
+        "Mean $\\mu$, variance $\\sigma^2$; the $68$-$95$-$99.7$ rule: $P(|X-\\mu| < \\sigma) = 68\\%$, $<2\\sigma$ is $95\\%$, $<3\\sigma$ is $99.7\\%$",
+        "The distribution is symmetric about $x = 0$ regardless of $\\mu$",
+        "The variance is $\\sigma$ (not $\\sigma^2$)",
+        "The peak value is $1/\\sqrt{2\\pi}$ regardless of $\\sigma$"
+      ],
+      "correct": 0,
+      "explanation": "The Gaussian is the unique maximum-entropy distribution for fixed mean and variance (by the central limit theorem argument). It appears in Doppler broadening (Maxwell-Boltzmann velocity distribution → Gaussian frequency distribution), measurement noise, quantum harmonic oscillator ground state ($\\psi_0 \\propto e^{-x^2/2\\ell^2}$), and shot noise in photon counting. The moment generating function is $M(t) = e^{\\mu t + \\sigma^2 t^2/2}$."
+    }
+  },
+  {
+    "id": "pr003",
+    "path": ["mathematics", "probability"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The central limit theorem (CLT) states that the sum $S_n = X_1 + X_2 + \\cdots + X_n$ of $n$ independent, identically distributed random variables with mean $\\mu$ and variance $\\sigma^2$ converges in distribution as $n\\to\\infty$ to:",
+    "passive": {
+      "options": [
+        "$S_n \\sim \\mathcal{N}(n\\mu, n\\sigma^2)$ — the normalised sum $(S_n - n\\mu)/(\\sigma\\sqrt{n}) \\to \\mathcal{N}(0,1)$ regardless of the underlying distribution",
+        "The sum always converges to a uniform distribution for large $n$",
+        "The CLT requires the variables to be Gaussian to begin with",
+        "$S_n$ converges to a Poisson distribution when the $X_i$ are non-negative"
+      ],
+      "correct": 0,
+      "explanation": "The CLT explains why Gaussian distributions are ubiquitous: any quantity arising from many independent small contributions is approximately Gaussian. Requirements: finite mean and variance (fails for heavy-tailed distributions like Cauchy). In physics: thermal noise in resistors (Johnson noise), random walk/Brownian motion ($\\langle x^2\\rangle = 2Dt$), counting statistics of many photon arrivals. The convergence rate is $O(1/\\sqrt{n})$ (Berry-Esseen theorem)."
+    }
+  },
+  {
+    "id": "pr004",
+    "path": ["mathematics", "probability"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "For two random variables $X$ and $Y$, the covariance and Pearson correlation coefficient are:",
+    "passive": {
+      "options": [
+        "$\\text{Cov}(X,Y) = \\langle XY\\rangle - \\langle X\\rangle\\langle Y\\rangle$; Pearson $\\rho = \\text{Cov}(X,Y)/(\\sigma_X\\sigma_Y) \\in [-1,1]$ with $\\pm 1$ for perfect linear correlation",
+        "$\\text{Cov}(X,Y) = \\langle X\\rangle\\langle Y\\rangle$ for independent variables",
+        "Correlation $\\rho = 1$ implies $X = Y$",
+        "Uncorrelated variables are always independent"
+      ],
+      "correct": 0,
+      "explanation": "$\\text{Cov}(X,Y) = 0$ (uncorrelated) does not imply independence — e.g., $Y = X^2$ with $X$ symmetric gives $\\text{Cov} = 0$ but $Y$ is determined by $X$. Independence implies $\\text{Cov} = 0$. The variance of a sum: $\\text{Var}(X+Y) = \\text{Var}(X) + \\text{Var}(Y) + 2\\text{Cov}(X,Y)$. In quantum mechanics, $\\text{Cov}(\\hat{A},\\hat{B}) = \\langle\\hat{A}\\hat{B}\\rangle - \\langle\\hat{A}\\rangle\\langle\\hat{B}\\rangle$ enters the Robertson uncertainty relation $\\sigma_A\\sigma_B \\geq |\\langle[\\hat{A},\\hat{B}]\\rangle|/2$."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each probability distribution to its typical physical application:",
+      "pairs": [
+        {"id": "p1", "term": "Poisson distribution $P(n) = \\lambda^n e^{-\\lambda}/n!$", "definition": "Count of rare, independent events: photon arrivals, radioactive decays per unit time"},
+        {"id": "p2", "term": "Gaussian $\\mathcal{N}(\\mu,\\sigma^2)$", "definition": "Sum of many independent contributions: thermal velocity components, measurement noise"},
+        {"id": "p3", "term": "Exponential $p(t) = \\lambda e^{-\\lambda t}$", "definition": "Waiting time between Poisson events: atomic lifetime, time between radioactive decays"},
+        {"id": "p4", "term": "Bose-Einstein $P(n) \\propto (\\bar{n}/(1+\\bar{n}))^n$", "definition": "Photon number distribution of thermal light (single mode): photon bunching"}
+      ],
+      "explanation": "The Poisson distribution is the limit of a binomial with many trials and small probability per trial. Its variance equals its mean ($\\sigma^2 = \\lambda$) — this is what defines shot noise. The thermal photon distribution has $\\sigma^2 = \\bar{n}(1+\\bar{n}) > \\bar{n}$, giving super-Poissonian (bunched) statistics."
+    }
+  },
+  {
+    "id": "pr005",
+    "path": ["mathematics", "probability"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "A random walk in 1D: a particle steps $\\pm 1$ with equal probability at each step. After $n$ steps starting from $x = 0$, the root-mean-square displacement is:",
+    "passive": {
+      "options": [
+        "$x_{\\rm rms} = \\sqrt{n}$ — the characteristic displacement grows as the square root of the number of steps (diffusion)",
+        "$x_{\\rm rms} = n$ (ballistic transport)",
+        "$x_{\\rm rms} = 0$ because the mean is zero",
+        "$x_{\\rm rms} = \\sqrt{n/2}$ from the variance of a single step"
+      ],
+      "correct": 0,
+      "explanation": "$\\langle x^2\\rangle = n$ (each step contributes $+1$ to the variance since steps are independent). Continuous limit: $\\langle x^2\\rangle = 2Dt$ (Fick's second law, $D$ = diffusion coefficient). Diffusion appears in Brownian motion (Einstein 1905), heat conduction, random-phase accumulation in atomic interferometers, and photon scattering recoil in laser cooling. Sub-diffusion ($\\langle x^2\\rangle \\propto t^\\alpha$, $\\alpha < 1$) occurs in strongly correlated systems."
+    }
+  },
+  {
+    "id": "pr006",
+    "path": ["mathematics", "probability"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The characteristic function of a random variable $X$ is $\\varphi_X(t) = \\langle e^{itX}\\rangle$. Its relationship to the moments and to the probability density is:",
+    "passive": {
+      "options": [
+        "$\\varphi_X(t) = \\int p(x)e^{itx}dx$ — the Fourier transform of $p(x)$; moments are $\\langle X^n\\rangle = (-i)^n \\varphi_X^{(n)}(0)$; cumulants follow from $\\ln\\varphi_X(t)$",
+        "The characteristic function is the Laplace transform of the density",
+        "Moments $\\langle X^n\\rangle = \\varphi_X^{(n)}(0)$ without the $(-i)^n$ factor",
+        "The characteristic function only works for distributions with finite variance"
+      ],
+      "correct": 0,
+      "explanation": "The cumulant generating function $K(t) = \\ln\\varphi_X(it)$ generates cumulants: $\\kappa_1 = \\mu$ (mean), $\\kappa_2 = \\sigma^2$ (variance), $\\kappa_3$ (skewness), $\\kappa_4$ (excess kurtosis). For a Gaussian, all cumulants $\\kappa_{n\\geq 3} = 0$ — a defining property. The characteristic function approach makes the CLT elegant: if $X_i$ are i.i.d., $\\varphi_{S_n/\\sqrt{n}}(t) = [\\varphi_X(t/\\sqrt{n})]^n \\to e^{-\\sigma^2 t^2/2}$ as $n\\to\\infty$ — a Gaussian."
+    }
+  }
+]

@@ -1,0 +1,133 @@
+[
+  {
+    "id": "mv001",
+    "path": ["mathematics", "multivariable"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "The partial derivative $\\partial f/\\partial x$ is the rate of change of $f(x,y,z,\\ldots)$ with all other variables held fixed. The total differential of $f(x,y)$ is:",
+    "equation": "df = \\frac{\\partial f}{\\partial x}dx + \\frac{\\partial f}{\\partial y}dy",
+    "passive": {
+      "options": [
+        "The total differential gives the change in $f$ to first order for arbitrary small displacements $(dx, dy)$ in any direction",
+        "The total differential is only defined when $f$ is linear",
+        "$df = (\\partial f/\\partial x)dx$ regardless of how many variables $f$ depends on",
+        "The partial derivatives must be equal for $df$ to exist"
+      ],
+      "correct": 0,
+      "explanation": "The total differential $df = \\nabla f \\cdot d\\mathbf{r}$ is the dot product of the gradient with a displacement vector. In thermodynamics: $dU = T\\,dS - p\\,dV + \\mu\\,dN$ is the total differential of internal energy. For a state function $f$, the mixed partials commute: $\\partial^2 f/\\partial x\\partial y = \\partial^2 f/\\partial y\\partial x$ (Clairaut's theorem) — this is the origin of Maxwell relations."
+    },
+    "active": {
+      "type": "fill-blanks",
+      "prompt": "The total differential of $f(x,y)$ is $df = (\\partial f/\\partial x)dx +$ ___:",
+      "template": ["$df = \\dfrac{\\partial f}{\\partial x}dx +$", null],
+      "tokens": [
+        {"id": "t1", "latex": "\\dfrac{\\partial f}{\\partial y}dy"},
+        {"id": "t2", "latex": "\\dfrac{\\partial f}{\\partial y}dx"},
+        {"id": "t3", "latex": "\\dfrac{df}{dy}dy"},
+        {"id": "t4", "latex": "f\\,dy"}
+      ],
+      "solution": ["t1"],
+      "explanation": "$df = (\\partial f/\\partial x)dx + (\\partial f/\\partial y)dy$. This generalises to $n$ variables: $df = \\sum_i (\\partial f/\\partial x_i)dx_i = \\nabla f\\cdot d\\mathbf{x}$."
+    }
+  },
+  {
+    "id": "mv002",
+    "path": ["mathematics", "multivariable"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "The Jacobian matrix $J$ of a vector function $\\mathbf{f}: \\mathbb{R}^n \\to \\mathbb{R}^m$ has entries $J_{ij} = \\partial f_i/\\partial x_j$. Its determinant $|J|$ appears in the change-of-variables formula for integrals:",
+    "equation": "\\int_{\\mathbf{y}\\text{ region}} g(\\mathbf{y})\\,d^n y = \\int_{\\mathbf{x}\\text{ region}} g(\\mathbf{f}(\\mathbf{x}))|J|\\,d^n x",
+    "passive": {
+      "options": [
+        "$|J|$ is the ratio of infinitesimal volume elements: $d^n y = |J|\\,d^n x$; for polar coordinates $(r,\\theta)$, $J = r$ gives $dx\\,dy = r\\,dr\\,d\\theta$",
+        "The Jacobian determinant is always equal to 1 for orthogonal coordinate systems",
+        "The Jacobian is only needed when $\\mathbf{f}$ is nonlinear",
+        "$|J|$ can be negative, indicating a valid coordinate transformation"
+      ],
+      "correct": 0,
+      "explanation": "Spherical coordinates: $|J| = r^2\\sin\\theta$, so $d^3x = r^2\\sin\\theta\\,dr\\,d\\theta\\,d\\phi$. This is why $4\\pi r^2 dr$ is the volume shell element. In quantum mechanics, the normalisation $\\int|\\psi|^2 r^2\\sin\\theta\\,dr\\,d\\theta\\,d\\phi = 1$ uses this Jacobian. In statistical mechanics, phase space volume $d^{3N}q\\,d^{3N}p$ transforms with Jacobian = 1 under canonical transformations (Liouville)."
+    }
+  },
+  {
+    "id": "mv003",
+    "path": ["mathematics", "multivariable"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "A critical point of $f(x,y)$ occurs where $\\nabla f = 0$. The second derivative test uses the Hessian matrix $H$ with entries $H_{ij} = \\partial^2 f/\\partial x_i \\partial x_j$. Classification:",
+    "passive": {
+      "options": [
+        "If $H$ is positive definite ($\\det H > 0$ and $f_{xx} > 0$): local minimum; negative definite: maximum; indefinite ($\\det H < 0$): saddle point",
+        "If $\\det H > 0$ the critical point is always a saddle point",
+        "If $f_{xx} > 0$ at the critical point it is a local minimum regardless of $\\det H$",
+        "The Hessian test is inconclusive only when $f_{xx} = 0$"
+      ],
+      "correct": 0,
+      "explanation": "For $f(x,y)$: $\\det H = f_{xx}f_{yy} - f_{xy}^2$. When $\\det H > 0$: definite (sign of $f_{xx}$ tells min/max); $\\det H < 0$: saddle; $\\det H = 0$: test inconclusive. In physics, the Hessian appears in the stability of equilibria (the curvature of the potential energy surface) and as the mass matrix in normal mode analysis. The normal mode frequencies are $\\omega_k = \\sqrt{\\lambda_k/m}$ where $\\lambda_k$ are Hessian eigenvalues."
+    }
+  },
+  {
+    "id": "mv004",
+    "path": ["mathematics", "multivariable"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "Lagrange multipliers find the extrema of $f(\\mathbf{x})$ subject to a constraint $g(\\mathbf{x}) = 0$. At the constrained extremum:",
+    "equation": "\\nabla f = \\lambda\\,\\nabla g",
+    "passive": {
+      "options": [
+        "The gradient of the objective is parallel to the gradient of the constraint — the level curves of $f$ are tangent to the constraint surface",
+        "The constraint forces $\\nabla f = 0$ at the extremum",
+        "Lagrange multipliers require the constraint to be linear",
+        "The multiplier $\\lambda$ equals the value of $f$ at the extremum"
+      ],
+      "correct": 0,
+      "explanation": "Geometrically: at the constrained max/min, the level curve of $f$ touches the constraint curve tangentially — if they crossed, you could move along the constraint to increase $f$. The extended system: $\\nabla(f - \\lambda g) = 0$ and $g = 0$ gives $n+1$ equations for $n$ unknowns plus $\\lambda$. The multiplier $\\lambda = \\partial f^*/\\partial c$ (sensitivity of optimum to constraint $c$) — it has a dual interpretation as a shadow price in economics and as energy in statistical mechanics (where $\\lambda = \\beta$ in the derivation of the Boltzmann distribution)."
+    },
+    "active": {
+      "type": "step-order",
+      "prompt": "Order the steps to find the maximum of $f = xy$ subject to $x + y = 1$ using Lagrange multipliers:",
+      "steps": [
+        {"id": "s1", "text": "Write constraint: $g(x,y) = x + y - 1 = 0$"},
+        {"id": "s2", "text": "Set $\\nabla f = \\lambda\\nabla g$: $(y, x) = \\lambda(1, 1)$, giving $y = \\lambda$ and $x = \\lambda$"},
+        {"id": "s3", "text": "From symmetry $x = y = \\lambda$; use constraint: $2\\lambda = 1$, so $\\lambda = 1/2$, $x = y = 1/2$"},
+        {"id": "s4", "text": "Maximum value: $f(1/2, 1/2) = 1/4$ — verified: by AM-GM inequality, $xy \\leq ((x+y)/2)^2 = 1/4$ ✓"}
+      ],
+      "solution": ["s1", "s2", "s3", "s4"],
+      "explanation": "The Lagrange condition $\\nabla f = \\lambda \\nabla g$ encodes that $f$ and $g$ have parallel normals at the constrained extremum. Here both gradients point in the same direction $(1,1)/\\sqrt{2}$ at $(1/2, 1/2)$."
+    }
+  },
+  {
+    "id": "mv005",
+    "path": ["mathematics", "multivariable"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "A double integral over a region $R$ can be converted to polar coordinates to simplify radially symmetric integrands. The integral $\\iint_R f(x,y)\\,dA$ in polar form is:",
+    "passive": {
+      "options": [
+        "$\\int_0^{2\\pi}\\int_0^\\infty f(r\\cos\\theta, r\\sin\\theta)\\,r\\,dr\\,d\\theta$ — the factor $r$ is the Jacobian of the polar transformation",
+        "$\\int_0^{2\\pi}\\int_0^\\infty f(r,\\theta)\\,dr\\,d\\theta$ without a Jacobian factor",
+        "The polar form only works when $f$ depends on $r$ alone",
+        "The Jacobian for polar coordinates is $r^2$"
+      ],
+      "correct": 0,
+      "explanation": "The Jacobian $|\\partial(x,y)/\\partial(r,\\theta)| = r$, so $dx\\,dy = r\\,dr\\,d\\theta$. Classic application: $\\int_{-\\infty}^\\infty e^{-x^2}dx = \\sqrt{\\pi}$, proved by squaring and converting to polar: $\\left(\\int_{-\\infty}^\\infty e^{-x^2}dx\\right)^2 = \\int_0^{2\\pi}\\int_0^\\infty e^{-r^2}r\\,dr\\,d\\theta = \\pi$. This Gaussian integral appears in the normalisation of quantum harmonic oscillator wave functions and the kinetic theory Maxwell-Boltzmann distribution."
+    }
+  },
+  {
+    "id": "mv006",
+    "path": ["mathematics", "multivariable"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The implicit function theorem guarantees that if $F(x, y) = 0$ with $\\partial F/\\partial y \\neq 0$ at a point $(x_0, y_0)$, then $y$ is locally a function of $x$. The thermodynamic triple product rule follows: for $F(P, V, T) = 0$ (equation of state):",
+    "equation": "\\left(\\frac{\\partial P}{\\partial V}\\right)_T \\left(\\frac{\\partial V}{\\partial T}\\right)_P \\left(\\frac{\\partial T}{\\partial P}\\right)_V = -1",
+    "passive": {
+      "options": [
+        "The cyclic triple product is $-1$ (not $+1$) because each partial involves holding a different variable fixed — follows from the implicit function theorem applied twice",
+        "The cyclic triple product equals $+1$ for ideal gases",
+        "The product rule requires the equation of state to be linear",
+        "The $-1$ only appears for PVT systems, not other thermodynamic triples"
+      ],
+      "correct": 0,
+      "explanation": "From $F(P,V,T) = 0$: applying the chain rule for implicit differentiation gives $(\\partial P/\\partial V)_T = -(\\partial F/\\partial V)/(\\partial F/\\partial P)$, and similarly for the other partials. The product of all three gives $-1$. Verified for ideal gas: $(\\partial P/\\partial V)_T = -nRT/V^2$, $(\\partial V/\\partial T)_P = nR/P$, $(\\partial T/\\partial P)_V = V/(nR)$; product $= -nRT/V^2 \\cdot nR/P \\cdot V/(nR) = -nRT/(PV) = -1$ (using $PV = nRT$) ✓."
+    }
+  }
+]

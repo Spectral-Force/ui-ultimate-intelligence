@@ -1,0 +1,136 @@
+[
+  {
+    "id": "vc001",
+    "path": ["mathematics", "vector-calculus"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "The gradient of a scalar field $f(x,y,z)$ points in the direction of steepest ascent. In Cartesian coordinates:",
+    "equation": "\\nabla f = \\frac{\\partial f}{\\partial x}\\hat{x} + \\frac{\\partial f}{\\partial y}\\hat{y} + \\frac{\\partial f}{\\partial z}\\hat{z}",
+    "passive": {
+      "options": [
+        "$\\nabla f$ is perpendicular to the level surfaces of $f$; the directional derivative $d f/ds = \\nabla f \\cdot \\hat{s}$ is maximised when $\\hat{s} \\parallel \\nabla f$",
+        "$\\nabla f$ is tangent to the level surfaces of $f$",
+        "The gradient always points toward the origin",
+        "$\\nabla f$ is dimensionless regardless of the dimensions of $f$"
+      ],
+      "correct": 0,
+      "explanation": "Example: for a gravitational potential $V = -GM/r$, $\\mathbf{g} = -\\nabla V = -GM\\hat{r}/r^2$ — the gradient gives the field from the potential. In optics, $\\nabla I$ gives the direction of dipole force on an atom in a laser field ($\\mathbf{F} = -\\nabla U_{\\rm dip} \\propto -\\nabla I/\\delta$). The gradient transforms as a covector (covariant vector) under coordinate transformations."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each vector calculus operator to its action and output type:",
+      "pairs": [
+        {"id": "p1", "term": "Gradient $\\nabla f$", "definition": "Scalar field $f$ → vector field; direction of steepest ascent"},
+        {"id": "p2", "term": "Divergence $\\nabla\\cdot\\mathbf{F}$", "definition": "Vector field $\\mathbf{F}$ → scalar field; net outward flux per unit volume"},
+        {"id": "p3", "term": "Curl $\\nabla\\times\\mathbf{F}$", "definition": "Vector field $\\mathbf{F}$ → vector field; circulation per unit area (axis = rotation axis)"},
+        {"id": "p4", "term": "Laplacian $\\nabla^2 f$", "definition": "Scalar field → scalar field; $\\nabla\\cdot(\\nabla f)$; measures curvature of $f$"}
+      ],
+      "explanation": "Key identities: $\\nabla\\times(\\nabla f) = 0$ (curl of gradient vanishes — conservative fields); $\\nabla\\cdot(\\nabla\\times\\mathbf{F}) = 0$ (divergence of curl vanishes). These underlie Maxwell's equations: $\\nabla\\cdot\\mathbf{B} = 0$ means $\\mathbf{B} = \\nabla\\times\\mathbf{A}$ for some vector potential $\\mathbf{A}$."
+    }
+  },
+  {
+    "id": "vc002",
+    "path": ["mathematics", "vector-calculus"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "The divergence theorem (Gauss's theorem) relates a volume integral of the divergence to a surface integral over the boundary:",
+    "equation": "\\iiint_V (\\nabla\\cdot\\mathbf{F})\\,dV = \\oiint_S \\mathbf{F}\\cdot d\\mathbf{A}",
+    "passive": {
+      "options": [
+        "The theorem converts a volume integral of a divergence to a flux integral over the enclosing surface — used to derive Gauss's law for $\\mathbf{E}$ from Coulomb's law",
+        "The theorem applies only to irrotational fields ($\\nabla\\times\\mathbf{F} = 0$)",
+        "The surface integral counts the number of field lines passing through the surface",
+        "The divergence theorem requires the vector field to be zero on the boundary"
+      ],
+      "correct": 0,
+      "explanation": "Gauss's law derivation: $\\nabla\\cdot\\mathbf{E} = \\rho/\\varepsilon_0$ integrated over volume $V$ gives $\\oiint_S \\mathbf{E}\\cdot d\\mathbf{A} = Q_{\\rm enc}/\\varepsilon_0$. The divergence theorem turns the differential form into the integral form. In fluid mechanics, $\\nabla\\cdot\\mathbf{v} = 0$ (incompressible flow) means net flux out of any volume is zero — no sources or sinks."
+    }
+  },
+  {
+    "id": "vc003",
+    "path": ["mathematics", "vector-calculus"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "Stokes' theorem relates a surface integral of the curl to a line integral around the boundary curve:",
+    "equation": "\\iint_S (\\nabla\\times\\mathbf{F})\\cdot d\\mathbf{A} = \\oint_{\\partial S} \\mathbf{F}\\cdot d\\boldsymbol{\\ell}",
+    "passive": {
+      "options": [
+        "Stokes' theorem converts a curl integral over a surface to a circulation integral around the perimeter — used to derive Faraday's and Ampère's laws in integral form",
+        "Stokes' theorem requires the surface to be simply connected",
+        "The theorem only applies when $\\mathbf{F}$ is conservative",
+        "The direction of the boundary is irrelevant to the sign of the integral"
+      ],
+      "correct": 0,
+      "explanation": "Faraday's law: $\\nabla\\times\\mathbf{E} = -\\partial\\mathbf{B}/\\partial t$ integrated over surface $S$ gives $\\oint\\mathbf{E}\\cdot d\\boldsymbol{\\ell} = -d\\Phi_B/dt$ (EMF = rate of change of flux). Ampère's law with displacement current similarly follows. In AMO physics, optical trapping uses the gradient of the intensity (potential), and the circulation of the dipole force is zero — confirming it is conservative."
+    }
+  },
+  {
+    "id": "vc004",
+    "path": ["mathematics", "vector-calculus"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "In spherical coordinates $(r, \\theta, \\phi)$, the gradient and Laplacian of a scalar field $f$ are:",
+    "passive": {
+      "options": [
+        "$\\nabla f = \\frac{\\partial f}{\\partial r}\\hat{r} + \\frac{1}{r}\\frac{\\partial f}{\\partial\\theta}\\hat{\\theta} + \\frac{1}{r\\sin\\theta}\\frac{\\partial f}{\\partial\\phi}\\hat{\\phi}$; the Laplacian $\\nabla^2 f = \\frac{1}{r^2}\\frac{\\partial}{\\partial r}\\left(r^2\\frac{\\partial f}{\\partial r}\\right) + \\frac{1}{r^2\\sin\\theta}\\frac{\\partial}{\\partial\\theta}\\left(\\sin\\theta\\frac{\\partial f}{\\partial\\theta}\\right) + \\frac{1}{r^2\\sin^2\\theta}\\frac{\\partial^2 f}{\\partial\\phi^2}$",
+        "$\\nabla f = \\partial f/\\partial r\\,\\hat{r}$ in spherical coordinates (angular terms vanish)",
+        "The Laplacian in spherical coordinates equals $\\partial^2 f/\\partial r^2$",
+        "The metric factors $1/r$ and $1/(r\\sin\\theta)$ apply only to the gradient, not the Laplacian"
+      ],
+      "correct": 0,
+      "explanation": "The metric factors arise because unit vectors $\\hat{\\theta}$ and $\\hat{\\phi}$ correspond to arc lengths $r d\\theta$ and $r\\sin\\theta\\, d\\phi$ respectively. The spherical Laplacian separates as $\\nabla^2 = \\nabla^2_r + L^2/(\\hbar^2 r^2)$ where $L^2$ is the angular momentum operator — the origin of $\\ell(\\ell+1)$ in hydrogen. Separating variables in $\\nabla^2\\psi = 0$ gives spherical harmonics $Y_\\ell^m(\\theta,\\phi)$."
+    }
+  },
+  {
+    "id": "vc005",
+    "path": ["mathematics", "vector-calculus"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "A vector field $\\mathbf{F}$ is conservative (irrotational) if and only if $\\nabla\\times\\mathbf{F} = 0$ on a simply connected domain. This is equivalent to:",
+    "passive": {
+      "options": [
+        "$\\mathbf{F} = -\\nabla\\phi$ for some scalar potential $\\phi$; the line integral $\\int_A^B \\mathbf{F}\\cdot d\\boldsymbol{\\ell}$ depends only on endpoints, not path",
+        "$\\nabla\\cdot\\mathbf{F} = 0$ everywhere",
+        "The field has zero magnitude on any closed surface",
+        "Conservative fields can only exist in 2D"
+      ],
+      "correct": 0,
+      "explanation": "Equivalent statements: (1) $\\nabla\\times\\mathbf{F} = 0$; (2) $\\oint_C \\mathbf{F}\\cdot d\\boldsymbol{\\ell} = 0$ for any closed curve $C$; (3) $\\mathbf{F} = -\\nabla\\phi$; (4) work done is path-independent. The electrostatic field $\\mathbf{E}$ is conservative ($\\nabla\\times\\mathbf{E} = 0$ for static fields), with potential $V$: $\\mathbf{E} = -\\nabla V$. The gravitational force is conservative; friction is not. The dipole force on atoms in a laser field is conservative (derived from $U_{\\rm dip} = -\\hbar\\Omega^2/4\\delta$)."
+    }
+  },
+  {
+    "id": "vc006",
+    "path": ["mathematics", "vector-calculus"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Helmholtz decomposition theorem states that any smooth vector field $\\mathbf{F}$ on all of $\\mathbb{R}^3$ (decaying at infinity) can be uniquely decomposed as:",
+    "passive": {
+      "options": [
+        "$\\mathbf{F} = -\\nabla\\phi + \\nabla\\times\\mathbf{A}$ — irrotational part plus solenoidal (divergence-free) part",
+        "$\\mathbf{F} = \\nabla\\phi + \\nabla\\phi'$ for two scalar potentials",
+        "The decomposition requires $\\mathbf{F}$ to be analytic",
+        "Any vector field is either purely irrotational or purely solenoidal"
+      ],
+      "correct": 0,
+      "explanation": "The longitudinal (irrotational) part has $\\nabla\\times\\mathbf{F}_\\parallel = 0$; the transverse (solenoidal) part has $\\nabla\\cdot\\mathbf{F}_\\perp = 0$. In electrodynamics: the longitudinal $\\mathbf{E}$ comes from charges ($\\nabla\\cdot\\mathbf{E} = \\rho/\\varepsilon_0$); the transverse $\\mathbf{E}$ is the radiation field ($\\nabla\\times\\mathbf{B} = \\mu_0\\mathbf{J} + ...$). The radiation gauge ($\\nabla\\cdot\\mathbf{A} = 0$, Coulomb gauge) keeps only the transverse vector potential, simplifying QED."
+    }
+  },
+  {
+    "id": "vc007",
+    "path": ["mathematics", "vector-calculus"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The divergence of the position vector field $\\mathbf{r}/r^3$ in 3D is zero everywhere except at the origin. In the sense of distributions:",
+    "equation": "\\nabla\\cdot\\left(\\frac{\\hat{r}}{r^2}\\right) = 4\\pi\\delta^3(\\mathbf{r})",
+    "passive": {
+      "options": [
+        "This is Poisson's equation: the Coulomb field $\\mathbf{E} = q\\hat{r}/(4\\pi\\varepsilon_0 r^2)$ satisfies $\\nabla\\cdot\\mathbf{E} = (q/\\varepsilon_0)\\delta^3(\\mathbf{r})$",
+        "The divergence of $\\hat{r}/r^2$ is $2/r$ everywhere",
+        "The delta function appears because the field is discontinuous at $r = 1$",
+        "This identity only holds in 2D electrostatics"
+      ],
+      "correct": 0,
+      "explanation": "Applying the divergence theorem to a sphere of radius $R$ around the origin: $\\oiint (\\hat{r}/r^2)\\cdot d\\mathbf{A} = 4\\pi$, independent of $R$. Yet $\\nabla\\cdot(\\hat{r}/r^2) = 0$ for $r > 0$ by direct calculation. The resolution: the distributional identity $\\nabla\\cdot(\\hat{r}/r^2) = 4\\pi\\delta^3(\\mathbf{r})$. This is the mathematical foundation of Gauss's law and Green's function for the Laplacian: $\\nabla^2(1/r) = -4\\pi\\delta^3(\\mathbf{r})$."
+    }
+  }
+]

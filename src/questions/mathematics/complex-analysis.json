@@ -1,0 +1,150 @@
+[
+  {
+    "id": "ca001",
+    "path": ["mathematics", "complex-analysis"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "The Cauchy-Riemann equations are the necessary and sufficient conditions for a complex function $f(z) = u(x,y) + iv(x,y)$ to be analytic (holomorphic) at a point. They state:",
+    "equation": "\\frac{\\partial u}{\\partial x} = \\frac{\\partial v}{\\partial y}, \\quad \\frac{\\partial u}{\\partial y} = -\\frac{\\partial v}{\\partial x}",
+    "passive": {
+      "options": [
+        "A function satisfying the Cauchy-Riemann equations has a complex derivative $f'(z)$ that is independent of the direction of approach in the complex plane",
+        "The Cauchy-Riemann equations are sufficient but not necessary for analyticity",
+        "The equations require $u$ and $v$ to be equal",
+        "Any differentiable real function of $x$ and $y$ automatically satisfies the Cauchy-Riemann equations"
+      ],
+      "correct": 0,
+      "explanation": "Analyticity is a very strong condition: once satisfied on an open set, $f$ is infinitely differentiable, equal to its Taylor series, and determined by its boundary values (Cauchy's integral theorem). Example: $f(z) = z^2 = x^2-y^2 + 2ixy$ has $u = x^2-y^2$, $v = 2xy$. Check: $\\partial u/\\partial x = 2x = \\partial v/\\partial y$ ✓, $\\partial u/\\partial y = -2y = -\\partial v/\\partial x$ ✓. The function $f(z) = \\bar{z} = x - iy$ fails (nowhere analytic)."
+    },
+    "active": {
+      "type": "fill-blanks",
+      "prompt": "The Cauchy-Riemann equation linking $\\partial u/\\partial x$ and $\\partial v/\\partial y$ is:",
+      "template": ["$\\dfrac{\\partial u}{\\partial x} =$", null],
+      "tokens": [
+        {"id": "t1", "latex": "\\dfrac{\\partial v}{\\partial y}"},
+        {"id": "t2", "latex": "-\\dfrac{\\partial v}{\\partial y}"},
+        {"id": "t3", "latex": "\\dfrac{\\partial v}{\\partial x}"},
+        {"id": "t4", "latex": "\\dfrac{\\partial u}{\\partial y}"}
+      ],
+      "solution": ["t1"],
+      "explanation": "$\\partial u/\\partial x = \\partial v/\\partial y$ and $\\partial u/\\partial y = -\\partial v/\\partial x$. These ensure that the limit $\\lim_{\\Delta z\\to 0}[f(z+\\Delta z)-f(z)]/\\Delta z$ is the same from all directions in the complex plane."
+    }
+  },
+  {
+    "id": "ca002",
+    "path": ["mathematics", "complex-analysis"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Cauchy's integral theorem states that for an analytic function on a simply-connected domain, the contour integral around any closed curve $C$ is:",
+    "equation": "\\oint_C f(z)\\,dz = 0",
+    "passive": {
+      "options": [
+        "The integral vanishes because analytic functions have no net circulation — this underlies Cauchy's integral formula and the residue theorem",
+        "The integral equals $2\\pi i f(z_0)$ for any interior point $z_0$",
+        "The theorem applies only to circular contours",
+        "The theorem holds even when $f$ has poles inside $C$"
+      ],
+      "correct": 0,
+      "explanation": "Cauchy's integral formula (for $z_0$ inside $C$): $f(z_0) = \\frac{1}{2\\pi i}\\oint_C \\frac{f(z)}{z-z_0}dz$, which follows because $1/(z-z_0)$ has a simple pole at $z_0$. This gives: $f^{(n)}(z_0) = \\frac{n!}{2\\pi i}\\oint_C \\frac{f(z)}{(z-z_0)^{n+1}}dz$ — analytic functions are completely determined by their boundary values. In physics, contour integrals evaluate Fourier transforms, Green's functions, and dispersion relations."
+    }
+  },
+  {
+    "id": "ca003",
+    "path": ["mathematics", "complex-analysis"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "The residue theorem evaluates contour integrals around singularities. For a function with isolated singularities $z_k$ inside a contour $C$:",
+    "equation": "\\oint_C f(z)\\,dz = 2\\pi i \\sum_k \\text{Res}(f, z_k)",
+    "passive": {
+      "options": [
+        "The residue at a simple pole $z_0$ is $\\text{Res}(f, z_0) = \\lim_{z\\to z_0}(z-z_0)f(z)$",
+        "The residue is the coefficient of $z$ in the Laurent series",
+        "The residue theorem only works for meromorphic functions with at most one pole",
+        "The residue at a pole is always real"
+      ],
+      "correct": 0,
+      "explanation": "For a simple pole: $\\text{Res}(f, z_0) = \\lim_{z\\to z_0}(z-z_0)f(z)$. For a pole of order $m$: $\\text{Res}(f,z_0) = \\frac{1}{(m-1)!}\\lim_{z\\to z_0}\\frac{d^{m-1}}{dz^{m-1}}[(z-z_0)^m f(z)]$. The residue is the $c_{-1}$ coefficient in the Laurent expansion $f(z) = \\sum_{n=-\\infty}^\\infty c_n(z-z_0)^n$. Used to evaluate real integrals: $\\int_{-\\infty}^\\infty \\frac{dx}{1+x^2} = \\pi$ by closing in the upper half-plane."
+    },
+    "active": {
+      "type": "step-order",
+      "prompt": "Order the steps to evaluate $\\int_{-\\infty}^\\infty \\frac{dx}{x^2+1}$ by contour integration:",
+      "steps": [
+        {"id": "s1", "text": "Identify $f(z) = 1/(z^2+1) = 1/[(z+i)(z-i)]$ with simple poles at $z = \\pm i$"},
+        {"id": "s2", "text": "Choose a semicircular contour in the upper half-plane; the arc contribution vanishes as $R\\to\\infty$ (Jordan's lemma)"},
+        {"id": "s3", "text": "Only $z = +i$ is inside the upper half-plane contour; compute $\\text{Res}(f, i) = 1/(2i)$"},
+        {"id": "s4", "text": "Apply residue theorem: $\\oint f\\,dz = 2\\pi i \\cdot (1/2i) = \\pi$, so the real integral equals $\\pi$"}
+      ],
+      "solution": ["s1", "s2", "s3", "s4"],
+      "explanation": "Closing in the upper half-plane works when the integrand decays as $|z| \\to \\infty$ with $\\text{Im}(z) > 0$. For $e^{i\\omega z}$ factors ($\\omega > 0$), Jordan's lemma guarantees the arc vanishes even when $|f| \\sim 1/R$ only."
+    }
+  },
+  {
+    "id": "ca004",
+    "path": ["mathematics", "complex-analysis"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Euler's formula connects the exponential and trigonometric functions in the complex plane:",
+    "equation": "e^{i\\theta} = \\cos\\theta + i\\sin\\theta",
+    "passive": {
+      "options": [
+        "Every complex number $z = re^{i\\theta}$ (polar form); multiplication $z_1 z_2 = r_1 r_2 e^{i(\\theta_1+\\theta_2)}$ adds arguments and multiplies moduli",
+        "Euler's formula only holds for $\\theta = \\pi$ (Euler's identity $e^{i\\pi} = -1$)",
+        "$e^{i\\theta}$ has modulus greater than 1 for $\\theta \\neq 0$",
+        "The formula implies $e^{i\\theta}$ is purely imaginary"
+      ],
+      "correct": 0,
+      "explanation": "$|e^{i\\theta}| = \\sqrt{\\cos^2\\theta + \\sin^2\\theta} = 1$ — the unit circle in the complex plane. Euler's identity $e^{i\\pi} + 1 = 0$ combines $e$, $i$, $\\pi$, $1$, $0$. The polar form $z = re^{i\\theta}$ makes multiplication geometric: $(r_1 e^{i\\theta_1})(r_2 e^{i\\theta_2}) = r_1r_2 e^{i(\\theta_1+\\theta_2)}$. De Moivre's theorem $e^{in\\theta} = (\\cos\\theta + i\\sin\\theta)^n$ follows immediately and gives $n$th roots of unity as $e^{2\\pi ik/n}$, $k = 0, 1, \\ldots, n-1$."
+    }
+  },
+  {
+    "id": "ca005",
+    "path": ["mathematics", "complex-analysis"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Laurent series of a function around an isolated singularity $z_0$ includes negative powers of $(z-z_0)$. The types of singularity are classified as:",
+    "passive": {
+      "options": [
+        "Removable (finite many $c_n = 0$ for $n < 0$ and $c_{-1} = 0$), pole of order $m$ ($c_{-m} \\neq 0$ but $c_n = 0$ for $n < -m$), essential singularity (infinitely many non-zero $c_{-n}$)",
+        "Only poles and essential singularities exist for analytic functions",
+        "A removable singularity has $c_{-1} \\neq 0$ but all higher negative terms vanish",
+        "Essential singularities occur only at infinity"
+      ],
+      "correct": 0,
+      "explanation": "Examples: $\\sin z/z$ has a removable singularity at $z=0$ (Laurent series has no negative powers). $1/z^3$ has a pole of order 3 at $z=0$. $e^{1/z}$ has an essential singularity at $z=0$: $e^{1/z} = \\sum_{n=0}^\\infty 1/(n!z^n)$ — infinitely many negative powers. By the Great Picard theorem, near an essential singularity, $f$ takes every complex value infinitely often with at most one exception."
+    }
+  },
+  {
+    "id": "ca006",
+    "path": ["mathematics", "complex-analysis"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The Kramers-Kronig relations connect the real and imaginary parts of any causal, analytic response function $\\chi(\\omega) = \\chi'(\\omega) + i\\chi''(\\omega)$:",
+    "passive": {
+      "options": [
+        "$\\chi'(\\omega) = \\frac{1}{\\pi}\\mathcal{P}\\int_{-\\infty}^\\infty \\frac{\\chi''(\\omega')}{\\omega'-\\omega}d\\omega'$ — the real (dispersive) part is determined by the imaginary (absorptive) part",
+        "The Kramers-Kronig relations apply only to electromagnetic response functions",
+        "The relations require $\\chi(\\omega)$ to have poles on the real axis",
+        "Real and imaginary parts of $\\chi$ are independent for a causal system"
+      ],
+      "correct": 0,
+      "explanation": "Causality ($\\chi(t) = 0$ for $t < 0$) places poles of $\\chi(\\omega)$ in the lower half-plane, allowing Cauchy's theorem to relate $\\chi'$ and $\\chi''$ via a Hilbert transform (the $\\mathcal{P}$ denotes Cauchy principal value). Physical consequences: you can't have absorption without dispersion. In AMO: the real (dispersive) part of atomic susceptibility gives the refractive index and dipole force; the imaginary (absorptive) part gives photon scattering and laser cooling."
+    }
+  },
+  {
+    "id": "ca007",
+    "path": ["mathematics", "complex-analysis"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "A conformal map is an analytic function with non-zero derivative that preserves angles between curves. The Schwarz-Christoffel mapping transforms the upper half-plane to a polygon. In physics, conformal maps are used because:",
+    "passive": {
+      "options": [
+        "Harmonic functions (solutions of Laplace's equation) are preserved under conformal maps — a complex electrostatics or fluid dynamics problem in a complicated geometry can be mapped to a simpler one",
+        "Conformal maps preserve distances as well as angles",
+        "Every harmonic function is the real part of a conformal map",
+        "Conformal invariance only applies in 2D for linear PDEs with constant coefficients"
+      ],
+      "correct": 0,
+      "explanation": "If $w = f(z)$ is analytic with $f' \\neq 0$, and $U(x,y)$ satisfies $\\nabla^2 U = 0$ in the $z$-plane, then $U(x(u,v), y(u,v))$ satisfies $\\nabla^2 U = 0$ in the $w$-plane. Classic example: the flow around a cylinder maps to flow around an airfoil (Joukowski transform). In string theory and 2D critical phenomena, conformal symmetry is the infinite-dimensional Virasoro algebra — the basis of conformal field theory."
+    }
+  }
+]

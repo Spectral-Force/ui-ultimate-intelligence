@@ -1,0 +1,148 @@
+[
+  {
+    "id": "en001",
+    "path": ["physics", "statistical-mechanics", "entropy"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "Boltzmann's formula relates entropy to the number of accessible microstates $\\Omega$:",
+    "equation": "S = k_B \\ln\\Omega",
+    "passive": {
+      "options": [
+        "$S$ is maximised at equilibrium — the equilibrium state is the one with the most microstates",
+        "$S$ is minimised at equilibrium by the second law",
+        "$\\Omega$ is the average energy of the system",
+        "$S = k_B\\Omega$ for classical systems"
+      ],
+      "correct": 0,
+      "explanation": "Boltzmann's formula is carved on his tombstone. Maximising $\\Omega$ (and hence $S$) subject to constraints gives the equilibrium distribution. For an ideal gas of $N$ particles, $\\Omega \\propto V^N E^{3N/2}$, immediately giving the ideal gas equation of state and energy. The bridge to thermodynamics is $dU = T\\,dS - p\\,dV + \\mu\\,dN$."
+    },
+    "active": {
+      "type": "fill-blanks",
+      "prompt": "Boltzmann's entropy formula (where $\\Omega$ = number of microstates):",
+      "template": ["$S =$", null, "$\\ln\\Omega$"],
+      "tokens": [
+        {"id": "t1", "latex": "k_B"},
+        {"id": "t2", "latex": "1/k_B"},
+        {"id": "t3", "latex": "k_B T"},
+        {"id": "t4", "latex": "R"}
+      ],
+      "solution": ["t1"],
+      "explanation": "$S = k_B\\ln\\Omega$. Boltzmann's constant $k_B = 1.38\\times10^{-23}$ J/K converts the dimensionless $\\ln\\Omega$ to units of J/K. The molar version is $S = R\\ln\\Omega_{\\rm mol}$ where $R = N_A k_B$."
+    }
+  },
+  {
+    "id": "en002",
+    "path": ["physics", "statistical-mechanics", "entropy"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "The second law of thermodynamics states that for an isolated system:",
+    "passive": {
+      "options": [
+        "$dS \\geq 0$ — entropy never decreases; equality holds for reversible processes",
+        "$dS = 0$ — entropy is conserved like energy",
+        "$dU = 0$ — internal energy is constant",
+        "$dS = dQ/T$ for all processes"
+      ],
+      "correct": 0,
+      "explanation": "The second law has many equivalent formulations: no heat engine converts heat entirely to work (Kelvin), heat does not spontaneously flow from cold to hot (Clausius), and $dS \\geq 0$ for isolated systems (Boltzmann). The relation $dS = dQ/T$ holds only for reversible processes; for irreversible processes $dS > dQ_{\\rm irrev}/T$."
+    }
+  },
+  {
+    "id": "en003",
+    "path": ["physics", "statistical-mechanics", "entropy"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "The four thermodynamic potentials and their natural variables are related by Legendre transforms. The Helmholtz free energy $F$ and Gibbs free energy $G$ are:",
+    "passive": {
+      "options": [
+        "$F = U - TS$ (natural variables $T, V, N$) and $G = U - TS + pV$ (natural variables $T, p, N$)",
+        "$F = U + TS$ and $G = H - TS$ where $H = U + pV$",
+        "$F = H - TS$ and $G = U - TS$",
+        "$F = U + pV - TS$ and $G = U - TS$"
+      ],
+      "correct": 0,
+      "explanation": "$F = U - TS$ is minimised at constant $T,V$ equilibrium; $G = U - TS + pV = H - TS$ is minimised at constant $T,p$ equilibrium (relevant to most lab experiments). Spontaneous processes at constant $T,p$ have $\\Delta G \\leq 0$. In AMO physics, $G$ matters for BEC (chemical equilibrium) and $F$ for canonical ensemble thermodynamics."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each thermodynamic potential to its natural variables and extremum condition:",
+      "pairs": [
+        {"id": "p1", "term": "Internal energy $U$", "definition": "Natural variables $(S, V, N)$; minimised at fixed $S, V$"},
+        {"id": "p2", "term": "Helmholtz free energy $F = U - TS$", "definition": "Natural variables $(T, V, N)$; minimised at fixed $T, V$"},
+        {"id": "p3", "term": "Gibbs free energy $G = U - TS + pV$", "definition": "Natural variables $(T, p, N)$; minimised at fixed $T, p$"},
+        {"id": "p4", "term": "Enthalpy $H = U + pV$", "definition": "Natural variables $(S, p, N)$; minimised at fixed $S, p$"}
+      ],
+      "explanation": "The choice of potential depends on which variables are held constant in the experiment. Most chemistry and AMO experiments operate at fixed $T$ and $p$, making $G$ the relevant potential for phase equilibria and chemical reactions."
+    }
+  },
+  {
+    "id": "en004",
+    "path": ["physics", "statistical-mechanics", "entropy"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "For a Carnot heat engine operating between a hot reservoir at $T_H$ and a cold reservoir at $T_C$, the maximum thermodynamic efficiency is:",
+    "equation": "\\eta_{\\rm Carnot} = 1 - \\frac{T_C}{T_H}",
+    "passive": {
+      "options": [
+        "Any real engine must have $\\eta < \\eta_{\\rm Carnot}$ — equality is only achievable in the limit of infinitely slow (reversible) operation",
+        "Real engines can exceed $\\eta_{\\rm Carnot}$ if friction is eliminated",
+        "$\\eta_{\\rm Carnot} = T_H/T_C - 1$",
+        "The efficiency depends on the working substance, not only on the temperatures"
+      ],
+      "correct": 0,
+      "explanation": "The Carnot efficiency is the universal upper bound for any heat engine operating between two temperatures, regardless of the working substance or mechanism. It follows from $\\Delta S_{\\rm universe} \\geq 0$: at most $Q_H(1 - T_C/T_H)$ can be converted to work. Laser cooling is often described in thermodynamic terms — the entropy of the photon field carries away the entropy of the atoms."
+    }
+  },
+  {
+    "id": "en005",
+    "path": ["physics", "statistical-mechanics", "entropy"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Maxwell relations are cross-derivative identities derived from the exactness of the thermodynamic potentials. One example, from $F = U - TS$ (with $dF = -S\\,dT - p\\,dV$), is:",
+    "passive": {
+      "options": [
+        "$\\left(\\dfrac{\\partial S}{\\partial V}\\right)_T = \\left(\\dfrac{\\partial p}{\\partial T}\\right)_V$",
+        "$\\left(\\dfrac{\\partial S}{\\partial V}\\right)_T = -\\left(\\dfrac{\\partial p}{\\partial T}\\right)_V$",
+        "$\\left(\\dfrac{\\partial U}{\\partial V}\\right)_T = p$",
+        "$\\left(\\dfrac{\\partial T}{\\partial V}\\right)_S = \\left(\\dfrac{\\partial p}{\\partial S}\\right)_V$"
+      ],
+      "correct": 0,
+      "explanation": "From $dF = -S\\,dT - p\\,dV$: $S = -(\\partial F/\\partial T)_V$ and $p = -(\\partial F/\\partial V)_T$. Exactness requires $\\partial^2 F/\\partial T\\partial V = \\partial^2 F/\\partial V\\partial T$, giving $(\\partial S/\\partial V)_T = (\\partial p/\\partial T)_V$. This allows measurable quantities ($p, V, T$) to determine entropic quantities. For an ideal gas $p = Nk_BT/V$, so $(\\partial p/\\partial T)_V = Nk_B/V = (\\partial S/\\partial V)_T$ ✓."
+    }
+  },
+  {
+    "id": "en006",
+    "path": ["physics", "statistical-mechanics", "entropy"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The third law of thermodynamics (Nernst's heat theorem) states:",
+    "passive": {
+      "options": [
+        "$S \\to 0$ as $T \\to 0$ for a system in its unique ground state; absolute zero is unattainable in a finite number of steps",
+        "$S \\to \\infty$ as $T \\to 0$ due to quantum fluctuations",
+        "$S = 0$ at all temperatures for a perfect crystal",
+        "The entropy change of any adiabatic process is zero"
+      ],
+      "correct": 0,
+      "explanation": "For a non-degenerate ground state, $\\Omega = 1$ at $T=0$, so $S = k_B\\ln 1 = 0$. This makes absolute entropy (not just $\\Delta S$) well-defined. The unattainability follows from the entropy going to zero: each cooling step requires removing less entropy, requiring exponentially more resources. In experiments, laser-cooled atoms reach $\\sim$ nK but exactly zero temperature remains impossible."
+    }
+  },
+  {
+    "id": "en007",
+    "path": ["physics", "statistical-mechanics", "entropy"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "The von Neumann entropy of a quantum state described by density matrix $\\hat{\\rho}$ is:",
+    "equation": "S_{\\rm vN} = -k_B\\,{\\rm tr}(\\hat{\\rho}\\ln\\hat{\\rho})",
+    "passive": {
+      "options": [
+        "$S_{\\rm vN} = 0$ for a pure state and $S_{\\rm vN} > 0$ for a mixed state",
+        "$S_{\\rm vN}$ is always equal to Boltzmann's entropy $k_B\\ln\\Omega$",
+        "$S_{\\rm vN}$ is invariant under measurement",
+        "$S_{\\rm vN}$ can decrease for an open quantum system"
+      ],
+      "correct": 0,
+      "explanation": "For a pure state $\\hat{\\rho} = |\\psi\\rangle\\langle\\psi|$: $\\hat{\\rho}^2 = \\hat{\\rho}$, eigenvalues are $\\{1, 0, 0,\\ldots\\}$, so $S_{\\rm vN} = 0$. For a maximally mixed state $\\hat{\\rho} = I/d$: $S_{\\rm vN} = k_B\\ln d$. In quantum information, the von Neumann entropy quantifies entanglement (entropy of a subsystem) and is the quantum analogue of Shannon entropy. For a system in thermal equilibrium, $S_{\\rm vN}$ reproduces the thermodynamic entropy."
+    }
+  }
+]

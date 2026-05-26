@@ -1,0 +1,148 @@
+[
+  {
+    "id": "op001",
+    "path": ["physics", "electromagnetism", "optics"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "The thin lens equation relates object distance $u$, image distance $v$, and focal length $f$:",
+    "equation": "\\frac{1}{f} = \\frac{1}{v} + \\frac{1}{u}",
+    "passive": {
+      "options": [
+        "A converging lens ($f > 0$) forms a real, inverted image when $u > f$; a virtual, upright image when $u < f$",
+        "The thin lens equation only applies to concave lenses",
+        "The focal length depends on the object distance",
+        "A diverging lens can form a real image"
+      ],
+      "correct": 0,
+      "explanation": "Sign convention (real-is-positive): real objects $u > 0$, real images $v > 0$. For a converging lens, when $u > 2f$ the image is smaller; at $u = 2f$ same size; $f < u < 2f$ magnified. The lensmaker's equation $1/f = (n-1)(1/R_1 - 1/R_2)$ relates focal length to glass index $n$ and surface radii. In laser labs, lenses are used to collimate beams, match modes, and focus into vapour cells."
+    },
+    "active": {
+      "type": "fill-blanks",
+      "prompt": "If object distance is $u$ and image distance is $v$, focal length $f$ satisfies:",
+      "template": ["$\\dfrac{1}{f} = \\dfrac{1}{v} +$", null],
+      "tokens": [
+        {"id": "t1", "latex": "\\dfrac{1}{u}"},
+        {"id": "t2", "latex": "\\dfrac{1}{u^2}"},
+        {"id": "t3", "latex": "u"},
+        {"id": "t4", "latex": "\\dfrac{u}{v}"}
+      ],
+      "solution": ["t1"],
+      "explanation": "$1/f = 1/v + 1/u$. Rearranging: $v = uf/(u-f)$. When $u \\to \\infty$ (collimated input), $v = f$ — the beam focuses at the back focal plane."
+    }
+  },
+  {
+    "id": "op002",
+    "path": ["physics", "electromagnetism", "optics"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "A Gaussian laser beam with waist $w_0$ has an intensity profile $I(r) = I_0 e^{-2r^2/w_0^2}$ at the focus. The beam divergence half-angle $\\theta$ (far field) is:",
+    "equation": "\\theta = \\frac{\\lambda}{\\pi w_0}",
+    "passive": {
+      "options": [
+        "Tighter focus ($w_0$ smaller) gives larger divergence — the beam-waist product $w_0\\theta = \\lambda/\\pi$ is a diffraction limit",
+        "Tighter focus gives less divergence",
+        "The divergence is independent of wavelength",
+        "The Rayleigh range $z_R = w_0/\\theta$"
+      ],
+      "correct": 0,
+      "explanation": "The beam waist–divergence product $w_0 \\theta = \\lambda/\\pi$ is the ideal Gaussian beam's diffraction limit ($M^2 = 1$). Real beams have $M^2 > 1$. The Rayleigh range $z_R = \\pi w_0^2/\\lambda$ sets the depth of focus — beyond $z_R$, the beam area doubles. For 780 nm and $w_0 = 1$ mm: $z_R \\approx 4$ m — essentially collimated over lab distances."
+    }
+  },
+  {
+    "id": "op003",
+    "path": ["physics", "electromagnetism", "optics"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "A Fabry-Pérot etalon of length $L$ has transmission peaks when the round-trip phase is a multiple of $2\\pi$. The free spectral range (FSR) is:",
+    "equation": "\\Delta\\nu_{\\rm FSR} = \\frac{c}{2L}",
+    "passive": {
+      "options": [
+        "FSR is the frequency spacing between adjacent transmission peaks; the finesse $\\mathcal{F} = \\Delta\\nu_{\\rm FSR}/\\delta\\nu_{\\rm linewidth}$ measures the cavity's frequency resolution",
+        "FSR is the frequency at which the cavity resonates",
+        "FSR decreases with mirror reflectivity",
+        "The cavity linewidth equals the FSR divided by the speed of light"
+      ],
+      "correct": 0,
+      "explanation": "Round-trip condition: $2L = m\\lambda$, so $\\nu_m = mc/2L$, giving $\\Delta\\nu_{\\rm FSR} = c/2L$. Finesse $\\mathcal{F} = \\pi\\sqrt{R}/(1-R)$ for mirror reflectivity $R$. A high-finesse cavity (e.g., $R = 0.9999$, $\\mathcal{F} \\sim 30{,}000$) can resolve MHz features within a 10 GHz FSR. Used in laser linewidth measurement, optical frequency combs, and cavity-QED experiments."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each Fabry-Pérot parameter to its definition:",
+      "pairs": [
+        {"id": "p1", "term": "Free spectral range (FSR)", "definition": "$c/2L$ — frequency spacing between adjacent resonance peaks"},
+        {"id": "p2", "term": "Finesse $\\mathcal{F}$", "definition": "$\\Delta\\nu_{\\rm FSR}/\\delta\\nu$ — ratio of FSR to cavity linewidth"},
+        {"id": "p3", "term": "Cavity linewidth $\\delta\\nu$", "definition": "$\\Delta\\nu_{\\rm FSR}/\\mathcal{F}$ — FWHM of each transmission peak"},
+        {"id": "p4", "term": "Cavity $Q$-factor", "definition": "$\\nu_0/\\delta\\nu$ — number of oscillation cycles per linewidth"}
+      ],
+      "explanation": "For a cavity with $L = 10$ cm ($\\Delta\\nu_{\\rm FSR} = 1.5$ GHz) and $\\mathcal{F} = 1000$: $\\delta\\nu = 1.5$ MHz. This cavity resolves frequency features separated by $> 1.5$ MHz. Used to analyse laser sidebands and servo noise."
+    }
+  },
+  {
+    "id": "op004",
+    "path": ["physics", "electromagnetism", "optics"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "An acousto-optic modulator (AOM) uses a piezoelectric transducer to launch sound waves into a crystal, creating a diffraction grating. A beam diffracted into the first order is shifted in frequency by:",
+    "passive": {
+      "options": [
+        "The acoustic drive frequency $f_{\\rm RF}$ — the AOM shifts the optical frequency by exactly $f_{\\rm RF}$ (typically 80–200 MHz)",
+        "Twice the acoustic frequency due to Bragg reflection",
+        "The acoustic frequency divided by the diffraction order",
+        "The frequency shift depends on beam diameter, not RF frequency"
+      ],
+      "correct": 0,
+      "explanation": "Conservation of energy and momentum: $\\omega_{\\rm out} = \\omega_{\\rm in} \\pm \\Omega_{\\rm RF}$ and $k_{\\rm out} = k_{\\rm in} \\pm k_{\\rm sound}$. The $\\pm$ sign gives $+1$ or $-1$ diffraction orders. Double-passing an AOM shifts by $2f_{\\rm RF}$ and provides pointing stability. AOMs are essential tools in AMO labs: they tune laser frequencies relative to atomic transitions (probe–repump detuning), chop beams on microsecond timescales, and generate coherent frequency sidebands for heterodyne detection."
+    }
+  },
+  {
+    "id": "op005",
+    "path": ["physics", "electromagnetism", "optics"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "A half-wave plate (HWP) retards one polarisation component by $\\pi$ relative to the other. Its effect on linearly polarised light incident at angle $\\theta$ to the fast axis is:",
+    "passive": {
+      "options": [
+        "The polarisation direction rotates by $2\\theta$ — an HWP rotates linear polarisation by twice the plate angle",
+        "The polarisation rotates by $\\theta$",
+        "The HWP converts linear to circular polarisation",
+        "The output polarisation is always along the fast axis"
+      ],
+      "correct": 0,
+      "explanation": "A HWP with fast axis at angle $\\theta$ transforms $|H\\rangle \\to \\cos 2\\theta|H\\rangle + \\sin 2\\theta|V\\rangle$ — equivalent to a rotation by $2\\theta$. A quarter-wave plate (QWP) at 45° converts linear to circular polarisation: $|H\\rangle \\to (|H\\rangle \\pm i|V\\rangle)/\\sqrt{2}$. In MOT setups, $\\sigma^+$ and $\\sigma^-$ polarisations for Zeeman slower and MOT beams are set with QWPs. HWPs are used to set power ratios at polarising beamsplitters."
+    }
+  },
+  {
+    "id": "op006",
+    "path": ["physics", "electromagnetism", "optics"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Phase-locked two-photon absorption uses counter-propagating beams of frequency $\\omega_1$ and $\\omega_2$ to excite a two-photon transition. The Doppler shift cancels when:",
+    "passive": {
+      "options": [
+        "$\\omega_1 = \\omega_2$ — equal-frequency counter-propagating beams give Doppler-free two-photon spectroscopy for all velocity classes simultaneously",
+        "The beams have orthogonal polarisations",
+        "The beams propagate at 45° to each other",
+        "Doppler cancellation requires $\\omega_1 + \\omega_2 = 2\\omega_0$ with $\\omega_1 \\neq \\omega_2$"
+      ],
+      "correct": 0,
+      "explanation": "For counter-propagating beams, atom with velocity $v$ sees frequencies $\\omega_1(1+v/c)$ and $\\omega_2(1-v/c)$. Total: $\\omega_1 + \\omega_2$ — velocity independent. So all velocity classes are simultaneously resonant when $\\omega_1 + \\omega_2 = \\omega_{\\rm transition}$. The 1S-2S transition in hydrogen (at 243 nm, two 486 nm photons) was measured this way to 15 significant figures, providing the most precise test of QED and the proton radius."
+    }
+  },
+  {
+    "id": "op007",
+    "path": ["physics", "electromagnetism", "optics"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "An electro-optic modulator (EOM) uses the Pockels effect to create frequency sidebands. When a carrier at $\\omega_0$ is phase-modulated at $\\Omega$ with modulation depth $\\beta$, the output field contains sidebands at $\\omega_0 \\pm n\\Omega$ with amplitudes proportional to Bessel functions $J_n(\\beta)$. For small $\\beta$:",
+    "passive": {
+      "options": [
+        "Only $\\pm 1$ sidebands are significant: amplitudes $J_0(\\beta) \\approx 1$ (carrier) and $J_1(\\beta) \\approx \\beta/2$ (first sidebands)",
+        "The carrier is fully suppressed at $\\beta = \\pi$",
+        "All sidebands have equal amplitude for small $\\beta$",
+        "The Pockels effect requires modulation at microwave frequencies only"
+      ],
+      "correct": 0,
+      "explanation": "EOM phase modulation: $E(t) = E_0 e^{i(\\omega_0 t + \\beta\\sin\\Omega t)} = E_0\\sum_n J_n(\\beta) e^{i(\\omega_0 + n\\Omega)t}$. For $\\beta \\ll 1$: carrier $J_0 \\approx 1$, sidebands $J_{\\pm 1} \\approx \\pm\\beta/2$. EOMs are used to generate reference sidebands for Pound-Drever-Hall (PDH) locking, injection locking, and for probing hyperfine structure. The PDH technique uses reflected sideband beats to generate an error signal proportional to laser frequency offset from cavity resonance."
+    }
+  }
+]
