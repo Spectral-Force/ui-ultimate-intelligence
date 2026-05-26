@@ -1,0 +1,177 @@
+[
+  {
+    "id": "fa001",
+    "path": ["mathematics", "fourier-analysis"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "The Fourier transform of a function $f(t)$ and its inverse are defined as (using the physics/engineering convention):",
+    "passive": {
+      "options": [
+        "$\\tilde{f}(\\omega) = \\int_{-\\infty}^{\\infty} f(t)\\,e^{-i\\omega t}\\,dt$ and $f(t) = \\dfrac{1}{2\\pi}\\int_{-\\infty}^{\\infty}\\tilde{f}(\\omega)\\,e^{i\\omega t}\\,d\\omega$",
+        "$\\tilde{f}(\\omega) = \\int_{-\\infty}^{\\infty} f(t)\\,e^{i\\omega t}\\,dt$ and $f(t) = \\dfrac{1}{2\\pi}\\int_{-\\infty}^{\\infty}\\tilde{f}(\\omega)\\,e^{-i\\omega t}\\,d\\omega$",
+        "$\\tilde{f}(\\omega) = \\dfrac{1}{\\sqrt{2\\pi}}\\int_{-\\infty}^{\\infty} f(t)\\,e^{-i\\omega t}\\,dt$ with the same prefactor in the inverse",
+        "$\\tilde{f}(\\nu) = \\int_{-\\infty}^{\\infty} f(t)\\,e^{-2\\pi i\\nu t}\\,dt$ and $f(t) = \\int_{-\\infty}^{\\infty}\\tilde{f}(\\nu)\\,e^{2\\pi i\\nu t}\\,d\\nu$"
+      ],
+      "correct": 0,
+      "explanation": "The asymmetric convention puts $1/2\\pi$ only in the inverse transform. The symmetric convention splits it as $1/\\sqrt{2\\pi}$ in both directions. The $\\nu$-convention uses ordinary frequency and puts no factors anywhere. All are equivalent — the key is consistency. In physics (quantum mechanics, optics) the $\\omega$ convention is most common."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each Fourier transform property to its statement:",
+      "pairs": [
+        {"id": "p1", "term": "Linearity", "definition": "$\\mathcal{F}\\{af+bg\\} = a\\tilde{f}+b\\tilde{g}$"},
+        {"id": "p2", "term": "Time shift", "definition": "$\\mathcal{F}\\{f(t-t_0)\\} = e^{-i\\omega t_0}\\tilde{f}(\\omega)$"},
+        {"id": "p3", "term": "Frequency shift", "definition": "$\\mathcal{F}\\{e^{i\\omega_0 t}f(t)\\} = \\tilde{f}(\\omega-\\omega_0)$"},
+        {"id": "p4", "term": "Derivative", "definition": "$\\mathcal{F}\\{f'(t)\\} = i\\omega\\,\\tilde{f}(\\omega)$"}
+      ],
+      "explanation": "These four properties — linearity, time shift (phase modulation in frequency), frequency shift (modulation in time), and the derivative theorem — are the workhorses of Fourier analysis. The derivative theorem converts differential equations to algebraic ones in frequency space."
+    }
+  },
+  {
+    "id": "fa002",
+    "path": ["mathematics", "fourier-analysis"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "Parseval's theorem for Fourier transforms states:",
+    "equation": "\\int_{-\\infty}^{\\infty}|f(t)|^2\\,dt = \\frac{1}{2\\pi}\\int_{-\\infty}^{\\infty}|\\tilde{f}(\\omega)|^2\\,d\\omega",
+    "passive": {
+      "options": [
+        "The total energy (squared norm) is the same in time and frequency domains",
+        "The peak value of $f$ equals the peak value of $\\tilde{f}$",
+        "The time-domain signal and its spectrum have equal support",
+        "The integral of $f$ equals the integral of $\\tilde{f}$"
+      ],
+      "correct": 0,
+      "explanation": "Parseval's theorem is a statement of energy conservation under the Fourier transform — it is an isometry. In quantum mechanics it underlies the equivalence of position-space and momentum-space wavefunctions: $\\int|\\psi(x)|^2 dx = \\int|\\tilde{\\psi}(k)|^2 dk/2\\pi$. In signal processing it means total signal energy equals total spectral energy."
+    }
+  },
+  {
+    "id": "fa003",
+    "path": ["mathematics", "fourier-analysis"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "The convolution theorem states that convolution in the time domain corresponds to pointwise multiplication in the frequency domain:",
+    "equation": "\\mathcal{F}\\{f * g\\}(\\omega) = \\tilde{f}(\\omega)\\cdot\\tilde{g}(\\omega)",
+    "passive": {
+      "options": [
+        "Convolution of two functions $\\to$ product of their transforms; equivalently, product in time $\\to$ convolution in frequency",
+        "Convolution in time $\\to$ convolution in frequency; the shapes are preserved",
+        "Multiplication of two signals is equivalent to their convolution in frequency only if both are causal",
+        "The theorem only holds for compactly supported functions"
+      ],
+      "correct": 0,
+      "explanation": "The convolution theorem is central to linear systems theory: the output of a linear time-invariant system is the convolution of the input with the impulse response, which in frequency space is just multiplication by the transfer function. The dual statement (product in time ↔ convolution in frequency) explains why amplitude modulation produces sidebands."
+    },
+    "active": {
+      "type": "fill-blanks",
+      "prompt": "Complete: if $h(t) = (f * g)(t)$, then $\\tilde{h}(\\omega) =$",
+      "template": ["$\\tilde{h}(\\omega) =$", null],
+      "tokens": [
+        {"id": "t1", "latex": "\\tilde{f}(\\omega)\\cdot\\tilde{g}(\\omega)"},
+        {"id": "t2", "latex": "\\tilde{f}(\\omega) + \\tilde{g}(\\omega)"},
+        {"id": "t3", "latex": "(\\tilde{f}*\\tilde{g})(\\omega)"},
+        {"id": "t4", "latex": "\\tilde{f}(\\omega)/\\tilde{g}(\\omega)"}
+      ],
+      "solution": ["t1"],
+      "explanation": "Convolution in time corresponds to multiplication in frequency: $\\mathcal{F}\\{f*g\\} = \\tilde{f}\\cdot\\tilde{g}$. This is why filtering (removing certain frequencies) can be done by multiplying the spectrum by a mask, then inverse transforming."
+    }
+  },
+  {
+    "id": "fa004",
+    "path": ["mathematics", "fourier-analysis"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Fourier transform of a Gaussian $f(t) = e^{-t^2/2\\sigma^2}$ is:",
+    "passive": {
+      "options": [
+        "A Gaussian in $\\omega$: $\\tilde{f}(\\omega) = \\sigma\\sqrt{2\\pi}\\,e^{-\\omega^2\\sigma^2/2}$",
+        "A Lorentzian in $\\omega$: $\\tilde{f}(\\omega) = \\sigma/(1+\\omega^2\\sigma^2)$",
+        "A sinc function: $\\tilde{f}(\\omega) = \\sin(\\omega\\sigma)/(\\omega\\sigma)$",
+        "A delta function at $\\omega = 0$"
+      ],
+      "correct": 0,
+      "explanation": "Gaussians are eigenfunctions of the Fourier transform — the transform of a Gaussian is another Gaussian. A narrow Gaussian in time ($\\small\\sigma\\small$) corresponds to a broad Gaussian in frequency ($1/\\sigma$), embodying the time-bandwidth product $\\Delta t\\,\\Delta\\omega \\geq 1/2$. This is the mathematical foundation of the Heisenberg uncertainty principle $\\Delta x\\,\\Delta p \\geq \\hbar/2$."
+    }
+  },
+  {
+    "id": "fa005",
+    "path": ["mathematics", "fourier-analysis"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The time-bandwidth product (uncertainty relation) for a signal $f(t)$ with rms width $\\Delta t$ and rms spectral width $\\Delta\\omega$ satisfies:",
+    "passive": {
+      "options": [
+        "$\\Delta t\\,\\Delta\\omega \\geq \\tfrac{1}{2}$, with equality for Gaussian pulses",
+        "$\\Delta t\\,\\Delta\\omega = 1$ always, regardless of pulse shape",
+        "$\\Delta t\\,\\Delta\\omega \\geq 2\\pi$",
+        "$\\Delta t\\,\\Delta\\omega$ can be arbitrarily small for smooth signals"
+      ],
+      "correct": 0,
+      "explanation": "The inequality $\\Delta t\\,\\Delta\\omega \\geq 1/2$ follows from the Cauchy-Schwarz inequality applied to $f$ and its Fourier transform. The Gaussian achieves equality. In quantum mechanics with $p = \\hbar k$ and $k = \\omega/c$ this becomes $\\Delta x\\,\\Delta p \\geq \\hbar/2$. In laser physics, a 'transform-limited' pulse has $\\Delta t\\,\\Delta\\nu = 0.44$ (for Gaussian pulses with $\\nu = \\omega/2\\pi$)."
+    }
+  },
+  {
+    "id": "fa006",
+    "path": ["mathematics", "fourier-analysis"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "The Dirac delta function $\\delta(t-t_0)$ can be represented as a limiting Fourier integral. Its Fourier transform is:",
+    "passive": {
+      "options": [
+        "$\\tilde{\\delta}(\\omega) = e^{-i\\omega t_0}$ — a pure phase, constant amplitude across all frequencies",
+        "$\\tilde{\\delta}(\\omega) = \\delta(\\omega)$ — a delta function at zero frequency",
+        "$\\tilde{\\delta}(\\omega) = 1/(i\\omega)$ for $t_0 = 0$",
+        "$\\tilde{\\delta}(\\omega) = \\cos(\\omega t_0)$ — real and even"
+      ],
+      "correct": 0,
+      "explanation": "Applying the definition: $\\tilde{\\delta}(\\omega) = \\int_{-\\infty}^{\\infty}\\delta(t-t_0)e^{-i\\omega t}dt = e^{-i\\omega t_0}$. At $t_0=0$, $\\tilde{\\delta}=1$ — the delta function has equal power at all frequencies ('white' spectrum). The inverse follows: $\\delta(t-t_0) = \\frac{1}{2\\pi}\\int e^{i\\omega(t-t_0)}d\\omega$, which is how $\\delta$ is often defined in physics."
+    },
+    "active": {
+      "type": "fill-blanks",
+      "prompt": "The Fourier transform of $\\delta(t - t_0)$ is:",
+      "template": ["$\\mathcal{F}\\{\\delta(t-t_0)\\} =$", null],
+      "tokens": [
+        {"id": "t1", "latex": "e^{-i\\omega t_0}"},
+        {"id": "t2", "latex": "e^{+i\\omega t_0}"},
+        {"id": "t3", "latex": "\\delta(\\omega)"},
+        {"id": "t4", "latex": "1/(i\\omega)"}
+      ],
+      "solution": ["t1"],
+      "explanation": "$\\int \\delta(t-t_0)e^{-i\\omega t}dt = e^{-i\\omega t_0}$. A time-shifted impulse is a unit-amplitude complex exponential in frequency — pure phase modulation."
+    }
+  },
+  {
+    "id": "fa007",
+    "path": ["mathematics", "fourier-analysis"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The Nyquist-Shannon sampling theorem states that a bandlimited signal with maximum frequency $f_{\\rm max}$ can be perfectly reconstructed if sampled at rate $f_s$ satisfying:",
+    "passive": {
+      "options": [
+        "$f_s > 2f_{\\rm max}$ — the Nyquist rate",
+        "$f_s > f_{\\rm max}$",
+        "$f_s > \\pi f_{\\rm max}$",
+        "$f_s > 4f_{\\rm max}$ to account for aliasing"
+      ],
+      "correct": 0,
+      "explanation": "Sampling at rate $f_s$ creates copies of the spectrum spaced by $f_s$. If $f_s < 2f_{\\rm max}$, these copies overlap (aliasing) and the original signal cannot be recovered. At $f_s > 2f_{\\rm max}$, an ideal low-pass filter with cutoff $f_s/2$ recovers the original. In practice, signals are anti-alias filtered before sampling. The Nyquist rate $2f_{\\rm max}$ has direct analogues in quantum optics (sampling optical fields) and in discretising Hamiltonians on lattices."
+    }
+  },
+  {
+    "id": "fa008",
+    "path": ["mathematics", "fourier-analysis"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "For a periodic function $f(t)$ with period $T$, the Fourier series representation is $f(t) = \\sum_{n=-\\infty}^{\\infty} c_n e^{2\\pi int/T}$. The coefficients are:",
+    "passive": {
+      "options": [
+        "$c_n = \\dfrac{1}{T}\\int_0^T f(t)\\,e^{-2\\pi int/T}\\,dt$",
+        "$c_n = \\dfrac{1}{2\\pi}\\int_0^T f(t)\\,e^{-int/T}\\,dt$",
+        "$c_n = \\int_0^T f(t)\\,e^{-2\\pi int/T}\\,dt$",
+        "$c_n = \\dfrac{1}{n}\\int_0^T f(t)\\,dt$"
+      ],
+      "correct": 0,
+      "explanation": "The Fourier series is related to the Fourier transform: $c_n = \\tilde{f}(n/T)/T$. For a real function, $c_{-n} = c_n^*$. The series converges to $f(t)$ in the $L^2$ sense (pointwise for smooth $f$, at Gibbs jumps for discontinuities). In quantum mechanics, the Fourier coefficients on a ring of circumference $L$ give the momentum eigenstates with $k_n = 2\\pi n/L$."
+    }
+  }
+]

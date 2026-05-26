@@ -1,0 +1,163 @@
+[
+  {
+    "id": "bc001",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "ultracold-atoms", "bec"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "Bose-Einstein condensation occurs when the phase-space density $n\\lambda_{\\rm dB}^3$ exceeds a critical value. For a 3D ideal Bose gas, the threshold is approximately:",
+    "passive": {
+      "options": [
+        "$n\\lambda_{\\rm dB}^3 \\approx 2.612$",
+        "$n\\lambda_{\\rm dB}^3 \\approx 1$",
+        "$n\\lambda_{\\rm dB}^3 \\approx \\pi$",
+        "$n\\lambda_{\\rm dB}^3 \\approx 4.19$"
+      ],
+      "correct": 0,
+      "explanation": "The value 2.612 is $\\zeta(3/2)$ — the Riemann zeta function at $3/2$. Physically, BEC occurs when the thermal de Broglie wavelength $\\lambda_{\\rm dB} = \\sqrt{2\\pi\\hbar^2/mk_BT}$ becomes comparable to the inter-particle spacing $n^{-1/3}$: quantum mechanical wave packets of neighbouring atoms begin to overlap and the system must be described by a macroscopic wavefunction."
+    },
+    "active": {
+      "type": "fill-blanks",
+      "prompt": "Complete the BEC onset condition (where $\\lambda_{\\rm dB} = \\sqrt{2\\pi\\hbar^2/mk_BT}$):",
+      "template": ["$n\\lambda_{\\rm dB}^3 \\geq$", null],
+      "tokens": [
+        {"id": "t1", "latex": "2.612"},
+        {"id": "t2", "latex": "1"},
+        {"id": "t3", "latex": "\\pi"},
+        {"id": "t4", "latex": "8\\pi/3"}
+      ],
+      "solution": ["t1"],
+      "explanation": "The threshold $n\\lambda_{\\rm dB}^3 = \\zeta(3/2) \\approx 2.612$ comes from the Bose-Einstein distribution at $\\mu = 0$. It marks the point where the ground-state occupation becomes macroscopic."
+    }
+  },
+  {
+    "id": "bc002",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "ultracold-atoms", "bec"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The critical temperature for BEC in a 3D harmonic trap (frequencies $\\bar{\\omega}$) for $N$ atoms is:",
+    "equation": "k_B T_c = \\hbar\\bar{\\omega}\\left(\\frac{N}{\\zeta(3)}\\right)^{1/3}",
+    "passive": {
+      "options": [
+        "$T_c$ grows as $N^{1/3}$ — larger atom number gives higher critical temperature",
+        "$T_c$ is independent of trap frequency",
+        "$T_c$ grows linearly with $N$",
+        "$T_c$ is determined by the scattering length alone"
+      ],
+      "correct": 0,
+      "explanation": "For a harmonic trap $T_c \\propto N^{1/3}\\bar{\\omega}$, where $\\bar{\\omega} = (\\omega_x\\omega_y\\omega_z)^{1/3}$ is the geometric mean trap frequency and $\\zeta(3) \\approx 1.202$. Tighter traps (higher $\\bar{\\omega}$) and more atoms both raise $T_c$. In experiments with $10^5$ Rb atoms and $\\bar{\\omega}/2\\pi \\approx 100$ Hz, this gives $T_c \\sim 100$ nK."
+    }
+  },
+  {
+    "id": "bc003",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "ultracold-atoms", "bec"],
+    "level": "P",
+    "modes": ["passive", "active"],
+    "question": "The Gross-Pitaevskii equation (GPE) describes the mean-field evolution of a weakly interacting BEC with condensate wavefunction $\\psi$:",
+    "equation": "i\\hbar\\frac{\\partial\\psi}{\\partial t} = \\left(-\\frac{\\hbar^2\\nabla^2}{2m} + V_{\\rm ext} + g|\\psi|^2\\right)\\psi",
+    "passive": {
+      "options": [
+        "$g = 4\\pi\\hbar^2 a/m$ where $a$ is the $s$-wave scattering length",
+        "$g = \\hbar^2/(2ma^2)$ where $a$ is the scattering length",
+        "$g$ is independent of the scattering length",
+        "$g = k_BT$ at the BEC transition"
+      ],
+      "correct": 0,
+      "explanation": "The coupling $g = 4\\pi\\hbar^2 a/m$ sets the strength of mean-field interactions. The nonlinear term $g|\\psi|^2$ represents the mean-field potential felt by each atom due to all others. Repulsive interactions ($a>0$, $g>0$) stabilise the condensate against collapse. For $^{87}$Rb with $a \\approx 5.2$ nm this gives $g$ of order $10^{-51}$ J·m$^3$."
+    },
+    "active": {
+      "type": "fill-blanks",
+      "prompt": "The interaction coupling in the GPE is:",
+      "template": ["$g =$", null],
+      "tokens": [
+        {"id": "t1", "latex": "4\\pi\\hbar^2 a/m"},
+        {"id": "t2", "latex": "2\\pi\\hbar^2 a/m"},
+        {"id": "t3", "latex": "\\hbar^2/(ma)"},
+        {"id": "t4", "latex": "\\hbar^2 a^2/m"}
+      ],
+      "solution": ["t1"],
+      "explanation": "$g = 4\\pi\\hbar^2 a/m$ is the mean-field coupling constant. The factor $4\\pi$ comes from integrating the pseudopotential $g\\delta^3(\\mathbf{r})$ in the Born approximation, recovering the same scattering length $a$."
+    }
+  },
+  {
+    "id": "bc004",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "ultracold-atoms", "bec"],
+    "level": "P",
+    "modes": ["passive", "active"],
+    "question": "The healing length $\\xi$ is the characteristic distance over which the condensate density recovers from a local perturbation (e.g., near a wall or vortex core):",
+    "equation": "\\xi = \\frac{1}{\\sqrt{8\\pi n a}}",
+    "passive": {
+      "options": [
+        "$\\xi$ shrinks as the density $n$ or scattering length $a$ increases",
+        "$\\xi$ grows with increasing density",
+        "$\\xi$ is independent of the scattering length",
+        "$\\xi$ equals the de Broglie wavelength at $T_c$"
+      ],
+      "correct": 0,
+      "explanation": "The healing length $\\xi = 1/\\sqrt{8\\pi na}$ balances kinetic energy ($\\hbar^2/2m\\xi^2$) against interaction energy ($gn = 4\\pi\\hbar^2 an/m$). In a vortex, the condensate density goes to zero at the core over a distance $\\sim \\xi$. For typical $^{87}$Rb BECs, $\\xi \\sim 200$ nm. Near a Feshbach resonance where $a \\to \\infty$, $\\xi \\to 0$ and the gas becomes strongly interacting."
+    },
+    "active": {
+      "type": "equation-order",
+      "prompt": "Arrange the tokens to form the healing length formula:",
+      "tokens": [
+        {"id": "t1", "latex": "\\xi"},
+        {"id": "t2", "latex": "="},
+        {"id": "t3", "latex": "1/"},
+        {"id": "t4", "latex": "\\sqrt{8\\pi n a}"}
+      ],
+      "solution": ["t1", "t2", "t3", "t4"],
+      "explanation": "The healing length $\\xi = 1/\\sqrt{8\\pi na}$ sets the size of topological defects (vortices, solitons) in a BEC. It can be thought of as the length scale at which quantum pressure (kinetic energy) and mean-field interaction energy are equal."
+    }
+  },
+  {
+    "id": "bc005",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "ultracold-atoms", "bec"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "In the Thomas-Fermi (TF) approximation for a trapped BEC, the kinetic energy term in the GPE is neglected. The resulting density profile $n(\\mathbf{r}) = |\\psi|^2$ is:",
+    "passive": {
+      "options": [
+        "An inverted parabola: $n(\\mathbf{r}) = \\max\\left[\\dfrac{\\mu - V_{\\rm ext}(\\mathbf{r})}{g},\\,0\\right]$",
+        "A Gaussian matching the harmonic oscillator ground state",
+        "Uniform inside the trap with a sharp boundary",
+        "An exponential decay from the trap centre"
+      ],
+      "correct": 0,
+      "explanation": "Setting $\\partial\\psi/\\partial t = \\mu\\psi/i\\hbar$ and dropping $-\\hbar^2\\nabla^2\\psi/2m$ gives $\\mu = V_{\\rm ext} + gn$, so $n = (\\mu - V_{\\rm ext})/g$ wherever $\\mu > V_{\\rm ext}$, and zero elsewhere. For a harmonic trap this gives an inverted paraboloid. The TF approximation is accurate when $Na/a_{\\rm ho} \\gg 1$, where $a_{\\rm ho} = \\sqrt{\\hbar/m\\bar{\\omega}}$ is the harmonic oscillator length."
+    }
+  },
+  {
+    "id": "bc006",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "ultracold-atoms", "bec"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "The Bogoliubov excitation spectrum of a weakly interacting homogeneous BEC at wavevector $k$ is:",
+    "equation": "E(k) = \\sqrt{\\varepsilon_k\\,(\\varepsilon_k + 2gn)}\\;,\\quad \\varepsilon_k = \\frac{\\hbar^2 k^2}{2m}",
+    "passive": {
+      "options": [
+        "Linear (phonon-like) at small $k$ and quadratic (free-particle) at large $k$",
+        "Always quadratic in $k$",
+        "Linear for all $k$ above a critical wavevector",
+        "Quadratic at small $k$ and linear at large $k$"
+      ],
+      "correct": 0,
+      "explanation": "At small $k$: $E \\approx \\hbar k\\sqrt{gn/m} = \\hbar k c_s$ (phonons with speed of sound $c_s = \\sqrt{gn/m}$). At large $k$: $E \\approx \\varepsilon_k + gn$ (free particles shifted by mean-field). The crossover occurs at $k \\sim 1/\\xi$ (healing length wavevector). The linear phonon dispersion at small $k$ is responsible for superfluidity via the Landau criterion."
+    }
+  },
+  {
+    "id": "bc007",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "ultracold-atoms", "bec"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "After release from a harmonic trap, a non-interacting BEC expands isotropically, while a Thomas-Fermi BEC (with repulsive interactions) expands:",
+    "passive": {
+      "options": [
+        "Anisotropically — the tighter axis expands faster, inverting the aspect ratio",
+        "Isotropically at the same rate as the non-interacting gas",
+        "Faster in all directions than the non-interacting case",
+        "Without changing shape — only the overall size increases"
+      ],
+      "correct": 0,
+      "explanation": "In a TF BEC the interaction energy is converted to kinetic energy during expansion. Because the pressure gradient (and hence acceleration) is largest along the most tightly confined axis, that axis expands fastest. An initially cigar-shaped BEC ($\\omega_z \\ll \\omega_\\perp$) becomes pancake-shaped after long expansion time. This anisotropic expansion was one of the first signatures of BEC observed experimentally (JILA, 1995)."
+    }
+  }
+]

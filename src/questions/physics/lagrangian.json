@@ -1,0 +1,129 @@
+[
+  {
+    "id": "lm001",
+    "path": ["physics", "classical-mechanics", "lagrangian"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "The Euler-Lagrange equation, which gives the equations of motion from the Lagrangian $L(q, \\dot{q}, t)$, is:",
+    "equation": "\\frac{d}{dt}\\frac{\\partial L}{\\partial \\dot{q}_i} - \\frac{\\partial L}{\\partial q_i} = 0",
+    "passive": {
+      "options": [
+        "It is derived from Hamilton's principle: the action $S = \\int L\\,dt$ is stationary along the physical path",
+        "It requires that kinetic energy equals potential energy along the path",
+        "It only holds for conservative systems with no constraints",
+        "It applies only when $L = T - V$ with $T$ quadratic in $\\dot{q}$"
+      ],
+      "correct": 0,
+      "explanation": "Hamilton's principle (stationary action) $\\delta S = \\delta\\int_{t_1}^{t_2}L\\,dt = 0$ with fixed endpoints yields the Euler-Lagrange equations. This variational principle is more general than Newton's laws: it handles constraints naturally through generalised coordinates, and extends to fields, relativity, and quantum mechanics (path integrals)."
+    },
+    "active": {
+      "type": "equation-order",
+      "prompt": "Arrange the tokens to form the Euler-Lagrange equation:",
+      "tokens": [
+        {"id": "t1", "latex": "\\frac{d}{dt}\\frac{\\partial L}{\\partial\\dot{q}}"},
+        {"id": "t2", "latex": "-"},
+        {"id": "t3", "latex": "\\frac{\\partial L}{\\partial q}"},
+        {"id": "t4", "latex": "= 0"}
+      ],
+      "solution": ["t1", "t2", "t3", "t4"],
+      "explanation": "$\\frac{d}{dt}\\frac{\\partial L}{\\partial\\dot{q}} - \\frac{\\partial L}{\\partial q} = 0$ — the rate of change of generalised momentum equals the generalised force."
+    }
+  },
+  {
+    "id": "lm002",
+    "path": ["physics", "classical-mechanics", "lagrangian"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "For a particle moving in a potential $V(\\mathbf{r})$, the Lagrangian is $L = T - V$. For a simple pendulum of length $\\ell$ and bob mass $m$, using angle $\\theta$ as the generalised coordinate:",
+    "passive": {
+      "options": [
+        "$L = \\tfrac{1}{2}m\\ell^2\\dot{\\theta}^2 - mg\\ell(1-\\cos\\theta)$",
+        "$L = \\tfrac{1}{2}m\\ell^2\\dot{\\theta}^2 + mg\\ell\\cos\\theta$",
+        "$L = m\\ell^2\\dot{\\theta}^2 - mg\\ell\\sin\\theta$",
+        "$L = \\tfrac{1}{2}m\\ell\\dot{\\theta}^2 - mg(1-\\cos\\theta)$"
+      ],
+      "correct": 0,
+      "explanation": "$T = \\frac{1}{2}m(\\ell\\dot{\\theta})^2$ (arc length speed squared). Taking $V=0$ at the pivot, $V = -mg\\ell\\cos\\theta$ (the bob is below the pivot by $\\ell\\cos\\theta$), so $V = mg\\ell(1-\\cos\\theta)$ relative to the equilibrium. The Euler-Lagrange equation gives $\\ddot{\\theta} + (g/\\ell)\\sin\\theta = 0$, linearising to $\\ddot{\\theta} + (g/\\ell)\\theta = 0$ for small angles."
+    }
+  },
+  {
+    "id": "lm003",
+    "path": ["physics", "classical-mechanics", "lagrangian"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "A generalised coordinate $q_i$ is cyclic (ignorable) if $\\partial L/\\partial q_i = 0$. The consequence is:",
+    "passive": {
+      "options": [
+        "The conjugate generalised momentum $p_i = \\partial L/\\partial \\dot{q}_i$ is conserved",
+        "The energy associated with that coordinate is zero",
+        "The coordinate itself is constant in time",
+        "$L$ is independent of time"
+      ],
+      "correct": 0,
+      "explanation": "From the Euler-Lagrange equation: if $\\partial L/\\partial q_i = 0$, then $d/dt(\\partial L/\\partial\\dot{q}_i) = 0$, so $p_i$ is conserved. Examples: if $L$ is independent of $x$ (translational symmetry), linear momentum $p_x = m\\dot{x}$ is conserved; if $L$ is independent of azimuthal angle $\\phi$ (rotational symmetry), angular momentum $L_z$ is conserved. This is the simplest form of Noether's theorem."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each symmetry (cyclic coordinate) to the conserved quantity:",
+      "pairs": [
+        {"id": "p1", "term": "$L$ independent of $x$ (translation)", "definition": "Linear momentum $p_x = m\\dot{x}$"},
+        {"id": "p2", "term": "$L$ independent of $\\phi$ (rotation)", "definition": "Angular momentum $L_z = mr^2\\dot{\\phi}$"},
+        {"id": "p3", "term": "$L$ independent of $t$ (time translation)", "definition": "Energy (Hamiltonian) $H = \\sum p_i\\dot{q}_i - L$"},
+        {"id": "p4", "term": "$L$ independent of $\\theta$ (polar angle)", "definition": "Polar angular momentum $p_\\theta = m\\ell^2\\dot{\\theta}$"}
+      ],
+      "explanation": "Noether's theorem generalises this: every continuous symmetry of the action corresponds to a conserved current. This unifies momentum, energy, angular momentum, and more exotic conserved quantities (e.g., the Runge-Lenz vector for $1/r$ potentials)."
+    }
+  },
+  {
+    "id": "lm004",
+    "path": ["physics", "classical-mechanics", "lagrangian"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Noether's theorem states that every continuous symmetry of the Lagrangian corresponds to a conserved quantity. If the Lagrangian is invariant under $q_i \\to q_i + \\epsilon\\,\\delta q_i$ (infinitesimal), the conserved quantity is:",
+    "passive": {
+      "options": [
+        "$Q = \\sum_i \\dfrac{\\partial L}{\\partial \\dot{q}_i}\\delta q_i = $ constant along any solution",
+        "$Q = L\\,\\delta t$ — the action increment",
+        "$Q = \\sum_i p_i q_i$ — the virial",
+        "$Q = \\delta L$ — the change in the Lagrangian"
+      ],
+      "correct": 0,
+      "explanation": "The conserved Noether charge is the inner product of the generalised momenta $p_i = \\partial L/\\partial\\dot{q}_i$ with the symmetry direction $\\delta q_i$. For spatial translation ($\\delta q_i = 1$ for one Cartesian coordinate), $Q = p = m\\dot{x}$. Noether's theorem has profound consequences in field theory: gauge symmetry → charge conservation; Lorentz symmetry → energy-momentum tensor."
+    }
+  },
+  {
+    "id": "lm005",
+    "path": ["physics", "classical-mechanics", "lagrangian"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "For a charged particle of charge $q$ in electromagnetic fields $\\mathbf{E}$ and $\\mathbf{B}$, the Lagrangian is:",
+    "equation": "L = \\frac{1}{2}m\\dot{\\mathbf{r}}^2 + q(\\mathbf{A}\\cdot\\dot{\\mathbf{r}} - \\phi)",
+    "passive": {
+      "options": [
+        "The canonical momentum is $\\mathbf{p} = m\\dot{\\mathbf{r}} + q\\mathbf{A}$ — not equal to the kinetic momentum $m\\dot{\\mathbf{r}}$",
+        "The canonical momentum equals the kinetic momentum $m\\dot{\\mathbf{r}}$",
+        "$\\mathbf{A}$ and $\\phi$ are not the standard vector and scalar potentials",
+        "The Euler-Lagrange equations do not reproduce the Lorentz force law"
+      ],
+      "correct": 0,
+      "explanation": "The canonical momentum $\\mathbf{p} = \\partial L/\\partial\\dot{\\mathbf{r}} = m\\dot{\\mathbf{r}} + q\\mathbf{A}$ differs from the kinetic momentum by $q\\mathbf{A}$. The Euler-Lagrange equations reproduce $m\\ddot{\\mathbf{r}} = q(\\mathbf{E} + \\dot{\\mathbf{r}}\\times\\mathbf{B})$. In quantum mechanics, the minimal coupling $\\mathbf{p} \\to \\mathbf{p} - q\\mathbf{A}$ and the resulting gauge invariance are central to the Aharonov-Bohm effect and the quantum Hall effect."
+    }
+  },
+  {
+    "id": "lm006",
+    "path": ["physics", "classical-mechanics", "lagrangian"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "For small oscillations about a stable equilibrium $q_0$, the Lagrangian can be expanded as $L \\approx \\frac{1}{2}M_{ij}\\dot{q}_i\\dot{q}_j - \\frac{1}{2}K_{ij}q_i q_j$ where $M$ and $K$ are the mass and stiffness matrices. The normal mode frequencies satisfy:",
+    "passive": {
+      "options": [
+        "$\\det(K - \\omega^2 M) = 0$ — a generalised eigenvalue problem",
+        "$\\det(K - \\omega^2 I) = 0$ — the standard characteristic equation",
+        "$K\\mathbf{a} = \\omega M\\mathbf{a}$ — a linear eigenvalue problem",
+        "$\\omega^2 = \\text{tr}(K)/\\text{tr}(M)$ — ratio of traces"
+      ],
+      "correct": 0,
+      "explanation": "Assuming oscillatory solutions $q_i = a_i e^{i\\omega t}$ gives $(K - \\omega^2 M)\\mathbf{a} = 0$, requiring $\\det(K-\\omega^2 M)=0$. The solutions $\\omega^2$ are guaranteed positive (real $\\omega$) for stable equilibria with positive definite $K$ and $M$. This formalism handles coupled oscillators, molecular vibrations, and phonons in solid-state physics."
+    }
+  }
+]

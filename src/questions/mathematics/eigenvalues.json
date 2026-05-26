@@ -1,0 +1,145 @@
+[
+  {
+    "id": "ev001",
+    "path": ["mathematics", "linear-algebra", "eigenvalues"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "The eigenvalues $\\lambda$ of an $n\\times n$ matrix $A$ are found by solving the characteristic equation:",
+    "passive": {
+      "options": [
+        "$\\det(A - \\lambda I) = 0$",
+        "$\\det(A + \\lambda I) = 0$",
+        "$\\text{tr}(A - \\lambda I) = 0$",
+        "$A\\mathbf{v} = \\lambda\\mathbf{v}$ solved by row reduction of $A$"
+      ],
+      "correct": 0,
+      "explanation": "For $A\\mathbf{v} = \\lambda\\mathbf{v}$ to have a non-trivial solution $\\mathbf{v} \\neq 0$, the matrix $(A - \\lambda I)$ must be singular: $\\det(A - \\lambda I) = 0$. This gives an $n$th-degree polynomial in $\\lambda$ (the characteristic polynomial), whose roots are the eigenvalues. The corresponding eigenvectors are found by solving $(A-\\lambda I)\\mathbf{v}=0$ for each eigenvalue."
+    },
+    "active": {
+      "type": "fill-blanks",
+      "prompt": "The characteristic equation for eigenvalues of $A$ is:",
+      "template": [null, "$= 0$"],
+      "tokens": [
+        {"id": "t1", "latex": "\\det(A - \\lambda I)"},
+        {"id": "t2", "latex": "\\mathrm{tr}(A - \\lambda I)"},
+        {"id": "t3", "latex": "\\det(A) - \\lambda"},
+        {"id": "t4", "latex": "\\det(A + \\lambda I)"}
+      ],
+      "solution": ["t1"],
+      "explanation": "$\\det(A-\\lambda I) = 0$ gives the characteristic polynomial. Its $n$ roots (counting multiplicity) are the eigenvalues. The eigenvector for each $\\lambda$ is then the null space of $A - \\lambda I$."
+    }
+  },
+  {
+    "id": "ev002",
+    "path": ["mathematics", "linear-algebra", "eigenvalues"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "For any $n\\times n$ matrix $A$, the trace and determinant are related to eigenvalues $\\lambda_1,\\ldots,\\lambda_n$ by:",
+    "passive": {
+      "options": [
+        "$\\text{tr}(A) = \\sum_i \\lambda_i$ and $\\det(A) = \\prod_i \\lambda_i$",
+        "$\\text{tr}(A) = \\prod_i \\lambda_i$ and $\\det(A) = \\sum_i \\lambda_i$",
+        "$\\text{tr}(A) = \\sum_i \\lambda_i^2$ and $\\det(A) = \\sum_i \\lambda_i$",
+        "$\\text{tr}(A) = \\lambda_{\\rm max}$ and $\\det(A) = \\lambda_{\\rm min}$"
+      ],
+      "correct": 0,
+      "explanation": "These follow directly from expanding $\\det(A - \\lambda I) = (-1)^n(\\lambda^n - \\text{tr}(A)\\lambda^{n-1} + \\cdots - \\det(A))$ using Vieta's formulas. In quantum mechanics: the trace of a density matrix is 1 (probabilities sum to 1); the determinant of a unitary operator is a complex number of modulus 1."
+    }
+  },
+  {
+    "id": "ev003",
+    "path": ["mathematics", "linear-algebra", "eigenvalues"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "The spectral theorem states that for a Hermitian matrix $H = H^\\dagger$:",
+    "passive": {
+      "options": [
+        "All eigenvalues are real, eigenvectors for different eigenvalues are orthogonal, and $H$ is unitarily diagonalisable: $H = U\\Lambda U^\\dagger$",
+        "All eigenvalues are purely imaginary",
+        "$H$ can always be diagonalised but eigenvectors need not be orthogonal",
+        "The eigenvalues are the diagonal entries of $H$"
+      ],
+      "correct": 0,
+      "explanation": "The spectral theorem is the cornerstone of quantum mechanics: all observables are Hermitian operators, so their eigenvalues (measurement outcomes) are real and their eigenstates form an orthonormal basis. The decomposition $H = \\sum_i \\lambda_i |v_i\\rangle\\langle v_i|$ (spectral decomposition) allows functions of operators: $f(H) = \\sum_i f(\\lambda_i)|v_i\\rangle\\langle v_i|$."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each matrix class to its spectral properties:",
+      "pairs": [
+        {"id": "p1", "term": "Hermitian ($H = H^\\dagger$)", "definition": "Real eigenvalues, orthonormal eigenbasis"},
+        {"id": "p2", "term": "Unitary ($U^\\dagger U = I$)", "definition": "Eigenvalues on unit circle $|\\lambda|=1$, orthonormal eigenbasis"},
+        {"id": "p3", "term": "Normal ($AA^\\dagger = A^\\dagger A$)", "definition": "Unitarily diagonalisable (most general class)"},
+        {"id": "p4", "term": "Positive definite", "definition": "All eigenvalues $> 0$; Hermitian with $\\mathbf{v}^\\dagger A\\mathbf{v} > 0$"}
+      ],
+      "explanation": "The hierarchy is: positive-definite ⊂ Hermitian ⊂ normal ⊂ diagonalisable (over $\\mathbb{C}$). In quantum mechanics, Hamiltonians are Hermitian, time-evolution operators are unitary, and density matrices are positive semi-definite with trace 1."
+    }
+  },
+  {
+    "id": "ev004",
+    "path": ["mathematics", "linear-algebra", "eigenvalues"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Two Hermitian operators $A$ and $B$ are simultaneously diagonalisable (share a common eigenbasis) if and only if:",
+    "passive": {
+      "options": [
+        "$[A, B] = AB - BA = 0$ (they commute)",
+        "$A + B$ is also Hermitian",
+        "$\\text{tr}(AB) = \\text{tr}(A)\\text{tr}(B)$",
+        "They have the same determinant"
+      ],
+      "correct": 0,
+      "explanation": "Simultaneous diagonalisability ↔ commutativity. In quantum mechanics this is the statement that two observables can be simultaneously measured with definite values iff their corresponding operators commute. For example, $[\\hat{H}, \\hat{L}^2] = 0$ for the hydrogen atom allows states to be labelled by both energy $n$ and angular momentum $l$."
+    }
+  },
+  {
+    "id": "ev005",
+    "path": ["mathematics", "linear-algebra", "eigenvalues"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Cayley-Hamilton theorem states that every square matrix:",
+    "passive": {
+      "options": [
+        "Satisfies its own characteristic polynomial: if $p(\\lambda) = \\det(A-\\lambda I)$, then $p(A) = 0$",
+        "Has the same eigenvalues as its transpose",
+        "Is a polynomial function of its own eigenvalues",
+        "Can always be expressed as a sum of at most $n$ projection operators"
+      ],
+      "correct": 0,
+      "explanation": "If the characteristic polynomial is $p(\\lambda) = (-1)^n(\\lambda^n - c_{n-1}\\lambda^{n-1} - \\cdots - c_0)$, then $p(A) = 0$. This means every power $A^n$ can be expressed as a linear combination of $\\{I, A, A^2, \\ldots, A^{n-1}\\}$. A practical use: computing $e^A$ or other matrix functions by reducing high powers to a finite basis."
+    }
+  },
+  {
+    "id": "ev006",
+    "path": ["mathematics", "linear-algebra", "eigenvalues"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The Rayleigh quotient $R(\\mathbf{v}) = \\mathbf{v}^\\dagger A\\mathbf{v}/\\mathbf{v}^\\dagger\\mathbf{v}$ for a Hermitian matrix $A$ satisfies:",
+    "passive": {
+      "options": [
+        "$\\lambda_{\\rm min} \\leq R(\\mathbf{v}) \\leq \\lambda_{\\rm max}$ for all $\\mathbf{v}\\neq 0$, with equality at the corresponding eigenvectors",
+        "$R(\\mathbf{v}) = \\text{tr}(A)/n$ for any normalised $\\mathbf{v}$",
+        "$R(\\mathbf{v})$ is always greater than zero",
+        "$R(\\mathbf{v})$ is maximised at the eigenvector with smallest eigenvalue"
+      ],
+      "correct": 0,
+      "explanation": "The Rayleigh quotient is the variational principle for eigenvalues. The ground-state energy in quantum mechanics is $E_0 = \\min_{|\\psi\\rangle} \\langle\\psi|H|\\psi\\rangle/\\langle\\psi|\\psi\\rangle = R_{\\rm min}$. Trial wavefunctions in variational calculations exploit this: any trial state gives $R \\geq E_0$, bounding the ground-state energy from above."
+    }
+  },
+  {
+    "id": "ev007",
+    "path": ["mathematics", "linear-algebra", "eigenvalues"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The singular value decomposition (SVD) writes any $m\\times n$ matrix $M$ as $M = U\\Sigma V^\\dagger$ where $U$ and $V$ are unitary and $\\Sigma$ is real non-negative diagonal. The singular values $\\sigma_i$ are related to eigenvalues of:",
+    "passive": {
+      "options": [
+        "$M^\\dagger M$ (or $MM^\\dagger$): $\\sigma_i = \\sqrt{\\lambda_i(M^\\dagger M)}$",
+        "$M$ itself: $\\sigma_i = |\\lambda_i(M)|$",
+        "$M + M^\\dagger$: symmetric part of $M$",
+        "$M^2$: $\\sigma_i = \\sqrt{\\lambda_i(M^2)}$"
+      ],
+      "correct": 0,
+      "explanation": "Since $M^\\dagger M = V\\Sigma^2 V^\\dagger$, the singular values are the square roots of the eigenvalues of the positive semi-definite matrix $M^\\dagger M$. The SVD generalises diagonalisation to non-square and non-normal matrices. In quantum information, the Schmidt decomposition of a bipartite state $|\\psi\\rangle = \\sum_i\\sigma_i|u_i\\rangle|v_i\\rangle$ is exactly the SVD of the coefficient matrix."
+    }
+  }
+]

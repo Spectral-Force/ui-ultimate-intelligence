@@ -1,0 +1,127 @@
+[
+  {
+    "id": "sd001",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "laser-cooling", "sub-doppler"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Sub-Doppler cooling mechanisms require atoms with multiple ground-state sublevels (multilevel structure). A genuine two-level atom cannot be cooled below the Doppler limit because:",
+    "passive": {
+      "options": [
+        "There is no ground-state orientation or alignment to create the light-shift potential gradients that enable Sisyphus cooling",
+        "The recoil temperature for a two-level atom is always higher than the Doppler temperature",
+        "Two-level atoms cannot undergo optical pumping",
+        "The spontaneous emission rate is too low in a two-level system"
+      ],
+      "correct": 0,
+      "explanation": "Sisyphus cooling exploits spatially varying light-shifts of different $m_F$ ground-state sublevels combined with polarisation-gradient-driven optical pumping between them. With only one ground state there are no sublevels to pump between, so the Sisyphus cycle cannot operate. Real alkali atoms have hyperfine and Zeeman sublevels that make the mechanism possible."
+    }
+  },
+  {
+    "id": "sd002",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "laser-cooling", "sub-doppler"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "In Sisyphus (polarisation-gradient) cooling with a lin$\\perp$lin standing wave, the cooling cycle is:",
+    "passive": {
+      "options": [
+        "Atom climbs a light-shift hill, is optically pumped to a lower-energy sublevel at the top, then repeats",
+        "Atom absorbs photons only from the counter-propagating beam due to Doppler shifts",
+        "Atom is attracted to nodes of the standing wave by dipole forces",
+        "Atom undergoes adiabatic rapid passage between dressed states"
+      ],
+      "correct": 0,
+      "explanation": "The lin$\\perp$lin configuration creates a polarisation gradient that cycles $\\sigma^+ \\to \\text{lin} \\to \\sigma^- \\to \\ldots$ over $\\lambda/2$. Different $m_F$ sublevels have different light-shift energies that vary with position. An atom moving along climbs its light-shift hill (converts kinetic energy to potential), then gets optically pumped to the minimum-energy sublevel at the hill top, losing the gained potential energy to the emitted photon. Each cycle removes $\\sim E_{\\rm rec}$ of kinetic energy."
+    },
+    "active": {
+      "type": "step-order",
+      "prompt": "Order the steps of one Sisyphus cooling cycle:",
+      "steps": [
+        {"id": "s1", "text": "Atom in sublevel $m_F = +1/2$ (low light-shift) starts moving"},
+        {"id": "s2", "text": "Atom climbs the spatially varying light-shift potential hill, converting kinetic energy to potential energy"},
+        {"id": "s3", "text": "Near the hill top (where polarisation is $\\sigma^-$), atom is optically pumped to $m_F = -1/2$ (now at a potential minimum)"},
+        {"id": "s4", "text": "Spontaneously emitted photon carries away the energy gained climbing the hill; cycle repeats"}
+      ],
+      "solution": ["s1", "s2", "s3", "s4"],
+      "explanation": "The Sisyphus cycle is named after the Greek myth: the atom endlessly climbs hills, losing energy each time it is reset to the bottom. Each cycle dissipates energy $\\sim U_0$ (light-shift depth) minus one recoil energy, giving temperatures well below the Doppler limit."
+    }
+  },
+  {
+    "id": "sd003",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "laser-cooling", "sub-doppler"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The temperature achievable with Sisyphus cooling scales as:",
+    "passive": {
+      "options": [
+        "$T \\propto U_0/k_B \\propto I/|\\delta|$ — proportional to light-shift depth, inversely proportional to detuning",
+        "$T \\propto \\hbar\\Gamma/k_B$ — set by the natural linewidth",
+        "$T$ is independent of laser intensity once below the Doppler limit",
+        "$T \\propto E_{\\rm rec}/k_B^2$ — set purely by the recoil energy squared"
+      ],
+      "correct": 0,
+      "explanation": "The light-shift depth $U_0 \\propto I/\\delta$ sets the depth of the Sisyphus potential. The equilibrium temperature is $k_BT \\sim U_0$ (atoms cannot be cooled below a temperature where their kinetic energy is comparable to the potential depth they must climb). Reducing intensity or increasing detuning lowers $U_0$ and hence $T$, until the recoil limit $T_{\\rm rec} = E_{\\rm rec}/k_B$ is reached. In practice, Sisyphus gives temperatures of a few $\\mu$K for Rb."
+    }
+  },
+  {
+    "id": "sd004",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "laser-cooling", "sub-doppler"],
+    "level": "P",
+    "modes": ["passive", "active"],
+    "question": "Velocity-selective coherent population trapping (VSCPT) achieves sub-recoil cooling by creating a dark state. For a 1D $\\sigma^+/\\sigma^-$ configuration on a $J=1 \\to J=1$ transition, the dark state is:",
+    "passive": {
+      "options": [
+        "$|D\\rangle = \\tfrac{1}{\\sqrt{2}}\\bigl(|p=-\\hbar k,m_J=-1\\rangle - |p=+\\hbar k,m_J=+1\\rangle\\bigr)$",
+        "$|D\\rangle = |p=0,m_J=0\\rangle$",
+        "$|D\\rangle = \\tfrac{1}{\\sqrt{2}}\\bigl(|p=-\\hbar k\\rangle + |p=+\\hbar k\\rangle\\bigr)$ irrespective of $m_J$",
+        "$|D\\rangle = |m_J = 0\\rangle$ for any momentum"
+      ],
+      "correct": 0,
+      "explanation": "The dark state is a superposition of two motional states with opposite momenta and opposite $m_J$: the $\\sigma^+$ beam can absorb from $m_J=-1$ but this amplitude exactly cancels with the contribution from the $\\sigma^-$ beam absorbing from $m_J=+1$. Atoms that happen to reach $p=0$ are captured by this dark state and stop absorbing photons — they're 'dark'. Momentum diffusion slowly drives other atoms toward $p=0$, achieving sub-recoil temperatures."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each sub-Doppler technique to its key mechanism:",
+      "pairs": [
+        {"id": "p1", "term": "Sisyphus (lin$\\perp$lin)", "definition": "Light-shift hill climbing + polarisation-gradient optical pumping"},
+        {"id": "p2", "term": "VSCPT", "definition": "Dark-state trapping at $p=0$ via destructive interference"},
+        {"id": "p3", "term": "Grey molasses", "definition": "Dark states on $F \\to F$ transition with blue-detuned light"},
+        {"id": "p4", "term": "Raman sideband cooling", "definition": "Resolved sideband transitions in optical lattice reduce motional quanta"}
+      ],
+      "explanation": "Each technique exploits a different quantum interference or light-shift effect. Grey molasses and Raman sideband cooling are widely used in modern experiments for achieving phase-space densities close to quantum degeneracy before evaporation."
+    }
+  },
+  {
+    "id": "sd005",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "laser-cooling", "sub-doppler"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Comparing cooling temperatures: for $^{87}$Rb, approximately how do the Doppler temperature $T_D$, Sisyphus temperature $T_S$, and recoil temperature $T_{\\rm rec}$ relate?",
+    "passive": {
+      "options": [
+        "$T_D \\approx 145\\,\\mu{\\rm K} \\gg T_S \\sim 2{-}10\\,\\mu{\\rm K} \\gg T_{\\rm rec} \\approx 360\\,{\\rm nK}$",
+        "$T_D \\approx T_S \\approx 145\\,\\mu{\\rm K} \\gg T_{\\rm rec}$",
+        "$T_{\\rm rec} > T_S > T_D$ for Rb",
+        "$T_D = T_S$ because both are limited by the natural linewidth"
+      ],
+      "correct": 0,
+      "explanation": "The Doppler limit ($\\hbar\\Gamma/2k_B \\approx 145\\,\\mu$K) is set by the linewidth; Sisyphus reduces this by about two orders of magnitude to $\\sim 2{-}10\\,\\mu$K in practice (depending on intensity/detuning); the recoil temperature ($\\hbar^2k^2/mk_B \\approx 360$ nK) is the absolute limit for single-photon processes. Sub-recoil techniques like VSCPT and evaporative cooling can go below $T_{\\rm rec}$."
+    }
+  },
+  {
+    "id": "sd006",
+    "path": ["physics", "quantum-mechanics", "atomic-physics", "laser-cooling", "sub-doppler"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "Grey molasses cooling uses blue-detuned light on a $F \\to F$ transition (same $F$ in ground and excited state). The cooling mechanism relies on:",
+    "passive": {
+      "options": [
+        "Dark states on the $F \\to F$ transition providing velocity-selective population trapping, combined with a light-shift that is positive (repulsive) for bright states",
+        "Stimulated Raman transitions between hyperfine levels",
+        "The Autler-Townes splitting creating a velocity-dependent absorption dip",
+        "Standard Sisyphus with reversed sign of light-shift because of blue detuning"
+      ],
+      "correct": 0,
+      "explanation": "On a $F \\to F$ transition, dark states exist (atoms in specific superpositions don't couple to light). Blue detuning gives a positive light shift for bright states (they are pushed away from intensity maxima), while dark-state atoms feel no force. The combination provides cooling similar to Sisyphus but without the need for a polarisation gradient structure. Grey molasses on the $D_1$ line of $^{40}$K has reached temperatures of $\\sim 6\\,\\mu$K in a single step from a MOT."
+    }
+  }
+]

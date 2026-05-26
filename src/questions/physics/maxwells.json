@@ -1,0 +1,147 @@
+[
+  {
+    "id": "mx001",
+    "path": ["physics", "electromagnetism", "maxwells-equations"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "Maxwell's four equations in differential form (in vacuum, SI units) are a set of coupled PDEs. Match each equation to its physical content:",
+    "passive": {
+      "options": [
+        "$\\nabla\\cdot\\mathbf{E}=\\rho/\\varepsilon_0$: electric charges source $\\mathbf{E}$ fields",
+        "$\\nabla\\cdot\\mathbf{E}=\\rho/\\varepsilon_0$: changing $\\mathbf{B}$ fields source $\\mathbf{E}$ fields",
+        "$\\nabla\\cdot\\mathbf{E}=\\rho/\\varepsilon_0$: $\\mathbf{E}$ fields curl around current loops",
+        "$\\nabla\\cdot\\mathbf{E}=\\rho/\\varepsilon_0$: magnetic field lines are closed loops"
+      ],
+      "correct": 0,
+      "explanation": "Gauss's law: $\\nabla\\cdot\\mathbf{E}=\\rho/\\varepsilon_0$ — charges are the source of electric flux. The other three equations are: $\\nabla\\cdot\\mathbf{B}=0$ (no magnetic monopoles), $\\nabla\\times\\mathbf{E}=-\\partial\\mathbf{B}/\\partial t$ (Faraday), and $\\nabla\\times\\mathbf{B}=\\mu_0\\mathbf{J}+\\mu_0\\varepsilon_0\\partial\\mathbf{E}/\\partial t$ (Ampère-Maxwell)."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each Maxwell equation to its physical meaning:",
+      "pairs": [
+        {"id": "p1", "term": "$\\nabla\\cdot\\mathbf{E} = \\rho/\\varepsilon_0$", "definition": "Electric charges source electric flux (Gauss)"},
+        {"id": "p2", "term": "$\\nabla\\cdot\\mathbf{B} = 0$", "definition": "No magnetic monopoles — $\\mathbf{B}$ field lines are closed"},
+        {"id": "p3", "term": "$\\nabla\\times\\mathbf{E} = -\\partial\\mathbf{B}/\\partial t$", "definition": "Changing magnetic field induces EMF (Faraday)"},
+        {"id": "p4", "term": "$\\nabla\\times\\mathbf{B} = \\mu_0\\mathbf{J} + \\mu_0\\varepsilon_0\\partial\\mathbf{E}/\\partial t$", "definition": "Currents and changing $\\mathbf{E}$ source magnetic circulation (Ampère-Maxwell)"}
+      ],
+      "explanation": "Maxwell's insight was the displacement current term $\\mu_0\\varepsilon_0\\partial\\mathbf{E}/\\partial t$ in Ampère's law. Without it, the equations are inconsistent with charge conservation, and no electromagnetic waves exist."
+    }
+  },
+  {
+    "id": "mx002",
+    "path": ["physics", "electromagnetism", "maxwells-equations"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "Taking the curl of Faraday's law and using the Ampère-Maxwell law, in free space ($\\rho=0$, $\\mathbf{J}=0$) one obtains the wave equation for $\\mathbf{E}$:",
+    "equation": "\\nabla^2\\mathbf{E} = \\mu_0\\varepsilon_0\\frac{\\partial^2\\mathbf{E}}{\\partial t^2}",
+    "passive": {
+      "options": [
+        "The speed of these waves is $c = 1/\\sqrt{\\mu_0\\varepsilon_0} \\approx 3\\times10^8$ m/s",
+        "The speed depends on the frequency of the wave",
+        "The equation only holds for transverse waves with $\\mathbf{E}\\parallel\\hat{k}$",
+        "The speed is $c = \\mu_0\\varepsilon_0$"
+      ],
+      "correct": 0,
+      "explanation": "Comparing with the standard wave equation $\\nabla^2 f = (1/v^2)\\partial^2 f/\\partial t^2$, the wave speed is $c = 1/\\sqrt{\\mu_0\\varepsilon_0}$. Maxwell's calculation of this in 1865 — finding $c$ matched the measured speed of light — was direct evidence that light is an electromagnetic wave. The derivation requires $\\nabla\\cdot\\mathbf{E}=0$ in free space to eliminate longitudinal terms."
+    },
+    "active": {
+      "type": "step-order",
+      "prompt": "Order the steps to derive the EM wave equation:",
+      "steps": [
+        {"id": "s1", "text": "Take $\\nabla\\times$ of Faraday: $\\nabla\\times(\\nabla\\times\\mathbf{E}) = -\\dfrac{\\partial}{\\partial t}(\\nabla\\times\\mathbf{B})$"},
+        {"id": "s2", "text": "Use the vector identity $\\nabla\\times(\\nabla\\times\\mathbf{E}) = \\nabla(\\nabla\\cdot\\mathbf{E}) - \\nabla^2\\mathbf{E}$; in free space $\\nabla\\cdot\\mathbf{E}=0$"},
+        {"id": "s3", "text": "Substitute Ampère-Maxwell: $\\nabla\\times\\mathbf{B} = \\mu_0\\varepsilon_0\\partial\\mathbf{E}/\\partial t$"},
+        {"id": "s4", "text": "Obtain $\\nabla^2\\mathbf{E} = \\mu_0\\varepsilon_0\\,\\partial^2\\mathbf{E}/\\partial t^2$, giving wave speed $c = 1/\\sqrt{\\mu_0\\varepsilon_0}$"}
+      ],
+      "solution": ["s1", "s2", "s3", "s4"],
+      "explanation": "The key steps are the vector identity (which simplifies using Gauss's law) and substituting Ampère-Maxwell. The same procedure with $\\nabla\\times$ applied to Ampère gives an identical wave equation for $\\mathbf{B}$."
+    }
+  },
+  {
+    "id": "mx003",
+    "path": ["physics", "electromagnetism", "maxwells-equations"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Poynting vector $\\mathbf{S}$ gives the electromagnetic energy flux (power per unit area). It is:",
+    "equation": "\\mathbf{S} = \\frac{1}{\\mu_0}\\,\\mathbf{E}\\times\\mathbf{B}",
+    "passive": {
+      "options": [
+        "Directed along the wave propagation direction and equal to the intensity for a plane wave",
+        "Always parallel to $\\mathbf{E}$",
+        "Equal to the electromagnetic momentum density",
+        "Zero for a standing wave at all times"
+      ],
+      "correct": 0,
+      "explanation": "For a plane wave $\\mathbf{E} = E_0\\hat{x}\\cos(kz-\\omega t)$ and $\\mathbf{B} = (E_0/c)\\hat{y}\\cos(kz-\\omega t)$, the Poynting vector points in $\\hat{z}$ with time-averaged magnitude $\\langle S\\rangle = E_0^2/2\\mu_0 c = \\varepsilon_0 c E_0^2/2$ — the intensity. In a standing wave the time-averaged Poynting vector is zero, but it oscillates instantaneously as energy sloshes between nodes and antinodes."
+    }
+  },
+  {
+    "id": "mx004",
+    "path": ["physics", "electromagnetism", "maxwells-equations"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The electromagnetic energy density $u$ in free space is:",
+    "equation": "u = \\frac{\\varepsilon_0 E^2}{2} + \\frac{B^2}{2\\mu_0}",
+    "passive": {
+      "options": [
+        "For a plane wave, both terms are equal: electric and magnetic energies are equipartitioned",
+        "The electric term always dominates over the magnetic term",
+        "The magnetic term is zero for a plane wave",
+        "$u$ is Lorentz invariant"
+      ],
+      "correct": 0,
+      "explanation": "For a plane wave $|\\mathbf{B}| = |\\mathbf{E}|/c$, so $B^2/2\\mu_0 = E^2/2\\mu_0c^2 = \\varepsilon_0 E^2/2$ — the electric and magnetic energy densities are equal. This equipartition is a general feature of electromagnetic waves in vacuum. $u$ itself is not Lorentz invariant; it transforms as the time-time component of the stress-energy tensor."
+    }
+  },
+  {
+    "id": "mx005",
+    "path": ["physics", "electromagnetism", "maxwells-equations"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "At the interface between two linear media with permittivities $\\varepsilon_1, \\varepsilon_2$ and permeabilities $\\mu_1, \\mu_2$, the boundary conditions derived from Maxwell's equations require:",
+    "passive": {
+      "options": [
+        "The tangential $\\mathbf{E}$ and tangential $\\mathbf{H}$ are continuous; normal $\\mathbf{D}$ and normal $\\mathbf{B}$ are continuous (in the absence of surface charges/currents)",
+        "All components of $\\mathbf{E}$ and $\\mathbf{B}$ are continuous at all boundaries",
+        "Only the normal component of $\\mathbf{E}$ is continuous",
+        "The tangential $\\mathbf{B}$ and normal $\\mathbf{E}$ are continuous"
+      ],
+      "correct": 0,
+      "explanation": "From $\\nabla\\times\\mathbf{E}=0$ (in static case) → tangential $\\mathbf{E}$ continuous; from $\\nabla\\cdot\\mathbf{D}=0$ → normal $\\mathbf{D}=\\varepsilon\\mathbf{E}$ continuous; from $\\nabla\\cdot\\mathbf{B}=0$ → normal $\\mathbf{B}$ continuous; from $\\nabla\\times\\mathbf{H}=0$ → tangential $\\mathbf{H}=\\mathbf{B}/\\mu$ continuous. These four conditions, applied to plane waves, give the Fresnel equations for reflection and transmission."
+    }
+  },
+  {
+    "id": "mx006",
+    "path": ["physics", "electromagnetism", "maxwells-equations"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "In the Lorenz gauge ($\\nabla\\cdot\\mathbf{A} + \\mu_0\\varepsilon_0\\partial\\phi/\\partial t = 0$), the wave equations for the potentials $\\phi$ and $\\mathbf{A}$ are:",
+    "passive": {
+      "options": [
+        "$\\Box^2\\phi = \\rho/\\varepsilon_0$ and $\\Box^2\\mathbf{A} = \\mu_0\\mathbf{J}$, where $\\Box^2 = \\nabla^2 - (1/c^2)\\partial^2/\\partial t^2$",
+        "$\\nabla^2\\phi = \\rho/\\varepsilon_0$ and $\\nabla^2\\mathbf{A} = \\mu_0\\mathbf{J}$ (static form)",
+        "$\\Box^2\\phi = 0$ and $\\Box^2\\mathbf{A} = 0$ even in the presence of sources",
+        "$\\phi = 0$ always in the Lorenz gauge"
+      ],
+      "correct": 0,
+      "explanation": "The d'Alembertian $\\Box^2 = \\nabla^2 - (1/c^2)\\partial^2/\\partial t^2$ is the Lorentz-invariant wave operator. The Lorenz gauge decouples $\\phi$ and $\\mathbf{A}$ into independent wave equations sourced by $\\rho$ and $\\mathbf{J}$ respectively, making the Lorentz covariance explicit and simplifying retarded potential calculations."
+    }
+  },
+  {
+    "id": "mx007",
+    "path": ["physics", "electromagnetism", "maxwells-equations"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "Maxwell's displacement current $\\varepsilon_0\\partial\\mathbf{E}/\\partial t$ was motivated by the need for charge conservation. Which law of electrostatics fails without it?",
+    "passive": {
+      "options": [
+        "Charge conservation: $\\nabla\\cdot\\mathbf{J} + \\partial\\rho/\\partial t = 0$ is violated by Ampère's law without the displacement current",
+        "Faraday's law: $\\nabla\\times\\mathbf{E} = -\\partial\\mathbf{B}/\\partial t$ requires the displacement current to be consistent",
+        "Gauss's law: $\\nabla\\cdot\\mathbf{E}=\\rho/\\varepsilon_0$ is not gauge invariant without displacement current",
+        "Newton's third law as applied to electromagnetic forces"
+      ],
+      "correct": 0,
+      "explanation": "Taking the divergence of Ampère's law (without displacement current): $\\nabla\\cdot(\\nabla\\times\\mathbf{B}) = \\mu_0\\nabla\\cdot\\mathbf{J} = 0$, implying $\\nabla\\cdot\\mathbf{J}=0$, i.e., no charge accumulation. But charge conservation requires $\\nabla\\cdot\\mathbf{J} = -\\partial\\rho/\\partial t$. Adding $\\mu_0\\varepsilon_0\\partial\\mathbf{E}/\\partial t$ and using Gauss's law gives the correct continuity equation. Maxwell's fix was thus logically necessary, not just empirical."
+    }
+  }
+]

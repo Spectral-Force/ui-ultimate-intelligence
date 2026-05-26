@@ -1,0 +1,145 @@
+[
+  {
+    "id": "hm001",
+    "path": ["physics", "classical-mechanics", "hamiltonian"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "Hamilton's equations of motion for a system with Hamiltonian $H(q_i, p_i, t)$ are:",
+    "passive": {
+      "options": [
+        "$\\dot{q}_i = \\dfrac{\\partial H}{\\partial p_i}$ and $\\dot{p}_i = -\\dfrac{\\partial H}{\\partial q_i}$",
+        "$\\dot{q}_i = -\\dfrac{\\partial H}{\\partial p_i}$ and $\\dot{p}_i = \\dfrac{\\partial H}{\\partial q_i}$",
+        "$\\dot{q}_i = \\dfrac{\\partial H}{\\partial q_i}$ and $\\dot{p}_i = -\\dfrac{\\partial H}{\\partial p_i}$",
+        "$\\ddot{q}_i = -\\dfrac{\\partial H}{\\partial q_i}$"
+      ],
+      "correct": 0,
+      "explanation": "Hamilton's equations convert the $n$ second-order Euler-Lagrange equations into $2n$ first-order equations. The symmetry between $q$ and $p$ is manifest — the structure is symplectic. In quantum mechanics these become $[\\hat{q}, \\hat{H}] = i\\hbar\\dot{\\hat{q}}$ and $[\\hat{p}, \\hat{H}] = i\\hbar\\dot{\\hat{p}}$ (Heisenberg equations of motion)."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each Hamilton's equation to its physical meaning:",
+      "pairs": [
+        {"id": "p1", "term": "$\\dot{q}_i = \\partial H/\\partial p_i$", "definition": "Velocity is the gradient of $H$ with respect to momentum"},
+        {"id": "p2", "term": "$\\dot{p}_i = -\\partial H/\\partial q_i$", "definition": "Force is minus the gradient of $H$ with respect to position"},
+        {"id": "p3", "term": "$\\partial H/\\partial q_i = 0$", "definition": "$q_i$ is cyclic: conjugate momentum $p_i$ is conserved"},
+        {"id": "p4", "term": "$\\partial H/\\partial t = 0$", "definition": "Energy is conserved: $dH/dt = 0$"}
+      ],
+      "explanation": "Hamilton's equations are first-order in time, making them ideal for numerical integration and theoretical analysis (e.g., perturbation theory, action-angle variables). The symplectic structure they encode is preserved under canonical transformations."
+    }
+  },
+  {
+    "id": "hm002",
+    "path": ["physics", "classical-mechanics", "hamiltonian"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "The Poisson bracket of two functions $f(q, p)$ and $g(q, p)$ is defined as:",
+    "equation": "\\{f, g\\} = \\sum_i\\left(\\frac{\\partial f}{\\partial q_i}\\frac{\\partial g}{\\partial p_i} - \\frac{\\partial f}{\\partial p_i}\\frac{\\partial g}{\\partial q_i}\\right)",
+    "passive": {
+      "options": [
+        "Hamilton's equations can be written $\\dot{f} = \\{f, H\\}$ for any observable $f$",
+        "$\\{f, g\\} = \\{g, f\\}$ — the Poisson bracket is symmetric",
+        "$\\{q_i, q_j\\} = \\delta_{ij}$ and $\\{p_i, p_j\\} = \\delta_{ij}$",
+        "The Poisson bracket vanishes for all conserved quantities"
+      ],
+      "correct": 0,
+      "explanation": "$\\dot{f} = \\partial f/\\partial t + \\{f, H\\}$. For a time-independent observable, $\\dot{f} = \\{f, H\\}$. The fundamental brackets are $\\{q_i, p_j\\} = \\delta_{ij}$, $\\{q_i, q_j\\}=0$, $\\{p_i, p_j\\}=0$. Canonical quantisation replaces $\\{\\cdot,\\cdot\\} \\to (1/i\\hbar)[\\cdot,\\cdot]$, turning classical Poisson brackets into quantum commutators."
+    },
+    "active": {
+      "type": "fill-blanks",
+      "prompt": "The time evolution of an observable $f(q,p)$ is:",
+      "template": ["$\\dot{f} = \\{f,$", null, "$\\}$"],
+      "tokens": [
+        {"id": "t1", "latex": "H"},
+        {"id": "t2", "latex": "L"},
+        {"id": "t3", "latex": "p"},
+        {"id": "t4", "latex": "q"}
+      ],
+      "solution": ["t1"],
+      "explanation": "$\\dot{f} = \\{f, H\\}$ — the Hamiltonian generates time evolution via Poisson brackets. This is the classical analogue of the Heisenberg equation $\\dot{\\hat{f}} = [\\hat{f}, \\hat{H}]/i\\hbar$."
+    }
+  },
+  {
+    "id": "hm003",
+    "path": ["physics", "classical-mechanics", "hamiltonian"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Hamiltonian $H$ is obtained from the Lagrangian $L$ by the Legendre transform:",
+    "equation": "H(q, p, t) = \\sum_i p_i\\dot{q}_i - L(q,\\dot{q},t)",
+    "passive": {
+      "options": [
+        "$H = T + V$ for natural systems (time-independent potential, kinetic term quadratic in velocities)",
+        "$H = T - V$ — same as the Lagrangian",
+        "$H = \\sum p_i q_i$ — the product of momenta and coordinates",
+        "$H$ always equals the total energy, even for time-dependent potentials"
+      ],
+      "correct": 0,
+      "explanation": "For a natural Lagrangian $L = T(\\dot{q}) - V(q)$ with $T = \\frac{1}{2}\\sum M_{ij}\\dot{q}_i\\dot{q}_j$, the Legendre transform gives $H = T + V$. However, for time-dependent systems or with electromagnetic fields the Hamiltonian may differ from the total energy. The Legendre transform switches the independent variable from $\\dot{q}$ to $p = \\partial L/\\partial\\dot{q}$."
+    }
+  },
+  {
+    "id": "hm004",
+    "path": ["physics", "classical-mechanics", "hamiltonian"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Liouville's theorem states that for a Hamiltonian system, the phase-space distribution function $\\rho(q, p, t)$ satisfies $d\\rho/dt = 0$. This means:",
+    "passive": {
+      "options": [
+        "Phase-space volume is conserved under Hamiltonian flow — the flow is incompressible",
+        "$\\rho$ is constant in time at fixed $(q, p)$ — the distribution is stationary",
+        "The number of accessible microstates decreases over time",
+        "All orbits in phase space are closed curves"
+      ],
+      "correct": 0,
+      "explanation": "Liouville's theorem follows from Hamilton's equations implying $\\nabla_{q,p}\\cdot\\mathbf{v}_{\\rm flow} = \\sum_i(\\partial\\dot{q}_i/\\partial q_i + \\partial\\dot{p}_i/\\partial p_i) = \\sum_i(\\partial^2 H/\\partial q_i\\partial p_i - \\partial^2 H/\\partial p_i\\partial q_i) = 0$. In statistical mechanics this is the foundation of the microcanonical ensemble. In quantum mechanics the analogue is the von Neumann equation $d\\hat{\\rho}/dt = [\\hat{H},\\hat{\\rho}]/i\\hbar$."
+    }
+  },
+  {
+    "id": "hm005",
+    "path": ["physics", "classical-mechanics", "hamiltonian"],
+    "level": "P",
+    "modes": ["passive", "active"],
+    "question": "Action-angle variables $(J_i, \\theta_i)$ are a canonical transformation particularly suited to integrable systems. The action variable for periodic motion along $q$ is:",
+    "equation": "J = \\oint p\\,dq",
+    "passive": {
+      "options": [
+        "$J$ is a constant of motion (the enclosed phase-space area is conserved); $\\theta$ evolves linearly in time at frequency $\\nu_i = \\partial H/\\partial J_i$",
+        "$J$ varies slowly compared to $\\theta$ and is therefore approximately conserved",
+        "$J = p \\cdot q$ — the product of momentum and position",
+        "$J$ is the angular momentum in polar coordinates"
+      ],
+      "correct": 0,
+      "explanation": "In action-angle variables the Hamiltonian depends only on the $J_i$, making all $J_i$ trivially conserved and $\\dot{\\theta}_i = \\partial H/\\partial J_i = $ const. The adiabatic invariance of $J$ (under slow parameter changes) is exploited in magnetic traps: as the trap is compressed, $J = \\oint p\\,dq$ is preserved, setting the minimum entropy of the trapped cloud."
+    },
+    "active": {
+      "type": "fill-blanks",
+      "prompt": "The action variable for periodic motion is:",
+      "template": ["$J = $", null, "$p\\,dq$"],
+      "tokens": [
+        {"id": "t1", "latex": "\\oint"},
+        {"id": "t2", "latex": "\\int_0^T"},
+        {"id": "t3", "latex": "\\int_{-\\infty}^{\\infty}"},
+        {"id": "t4", "latex": "\\frac{1}{2\\pi}\\oint"}
+      ],
+      "solution": ["t1"],
+      "explanation": "$J = \\oint p\\,dq$ is the area enclosed by the orbit in phase space. It is an adiabatic invariant — conserved under slow changes of external parameters — a fact used in designing magnetic bottle traps and understanding plasma confinement."
+    }
+  },
+  {
+    "id": "hm006",
+    "path": ["physics", "classical-mechanics", "hamiltonian"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "The Hamilton-Jacobi equation for Hamilton's principal function $S(q, t)$ is:",
+    "equation": "H\\!\\left(q_i,\\,\\frac{\\partial S}{\\partial q_i},\\,t\\right) + \\frac{\\partial S}{\\partial t} = 0",
+    "passive": {
+      "options": [
+        "$S$ is related to the classical action: $S = \\int L\\,dt$ along the actual path; the H-J equation is a PDE equivalent to the full equations of motion",
+        "The H-J equation is valid only for separable systems",
+        "$\\partial S/\\partial q_i = q_i$ — the derivative of $S$ gives the coordinate",
+        "The H-J equation always reduces to the Schrödinger equation"
+      ],
+      "correct": 0,
+      "explanation": "The Hamilton-Jacobi equation is a single first-order PDE replacing the $2n$ Hamilton equations. If $S$ is separable, $S = \\sum_i S_i(q_i) - Et$, it directly gives action-angle variables. In the WKB approximation, the Schrödinger equation $-\\hbar^2\\nabla^2\\psi/2m + V\\psi = i\\hbar\\partial\\psi/\\partial t$ with $\\psi = e^{iS/\\hbar}$ reduces to the H-J equation in the classical limit $\\hbar\\to 0$, showing quantum mechanics is a 'wave mechanics' with the Hamilton-Jacobi equation as its classical limit."
+    }
+  }
+]

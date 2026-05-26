@@ -1,0 +1,189 @@
+[
+  {
+    "id": "pt001",
+    "path": ["physics", "quantum-mechanics", "perturbation"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "In time-independent perturbation theory, the first-order correction to the energy of state $|n^{(0)}\\rangle$ under perturbation $H'$ is:",
+    "passive": {
+      "options": [
+        "$E_n^{(1)} = \\langle n^{(0)}|H'|n^{(0)}\\rangle$",
+        "$E_n^{(1)} = \\sum_{m\\neq n}\\dfrac{|\\langle m|H'|n\\rangle|^2}{E_n^{(0)}-E_m^{(0)}}$",
+        "$E_n^{(1)} = \\langle n^{(0)}|H_0|n^{(0)}\\rangle$",
+        "$E_n^{(1)} = \\langle n^{(1)}|H'|n^{(0)}\\rangle$"
+      ],
+      "correct": 0,
+      "explanation": "The first-order energy correction is simply the expectation value of the perturbation in the unperturbed state: $E_n^{(1)} = \\langle n^{(0)}|H'|n^{(0)}\\rangle$. The second option is the second-order correction. This result follows directly from expanding $H|n\\rangle = E_n|n\\rangle$ to first order in $\\lambda$."
+    },
+    "active": {
+      "type": "fill-blanks",
+      "prompt": "Complete the first-order energy correction formula:",
+      "template": ["$E_n^{(1)} = \\langle n^{(0)}|$", null, "$|n^{(0)}\\rangle$"],
+      "tokens": [
+        {"id": "t1", "latex": "H'"},
+        {"id": "t2", "latex": "H_0"},
+        {"id": "t3", "latex": "H' + H_0"},
+        {"id": "t4", "latex": "E_n"}
+      ],
+      "solution": ["t1"],
+      "explanation": "The first-order energy correction is the matrix element of the perturbation $H'$ between unperturbed states: $E_n^{(1)} = \\langle n^{(0)}|H'|n^{(0)}\\rangle$."
+    }
+  },
+  {
+    "id": "pt002",
+    "path": ["physics", "quantum-mechanics", "perturbation"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "The first-order correction to the eigenstate $|n^{(0)}\\rangle$ is:",
+    "passive": {
+      "options": [
+        "$|n^{(1)}\\rangle = \\displaystyle\\sum_{m\\neq n}\\frac{\\langle m^{(0)}|H'|n^{(0)}\\rangle}{E_n^{(0)}-E_m^{(0)}}|m^{(0)}\\rangle$",
+        "$|n^{(1)}\\rangle = \\langle n^{(0)}|H'|n^{(0)}\\rangle\\,|n^{(0)}\\rangle$",
+        "$|n^{(1)}\\rangle = \\displaystyle\\sum_{m}\\frac{\\langle m^{(0)}|H'|n^{(0)}\\rangle}{E_n^{(0)}-E_m^{(0)}}|m^{(0)}\\rangle$",
+        "$|n^{(1)}\\rangle = H'|n^{(0)}\\rangle / E_n^{(0)}$"
+      ],
+      "correct": 0,
+      "explanation": "The sum excludes $m = n$ because that term would contribute a first-order normalisation correction (which can be set to zero by choice of phase). The energy denominator $E_n^{(0)}-E_m^{(0)}$ is why degenerate levels require special treatment — it diverges when $E_m^{(0)} = E_n^{(0)}$."
+    },
+    "active": {
+      "type": "step-order",
+      "prompt": "Order the steps to derive the first-order state correction:",
+      "steps": [
+        {"id": "s1", "text": "Expand: $H = H_0 + \\lambda H'$, $|n\\rangle = |n^{(0)}\\rangle + \\lambda|n^{(1)}\\rangle + \\ldots$, $E_n = E_n^{(0)} + \\lambda E_n^{(1)} + \\ldots$"},
+        {"id": "s2", "text": "Collect $O(\\lambda)$ terms: $(H_0 - E_n^{(0)})|n^{(1)}\\rangle = (E_n^{(1)} - H')|n^{(0)}\\rangle$"},
+        {"id": "s3", "text": "Project onto $\\langle m^{(0)}|$ with $m\\neq n$: $\\langle m^{(0)}|n^{(1)}\\rangle = \\dfrac{\\langle m^{(0)}|H'|n^{(0)}\\rangle}{E_n^{(0)}-E_m^{(0)}}$"},
+        {"id": "s4", "text": "Reassemble: $|n^{(1)}\\rangle = \\sum_{m\\neq n}\\dfrac{\\langle m|H'|n\\rangle}{E_n^{(0)}-E_m^{(0)}}|m^{(0)}\\rangle$"}
+      ],
+      "solution": ["s1", "s2", "s3", "s4"],
+      "explanation": "The key step is projecting the $O(\\lambda)$ equation onto off-diagonal states $\\langle m^{(0)}|$. The diagonal projection ($m=n$) gives the first-order energy correction instead."
+    }
+  },
+  {
+    "id": "pt003",
+    "path": ["physics", "quantum-mechanics", "perturbation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The second-order energy correction in non-degenerate perturbation theory is:",
+    "equation": "E_n^{(2)} = \\sum_{m\\neq n}\\frac{|\\langle m^{(0)}|H'|n^{(0)}\\rangle|^2}{E_n^{(0)}-E_m^{(0)}}",
+    "passive": {
+      "options": [
+        "Always negative for the ground state",
+        "Always positive for the ground state",
+        "Always zero if $H'$ is Hermitian",
+        "Independent of the unperturbed spectrum"
+      ],
+      "correct": 0,
+      "explanation": "For the ground state ($n=0$), all denominators $E_0^{(0)}-E_m^{(0)}$ are negative (since excited states have higher energy), so $E_0^{(2)} \\leq 0$. The second-order correction always lowers the ground-state energy — a consequence of the variational principle. This is why, for instance, the van der Waals interaction (second-order electrostatic perturbation) is attractive."
+    }
+  },
+  {
+    "id": "pt004",
+    "path": ["physics", "quantum-mechanics", "perturbation"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "Degenerate perturbation theory must be used when:",
+    "passive": {
+      "options": [
+        "Two or more unperturbed states share the same energy and are connected by $H'$",
+        "The perturbation $H'$ is larger than $H_0$",
+        "The energy correction is imaginary",
+        "The system has more than two particles"
+      ],
+      "correct": 0,
+      "explanation": "The first-order state correction diverges when $E_n^{(0)} = E_m^{(0)}$ and $\\langle m|H'|n\\rangle \\neq 0$. The fix is to diagonalise $H'$ within the degenerate subspace first, finding the correct zeroth-order eigenstates ('good states') that are already adapted to the symmetry breaking caused by $H'$."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each perturbation scenario to the correct approach:",
+      "pairs": [
+        {"id": "p1", "term": "Non-degenerate levels, $H' \\ll H_0$", "definition": "Standard TIPT: $E^{(1)} = \\langle n|H'|n\\rangle$"},
+        {"id": "p2", "term": "Degenerate levels connected by $H'$", "definition": "Diagonalise $H'$ in degenerate subspace first"},
+        {"id": "p3", "term": "Oscillating perturbation $H'e^{-i\\omega t}$", "definition": "Time-dependent perturbation theory, Fermi's golden rule"},
+        {"id": "p4", "term": "$H'$ comparable to $H_0$", "definition": "Perturbation theory breaks down; use exact or numerical methods"}
+      ],
+      "explanation": "The applicability of perturbation theory depends on both the size of $H'$ relative to $H_0$ and whether degenerate states are mixed. For time-dependent perturbations, the relevant quantity is the transition rate to continuum states."
+    }
+  },
+  {
+    "id": "pt005",
+    "path": ["physics", "quantum-mechanics", "perturbation"],
+    "level": "P",
+    "modes": ["passive", "active"],
+    "question": "Fermi's golden rule gives the transition rate from an initial state $|i\\rangle$ to a continuum of final states under a weak constant perturbation $H'$:",
+    "equation": "\\Gamma_{i\\to f} = \\frac{2\\pi}{\\hbar}|\\langle f|H'|i\\rangle|^2\\,\\rho(E_f)",
+    "passive": {
+      "options": [
+        "The factor $\\rho(E_f)$ is the density of final states at the energy of the initial state",
+        "The rate grows quadratically in time for all durations",
+        "$\\Gamma$ is independent of the matrix element $\\langle f|H'|i\\rangle$",
+        "The result is exact for any strength of $H'$"
+      ],
+      "correct": 0,
+      "explanation": "Fermi's golden rule applies in the long-time limit of first-order time-dependent perturbation theory, where the transition probability grows linearly in time (giving a constant rate). The density of states $\\rho(E_f)$ evaluated at $E_f = E_i$ accounts for energy conservation via the $\\delta(E_f - E_i)$ that emerges. It requires $H'$ to be weak enough that the perturbative expansion is valid."
+    },
+    "active": {
+      "type": "equation-order",
+      "prompt": "Arrange the tokens to form Fermi's golden rule:",
+      "tokens": [
+        {"id": "t1", "latex": "\\Gamma"},
+        {"id": "t2", "latex": "="},
+        {"id": "t3", "latex": "\\frac{2\\pi}{\\hbar}"},
+        {"id": "t4", "latex": "|\\langle f|H'|i\\rangle|^2"},
+        {"id": "t5", "latex": "\\rho(E_f)"}
+      ],
+      "solution": ["t1", "t2", "t3", "t4", "t5"],
+      "explanation": "Fermi's golden rule: $\\Gamma = \\frac{2\\pi}{\\hbar}|\\langle f|H'|i\\rangle|^2\\rho(E_f)$. The $2\\pi/\\hbar$ prefactor arises from the Fourier transform of the time evolution, and $\\rho(E_f)$ enforces energy conservation over the continuum."
+    }
+  },
+  {
+    "id": "pt006",
+    "path": ["physics", "quantum-mechanics", "perturbation"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The dc Stark effect on the hydrogen ground state (applying a static electric field $\\mathcal{E}$) produces an energy shift:",
+    "passive": {
+      "options": [
+        "Quadratic in $\\mathcal{E}$: $\\Delta E \\propto -\\mathcal{E}^2$",
+        "Linear in $\\mathcal{E}$: $\\Delta E \\propto -\\mathcal{E}$",
+        "Zero at all orders",
+        "Proportional to $\\mathcal{E}^3$"
+      ],
+      "correct": 0,
+      "explanation": "The ground state of hydrogen has definite parity ($1s$ is even), so $\\langle 1s|\\mathbf{d}\\cdot\\mathcal{E}|1s\\rangle = 0$ and the first-order shift vanishes. The leading shift is second-order: $\\Delta E = -\\frac{1}{2}\\alpha\\mathcal{E}^2$, where $\\alpha$ is the static polarisability. States without definite parity (e.g., the $n=2$ manifold) show a linear Stark effect instead."
+    }
+  },
+  {
+    "id": "pt007",
+    "path": ["physics", "quantum-mechanics", "perturbation"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "The van der Waals interaction between two ground-state neutral atoms at separation $R$ arises as a second-order perturbation. Its asymptotic form at large $R$ scales as:",
+    "passive": {
+      "options": [
+        "$-C_6/R^6$",
+        "$-C_3/R^3$",
+        "$-C_8/R^8$",
+        "$-C_5/R^5$"
+      ],
+      "correct": 0,
+      "explanation": "The dipole–dipole interaction $H' \\propto 1/R^3$ enters at second order, giving $E^{(2)} \\propto |H'|^2 \\propto 1/R^6$. The $C_6$ coefficient encodes the product of the two atoms' polarisabilities summed over virtual transitions. The $-C_3/R^3$ form applies to resonant interactions (e.g., one atom is excited) and $-C_8/R^8$ to higher multipole corrections."
+    }
+  },
+  {
+    "id": "pt008",
+    "path": ["physics", "quantum-mechanics", "perturbation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "In time-dependent perturbation theory, if a perturbation $H'$ is turned on at $t=0$, the probability of finding the system in state $|f\\rangle \\neq |i\\rangle$ at time $t$ (for $t$ small) grows as:",
+    "passive": {
+      "options": [
+        "$P_{i\\to f}(t) \\propto t^2$ for short times",
+        "$P_{i\\to f}(t) \\propto t$ for all times",
+        "$P_{i\\to f}(t) \\propto e^{-\\Gamma t}$",
+        "$P_{i\\to f}(t) = $ constant once $t > \\hbar/\\Delta E$"
+      ],
+      "correct": 0,
+      "explanation": "At short times, $P_{i\\to f}(t) = |\\langle f|H'|i\\rangle|^2 t^2/\\hbar^2$ — quadratic in $t$. This is the quantum Zeno regime. Only after integrating over a continuum of final states (Fermi's golden rule regime) does the probability grow linearly in $t$, giving a constant rate. The crossover occurs around the inverse level spacing of the continuum."
+    }
+  }
+]

@@ -1,0 +1,160 @@
+[
+  {
+    "id": "sc001",
+    "path": ["physics", "quantum-mechanics", "scattering-theory"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "In the Born approximation, the scattering amplitude $f(\\mathbf{q})$ for momentum transfer $\\mathbf{q} = \\mathbf{k}'-\\mathbf{k}$ from potential $V(\\mathbf{r})$ is:",
+    "passive": {
+      "options": [
+        "$f(\\mathbf{q}) = -\\dfrac{m}{2\\pi\\hbar^2}\\tilde{V}(\\mathbf{q})$, where $\\tilde{V}$ is the Fourier transform of $V$",
+        "$f(\\mathbf{q}) = -\\dfrac{2m}{\\hbar^2}\\tilde{V}(\\mathbf{q})$",
+        "$f(\\mathbf{q}) = \\dfrac{m}{\\hbar^2}\\int V(r)\\,d^3r$",
+        "$f(\\mathbf{q}) = \\tilde{V}(\\mathbf{q}) / E_k$"
+      ],
+      "correct": 0,
+      "explanation": "The Born approximation treats the scattered wave as a first-order perturbation of the incident plane wave. The result $f = -(m/2\\pi\\hbar^2)\\tilde{V}(\\mathbf{q})$ shows the scattering amplitude is the Fourier transform of the potential — so measuring angular-dependent scattering effectively images $V(r)$ in momentum space. The approximation is valid when $|V| \\ll \\hbar^2 k^2/2m$."
+    },
+    "active": {
+      "type": "step-order",
+      "prompt": "Order the steps of the Born approximation derivation:",
+      "steps": [
+        {"id": "s1", "text": "Write the Lippmann-Schwinger equation: $|\\psi\\rangle = |\\mathbf{k}\\rangle + G_0^+ V|\\psi\\rangle$ where $G_0^+ = (E - H_0 + i\\eta)^{-1}$"},
+        {"id": "s2", "text": "Replace $|\\psi\\rangle$ on the right by $|\\mathbf{k}\\rangle$ (first Born approximation)"},
+        {"id": "s3", "text": "Extract the asymptotic form of $\\langle\\mathbf{r}|G_0^+|\\mathbf{r}'\\rangle$ for $r \\to \\infty$"},
+        {"id": "s4", "text": "Read off $f(\\mathbf{q}) = -(m/2\\pi\\hbar^2)\\int e^{-i\\mathbf{q}\\cdot\\mathbf{r}'}V(\\mathbf{r}')d^3r' = -(m/2\\pi\\hbar^2)\\tilde{V}(\\mathbf{q})$"}
+      ],
+      "solution": ["s1", "s2", "s3", "s4"],
+      "explanation": "The Born approximation iterates the Lippmann-Schwinger equation once. Higher Born approximations iterate further. The result maps directly to the Fourier transform of the potential, which is why it is especially useful for analysing scattering data."
+    }
+  },
+  {
+    "id": "sc002",
+    "path": ["physics", "quantum-mechanics", "scattering-theory"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The optical theorem relates the total cross-section to the forward scattering amplitude:",
+    "equation": "\\sigma_{\\rm tot} = \\frac{4\\pi}{k}\\,{\\rm Im}[f(\\theta=0)]",
+    "passive": {
+      "options": [
+        "It follows from conservation of probability (unitarity of the $S$-matrix)",
+        "It is an approximation valid only for weak potentials",
+        "It applies only to elastic scattering",
+        "It requires the Born approximation to hold"
+      ],
+      "correct": 0,
+      "explanation": "The optical theorem is exact — it is a direct consequence of probability conservation. The imaginary part of the forward amplitude encodes how much flux is removed from the beam by all processes (elastic and inelastic). In the Born approximation $f$ is real to first order, so the optical theorem is only satisfied at second order, reflecting the approximation's violation of exact unitarity."
+    }
+  },
+  {
+    "id": "sc003",
+    "path": ["physics", "quantum-mechanics", "scattering-theory"],
+    "level": "P",
+    "modes": ["passive", "active"],
+    "question": "At ultralow collision energies ($k \\to 0$), $s$-wave scattering dominates. The $s$-wave scattering length $a$ is defined via the phase shift $\\delta_0$ as:",
+    "passive": {
+      "options": [
+        "$\\tan\\delta_0 \\approx -ka$ as $k\\to 0$",
+        "$\\sin\\delta_0 = ka$ as $k\\to 0$",
+        "$\\delta_0 = ka^2$ as $k\\to 0$",
+        "$\\delta_0 = k/a$ as $k\\to 0$"
+      ],
+      "correct": 0,
+      "explanation": "The $s$-wave cross-section is $\\sigma_0 = 4\\pi a^2$ (for distinguishable particles). For identical bosons the factor is $8\\pi a^2$. A positive $a$ indicates repulsive interactions at low energy; negative $a$ indicates attractive. For $^{87}$Rb, $a \\approx +5.2$ nm — repulsive, which stabilises the condensate."
+    },
+    "active": {
+      "type": "fill-blanks",
+      "prompt": "Complete: the $s$-wave cross-section at low energy in terms of scattering length $a$:",
+      "template": ["$\\sigma_0 =$", null],
+      "tokens": [
+        {"id": "t1", "latex": "4\\pi a^2"},
+        {"id": "t2", "latex": "\\pi a^2"},
+        {"id": "t3", "latex": "2\\pi a"},
+        {"id": "t4", "latex": "4\\pi/a^2"}
+      ],
+      "solution": ["t1"],
+      "explanation": "At $k\\to 0$, $\\sigma_0 = 4\\pi a^2$ — the scattering cross-section is set entirely by the scattering length, independent of the details of the short-range potential. For identical bosons the symmetry factor doubles it to $8\\pi a^2$."
+    }
+  },
+  {
+    "id": "sc004",
+    "path": ["physics", "quantum-mechanics", "scattering-theory"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "For each partial wave $l$, unitarity bounds the contribution to the total cross-section. The maximum (unitarity limit) for the $l$-th partial wave cross-section is:",
+    "passive": {
+      "options": [
+        "$\\sigma_l^{\\rm max} = \\dfrac{4\\pi(2l+1)}{k^2}$",
+        "$\\sigma_l^{\\rm max} = \\dfrac{\\pi(2l+1)}{k^2}$",
+        "$\\sigma_l^{\\rm max} = \\dfrac{4\\pi}{k^2}$",
+        "$\\sigma_l^{\\rm max} = \\dfrac{2l+1}{k}$"
+      ],
+      "correct": 0,
+      "explanation": "From $\\sigma_l = (4\\pi/k^2)(2l+1)\\sin^2\\delta_l$, the maximum occurs at $\\delta_l = \\pi/2$ (resonance), giving $\\sigma_l^{\\rm max} = 4\\pi(2l+1)/k^2$. At ultracold temperatures only $l=0$ contributes, so the $s$-wave unitarity limit is $4\\pi/k^2$, corresponding to $a \\to \\infty$ at a Feshbach resonance."
+    }
+  },
+  {
+    "id": "sc005",
+    "path": ["physics", "quantum-mechanics", "scattering-theory"],
+    "level": "A",
+    "modes": ["passive", "active"],
+    "question": "Near a Feshbach resonance, the $s$-wave scattering length varies with magnetic field $B$ as:",
+    "equation": "a(B) = a_{\\rm bg}\\!\\left(1 - \\frac{\\Delta B}{B - B_0}\\right)",
+    "passive": {
+      "options": [
+        "$a$ diverges to $\\pm\\infty$ at $B = B_0$ and crosses zero at $B = B_0 + \\Delta B$",
+        "$a$ diverges at $B = B_0 + \\Delta B$ and is zero at $B_0$",
+        "$a$ is always equal to $a_{\\rm bg}$ far from $B_0$",
+        "$\\Delta B$ is the field at which $a$ is maximum"
+      ],
+      "correct": 0,
+      "explanation": "At $B = B_0$ (the resonance field) the scattering length diverges ($a \\to \\pm\\infty$), reaching the unitarity limit. At $B = B_0 + \\Delta B$, $a = 0$ — the interactions can be completely switched off. Far from resonance ($|B-B_0| \\gg |\\Delta B|$), $a \\to a_{\\rm bg}$. Feshbach resonances give experimentalists exquisite control over interatomic interactions, enabling the BEC–BCS crossover studies."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each regime of the Feshbach formula to the physical outcome:",
+      "pairs": [
+        {"id": "p1", "term": "$B = B_0$", "definition": "$a \\to \\pm\\infty$: unitarity limit, strongly interacting"},
+        {"id": "p2", "term": "$B = B_0 + \\Delta B$", "definition": "$a = 0$: non-interacting gas"},
+        {"id": "p3", "term": "$|B - B_0| \\gg |\\Delta B|$", "definition": "$a \\approx a_{\\rm bg}$: background scattering"},
+        {"id": "p4", "term": "$a > 0$", "definition": "Repulsive mean-field — stable BEC"}
+      ],
+      "explanation": "The Feshbach resonance formula encodes all interaction regimes. The ability to tune $a$ from $+\\infty$ through 0 to $-\\infty$ by varying $B$ is the cornerstone of ultracold atom experiments studying strongly correlated physics."
+    }
+  },
+  {
+    "id": "sc006",
+    "path": ["physics", "quantum-mechanics", "scattering-theory"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Why does $p$-wave ($l=1$) scattering vanish for identical bosons at ultracold temperatures?",
+    "passive": {
+      "options": [
+        "The spatial wavefunction must be symmetric under exchange, and $p$-wave has odd parity — the two conditions are incompatible",
+        "The Pauli exclusion principle forbids two bosons from the same $l=1$ state",
+        "The $p$-wave centrifugal barrier is infinite at low energy",
+        "$p$-wave requires a non-zero magnetic quantum number which bosons cannot have"
+      ],
+      "correct": 0,
+      "explanation": "Identical bosons require a totally symmetric wavefunction under particle exchange. For the spatial part, exchange corresponds to $\\mathbf{r} \\to -\\mathbf{r}$, so $l$-even partial waves are symmetric and $l$-odd are antisymmetric. Therefore only even-$l$ waves ($s$, $d$, $g$, …) contribute for identical bosons. At ultracold energies the centrifugal barrier suppresses $l \\geq 2$, leaving only $s$-wave."
+    }
+  },
+  {
+    "id": "sc007",
+    "path": ["physics", "quantum-mechanics", "scattering-theory"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The effective range expansion for the $s$-wave phase shift is:",
+    "equation": "k\\cot\\delta_0 = -\\frac{1}{a} + \\frac{1}{2}r_e k^2 + \\ldots",
+    "passive": {
+      "options": [
+        "$r_e$ is the effective range, characterising the spatial extent over which the potential acts",
+        "$r_e$ is the scattering length at finite energy",
+        "$a$ cancels out when the effective range is included",
+        "The expansion is exact for all $k$"
+      ],
+      "correct": 0,
+      "explanation": "At $k = 0$, only the scattering length $a$ matters. At higher energies the effective range $r_e$ (of order the potential range) provides the first correction. For typical atom–atom potentials $r_e \\sim$ a few nm while $|a|$ can be tuned to $\\mu$m near a Feshbach resonance, making $r_e$ corrections negligible near resonance. The expansion breaks down at $k \\sim 1/r_e$."
+    }
+  }
+]

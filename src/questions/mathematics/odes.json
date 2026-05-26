@@ -1,0 +1,144 @@
+[
+  {
+    "id": "od001",
+    "path": ["mathematics", "differential-equations", "odes"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "The first-order linear ODE $y' + p(x)\\,y = q(x)$ is solved using an integrating factor $\\mu(x)$. The integrating factor is:",
+    "passive": {
+      "options": [
+        "$\\mu(x) = e^{\\int p(x)\\,dx}$",
+        "$\\mu(x) = e^{-\\int p(x)\\,dx}$",
+        "$\\mu(x) = \\int p(x)\\,dx$",
+        "$\\mu(x) = p(x)$"
+      ],
+      "correct": 0,
+      "explanation": "Multiplying through by $\\mu = e^{\\int p\\,dx}$ makes the left side an exact derivative: $\\mu y' + \\mu p y = (\\mu y)' = \\mu q$. Integrating gives $\\mu y = \\int \\mu q\\,dx + C$, then $y = (\\int\\mu q\\,dx + C)/\\mu$. The exponential form of $\\mu$ is chosen precisely because $(e^{\\int p\\,dx})' = p\\,e^{\\int p\\,dx}$."
+    },
+    "active": {
+      "type": "step-order",
+      "prompt": "Order the steps to solve $y' + p(x)y = q(x)$ using the integrating factor:",
+      "steps": [
+        {"id": "s1", "text": "Compute the integrating factor: $\\mu(x) = e^{\\int p(x)\\,dx}$"},
+        {"id": "s2", "text": "Multiply both sides by $\\mu$: $\\mu y' + \\mu p y = \\mu q$"},
+        {"id": "s3", "text": "Recognise the left side as $(\\mu y)'$ and integrate: $\\mu y = \\int \\mu q\\,dx + C$"},
+        {"id": "s4", "text": "Solve for $y$: $y = \\dfrac{1}{\\mu}\\Bigl(\\int \\mu q\\,dx + C\\Bigr)$"}
+      ],
+      "solution": ["s1", "s2", "s3", "s4"],
+      "explanation": "The integrating factor method converts a non-exact equation into an exact one. The key insight is that $\\mu p = \\mu'/\\mu \\cdot \\mu = \\mu'$, making the left side a perfect derivative."
+    }
+  },
+  {
+    "id": "od002",
+    "path": ["mathematics", "differential-equations", "odes"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "A separable ODE has the form $dy/dx = f(x)g(y)$. The solution method is:",
+    "passive": {
+      "options": [
+        "Separate variables: $\\dfrac{dy}{g(y)} = f(x)\\,dx$, then integrate both sides",
+        "Find an integrating factor $\\mu(x)$",
+        "Substitute $y = vx$ to reduce to a linear equation",
+        "Use variation of parameters with the homogeneous solution"
+      ],
+      "correct": 0,
+      "explanation": "Separating variables places all $y$-dependence on the left and all $x$-dependence on the right, making both sides independently integrable. For example, $dy/dx = -ky$ separates to $dy/y = -k\\,dx$, integrating to $\\ln|y| = -kx + C$, so $y = Ae^{-kx}$ — the hallmark of exponential decay. The method requires $g(y) \\neq 0$."
+    }
+  },
+  {
+    "id": "od003",
+    "path": ["mathematics", "differential-equations", "odes"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "For the second-order linear ODE with constant coefficients $ay'' + by' + cy = 0$, the solution type depends on the discriminant $\\Delta = b^2 - 4ac$. For $\\Delta > 0$:",
+    "passive": {
+      "options": [
+        "Two distinct real roots $r_1, r_2$: general solution $y = C_1 e^{r_1 x} + C_2 e^{r_2 x}$",
+        "Two complex conjugate roots: general solution $y = e^{\\alpha x}(C_1\\cos\\beta x + C_2\\sin\\beta x)$",
+        "One repeated root $r$: general solution $y = (C_1 + C_2 x)e^{rx}$",
+        "No real solution exists"
+      ],
+      "correct": 0,
+      "explanation": "The characteristic equation $ar^2+br+c=0$ gives $r = (-b\\pm\\sqrt{\\Delta})/2a$. For $\\Delta > 0$: two distinct reals → two independent exponentials. For $\\Delta = 0$: repeated root → $e^{rx}$ and $xe^{rx}$ (the second term comes from reduction of order). For $\\Delta < 0$: complex conjugates $\\alpha\\pm i\\beta$ → oscillatory solutions $e^{\\alpha x}\\cos\\beta x$ and $e^{\\alpha x}\\sin\\beta x$."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each discriminant case to its general solution:",
+      "pairs": [
+        {"id": "p1", "term": "$\\Delta = b^2 - 4ac > 0$", "definition": "$y = C_1 e^{r_1 x} + C_2 e^{r_2 x}$, two distinct real exponentials"},
+        {"id": "p2", "term": "$\\Delta = 0$", "definition": "$y = (C_1 + C_2 x)e^{rx}$, repeated root"},
+        {"id": "p3", "term": "$\\Delta < 0$, roots $\\alpha \\pm i\\beta$", "definition": "$y = e^{\\alpha x}(C_1\\cos\\beta x + C_2\\sin\\beta x)$, damped oscillation"}
+      ],
+      "explanation": "The three cases cover all physical scenarios: overdamped ($\\Delta>0$), critically damped ($\\Delta=0$), and underdamped ($\\Delta<0$) oscillators. The underdamped case is ubiquitous in physics — any resonant system near equilibrium."
+    }
+  },
+  {
+    "id": "od004",
+    "path": ["mathematics", "differential-equations", "odes"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "A forced harmonic oscillator obeys $\\ddot{x} + 2\\gamma\\dot{x} + \\omega_0^2 x = F_0\\cos(\\omega t)/m$. At resonance ($\\omega = \\omega_0$), the steady-state amplitude scales as:",
+    "passive": {
+      "options": [
+        "$A \\propto 1/\\gamma$ — amplitude diverges as damping $\\gamma\\to 0$",
+        "$A \\propto 1/\\omega_0^2$ — amplitude inversely proportional to the natural frequency squared",
+        "$A \\propto \\omega_0/\\gamma^2$",
+        "$A$ is finite and independent of $\\gamma$ at resonance"
+      ],
+      "correct": 0,
+      "explanation": "The steady-state amplitude is $A(\\omega) = F_0/m\\sqrt{(\\omega_0^2-\\omega^2)^2 + 4\\gamma^2\\omega^2}$. At $\\omega=\\omega_0$: $A = F_0/(2m\\gamma\\omega_0) \\propto 1/\\gamma$. The quality factor $Q = \\omega_0/2\\gamma$ measures the resonance sharpness and also equals the peak amplitude enhancement over the static response. In optics, $Q = \\omega\\tau$ where $\\tau$ is the photon lifetime in a cavity."
+    }
+  },
+  {
+    "id": "od005",
+    "path": ["mathematics", "differential-equations", "odes"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Variation of parameters solves a non-homogeneous ODE $y'' + p(x)y' + q(x)y = r(x)$ given two independent homogeneous solutions $y_1, y_2$. The particular solution is:",
+    "equation": "y_p = -y_1\\int\\frac{y_2\\,r}{W}\\,dx + y_2\\int\\frac{y_1\\,r}{W}\\,dx",
+    "passive": {
+      "options": [
+        "$W = y_1 y_2' - y_2 y_1'$ is the Wronskian of the homogeneous solutions",
+        "$W$ is the determinant of the coefficient matrix",
+        "$W = y_1 + y_2$",
+        "$W = r(x)$ the forcing function"
+      ],
+      "correct": 0,
+      "explanation": "The Wronskian $W[y_1,y_2] = y_1y_2'-y_2y_1'$ is non-zero whenever $y_1$ and $y_2$ are linearly independent (Abel's theorem: $W = Ce^{-\\int p\\,dx}$). Variation of parameters works for any continuous $r(x)$, unlike the method of undetermined coefficients which requires special forms of $r$."
+    }
+  },
+  {
+    "id": "od006",
+    "path": ["mathematics", "differential-equations", "odes"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Frobenius' method seeks series solutions of $y'' + P(x)y' + Q(x)y = 0$ near a regular singular point $x_0$. A regular singular point requires:",
+    "passive": {
+      "options": [
+        "$(x-x_0)P(x)$ and $(x-x_0)^2Q(x)$ are both analytic at $x_0$ (the singularity is 'not too bad')",
+        "$P(x)$ and $Q(x)$ are both analytic at $x_0$",
+        "The equation has no solution near $x_0$",
+        "The solution must be expressible as a polynomial"
+      ],
+      "correct": 0,
+      "explanation": "At a regular singular point, the solution has the form $y = x^r\\sum_{n=0}^\\infty a_n x^n$ where the indicial equation determines $r$. This covers the Bessel, Legendre, Laguerre, and Hermite equations — all central to atomic physics. The hydrogen atom Schrödinger equation is solved by Frobenius near the origin (where it has a regular singular point due to the $1/r$ Coulomb potential)."
+    }
+  },
+  {
+    "id": "od007",
+    "path": ["mathematics", "differential-equations", "odes"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "For the autonomous 2D system $\\dot{\\mathbf{x}} = A\\mathbf{x}$ where $A$ is a $2\\times2$ matrix, the character of the fixed point at the origin depends on the eigenvalues $\\lambda_{1,2}$ of $A$. An unstable spiral corresponds to:",
+    "passive": {
+      "options": [
+        "Complex conjugate eigenvalues with positive real part: $\\lambda = \\alpha\\pm i\\beta$ with $\\alpha > 0$",
+        "Two positive real eigenvalues",
+        "Pure imaginary eigenvalues $\\lambda = \\pm i\\beta$",
+        "One positive and one negative real eigenvalue"
+      ],
+      "correct": 0,
+      "explanation": "The phase portrait classification: two real same-sign eigenvalues → node (stable if negative, unstable if positive); opposite-sign reals → saddle; pure imaginary → centre (neutral stability, circles); complex with Re > 0 → unstable spiral; Re < 0 → stable spiral. The spiral topology arises from the oscillatory imaginary part while the real part drives growth/decay."
+    }
+  }
+]
