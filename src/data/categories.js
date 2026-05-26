@@ -166,6 +166,11 @@ export function getAllDescendantIds(node) {
   return [node.id, ...node.children.flatMap(getAllDescendantIds)]
 }
 
+// True if node is a leaf (no children) — used to count "real" topic selections
+export function isLeaf(node) {
+  return !node.children || node.children.length === 0
+}
+
 export function getNodeSelectionState(node, selectedIds) {
   if (!node.children) return selectedIds.has(node.id) ? 'selected' : 'unselected'
   const childStates = node.children.map(c => getNodeSelectionState(c, selectedIds))

@@ -9,23 +9,33 @@ db.version(1).stores({
   questionHistory: 'questionId',
 })
 
+const SCHEMA_VERSION = 2
+
 // ── helpers ──────────────────────────────────────────────
 
 export async function persistSession(sessionData, answers) {
-  await db.sessions.add(sessionData)
+  await db.transaction('rw', db.sessions, db.questionHistory, async () => {
+    await db.sessions.add({ schemaVersion: SCHEMA_VERSION, ...sessionData })
 
-  // update per-question history
-  for (const a of answers) {
-    const existing = await db.questionHistory.get(a.questionId) ?? {
-      questionId: a.questionId, seen: 0, correct: 0, lastSeen: 0,
-    }
-    await db.questionHistory.put({
-      ...existing,
-      seen:    existing.seen + 1,
-      correct: existing.correct + (a.correct ? 1 : 0),
-      lastSeen: Date.now(),
+    // batch-load existing history rows so we can update them in one bulkPut
+    const ids = [...new Set(answers.map(a => a.questionId))]
+    const existing = await db.questionHistory.bulkGet(ids)
+    const map = new Map()
+    ids.forEach((id, i) => {
+      map.set(id, existing[i] ?? { questionId: id, seen: 0, correct: 0, skipped: 0, lastSeen: 0 })
     })
-  }
+
+    const now = Date.now()
+    for (const a of answers) {
+      const row = map.get(a.questionId)
+      row.seen    += 1
+      row.correct += a.correct ? 1 : 0
+      row.skipped += a.skipped ? 1 : 0
+      row.lastSeen = now
+      row.schemaVersion = SCHEMA_VERSION
+    }
+    await db.questionHistory.bulkPut([...map.values()])
+  })
 }
 
 export async function loadAllSessions() {
@@ -44,6 +54,7 @@ export async function exportData() {
   ])
   return {
     version: 1,
+    schemaVersion: SCHEMA_VERSION,
     exported: Date.now(),
     sessions,
     questionHistory: Object.fromEntries(histRows.map(r => [r.questionId, r])),
@@ -52,6 +63,10 @@ export async function exportData() {
 
 export async function importData(payload) {
   if (payload.version !== 1) throw new Error(`Unknown export version: ${payload.version}`)
+  if (!Array.isArray(payload.sessions)) throw new Error('Export payload: sessions must be an array')
+  if (payload.questionHistory && typeof payload.questionHistory !== 'object') {
+    throw new Error('Export payload: questionHistory must be an object')
+  }
   await db.transaction('rw', db.sessions, db.questionHistory, async () => {
     await db.sessions.clear()
     await db.questionHistory.clear()

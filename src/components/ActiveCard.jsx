@@ -358,7 +358,7 @@ export default function ActiveCard({ question, questionIndex, total, onAnswer, o
     const correct = subRef.current.evaluate()
     setIsCorrect(correct)
     setChecked(true)
-    onAnswer(correct ? question.passive?.correct ?? 0 : -1)
+    onAnswer(correct)
   }
 
   return (

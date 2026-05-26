@@ -1,4 +1,6 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import RichText from './RichText.jsx'
+import MathDisplay from './Math.jsx'
 
 function pct(n) { return Math.round(n * 100) }
 function fmtTime(ms) {
@@ -9,6 +11,7 @@ function fmtTime(ms) {
 
 export default function SessionSummary({ answers, pool, durationMs, onSave, onPlayAgain, onNewSession }) {
   const savedRef = useRef(false)
+  const [reviewOpen, setReviewOpen] = useState(false)
 
   // Save exactly once when the summary first mounts
   useEffect(() => {
@@ -19,17 +22,27 @@ export default function SessionSummary({ answers, pool, durationMs, onSave, onPl
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   const correct  = answers.filter(a => a.correct).length
+  const skipped  = answers.filter(a => a.skipped).length
   const total    = answers.length
   const accuracy = total > 0 ? correct / total : 0
 
+  // Build a quick id→question map once (avoids O(n²) find in render)
+  const poolById = new Map(pool.map(q => [q.id, q]))
+
+  // Group results by level for the bars
   const byLevel = {}
   answers.forEach(a => {
-    const q = pool.find(q => q.id === a.questionId)
+    const q = poolById.get(a.questionId)
     if (!q) return
     if (!byLevel[q.level]) byLevel[q.level] = { correct: 0, total: 0 }
     byLevel[q.level].total++
     if (a.correct) byLevel[q.level].correct++
   })
+
+  // Wrong + skipped answers — what the "Review" expander shows
+  const reviewItems = answers
+    .map((a, i) => ({ a, q: poolById.get(a.questionId), idx: i }))
+    .filter(({ a }) => !a.correct)
 
   const LEVEL_LABELS = { U: 'Undergrad', M: "Master's", P: 'PhD', A: 'Academic' }
   const grade = accuracy >= 0.9 ? 'Excellent' : accuracy >= 0.7 ? 'Good' : accuracy >= 0.5 ? 'Developing' : 'Keep practising'
@@ -58,6 +71,12 @@ export default function SessionSummary({ answers, pool, durationMs, onSave, onPl
         ))}
       </div>
 
+      {skipped > 0 && (
+        <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textAlign: 'center', marginTop: -10, marginBottom: 14 }}>
+          {skipped} {skipped === 1 ? 'question' : 'questions'} skipped
+        </div>
+      )}
+
       {Object.keys(byLevel).length > 1 && (
         <div style={{ marginBottom: 24 }}>
           <div className="sidebar-section-label" style={{ marginBottom: 10 }}>By level</div>
@@ -77,7 +96,51 @@ export default function SessionSummary({ answers, pool, durationMs, onSave, onPl
         </div>
       )}
 
-      <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', textAlign: 'center', marginBottom: 20 }}>
+      {/* ── review wrong-answers (I7) ── */}
+      {reviewItems.length > 0 && (
+        <div className="review-section">
+          <button
+            className="review-toggle"
+            onClick={() => setReviewOpen(o => !o)}
+            aria-expanded={reviewOpen}
+          >
+            <span className="review-toggle-arrow" data-open={reviewOpen}>▶</span>
+            Review {reviewItems.length} missed {reviewItems.length === 1 ? 'question' : 'questions'}
+          </button>
+          {reviewOpen && (
+            <ol className="review-list">
+              {reviewItems.map(({ a, q, idx }) => q && (
+                <li key={`${a.questionId}-${idx}`} className="review-item">
+                  <div className="review-item-head">
+                    <span className={`level-badge ${q.level}`} style={{ marginRight: 8 }}>{LEVEL_LABELS[q.level] ?? q.level}</span>
+                    <span className="review-item-tag">
+                      {a.skipped ? 'Skipped' : 'Incorrect'}
+                    </span>
+                  </div>
+                  <p className="review-item-q"><RichText text={q.question} /></p>
+                  {q.equation && (
+                    <div className="review-item-eq"><MathDisplay latex={q.equation} display /></div>
+                  )}
+                  {/* Show the canonical correct answer for passive questions */}
+                  {q.passive?.options && typeof q.passive.correct === 'number' && (
+                    <div className="review-item-answer">
+                      <span className="review-item-label">Correct answer:</span>
+                      <span className="review-item-text"><RichText text={q.passive.options[q.passive.correct]} /></span>
+                    </div>
+                  )}
+                  {(q.passive?.explanation || q.active?.explanation) && (
+                    <p className="review-item-exp">
+                      <RichText text={q.passive?.explanation ?? q.active?.explanation} />
+                    </p>
+                  )}
+                </li>
+              ))}
+            </ol>
+          )}
+        </div>
+      )}
+
+      <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', textAlign: 'center', margin: '18px 0 20px' }}>
         Session saved · visit the Stats tab to track progress over time
       </div>
 

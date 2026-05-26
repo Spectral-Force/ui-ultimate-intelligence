@@ -6,7 +6,8 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      registerType: 'autoUpdate',
+      // 'prompt' so we can show an update toast instead of silent auto-update
+      registerType: 'prompt',
       manifest: {
         name: 'UI — Ultimate Intelligence',
         short_name: 'UI',
@@ -45,4 +46,22 @@ export default defineConfig({
     }),
   ],
   base: './',
+  build: {
+    chunkSizeWarningLimit: 800,
+    rollupOptions: {
+      output: {
+        // Split heavy 3rd-party deps so the app shell stays tiny on first load (I1)
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('katex'))    return 'vendor-katex'
+            if (id.includes('recharts')) return 'vendor-recharts'
+            if (id.includes('dexie'))    return 'vendor-dexie'
+            if (id.includes('react'))    return 'vendor-react'
+          }
+          // Split the question bank from the app code; it'll be ~half the bundle
+          if (id.includes('/src/questions/')) return 'questions'
+        },
+      },
+    },
+  },
 })

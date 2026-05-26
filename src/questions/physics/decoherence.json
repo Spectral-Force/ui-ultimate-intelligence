@@ -1,6 +1,6 @@
 [
   {
-    "id": "dc001",
+    "id": "dec001",
     "path": ["physics", "quantum-mechanics", "quantum-information", "decoherence"],
     "level": "M",
     "modes": ["passive", "active"],
@@ -29,7 +29,7 @@
     }
   },
   {
-    "id": "dc002",
+    "id": "dec002",
     "path": ["physics", "quantum-mechanics", "quantum-information", "decoherence"],
     "level": "M",
     "modes": ["passive"],
@@ -47,7 +47,7 @@
     }
   },
   {
-    "id": "dc003",
+    "id": "dec003",
     "path": ["physics", "quantum-mechanics", "quantum-information", "decoherence"],
     "level": "M",
     "modes": ["passive"],
@@ -64,7 +64,7 @@
     }
   },
   {
-    "id": "dc004",
+    "id": "dec004",
     "path": ["physics", "quantum-mechanics", "quantum-information", "decoherence"],
     "level": "P",
     "modes": ["passive"],
@@ -81,7 +81,7 @@
     }
   },
   {
-    "id": "dc005",
+    "id": "dec005",
     "path": ["physics", "quantum-mechanics", "quantum-information", "decoherence"],
     "level": "P",
     "modes": ["passive"],

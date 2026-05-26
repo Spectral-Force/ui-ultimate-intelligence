@@ -158,9 +158,12 @@ function CategoryBars({ catStats }) {
 
 function DataPanel({ exportProgress, importProgress }) {
   const [status, setStatus] = useState(null)
+  const [busy, setBusy]     = useState(false)
   const fileRef = useRef(null)
 
   async function handleExport() {
+    if (busy) return
+    setBusy(true)
     try {
       const data = await exportProgress()
       const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' })
@@ -173,12 +176,15 @@ function DataPanel({ exportProgress, importProgress }) {
       setStatus({ ok: true, msg: `Exported ${data.sessions?.length ?? 0} sessions.` })
     } catch (e) {
       setStatus({ ok: false, msg: `Export failed: ${e.message}` })
+    } finally {
+      setBusy(false)
     }
   }
 
   async function handleFileChange(e) {
     const file = e.target.files?.[0]
-    if (!file) return
+    if (!file || busy) { e.target.value = ''; return }
+    setBusy(true)
     try {
       const text = await file.text()
       const payload = JSON.parse(text)
@@ -186,16 +192,22 @@ function DataPanel({ exportProgress, importProgress }) {
       setStatus({ ok: true, msg: `Imported ${payload.sessions?.length ?? 0} sessions successfully.` })
     } catch (e) {
       setStatus({ ok: false, msg: `Import failed: ${e.message}` })
+    } finally {
+      e.target.value = ''
+      setBusy(false)
     }
-    e.target.value = ''
   }
 
   return (
     <div className="chart-placeholder">
       <div className="chart-placeholder-title">Data</div>
       <div className="data-panel-actions">
-        <button className="btn btn-ghost" onClick={handleExport}>Export JSON</button>
-        <button className="btn btn-ghost" onClick={() => fileRef.current?.click()}>Import JSON</button>
+        <button className="btn btn-ghost" onClick={handleExport} disabled={busy}>
+          {busy ? 'Working…' : 'Export JSON'}
+        </button>
+        <button className="btn btn-ghost" onClick={() => fileRef.current?.click()} disabled={busy}>
+          {busy ? 'Working…' : 'Import JSON'}
+        </button>
         <input ref={fileRef} type="file" accept=".json" style={{ display: 'none' }} onChange={handleFileChange} />
       </div>
       {status && (
@@ -207,7 +219,7 @@ function DataPanel({ exportProgress, importProgress }) {
 
 // ── main export ───────────────────────────────────────────────────────────────
 
-export default function StatsView({ progress, currentSetKey }) {
+export default function StatsView({ progress, currentSetKey, activeMode }) {
   const {
     totalSessions,
     overallAccuracy,
@@ -218,14 +230,31 @@ export default function StatsView({ progress, currentSetKey }) {
     exportProgress,
     importProgress,
     loaded,
+    loadError,
   } = progress
 
+  // currentSetKey is already mode-prefixed by App.jsx (e.g. "passive:..."),
+  // so we don't need to pass mode separately — same key implies same mode.
   const catStats  = categoryStats(allQuestions)
   const consRuns  = currentSetKey ? consolidationRuns(currentSetKey) : []
   const recentSessions = sessions.slice(-15)
 
   if (!loaded) {
     return <div style={{ padding: 40, textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.85rem' }}>Loading…</div>
+  }
+
+  if (loadError) {
+    return (
+      <div className="error-boundary" style={{ margin: '20px 0' }}>
+        <div className="error-boundary-icon">⚠</div>
+        <div className="error-boundary-title">Couldn't load progress data</div>
+        <p className="error-boundary-body">
+          The local progress database failed to load. This can happen in private-browsing
+          mode or if storage is full.
+        </p>
+        <pre className="error-boundary-detail">{String(loadError.message ?? loadError)}</pre>
+      </div>
+    )
   }
 
   return (

@@ -1,6 +1,6 @@
 [
   {
-    "id": "pt001",
+    "id": "pht001",
     "path": ["physics", "statistical-mechanics", "phase-transitions"],
     "level": "M",
     "modes": ["passive", "active"],
@@ -29,7 +29,7 @@
     }
   },
   {
-    "id": "pt002",
+    "id": "pht002",
     "path": ["physics", "statistical-mechanics", "phase-transitions"],
     "level": "M",
     "modes": ["passive"],
@@ -47,7 +47,7 @@
     }
   },
   {
-    "id": "pt003",
+    "id": "pht003",
     "path": ["physics", "statistical-mechanics", "phase-transitions"],
     "level": "M",
     "modes": ["passive"],
@@ -64,7 +64,7 @@
     }
   },
   {
-    "id": "pt004",
+    "id": "pht004",
     "path": ["physics", "statistical-mechanics", "phase-transitions"],
     "level": "P",
     "modes": ["passive"],
@@ -81,7 +81,7 @@
     }
   },
   {
-    "id": "pt005",
+    "id": "pht005",
     "path": ["physics", "statistical-mechanics", "phase-transitions"],
     "level": "P",
     "modes": ["passive"],

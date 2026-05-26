@@ -24,7 +24,7 @@ export default function PassiveCard({ question, questionIndex, total, onAnswer, 
 
   function handleCheck() {
     if (selected === null) return
-    onAnswer(opts[selected].isCorrect ? question.passive.correct : -1)
+    onAnswer(opts[selected].isCorrect)
     setRevealed(true)
   }
 
@@ -60,10 +60,24 @@ export default function PassiveCard({ question, questionIndex, total, onAnswer, 
         </div>
       )}
 
-      <ul className="options-list">
+      <ul className="options-list" role="radiogroup" aria-label="Answer options">
         {opts.map((opt, idx) => (
-          <li key={idx} className={optionClass(idx)} onClick={() => handleSelect(idx)}>
-            <span className="option-radio" />
+          <li
+            key={idx}
+            className={optionClass(idx)}
+            onClick={() => handleSelect(idx)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault()
+                handleSelect(idx)
+              }
+            }}
+            role="radio"
+            aria-checked={selected === idx}
+            aria-disabled={revealed}
+            tabIndex={revealed ? -1 : 0}
+          >
+            <span className="option-radio" aria-hidden="true" />
             <span className="option-text">
               <RichText text={opt.text} />
             </span>

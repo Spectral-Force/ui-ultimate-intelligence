@@ -1,8 +1,9 @@
 import { LEVELS } from '../data/categories.js'
 import LevelBadge from './LevelBadge.jsx'
 
-export default function SessionStart({ questionCount, selectedIds, selectedLevels, mode, onStart }) {
+export default function SessionStart({ questionCount, selectedLeafCount, selectedLevels, mode, onStart }) {
   const hasQuestions = questionCount > 0
+  const topicCount = selectedLeafCount ?? 0
 
   return (
     <div className="question-card" style={{ textAlign: 'center', padding: '36px 28px' }}>
@@ -15,7 +16,7 @@ export default function SessionStart({ questionCount, selectedIds, selectedLevel
           </div>
           <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: 24, lineHeight: 1.65 }}>
             <strong style={{ color: 'var(--text-primary)' }}>{questionCount}</strong> questions available
-            in <strong style={{ color: 'var(--text-primary)' }}>{selectedIds.size}</strong> {selectedIds.size === 1 ? 'category' : 'categories'}
+            {topicCount > 0 && <> in <strong style={{ color: 'var(--text-primary)' }}>{topicCount}</strong> {topicCount === 1 ? 'topic' : 'topics'}</>}
           </div>
 
           <div style={{ display: 'flex', justifyContent: 'center', gap: 6, flexWrap: 'wrap', marginBottom: 28 }}>
@@ -33,7 +34,7 @@ export default function SessionStart({ questionCount, selectedIds, selectedLevel
             No questions available
           </div>
           <p style={{ fontSize: '0.83rem', color: 'var(--text-muted)', maxWidth: 320, margin: '0 auto', lineHeight: 1.65 }}>
-            The selected {selectedIds.size === 1 ? 'category has' : 'categories have'} no questions yet
+            The selected {topicCount === 1 ? 'topic has' : 'topics have'} no questions yet
             for the active difficulty levels.
             Try enabling more levels, or use Claude Code to generate questions for this topic.
           </p>
