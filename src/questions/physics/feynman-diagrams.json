@@ -1,0 +1,150 @@
+[
+  {
+    "id": "fd001",
+    "path": ["physics", "quantum-field-theory", "feynman-diagrams"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "Feynman diagrams provide a graphical representation of perturbative QFT amplitudes. What do the basic elements correspond to?",
+    "passive": {
+      "options": [
+        "Internal lines = propagators; vertices = interactions from $\\mathcal L_{\\rm int}$; external = in/out states; loops = momentum integrals",
+        "Feynman diagrams are purely pictorial illustrations with no precise mathematical meaning beyond mnemonic visualisation",
+        "Each diagram is a complete scattering amplitude by itself; there is no sum over different diagrams of the same order needed",
+        "Lines literally represent the physical spacetime paths taken by particles; vertices are the spacetime points of measurement"
+      ],
+      "correct": 0,
+      "explanation": "Diagram-to-amplitude dictionary (Feynman rules). For QED: photon propagator $-i\\eta_{\\mu\\nu}/k^2$ (Feynman gauge); electron propagator $i(\\not k + m)/(k^2 - m^2 + i\\epsilon)$; vertex $-ie\\gamma^\\mu$. Loops contribute $\\int d^4k/(2\\pi)^4$ — often divergent, requiring renormalisation. Each diagram has a symmetry factor accounting for over-counting in Wick contractions. Tree level: classical-like, no loops; one-loop: leading quantum correction."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each Feynman diagram concept:",
+      "pairs": [
+        {"id": "p1", "term": "Tree diagram", "definition": "No loops; classical-like topology; gives leading-order perturbative amplitude"},
+        {"id": "p2", "term": "Loop diagram", "definition": "Contains closed loops; integrate over loop momenta; produces quantum corrections, often divergent"},
+        {"id": "p3", "term": "1PI (one-particle irreducible)", "definition": "Cannot be split into two by cutting one internal line; building blocks of effective action $\\Gamma$"},
+        {"id": "p4", "term": "Symmetry factor", "definition": "Combinatorial weight $1/n$ from indistinguishable diagrams in Wick expansion; e.g., 1/2 for a bubble loop"}
+      ],
+      "explanation": "Loop counting parameter: power of $\\hbar$ tracks loops. Tree amplitudes are $\\hbar^0$ (classical limit); one-loop is $\\hbar^1$; etc. The Born approximation in scattering is tree level. Quantum effects begin at one-loop: vacuum polarisation in QED, magnetic moment $g - 2 = \\alpha/\\pi$ at one loop."
+    }
+  },
+  {
+    "id": "fd002",
+    "path": ["physics", "quantum-field-theory", "feynman-diagrams"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The QED vertex couples a photon to an electron-positron pair. What is its Feynman rule?",
+    "equation": "\\text{QED vertex} = -ie\\gamma^\\mu",
+    "passive": {
+      "options": [
+        "$-ie\\gamma^\\mu$ with $e$ = electron charge, $\\mu$ matching photon polarisation; from $\\mathcal L_{\\rm int} = -e\\bar\\psi\\gamma^\\mu\\psi A_\\mu$",
+        "Vertex factor is $-ie\\delta^{\\mu\\nu}$ — a diagonal Kronecker delta rather than a gamma matrix in the spinor space",
+        "QED has no 3-particle vertex at all; all interactions are quartic (4-particle) like the seagull diagram in scalar QED",
+        "Vertex factor is $-e^2$ — square of the charge rather than first power, because the photon couples via its squared field"
+      ],
+      "correct": 0,
+      "explanation": "Standard QED Feynman rule. Combine with electron and photon propagators to compute amplitudes. Example: electron-electron scattering (Møller): tree-level via $t$-channel and $u$-channel photon exchange. Compton scattering: tree-level $s$-channel and $u$-channel electron propagator. Photon self-energy (one-loop): electron loop between two photons — gives running of $\\alpha$. Electron $g-2$ (one-loop): vertex correction giving Schwinger's $\\alpha/2\\pi$."
+    }
+  },
+  {
+    "id": "fd003",
+    "path": ["physics", "quantum-field-theory", "feynman-diagrams"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Mandelstam variables $s$, $t$, $u$ classify 2-to-2 scattering processes. What are they?",
+    "passive": {
+      "options": [
+        "$s = (p_1+p_2)^2$ (CoM energy squared); $t = (p_1-p_3)^2$ (momentum transfer); $u = (p_1-p_4)^2$; $s+t+u = \\sum m_i^2$",
+        "$s, t, u$ are simply spatial coordinates of the scattering region with no underlying physical or kinematic content beyond labelling",
+        "Three independent variables that can be freely chosen for any scattering process; no kinematic constraint relates them whatsoever",
+        "$s + t + u = 0$ by energy conservation alone; the sum constraint comes from $\\sum p_i = 0$ for any 2-to-2 scattering process"
+      ],
+      "correct": 0,
+      "explanation": "Mandelstam (1958). For 4-particle scattering, only 2 of $s, t, u$ are independent (the third fixed by mass-shell + constraint). Crossing symmetry: amplitudes in different channels related by analytic continuation. $s$-channel: process $1+2 \\to 3+4$ at energy $\\sqrt s$. $t$-channel: $1 + \\bar 3 \\to \\bar 2 + 4$ (or one-particle exchange). $u$-channel: similar. Mandelstam plot represents physical region. Mandelstam-Regge poles describe high-energy behavior."
+    }
+  },
+  {
+    "id": "fd004",
+    "path": ["physics", "quantum-field-theory", "feynman-diagrams"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Loop integrals in QFT typically diverge. What types of divergences arise?",
+    "passive": {
+      "options": [
+        "UV (ultraviolet): from large loop momenta $|k| \\to \\infty$; IR (infrared): from soft/collinear emissions $|k| \\to 0$ for massless particles; both require regularisation",
+        "Only IR divergences exist; UV divergences are eliminated by gauge invariance automatically",
+        "Loop divergences are always small and can be ignored",
+        "Divergences appear only in interacting theories; free QFT is perfectly finite at all loops"
+      ],
+      "correct": 0,
+      "explanation": "UV divergences: dimensional analysis tells you superficial degree of divergence. $\\phi^4$ in 4D is logarithmically divergent (renormalisable). $\\phi^6$ in 4D is non-renormalisable. IR divergences in massless theories: from soft photon emission, collinear gluon. KLN theorem: cancel in physical observables (sum over indistinguishable initial/final states). Bloch-Nordsieck: cancellation in QED. Renormalisation handles UV by counterterms; IR by inclusive measurements."
+    }
+  },
+  {
+    "id": "fd005",
+    "path": ["physics", "quantum-field-theory", "feynman-diagrams"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The Schwinger calculation of electron magnetic moment anomaly $g - 2 = \\alpha/\\pi$ was a triumph of QED. What does it represent diagrammatically?",
+    "passive": {
+      "options": [
+        "One-loop vertex correction: photon exchange across the QED interaction vertex; $a_e = \\alpha/(2\\pi)$ to first order in $\\alpha$",
+        "Tree-level effect arising directly from minimal coupling of the fermion to the photon without any quantum-loop correction",
+        "Non-perturbative contribution from instanton-like solutions in QED at large coupling, beyond all orders in perturbation",
+        "Higher-loop diagram contributing only at $\\alpha^4$ order or higher; first-order $\\alpha$ correction vanishes for $g - 2$"
+      ],
+      "correct": 0,
+      "explanation": "Schwinger (1948): $a_e = \\alpha/(2\\pi) \\approx 0.001162$. Modern theory + experiment: $a_e = 0.001\\,159\\,652\\,180\\,73\\,(28)$ — measured and predicted to $\\sim$ 0.4 parts per trillion. Includes 5-loop QED + hadronic + electroweak contributions. Muon $g - 2$: similar story, $a_\\mu = 0.001\\,165\\,920\\,89\\,(63)$ — currently shows a $\\sim 4\\sigma$ tension between Fermilab measurement and Standard Model prediction, possibly hinting at new physics."
+    }
+  },
+  {
+    "id": "fd006",
+    "path": ["physics", "quantum-field-theory", "feynman-diagrams"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Cutkosky rules express the imaginary part of a Feynman diagram in terms of cut diagrams. What's the physical content?",
+    "passive": {
+      "options": [
+        "$2\\text{Im}\\,\\mathcal M = \\sum_{\\rm cuts}|\\mathcal M_{\\rm cut}|^2$: cut loops at on-shell intermediate states; underpins optical theorem & unitarity",
+        "Cutkosky rules apply only to tree-level diagrams; loop diagrams require an entirely different non-perturbative approach for their imaginary parts",
+        "Imaginary part of any Feynman diagram is identically zero in the standard QFT formulation; only real parts contribute to physical amplitudes",
+        "Cut diagrams correspond to gauge transformations of the original diagram; cutting reproduces the same amplitude in a different gauge"
+      ],
+      "correct": 0,
+      "explanation": "Cutkosky (1960): replace internal propagators $i/(k^2 - m^2 + i\\epsilon)$ by $2\\pi\\delta(k^2 - m^2)\\Theta(k^0)$ (cut = on-shell + positive energy). Imaginary part of the loop integral equals the sum of cuts. Optical theorem $2\\text{Im}\\,\\mathcal M(p, p) = \\sum_X|\\mathcal M(p \\to X)|^2$ follows. Ensures unitarity diagram-by-diagram, since the optical theorem is unitarity in disguise. Cutkosky rules underlie modern unitarity-based amplitude methods (BCFW recursion etc.)."
+    }
+  },
+  {
+    "id": "fd007",
+    "path": ["physics", "quantum-field-theory", "feynman-diagrams"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Dimensional regularisation handles UV divergences by analytically continuing in spacetime dimension. What's the trick?",
+    "passive": {
+      "options": [
+        "Compute loops in $d = 4 - 2\\epsilon$ dim; divergences appear as $1/\\epsilon$ poles; absorbed into counterterms; finite at $d \\to 4$",
+        "Pauli-Villars regularisation is mathematically identical to dim reg; both add heavy regulator fields with non-physical signature",
+        "Dimensional regularisation cannot be used for chiral theories because $\\gamma^5$ is not consistently defined in non-integer dimensions",
+        "Reduces spacetime dimensions to 1 to make loop integrals trivially convergent through massive phase-space suppression of UV modes"
+      ],
+      "correct": 0,
+      "explanation": "$\\int d^4k/k^4 \\to \\int d^dk/k^4 = $ finite for $d < 4$. Analytic continuation in $d$ gives pole at $d = 4$ representing the divergence. 't Hooft-Veltman (1972): proved dimensional reg preserves gauge invariance — major reason it became standard in modern QFT. $\\gamma^5$ in $d$ dimensions is subtle (Naive: $\\{\\gamma^5, \\gamma^\\mu\\} = 0$ fails). $\\overline{\\rm MS}$ scheme: standard renormalisation in dim reg. Compare to Pauli-Villars (modify propagators with heavy regulator) or lattice cutoff."
+    }
+  },
+  {
+    "id": "fd008",
+    "path": ["physics", "quantum-field-theory", "feynman-diagrams"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "Modern amplitude methods (BCFW, on-shell techniques) revolutionised Feynman-diagram calculations. What's the key insight?",
+    "passive": {
+      "options": [
+        "Recursively build amplitudes from lower-point on-shell amplitudes via analytic momentum shifts; revealed simplicity in N=4 SYM",
+        "On-shell amplitude methods are equivalent to summing Feynman diagrams with exactly the same computational effort and no simplification",
+        "BCFW recursion works only at one-loop level and breaks down completely for tree-level scattering or for two-loop amplitudes",
+        "Modern amplitude methods rely entirely on numerical evaluation of all Feynman diagrams via Monte Carlo phase-space sampling techniques"
+      ],
+      "correct": 0,
+      "explanation": "BCFW recursion (Britto-Cachazo-Feng-Witten 2005): shift two external momenta in a complex direction $\\hat p_1 = p_1 + zq$, $\\hat p_2 = p_2 - zq$ keeping on-shell. Tree amplitude $\\mathcal M(z)$ is a rational function with poles only when intermediate particles go on-shell. Cauchy's residue theorem: $\\mathcal M(0) = \\sum_{\\rm poles}$ Res — each residue is product of lower-point amplitudes. Revealed: N=4 SYM amplitudes have hidden symmetries (dual conformal, Yangian). Amplituhedron (Arkani-Hamed-Trnka 2013): geometric reformulation."
+    }
+  }
+]

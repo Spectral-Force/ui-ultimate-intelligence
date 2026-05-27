@@ -120,6 +120,20 @@ export const CATEGORIES = [
         ],
       },
       {
+        id: 'quantum-field-theory',
+        label: 'Quantum Field Theory',
+        children: [
+          { id: 'qft-foundations',        label: 'QFT Foundations' },
+          { id: 'classical-fields',       label: 'Classical Fields & Lagrangians' },
+          { id: 'canonical-quantisation', label: 'Canonical Quantisation' },
+          { id: 'path-integrals',         label: 'Path Integrals' },
+          { id: 'feynman-diagrams',       label: 'Feynman Diagrams' },
+          { id: 'renormalisation',        label: 'Renormalisation' },
+          { id: 'symmetries-anomalies',   label: 'Symmetries & Anomalies' },
+          { id: 'spontaneous-breaking',   label: 'Spontaneous Symmetry Breaking' },
+        ],
+      },
+      {
         id: 'theorems',
         label: 'Theorems & Principles',
         children: [

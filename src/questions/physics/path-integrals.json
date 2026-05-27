@@ -1,0 +1,151 @@
+[
+  {
+    "id": "pi001",
+    "path": ["physics", "quantum-field-theory", "path-integrals"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "The Feynman path integral expresses the quantum transition amplitude as a sum over all classical paths weighted by $e^{iS/\\hbar}$. What is the precise form?",
+    "equation": "\\langle q_f, t_f | q_i, t_i\\rangle = \\int \\mathcal Dq(t)\\,e^{iS[q]/\\hbar}",
+    "passive": {
+      "options": [
+        "$\\langle q_f|e^{-i\\hat H T/\\hbar}|q_i\\rangle = \\int\\mathcal Dq\\,e^{iS[q]/\\hbar}$; integrate over all paths $q(t)$ connecting endpoints with action $S = \\int L dt$",
+        "Only classical paths contribute; the path integral collapses to a single trajectory",
+        "Path integral sums over all field values with no weighting",
+        "Sum is over only piecewise-linear paths; smooth paths are excluded"
+      ],
+      "correct": 0,
+      "explanation": "Feynman (1948): sum over histories. All paths contribute with phase $e^{iS/\\hbar}$. Classical limit: stationary phase picks out paths with $\\delta S = 0$ (classical equations of motion). Quantum effects come from paths in a 'tube' of width $\\sqrt\\hbar$ around classical path. For QFT: replace $q(t)$ by field $\\phi(x)$, $S = \\int d^4x\\,\\mathcal L$. Provides systematic way to extract scattering amplitudes via generating functional $Z[J]$."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each path-integral concept:",
+      "pairs": [
+        {"id": "p1", "term": "Generating functional $Z[J]$", "definition": "$\\int\\mathcal D\\phi\\,e^{iS + i\\int J\\phi}$; $n$-point correlators from $n$ derivatives w.r.t. $J$ at $J = 0$"},
+        {"id": "p2", "term": "Wick rotation $t \\to -i\\tau$", "definition": "Converts Minkowski path integral to Euclidean: $iS \\to -S_E$; oscillatory integral $\\to$ convergent Gaussian; basis of lattice QFT"},
+        {"id": "p3", "term": "Stationary-phase / saddle point", "definition": "Classical limit: dominant paths satisfy $\\delta S = 0$; corrections in $\\hbar$ via Gaussian fluctuations around classical solution"},
+        {"id": "p4", "term": "Faddeev-Popov gauge fixing", "definition": "Inserts $\\int\\mathcal D\\alpha\\,\\delta(G[A]) \\det(\\delta G/\\delta\\alpha)$ to handle gauge redundancy; det = ghost determinant"}
+      ],
+      "explanation": "Path integrals unify quantum mechanics, statistical mechanics (after Wick rotation), and quantum field theory. Generating functional encodes all correlators. Symmetries imply Ward identities. Faddeev-Popov ghosts make non-Abelian gauge theories computable."
+    }
+  },
+  {
+    "id": "pi002",
+    "path": ["physics", "quantum-field-theory", "path-integrals"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Wick rotation $t \\to -i\\tau$ converts oscillatory Minkowski path integrals into well-defined Euclidean ones. What's the relationship to statistical mechanics?",
+    "passive": {
+      "options": [
+        "Euclidean $\\int\\mathcal D\\phi\\,e^{-S_E/\\hbar}$ identical to classical stat partition function with $\\hbar \\to k_BT$",
+        "Euclidean and Minkowski path integrals are physically unrelated; the Wick rotation is just a formal calculational trick",
+        "Wick rotation works only for free fields without interactions; any interaction term in the Lagrangian breaks the rotation",
+        "Statistical mechanics has nothing to do with QFT; they use entirely different mathematical formalisms and concepts overall"
+      ],
+      "correct": 0,
+      "explanation": "$e^{iS_M}$ has oscillatory weight (mathematically subtle); $e^{-S_E}$ has positive real weight (probability-like, well-defined). $S_E = \\int d^4x_E\\,[\\tfrac12(\\partial_\\mu\\phi)^2 + V(\\phi)]$. Identification with classical stat mech: temperature $\\beta = 1/(k_BT)$ plays role of Euclidean time interval. Lattice QFT uses this: discretise Euclidean spacetime, compute path integral by Monte Carlo (e.g. lattice QCD calculations of hadron spectrum). Connects QFT to critical phenomena (Wilson)."
+    }
+  },
+  {
+    "id": "pi003",
+    "path": ["physics", "quantum-field-theory", "path-integrals"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The generating functional $Z[J] = \\int\\mathcal D\\phi\\,e^{i(S + \\int J\\phi)}$ encodes all correlation functions. How are they extracted?",
+    "passive": {
+      "options": [
+        "$\\langle 0|T\\phi(x_1)\\cdots\\phi(x_n)|0\\rangle = (1/i)^n (1/Z[0])\\delta^n Z[J]/\\delta J(x_1)\\cdots\\delta J(x_n)\\big|_{J=0}$",
+        "$Z[J]$ directly equals the $n$-point function; no derivatives needed",
+        "Correlators are computed by setting $J = \\phi$ in $Z$",
+        "Functional derivatives produce the action $S$, not correlators"
+      ],
+      "correct": 0,
+      "explanation": "Each functional derivative pulls down one $i\\phi$ factor: $\\delta/\\delta J(x)\\,e^{i\\int J\\phi} = i\\phi(x)e^{i\\int J\\phi}$. Normalisation $Z[0]$ removes vacuum bubbles. Connected (linked-cluster) correlators come from $W[J] = -i\\log Z[J]$. 1PI (proper) vertices come from Legendre transform $\\Gamma[\\phi_{\\rm cl}]$ — building blocks of perturbation theory. Effective action $\\Gamma$ generates Feynman rules at all orders."
+    }
+  },
+  {
+    "id": "pi004",
+    "path": ["physics", "quantum-field-theory", "path-integrals"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The free scalar field path integral is Gaussian. What is its evaluation?",
+    "equation": "Z_0[J] = \\exp\\left(-\\frac{i}{2}\\int d^4x\\,d^4y\\,J(x)D_F(x-y)J(y)\\right)",
+    "passive": {
+      "options": [
+        "Gaussian: $Z_0[J] \\propto \\exp(-i\\int J D_F J/2)$ with $D_F$ Feynman propagator; generates all free-theory correlators",
+        "The free-field path integral diverges identically and must be regulated by hand with cutoffs or counterterms before any evaluation",
+        "Gaussian integrals identically give zero in path-integral form because the oscillatory factors cancel out via stationary-phase arguments",
+        "Free-theory generating functional $Z_0[J]$ equals the classical action $S[\\phi]$ itself evaluated at $\\phi = J/(\\Box + m^2)$ as an output"
+      ],
+      "correct": 0,
+      "explanation": "Free action $S_0 = \\int\\phi(\\Box + m^2)\\phi/2$. Complete the square: shift $\\phi \\to \\phi + (\\Box + m^2)^{-1}J$ to eliminate linear term. Gaussian integration gives $Z_0[J] = Z_0[0]\\exp(i\\int J(\\Box + m^2)^{-1}J/2)$. $(\\Box + m^2)^{-1} = -D_F$ (with $i\\epsilon$ prescription). Two-point function: $\\langle\\phi(x)\\phi(y)\\rangle_0 = -i\\delta^2 Z_0/\\delta J(x)\\delta J(y)|_{J=0} = iD_F(x-y)$."
+    }
+  },
+  {
+    "id": "pi005",
+    "path": ["physics", "quantum-field-theory", "path-integrals"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Perturbation theory expands $e^{iS_{\\rm int}}$ in coupling. For $\\phi^4$ theory with $\\mathcal L_{\\rm int} = -\\lambda\\phi^4/4!$, how does the expansion proceed?",
+    "passive": {
+      "options": [
+        "$Z = Z_0\\langle e^{iS_{\\rm int}}\\rangle_0$; expand in $\\lambda$, Wick-contract → Feynman diagrams with $\\phi^4$ vertices",
+        "Perturbation theory in $\\phi^4$ gives only the leading classical mean-field solution exactly with no quantum corrections allowed",
+        "$\\phi^4$ field theory cannot be expanded perturbatively at all due to severe infrared divergences in the massive scalar sector",
+        "Perturbation theory expansion is in $1/\\lambda$ rather than $\\lambda$ — only a strong-coupling expansion is mathematically possible"
+      ],
+      "correct": 0,
+      "explanation": "$Z = Z_0\\langle e^{iS_{\\rm int}}\\rangle_0$ where $\\langle\\cdot\\rangle_0$ is free expectation. Expand: $\\langle 1 + iS_{\\rm int} + (iS_{\\rm int})^2/2 + \\ldots\\rangle_0$. Each term evaluated by Wick contractions $\\langle\\phi(x)\\phi(y)\\rangle_0 = iD_F$. Diagrammatically: vertices from $S_{\\rm int}$ ($\\phi^4$ vertex with 4 legs); propagators from contractions. Combinatorics gives symmetry factors. Asymptotic series in $\\lambda$ — diverges (Dyson 1952), but truncations are useful: $\\alpha_{\\rm QED} \\sim 10^{-3}$ gives excellent precision."
+    }
+  },
+  {
+    "id": "pi006",
+    "path": ["physics", "quantum-field-theory", "path-integrals"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Faddeev-Popov gauge fixing handles gauge redundancy in non-Abelian path integrals. What does it produce?",
+    "passive": {
+      "options": [
+        "Adds $-G[A]^2/2\\xi$ + ghost determinant $\\det(\\delta G/\\delta\\alpha)$ → $\\bar c, c$ fields; Abelian decouples, QCD contributes",
+        "Adds extra physical gauge bosons to make the path integral well-defined and finite without modifying the gauge field content",
+        "Removes all gauge bosons from the path integral, leaving only matter fields and ghost fields as physical degrees of freedom",
+        "Gauge fixing is unnecessary in path integrals because the gauge redundancy automatically cancels between numerator and denominator"
+      ],
+      "correct": 0,
+      "explanation": "Path integral $\\int\\mathcal D A\\,e^{iS[A]}$ over-counts gauge-equivalent configurations. Faddeev-Popov (1967): insert $1 = \\int\\mathcal D\\alpha\\,\\delta(G[A^\\alpha])\\det(\\delta G/\\delta\\alpha)$. The determinant becomes a path integral over anticommuting ghost fields: $\\det M = \\int\\mathcal D\\bar c\\mathcal D c\\,e^{-\\bar c M c}$. In QED Abelian: ghost decouples. In QCD: ghosts are physical degrees of freedom in loops (though not as external states) — required for unitarity in covariant gauges."
+    }
+  },
+  {
+    "id": "pi007",
+    "path": ["physics", "quantum-field-theory", "path-integrals"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Lattice QFT discretises spacetime to make the path integral mathematically rigorous and numerically computable. What's the key insight?",
+    "passive": {
+      "options": [
+        "Discretise Euclidean spacetime to 4D lattice spacing $a$; fields $\\to$ lattice vars; MC importance sampling with weight $e^{-S_E}$",
+        "Lattice QFT works only for free theories without interactions; interaction terms in the Lagrangian cannot be consistently discretised",
+        "Replaces quantum fields by classical pointlike particles fixed on lattice sites with no quantum or wave-like effects in the path integral",
+        "Spacetime discretisation breaks Lorentz invariance permanently and gives wrong physical answers even after continuum extrapolation"
+      ],
+      "correct": 0,
+      "explanation": "Wilson (1974). Action discretised: $S_{\\rm lattice}$ approaches continuum $S$ as $a \\to 0$. For gauge theories: gauge link variables $U_\\mu = e^{iaA_\\mu}$ live on links, preserving exact gauge invariance. Monte Carlo: sample configurations with weight $e^{-S_E}$ (importance sampling); compute observables as ensemble averages. Lattice QCD computes hadron masses, form factors, scattering — first-principles QCD results. Limitations: sign problem (finite $\\mu$), Euclidean-only (Wick-rotated back via spectral functions)."
+    }
+  },
+  {
+    "id": "pi008",
+    "path": ["physics", "quantum-field-theory", "path-integrals"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "Instantons are non-perturbative solutions to Euclidean equations of motion. What role do they play in QFT?",
+    "passive": {
+      "options": [
+        "Saddle pts of $S_E$ with $S \\sim 1/g^2$; contribute $e^{-1/g^2}$ — invisible perturbatively; $\\theta$-vacuum, $U(1)_A$",
+        "Instantons are perturbative diagrams of finite order that happen to vanish identically at every order in the coupling constant",
+        "Only Abelian gauge theories like QED have instanton solutions; non-Abelian QCD has no such non-perturbative configurations",
+        "Instantons describe purely gravitational effects in QFT; they have no role in QCD or any other non-gravitational gauge theory"
+      ],
+      "correct": 0,
+      "explanation": "BPST instanton in SU(2): self-dual gauge field $F = \\star F$ with topological charge $n \\in \\mathbb Z$ and $S_E = 8\\pi^2 n/g^2$. Contribution to path integral: $e^{-S_E} \\sim e^{-8\\pi^2/g^2}$ — non-analytic in $g$, invisible to perturbation theory. Solves $U(1)_A$ problem (why $\\eta'$ is massive). $\\theta$-vacuum: $\\sum_n e^{in\\theta - S_E}$ — adds $\\theta$-angle to QCD (CP problem). Coleman bounce: instantons for false-vacuum decay (relevant to inflation, electroweak stability)."
+    }
+  }
+]

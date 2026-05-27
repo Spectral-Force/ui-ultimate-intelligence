@@ -1,0 +1,152 @@
+[
+  {
+    "id": "cq101",
+    "path": ["physics", "quantum-field-theory", "canonical-quantisation"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "Canonical quantisation of a real scalar field promotes $\\phi(x)$ to an operator. What are the equal-time commutation relations?",
+    "equation": "[\\hat\\phi(\\mathbf x, t), \\hat\\pi(\\mathbf y, t)] = i\\hbar\\delta^3(\\mathbf x - \\mathbf y)",
+    "passive": {
+      "options": [
+        "$[\\hat\\phi(\\mathbf x), \\hat\\pi(\\mathbf y)] = i\\hbar\\delta^3(\\mathbf x - \\mathbf y)$ at equal times; $[\\hat\\phi,\\hat\\phi] = [\\hat\\pi,\\hat\\pi] = 0$; analogue of $[\\hat q, \\hat p] = i\\hbar$ in QM but at each spatial point",
+        "$\\{\\hat\\phi(\\mathbf x), \\hat\\pi(\\mathbf y)\\} = i\\hbar\\delta^3(\\mathbf x - \\mathbf y)$ — anticommutator for scalar fields",
+        "Equal-time commutators vanish for relativistic fields by Lorentz invariance",
+        "$[\\hat\\phi, \\hat\\pi] = i\\hbar$ (no delta) — fields treated as single operators"
+      ],
+      "correct": 0,
+      "explanation": "Conjugate momentum $\\pi = \\partial\\mathcal L/\\partial\\dot\\phi = \\dot\\phi$ for free KG. Continuum analogue of QM: each spatial point has its own $\\hat q, \\hat p$ pair. The $\\delta^3(\\mathbf x - \\mathbf y)$ ensures fields at different points commute. Fermions use anticommutators ($\\{\\}$) instead, enforcing Pauli exclusion. Vector fields require gauge fixing + Faddeev-Popov ghosts to handle gauge redundancy."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each canonical quantisation ingredient:",
+      "pairs": [
+        {"id": "p1", "term": "Conjugate momentum $\\hat\\pi$", "definition": "$\\partial\\mathcal L/\\partial\\dot\\phi$; for KG: $\\hat\\pi = \\dot{\\hat\\phi}$; promotes to operator alongside $\\hat\\phi$"},
+        {"id": "p2", "term": "Creation operator $\\hat a^\\dagger_k$", "definition": "Adds a particle of momentum $k$ to a state; satisfies $[\\hat a_k, \\hat a^\\dagger_{k'}] = (2\\pi)^3\\delta^3(k-k')$ (bosons)"},
+        {"id": "p3", "term": "Annihilation operator $\\hat a_k$", "definition": "Removes a particle of momentum $k$; acts on vacuum as $\\hat a_k|0\\rangle = 0$ (no particles below vacuum)"},
+        {"id": "p4", "term": "Normal ordering $:\\hat O:$", "definition": "Reorders to put creation ops left of annihilation ops without commutator terms; removes vacuum energy in $\\hat H$"}
+      ],
+      "explanation": "Canonical quantisation prescription: classical Poisson brackets $\\{q, p\\} = 1 \\to [\\hat q, \\hat p]/(i\\hbar) = 1$. The same idea extends to fields with $\\delta$ functions. Mode expansion gives $\\hat a, \\hat a^\\dagger$ operators acting on Fock space. Normal ordering removes the (formally infinite) vacuum zero-point energy."
+    }
+  },
+  {
+    "id": "cq102",
+    "path": ["physics", "quantum-field-theory", "canonical-quantisation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The free scalar field can be expanded in plane-wave modes. What is the standard mode expansion?",
+    "equation": "\\hat\\phi(x) = \\int \\frac{d^3k}{(2\\pi)^3 \\sqrt{2\\omega_k}}[\\hat a_k e^{-ik\\cdot x} + \\hat a_k^\\dagger e^{ik\\cdot x}]",
+    "passive": {
+      "options": [
+        "$\\hat\\phi = \\int d^3k/[(2\\pi)^3\\sqrt{2\\omega_k}](\\hat a e^{-ikx} + \\hat a^\\dagger e^{ikx})$; Hermitian field needs both $a$ and $a^\\dagger$",
+        "$\\hat\\phi(x) = \\int d^3k\\,\\hat a_k e^{-ik\\cdot x}$ — only positive frequency modes, no creation operator $a^\\dagger$ contributes",
+        "$\\hat\\phi$ is a discrete sum over allowed $k$ values from periodic boundary conditions; no continuous integral is needed at all",
+        "Mode expansion uses spherical harmonics directly as basis; plane waves are inappropriate for relativistic quantum field theory"
+      ],
+      "correct": 0,
+      "explanation": "Lorentz-invariant measure $d^3k/(2\\pi)^3 2\\omega_k$ comes from $\\int d^4k \\delta(k^2 - m^2)\\Theta(k^0)$. For real field: $\\hat\\phi^\\dagger = \\hat\\phi$ requires $\\hat a$ and $\\hat a^\\dagger$ to both appear (so positive and negative frequencies combine). Complex field: $\\hat\\phi = \\int(a e^{-ikx} + b^\\dagger e^{ikx})$ with $b \\neq a$ (antiparticle). Commutator at unequal times: $[\\hat\\phi(x), \\hat\\phi(y)] = i\\Delta(x-y)$ — Pauli-Jordan function, vanishes outside the light cone."
+    }
+  },
+  {
+    "id": "cq103",
+    "path": ["physics", "quantum-field-theory", "canonical-quantisation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The free Hamiltonian for a scalar field $\\hat H = \\int (\\hat\\pi^2 + |\\nabla\\hat\\phi|^2 + m^2\\hat\\phi^2)/2$ takes a simple form in mode basis. What is it?",
+    "passive": {
+      "options": [
+        "$\\hat H = \\int d^3k/(2\\pi)^3\\,\\omega_k(\\hat a^\\dagger\\hat a + \\tfrac12)$; each mode = QHO with frequency $\\omega_k$; $\\tfrac12$ = divergent zero-point",
+        "$\\hat H = \\int \\hat a_k\\hat a^\\dagger_k$ — only one operator ordering is used, giving total zero ground-state energy",
+        "$\\hat H$ equals the classical Hamiltonian directly; quantum corrections do not change the operator form at all",
+        "Free-field Hamiltonian has no well-defined operator form; only interacting theories have meaningful Hamiltonians defined"
+      ],
+      "correct": 0,
+      "explanation": "Each mode behaves as an independent QHO with frequency $\\omega_k$. Vacuum energy $\\sum \\omega_k/2 \\to \\infty$ (divergent integral) is normally removed by normal-ordering. Issue arises if gravity is added (or in Casimir effect): the zero-point energy gravitates and renormalisation is subtle. The 'cosmological constant problem' is the failure of naive QFT vacuum energy to match observation by 120 orders of magnitude — one of the deepest puzzles in physics."
+    }
+  },
+  {
+    "id": "cq104",
+    "path": ["physics", "quantum-field-theory", "canonical-quantisation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Fock space is the Hilbert space of QFT. How is it constructed?",
+    "passive": {
+      "options": [
+        "$\\mathcal F = \\mathcal H^{(0)} \\oplus \\mathcal H^{(1)} \\oplus \\ldots$; vacuum in $\\mathcal H^{(0)}$; $n$-particle states built from $\\hat a^\\dagger$ on $|0\\rangle$",
+        "Fock space is a single Hilbert space with a fixed predetermined number of particles, like ordinary quantum mechanics",
+        "Construction requires choosing a single-particle Hilbert space and then discarding all higher-multiplicity content explicitly",
+        "Fock space exists only for non-interacting free QFT and breaks down completely with any non-trivial interaction term added"
+      ],
+      "correct": 0,
+      "explanation": "Fock space: $\\mathcal F_\\pm = \\bigoplus_n S_\\pm \\mathcal H^{\\otimes n}$, with $S_+$ symmetriser (bosons) or $S_-$ antisymmetriser (fermions). $|n_{k_1}, n_{k_2}, \\ldots\\rangle = \\prod (\\hat a^\\dagger_{k_i})^{n_i}|0\\rangle/\\sqrt{\\prod n_i!}$. Creation/annihilation respect (anti)symmetry. Inner product comes from base $\\mathcal H$. In interacting QFT, Haag's theorem says interacting Fock space is unitarily inequivalent to free — physical asymptotic states are 'in' and 'out' Fock spaces."
+    }
+  },
+  {
+    "id": "cq105",
+    "path": ["physics", "quantum-field-theory", "canonical-quantisation"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Normal ordering $: \\hat O :$ rearranges operators to remove vacuum expectation. What's the canonical example?",
+    "passive": {
+      "options": [
+        "$:\\hat a^\\dagger\\hat a: = \\hat a^\\dagger\\hat a$ (normal); $:\\hat a\\hat a^\\dagger: = \\hat a^\\dagger\\hat a$ (reorder); $\\langle 0|:\\hat O:|0\\rangle = 0$",
+        "Normal ordering means alphabetising the operator names in the symbolic expression for the convenience of typesetters",
+        "Normal ordering is mathematically identical to anti-normal ordering; both produce the same Hamiltonian operator and spectrum",
+        "Normal ordering applies only in finite-dimensional Hilbert spaces; the technique breaks down for continuous-spectrum field theories"
+      ],
+      "correct": 0,
+      "explanation": "Normal-ordered Hamiltonian: $:\\hat H: = \\int \\omega_k \\hat a^\\dagger \\hat a$ (no $\\tfrac12$ term), so vacuum has zero energy. Wick's theorem expresses time-ordered products as sums of normal-ordered products plus contractions: $T\\phi(x)\\phi(y) = :\\phi(x)\\phi(y): + \\langle 0|T\\phi(x)\\phi(y)|0\\rangle$. Contractions are propagators. Foundation of Feynman-diagram derivation."
+    }
+  },
+  {
+    "id": "cq106",
+    "path": ["physics", "quantum-field-theory", "canonical-quantisation"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The Feynman propagator $D_F(x-y) = \\langle 0|T\\phi(x)\\phi(y)|0\\rangle$ is the fundamental object of perturbative QFT. What does it physically represent?",
+    "equation": "D_F(x-y) = \\int \\frac{d^4k}{(2\\pi)^4}\\,\\frac{i}{k^2 - m^2 + i\\epsilon}e^{-ik(x-y)}",
+    "passive": {
+      "options": [
+        "Particle from $y \\to x$ or antiparticle from $x \\to y$; $i\\epsilon$ prescription selects causal time-ordered propagator",
+        "Energy density of the QFT vacuum integrated over the spacetime separation between the two events at locations $x$ and $y$",
+        "Purely spatial Green's function with no time dependence — propagator is the static Coulomb-like Yukawa kernel only",
+        "Wick rotation makes it identical to a real classical correlation function with no $i\\epsilon$ prescription needed anywhere"
+      ],
+      "correct": 0,
+      "explanation": "Feynman's $i\\epsilon$ shifts poles: $k^0$ poles at $\\pm\\omega_k \\mp i\\epsilon$. Closes contour above ($x^0 > y^0$): picks $-\\omega_k + i\\epsilon$ pole → particle going forward. Closes below: $+\\omega_k - i\\epsilon$ pole → antiparticle going backward. The full $D_F$ is a linear combination of positive- and negative-energy propagation. Different prescriptions give retarded ($D_R$), advanced ($D_A$), or Wightman propagators."
+    }
+  },
+  {
+    "id": "cq107",
+    "path": ["physics", "quantum-field-theory", "canonical-quantisation"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Fermion quantisation uses anticommutators because of spin-statistics. What goes wrong if you use commutators?",
+    "passive": {
+      "options": [
+        "Bose statistics for spin-$\\tfrac12$ violates spin-statistics; energy unbounded below (negative states with any occupation); inconsistent",
+        "Using commutators instead of anticommutators gives the same physics; the choice is purely a notational convention",
+        "Commutator quantisation gives Pauli exclusion correctly; anticommutators violate the Pauli exclusion principle in detail",
+        "Commutators are required for fermions to ensure renormalisability of the resulting field theory and finite cross-sections"
+      ],
+      "correct": 0,
+      "explanation": "If you naively quantise Dirac field with commutators: vacuum has occupied negative-energy states forming the 'Dirac sea'; total energy unbounded; theory inconsistent. Anticommutators $\\{\\hat\\psi(\\mathbf x), \\hat\\psi^\\dagger(\\mathbf y)\\} = \\delta^3(\\mathbf x - \\mathbf y)$ enforce Pauli exclusion: $(\\hat\\psi^\\dagger)^2 = 0$, so each mode has occupation 0 or 1. Antiparticle interpretation emerges automatically. This is Pauli's spin-statistics theorem in action: half-integer spin → fermions (anticommutators)."
+    }
+  },
+  {
+    "id": "cq108",
+    "path": ["physics", "quantum-field-theory", "canonical-quantisation"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "Constrained Hamiltonian systems (e.g., gauge theories) need extra care to quantise. What is Dirac's approach?",
+    "passive": {
+      "options": [
+        "Primary constraints classified into first-class (gauge generators) + second-class; gauge-fix the former, Dirac brackets for the latter",
+        "Constraints are simply ignored in the quantisation; one quantises as if no constraints existed in the original Hamiltonian system",
+        "Treat constraints as ordinary equations of motion within the canonical quantisation procedure, like any dynamical variable",
+        "Use only the Lagrangian formulation; canonical quantisation does not apply to constrained systems and cannot be extended"
+      ],
+      "correct": 0,
+      "explanation": "Dirac's procedure for constrained Hamiltonian systems (1950s). Primary constraints from non-invertible momenta: e.g., $\\pi^0 = 0$ in EM (no $\\dot A^0$ in Lagrangian). First-class (commute with constraints): generators of gauge transformations — gauge-fix or use BRST. Second-class (non-commuting): use Dirac brackets in place of Poisson. Modern alternative: BRST quantisation (Becchi-Rouet-Stora-Tyutin) — uses ghost fields to maintain Lorentz covariance. Path-integral with Faddeev-Popov is the practical computational tool."
+    }
+  }
+]

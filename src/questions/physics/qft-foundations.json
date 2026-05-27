@@ -1,0 +1,150 @@
+[
+  {
+    "id": "qft001",
+    "path": ["physics", "quantum-field-theory", "qft-foundations"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "Why do we need quantum field theory rather than just relativistic single-particle quantum mechanics?",
+    "passive": {
+      "options": [
+        "KG has neg-probability density; Dirac has neg-energy states; both fail above $2mc^2$ via pair creation — QFT handles multi-particle naturally",
+        "Single-particle relativistic QM (Klein-Gordon and Dirac) is perfectly fine; QFT is purely formal reorganisation with no genuinely new physics",
+        "QFT is required only for massless particles; massive ones can be handled by single-particle Dirac equation at any energy regime",
+        "Relativistic QM is rigorous and finite; QFT introduces non-rigorous UV infinities that complicate the theory unnecessarily"
+      ],
+      "correct": 0,
+      "explanation": "Three problems forced QFT: (1) Klein-Gordon's probability current is not positive-definite; (2) Dirac equation has negative-energy solutions interpretable only via 'hole theory' (re-interpreted as antiparticles); (3) at energies $\\sim 2mc^2$, particle creation makes 'one-particle wavefunction' meaningless. QFT treats fields as operators creating/destroying multi-particle states, accommodating arbitrary particle number. Pair creation in strong electric fields (Schwinger effect) is QFT's signature."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each QFT foundational principle to its meaning:",
+      "pairs": [
+        {"id": "p1", "term": "Microcausality (locality)", "definition": "Field operators at spacelike separated points commute: $[\\hat\\phi(x), \\hat\\phi(y)] = 0$ for $(x-y)^2 > 0$ (spacelike); prevents superluminal signalling"},
+        {"id": "p2", "term": "Cluster decomposition", "definition": "Distant experiments are independent: connected $n$-point functions vanish at large separations; required for sensible particle interpretation"},
+        {"id": "p3", "term": "Positive energy spectrum", "definition": "Hamiltonian $\\hat H \\geq 0$ (above vacuum); excludes negative-energy 'rolling-down' instabilities; requires Lorentz-invariant vacuum"},
+        {"id": "p4", "term": "Lorentz invariance", "definition": "Action is invariant under Poincaré group; ensures observers in different inertial frames agree on physics; constrains field types via Wigner's classification"}
+      ],
+      "explanation": "These four pillars (microcausality, cluster decomposition, positive energy, Lorentz invariance) plus unitarity form the Wightman/Haag-Kastler axioms of QFT. The spin-statistics theorem follows from them. Theories that violate any of these face deep consistency problems — quantum gravity is hard partly because it conflicts with locality at the Planck scale."
+    }
+  },
+  {
+    "id": "qft002",
+    "path": ["physics", "quantum-field-theory", "qft-foundations"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Wigner's classification (1939) of relativistic particles uses irreducible representations of the Poincaré group. What labels a particle?",
+    "passive": {
+      "options": [
+        "Mass $m$ (Casimir $P^\\mu P_\\mu$) and spin $s$ (Casimir $W^\\mu W_\\mu$ for massive, helicity for massless); together $(m, s)$ uniquely specifies a particle type",
+        "Only spin $s$; mass is a continuous parameter not tied to the representation",
+        "Only mass; spin emerges from internal dynamics within each massive multiplet",
+        "Particles are labelled by their dimension count and gauge charge, not Poincaré quantum numbers"
+      ],
+      "correct": 0,
+      "explanation": "Casimir invariants of Poincaré algebra: $P^\\mu P_\\mu = m^2 c^2$ (gives mass) and $W^\\mu W_\\mu = -m^2 s(s+1)\\hbar^2 c^2$ (gives spin via Pauli-Lubanski). For massive particles in their rest frame: $W^\\mu \\propto $ angular momentum, with $2s+1$ states. For massless particles: $W^\\mu$ has different structure — only two helicity states $\\pm s$ (e.g. photons $\\pm 1$, gravitons $\\pm 2$), not $2s+1$. Continuous spin reps exist mathematically but are not realised in nature."
+    }
+  },
+  {
+    "id": "qft003",
+    "path": ["physics", "quantum-field-theory", "qft-foundations"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Antimatter emerges naturally in QFT from the structure of relativistic fields. What is the conceptual origin?",
+    "passive": {
+      "options": [
+        "Complex field $\\phi(x)$ contains both $a$ (annihilate particle) and $b^\\dagger$ (create antiparticle) modes; Lorentz invariance forces both, with CPT relating them",
+        "Antimatter is an empirical fact added by hand to the Standard Model with no theoretical necessity",
+        "Antiparticles exist only for fermions, not for bosons; photons are their own antiparticle by accident",
+        "Antiparticles arise only as 'holes' in the Dirac sea picture; the modern formulation has removed the need for them"
+      ],
+      "correct": 0,
+      "explanation": "Mode expansion of a complex scalar field: $\\phi(x) = \\int \\frac{d^3k}{(2\\pi)^3 2E_k}[a_k e^{-ik\\cdot x} + b_k^\\dagger e^{ik\\cdot x}]$. The Lorentz transformation mixes positive and negative frequency modes, requiring both $a$ (particle annihilation) and $b^\\dagger$ (antiparticle creation). For a real field, $b = a$ (self-conjugate, e.g., photon, neutral pion, Higgs). For complex/charged field, $b \\neq a$ (electron $\\leftrightarrow$ positron, $W^+ \\leftrightarrow W^-$)."
+    }
+  },
+  {
+    "id": "qft004",
+    "path": ["physics", "quantum-field-theory", "qft-foundations"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The S-matrix encodes scattering amplitudes in QFT. What are its key properties?",
+    "passive": {
+      "options": [
+        "Unitary $S^\\dagger S = I$; Lorentz invariant; analytic in momenta (causality); crossing symmetry (particle/antiparticle swap)",
+        "S-matrix is anti-unitary by construction; this anti-unitarity allows time-reversal symmetry to be broken in scattering processes",
+        "S-matrix elements vanish for distinct in and out states; only forward scattering with $p_{\\rm out} = p_{\\rm in}$ survives at any energy",
+        "Only Lorentz invariance is needed for the S-matrix; unitarity and analyticity are emergent features tied to bound-state physics"
+      ],
+      "correct": 0,
+      "explanation": "S-matrix $\\langle\\text{out}|S|\\text{in}\\rangle$ relates asymptotic states. Unitarity $S^\\dagger S = I$ becomes the optical theorem: $2\\text{Im}\\,T = T^\\dagger T$. Analyticity allows continuation to complex momenta (giving Mandelstam variables); poles correspond to bound states or resonances; branch cuts to multi-particle thresholds. Crossing: $A \\to B + C$ amplitude related to $\\bar B \\to \\bar A + C$ via analytic continuation. These properties form the S-matrix bootstrap programme."
+    }
+  },
+  {
+    "id": "qft005",
+    "path": ["physics", "quantum-field-theory", "qft-foundations"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The LSZ reduction formula connects time-ordered field correlators to scattering amplitudes. What is its content?",
+    "equation": "\\langle \\text{out}|S|\\text{in}\\rangle = \\text{amputated, on-shell limit of } \\langle 0|T\\phi(x_1)\\cdots\\phi(x_n)|0\\rangle",
+    "passive": {
+      "options": [
+        "Amputate external propagators, take momenta on-shell ($p^2 = m^2$), include $\\sqrt Z$ factors per external leg — gives S-matrix",
+        "LSZ reduction formula directly equates time-ordered correlators with S-matrix amplitudes without any amputation step",
+        "The LSZ reduction works only at tree level; loop corrections require an entirely different non-perturbative formalism",
+        "LSZ is a purely formal non-perturbative theorem that cannot be evaluated explicitly in any practical computational scheme"
+      ],
+      "correct": 0,
+      "explanation": "Lehmann-Symanzik-Zimmermann (1955): connects in/out states with field operators. Correlators have propagator poles at $p^2 = m^2$ (external legs); amputation removes them; the residue gives the S-matrix. Factors of $\\sqrt Z$ (field renormalisation): $Z = $ residue at the physical pole. Non-perturbative — works in any QFT. In perturbation theory, LSZ gives the Feynman-diagrammatic recipe."
+    }
+  },
+  {
+    "id": "qft006",
+    "path": ["physics", "quantum-field-theory", "qft-foundations"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The Wightman axioms provide a rigorous foundation for QFT. Which of the following is one of the axioms?",
+    "passive": {
+      "options": [
+        "Positive Hilbert space; unitary Poincaré rep with $E \\geq 0$; fields as operator-valued tempered distributions; microcausality; cyclic vacuum",
+        "Fields must commute everywhere in spacetime, not merely at spacelike separation; full commutativity is required for consistency",
+        "The Hilbert space must be finite-dimensional in any consistent QFT in order to avoid the appearance of UV renormalisation issues",
+        "All correlation functions must be polynomial in fields with no derivative terms allowed; this ensures algebraic locality at all points"
+      ],
+      "correct": 0,
+      "explanation": "Wightman axioms (1956) formalise QFT in flat spacetime. Five core: (1) Hilbert space with positive-energy Poincaré rep; (2) fields as operator-valued distributions; (3) Poincaré covariance; (4) local commutativity (microcausality); (5) cyclic vacuum (every state from vacuum + field operators). Reconstruct theory from $n$-point Wightman functions. Constructive QFT proves existence rigorously in 2D and 3D for many models; 4D interacting QFTs (e.g., QCD) remain not rigorously constructed — one of the Millennium Prize problems."
+    }
+  },
+  {
+    "id": "qft007",
+    "path": ["physics", "quantum-field-theory", "qft-foundations"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "Haag's theorem (1955) is a no-go result about the interaction picture in QFT. What does it say?",
+    "passive": {
+      "options": [
+        "Interaction picture fails in QFT: free and interacting Hilbert spaces are unitarily inequivalent; usual $|\\text{in}\\rangle, |\\text{out}\\rangle$ formalism is non-rigorous",
+        "Haag's theorem proves that all relativistic QFTs are mathematically rigorous and well-defined in any spacetime dimension",
+        "It states that all scattering amplitudes diverge identically for any non-trivial interaction term in the Lagrangian",
+        "Free and interacting theories share the exact same vacuum state in 4D Minkowski spacetime as a corollary of Lorentz invariance"
+      ],
+      "correct": 0,
+      "explanation": "Haag (1955): in relativistic QFT, the asymptotic states (in/out) live in different Hilbert spaces from the free theory. The interaction-picture formalism (textbook recipe) is not rigorously well-defined. Practical reason it 'works': perturbation theory and renormalisation effectively handle the issue by absorbing the inequivalence into counterterms. Constructive QFT and axiomatic approaches (Haag-Kastler, AQFT) handle this rigorously without an explicit interaction picture. In QM (non-relativistic), Stone-von Neumann uniqueness saves the day."
+    }
+  },
+  {
+    "id": "qft008",
+    "path": ["physics", "quantum-field-theory", "qft-foundations"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "The Reeh-Schlieder theorem reveals a counterintuitive property of the QFT vacuum. What does it state?",
+    "passive": {
+      "options": [
+        "Vacuum is cyclic for the local-operator algebra in any open region: $\\overline{\\mathcal A(O)|0\\rangle} = \\mathcal H$ — any state approximable",
+        "The QFT vacuum has zero energy and zero correlation between operators at any pair of spacelike-separated spacetime points",
+        "The vacuum state is unique only in massless field theories and becomes degenerate or unstable in any massive QFT",
+        "Vacuum expectation values vanish identically for all gauge-invariant operators in any consistent quantum field theory"
+      ],
+      "correct": 0,
+      "explanation": "Reeh-Schlieder (1961): even from a tiny spacetime region, one can in principle 'create' any state in the Hilbert space by applying suitable combinations of local field operators to the vacuum. This implies vacuum entanglement is highly nonlocal — manipulating fields in Mars can affect arbitrary states on Earth in principle (though the required operations would take astronomical time/energy). Underlies the structure of AQFT and informs questions about black-hole information."
+    }
+  }
+]

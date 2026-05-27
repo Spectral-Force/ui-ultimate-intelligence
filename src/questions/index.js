@@ -73,6 +73,14 @@ import pauliMatrices         from './physics/pauli-matrices.json'
 import gammaMatrices         from './physics/gamma-matrices.json'
 import spinorNotation        from './physics/spinor-notation.json'
 import physicsSymbols        from './physics/physics-symbols.json'
+import qftFoundations        from './physics/qft-foundations.json'
+import classicalFields       from './physics/classical-fields.json'
+import canonicalQuantisation from './physics/canonical-quantisation.json'
+import pathIntegrals         from './physics/path-integrals.json'
+import feynmanDiagrams       from './physics/feynman-diagrams.json'
+import renormalisation       from './physics/renormalisation.json'
+import symmetriesAnomalies   from './physics/symmetries-anomalies.json'
+import spontaneousBreaking   from './physics/spontaneous-breaking.json'
 
 export const allQuestions = [
   ...dopplerCooling,
@@ -150,6 +158,14 @@ export const allQuestions = [
   ...gammaMatrices,
   ...spinorNotation,
   ...physicsSymbols,
+  ...qftFoundations,
+  ...classicalFields,
+  ...canonicalQuantisation,
+  ...pathIntegrals,
+  ...feynmanDiagrams,
+  ...renormalisation,
+  ...symmetriesAnomalies,
+  ...spontaneousBreaking,
 ]
 
 /**

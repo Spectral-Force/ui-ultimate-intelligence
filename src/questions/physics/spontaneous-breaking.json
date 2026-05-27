@@ -1,0 +1,149 @@
+[
+  {
+    "id": "ssb001",
+    "path": ["physics", "quantum-field-theory", "spontaneous-breaking"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "Spontaneous symmetry breaking (SSB) means the ground state is less symmetric than the Lagrangian. What's the canonical example?",
+    "passive": {
+      "options": [
+        "Mexican-hat $V = -\\mu^2|\\phi|^2 + \\lambda|\\phi|^4$: U(1)-symmetric Lagrangian, vacuum on circle $|\\phi| = \\mu/\\sqrt{2\\lambda}$",
+        "Spontaneous symmetry breaking requires the Lagrangian to break the symmetry explicitly via a symmetry-violating term in $\\mathcal L$",
+        "Ground state always respects all symmetries of the Lagrangian by a symmetry-preservation theorem in any finite-dim Hilbert space",
+        "Mexican-hat potential always leads to symmetric vacuum at $\\phi = 0$ for any choice of $\\mu, \\lambda$ — no spontaneous breaking arises"
+      ],
+      "correct": 0,
+      "explanation": "Quartic potential with $\\mu^2 > 0$ (negative mass-squared term): minima form circle at $|\\phi| = v/\\sqrt 2$ with $v = \\sqrt{2\\mu^2/\\lambda}$ — vacuum manifold $S^1$. Each vacuum breaks the U(1) symmetry; the symmetry is realised by rotating between different vacua. Examples: ferromagnetism (broken SO(3) → SO(2) by spontaneous magnetisation); superconductivity (broken U(1) gauge); chiral symmetry breaking in QCD; Higgs mechanism in SM."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each SSB system to its broken symmetry:",
+      "pairs": [
+        {"id": "p1", "term": "Ferromagnet (ordered phase)", "definition": "SO(3) rotational → SO(2); magnetisation $\\mathbf M$ picks a direction; spin waves are Goldstones"},
+        {"id": "p2", "term": "Superconductor", "definition": "U(1) electromagnetic gauge → 0; Cooper-pair condensate $\\langle\\psi\\psi\\rangle \\neq 0$; photon becomes massive (Meissner)"},
+        {"id": "p3", "term": "QCD chiral symmetry", "definition": "SU(2)$_L$ × SU(2)$_R$ → SU(2)$_V$; quark condensate $\\langle\\bar qq\\rangle \\neq 0$; pions are pseudo-Goldstones"},
+        {"id": "p4", "term": "Higgs mechanism", "definition": "SU(2)$_L$ × U(1)$_Y$ → U(1)$_{\\rm em}$; Higgs VEV; W and Z become massive; photon massless"}
+      ],
+      "explanation": "SSB is ubiquitous in nature. Ground-state degeneracy + spontaneous choice = broken symmetry. Goldstone modes are the fluctuations that connect different vacua. SSB explains why apparently very different systems share critical behaviour (universality)."
+    }
+  },
+  {
+    "id": "ssb002",
+    "path": ["physics", "quantum-field-theory", "spontaneous-breaking"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Goldstone's theorem (1961) is the central result of SSB. What does it state?",
+    "passive": {
+      "options": [
+        "Spontaneously broken continuous global symmetry $\\Rightarrow$ massless 'Goldstone' boson per broken generator; carries the same quantum numbers as the symmetry charge",
+        "Broken symmetries give massive bosons; never massless",
+        "Goldstone theorem applies only to U(1) symmetries",
+        "Spontaneous breaking conserves all original symmetries through dual transformations"
+      ],
+      "correct": 0,
+      "explanation": "If symmetry has $n$ broken generators (group $G \\to H$ with $\\dim G - \\dim H = n$), there are exactly $n$ massless Goldstone bosons. Example: SU(2)$_L$ × SU(2)$_R$ → SU(2)$_V$ (broken 3 generators) gives 3 pions ($\\pi^\\pm, \\pi^0$). Pions are pseudo-Goldstones because the chiral symmetry is also explicitly broken by small quark masses (so pions are massive but light). Phonons in solids are Goldstones of broken translational symmetry."
+    }
+  },
+  {
+    "id": "ssb003",
+    "path": ["physics", "quantum-field-theory", "spontaneous-breaking"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Higgs mechanism gives mass to gauge bosons without breaking gauge invariance explicitly. How does it work?",
+    "passive": {
+      "options": [
+        "Gauged SSB: Goldstone eaten by gauge boson, becomes its longitudinal mode → gauge boson massive; $m_W^2 = g^2v^2/4$ for SU(2)",
+        "Higgs field gives mass to gauge bosons via direct Yukawa coupling rather than through any gauge-eating mechanism for Goldstone modes",
+        "Mass term $m_A^2 A_\\mu A^\\mu$ added directly to gauge Lagrangian by hand; this is gauge-invariant for massive vector fields",
+        "Gauge-boson mass requires explicit symmetry-breaking terms in the Lagrangian; spontaneous breaking is insufficient by itself for masses"
+      ],
+      "correct": 0,
+      "explanation": "Anderson (1962), Brout-Englert-Higgs (1964): when gauge symmetry SSB, would-be Goldstones don't appear as physical massless particles. Counting: each broken generator → 1 Goldstone, but eaten by 1 gauge boson which gains longitudinal mode. SM: SU(2)$_L$ × U(1)$_Y$ → U(1)$_{\\rm em}$ breaks 3 generators; 3 Goldstones eaten by $W^\\pm, Z$; photon (unbroken) stays massless. Single remaining physical scalar: the Higgs boson, $m_h \\approx 125$ GeV (discovered 2012 at LHC, Nobel 2013)."
+    }
+  },
+  {
+    "id": "ssb004",
+    "path": ["physics", "quantum-field-theory", "spontaneous-breaking"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The vacuum expectation value (VEV) $v = \\langle\\phi\\rangle$ is the order parameter for SSB. What is it for the Higgs field?",
+    "passive": {
+      "options": [
+        "$v \\approx 246$ GeV, fixed by Fermi constant $G_F = 1/(\\sqrt 2 v^2)$; sets scale of every SM particle mass via Yukawa coupling",
+        "$v = 0$ exactly in the Standard Model; the electroweak symmetry is unbroken in nature and no Higgs VEV develops dynamically",
+        "$v$ is a totally free parameter of the Standard Model; its value can be chosen arbitrarily without affecting observables at all",
+        "Higgs VEV is mathematically undefined in any properly renormalised QFT because of regulator dependence in the path integral"
+      ],
+      "correct": 0,
+      "explanation": "$v = (G_F\\sqrt 2)^{-1/2} \\approx 246.22$ GeV. Sets electroweak scale, the only mass scale of the SM at tree level. All masses come from coupling to $v$: $m_e = y_e v/\\sqrt 2$, $m_t = y_t v/\\sqrt 2 \\approx 173$ GeV (so $y_t \\approx 1$, near non-perturbative), $m_W = gv/2 \\approx 80$ GeV, $m_Z = \\sqrt{g^2 + g'^2}\\,v/2 \\approx 91$ GeV, $m_h = \\sqrt{2\\lambda}\\,v \\approx 125$ GeV. Hierarchy problem: why is $v$ much smaller than Planck scale?"
+    }
+  },
+  {
+    "id": "ssb005",
+    "path": ["physics", "quantum-field-theory", "spontaneous-breaking"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Why is QCD chiral symmetry breaking essential for our world?",
+    "passive": {
+      "options": [
+        "$\\langle\\bar qq\\rangle \\neq 0$ breaks SU(2)$_L$×SU(2)$_R$ → SU(2)$_V$ — light pions; without it, p/n mass $\\to$ 0 (quark current $\\sim$ MeV)",
+        "Chiral symmetry breaking is a purely mathematical curiosity in QCD with no observable consequences for hadronic physics or particle masses",
+        "Chiral breaking gives mass to leptons through the chiral anomaly; quarks remain massless even after the chiral condensate forms",
+        "Chiral symmetry breaking would make protons unstable to spontaneous decay into quarks and gluons via the QCD vacuum structure"
+      ],
+      "correct": 0,
+      "explanation": "Almost all hadronic mass comes from QCD dynamics, not Higgs. Quark current masses (Higgs-given): $m_u \\approx 2$ MeV, $m_d \\approx 5$ MeV. But proton mass: 938 MeV — vast majority from chromodynamic binding + chiral condensate. Pions are the would-be Goldstones, light because chiral symmetry is mostly exact (explicit breaking by quark masses gives $m_\\pi \\sim 140$ MeV not zero). Chiral perturbation theory: low-energy effective theory of QCD treating pions as Goldstones."
+    }
+  },
+  {
+    "id": "ssb006",
+    "path": ["physics", "quantum-field-theory", "spontaneous-breaking"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The Coleman-Weinberg mechanism shows that radiative (quantum) corrections can drive SSB even with no classical symmetry-breaking term. What's the picture?",
+    "passive": {
+      "options": [
+        "Massless $\\lambda\\phi^4/4!$: classical min at $\\phi = 0$; one-loop $V_{\\rm eff}$ has $\\log$ correction → minimum at $\\phi \\neq 0$",
+        "Quantum corrections cannot break classical symmetries that are unbroken at tree level; spontaneous breaking requires a tree-level potential",
+        "Coleman-Weinberg mechanism requires explicit symmetry-breaking terms in the original classical Lagrangian to set the broken vacuum location",
+        "Mechanism applies only to fermionic fields, not to scalars; bosonic loop corrections never generate spontaneous symmetry breaking"
+      ],
+      "correct": 0,
+      "explanation": "Coleman-Weinberg (1973): radiative corrections generate effective potential with non-trivial vacuum. Dimensional transmutation: massless theory dynamically generates a mass scale through running coupling. In the SM: not the actual mechanism for electroweak SSB (Higgs mass term provides explicit scale), but the mechanism would apply if $m_H^2 = 0$ classically. Coleman-Weinberg also explains how strong interactions generate $\\Lambda_{\\rm QCD}$ from no fundamental mass scale (dimensional transmutation in QCD)."
+    }
+  },
+  {
+    "id": "ssb007",
+    "path": ["physics", "quantum-field-theory", "spontaneous-breaking"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Mermin-Wagner theorem says SSB of continuous symmetries is impossible at finite $T$ in $d \\leq 2$ dimensions. Why?",
+    "passive": {
+      "options": [
+        "IR divergence of Goldstone fluctuations in low $d$: $\\langle\\phi^2\\rangle \\sim \\int d^2k/k^2$ logarithmic — disorders the would-be SSB phase",
+        "Mermin-Wagner applies only to non-relativistic condensed-matter systems; relativistic quantum field theory works fine in 2D for all SSB",
+        "Continuous symmetries can be spontaneously broken in any spacetime dimension; only discrete symmetry breaking fails in low dimensions",
+        "Theorem is purely empirical with no rigorous theoretical proof; only experimental tests in stat mech confirm it on a case-by-case basis"
+      ],
+      "correct": 0,
+      "explanation": "Mermin-Wagner (1966): no Goldstone bosons → no SSB of continuous symmetry. IR fluctuations grow without bound in $d \\leq 2$. Exception: BKT (Berezinskii-Kosterlitz-Thouless) transition in $d = 2$ — quasi-long-range order with algebraic correlations, vortex-antivortex unbinding. Discrete symmetries can break (2D Ising has phase transition). $d = 3$: ordinary SSB works; phonons, Higgs, ferromagnetism all OK in our 3D world."
+    }
+  },
+  {
+    "id": "ssb008",
+    "path": ["physics", "quantum-field-theory", "spontaneous-breaking"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "The hierarchy problem asks why the Higgs VEV is $\\sim 250$ GeV instead of $\\sim M_{\\rm Pl}$. What's the issue?",
+    "passive": {
+      "options": [
+        "$m_h^2$ receives quadratic corrections $\\sim \\Lambda^2$ from heavy fields; without cancellation, fine-tuning $10^{34}$ to keep $m_h \\approx 125$ GeV",
+        "The hierarchy problem is purely cosmetic with no physical issue; tuning between bare and renormalised parameters is mathematically routine",
+        "Higgs mass is naturally light because the Higgs is fundamentally fermionic in the Standard Model with chiral protection",
+        "Quadratic divergences in $m_h^2$ cancel automatically within the Standard Model via Ward identities without any new physics needed"
+      ],
+      "correct": 0,
+      "explanation": "Scalar masses have quadratically divergent loop corrections, unlike fermion/gauge masses (protected by symmetries). In SM with cutoff $M_{\\rm Pl}$, bare $m_h^2$ would have to be fine-tuned to $\\sim 10^{-34}$ precision to give $m_h \\sim$ GeV after corrections — naturalness problem. Proposed solutions: SUSY (cancellations between bosons and fermions); technicolor (Higgs as composite); extra dimensions (lower fundamental Planck scale); anthropic (multiverse selection). LHC has so far found no SUSY at expected $\\sim$ TeV scale, deepening the puzzle."
+    }
+  }
+]

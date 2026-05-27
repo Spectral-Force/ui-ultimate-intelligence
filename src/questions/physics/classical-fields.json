@@ -1,0 +1,150 @@
+[
+  {
+    "id": "cfd001",
+    "path": ["physics", "quantum-field-theory", "classical-fields"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "The Klein-Gordon Lagrangian density for a real scalar field $\\phi(x)$ with mass $m$ is:",
+    "equation": "\\mathcal L_{\\rm KG} = \\frac{1}{2}\\partial_\\mu\\phi\\,\\partial^\\mu\\phi - \\frac{1}{2}m^2\\phi^2",
+    "passive": {
+      "options": [
+        "$\\mathcal L = \\tfrac12(\\partial\\phi)^2 - \\tfrac12 m^2\\phi^2$; Euler-Lagrange gives $(\\Box + m^2)\\phi = 0$ — relativistic wave equation for spin-0 particle",
+        "$\\mathcal L = \\tfrac12\\phi^2 + \\tfrac12 m^2(\\partial\\phi)^2$ — kinetic and mass terms swapped",
+        "$\\mathcal L = (\\partial\\phi)^2 + m^2\\phi$ — quadratic kinetic, linear mass term",
+        "Klein-Gordon Lagrangian has no kinetic term; it's purely a mass-energy density"
+      ],
+      "correct": 0,
+      "explanation": "Sign conventions vary with metric: mostly-plus signature gives $-\\tfrac12(\\partial\\phi)^2 - \\tfrac12 m^2\\phi^2$, mostly-minus gives the form shown. The equation $(\\Box + m^2)\\phi = 0$ (called Klein-Gordon equation) follows from Euler-Lagrange. Plane-wave solutions $\\phi \\propto e^{-ipx}$ have $p^2 = m^2$ — mass-shell condition. The field describes spin-0 particles like the Higgs boson, neutral pions ($\\pi^0$), and the inflaton in cosmology."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each classical field theory to its Lagrangian and particle content:",
+      "pairs": [
+        {"id": "p1", "term": "Real scalar (Klein-Gordon)", "definition": "$\\tfrac12(\\partial\\phi)^2 - \\tfrac12 m^2\\phi^2$; spin-0 neutral particle; Higgs boson, $\\pi^0$, inflaton"},
+        {"id": "p2", "term": "Complex scalar", "definition": "$|\\partial\\phi|^2 - m^2|\\phi|^2$; U(1) symmetric; charged spin-0 particle plus antiparticle"},
+        {"id": "p3", "term": "Dirac fermion", "definition": "$\\bar\\psi(i\\not\\partial - m)\\psi$; spin-1/2 charged particle + antiparticle; electron, quark"},
+        {"id": "p4", "term": "Electromagnetic (free Maxwell)", "definition": "$-\\tfrac14 F_{\\mu\\nu}F^{\\mu\\nu}$; spin-1 massless gauge boson; photon"}
+      ],
+      "explanation": "Each Lagrangian gives an action $S = \\int d^4x\\,\\mathcal L$, and varying gives the equations of motion. The number of fields, spin, and gauge structure are all encoded in the Lagrangian's structure. Interactions are added as additional terms (e.g., $-\\lambda\\phi^4/4!$ for self-interacting scalar; $-e\\bar\\psi\\gamma^\\mu\\psi A_\\mu$ for QED)."
+    }
+  },
+  {
+    "id": "cfd002",
+    "path": ["physics", "quantum-field-theory", "classical-fields"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Euler-Lagrange equations for a field theory follow from $\\delta S = 0$ where $S = \\int d^4x\\,\\mathcal L(\\phi, \\partial_\\mu\\phi)$. What is the field-theory analogue of $d/dt(\\partial L/\\partial\\dot q) - \\partial L/\\partial q = 0$?",
+    "passive": {
+      "options": [
+        "$\\partial_\\mu(\\partial\\mathcal L/\\partial(\\partial_\\mu\\phi)) - \\partial\\mathcal L/\\partial\\phi = 0$ — Lorentz-covariant generalisation; for KG gives $\\Box\\phi + m^2\\phi = 0$",
+        "$d/dt(\\partial\\mathcal L/\\partial\\dot\\phi) - \\partial\\mathcal L/\\partial\\phi = 0$ — time derivative only, not Lorentz-covariant",
+        "Euler-Lagrange in field theory is identical to mechanics; replace $q$ by $\\phi$ literally",
+        "$\\nabla^2 \\phi = 0$ — only spatial gradient appears; time derivatives absorbed into action"
+      ],
+      "correct": 0,
+      "explanation": "Variation of $S = \\int\\mathcal L d^4x$: $\\delta S = \\int [\\partial\\mathcal L/\\partial\\phi - \\partial_\\mu(\\partial\\mathcal L/\\partial(\\partial_\\mu\\phi))]\\delta\\phi\\, d^4x$ (using integration by parts; assumes $\\delta\\phi$ vanishes on boundary). Setting $\\delta S = 0$ for arbitrary $\\delta\\phi$ gives the EL equation. For Klein-Gordon: $\\partial\\mathcal L/\\partial\\phi = -m^2\\phi$, $\\partial\\mathcal L/\\partial(\\partial_\\mu\\phi) = \\partial^\\mu\\phi$, $\\partial_\\mu(\\partial^\\mu\\phi) = \\Box\\phi$ — giving $\\Box\\phi + m^2\\phi = 0$."
+    }
+  },
+  {
+    "id": "cfd003",
+    "path": ["physics", "quantum-field-theory", "classical-fields"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Dirac Lagrangian $\\mathcal L = \\bar\\psi(i\\gamma^\\mu\\partial_\\mu - m)\\psi$ contains both $\\psi$ and $\\bar\\psi$. What is special about treating them?",
+    "passive": {
+      "options": [
+        "Treat $\\psi$ and $\\bar\\psi$ as independent Grassmann fields; varying with respect to $\\bar\\psi$ gives the Dirac equation $(i\\not\\partial - m)\\psi = 0$",
+        "$\\bar\\psi$ is determined by $\\psi$; the Lagrangian has only one independent variable",
+        "$\\psi$ and $\\bar\\psi$ must be varied simultaneously; treating them independently gives wrong equations",
+        "Dirac Lagrangian has no Euler-Lagrange formulation; equations of motion are postulated separately"
+      ],
+      "correct": 0,
+      "explanation": "Treating $\\psi$ and $\\bar\\psi$ as independent Grassmann (anticommuting) fields in the action principle is a standard trick. Varying w.r.t. $\\bar\\psi$: $\\partial\\mathcal L/\\partial\\bar\\psi = (i\\not\\partial - m)\\psi$, so EOM is $(i\\not\\partial - m)\\psi = 0$. Varying w.r.t. $\\psi$ (with care for Grassmann order) gives the conjugate equation. Since $\\bar\\psi = \\psi^\\dagger\\gamma^0$, the two equations are related but conveniently treated as independent in derivations."
+    }
+  },
+  {
+    "id": "cfd004",
+    "path": ["physics", "quantum-field-theory", "classical-fields"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Gauge invariance of QED requires the Lagrangian to be invariant under local U(1) transformations $\\psi \\to e^{i\\alpha(x)}\\psi$. How is this achieved?",
+    "passive": {
+      "options": [
+        "Replace $\\partial_\\mu \\to D_\\mu = \\partial_\\mu + ieA_\\mu$ (covariant derivative); require $A_\\mu \\to A_\\mu - \\partial_\\mu\\alpha/e$ under U(1); ensures $D_\\mu\\psi$ transforms like $\\psi$",
+        "Add a mass term $m_A^2 A_\\mu A^\\mu$ to the photon to enforce gauge invariance",
+        "Set $\\alpha(x) = $ constant to recover gauge invariance trivially",
+        "Gauge invariance is impossible for charged fermions; only neutral fermions like neutrinos can be made gauge-invariant"
+      ],
+      "correct": 0,
+      "explanation": "Local U(1) phase transformation forces introducing gauge field $A_\\mu$ (the photon!) via $D_\\mu = \\partial_\\mu + ieA_\\mu$. Then $D_\\mu\\psi$ transforms covariantly: $D_\\mu\\psi \\to e^{i\\alpha}D_\\mu\\psi$. The QED Lagrangian is $\\mathcal L = \\bar\\psi(i\\not D - m)\\psi - \\tfrac14 F_{\\mu\\nu}F^{\\mu\\nu}$ where $F_{\\mu\\nu} = \\partial_\\mu A_\\nu - \\partial_\\nu A_\\mu$. Photon must be massless to preserve gauge invariance (no $m_A^2 A^2$ term). Generalisations to SU(N) give Yang-Mills (QCD, weak)."
+    }
+  },
+  {
+    "id": "cfd005",
+    "path": ["physics", "quantum-field-theory", "classical-fields"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The energy-momentum tensor $T^{\\mu\\nu}$ of a field theory is the Noether current of spacetime translations. What is its general form?",
+    "passive": {
+      "options": [
+        "$T^{\\mu\\nu} = (\\partial\\mathcal L/\\partial\\partial_\\mu\\phi)\\partial^\\nu\\phi - \\eta^{\\mu\\nu}\\mathcal L$; Belinfante symmetrisation; $\\partial_\\mu T^{\\mu\\nu} = 0$",
+        "$T^{\\mu\\nu} = \\partial^\\mu\\partial^\\nu\\phi$ — pure double-derivative expression with no metric or Lagrangian-derivative structure involved",
+        "$T^{\\mu\\nu}$ is identically zero for any field theory whose fields satisfy their Euler-Lagrange equations of motion",
+        "The energy-momentum tensor exists only in gravitational theories; Standard Model matter fields possess no analogous quantity"
+      ],
+      "correct": 0,
+      "explanation": "Noether for 4-translations: $T^\\mu_{\\ \\nu} = (\\partial\\mathcal L/\\partial(\\partial_\\mu\\phi))\\partial_\\nu\\phi - \\delta^\\mu_\\nu\\mathcal L$. Components: $T^{00}$ = energy density, $T^{0i}$ = energy flux, $T^{ij}$ = stress tensor. For scalar field: $T^{\\mu\\nu} = \\partial^\\mu\\phi\\partial^\\nu\\phi - \\eta^{\\mu\\nu}\\mathcal L$. For EM: $T^{\\mu\\nu} = F^{\\mu\\alpha}F^\\nu_{\\ \\alpha} - \\tfrac14\\eta^{\\mu\\nu}F^2$ (after Belinfante symmetrisation). Source of gravity in GR: $G^{\\mu\\nu} = 8\\pi G T^{\\mu\\nu}/c^4$."
+    }
+  },
+  {
+    "id": "cfd006",
+    "path": ["physics", "quantum-field-theory", "classical-fields"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Yang-Mills theory generalises QED's U(1) to non-Abelian gauge groups (SU(N)). What is the key new feature?",
+    "passive": {
+      "options": [
+        "$F^a_{\\mu\\nu} = \\partial_\\mu A^a_\\nu - \\partial_\\nu A^a_\\mu + gf^{abc}A^b_\\mu A^c_\\nu$; non-Abelian gauge bosons carry charge themselves",
+        "Yang-Mills theory is identical to QED with multiple copies of the photon, with no self-interaction or non-Abelian structure",
+        "Non-Abelian gauge fields commute with each other, simplifying the theory analytically and making it nearly trivial",
+        "Yang-Mills theory requires all fermions to be massless; any massive fermion would break the non-Abelian gauge invariance"
+      ],
+      "correct": 0,
+      "explanation": "The new $A \\wedge A$ term in $F$ (with structure constants $f^{abc}$ of the gauge group) makes Yang-Mills nonlinear even without matter. Implies: gluons self-interact via 3-gluon and 4-gluon vertices. In QCD: this nonlinearity is responsible for asymptotic freedom (coupling decreases at high energy) and confinement (effective long-range force). Yang-Mills (1954, with Mills) — long unappreciated until used in electroweak (Glashow-Weinberg-Salam) and QCD."
+    }
+  },
+  {
+    "id": "cfd007",
+    "path": ["physics", "quantum-field-theory", "classical-fields"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Gauge-fixing is needed to quantise gauge theories because of redundancy. What are common gauge choices in QED?",
+    "passive": {
+      "options": [
+        "Lorenz: $\\partial_\\mu A^\\mu = 0$ (covariant). Coulomb: $\\nabla\\cdot\\mathbf A = 0$ (physical photons). Feynman: $\\xi = 1$ propagator",
+        "Only Coulomb gauge is allowed for QED quantisation; covariant gauges fundamentally break Lorentz invariance of the theory",
+        "Gauge fixing is entirely unnecessary in QED because gauge invariance is automatically preserved by the path-integral measure",
+        "Lorenz and Coulomb gauges give identical results in all observable consequences as well as in intermediate computational steps"
+      ],
+      "correct": 0,
+      "explanation": "Different gauges trade simplicity for manifest properties. Lorenz: relativistically covariant but has spurious longitudinal/timelike photon modes (canceled by Faddeev-Popov ghosts in non-Abelian). Coulomb: only physical (transverse) photons, but no manifest Lorentz invariance. Feynman gauge $\\xi = 1$: simplest propagator $-i\\eta_{\\mu\\nu}/p^2$. Physical results are gauge-independent. In path integrals, Faddeev-Popov procedure formally adds gauge-fixing + ghost terms."
+    }
+  },
+  {
+    "id": "cfd008",
+    "path": ["physics", "quantum-field-theory", "classical-fields"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "The Standard Model Lagrangian fits roughly on a coffee mug. What are its main pieces?",
+    "passive": {
+      "options": [
+        "Yang-Mills for SU(3)×SU(2)×U(1); fermion kinetic+gauge $\\bar\\psi i\\not D\\psi$; Higgs $|D\\phi|^2 - V$; Yukawa $\\bar\\psi\\phi\\psi$",
+        "Standard Model has only one term in the Lagrangian: a kinetic energy term for fermions; everything else is derived dynamically",
+        "Standard Model Lagrangian contains gravity explicitly via the metric tensor; there is no need to add general relativity separately",
+        "Standard Model fields are all fundamentally bosonic; fermionic quarks and leptons are derived as topological soliton excitations"
+      ],
+      "correct": 0,
+      "explanation": "Four building blocks: (1) gauge-boson kinetic ($F^2$); (2) fermion kinetic + gauge coupling ($\\bar\\psi\\not D\\psi$); (3) Higgs sector ($|D\\phi|^2 - \\lambda(|\\phi|^2 - v^2/2)^2$); (4) Yukawa ($-y\\bar\\psi_L\\phi\\psi_R + h.c.$). 19 free parameters (3 gauge couplings, 9 fermion masses, 4 CKM angles, 3 Higgs parameters; +1 for $\\theta_{\\rm QCD}$). Gravity is added separately (not yet successfully integrated into QFT). The Lagrangian is renormalisable and predictive but incomplete (dark matter, neutrino masses, baryon asymmetry, gravity)."
+    }
+  }
+]

@@ -1,0 +1,150 @@
+[
+  {
+    "id": "sa001",
+    "path": ["physics", "quantum-field-theory", "symmetries-anomalies"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "Ward identities are quantum analogues of classical Noether-current conservation. What do they state?",
+    "passive": {
+      "options": [
+        "Symmetries $\\Rightarrow$ identities on correlators: $\\partial_\\mu\\langle J^\\mu(x)\\cdots\\rangle$ = contact terms; momentum: $k_\\mu\\mathcal M^\\mu = 0$",
+        "Ward identities apply only to classical symmetries that subsequently get broken at the quantum level by loop-induced anomalous effects",
+        "They are equivalent to the classical Euler-Lagrange equations at tree level only and become irrelevant in any loop-level calculation",
+        "Ward identities require the symmetry to be spontaneously broken in order to produce non-trivial relations among quantum correlators"
+      ],
+      "correct": 0,
+      "explanation": "Ward identity for QED: $k_\\mu\\mathcal M^\\mu(k, \\ldots) = 0$ for any amplitude with external photon of momentum $k$ — equivalent to gauge invariance. Consequence: charge renormalisation $Z_1 = Z_2$ (vertex and electron field renormalise the same way). Ward-Takahashi: includes contact terms. Non-Abelian generalisation: Slavnov-Taylor identities, expressed in terms of BRST operator. All ensure consistency of gauge theory at quantum level."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each symmetry concept in QFT:",
+      "pairs": [
+        {"id": "p1", "term": "Noether current $J^\\mu$", "definition": "Conserved current from continuous symmetry of action; gives conserved charge $Q = \\int J^0 d^3x$"},
+        {"id": "p2", "term": "Ward identity", "definition": "Quantum version of $\\partial_\\mu J^\\mu = 0$; relates correlators when one operator is the current"},
+        {"id": "p3", "term": "Anomaly", "definition": "Classical symmetry broken by quantum effects (loop diagrams); current conservation fails: $\\partial_\\mu J^\\mu \\neq 0$"},
+        {"id": "p4", "term": "Slavnov-Taylor identity", "definition": "Non-Abelian generalisation of Ward identity using BRST symmetry; ensures gauge consistency at all orders"}
+      ],
+      "explanation": "Symmetries fall into three categories in QFT: exact (true conservation), spontaneously broken (Goldstone bosons), or anomalous (quantum-level breaking). Anomalies are a finite, calculable mismatch between classical and quantum theory — sometimes physically required (chiral anomaly explaining $\\pi^0 \\to \\gamma\\gamma$), sometimes forbidden (gauge anomalies must cancel)."
+    }
+  },
+  {
+    "id": "sa002",
+    "path": ["physics", "quantum-field-theory", "symmetries-anomalies"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The chiral (axial) anomaly is the most famous anomaly in QFT. What does it state for QED with massless fermions?",
+    "equation": "\\partial_\\mu J^\\mu_5 = \\frac{e^2}{16\\pi^2}\\epsilon^{\\mu\\nu\\rho\\sigma}F_{\\mu\\nu}F_{\\rho\\sigma}",
+    "passive": {
+      "options": [
+        "Classical $\\partial_\\mu J^\\mu_5 = 0$ for massless $\\psi$; quantum: $\\partial_\\mu J^\\mu_5 = e^2 F\\tilde F/(8\\pi^2)$ from triangle diagram",
+        "Chiral anomaly cancels identically in all consistent quantum field theories regardless of fermion content or gauge structure",
+        "Anomaly contributes only at the non-perturbative level via instanton configurations; perturbation theory misses it entirely",
+        "The axial-vector current is always identically conserved at all orders in perturbation theory and non-perturbatively as well"
+      ],
+      "correct": 0,
+      "explanation": "Adler-Bell-Jackiw anomaly (1969): triangle diagram with axial current + two photons gives finite, non-zero divergence even for massless fermions. Magnitude is exact (one-loop only, by Adler-Bardeen theorem). Physical: explains observed $\\pi^0 \\to \\gamma\\gamma$ rate which would be 100$\\times$ too small without anomaly. Resolves $U(1)_A$ problem in QCD ($\\eta'$ mass). Sets up the QCD $\\theta$-vacuum and CP problem."
+    }
+  },
+  {
+    "id": "sa003",
+    "path": ["physics", "quantum-field-theory", "symmetries-anomalies"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Gauge anomalies (anomalies in gauged symmetries) are catastrophic — they destroy unitarity. What's the consistency condition?",
+    "passive": {
+      "options": [
+        "Gauge anomalies must cancel between matter reps; SM cancellation between leptons & quarks per generation — non-trivial constraint",
+        "Gauge anomalies are physical and observable in nature; they give the small parity-violation effects measured at LEP and the LHC",
+        "Anomalies in gauge symmetry are simply absorbed by gauge bosons becoming massive through the Higgs mechanism in the SM",
+        "Gauge anomalies always cancel automatically in 4D spacetime regardless of matter content, as a theorem of relativistic QFT"
+      ],
+      "correct": 0,
+      "explanation": "SM anomaly cancellation: contributions from one lepton doublet ($\\nu_L, e_L$) and three colour copies of one quark doublet $(u_L, d_L)$ exactly cancel via electric-charge sum: $-1 + 3(2/3 - 1/3) = 0$. This is a deep coincidence (or perhaps reflection of a larger symmetry, like SU(5) GUT). Gauge anomalies would make the theory inconsistent: unphysical longitudinal polarisations of gauge bosons would no longer decouple. Constraint pointed to a third quark family before its discovery (top quark 1995)."
+    }
+  },
+  {
+    "id": "sa004",
+    "path": ["physics", "quantum-field-theory", "symmetries-anomalies"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Global vs gauge symmetries play very different roles in QFT. What's the distinction?",
+    "passive": {
+      "options": [
+        "Global: physical symmetry, distinct states, observable charge. Gauge: redundancy, only invariants observable; gauging needs gauge bosons",
+        "Global and gauge symmetries are physically identical concepts; the different names are merely a historical accident of terminology",
+        "Gauge symmetries describe spacetime structure exclusively; global symmetries describe internal structure exclusively without overlap",
+        "Only global symmetries can be spontaneously broken in any QFT; gauge symmetries are always exactly preserved by all dynamics"
+      ],
+      "correct": 0,
+      "explanation": "Global U(1) of complex scalar: $\\phi \\to e^{i\\alpha}\\phi$ with constant $\\alpha$; charge $Q$ conserved by Noether. Gauge U(1) of QED: $\\alpha(x)$ local; introduces photon $A_\\mu$; observables are gauge-invariant ($F_{\\mu\\nu}$, $|\\phi|^2$). Gauging a global symmetry promotes the conserved current to a Noether current sourcing the gauge field. Spontaneously broken global → Goldstones (massless). Spontaneously broken gauge → Higgs mechanism: Goldstone eaten by gauge boson which becomes massive."
+    }
+  },
+  {
+    "id": "sa005",
+    "path": ["physics", "quantum-field-theory", "symmetries-anomalies"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The 't Hooft anomaly is a global anomaly that constrains low-energy physics. What's the principle?",
+    "passive": {
+      "options": [
+        "Global-symmetry anomalies are RG invariant: UV theory and IR effective theory match anomalies — constrains IR phases ('t Hooft 1980)",
+        "'t Hooft anomalies vanish in any consistent QFT as a direct consequence of gauge invariance; they have no role in constraining dynamics",
+        "They are anomalies of gauge symmetry that must cancel between distinct fermion fields in the theory; otherwise unitarity fails",
+        "Anomalies are not preserved under RG flow and therefore play no role at low energies; they appear and disappear with scale"
+      ],
+      "correct": 0,
+      "explanation": "'t Hooft (1980): if a global symmetry is anomalous in the UV (e.g., in terms of fundamental quarks), the IR effective theory (in terms of pions, etc.) must reproduce the same anomaly. Used to derive Wess-Zumino-Witten terms in chiral Lagrangians, constrain spectrum of confining gauge theories (e.g., why QCD can't have certain alternative IR phases). Modern revival: useful for SUSY duality checks, classification of topological phases, generalized symmetries."
+    }
+  },
+  {
+    "id": "sa006",
+    "path": ["physics", "quantum-field-theory", "symmetries-anomalies"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The conformal anomaly (trace anomaly) appears in massless theories. What's it about?",
+    "passive": {
+      "options": [
+        "Massless classical: $T^\\mu_\\mu = 0$; quantum: $T^\\mu_\\mu = \\beta(g)\\,\\mathcal O$, proportional to $\\beta$; breaks conformal at quantum level",
+        "Trace anomaly cancels identically in any consistent QFT by a mathematical Ward-identity argument; no physical content remains",
+        "It is mathematically the same phenomenon as the chiral anomaly, just labelled with a different name in different subfields",
+        "Conformal anomaly applies only to gravitational theories with curved spacetime backgrounds; flat-spacetime QFT is unaffected"
+      ],
+      "correct": 0,
+      "explanation": "Massless classical theory has scale invariance: $T^\\mu_\\mu = 0$. Quantum loops introduce the renormalisation scale $\\mu$, breaking conformal invariance. The trace anomaly $T^\\mu_\\mu \\propto \\beta(g)\\,F^2$ or analogous operator. In QCD: trace anomaly contributes most of the proton mass (Higgs gives only $\\sim 1\\%$). In curved-space QFT: gives Hawking radiation in 2D toy models, contributes to cosmological vacuum energy."
+    }
+  },
+  {
+    "id": "sa007",
+    "path": ["physics", "quantum-field-theory", "symmetries-anomalies"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "Generalised global symmetries (higher-form symmetries) are a modern reformulation of QFT symmetries. What do they describe?",
+    "passive": {
+      "options": [
+        "Act on extended objects (lines, surfaces); e.g., electric 1-form symmetry shifts gauge fields by closed forms; GKSW 2014",
+        "Generalised symmetries are just standard ordinary symmetries renamed with a fancier label; no new mathematical or physical content arises",
+        "Higher-form generalised symmetries apply only to topological phases of matter and have no role in relativistic quantum field theory",
+        "Higher-form symmetries cannot be spontaneously broken or anomalous; their algebraic structure precludes any non-trivial dynamics"
+      ],
+      "correct": 0,
+      "explanation": "GKSW (2014) reformulation: U(1) gauge theory has a $U(1)$ 1-form electric symmetry (acts on Wilson lines) and a $U(1)$ 1-form magnetic symmetry (acts on 't Hooft lines). Symmetry operators have support on co-dimension-$(p+1)$ manifolds. Provides new anomaly constraints, deconfinement criteria, topological classification of phases. Active research area: connecting QFT, condensed matter, and category theory through the language of higher symmetries."
+    }
+  },
+  {
+    "id": "sa008",
+    "path": ["physics", "quantum-field-theory", "symmetries-anomalies"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "The Atiyah-Singer index theorem connects anomalies to topology. What's the relationship?",
+    "passive": {
+      "options": [
+        "Chiral anomaly = Dirac-operator index = Pontryagin topological class (Atiyah-Singer); integer-valued, fully topological",
+        "Anomalies in QFT have no relation to topology of gauge bundles; they are purely a manifestation of regularisation-scheme dependence",
+        "Atiyah-Singer index theorem is purely a mathematical curiosity in differential geometry without any physical applications in QFT",
+        "Index theorem gives a continuous (non-integer) anomaly coefficient that depends smoothly on the renormalisation scale chosen"
+      ],
+      "correct": 0,
+      "explanation": "Atiyah-Singer (1963): index of Dirac operator = $\\int_M\\hat A(M)\\text{ch}(\\mathcal F)$ on manifold $M$ with gauge field $\\mathcal F$. In flat 4D, gives instanton number $\\nu = (1/32\\pi^2)\\int F\\tilde F\\,d^4x$ — integer. The chiral anomaly equation $\\partial_\\mu J_5^\\mu \\propto F\\tilde F$ integrated gives $\\Delta Q_5 = 2\\nu$ — change in chiral charge equals twice the instanton number. Deep connection between gauge-theory anomalies (physics) and topological invariants (mathematics) — one of the most striking results of 20th-century theoretical physics."
+    }
+  }
+]

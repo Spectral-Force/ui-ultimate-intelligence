@@ -1,0 +1,151 @@
+[
+  {
+    "id": "ren001",
+    "path": ["physics", "quantum-field-theory", "renormalisation"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "Renormalisation handles UV divergences in QFT by absorbing them into redefinitions of physical parameters. What is the conceptual picture?",
+    "passive": {
+      "options": [
+        "Bare params (mass, coupling, $Z$) infinite; physical (renormalised) finite; renormalisable theories have finitely many divergence types",
+        "Renormalisation is an ad-hoc computational trick with no physical content; the appearance of divergences means the theory is fundamentally wrong",
+        "Only QED is renormalisable among realistic QFTs; all other field theories like QCD or weak interaction cannot handle their divergences",
+        "Renormalisation introduces entirely new physical predictions not present in classical theory; e.g., quantum corrections to gravitational waves"
+      ],
+      "correct": 0,
+      "explanation": "View 1 (BPHZ): subtract divergences via counterterms order by order. View 2 (Wilson): integrate out high-momentum modes, renormalised parameters describe long-distance physics. Modern view: every QFT is an effective theory at its accessible energy scale; non-renormalisable terms (suppressed by powers of $E/\\Lambda$) are perfectly fine, just less important at low $E$. Wilson's view (Nobel 1982) reframed renormalisation as a natural physical operation."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each renormalisation concept:",
+      "pairs": [
+        {"id": "p1", "term": "Bare vs renormalised", "definition": "Bare = unmeasured Lagrangian parameters (formally infinite); renormalised = physical observables (finite, measured)"},
+        {"id": "p2", "term": "Counterterms", "definition": "Extra Lagrangian terms with divergent coefficients that cancel loop divergences order by order"},
+        {"id": "p3", "term": "Renormalisable theory", "definition": "Finitely many counterterm types suffice at all orders; predictive with $\\sim$ few parameters; e.g., QED, QCD, SM"},
+        {"id": "p4", "term": "Renormalisation scale $\\mu$", "definition": "Arbitrary momentum scale at which renormalised parameters are defined; physical results $\\mu$-independent (RG)"}
+      ],
+      "explanation": "Renormalisable: 4D theories with operator dimension $\\leq 4$. Non-renormalisable theories (dim $> 4$, like gravity with dim-2 operator times $\\hbar^2 G$) require infinitely many counterterms — still predictive at low energy as effective theories. Superrenormalisable (dim $< 4$, like $\\phi^4$ in 3D): only finitely many diagrams diverge."
+    }
+  },
+  {
+    "id": "ren002",
+    "path": ["physics", "quantum-field-theory", "renormalisation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Power counting determines whether a QFT is renormalisable in 4D. What's the rule?",
+    "passive": {
+      "options": [
+        "Operator with mass dimension $d_O > 4$ is non-renormalisable (coupling has negative mass dimension); $d_O \\leq 4$ is renormalisable; $d_O < 4$ super-renormalisable",
+        "Renormalisability depends only on the spacetime dimension, not the operator dimension",
+        "Any QFT with mass parameters is renormalisable",
+        "Power counting fails completely for gauge theories"
+      ],
+      "correct": 0,
+      "explanation": "Mass dimensions in 4D: $[\\phi] = 1$, $[\\psi] = 3/2$, $[A_\\mu] = 1$, $[\\partial_\\mu] = 1$. For Lagrangian to have $[\\mathcal L] = 4$ (so action $S = \\int d^4x\\,\\mathcal L$ is dimensionless): operators have dim 4 (e.g., $\\phi^4$, $\\bar\\psi\\gamma^\\mu A_\\mu\\psi$). Marginal (dim 4) and relevant (dim $< 4$) operators give renormalisable theories. Fermi 4-fermion interaction $G_F(\\bar\\psi\\psi)^2$ has dim 6, non-renormalisable — UV-completed to weak interaction at $E \\sim M_W$. Gravity (Newton's $G$): dim $-2$, non-renormalisable; UV-completion in string theory or asymptotic safety."
+    }
+  },
+  {
+    "id": "ren003",
+    "path": ["physics", "quantum-field-theory", "renormalisation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The renormalisation group (RG) describes how physical parameters depend on the energy scale at which they are probed. What is the $\\beta$-function?",
+    "equation": "\\beta(g) = \\mu\\frac{dg}{d\\mu}",
+    "passive": {
+      "options": [
+        "$\\beta = \\mu\\,dg/d\\mu$ encodes coupling running; sign matters: $\\beta > 0$ (QED, asymp slave) vs $\\beta < 0$ (QCD, asymp free)",
+        "$\\beta(g) = g^2$ universally for all field theories; this gives one-size-fits-all scaling regardless of gauge group or matter content",
+        "$\\beta$-function is identically zero in any consistent theory; couplings don't run with energy in a physically meaningful sense",
+        "$\\beta$ depends entirely on the choice of renormalisation scheme and has no scheme-independent physical meaning beyond convention"
+      ],
+      "correct": 0,
+      "explanation": "$\\beta$-function encodes scale dependence. Solution: $g(\\mu) = $ running coupling. QED: $\\beta = e^3/(12\\pi^2) > 0$, so $e$ grows with $E$; Landau pole at $\\mu \\sim e^{10^{34}}$ GeV. QCD: $\\beta = -g^3(11 - 2n_f/3)/(48\\pi^2) < 0$ for $n_f \\leq 16$ flavors; coupling decreases at high $E$ (asymptotic freedom, Gross-Wilczek-Politzer, Nobel 2004). Sign of $\\beta$ has fundamental physical consequences: confinement in QCD requires $\\beta < 0$."
+    }
+  },
+  {
+    "id": "ren004",
+    "path": ["physics", "quantum-field-theory", "renormalisation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Wilson's view of renormalisation reframes it as integrating out high-momentum modes. What's the picture?",
+    "passive": {
+      "options": [
+        "RG flow in coupling space: integrate out high modes above $\\mu$ → effective Lagrangian at $\\mu$ with modified renormalised couplings",
+        "Wilson's view directly contradicts the BPHZ counterterm method of renormalisation; only one of these two approaches can be correct",
+        "Wilson invented the concept of renormalisation entirely; before his work in the 1970s, QFT was thought to be fundamentally non-renormalisable",
+        "Wilson's view of RG flow applies only to statistical mechanics critical phenomena and has no direct application to relativistic QFT"
+      ],
+      "correct": 0,
+      "explanation": "Wilson (1971-1974, Nobel 1982): RG transformation $\\mathcal L_\\Lambda \\to \\mathcal L_{\\Lambda/b}$ via integration over momentum shell. Couplings flow under RG; fixed points correspond to scale-invariant theories (critical points in stat mech, conformal field theories). Relevant operators (dim $< 4$) grow; irrelevant (dim $> 4$) shrink; marginal (dim = 4) stay (log corrections). Universality classes determined by relevant operators only — explains why microscopically different systems have identical critical behaviour."
+    }
+  },
+  {
+    "id": "ren005",
+    "path": ["physics", "quantum-field-theory", "renormalisation"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "QED running of $\\alpha$ from low to high energy is a textbook example. How does it behave?",
+    "passive": {
+      "options": [
+        "$\\alpha(0) \\approx 1/137$; $\\alpha(m_Z^2) \\approx 1/128$; vacuum polarisation by $e^+e^-$ screens charge — effective coupling grows at short distances",
+        "$\\alpha$ is a true constant of nature; the fine-structure constant doesn't run with energy in any physically meaningful sense",
+        "$\\alpha$ decreases with energy from 1/137 down to 1/200 at the LHC scale because of screening becoming more effective at higher energies",
+        "Running of $\\alpha$ is so small that it has remained unmeasurable to date; only theoretical $\\beta$-function calculations exist"
+      ],
+      "correct": 0,
+      "explanation": "QED vacuum polarisation: virtual $e^+e^-$ pairs screen charge like a dielectric. Bare charge is larger; at low $E$ we see screened (partly shielded) effective charge. At high $E$, probe closer to bare, $\\alpha$ grows. Measured: $1/\\alpha(0) = 137.036$; $1/\\alpha(m_Z) = 127.952$ — 7% change, easily measured at LEP. Other charged particles (muons, $W$) contribute at higher thresholds, adding kinks to $\\alpha(\\mu)$. The running of $\\alpha$ enters precision electroweak fits."
+    }
+  },
+  {
+    "id": "ren006",
+    "path": ["physics", "quantum-field-theory", "renormalisation"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Asymptotic freedom in QCD is the running of $\\alpha_s$ that decreases at high energy. Why does this happen?",
+    "passive": {
+      "options": [
+        "Gluon self-interaction antiscreens colour — opposite of QED screening; $\\beta_{\\rm QCD} < 0$; weakly-interacting partons at high $Q^2$",
+        "QCD has more fermions than QED so vacuum-polarisation screening is stronger and effective coupling $\\alpha_s$ decreases at short distances",
+        "Asymptotic freedom is empirical with no underlying theoretical explanation; observed but not derivable from first principles in current theory",
+        "$\\alpha_s$ increases monotonically at higher energies, just like the QED running of $\\alpha$ from low to high energy due to charge screening"
+      ],
+      "correct": 0,
+      "explanation": "Gross-Wilczek-Politzer (1973, Nobel 2004) discovered asymptotic freedom. $\\beta$-function from gluon loops (positive contribution from gluon self-interaction) dominates over fermion loops (negative, like QED): $\\beta_{\\rm QCD} = -g^3(11N_c/3 - 2n_f/3)/(16\\pi^2)$ for $SU(N_c)$ with $n_f$ flavors. For QCD ($N_c = 3$, $n_f \\leq 6$): $\\beta < 0$. Running: $\\alpha_s(M_Z) \\approx 0.118$; at $\\Lambda_{\\rm QCD} \\approx 200$ MeV: $\\alpha_s \\to \\infty$ (Landau-like singularity), beyond which perturbation breaks down — this is the strong-coupling, confinement regime."
+    }
+  },
+  {
+    "id": "ren007",
+    "path": ["physics", "quantum-field-theory", "renormalisation"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The Callan-Symanzik equation expresses RG flow of correlation functions. What is it?",
+    "equation": "\\left[\\mu\\frac{\\partial}{\\partial\\mu} + \\beta(g)\\frac{\\partial}{\\partial g} + n\\gamma_\\phi\\right]G^{(n)} = 0",
+    "passive": {
+      "options": [
+        "$[\\mu\\partial_\\mu + \\beta\\partial_g + n\\gamma_\\phi]G^{(n)} = 0$; $G^{(n)}$ transforms under RG via $\\beta$ and anomalous dim $\\gamma_\\phi$",
+        "Callan-Symanzik is purely a free-field theory result and does not apply at all to genuinely interacting QFTs with non-trivial couplings",
+        "The equation expresses absolute scale independence of correlation functions; nothing runs and no renormalisation-group structure exists",
+        "The Callan-Symanzik equation directly gives the cosmological constant from QFT; it is the origin of the dark-energy problem"
+      ],
+      "correct": 0,
+      "explanation": "Renormalised correlators $G^{(n)}(p_i; g, \\mu)$ satisfy Callan-Symanzik. Anomalous dimension $\\gamma_\\phi = \\tfrac12\\mu\\partial_\\mu\\ln Z_\\phi$: field renormalisation correction beyond classical. Solution: $G(\\lambda p) = $ function of running coupling and anomalous-dimension factors. At fixed points $\\beta = 0$: scale invariance; theory becomes conformal (if extended Poincaré symmetry holds). Used in non-perturbative analysis, RG improvement of perturbation theory, computing critical exponents."
+    }
+  },
+  {
+    "id": "ren008",
+    "path": ["physics", "quantum-field-theory", "renormalisation"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "Effective field theory (EFT) is the modern interpretation of QFTs: every theory is effective at its accessible scale. What does this mean?",
+    "passive": {
+      "options": [
+        "QFT below cutoff $\\Lambda$ = infinite tower of operators, coefficients $\\sim 1/\\Lambda^{d-4}$; non-renormalisable terms OK below $\\Lambda$",
+        "Only renormalisable theories make any physical sense; effective field theories are mere mathematical artifacts without predictive power",
+        "EFT formulation requires the underlying UV completion to be quantum gravity; no other completion is theoretically permitted",
+        "EFT means quantum field theory applies only at low energies and breaks down at high energies, where physics becomes non-quantum-mechanical"
+      ],
+      "correct": 0,
+      "explanation": "Modern view (Wilson, Weinberg): all QFTs are effective. Fermi's weak theory: dim-6 4-fermion operator, valid below $\\sim M_W$. Chiral perturbation theory: pions as Goldstone bosons of broken chiral symmetry, valid below $\\sim 1$ GeV. Standard Model EFT (SMEFT): SM + higher-dim operators encoding hypothetical new physics at scale $\\Lambda$. Power counting in $E/\\Lambda$ organises expansion. Naturalness arguments: dim-2 operators (Higgs mass) sensitive to high scale → hierarchy problem."
+    }
+  }
+]
