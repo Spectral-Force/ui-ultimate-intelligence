@@ -1,0 +1,192 @@
+[
+  {
+    "id": "qea001",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-applications"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "Positronium (Ps) is a pure QED bound state of $e^+e^-$. What are its key spectroscopic features?",
+    "passive": {
+      "options": [
+        "Ground-state binding 6.8 eV ($= R_y/2$, reduced mass); para-Ps singlet decays $\\to 2\\gamma$ (0.125 ns); ortho-Ps triplet decays $\\to 3\\gamma$ (142 ns); hyperfine 203 GHz between them",
+        "Positronium is identical to hydrogen with no observable differences in the standard QED textbook treatment, as established for perturbative regimes",
+        "$e^+e^-$ cannot form a bound state due to Coulomb repulsion in the standard QED textbook treatment, as established for perturbative regimes",
+        "Positronium has no annihilation channels and is stable indefinitely in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "Positronium: reduced mass $m_e/2$, so binding $E_1 = -\\alpha^2 m_ec^2/4 = -6.8$ eV (half hydrogen's). C-parity: photon has $C = -1$; even-$n$-photon final states have $C = +1$ (matches para-Ps $^1S_0$), odd-$n$ have $C = -1$ (matches ortho-Ps $^3S_1$). Decay channels selected by C-parity conservation. Lifetimes: para 125 ps to $2\\gamma$; ortho 142 ns to $3\\gamma$ ($\\alpha$ extra factor). Used to test bound-state QED to high orders."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each pure-QED bound state to its properties:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Positronium ($e^+e^-$)",
+          "definition": "Binding 6.8 eV; lifetime 125 ps (para) or 142 ns (ortho); pure QED, no nuclear structure"
+        },
+        {
+          "id": "p2",
+          "term": "Muonium ($\\mu^+e^-$)",
+          "definition": "Muon plays role of nucleus; binding 13.5 eV; lifetime $\\sim 2.2\\,\\mu$s (muon decay); pure QED + small weak/hadronic"
+        },
+        {
+          "id": "p3",
+          "term": "Muonic hydrogen ($\\mu^-p$)",
+          "definition": "Muon bound to proton; orbit $\\sim 200\\times$ closer than $e$; samples proton structure; gives best $r_p$ measurement"
+        },
+        {
+          "id": "p4",
+          "term": "Hydrogen ($e^-p$)",
+          "definition": "Familiar atom; small finite-nuclear-size correction; benchmark for QED + bound-state methods"
+        }
+      ],
+      "explanation": "Each system tests different aspects of QED. Ps: pure QED at field-theory level. Muonium: pure QED with leptonic nucleus. Muonic-H: QED + proton structure. Hydrogen: highest-precision QED + nuclear corrections. Together they constrain QED parameters to 10-12 digits."
+    }
+  },
+  {
+    "id": "qea002",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-applications"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Para-positronium decay $p$-Ps $\\to 2\\gamma$ tests C-parity selection rules. What's the angular distribution?",
+    "passive": {
+      "options": [
+        "Isotropic in the para-Ps rest frame (spin-0); two back-to-back photons each with $E = m_ec^2 = 511$ keV; polarisations correlated (entangled)",
+        "Anisotropic with $\\sin^2\\theta$ dependence in the standard QED textbook treatment, as established for perturbative regimes",
+        "Photons have arbitrary energies summing to $2m_ec^2$ in the standard QED textbook treatment, as established for perturbative regimes",
+        "Decay forbidden by parity regardless of the choice of regularisation scheme used in the calculation"
+      ],
+      "correct": 0,
+      "explanation": "$^1S_0 \\to 2\\gamma$: spin-0 state, isotropic emission. Each photon: 511 keV (rest-frame energy from $E_\\gamma = m_ec^2$). Back-to-back from momentum conservation. Linear polarisations of the two photons are orthogonal (from selection rules) — entangled photon state. Used in original Bell-test-type experiments (Wu-Shaknov 1950) testing nonlocality. Modern: PET (positron emission tomography) detects coincident 511 keV photons to localise positron annihilation in patient body."
+    }
+  },
+  {
+    "id": "qea003",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-applications"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Muonium ($\\mu^+e^-$) is a pure leptonic bound state. Why is it interesting for testing QED?",
+    "passive": {
+      "options": [
+        "Bound state of two leptons → no hadronic corrections; muon mass known precisely; tests bound-state QED with $\\alpha^7$ accuracy; hyperfine measured to $10^{-9}$ precision",
+        "Muonium is exotic and very rare; barely studied experimentally in the standard QED textbook treatment, as established for perturbative regimes",
+        "Has same lifetime as hydrogen (essentially infinite) in the standard QED textbook treatment, as established for perturbative regimes",
+        "Equivalent to muonic hydrogen and provides no independent test in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "Muonium ($\\mu^+e^-$): muon acts as 'heavy electron' nucleus. No nuclear structure → cleanest bound-state QED test. Lifetime: limited by muon decay $\\mu^+ \\to e^+\\nu_e\\bar\\nu_\\mu$ ($\\tau_\\mu = 2.2\\,\\mu$s). Hyperfine splitting: measured $\\Delta\\nu_{\\rm Mu} = 4\\,463\\,302.776(51)$ Hz (LAMPF/PSI); theory matches at $10^{-9}$. Provides measurement of $m_\\mu/m_e$ ratio and best test of QED bound-state methods (no proton-radius uncertainty)."
+    }
+  },
+  {
+    "id": "qea004",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-applications"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Anti-hydrogen ($\\bar pe^+$) was first synthesised at CERN and has been used for fundamental tests. What's the goal?",
+    "passive": {
+      "options": [
+        "Compare H and $\\bar{\\rm H}$ spectra (test CPT theorem): expected identical by CPT, any difference $\\Rightarrow$ CPT violation; also test gravitational behaviour of antimatter",
+        "Anti-hydrogen is used as a fuel source for matter-antimatter propulsion in the standard QED textbook treatment, as established for perturbative regimes",
+        "$\\bar{\\rm H}$ has different chemistry from H and is used to make new molecules in the standard QED textbook treatment, as established for perturbative regimes",
+        "Anti-hydrogen creates new chemical compounds with conventional matter in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "CERN's ALPHA, ATRAP, AEgIS, GBAR experiments synthesise and trap $\\bar{\\rm H}$. CPT theorem predicts H and $\\bar{\\rm H}$ have identical spectra. ALPHA (2017): measured $\\bar{\\rm H}$ 1S-2S transition agreeing with H at 2 ppt. ALPHA (2018): measured Lamb shift in $\\bar{\\rm H}$. AEgIS, GBAR: test gravitational free-fall of antimatter (no anomaly found so far). Any difference between H and $\\bar{\\rm H}$ would shake fundamental physics (CPT violation, equivalence principle violation)."
+    }
+  },
+  {
+    "id": "qea005",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-applications"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Highly charged ions (HCI, e.g. U$^{91+}$) probe QED in extreme strong-field regimes. Why are they important?",
+    "passive": {
+      "options": [
+        "Effective coupling $Z\\alpha$ approaches unity for $Z \\sim 1/\\alpha \\sim 137$; strong-field QED corrections grow as $(Z\\alpha)^n$; tests QED beyond perturbation in $Z\\alpha$",
+        "HCI are easier to produce than neutral atoms; this result follows directly from the gauge-fixing prescription at hand",
+        "QED corrections vanish for high-$Z$ ions with no further corrections at any loop order in the perturbative expansion",
+        "Useful only for nuclear physics, not for QED testing in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "Hydrogenic uranium U$^{91+}$ has electron orbiting Z=92 proton. Effective $Z\\alpha \\approx 0.67$ — strong-field. QED corrections: leading $\\alpha(Z\\alpha)^4 m_e c^2 \\sim 60$ eV (much larger than hydrogen's 4×10⁻⁶ eV scale). $g - 2$ of bound electron: differs from free $g - 2$ by $\\sim (Z\\alpha)^2$. GSI, MPIK Heidelberg facilities produce and measure HCI. Tests non-perturbative bound-state QED. EBIT (electron-beam ion trap) is the main lab tool."
+    }
+  },
+  {
+    "id": "qea006",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-applications"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "The Casimir effect is the attractive force between uncharged conducting plates from QED vacuum fluctuations. What's the formula?",
+    "equation": "F/A = -\\frac{\\pi^2\\hbar c}{240 d^4}",
+    "passive": {
+      "options": [
+        "$F/A = -\\pi^2\\hbar c/(240 d^4)$ attractive; geometric (no charge needed); confirmed experimentally by Lamoreaux 1997; arises from boundary conditions on EM modes",
+        "$F/A = +\\pi^2\\hbar c/(240 d^4)$ — repulsive force between plates in the standard QED textbook treatment, as established for perturbative regimes",
+        "Casimir force is finite only in 1D; 3D gives infinite force in the standard QED textbook treatment, as established for perturbative regimes",
+        "Force depends on plate charge density, not separation in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "Casimir (1948): conducting plates exclude long-wavelength EM modes from the cavity; vacuum energy between plates is less than outside; net attractive force. Magnitude tiny but measurable. Lamoreaux (1997): first precision measurement with torsion pendulum. Modern: confirmed by many groups using AFM techniques. Has practical consequences for MEMS at nm scales. The Casimir-Polder version: force between an atom and a wall. Stark Casimir effect: vacuum-fluctuation effects also exist for fermion fields in cavities."
+    }
+  },
+  {
+    "id": "qea007",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-applications"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "Strong-field QED (laser fields approaching the Schwinger limit) is a frontier. What characterises it?",
+    "passive": {
+      "options": [
+        "Schwinger critical field $E_S = m_e^2 c^3/(e\\hbar) \\approx 1.3\\times 10^{18}$ V/m; above it, vacuum spontaneously pair-produces $e^+e^-$; perturbation in $E/E_S$ breaks down; tested at ELI/XFEL/Apollon facilities",
+        "Strong-field QED is identical to ordinary perturbative QED at any field strength in the standard QED textbook treatment, as established for perturbative regimes",
+        "Schwinger limit is $10^{30}$ V/m, far above laboratory capabilities in the standard QED textbook treatment, as established for perturbative regimes",
+        "Above the Schwinger limit, QED predictions become trivially zero; this result follows directly from the gauge-fixing prescription at hand"
+      ],
+      "correct": 0,
+      "explanation": "Schwinger limit: $E_S \\sim 1.32 \\times 10^{18}$ V/m or intensity $\\sim 4.6 \\times 10^{29}$ W/cm². Current laser intensities: $\\sim 10^{23}$ W/cm² (Apollon, ELI under commissioning); approaching but not yet at Schwinger. Multi-petawatt lasers will probe regime where electrons can interact non-perturbatively with photons (multi-photon scattering, vacuum pair production). E144 experiment at SLAC (1990s): nonlinear Compton scattering observed with $\\sim 10$ photons per interaction. Future: XCELS, Apollon, ELI extreme-light facilities aim at $10^{25}$ W/cm² and beyond."
+    }
+  }
+]

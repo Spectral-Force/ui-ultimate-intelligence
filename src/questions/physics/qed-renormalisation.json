@@ -1,0 +1,192 @@
+[
+  {
+    "id": "qer001",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-renormalisation"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "QED renormalisation involves three independent counterterms in the standard scheme. What are they?",
+    "passive": {
+      "options": [
+        "$Z_2$ (electron field), $Z_3$ (photon field), $Z_m$ (mass); the vertex $Z_1$ equals $Z_2$ by Ward identity, so only 3 independent — same as the number of parameters in the bare Lagrangian",
+        "$Z_1, Z_2, Z_3, Z_m$ — four independent counterterms required in the standard QED textbook treatment, as established for perturbative regimes",
+        "Only $Z_m$ is needed; field renormalisations are gauge-invariant in the standard QED textbook treatment, as established for perturbative regimes",
+        "QED is finite, so no counterterms are required at any loop order in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "Bare Lagrangian (in terms of bare quantities): $\\mathcal L_0 = \\bar\\psi_0(i\\not\\partial - m_0)\\psi_0 - e_0\\bar\\psi_0\\gamma^\\mu\\psi_0 A_{0\\mu} - \\tfrac14 F_0^2$. Rescale: $\\psi_0 = \\sqrt{Z_2}\\psi_R$, $A_0 = \\sqrt{Z_3}A_R$, $m_0 = Z_m m_R/Z_2$, $e_0 = e_R Z_1/(Z_2\\sqrt Z_3)$. Ward: $Z_1 = Z_2$ → $e_0 = e_R/\\sqrt Z_3$. Three independent constants for three Lagrangian parameters ($m, e, Z_\\psi$)."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each QED renormalisation aspect:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Mass renormalisation $\\delta m$",
+          "definition": "On-shell scheme: $\\delta m = $ shift between bare and physical mass; logarithmic in cutoff: $\\delta m \\sim \\alpha m\\ln(\\Lambda/m)$"
+        },
+        {
+          "id": "p2",
+          "term": "Field-strength $Z_2$",
+          "definition": "Residue of full propagator at physical pole; gauge-dependent; appears in LSZ as $\\sqrt Z_2$ per external electron leg"
+        },
+        {
+          "id": "p3",
+          "term": "Photon renormalisation $Z_3$",
+          "definition": "Gauge-invariant; determines running of $\\alpha$ via $\\alpha_R = \\alpha_0 Z_3$; one-loop: $Z_3 = 1 + \\alpha/(3\\pi\\epsilon) + \\ldots$"
+        },
+        {
+          "id": "p4",
+          "term": "Counterterm scheme",
+          "definition": "Add $\\delta\\mathcal L = (Z-1)\\mathcal L$ pieces to cancel divergences; choose finite parts (e.g., on-shell, $\\overline{\\rm MS}$, momentum-subtraction)"
+        }
+      ],
+      "explanation": "Renormalisation makes finite predictions from divergent loops. Different schemes give different finite values of intermediate quantities but same physical observables. On-shell scheme is intuitive (counterterms eliminate physical mass/charge shifts); $\\overline{\\rm MS}$ is convenient (just subtract $1/\\epsilon$ pole)."
+    }
+  },
+  {
+    "id": "qer002",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-renormalisation"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "The Ward identity $Z_1 = Z_2$ has a deep consequence for QED. What is it?",
+    "passive": {
+      "options": [
+        "Universality of charge renormalisation: charge running depends only on photon self-energy ($Z_3$), not on which fermion (electron, muon, quark) is in the loop — all fermions of same charge run identically",
+        "$Z_1 = Z_2$ implies QED is non-renormalisable regardless of the choice of regularisation scheme used in the calculation",
+        "Identity holds only at one loop; breaks down at higher orders for any spacetime dimension above two without further modification needed",
+        "It allows the photon to acquire a mass via loop corrections for any spacetime dimension above two without further modification needed"
+      ],
+      "correct": 0,
+      "explanation": "Bare coupling: $e_0 = e_R Z_1/(Z_2\\sqrt Z_3) = e_R/\\sqrt Z_3$ (using $Z_1 = Z_2$). Renormalised coupling depends only on $Z_3$, which is determined by photon self-energy. Universality: all charged particles see the same running $\\alpha(\\mu^2)$, regardless of their type. Consequence: precision QED tests (Lamb shift, $g - 2$, hydrogen spectrum, atomic clocks) all give consistent value of $\\alpha$. Non-Abelian theories: Ward identity becomes Slavnov-Taylor; $Z_1 \\neq Z_2$ in general."
+    }
+  },
+  {
+    "id": "qer003",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-renormalisation"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "The on-shell renormalisation scheme defines the electron mass and charge by physical conditions. What are they?",
+    "passive": {
+      "options": [
+        "Electron mass = pole position of propagator ($\\not p = m_R$); residue = $Z_2$; charge = Thomson scattering limit ($k^2 \\to 0$ photon-electron coupling)",
+        "Mass and charge are taken at arbitrary off-shell momentum; no physical definition",
+        "On-shell scheme requires the cutoff $\\Lambda$ to be specified",
+        "All renormalisation conditions are imposed at the Z-pole ($\\sqrt s = 91$ GeV)"
+      ],
+      "correct": 0,
+      "explanation": "On-shell (OS) scheme: define $m_R$ and $e_R$ by their physical, IR conditions. $m_R$ = pole of two-point function; $e_R$ = charge measured at low momentum (Thomson). Counterterms determined by these conditions; finite parts absorbed automatically. Convenient for direct comparison with measurements. Alternative: $\\overline{\\rm MS}$ (minimal subtraction with $\\ln 4\\pi - \\gamma_E$ removal) — convenient for high-energy QFT; intermediate; momentum-subtraction (MOM) — defines couplings at some Euclidean reference momentum."
+    }
+  },
+  {
+    "id": "qer004",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-renormalisation"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "The running of $\\alpha$ from low to high energy is well-measured. What's the experimental confirmation?",
+    "passive": {
+      "options": [
+        "$1/\\alpha(0) = 137.036$ (low $E$, Thomson limit); $1/\\alpha(m_Z^2) = 127.94 \\pm 0.02$ (measured at LEP/SLC); the $\\sim 7\\%$ shift directly tests vacuum polarisation",
+        "$\\alpha$ has been measured constant from low to high energy; no running observed",
+        "Running of $\\alpha$ is too small to measure experimentally",
+        "The running depends on choice of renormalisation scheme; no scheme-independent prediction"
+      ],
+      "correct": 0,
+      "explanation": "Precision measurements: $\\alpha$ at $\\mu = 0$ from quantum Hall effect, atom interferometry, electron $g-2$. $\\alpha(m_Z^2)$ from precision electroweak observables (effective leptonic mixing angle $\\sin^2\\theta_W^{\\rm eff}$, $Z$ partial widths). Hadronic vacuum polarisation contribution dominates uncertainty in $\\alpha(m_Z^2)$: $\\Delta\\alpha_{\\rm had}(m_Z^2) \\approx 0.0276 \\pm 0.0001$. Sub-percent agreement: definitive confirmation of QED running."
+    }
+  },
+  {
+    "id": "qer005",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-renormalisation"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "BPHZ (Bogoliubov-Parasiuk-Hepp-Zimmermann) is the systematic recipe for QED renormalisation at all orders. What's its content?",
+    "passive": {
+      "options": [
+        "Recursive subtraction of subdivergences: forest formula reorganises overlapping divergences; ensures locality of counterterms; proves renormalisability to all orders for renormalisable QFTs",
+        "BPHZ applies only to QED at one loop; higher orders require new techniques in the standard QED textbook treatment, as established for perturbative regimes",
+        "Recipe gives finite results without need for any counterterms in the standard QED textbook treatment, as established for perturbative regimes",
+        "BPHZ regularisation explicitly breaks gauge invariance and so does not work for QED in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "BPHZ scheme (Bogoliubov-Parasiuk 1957, Hepp 1966, Zimmermann 1969): for each divergent subdiagram, subtract its Taylor expansion around external momentum zero. Forest formula handles nested/overlapping divergences. Proves all UV divergences in renormalisable QFT can be removed order by order by local counterterms. Modern viewpoint: subsumed by Wilson's RG approach. In practice: most QED computations use dim reg + $\\overline{\\rm MS}$ or on-shell scheme."
+    }
+  },
+  {
+    "id": "qer006",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-renormalisation"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "The renormalisation-group equation in QED gives the scale-evolution of physical observables. What's it for a scattering amplitude $\\Gamma^{(n)}$?",
+    "equation": "\\left[\\mu\\frac{\\partial}{\\partial\\mu} + \\beta(e)\\frac{\\partial}{\\partial e} - n\\gamma_\\psi + n_\\gamma\\gamma_A\\right]\\Gamma^{(n)} = 0",
+    "passive": {
+      "options": [
+        "$[\\mu\\partial_\\mu + \\beta(e)\\partial_e - n_e\\gamma_\\psi + n_\\gamma\\gamma_A]\\Gamma^{(n)} = 0$; running coupling + anomalous dimensions of external legs determine scale dependence",
+        "Amplitude is independent of renormalisation scale by construction in the standard QED textbook treatment, as established for perturbative regimes",
+        "RG equation involves only the $\\beta$-function, no anomalous dimensions in the standard QED textbook treatment, as established for perturbative regimes",
+        "Gives identical answers in all renormalisation schemes in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "Anomalous dimension $\\gamma_\\psi = \\tfrac12\\mu d\\ln Z_2/d\\mu$ for electron field; similar $\\gamma_A$ for photon. The 'minus' sign for $\\gamma_\\psi$ reflects that external-leg renormalisation contributes inversely. Solving RG equation with running coupling $e(\\mu)$ resums large logs $\\ln(E/m_e)$ in scattering amplitudes. Critical for processes at $E \\gg m_e$ where leading-log accuracy demands RG improvement."
+    }
+  },
+  {
+    "id": "qer007",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-renormalisation"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "QED is believed to have a Landau pole at extreme high energy. What does this mean and is it physical?",
+    "passive": {
+      "options": [
+        "$\\alpha(\\mu)$ formally diverges at $\\mu_L \\sim m_e e^{3\\pi/2\\alpha} \\sim 10^{286}$ GeV via one-loop running; well above Planck scale, so QED is embedded in a larger UV-complete theory before reaching $\\mu_L$",
+        "Landau pole is at $\\mu_L = m_e c^2$ — i.e., at the electron mass itself in the standard QED textbook treatment, as established for perturbative regimes",
+        "QED has no Landau pole; $\\alpha$ runs only logarithmically forever in the standard QED textbook treatment, as established for perturbative regimes",
+        "Landau pole is physical and observable at LHC energies; the renormalisation-group flow leaves this conclusion unchanged at all orders"
+      ],
+      "correct": 0,
+      "explanation": "Solving one-loop RG: $1/\\alpha(\\mu^2) = 1/\\alpha(\\mu_0^2) - (2/3\\pi)\\ln(\\mu^2/\\mu_0^2)$. Pole when $\\alpha \\to \\infty$: $\\mu_L \\sim m_e\\exp(3\\pi/2\\alpha_0)$ — astronomically above Planck. Higher loops modify but don't remove. Physical interpretation: QED is an effective theory embedded in some UV completion (GUT, string theory) well before this scale. In the SM, electroweak unification at $m_Z$ scale already extends QED; the U(1)_Y hypercharge has its own Landau pole at much smaller scale ($\\sim 10^{53}$ GeV) — still above Planck."
+    }
+  }
+]

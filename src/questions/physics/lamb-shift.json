@@ -1,0 +1,191 @@
+[
+  {
+    "id": "lmb001",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "lamb-shift"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "The Lamb shift (Lamb & Retherford 1947) is the splitting between hydrogen $2S_{1/2}$ and $2P_{1/2}$ levels. What does Dirac theory predict and what's observed?",
+    "passive": {
+      "options": [
+        "Dirac predicts $2S_{1/2}$ and $2P_{1/2}$ exactly degenerate; experiment shows $2S_{1/2}$ above $2P_{1/2}$ by 1057 MHz; the QED correction was a landmark in the development of renormalisation",
+        "Dirac predicts the shift correctly; QED gives only small corrections of $\\sim 10^{-4}$ in the standard QED textbook treatment, as established for perturbative regimes",
+        "Dirac predicts $2P_{1/2}$ above $2S_{1/2}$; QED flips the sign in the standard QED textbook treatment, as established for perturbative regimes",
+        "Splitting is zero experimentally — Dirac is correct, no QED correction needed in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "Lamb-Retherford (1947): microwave spectroscopy of hydrogen showed $2S_{1/2}$ above $2P_{1/2}$ by $\\sim 1058$ MHz, in conflict with the Dirac equation prediction (degenerate). This forced reconsideration of QED. Bethe's calculation (1947): non-relativistic estimate gave $\\sim 1000$ MHz. Full QED computation: $\\sim 1057$ MHz. Triggered the modern renormalisation programme (Feynman, Schwinger, Tomonaga, Dyson) and the 1965 Nobel Prize."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each contribution to the hydrogen $2S_{1/2}$–$2P_{1/2}$ Lamb shift:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Self-energy (electron mass shift in atom)",
+          "definition": "Largest piece, $\\sim +1052$ MHz; smearing of electron position by vacuum fluctuations weakens nuclear attraction at $r = 0$"
+        },
+        {
+          "id": "p2",
+          "term": "Vacuum polarisation (Uehling)",
+          "definition": "$\\sim -27$ MHz; screening of Coulomb by virtual $e^+e^-$; modifies short-range potential"
+        },
+        {
+          "id": "p3",
+          "term": "Anomalous magnetic moment",
+          "definition": "$\\sim +68$ MHz; Schwinger correction $g - 2$ enters fine-structure"
+        },
+        {
+          "id": "p4",
+          "term": "Total Lamb shift",
+          "definition": "$\\sim +1057.84$ MHz; remarkable QED prediction confirmed to 14 ppm precision"
+        }
+      ],
+      "explanation": "The Lamb shift is the cleanest test of vacuum-polarisation and self-energy effects in QED. Each individual contribution has been computed and measured. Modern theory + experiment: $\\Delta E_{\\rm Lamb}(\\text{H}, 2S-2P) = 1\\,057.8446$ MHz, with theoretical uncertainty $\\sim 14$ MHz dominated by proton-structure effects."
+    }
+  },
+  {
+    "id": "lmb002",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "lamb-shift"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Bethe's logarithmic approximation captured the dominant Lamb shift in a non-relativistic calculation. What's the structure?",
+    "passive": {
+      "options": [
+        "Self-energy gives shift $\\Delta E \\sim (\\alpha^5/3\\pi)m_ec^2\\ln(m_ec^2/E_n)$ where $E_n$ is binding energy; the $\\ln(1/\\alpha)$ enhancement is the characteristic Bethe log",
+        "Lamb shift is computed without logarithms; pure power-law in $\\alpha$ in the standard QED textbook treatment, as established for perturbative regimes",
+        "Bethe used $\\alpha^4$ scaling, not $\\alpha^5$; this result follows directly from the gauge-fixing prescription at hand",
+        "Calculation requires retaining only the s-wave amplitude in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "Bethe's insight (1947): subtract the formally infinite free-electron self-energy from the in-atom self-energy. Remainder is finite and dominated by photon emission/reabsorption within atomic energy scale. Logarithm $\\ln(m_e/E_n) \\sim \\ln(1/\\alpha)$ enhances. Numerically: Bethe got 1040 MHz; precise modern QED: 1057.84 MHz. The Bethe log is the characteristic feature of bound-state QED corrections."
+    }
+  },
+  {
+    "id": "lmb003",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "lamb-shift"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Hyperfine structure in hydrogen (21 cm line) is the famous splitting of the $1S_{1/2}$ ground state. What's the scale?",
+    "passive": {
+      "options": [
+        "$\\Delta\\nu_{\\rm hfs} = 1\\,420.4057517667$ MHz (defined exactly for $^{133}$Cs clock); from coupling of electron and proton magnetic moments; depends on $\\mu_e\\mu_p/r^3$ at the origin",
+        "Hyperfine splitting equals the Lamb shift exactly regardless of the choice of regularisation scheme used in the calculation",
+        "21 cm line arises from rotational transition of the H molecule in the standard QED textbook treatment, as established for perturbative regimes",
+        "Hyperfine splitting requires both spin-orbit and Zeeman effects to be present in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "Magnetic dipole-dipole between $e^-$ ($\\mu_e = g_e\\mu_B$) and proton ($\\mu_p = g_p\\mu_N$) gives the Fermi contact term: $\\Delta E_{\\rm hfs} = (8\\pi/3)g_eg_p\\mu_B\\mu_N|\\psi(0)|^2$. For hydrogen $1S$: $\\Delta\\nu = 1\\,420.4$ MHz, $\\lambda = 21$ cm. Most precisely known atomic transition (limited by proton structure). 21 cm is the astronomical hallmark of neutral hydrogen — maps galactic gas (HI surveys, EDGES, SKA). Cesium hyperfine defines the SI second (Cs: 9.193 GHz)."
+    }
+  },
+  {
+    "id": "lmb004",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "lamb-shift"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Muonic hydrogen ($\\mu^-p$) has different Lamb shift sensitivity than ordinary hydrogen. Why?",
+    "passive": {
+      "options": [
+        "Muon Bohr radius $a_\\mu = a_0 m_e/m_\\mu \\sim 200\\times$ smaller; muon samples proton charge distribution much more; vacuum polarisation contribution enhanced by $\\sim(m_\\mu/m_e)$",
+        "Muonic hydrogen is non-existent; no muonic atom can form in the standard QED textbook treatment, as established for perturbative regimes",
+        "Lamb shift in muonic H is the same as ordinary H; only mass differs in the standard QED textbook treatment, as established for perturbative regimes",
+        "Muonic hydrogen lifetime is too short to measure the Lamb shift in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "Replacing $e^-$ with $\\mu^-$ (200× heavier): muon orbits 200× closer to proton, much more sensitive to proton charge distribution. Vacuum polarisation effect enhanced because the Compton wavelength $\\lambda_C^e$ now exceeds the orbit size — Uehling integral 'sees' the full screening cloud. Proton structure dominates uncertainty. CREMA experiment (Pohl et al., PSI 2010): measured muonic-H Lamb shift, extracted proton charge radius $r_p = 0.842(1)$ fm — initially disagreed with electronic-H/scattering value of 0.879 fm (proton-radius puzzle, now mostly resolved with new measurements)."
+    }
+  },
+  {
+    "id": "lmb005",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "lamb-shift"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "The hydrogen $1S-2S$ two-photon transition is the most precisely measured atomic transition. What enables this precision?",
+    "passive": {
+      "options": [
+        "Two-photon Doppler-free spectroscopy: $\\omega_1 + \\omega_2 = E_{2S} - E_{1S}$ independent of atom velocity; long $2S$ lifetime ($\\sim 122$ ms via 2$\\gamma$ decay); current precision: $4 \\times 10^{-15}$",
+        "Single-photon resonance at 121 nm; lifetime is short ($\\sim$ ns) in the standard QED textbook treatment, as established for perturbative regimes",
+        "Measurement uses a hydrogen maser at 21 cm wavelength; this result follows directly from the gauge-fixing prescription at hand",
+        "Precision comes from many short-lived atoms emitting incoherently in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "Doppler-free two-photon spectroscopy: counter-propagating beams at $\\omega \\approx (E_{2S}-E_{1S})/2 = 243$ nm. Long-lived $2S_{1/2}$ state: forbidden single-photon decay to $1S$ (E1 selection rule $\\Delta\\ell = \\pm 1$), only 2-photon. Current precision: Hänsch group (MPQ) measured $\\nu_{1S-2S} = 2\\,466\\,061\\,413\\,187.035(10)$ Hz — relative precision $4 \\times 10^{-15}$. Tests QED to extraordinary precision; extracts Rydberg constant and proton-related parameters."
+    }
+  },
+  {
+    "id": "lmb006",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "lamb-shift"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Positronium ($e^+e^-$ bound state) has corrections distinct from hydrogen. What's special?",
+    "passive": {
+      "options": [
+        "No nuclear structure ($e^+$ is pointlike); annihilation channel (para-positronium $\\to 2\\gamma$, ortho-positronium $\\to 3\\gamma$); reduced mass $m_e/2$; tests pure QED with $\\alpha^7$ corrections accessible",
+        "Positronium is identical to hydrogen in all properties; differs only in mass in the standard QED textbook treatment, as established for perturbative regimes",
+        "$e^+e^-$ cannot form a bound state due to Coulomb repulsion regardless of the choice of regularisation scheme used in the calculation",
+        "Positronium has nuclear contribution that dominates uncertainty; this result follows directly from the gauge-fixing prescription at hand"
+      ],
+      "correct": 0,
+      "explanation": "Positronium: ground-state binding energy $\\sim 6.8$ eV (half of H's because reduced mass $m_e/2$). Two states: para-Ps ($^1S_0$, lifetime 0.125 ns, decays to even number of photons via $C$-parity), ortho-Ps ($^3S_1$, lifetime 142 ns, decays to odd number — typically 3$\\gamma$). Hyperfine splitting Ps-1S: 203.4 GHz; theoretical and experimental agreement to $10^{-7}$. The cleanest QED bound-state laboratory."
+    }
+  },
+  {
+    "id": "lmb007",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "lamb-shift"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "The proton-radius puzzle was an apparent discrepancy between $r_p$ determinations from electronic and muonic hydrogen. What was it and how was it resolved?",
+    "passive": {
+      "options": [
+        "Muonic H gave $r_p = 0.84$ fm (2010, Pohl); electron scattering/spectroscopy gave 0.88 fm — $5\\sigma$ tension; resolved by new electronic measurements (MPQ 2017, York 2019) now agreeing with muonic value around 0.84 fm",
+        "Puzzle remains unresolved with current $5\\sigma$ discrepancy; the renormalisation-group flow leaves this conclusion unchanged at all orders",
+        "Resolved by discovering a new force coupling to muons for any spacetime dimension above two without further modification needed",
+        "Was due to systematic errors in the muonic measurement; muonic value retracted in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "2010–2017: electronic-hydrogen $r_p = 0.879(8)$ fm vs muonic $0.842(1)$ fm — $5\\sigma$ tension led to speculations of new physics (muon-specific forces). CODATA 2014 quoted weighted average. Resolution: better electronic-H Lamb-shift measurements (Beyer et al. 2017, Bezginov et al. 2019) gave values $\\sim 0.84$ fm, consistent with muonic. New CODATA value: $r_p = 0.8414(19)$ fm. Tension reduced to $\\lesssim 1\\sigma$. A cautionary tale about apparent QED anomalies being systematic effects."
+    }
+  }
+]

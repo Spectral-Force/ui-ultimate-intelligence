@@ -1,0 +1,192 @@
+[
+  {
+    "id": "qedl001",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-lagrangian"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "The QED Lagrangian combines fermion kinetic, gauge-field kinetic, and minimal-coupling terms. What is its standard form?",
+    "equation": "\\mathcal L_{\\rm QED} = \\bar\\psi(i\\gamma^\\mu D_\\mu - m)\\psi - \\frac{1}{4}F_{\\mu\\nu}F^{\\mu\\nu}",
+    "passive": {
+      "options": [
+        "$\\mathcal L = \\bar\\psi(i\\gamma^\\mu D_\\mu - m)\\psi - \\tfrac14 F_{\\mu\\nu}F^{\\mu\\nu}$ with $D_\\mu = \\partial_\\mu + ieA_\\mu$; minimal coupling generates the electron-photon vertex",
+        "$\\mathcal L = \\bar\\psi(i\\partial_\\mu\\gamma^\\mu - m)\\psi$ alone, no photon field; QED is purely fermionic",
+        "$\\mathcal L = (\\partial_\\mu\\psi)^2 - m^2\\psi^2$ — scalar Klein-Gordon form, not Dirac",
+        "$\\mathcal L = \\bar\\psi\\psi + A_\\mu A^\\mu$ — both fields appear without derivatives"
+      ],
+      "correct": 0,
+      "explanation": "Minimal coupling $\\partial_\\mu \\to D_\\mu = \\partial_\\mu + ieA_\\mu$ ensures local U(1) invariance: $\\psi \\to e^{-i\\alpha(x)}\\psi$, $A_\\mu \\to A_\\mu + \\partial_\\mu\\alpha/e$. Expanding: $\\mathcal L = \\bar\\psi(i\\not\\partial - m)\\psi - eA_\\mu\\bar\\psi\\gamma^\\mu\\psi - \\tfrac14 F^2$. Middle term gives the interaction vertex $-ie\\gamma^\\mu$. The photon stays massless because a mass term $\\tfrac12 m_\\gamma^2 A^2$ would break gauge invariance."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each QED Lagrangian piece to its role:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "$\\bar\\psi(i\\not\\partial - m)\\psi$",
+          "definition": "Free Dirac kinetic + mass; describes propagating electrons and positrons of mass $m$"
+        },
+        {
+          "id": "p2",
+          "term": "$-\\tfrac14 F_{\\mu\\nu}F^{\\mu\\nu}$",
+          "definition": "Free Maxwell kinetic; $F_{\\mu\\nu} = \\partial_\\mu A_\\nu - \\partial_\\nu A_\\mu$; gauge-invariant photon kinetic"
+        },
+        {
+          "id": "p3",
+          "term": "$-eA_\\mu\\bar\\psi\\gamma^\\mu\\psi$",
+          "definition": "Minimal-coupling interaction; gives the QED vertex $-ie\\gamma^\\mu$ in Feynman rules"
+        },
+        {
+          "id": "p4",
+          "term": "$D_\\mu = \\partial_\\mu + ieA_\\mu$",
+          "definition": "Gauge-covariant derivative; transforms as $D_\\mu\\psi \\to e^{-i\\alpha}D_\\mu\\psi$ to preserve local U(1)"
+        }
+      ],
+      "explanation": "The Lagrangian has only ONE coupling: $e$. Once written, all QED phenomena (Compton scattering, $g - 2$, Lamb shift, Rutherford) follow from systematic Feynman-diagram expansion. Predictive power: $e$ extracted from one experiment then predicts all others to extraordinary accuracy."
+    }
+  },
+  {
+    "id": "qedl002",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-lagrangian"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Local U(1) gauge invariance forces the photon to be massless. Why can't we just add a photon mass term $\\tfrac12 m_\\gamma^2 A_\\mu A^\\mu$?",
+    "passive": {
+      "options": [
+        "Under $A_\\mu \\to A_\\mu + \\partial_\\mu\\alpha/e$, the mass term transforms as $\\tfrac12 m_\\gamma^2(A + \\partial\\alpha/e)^2 \\neq \\tfrac12 m_\\gamma^2 A^2$ — explicitly breaks gauge invariance",
+        "The photon mass term is mathematically ill-defined in 4D spacetime in the standard QED textbook treatment, as established for perturbative regimes",
+        "Photon mass term commutes with the gauge group, so it adds no new physics in the standard QED textbook treatment, as established for perturbative regimes",
+        "A photon mass would change the spin-statistics relation for the electromagnetic field in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "Mass term $A_\\mu A^\\mu$ is not gauge invariant. Experimental bound on photon mass: $m_\\gamma < 10^{-18}$ eV (from galactic magnetic-field structure). Proca theory: massive vector field without gauge invariance — has 3 physical polarisations instead of 2. To give a vector boson mass while keeping gauge invariance: Higgs mechanism (spontaneously broken gauge symmetry, longitudinal eaten Goldstone). This is how $W, Z$ get masses but photon stays massless."
+    }
+  },
+  {
+    "id": "qedl003",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-lagrangian"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "The field strength $F_{\\mu\\nu} = \\partial_\\mu A_\\nu - \\partial_\\nu A_\\mu$ packages the electric and magnetic fields. What are its components?",
+    "passive": {
+      "options": [
+        "$F^{0i} = -E^i/c$ (electric); $F^{ij} = -\\epsilon^{ijk}B_k$ (magnetic); antisymmetric, so 6 independent components matching $\\mathbf E, \\mathbf B$",
+        "$F^{\\mu\\nu}$ has 16 independent components since it's a rank-2 tensor",
+        "$F^{\\mu\\nu}$ is symmetric and traceless, like the metric perturbation",
+        "Field strength carries the photon's mass; $F$ vanishes if photon were massive"
+      ],
+      "correct": 0,
+      "explanation": "Antisymmetric: $F^{\\mu\\nu} = -F^{\\nu\\mu}$, so 6 independent components. Bianchi identity $\\partial_\\mu \\tilde F^{\\mu\\nu} = 0$ encodes the homogeneous Maxwell equations ($\\nabla\\cdot\\mathbf B = 0$, $\\partial_t\\mathbf B = -\\nabla\\times\\mathbf E$). Inhomogeneous: $\\partial_\\mu F^{\\mu\\nu} = J^\\nu$ (current conservation). Dual field strength $\\tilde F^{\\mu\\nu} = \\tfrac12\\epsilon^{\\mu\\nu\\rho\\sigma}F_{\\rho\\sigma}$ swaps $\\mathbf E \\leftrightarrow \\mathbf B$ in the components."
+    }
+  },
+  {
+    "id": "qedl004",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-lagrangian"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "The QED vertex Feynman rule is $-ie\\gamma^\\mu$. How is its sign and structure determined from the Lagrangian?",
+    "passive": {
+      "options": [
+        "From $i\\mathcal L_{\\rm int} = -ie\\bar\\psi\\gamma^\\mu\\psi A_\\mu$ in path integral; vertex factor = $i \\times $ coefficient of interaction term in $i\\mathcal L$, contracted with field indices",
+        "The vertex is purely conventional with arbitrary sign and magnitude in the standard QED textbook treatment, as established for perturbative regimes",
+        "Vertex factor equals the electric charge squared $-ie^2$ in the standard QED textbook treatment, as established for perturbative regimes",
+        "QED has no vertex factor; interactions arise from field kinematics alone in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "Feynman rules derivation: $Z[J] = \\int\\mathcal D[\\psi, \\bar\\psi, A]e^{i\\int(\\mathcal L_0 + \\mathcal L_{\\rm int})}$; expand $e^{i\\mathcal L_{\\rm int}} = 1 + i\\int\\mathcal L_{\\rm int} + \\ldots$. Each insertion of $-ie\\bar\\psi\\gamma^\\mu\\psi A_\\mu$ produces a vertex factor $-ie\\gamma^\\mu$ when extracting Wick contractions. Conventions: some texts use $+ie\\gamma^\\mu$ (depends on sign of $e$); positrons have charge $+e$, electrons $-e$. For QCD: vertex $-ig\\gamma^\\mu T^a$ with $T^a$ Gell-Mann generators."
+    }
+  },
+  {
+    "id": "qedl005",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-lagrangian"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Scalar QED replaces the Dirac field with a complex scalar. What new feature appears that fermionic QED lacks?",
+    "passive": {
+      "options": [
+        "Seagull vertex $-2ie^2\\eta^{\\mu\\nu}|\\phi|^2 A^\\mu A^\\nu$ — 4-particle interaction between two photons and two scalars; arises from $|D_\\mu\\phi|^2$ expansion",
+        "Scalar QED is identical to fermion QED with no new vertices in the standard QED textbook treatment, as established for perturbative regimes",
+        "Magnetic moment of the scalar is twice that of a fermion in the standard QED textbook treatment, as established for perturbative regimes",
+        "Scalar QED has no electron-photon vertex in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "$|D_\\mu\\phi|^2 = |\\partial_\\mu\\phi + ieA_\\mu\\phi|^2 = |\\partial\\phi|^2 + ieA_\\mu(\\phi^*\\partial^\\mu\\phi - \\phi\\partial^\\mu\\phi^*) + e^2A_\\mu A^\\mu|\\phi|^2$. The third term is the 'seagull' or 'tadpole' contact term — two photons coupled to two scalars directly. Important for Compton scattering off scalars: a contact diagram contributes alongside the usual $s$- and $u$-channel exchange. In SM: pions (treated as composite via ChPT) have this structure; the Higgs has analogous $HHWW$, $HHZZ$ couplings."
+    }
+  },
+  {
+    "id": "qedl006",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-lagrangian"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "$\\theta$-term $\\theta F_{\\mu\\nu}\\tilde F^{\\mu\\nu}/32\\pi^2$ can be added to QED Lagrangian. Why doesn't it affect physics in QED?",
+    "passive": {
+      "options": [
+        "It's a total derivative ($\\partial_\\mu(\\epsilon^{\\mu\\nu\\rho\\sigma}A_\\nu\\partial_\\rho A_\\sigma)$); in QED with trivial topology, integrates to zero — no observable effect; differs in QCD where instantons make it non-trivial",
+        "$\\theta$-term breaks gauge invariance and is forbidden in QED independently of the renormalisation scheme or specific Feynman-gauge choice",
+        "$\\theta$-term vanishes by parity invariance of QED in the standard QED textbook treatment, as established for perturbative regimes",
+        "It's a total derivative and so contributes only to surface terms; this result follows directly from the gauge-fixing prescription at hand"
+      ],
+      "correct": 0,
+      "explanation": "$F\\tilde F = \\partial_\\mu(\\epsilon^{\\mu\\nu\\rho\\sigma}A_\\nu\\partial_\\rho A_\\sigma)$ — total derivative, in Abelian gauge theory. Integrates to zero in QED (no topological non-trivial vacuum). $F\\tilde F$ is P- and T-odd, CP-odd (but CPT-even). In QCD: $\\theta_{\\rm QCD}F^a\\tilde F^a$ is also a total derivative locally, but instantons give non-zero contributions to $\\int F\\tilde F$ → CP-violating $\\theta$-vacuum. Experimental bound from neutron EDM: $|\\theta_{\\rm QCD}| < 10^{-10}$ — strong CP problem."
+    }
+  },
+  {
+    "id": "qedl007",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-lagrangian"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "Heisenberg-Euler effective Lagrangian describes nonlinear QED at low-energy/intense-field regimes. What's its leading correction?",
+    "passive": {
+      "options": [
+        "$\\mathcal L_{\\rm HE} = \\tfrac{2\\alpha^2}{45 m_e^4}[(\\mathbf E^2 - \\mathbf B^2)^2 + 7(\\mathbf E\\cdot\\mathbf B)^2] + \\ldots$; arises from integrating out the electron loop in a background field; predicts photon-photon scattering",
+        "Heisenberg-Euler is identical to the classical Maxwell Lagrangian with no further corrections at any loop order in the perturbative expansion",
+        "Effective Lagrangian vanishes at order $\\alpha^2$ by parity by analogy with the corresponding non-relativistic quantum-mechanical case",
+        "$\\mathcal L_{\\rm HE}$ applies only to neutrinos, not electrons; this is the universal answer adopted by all standard QFT textbooks since 1965"
+      ],
+      "correct": 0,
+      "explanation": "Heisenberg-Euler (1936): integrate out heavy electron loops at low photon energy → effective Lagrangian for slow photon fields. Predicts: light-by-light scattering ($\\gamma\\gamma \\to \\gamma\\gamma$), birefringence in strong magnetic fields, and the Schwinger limit $E_S = m_e^2 c^3/(e\\hbar) = 1.32\\times 10^{18}$ V/m above which vacuum becomes unstable to $e^+e^-$ pair production. Modern relevance: PETRA-III observations of photon-photon scattering; PVLAS/BMV experiments on vacuum birefringence in strong $B$; ultraintense lasers approaching Schwinger limit (ELI)."
+    }
+  }
+]

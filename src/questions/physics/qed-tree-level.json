@@ -1,0 +1,192 @@
+[
+  {
+    "id": "qedt001",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-tree-level"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "Compton scattering ($\\gamma e \\to \\gamma e$) is the canonical QED tree-level process. What diagrams contribute at $O(\\alpha)$?",
+    "passive": {
+      "options": [
+        "$s$-channel (electron absorbs photon, emits another) + $u$-channel (crossed); two diagrams; gauge invariance requires their sum (each alone fails $k_\\mu\\mathcal M^\\mu = 0$)",
+        "Only $s$-channel diagram contributes; $u$-channel vanishes by parity in the standard QED textbook treatment, as established for perturbative regimes",
+        "Tree-level Compton scattering vanishes; only one-loop terms contribute in the standard QED textbook treatment, as established for perturbative regimes",
+        "Compton scattering uses a 4-particle vertex with no internal electron propagator in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "Tree amplitudes: $\\mathcal M_s + \\mathcal M_u$ where $s$ has intermediate electron propagator $\\sim 1/(p + k)^2 - m^2$ and $u$ has $\\sim 1/(p - k')^2 - m^2$. Each diagram individually doesn't satisfy Ward identity; sum does. Klein-Nishina formula: differential cross-section in lab frame, function of incident photon energy and scattering angle. At low energies ($\\hbar\\omega \\ll m_ec^2$): reduces to classical Thomson scattering ($\\sigma_T = 8\\pi r_e^2/3$, $r_e \\approx 2.82\\times 10^{-15}$ m)."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each tree-level QED process to its description:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Compton: $\\gamma e \\to \\gamma e$",
+          "definition": "Photon-electron scattering; $s + u$ diagrams; Klein-Nishina formula at $\\alpha^2$; recovers Thomson at low $E$"
+        },
+        {
+          "id": "p2",
+          "term": "Møller: $e^- e^- \\to e^- e^-$",
+          "definition": "Electron-electron scattering; $t + u$ via photon exchange; antisymmetrise for identical fermions"
+        },
+        {
+          "id": "p3",
+          "term": "Bhabha: $e^+e^- \\to e^+e^-$",
+          "definition": "Electron-positron scattering; $s + t$ diagrams; $s$-channel annihilation + $t$-channel exchange"
+        },
+        {
+          "id": "p4",
+          "term": "Pair annihilation: $e^+e^- \\to \\gamma\\gamma$",
+          "definition": "Two-photon final state; $t + u$ diagrams; minimum 2 photons by angular momentum (positronium decay)"
+        }
+      ],
+      "explanation": "Each process has its characteristic diagram topology. Crossing symmetry relates them: same matrix element with momenta interchanged. The Klein-Nishina, Møller, and Bhabha cross-sections are textbook QED results, tested at all energies from atomic to LEP/LHC."
+    }
+  },
+  {
+    "id": "qedt002",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-tree-level"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "The Klein-Nishina formula gives the Compton cross-section as a function of energy. What are the key limits?",
+    "passive": {
+      "options": [
+        "Low energy $\\hbar\\omega \\ll m_ec^2$: $\\sigma \\to \\sigma_T = (8\\pi/3)r_e^2$ (Thomson, classical, $\\sim 6.65\\times 10^{-29}$ m²). High energy: $\\sigma \\sim (m_ec^2/\\hbar\\omega)\\ln(\\hbar\\omega/m_ec^2)$ — logarithmic decrease",
+        "Cross-section is constant at all energies in the standard QED textbook treatment, as established for perturbative regimes",
+        "Klein-Nishina diverges at low energy from infrared singularity; this result follows directly from the gauge-fixing prescription at hand",
+        "Cross-section is proportional to $\\hbar\\omega^2$ at all energies with no further corrections at any loop order in the perturbative expansion"
+      ],
+      "correct": 0,
+      "explanation": "Klein-Nishina (1929): $d\\sigma/d\\Omega = (r_e^2/2)(\\omega'/\\omega)^2(\\omega/\\omega' + \\omega'/\\omega - \\sin^2\\theta)$. At $\\omega \\ll m_e$: Thomson regime, isotropic-ish, $\\sigma = \\sigma_T$. At $\\omega \\sim m_e$: relativistic, forward-peaked. At $\\omega \\gg m_e$: $\\sigma \\sim (\\pi r_e^2)\\ln(2\\omega/m_e)/\\omega$ — falls off. Applies to X-ray scattering (low-$Z$ materials), CMB Sunyaev-Zel'dovich effect, $\\gamma$-ray attenuation in astrophysical sources."
+    }
+  },
+  {
+    "id": "qedt003",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-tree-level"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Electron-positron annihilation $e^+e^- \\to \\mu^+\\mu^-$ at high energy is a tree-level QED test. What's the cross-section?",
+    "equation": "\\sigma = \\frac{4\\pi\\alpha^2}{3s}",
+    "passive": {
+      "options": [
+        "$\\sigma = 4\\pi\\alpha^2/(3s)$ at CoM energy $\\sqrt s$; falls as $1/s$; canonical normalisation for measuring $R = \\sigma_{\\rm hadrons}/\\sigma_{\\mu\\mu}$ at $e^+e^-$ colliders",
+        "Cross-section grows as $s^2$ at high energy from gauge boson exchange in the standard QED textbook treatment, as established for perturbative regimes",
+        "$\\sigma$ depends only on $\\alpha$, not on collision energy in the standard QED textbook treatment, as established for perturbative regimes",
+        "Annihilation requires the photon to be massive for finite cross-section in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "Process $e^+e^- \\to \\gamma^* \\to \\mu^+\\mu^-$: single $s$-channel photon. Amplitude $\\propto e^2/s$; cross-section $\\propto \\alpha^2/s$. Used to measure: $R$-ratio at colliders ($R = \\sigma(e^+e^- \\to {\\rm hadrons})/\\sigma(e^+e^- \\to \\mu^+\\mu^-)$) — counts quark colours and flavours; $R = 3\\sum_q Q_q^2$ above threshold for $u,d,s,c,b$ quarks. LEP/SLC measurements at $Z$-pole include $Z^0$ exchange which modifies near $\\sqrt s = m_Z = 91$ GeV."
+    }
+  },
+  {
+    "id": "qedt004",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-tree-level"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Rutherford scattering (electron off heavy nucleus) is the non-relativistic limit of $t$-channel photon exchange. What's the cross-section?",
+    "passive": {
+      "options": [
+        "$d\\sigma/d\\Omega = (Z\\alpha)^2/(4E^2\\sin^4(\\theta/2))$; $1/\\sin^4(\\theta/2)$ singularity at small angles from massless photon exchange; recovers Rutherford's 1911 result",
+        "Cross-section is angle-independent (isotropic) for Coulomb potential in the standard QED textbook treatment, as established for perturbative regimes",
+        "Cross-section vanishes for $\\theta < \\pi/2$ — only backward scattering allowed in the standard QED textbook treatment, as established for perturbative regimes",
+        "Rutherford formula requires retarded photon propagator and breaks Lorentz invariance in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "Tree-level $t$-channel photon exchange between electron and nucleus (mass $\\gg m_e$, treat as static Coulomb source). Born approximation: $d\\sigma/d\\Omega = |f(\\theta)|^2 = (Z\\alpha/2Ev^2\\sin^2(\\theta/2))^2$ at large $v$; non-rel: standard Rutherford. The $1/\\sin^4(\\theta/2)$ singularity → infinite total cross-section, characteristic of long-range Coulomb force. Mott formula: relativistic version including spin. Modified by nuclear form factor at high momentum transfer (probes nuclear charge distribution)."
+    }
+  },
+  {
+    "id": "qedt005",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-tree-level"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Bremsstrahlung ('braking radiation') is photon emission by an accelerating charge. What characterises it as a QED process?",
+    "passive": {
+      "options": [
+        "Soft-photon emission ($E_\\gamma \\to 0$) gives logarithmic IR divergence $\\sim \\alpha\\ln(E_\\gamma/E)$; cancelled by virtual corrections via Bloch-Nordsieck/KLN; spectrum $dN_\\gamma/dE_\\gamma \\propto 1/E_\\gamma$ at low $E$",
+        "Bremsstrahlung is purely classical, with no quantum or QED content independently of the renormalisation scheme or specific Feynman-gauge choice",
+        "Spectrum is monochromatic at the energy of the incident particle; this result follows directly from the gauge-fixing prescription at hand",
+        "Bremsstrahlung has UV divergence at high photon energies; this result follows directly from the gauge-fixing prescription at hand"
+      ],
+      "correct": 0,
+      "explanation": "Classical Larmor formula gives $1/E_\\gamma$ infrared spectrum. Quantum: same behaviour with $\\hbar$ corrections. IR divergence cancels in cross-sections inclusive over soft emissions (Bloch-Nordsieck 1937). High-$E$ cut-off from kinematics. Bremsstrahlung is the dominant energy-loss mechanism for high-energy electrons in matter (e.g. shower development in calorimeters): $-dE/dx \\propto E$ → exponential energy decrease, characteristic length $X_0$ (radiation length, $\\sim 1$ cm in iron)."
+    }
+  },
+  {
+    "id": "qedt006",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-tree-level"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Pair production $\\gamma\\gamma \\to e^+e^-$ (or $\\gamma N \\to e^+e^- N$ in a nuclear field) is the inverse of pair annihilation. What's the threshold?",
+    "passive": {
+      "options": [
+        "$2\\gamma \\to e^+e^-$: CoM energy $\\sqrt s > 2m_ec^2 = 1.022$ MeV; cross-section $\\sim \\pi r_e^2(m_e/E)^2$ near threshold, growing logarithmically at high $E$",
+        "No threshold; pair production occurs at any photon energy",
+        "Threshold is $E_\\gamma = m_ec^2 = 0.511$ MeV for single photon in vacuum",
+        "Single-photon pair production in vacuum (no nucleus needed) is allowed below 1 MeV"
+      ],
+      "correct": 0,
+      "explanation": "Two-photon pair production: $E_\\gamma^{\\rm thr} = m_e c^2$ for each photon at CoM angle. Single photon cannot produce a pair in vacuum (4-momentum conservation: $k^2 = 0 \\neq (p_++p_-)^2 \\geq 4m_e^2$). Needs a nucleus to absorb recoil: $\\gamma N \\to e^+e^- N$. Most important $\\gamma$-matter interaction above 1 MeV (e.g., medical imaging, cosmic ray showers). Cross-section grows as $\\alpha Z^2$. The pair-production threshold is the textbook bound on the photon spectrum for processes in vacuum."
+    }
+  },
+  {
+    "id": "qedt007",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-tree-level"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "Light-by-light scattering $\\gamma\\gamma \\to \\gamma\\gamma$ has no tree-level diagram in QED but exists at one loop. What's special about its observation?",
+    "passive": {
+      "options": [
+        "Leading contribution at $O(\\alpha^4)$ via electron-loop box; observed in 2017 by ATLAS in ultra-peripheral Pb-Pb collisions at LHC; rate consistent with QED prediction",
+        "Light-by-light scattering is forbidden by parity and never occurs in the standard QED textbook treatment, as established for perturbative regimes",
+        "First observed at low-energy electron beams in the 1960s in the standard QED textbook treatment, as established for perturbative regimes",
+        "Has a classical analogue from Maxwell's equations directly in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "Lowest order: electron box diagram with four external photons, $O(\\alpha^4)$. Cross-section $\\sim \\alpha^4/m_e^4$ — very small. ATLAS (2017) at LHC: ultra-peripheral lead-lead collisions where the strong nuclear EM fields enhance photon-photon flux; observed $\\sigma \\sim 70$ fb. Predicted by Euler-Heisenberg-Kockel in 1936. Also relevant for muon $g - 2$: hadronic light-by-light contribution is one of the largest theoretical uncertainties currently."
+    }
+  }
+]

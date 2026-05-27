@@ -1,0 +1,191 @@
+[
+  {
+    "id": "ird001",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "ir-divergences"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "Infrared (IR) divergences in QED arise from massless photons. What's the canonical example?",
+    "passive": {
+      "options": [
+        "Soft photon emission/exchange: phase-space integration over $E_\\gamma \\to 0$ gives logarithmic divergence; cured by including bremsstrahlung accompanying any process (Bloch-Nordsieck 1937)",
+        "IR divergences arise from heavy photon mass and are eliminated by setting $m_\\gamma = 0$ in the standard QED textbook treatment, as established for perturbative regimes",
+        "Divergences appear only in non-relativistic QED, not in the full theory in the standard QED textbook treatment, as established for perturbative regimes",
+        "IR effects vanish identically in any QED calculation by gauge invariance in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "Two sources of IR in QED: (1) Soft virtual photons in loops (e.g., one-loop vertex correction has log IR div from soft photon exchange between external legs). (2) Soft real photon emission (bremsstrahlung at $E_\\gamma \\to 0$, integrated cross-section logarithmic). Both individually log-divergent. Bloch-Nordsieck: log divergences cancel in sum 'elastic + soft brem'. Why: any detector has finite energy resolution, so undetected soft photons must be summed."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each IR concept:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Soft photon divergence",
+          "definition": "Phase-space integration $\\int dE_\\gamma/E_\\gamma$ diverges as $E_\\gamma \\to 0$; logarithmic IR singularity"
+        },
+        {
+          "id": "p2",
+          "term": "Bloch-Nordsieck theorem",
+          "definition": "Sum 'elastic + n-soft-photon' processes — IR divergences cancel in physically meaningful inclusive cross-sections"
+        },
+        {
+          "id": "p3",
+          "term": "Collinear (mass) singularity",
+          "definition": "Emission collinear with massless emitter ($\\theta \\to 0$); logarithmic in fermion mass when $m \\to 0$; characteristic of QCD"
+        },
+        {
+          "id": "p4",
+          "term": "KLN theorem",
+          "definition": "Kinoshita-Lee-Nauenberg: sum over degenerate initial+final states removes mass/IR singularities; generalises Bloch-Nordsieck"
+        }
+      ],
+      "explanation": "Three IR types: soft, collinear, and combined soft+collinear (worst). Bloch-Nordsieck (1937) handles soft photons; Lee-Nauenberg (1964) handles all degenerate states (initial and final). KLN: physical observables (smeared over indistinguishable states) are IR finite. Crucial for QCD where collinear divergences ($\\ln(E/\\Lambda)$) dominate."
+    }
+  },
+  {
+    "id": "ird002",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "ir-divergences"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "In QED, the one-loop vertex correction has an IR divergence. How is it regulated?",
+    "passive": {
+      "options": [
+        "Photon mass $\\mu_\\gamma$ regulator: introduce small $\\mu_\\gamma$, compute, then $\\mu_\\gamma \\to 0$; or dimensional regularisation in $d = 4 + 2\\epsilon$ (IR pole at $\\epsilon \\to 0$)",
+        "IR divergence regulated by quark mass, not photon mass in the standard QED textbook treatment, as established for perturbative regimes",
+        "Use UV cutoff $\\Lambda$ — same regulator handles both UV and IR in the standard QED textbook treatment, as established for perturbative regimes",
+        "No regularisation needed; QED vertex is IR finite at one loop in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "Two common IR regulators: (1) Massive photon: $1/(k^2 - \\mu_\\gamma^2)$ in propagator gives $\\ln\\mu_\\gamma$-dependent results, which cancel after summing soft brem. (2) Dim reg: same dimensional regulator handles UV and IR but at different signs of $\\epsilon$ (UV at $4 - 2\\epsilon$, IR at $4 + 2\\epsilon$). Modern QFT uses dim reg almost exclusively for both."
+    }
+  },
+  {
+    "id": "ird003",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "ir-divergences"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Soft photon emission probability factorises in a particularly simple way. What's the structure?",
+    "passive": {
+      "options": [
+        "$d\\sigma_{\\rm brem}/d\\sigma_0 = (\\alpha/\\pi)\\int dE_\\gamma/E_\\gamma\\,[2\\ln(2E/m_e) - 1] + \\ldots$ — universal logarithmic IR; factor independent of hard process",
+        "Soft emission gives an exponential ratio: $d\\sigma_{\\rm brem}/d\\sigma_0 = e^{-\\alpha\\ln(E/m)}$",
+        "Factorisation breaks down for soft photons; soft brem is non-universal",
+        "Soft brem probability is constant, independent of $E_\\gamma$"
+      ],
+      "correct": 0,
+      "explanation": "Universality of soft photon emission: the amplitude factorises into hard process × soft factor depending only on external momenta. Soft factor: $\\sum_i e_i/(p_i\\cdot k)$ where sum is over external charged particles. Inclusive cross-section over soft photons up to energy resolution $E_\\Delta$: logarithm of resolution divided by photon mass (or appropriate scale). Used in event-generator soft-photon resummation."
+    }
+  },
+  {
+    "id": "ird004",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "ir-divergences"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "The Sudakov double logarithm $\\alpha\\ln^2(s/m^2)$ arises in QED at high energy. What's its physical origin?",
+    "passive": {
+      "options": [
+        "Combination of soft + collinear divergences at one loop; exponentiates to $e^{-\\alpha\\ln^2(s/m^2)/(2\\pi)}$ — Sudakov suppression of elastic processes at large momentum transfer",
+        "Single logarithm $\\ln s$ alone with no double-log structure in the standard QED textbook treatment, as established for perturbative regimes",
+        "Sudakov logs are UV-finite contributions only for any spacetime dimension above two without further modification needed",
+        "Double logs appear only in non-Abelian gauge theories like QCD in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "Sudakov (1956): one-loop EM form factor at high $|q^2|$ behaves as $\\exp[-(\\alpha/2\\pi)\\ln^2(|q^2|/m^2)]$. Origin: virtual photon goes both soft AND collinear, giving two simultaneous logs. Physical: elastic scattering suppressed at high energy because radiating soft+collinear photons is overwhelmingly likely. Crucial in QCD parton evolution at hadron colliders; basis of DGLAP equations. In QED matters at LEP/LHC for QED corrections to electron physics."
+    }
+  },
+  {
+    "id": "ird005",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "ir-divergences"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Yennie-Frautschi-Suura (YFS) exponentiation systematically resums soft photon emissions. What does it provide?",
+    "passive": {
+      "options": [
+        "Resummation of all-order soft photon emissions: $\\sigma_{\\rm incl} = \\exp(\\alpha B)\\sum_n\\sigma_n^{\\rm hard}/n!$ where $B$ contains the soft-photon eikonal; gives finite, exponentiated IR behaviour",
+        "YFS provides only the leading-log approximation; subleading IR terms ignored in the standard QED textbook treatment, as established for perturbative regimes",
+        "Exponentiation works only at tree level in the standard QED textbook treatment, as established for perturbative regimes",
+        "YFS is identical to Bloch-Nordsieck without resummation; this result follows directly from the gauge-fixing prescription at hand"
+      ],
+      "correct": 0,
+      "explanation": "Yennie-Frautschi-Suura (1961): isolate IR-singular part of soft-photon emission, exponentiate. Provides finite IR limit while preserving non-IR-divergent finite corrections. Implementation: BHLUMI Monte Carlo for LEP Bhabha luminosity (precision $5\\times 10^{-4}$); KKMC for LEP $e^+e^- \\to$ fermion pairs. Modern: SHERPA, MadGraph generators include YFS exponentiation for precision electroweak/QED."
+    }
+  },
+  {
+    "id": "ird006",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "ir-divergences"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "QCD has both soft AND collinear divergences (massless gluons + massless quarks). How is this handled?",
+    "passive": {
+      "options": [
+        "Collinear divergences absorbed into parton distribution functions (PDFs) and fragmentation functions; remaining IR-safe quantities are jets/inclusive cross-sections, computed at fixed order + parton-shower",
+        "QCD has no IR divergences; gluons are massive in confined phase; this result follows directly from the gauge-fixing prescription at hand",
+        "Quark mass $m_q$ regulates all divergences; no PDFs needed by analogy with the corresponding non-relativistic quantum-mechanical case",
+        "Collinear divergences exactly cancel between quarks and gluons regardless of the choice of regularisation scheme used in the calculation"
+      ],
+      "correct": 0,
+      "explanation": "Massless QCD has both soft and collinear singularities. Factorisation theorem: cross-section = perturbative (calculable) × PDFs (non-perturbative, universal). Collinear divergences absorbed into evolution of PDFs (DGLAP equations). IR-safe observables (jets defined by $k_T$ algorithm, thrust, etc.) free of collinear divergences. Soft divergences cancel via KLN. Modern parton-shower generators (PYTHIA, HERWIG, SHERPA) simulate logarithmically enhanced QCD radiation."
+    }
+  },
+  {
+    "id": "ird007",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "ir-divergences"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "Dressed states (Faddeev-Kulish) handle infrared problems by modifying the asymptotic states. What's the approach?",
+    "passive": {
+      "options": [
+        "Asymptotic states are coherent superpositions of bare-charge + infinite soft-photon cloud; S-matrix between dressed states is IR-finite without needing inclusive cross-sections",
+        "Faddeev-Kulish requires breaking gauge invariance in the standard QED textbook treatment, as established for perturbative regimes",
+        "Dressed states apply only to neutral particles for any spacetime dimension above two without further modification needed",
+        "Dressed states give same result as bare states for any observable in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "Faddeev-Kulish (1970): physical electron states are not bare $|p, s\\rangle$ but dressed with coherent photon cloud $|p, s, \\text{cloud}(p)\\rangle = e^{R(p)}|p, s\\rangle$ where $R$ creates an infinite number of soft photons matching the eikonal current. With dressed states, S-matrix elements between specific final states are IR-finite. Mathematically rigorous: solves Haag's-theorem-style problems for QED. Less used than Bloch-Nordsieck in practice but conceptually cleaner. Modern revival in study of asymptotic symmetries and soft-photon theorems (Strominger et al.)."
+    }
+  }
+]

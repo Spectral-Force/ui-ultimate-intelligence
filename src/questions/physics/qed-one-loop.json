@@ -1,0 +1,193 @@
+[
+  {
+    "id": "qol001",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-one-loop"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "QED at one loop has three primitive divergent diagrams. What are they?",
+    "passive": {
+      "options": [
+        "Electron self-energy (electron→photon loop→electron); photon self-energy (photon→electron loop→photon); vertex correction (vertex with photon exchanged across)",
+        "Only the electron self-energy is divergent at one loop in the standard QED textbook treatment, as established for perturbative regimes",
+        "QED has four primitive divergences: the three plus light-by-light in the standard QED textbook treatment, as established for perturbative regimes",
+        "All one-loop QED diagrams are finite by gauge invariance in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "By power counting in 4D: superficial degree of divergence $D = 4L - 2I_\\gamma - I_e + V_e$ (loops, photon/electron lines, vertices). The three divergent topologies in QED: electron self-energy ($D = 1$, log after gauge invariance), photon self-energy ($D = 2$, log after gauge), vertex ($D = 0$, log). Light-by-light ($\\gamma\\gamma \\to \\gamma\\gamma$) has $D = 0$ but is finite by gauge invariance. All other QED diagrams convergent."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each one-loop QED diagram to its physical effect:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Vacuum polarisation $\\Pi^{\\mu\\nu}$",
+          "definition": "Photon self-energy via $e^+e^-$ loop; gives running of $\\alpha$ and Uehling contribution to Lamb shift"
+        },
+        {
+          "id": "p2",
+          "term": "Electron self-energy $\\Sigma(p)$",
+          "definition": "Mass renormalisation; field-strength renormalisation $Z_2$; contributes to electron anomalous mass dimension"
+        },
+        {
+          "id": "p3",
+          "term": "Vertex correction $\\Gamma^\\mu$",
+          "definition": "Modifies QED vertex; gives Schwinger's $a_e = \\alpha/2\\pi$ anomalous magnetic moment at one loop"
+        },
+        {
+          "id": "p4",
+          "term": "Renormalisation constants $Z_i$",
+          "definition": "$Z_2$ (electron), $Z_3$ (photon), $Z_1$ (vertex); $Z_1 = Z_2$ by Ward identity; finite ratios"
+        }
+      ],
+      "explanation": "Each one-loop diagram requires regularisation (typically dim reg). Counterterms absorb the divergences. Finite remainders give physical predictions: running coupling, anomalous moments, Lamb shift. The Ward identity $Z_1 = Z_2$ simplifies QED renormalisation."
+    }
+  },
+  {
+    "id": "qol002",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-one-loop"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "The vacuum polarisation function $\\Pi(k^2)$ at one loop in QED is given by Uehling's calculation. What's the small-$k^2$ behaviour?",
+    "passive": {
+      "options": [
+        "$\\Pi(k^2) \\to (\\alpha/15\\pi)(k^2/m_e^2)$ for $k^2 \\ll m_e^2$; gives Uehling potential $V(r) \\sim -e^2 e^{-2m_er}/(r m_e^2 r^2)$ modifying Coulomb at distances $r \\lesssim 1/m_e$",
+        "$\\Pi(k^2)$ is constant for $k^2 \\ll m_e^2$ and gives photon mass in the standard QED textbook treatment, as established for perturbative regimes",
+        "Function diverges at $k^2 = 0$, signalling theory breakdown in the standard QED textbook treatment, as established for perturbative regimes",
+        "$\\Pi$ is purely imaginary at small $k^2$ in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "Uehling effect (1935): virtual $e^+e^-$ pairs screen the Coulomb field at distances $r \\lesssim \\lambda_C^e = \\hbar/m_ec \\sim 386$ fm. Modified potential: $V(r) = -\\alpha/r \\cdot [1 + (2\\alpha/3\\pi)\\int_1^\\infty dx\\,e^{-2m_e rx}(1 + 1/2x^2)\\sqrt{x^2 - 1}/x^2]$. Contribution to hydrogen Lamb shift: $\\Delta E_{\\rm Uehling}(2S_{1/2}) \\approx -27$ MHz — the dominant vacuum polarisation correction. Larger effect in muonic atoms (where lepton is heavier, samples shorter distances)."
+    }
+  },
+  {
+    "id": "qol003",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-one-loop"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Schwinger's calculation (1948) of the electron anomalous magnetic moment is the most famous one-loop result. What does it give?",
+    "equation": "a_e = \\frac{g - 2}{2} = \\frac{\\alpha}{2\\pi}",
+    "passive": {
+      "options": [
+        "$a_e = \\alpha/(2\\pi) \\approx 0.001\\,161$ at one loop; from the QED vertex correction; matched experiment with $\\sim 1\\%$ precision at the time",
+        "Tree-level result: $a_e = 0$ exactly (Dirac value $g = 2$); no correction predicted at any order",
+        "$a_e = \\alpha^2$ at one loop, quadratic in fine-structure constant",
+        "Schwinger's value $a_e = 1/137$ exactly, equal to $\\alpha$"
+      ],
+      "correct": 0,
+      "explanation": "$g$-factor: $\\mu = g(e\\hbar/2m_e)S$. Dirac eq predicts $g = 2$ exactly at tree level. Schwinger's one-loop correction: $a_e \\equiv (g-2)/2 = \\alpha/(2\\pi) = 0.001\\,162$. Engraved on Schwinger's tombstone. Modern: $a_e$ computed to 5 loops, measured to 0.4 ppt: $a_e = 0.001\\,159\\,652\\,180\\,73(28)$ — most precisely tested QFT prediction. Muon $a_\\mu$: similar story, currently $\\sim 4\\sigma$ tension between Fermilab measurement and SM prediction (hadronic uncertainties)."
+    }
+  },
+  {
+    "id": "qol004",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-one-loop"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Electron self-energy $\\Sigma(p)$ at one loop renormalises the electron mass and field. How is the physical mass extracted?",
+    "passive": {
+      "options": [
+        "Physical mass $m_R$ defined by pole of full propagator: $S^{-1}(p) = \\not p - m_0 - \\Sigma(p) = 0$ at $\\not p = m_R$; on-shell renormalisation scheme",
+        "Physical mass equals bare mass $m_0$ with no quantum corrections in the standard QED textbook treatment, as established for perturbative regimes",
+        "Mass renormalisation requires explicit symmetry breaking in the standard QED textbook treatment, as established for perturbative regimes",
+        "Electron self-energy is UV-finite and needs no renormalisation in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "$\\Sigma(p) = A(p^2)\\not p + B(p^2)$. On-shell scheme: $m_R - m_0 = B(m_R^2) + m_R A(m_R^2) = \\delta m$ (mass counterterm). Field renormalisation: $Z_2 = (1 - dA/d(\\not p)|_{\\not p=m_R})^{-1}$. Mass shift: $\\delta m \\sim \\alpha m\\ln(\\Lambda/m)/4\\pi$ in dim reg ($1/\\epsilon \\sim \\ln\\Lambda$). Renormalised mass is gauge-independent; bare mass and $Z_2$ individually are gauge-dependent."
+    }
+  },
+  {
+    "id": "qol005",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-one-loop"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "The QED $\\beta$-function at one loop gives the running of $\\alpha$. What's the result?",
+    "equation": "\\beta(\\alpha) = \\frac{2\\alpha^2}{3\\pi} + O(\\alpha^3)",
+    "passive": {
+      "options": [
+        "$\\beta_{\\rm QED} = 2\\alpha^2/(3\\pi)$ at one loop; $\\alpha(\\mu^2) = \\alpha(\\mu_0^2)/(1 - (2\\alpha_0/3\\pi)\\ln(\\mu^2/\\mu_0^2))$; positive $\\beta$ → running grows at high energy",
+        "$\\beta_{\\rm QED} < 0$ at one loop, like QCD regardless of the choice of regularisation scheme used in the calculation",
+        "$\\beta$ is identically zero in QED (no running) in the standard QED textbook treatment, as established for perturbative regimes",
+        "$\\beta$ has the same sign as the electron charge ($\\pm$) in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "One-loop QED $\\beta$: $\\beta(e) = e^3/(12\\pi^2)$, equivalent to $\\beta(\\alpha) = 2\\alpha^2/3\\pi$. Sign of $\\beta > 0$: vacuum polarisation by virtual $e^+e^-$ pairs screens the bare charge — at higher energy (probing closer to bare), effective $\\alpha$ grows. Quantitative: $1/\\alpha(0) = 137.036$; $1/\\alpha(m_Z^2) \\approx 127.94$. Higher loops contribute more fermion species (μ, τ, etc.) crossing thresholds, adding to running. Landau pole at unphysical $\\mu \\sim m_e e^{3\\pi/2\\alpha} \\sim 10^{286}$ GeV."
+    }
+  },
+  {
+    "id": "qol006",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-one-loop"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Photon self-energy is calculated in dim reg as $\\Pi(k^2) = (\\alpha/3\\pi)(\\ln(\\Lambda^2/m^2) + ...)$. What does the structure imply?",
+    "passive": {
+      "options": [
+        "Logarithmic UV divergence absorbed into $Z_3$ counterterm; renormalised $\\Pi_R(k^2)$ gives finite running coupling; logarithm of ratio of scales typical of marginal coupling",
+        "Power-law UV divergence $\\Lambda^2$ — non-renormalisable behaviour in the standard QED textbook treatment, as established for perturbative regimes",
+        "Self-energy is finite without counterterms as a direct consequence of the underlying Lorentz invariance of the theory",
+        "$\\Pi(k^2)$ is independent of momentum, contradicting Ward identity in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "Power-counting: photon two-point function has $D = 2$, suggesting quadratic divergence. Gauge invariance (Ward identity, transverse projector) reduces this to logarithmic. In dim reg: $\\Pi(k^2) = (\\alpha/3\\pi)[1/\\epsilon + \\ln(\\mu^2/m_e^2) + f(k^2/m_e^2)]$ where $1/\\epsilon$ is the UV divergence. Counterterm: $\\delta Z_3 = -\\alpha/(3\\pi\\epsilon)$ in $\\overline{\\rm MS}$. Result $\\Pi_R$ gives gauge-invariant running of $\\alpha(\\mu^2)$. The logarithm reflects the marginal nature of the QED coupling (dimensionless)."
+    }
+  },
+  {
+    "id": "qol007",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-one-loop"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "The electron $g - 2$ has been computed to high precision in QED. What's the current state of the art?",
+    "passive": {
+      "options": [
+        "$a_e$ known to $5$-loop QED + hadronic + weak corrections, ~$10^{-12}$ precision in prediction; measured to 0.4 ppt by Penning trap; provides best determination of $\\alpha$",
+        "$a_e$ only known to one-loop order (Schwinger) due to computational complexity in the standard QED textbook treatment, as established for perturbative regimes",
+        "Higher loops in QED diverge so cannot be computed in the standard QED textbook treatment, as established for perturbative regimes",
+        "$a_e$ is anchored to a measured value rather than calculated in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "QED loop coefficients of $a_e$: 1-loop (Schwinger, 1948): $\\alpha/2\\pi$. 2-loop: 7 diagrams, computed 1957-1958. 3-loop: 72 diagrams (Roskies-Levine 1976). 4-loop: 891 diagrams (Kinoshita et al.). 5-loop: 12,672 diagrams (Aoyama-Kinoshita-Nio 2017). Total QED $a_e \\approx 0.001\\,159\\,652\\,182$ — agrees with measurement to ~0.4 ppt. Provides $\\alpha$ at unprecedented precision: $\\alpha^{-1} = 137.035\\,999\\,084(21)$. Most precise theory-experiment confrontation in physics."
+    }
+  }
+]

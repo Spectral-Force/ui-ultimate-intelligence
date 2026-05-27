@@ -1,0 +1,193 @@
+[
+  {
+    "id": "qedp001",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-propagators"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "The photon propagator in Feynman gauge ($\\xi = 1$) is simple. What's its form?",
+    "equation": "D^F_{\\mu\\nu}(k) = \\frac{-i\\eta_{\\mu\\nu}}{k^2 + i\\epsilon}",
+    "passive": {
+      "options": [
+        "$-i\\eta_{\\mu\\nu}/(k^2 + i\\epsilon)$ — Feynman gauge; massless pole at $k^2 = 0$; $i\\epsilon$ prescription selects causal propagation",
+        "$-i\\eta_{\\mu\\nu}/(k^2 - m_\\gamma^2)$ — propagator has photon mass $m_\\gamma$ from QED renormalisation",
+        "$\\delta_{\\mu\\nu}/k^2$ — Euclidean form without $i\\epsilon$ used directly in Minkowski",
+        "Photon propagator has no Lorentz indices; it's a scalar like the Klein-Gordon propagator"
+      ],
+      "correct": 0,
+      "explanation": "Feynman gauge $\\xi = 1$: simplest propagator $-i\\eta_{\\mu\\nu}/k^2$ (with $i\\epsilon$). General covariant gauge: $D_{\\mu\\nu}^F = -i[\\eta_{\\mu\\nu} - (1-\\xi)k_\\mu k_\\nu/k^2]/(k^2+i\\epsilon)$ — extra gauge term decouples in observable amplitudes by Ward identity. Landau gauge: $\\xi = 0$, transverse projector. Unitary gauge for massive vectors: includes $k_\\mu k_\\nu/m^2$ — bad UV behaviour but manifestly physical."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each QED propagator/identity:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Photon propagator (Feynman gauge)",
+          "definition": "$-i\\eta_{\\mu\\nu}/(k^2 + i\\epsilon)$; massless, simplest form for $\\xi = 1$"
+        },
+        {
+          "id": "p2",
+          "term": "Electron propagator",
+          "definition": "$i(\\not k + m)/(k^2 - m^2 + i\\epsilon)$; on-shell residue gives Dirac equation"
+        },
+        {
+          "id": "p3",
+          "term": "Ward identity",
+          "definition": "$k_\\mu\\Gamma^\\mu(p, p+k) = e[S^{-1}(p+k) - S^{-1}(p)]$; relates vertex and self-energy"
+        },
+        {
+          "id": "p4",
+          "term": "Ward-Takahashi",
+          "definition": "Generalised Ward including contact terms in off-shell correlators; quantum analogue of current conservation"
+        }
+      ],
+      "explanation": "Ward-Takahashi identity: $k_\\mu\\Gamma^\\mu = -e[S^{-1}(p+k) - S^{-1}(p)]$ relates fermion-photon vertex $\\Gamma^\\mu$ and inverse electron propagator $S^{-1}$. Consequence at $k = 0$ (forward limit): $\\Gamma^\\mu(p,p) = -e\\partial S^{-1}/\\partial p_\\mu$ — connecting renormalisation of vertex and field: $Z_1 = Z_2$ in QED. This is why running coupling involves only photon self-energy ($Z_3$), not vertex/field separately."
+    }
+  },
+  {
+    "id": "qedp002",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-propagators"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "The Dirac electron propagator in momentum space is $i(\\not k + m)/(k^2 - m^2 + i\\epsilon)$. How does it arise from the Dirac Lagrangian?",
+    "passive": {
+      "options": [
+        "Invert the kinetic operator $(\\not k - m)$: $(\\not k - m)^{-1} = (\\not k + m)/(\\not k^2 - m^2) = (\\not k + m)/(k^2 - m^2)$ using $\\not k^2 = k^2$",
+        "Propagator is identical to Klein-Gordon $i/(k^2 - m^2)$; spin structure adds nothing",
+        "Propagator is $i\\gamma^\\mu/(k^\\mu - m)$ — vector divided by single component of momentum",
+        "Dirac propagator has no $\\not k + m$ numerator; just $1/(k^2 - m^2)$"
+      ],
+      "correct": 0,
+      "explanation": "Lagrangian $\\bar\\psi(i\\not\\partial - m)\\psi$ → momentum-space kinetic operator $\\not k - m$. Inverse: multiply numerator and denominator by $\\not k + m$: $(\\not k + m)(\\not k - m) = \\not k^2 - m^2 = k^2 - m^2$ (using $\\not k^2 = k^\\mu k^\\nu \\gamma_\\mu\\gamma_\\nu = k^2$ by $\\{\\gamma^\\mu, \\gamma^\\nu\\} = 2\\eta^{\\mu\\nu}$). Numerator $\\not k + m$ encodes spin sum: $\\sum_s u_s(k)\\bar u_s(k) = \\not k + m$ on-shell. Antiparticle propagation via the $-\\not k + m$ pieces in the $i\\epsilon$ prescription."
+    }
+  },
+  {
+    "id": "qedp003",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-propagators"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "The Ward-Takahashi identity is the quantum manifestation of U(1) current conservation. What does it imply for renormalisation in QED?",
+    "passive": {
+      "options": [
+        "Vertex and field renormalisations are tied: $Z_1 = Z_2$, so charge renormalisation comes only from photon self-energy $Z_3$: $e_R = e_0\\sqrt{Z_3}$",
+        "Ward identity gives charge renormalisation $e_R = e_0$ to all orders (no running)",
+        "Renormalisation constants $Z_1, Z_2, Z_3$ are all independent and physically distinct",
+        "Ward identity applies only at tree level and breaks down in loops"
+      ],
+      "correct": 0,
+      "explanation": "Bare Lagrangian: $-eA_\\mu\\bar\\psi\\gamma^\\mu\\psi$. Renormalised pieces: $Z_2$ (electron field), $Z_3$ (photon field), $Z_1$ (vertex). Bare coupling: $e_0 = Z_1 e_R/(Z_2\\sqrt Z_3)$. Ward identity $Z_1 = Z_2$ → $e_0 = e_R/\\sqrt Z_3$. Charge renormalisation universal: same $\\alpha(\\mu)$ runs in any process. This is why coupling running is gauge-invariant despite gauge-dependent $Z_2$ and $Z_1$ individually."
+    }
+  },
+  {
+    "id": "qedp004",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-propagators"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Different gauge choices give different photon propagators but the same observables. Which gauges are commonly used?",
+    "passive": {
+      "options": [
+        "Feynman ($\\xi = 1$, simplest); Landau ($\\xi = 0$, transverse); Coulomb ($\\nabla\\cdot\\mathbf A = 0$, manifest physical photons); Unitary (for massive vectors via Higgs)",
+        "Only one gauge exists in QED; gauge choice is unphysical in the standard QED textbook treatment, as established for perturbative regimes",
+        "Coulomb gauge is the only Lorentz-invariant choice in the standard QED textbook treatment, as established for perturbative regimes",
+        "Gauge fixing requires breaking Lorentz invariance permanently in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "Lorenz/covariant family: $\\partial_\\mu A^\\mu = 0$ + $\\xi$-dependent gauge-fixing term. Coulomb (non-covariant): $\\nabla\\cdot\\mathbf A = 0$; manifest physical degrees of freedom (2 transverse photons), but no manifest Lorentz invariance. Light-cone: $A^+ = 0$; useful in DIS. Axial: $n_\\mu A^\\mu = 0$. All give the same physical observables — but for intermediate calculations, choose the gauge that simplifies the diagram. Faddeev-Popov procedure systematically derives all gauges from path integral."
+    }
+  },
+  {
+    "id": "qedp005",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-propagators"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "The photon self-energy $\\Pi^{\\mu\\nu}(k)$ has a specific tensor structure dictated by gauge invariance. What is it?",
+    "equation": "\\Pi^{\\mu\\nu}(k) = (k^2\\eta^{\\mu\\nu} - k^\\mu k^\\nu)\\Pi(k^2)",
+    "passive": {
+      "options": [
+        "Transverse: $\\Pi^{\\mu\\nu}(k) = (k^2\\eta^{\\mu\\nu} - k^\\mu k^\\nu)\\Pi(k^2)$; transversality $k_\\mu\\Pi^{\\mu\\nu} = 0$ ensures photon stays massless after renormalisation",
+        "Photon self-energy has trace structure $\\Pi^{\\mu\\nu} = \\eta^{\\mu\\nu}\\Pi(k^2)$; gives photon mass term in loop",
+        "$\\Pi^{\\mu\\nu}$ has only longitudinal $k^\\mu k^\\nu$ structure",
+        "Gauge invariance allows arbitrary tensor structure; $\\Pi^{\\mu\\nu}$ is unconstrained"
+      ],
+      "correct": 0,
+      "explanation": "Ward identity at the level of two-point function: $k_\\mu\\Pi^{\\mu\\nu} = 0$. Only transverse projector $\\eta^{\\mu\\nu} - k^\\mu k^\\nu/k^2$ allowed. Photon mass would require longitudinal piece $\\propto \\eta^{\\mu\\nu}$ which is forbidden by gauge invariance — photon remains massless to all orders. Running coupling $\\alpha(k^2) = \\alpha_0/(1 - \\Pi(k^2))$ from photon self-energy alone. In dim reg: $\\Pi(k^2)$ is finite once renormalised."
+    }
+  },
+  {
+    "id": "qedp006",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-propagators"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Spectral (Källén-Lehmann) representation expresses the full propagator in terms of physical states. What's the structure?",
+    "passive": {
+      "options": [
+        "$\\langle 0|T\\phi(x)\\phi(y)|0\\rangle = \\int_0^\\infty d\\mu^2\\,\\rho(\\mu^2)\\Delta_F(x-y; \\mu^2)$; $\\rho \\geq 0$ spectral density; $\\rho$ contains one-particle pole at $\\mu^2 = m^2$ plus continuum",
+        "Källén-Lehmann decomposes propagator into free states only; no interaction information in the standard QED textbook treatment, as established for perturbative regimes",
+        "Spectral representation works only in free QFT; interactions break it in the standard QED textbook treatment, as established for perturbative regimes",
+        "$\\rho(\\mu^2)$ can be negative if the theory is non-unitary in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "Källén (1952), Lehmann (1954): spectral density $\\rho(\\mu^2) = (2\\pi)^3\\sum_n|\\langle 0|\\phi(0)|n\\rangle|^2\\delta(\\mu^2 - p_n^2)$. Positive by unitarity. One-particle state at $\\mu^2 = m^2_{\\rm phys}$ with residue $Z$ (wavefunction renormalisation); multi-particle continuum starts at threshold $(\\sum m_i)^2$. Non-perturbative — applies to any QFT. Useful in: lattice QCD spectral function extraction, finite-temperature QFT, bound-state analysis."
+    }
+  },
+  {
+    "id": "qedp007",
+    "path": [
+      "physics",
+      "quantum-electrodynamics",
+      "qed-propagators"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "The Schwinger-Dyson equations are non-perturbative relations for full Green's functions in QED. What do they encode?",
+    "passive": {
+      "options": [
+        "Infinite tower: full propagator depends on full vertex which depends on higher correlators — like a generalised quantum equation of motion; need truncations (e.g., rainbow-ladder) for practical use",
+        "Schwinger-Dyson gives exact closed-form solution for QED propagators in the standard QED textbook treatment, as established for perturbative regimes",
+        "Equations apply only at one-loop level perturbatively; this result follows directly from the gauge-fixing prescription at hand",
+        "Schwinger-Dyson equations are equivalent to the renormalisation group in the standard QED textbook treatment, as established for perturbative regimes"
+      ],
+      "correct": 0,
+      "explanation": "Schwinger-Dyson: $D^{-1} = D_0^{-1} - \\Pi[D, S, \\Gamma]$, $S^{-1} = S_0^{-1} - \\Sigma[D, S, \\Gamma]$, $\\Gamma = \\Gamma_0 + $ kernel — coupled integral equations. In practice: truncate by ansatz for $\\Gamma$. Useful in non-perturbative QED at strong coupling (Schwinger pair production), QCD bound-state calculations (Bethe-Salpeter), and chiral symmetry breaking in $D = 3$ models. Modern revival in lattice QFT and functional renormalisation group."
+    }
+  }
+]

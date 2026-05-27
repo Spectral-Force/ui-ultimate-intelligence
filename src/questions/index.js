@@ -81,6 +81,14 @@ import feynmanDiagrams       from './physics/feynman-diagrams.json'
 import renormalisation       from './physics/renormalisation.json'
 import symmetriesAnomalies   from './physics/symmetries-anomalies.json'
 import spontaneousBreaking   from './physics/spontaneous-breaking.json'
+import qedLagrangian         from './physics/qed-lagrangian.json'
+import qedPropagators        from './physics/qed-propagators.json'
+import qedTreeLevel          from './physics/qed-tree-level.json'
+import qedOneLoop            from './physics/qed-one-loop.json'
+import qedRenormalisation    from './physics/qed-renormalisation.json'
+import lambShift             from './physics/lamb-shift.json'
+import irDivergences         from './physics/ir-divergences.json'
+import qedApplications       from './physics/qed-applications.json'
 
 export const allQuestions = [
   ...dopplerCooling,
@@ -166,6 +174,14 @@ export const allQuestions = [
   ...renormalisation,
   ...symmetriesAnomalies,
   ...spontaneousBreaking,
+  ...qedLagrangian,
+  ...qedPropagators,
+  ...qedTreeLevel,
+  ...qedOneLoop,
+  ...qedRenormalisation,
+  ...lambShift,
+  ...irDivergences,
+  ...qedApplications,
 ]
 
 /**

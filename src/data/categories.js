@@ -134,6 +134,20 @@ export const CATEGORIES = [
         ],
       },
       {
+        id: 'quantum-electrodynamics',
+        label: 'Quantum Electrodynamics (QED)',
+        children: [
+          { id: 'qed-lagrangian',        label: 'QED Lagrangian & Vertex' },
+          { id: 'qed-propagators',       label: 'QED Propagators & Ward' },
+          { id: 'qed-tree-level',        label: 'Tree-Level Processes' },
+          { id: 'qed-one-loop',          label: 'One-Loop Corrections' },
+          { id: 'qed-renormalisation',   label: 'QED Renormalisation' },
+          { id: 'lamb-shift',            label: 'Lamb Shift & Precision QED' },
+          { id: 'ir-divergences',        label: 'IR Divergences & Soft Photons' },
+          { id: 'qed-applications',      label: 'Positronium & Bound States' },
+        ],
+      },
+      {
         id: 'theorems',
         label: 'Theorems & Principles',
         children: [
