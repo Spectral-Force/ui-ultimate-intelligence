@@ -132,10 +132,10 @@
     "question": "For the autonomous 2D system $\\dot{\\mathbf{x}} = A\\mathbf{x}$ where $A$ is a $2\\times2$ matrix, the character of the fixed point at the origin depends on the eigenvalues $\\lambda_{1,2}$ of $A$. An unstable spiral corresponds to:",
     "passive": {
       "options": [
-        "Complex conjugate eigenvalues with positive real part: $\\lambda = \\alpha\\pm i\\beta$ with $\\alpha > 0$",
-        "Two positive real eigenvalues",
-        "Pure imaginary eigenvalues $\\lambda = \\pm i\\beta$",
-        "One positive and one negative real eigenvalue"
+        "Complex conjugate eigenvalues with positive real part: $\\lambda = \\alpha \\pm i\\beta$ with $\\alpha > 0$ — outward spiral",
+        "Two distinct positive real eigenvalues — trajectories grow exponentially along two eigenvector axes (unstable node)",
+        "Pure imaginary eigenvalues $\\lambda = \\pm i\\beta$ — closed elliptical orbits (centre, neutral stability)",
+        "One positive and one negative real eigenvalue — trajectories diverge along one axis (saddle point)"
       ],
       "correct": 0,
       "explanation": "The phase portrait classification: two real same-sign eigenvalues → node (stable if negative, unstable if positive); opposite-sign reals → saddle; pure imaginary → centre (neutral stability, circles); complex with Re > 0 → unstable spiral; Re < 0 → stable spiral. The spiral topology arises from the oscillatory imaginary part while the real part drives growth/decay."

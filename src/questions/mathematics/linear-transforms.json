@@ -39,10 +39,10 @@
     "equation": "A' = P^{-1}AP",
     "passive": {
       "options": [
-        "This is a similarity transformation; eigenvalues are preserved under similarity transformations, and the matrix $A$ is diagonalised if $P$ contains the eigenvectors of $A$ as columns",
-        "$A' = PAP^{-1}$ (order reversed)",
-        "The transformation changes the eigenvalues of $A$",
-        "A change of basis changes the trace of $A$"
+        "Similarity transformation; eigenvalues preserved; diagonalises $A$ when $P$ holds the eigenvectors of $A$ as columns",
+        "$A' = PAP^{-1}$ — the inverse and $P$ act in the opposite order from the standard similarity formula",
+        "Transformation changes the eigenvalues of $A$ but preserves trace and determinant",
+        "Change of basis preserves eigenvalues but alters the trace of $A$ by the basis volume factor"
       ],
       "correct": 0,
       "explanation": "If $P$ has eigenvectors as columns: $P^{-1}AP = \\text{diag}(\\lambda_1, \\lambda_2, \\ldots)$. The trace $\\text{tr}(A) = \\text{tr}(A')$ and determinant $\\det(A) = \\det(A')$ are invariant under similarity transformations. In quantum mechanics, changing from position to momentum basis is a Fourier transform (the infinite-dimensional analogue). The spectral representation $A = \\sum_i \\lambda_i |i\\rangle\\langle i|$ is the diagonalised form."
@@ -56,10 +56,10 @@
     "question": "Singular Value Decomposition (SVD) factors any $m\\times n$ matrix $A$ as $A = U\\Sigma V^\\dagger$ where $U$ is $m\\times m$ unitary, $V$ is $n\\times n$ unitary, and $\\Sigma$ is $m\\times n$ diagonal with non-negative singular values $\\sigma_i$. Key properties:",
     "passive": {
       "options": [
-        "The singular values $\\sigma_i = \\sqrt{\\lambda_i(A^\\dagger A)}$; the rank of $A$ equals the number of non-zero singular values; the condition number $\\sigma_{\\rm max}/\\sigma_{\\rm min}$ measures sensitivity to perturbations",
-        "SVD requires $A$ to be square and invertible",
-        "The singular values equal the eigenvalues of $A$",
-        "SVD is only defined for real matrices"
+        "$\\sigma_i = \\sqrt{\\lambda_i(A^\\dagger A)}$; rank = number of non-zero $\\sigma_i$; condition number $\\sigma_{\\rm max}/\\sigma_{\\rm min}$ measures sensitivity",
+        "SVD requires $A$ to be both square and invertible; rectangular or singular matrices have no decomposition",
+        "Singular values equal the eigenvalues of $A$, ordered by magnitude, regardless of whether $A$ is normal",
+        "SVD is defined only for real matrices; complex matrices need a separate polar decomposition framework"
       ],
       "correct": 0,
       "explanation": "SVD is the most numerically stable matrix factorisation. Applications: pseudoinverse $A^+ = V\\Sigma^+U^\\dagger$ (least-squares solution even for singular $A$); principal component analysis (PCA, the top $k$ singular vectors explain most variance); image compression (truncate to top $k$ singular values). In quantum mechanics: Schmidt decomposition of a bipartite state is exactly SVD of the coefficient matrix $c_{ij}$."
@@ -84,10 +84,10 @@
     "question": "A projection operator $P$ on a vector space satisfies $P^2 = P$ (idempotent). For an orthogonal projection onto subspace $W$:",
     "passive": {
       "options": [
-        "$P$ is also Hermitian ($P^\\dagger = P$); any vector $v$ decomposes as $v = Pv + (I-P)v$ — the component in $W$ and its orthogonal complement",
-        "Orthogonal projections have $P^2 = P^{1/2}$",
-        "The eigenvalues of a projection operator are $\\{0, \\pm 1\\}$",
-        "Non-orthogonal projections satisfy $P^\\dagger = P$ but $P^2 \\neq P$"
+        "$P^\\dagger = P$ (Hermitian); any vector splits as $v = Pv + (I-P)v$ — component in $W$ plus orthogonal complement",
+        "Orthogonal projections satisfy $P^2 = P^{1/2}$ instead of $P^2 = P$, distinguishing them from idempotents",
+        "Eigenvalues of a projection operator are $\\{0, +1, -1\\}$, including a negative branch for orthogonal complements",
+        "Non-orthogonal projections satisfy Hermiticity $P^\\dagger = P$ but fail idempotency $P^2 \\neq P$"
       ],
       "correct": 0,
       "explanation": "Eigenvalues of a projector: only $0$ (vectors orthogonal to $W$) and $1$ (vectors in $W$). The trace $\\text{tr}(P) = \\dim(W)$ — the number of basis vectors in $W$. In quantum mechanics, measurement projectors $P_n = |n\\rangle\\langle n|$ are rank-1 orthogonal projectors. The probability of outcome $n$ is $\\langle\\psi|P_n|\\psi\\rangle = |\\langle n|\\psi\\rangle|^2$ — Born rule. POVMs generalise projective measurements to non-Hermitian operators."
@@ -101,10 +101,10 @@
     "question": "Unitary transformations $U$ satisfy $U^\\dagger U = UU^\\dagger = I$. Their key properties are:",
     "passive": {
       "options": [
-        "All eigenvalues lie on the unit circle $|\\lambda| = 1$; unitary operators preserve inner products $\\langle Ux, Uy\\rangle = \\langle x,y\\rangle$; in finite dimensions, unitary $\\Leftrightarrow$ isometry",
-        "Unitary matrices have determinant $+1$ always",
-        "Unitary operators have real eigenvalues",
-        "A product of two unitary matrices is not necessarily unitary"
+        "All eigenvalues on the unit circle $|\\lambda| = 1$; preserves inner products $\\langle Ux, Uy\\rangle = \\langle x, y\\rangle$; in finite dim, unitary ⇔ isometry",
+        "Unitary matrices always have determinant exactly $+1$; det $= -1$ would make them anti-unitary",
+        "Unitary operators have real eigenvalues, similar to Hermitian operators — only the eigenvectors differ",
+        "A product of two unitary matrices need not be unitary; the unitary group is not closed under matrix multiplication"
       ],
       "correct": 0,
       "explanation": "Eigenvalues of $U$: $Uv = \\lambda v$ gives $|\\lambda|^2\\|v\\|^2 = \\|Uv\\|^2 = \\|v\\|^2$, so $|\\lambda| = 1$. Unitary matrices form the Lie group $U(n)$. In quantum mechanics, time evolution $U(t) = e^{-iHt/\\hbar}$ is unitary (conserves norm). Single-qubit gates are $2\\times 2$ unitary matrices (up to global phase, elements of $SU(2)$). The Fourier transform matrix is unitary (Parseval's theorem follows)."
@@ -119,10 +119,10 @@
     "equation": "(A\\otimes B)(|v\\rangle\\otimes|w\\rangle) = (A|v\\rangle)\\otimes(B|w\\rangle)",
     "passive": {
       "options": [
-        "$(A\\otimes B)$ is a $\\dim(V)\\cdot\\dim(W)$ dimensional operator; for qubits, $\\sigma_x\\otimes\\sigma_z$ is a $4\\times 4$ matrix acting on the 2-qubit space",
-        "$(A\\otimes B) = A + B$ as matrices",
-        "The tensor product of two Hermitian operators is always Hermitian",
-        "$(A\\otimes B)$ has eigenvalues $\\lambda_A + \\lambda_B$ (sums, not products)"
+        "Acts on a $\\dim(V)\\dim(W)$-dim space; for qubits $\\sigma_x \\otimes \\sigma_z$ is a $4\\times 4$ matrix on the 2-qubit Hilbert space",
+        "$(A\\otimes B) = A + B$ — tensor product is implemented as a direct sum, not a Kronecker product",
+        "Tensor product of two Hermitian operators is always Hermitian and has eigenvalues equal to sums $\\lambda_A + \\lambda_B$",
+        "$(A\\otimes B)$ has eigenvalues equal to sums $\\lambda_A + \\lambda_B$ rather than products, by linearity of trace"
       ],
       "correct": 0,
       "explanation": "Eigenvalues of $A\\otimes B$: if $A|v\\rangle = \\lambda_A|v\\rangle$ and $B|w\\rangle = \\lambda_B|w\\rangle$, then $(A\\otimes B)|vw\\rangle = \\lambda_A\\lambda_B|vw\\rangle$ — eigenvalues are products. The Hamiltonian of a two-qubit system with coupling: $H = H_1\\otimes I_2 + I_1\\otimes H_2 + J\\sigma_z\\otimes\\sigma_z$. Entangled states cannot be written as $|v\\rangle\\otimes|w\\rangle$ — they live in the full tensor product space."

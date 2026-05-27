@@ -7,10 +7,10 @@
     "question": "Decoherence occurs when a quantum system $S$ becomes entangled with its environment $E$, causing the reduced density matrix of $S$ to lose its off-diagonal coherences. For a qubit superposition $|\\psi\\rangle = \\alpha|0\\rangle + \\beta|1\\rangle$, the density matrix evolves from:",
     "passive": {
       "options": [
-        "Pure state $|\\alpha|^2|0\\rangle\\langle 0| + \\alpha\\beta^*|0\\rangle\\langle 1| + \\alpha^*\\beta|1\\rangle\\langle 0| + |\\beta|^2|1\\rangle\\langle 1|$ to diagonal mixture $|\\alpha|^2|0\\rangle\\langle 0| + |\\beta|^2|1\\rangle\\langle 1|$",
-        "From a mixture to a pure state as the environment is traced out",
-        "Decoherence increases the off-diagonal elements over time",
-        "The diagonal elements change but off-diagonal elements are preserved"
+        "Pure-state $\\rho$ with non-zero off-diagonals $\\alpha\\beta^*$ → diagonal mixture $|\\alpha|^2|0\\rangle\\langle 0| + |\\beta|^2|1\\rangle\\langle 1|$ (coherences gone)",
+        "From a mixture to a pure state as the environment is traced out — decoherence purifies the system",
+        "Decoherence increases the off-diagonal elements over time, sharpening the superposition",
+        "Diagonal (population) elements change with time while off-diagonal coherences are conserved"
       ],
       "correct": 0,
       "explanation": "When $S$ and $E$ entangle: $|\\psi\\rangle_S|0\\rangle_E \\to \\alpha|0\\rangle_S|e_0\\rangle_E + \\beta|1\\rangle_S|e_1\\rangle_E$. Tracing over $E$: $\\rho_S = |\\alpha|^2|0\\rangle\\langle 0| + |\\beta|^2|1\\rangle\\langle 1| + \\alpha\\beta^*\\langle e_1|e_0\\rangle|0\\rangle\\langle 1| + \\text{h.c.}$ If $|e_0\\rangle, |e_1\\rangle$ become orthogonal (environment 'measures'), coherences vanish. The pointer basis (decoherence basis) is the one that survives — typically energy eigenstates."
@@ -54,10 +54,10 @@
     "question": "The $T_1$ and $T_2$ relaxation times characterise qubit decoherence. For a qubit with energy splitting $\\hbar\\omega_0$:",
     "passive": {
       "options": [
-        "$T_1$ (longitudinal, energy relaxation) describes decay of $\\langle\\sigma_z\\rangle$; $T_2$ (transverse, dephasing) describes decay of $\\langle\\sigma_x\\rangle$ and $\\langle\\sigma_y\\rangle$; always $T_2 \\leq 2T_1$",
-        "$T_2 \\geq 2T_1$ always by the uncertainty principle",
-        "$T_1$ is always shorter than $T_2$ for atomic qubits",
-        "$T_1 = T_2$ for a two-level atom in free space"
+        "$T_1$ (longitudinal): decay of $\\langle\\sigma_z\\rangle$; $T_2$ (transverse): decay of $\\langle\\sigma_x\\rangle, \\langle\\sigma_y\\rangle$; always $T_2 \\leq 2T_1$",
+        "$T_2 \\geq 2T_1$ always, with the bound saturating only for pure dephasing — energy uncertainty enforces this",
+        "$T_1$ is always shorter than $T_2$ for atomic qubits because population decay dominates phase noise",
+        "$T_1 = T_2$ identically for a two-level atom in free space because spontaneous emission causes both"
       ],
       "correct": 0,
       "explanation": "$1/T_2 = 1/(2T_1) + 1/T_\\phi$ where $T_\\phi$ is the pure dephasing time. Energy relaxation ($T_1$) requires energy exchange with the environment (real transitions); dephasing ($T_\\phi$) comes from phase noise without energy exchange (e.g., magnetic field fluctuations). For the $^{87}$Rb ground-state hyperfine qubit in a magnetic trap: $T_1 \\sim$ minutes (no energy loss channel), $T_2 \\sim$ seconds (magnetic field noise). For a superconducting transmon: $T_1 \\sim T_2 \\sim 100\\,\\mu$s."
@@ -71,10 +71,10 @@
     "question": "Quantum error correction (QEC) encodes one logical qubit into multiple physical qubits to protect against errors. The 3-qubit bit-flip code uses:",
     "passive": {
       "options": [
-        "Logical $|\\bar{0}\\rangle = |000\\rangle$, $|\\bar{1}\\rangle = |111\\rangle$; syndrome measurement detects single bit flips without disturbing the logical state",
-        "Three qubits in a product state to protect against all single-qubit errors",
-        "The code can correct both bit-flip and phase-flip errors with 3 qubits",
-        "Error correction requires measuring the logical qubit directly"
+        "$|\\bar 0\\rangle = |000\\rangle$, $|\\bar 1\\rangle = |111\\rangle$; parity-check syndrome $Z_1Z_2, Z_2Z_3$ locates a single bit flip without disturbing the logical state",
+        "Three qubits in a product (unentangled) state suffice to protect against all single-qubit errors",
+        "The 3-qubit code corrects both bit-flip and phase-flip errors simultaneously without further encoding",
+        "Error correction requires measuring the logical qubit directly, which collapses the protected superposition"
       ],
       "correct": 0,
       "explanation": "Syndrome measurement: measure $Z_1Z_2$ and $Z_2Z_3$ (parity checks). Outcomes: $(+1,+1)$ = no error; $(-1,+1)$ = qubit 1 flipped; $(+1,-1)$ = qubit 3 flipped; $(-1,-1)$ = qubit 2 flipped. The measurement tells you which qubit to correct without collapsing the logical superposition. To correct arbitrary single-qubit errors (including phase flips), the 9-qubit Shor code or 5-qubit perfect code is needed. The threshold theorem: if physical error rate $p < p_{\\rm th} \\sim 1\\%$, encoded error rate can be made arbitrarily small by concatenation."
@@ -88,10 +88,10 @@
     "question": "Dynamical decoupling (DD) suppresses decoherence by applying fast pulse sequences that average out slowly fluctuating environmental noise. The simplest scheme, the Hahn spin echo, consists of:",
     "passive": {
       "options": [
-        "A $\\pi/2$ pulse, free evolution for time $\\tau$, a $\\pi$ pulse, free evolution for $\\tau$, then $\\pi/2$ readout — refocusing inhomogeneous dephasing to form an echo at $t = 2\\tau$",
-        "Continuous driving at the qubit frequency to suppress all noise",
-        "A sequence of $\\pi$ pulses applied every $T_1$ to reset the qubit",
-        "The spin echo works by entangling the qubit with the environment to cancel noise"
+        "$\\pi/2$ – wait $\\tau$ – $\\pi$ – wait $\\tau$ – $\\pi/2$ readout; refocuses inhomogeneous dephasing to form an echo at $t = 2\\tau$",
+        "Continuous CW driving at the qubit frequency to dynamically average out all environmental noise sources",
+        "A sequence of $\\pi$ pulses applied at intervals of $T_1$ to reset the qubit population to the ground state",
+        "Spin echo works by entangling the qubit with its environment in a way that cancels the noise correlations"
       ],
       "correct": 0,
       "explanation": "The Hahn echo refocuses static or slowly varying phase errors: after the $\\pi$ pulse, each spin accumulates the negative of its prior phase error, so all spins refocus at $t = 2\\tau$. This extends $T_2^*$ (inhomogeneous dephasing time) toward $T_2$ (homogeneous limit). Carr-Purcell-Meiboom-Gill (CPMG) uses $N$ equally spaced $\\pi$ pulses to filter noise at frequency $1/2\\tau$. Used in NMR, trapped ions, and nitrogen-vacancy (NV) centres in diamond for quantum sensing."

@@ -53,10 +53,10 @@
     "question": "Quantum teleportation transfers an unknown qubit state $|\\psi\\rangle$ from Alice to Bob using a shared Bell pair and two classical bits. The protocol requires:",
     "passive": {
       "options": [
-        "Alice performs a Bell measurement on her qubit + $|\\psi\\rangle$, sends 2 classical bits to Bob, who applies a conditional correction; state $|\\psi\\rangle$ appears at Bob's qubit",
-        "The quantum state is transmitted faster than light via the entangled channel",
-        "No classical communication is needed; the state appears at Bob's location instantly",
-        "Teleportation clones the state — Alice still has $|\\psi\\rangle$ afterwards"
+        "Alice does Bell measurement on her qubit + $|\\psi\\rangle$, sends 2 classical bits; Bob applies a conditional Pauli to recover $|\\psi\\rangle$",
+        "Quantum state is transmitted faster than light through the entangled channel, with no classical communication required",
+        "No classical bits are needed — the entanglement alone is sufficient to project Bob's qubit into $|\\psi\\rangle$",
+        "Teleportation perfectly clones the state, leaving $|\\psi\\rangle$ at both Alice and Bob simultaneously after the protocol"
       ],
       "correct": 0,
       "explanation": "Teleportation requires 1 ebit (entangled pair) and 2 classical bits. The no-cloning theorem is not violated: Alice's qubit is destroyed by the Bell measurement. The quantum information arrives at Bob only after the 2 classical bits (which travel at most at $c$). First demonstrated with photons (Zeilinger, 1997) and ions (Blatt, 2004). The 'quantum channel capacity' of 1 ebit + 2 cbits = 1 qubit is exact (superdense coding reverses this: 1 ebit + 1 qubit = 2 cbits)."
@@ -71,10 +71,10 @@
     "equation": "S(A) = -\\text{tr}(\\rho_A \\ln\\rho_A)",
     "passive": {
       "options": [
-        "$S(A) = 0$ for product states; $S(A) = \\ln d$ (maximum) for maximally entangled states in $d$-dimensional subsystems",
-        "$S(A) = S(A) + S(B)$ for pure states",
-        "Entanglement entropy can decrease under local operations",
-        "$S(A) > \\ln d$ is possible for qubits"
+        "$S(A) = 0$ for product states; $S(A) = \\ln d$ (max) for maximally entangled states in $d$ dimensions",
+        "$S(A) = S(A) + S(B)$ for pure states — entropies of subsystems add to give the joint entropy",
+        "Entanglement entropy can decrease under local operations and classical communication (LOCC) by extracting Bell pairs",
+        "$S(A) > \\ln d$ is allowed for qubits when correlations exceed the classical mutual-information bound"
       ],
       "correct": 0,
       "explanation": "For a pure state $|\\psi\\rangle_{AB}$, $S(A) = S(B)$ (Schmidt symmetry). Schmidt decomposition: $|\\psi\\rangle = \\sum_i \\lambda_i |i_A\\rangle|i_B\\rangle$, and $S(A) = -\\sum_i \\lambda_i^2 \\ln\\lambda_i^2$. A Bell state has Schmidt coefficients $1/\\sqrt{2}, 1/\\sqrt{2}$, giving $S = \\ln 2 = 1$ ebit. Entanglement entropy is the unique entanglement measure (up to LOCC) for pure states and equals the minimum number of Bell pairs needed to create $|\\psi\\rangle$ asymptotically."
@@ -105,10 +105,10 @@
     "question": "In the GHZ (Greenberger-Horne-Zeilinger) state $|\\rm GHZ\\rangle = (|000\\rangle + |111\\rangle)/\\sqrt{2}$, a contradiction with local realism arises from simultaneous perfect correlations. If each qubit is measured in the $x$-basis with outcomes $\\pm 1$:",
     "passive": {
       "options": [
-        "The product of all three $x$-outcomes is always $+1$ — but local hidden variable logic predicts $-1$, a perfect contradiction with no statistical error",
-        "The product of all three outcomes is random and provides no information",
-        "The contradiction requires measuring in the $z$-basis",
-        "The GHZ argument requires the non-locality loophole to be closed"
+        "Product of three $x$-outcomes is always $+1$; local hidden-variable logic forces $-1$ — exact contradiction, no statistics needed",
+        "Product of the three outcomes is statistically random, so the GHZ argument provides no information about non-locality",
+        "Contradiction requires measuring all three qubits in the $z$-basis simultaneously — not in the $x$-basis",
+        "GHZ contradiction relies on the non-locality loophole being closed; otherwise local realism survives"
       ],
       "correct": 0,
       "explanation": "The GHZ argument (1989): $\\sigma_x^A\\sigma_x^B\\sigma_x^C|{\\rm GHZ}\\rangle = +|{\\rm GHZ}\\rangle$ (eigenvalue $+1$). But local realism assigns predetermined values $x_A, x_B, x_C \\in \\{\\pm 1\\}$ to all measurements. From $\\sigma_x^A\\sigma_y^B\\sigma_y^C|{\\rm GHZ}\\rangle = +|{\\rm GHZ}\\rangle$ and cyclic permutations: $x_Ay_By_C = x_Bx_Cy_Ay_C = x_Cy_Ay_B = +1$, multiplying gives $x_Ax_Bx_C = -1$. Contradiction. GHZ provides a 'Bell inequality' that is violated by a single experiment — a stronger argument than statistical Bell tests."

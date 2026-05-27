@@ -36,10 +36,10 @@
     "question": "In an optical dipole trap, the photon scattering rate $\\Gamma_{\\rm sc}$ and the trap depth $U_0$ have different dependences on detuning $\\delta$:",
     "passive": {
       "options": [
-        "$\\Gamma_{\\rm sc} \\propto I/\\delta^2$ while $U_0 \\propto I/\\delta$ — so scattering is suppressed more than trap depth as $|\\delta|$ increases",
-        "$\\Gamma_{\\rm sc} \\propto I/\\delta$ and $U_0 \\propto I/\\delta^2$",
-        "Both scale identically as $I/\\delta^2$",
-        "$\\Gamma_{\\rm sc}$ is independent of detuning"
+        "$\\Gamma_{\\rm sc} \\propto I/\\delta^2$; $U_0 \\propto I/\\delta$ — scattering suppressed faster than trap depth as $|\\delta|$ grows",
+        "$\\Gamma_{\\rm sc} \\propto I/\\delta$ and $U_0 \\propto I/\\delta^2$ — opposite of the actual dependence",
+        "Both $\\Gamma_{\\rm sc}$ and $U_0$ scale identically as $I/\\delta^2$, so detuning offers no scattering-depth tradeoff",
+        "$\\Gamma_{\\rm sc}$ is independent of detuning $\\delta$ once the laser is far from resonance"
       ],
       "correct": 0,
       "explanation": "The scattering rate $\\Gamma_{\\rm sc} = (\\Gamma/\\hbar)|U_{\\rm dip}|/|\\delta| \\propto I\\Gamma/\\delta^2$, while $|U_{\\rm dip}| \\propto I/|\\delta|$. The ratio $|U_{\\rm dip}|/\\Gamma_{\\rm sc} \\propto |\\delta|/\\Gamma$, so far-detuned traps give better 'trap depth per scattered photon'. CO$_2$ laser traps ($\\lambda = 10.6\\,\\mu$m, $\\delta \\sim 10^{14}$ Hz) can hold atoms for minutes with negligible heating from photon recoil."
@@ -53,10 +53,10 @@
     "question": "The trap frequencies of a Gaussian beam ODT (waist $w_0$, power $P$, Rayleigh range $z_R = \\pi w_0^2/\\lambda$) are:",
     "passive": {
       "options": [
-        "Radial: $\\omega_r = \\sqrt{4|U_0|/mw_0^2}$, axial: $\\omega_z = \\sqrt{2|U_0|/mz_R^2}$ — radial confinement much tighter than axial for typical $w_0 \\ll z_R$",
-        "Equal in all directions: $\\omega_r = \\omega_z$",
-        "Axial confinement is always tighter than radial",
-        "The trap is harmonic only at the centre and anharmonic everywhere else"
+        "$\\omega_r = \\sqrt{4|U_0|/(mw_0^2)}$, $\\omega_z = \\sqrt{2|U_0|/(mz_R^2)}$; radial $\\gg$ axial for typical $w_0 \\ll z_R$",
+        "Trap is fully isotropic: $\\omega_r = \\omega_z$ because the Gaussian intensity profile is spherically symmetric",
+        "Axial confinement is always tighter than radial because the focus is sharper along the beam direction",
+        "The trap is only harmonic exactly at the centre point and becomes anharmonic for any nonzero amplitude"
       ],
       "correct": 0,
       "explanation": "A Gaussian beam intensity profile $I(r,z) = I_0(w_0/w(z))^2\\exp(-2r^2/w(z)^2)$ gives a nearly harmonic potential near the focus. Since $z_R = \\pi w_0^2/\\lambda \\gg w_0$, the axial is always much weaker than radial: a single beam gives a cigar-shaped trap. Crossed beams give a more spherical trap. Typical values: $\\omega_r/2\\pi \\sim$ kHz, $\\omega_z/2\\pi \\sim 10{-}100$ Hz."
@@ -70,10 +70,10 @@
     "question": "Evaporative cooling in an ODT works by:",
     "passive": {
       "options": [
-        "Lowering the trap depth to let the hottest atoms escape, allowing the remaining atoms to re-thermalise at a lower temperature via elastic collisions",
-        "Increasing the laser intensity to push hot atoms out",
-        "Tuning the laser frequency to selectively remove excited atoms",
-        "Using a Feshbach resonance to cool atoms through inelastic collisions"
+        "Lower trap depth to let the hottest atoms escape; remaining atoms re-thermalise at lower $T$ via elastic collisions",
+        "Increase the laser intensity to push the hottest atoms out of the trap volume",
+        "Tune the laser frequency on resonance to selectively expel atoms in the excited internal state",
+        "Use a Feshbach resonance to cool atoms by enhancing inelastic three-body collisions"
       ],
       "correct": 0,
       "explanation": "Evaporative cooling is analogous to a hot drink cooling: the highest-energy atoms leave over the trap edge, and the remaining atoms re-thermalise (via elastic collisions) to a colder equilibrium. Efficiency requires the elastic collision rate $\\gg$ trap loss rate. Lowering power reduces $U_0$, cutting off the energy distribution at progressively lower $E_{\\rm cut} = \\eta k_BT$ (typically $\\eta \\approx 6$–10). This is the final stage before BEC in all current experiments."
@@ -87,10 +87,10 @@
     "question": "An optical lattice is formed by two counter-propagating laser beams of the same frequency creating a standing wave. The resulting periodic potential for atoms has spacing:",
     "passive": {
       "options": [
-        "$d = \\lambda/2$ — the lattice spacing is half the laser wavelength, giving quasi-momentum in the first Brillouin zone $[-\\hbar\\pi/d, \\hbar\\pi/d]$",
-        "$d = \\lambda$ — one full wavelength per lattice site",
-        "$d = 2\\lambda$ — set by the Rayleigh criterion",
-        "$d$ depends on the atomic species"
+        "$d = \\lambda/2$ — lattice spacing is half the laser wavelength; first Brillouin zone runs over $[-\\hbar\\pi/d, +\\hbar\\pi/d]$",
+        "$d = \\lambda$ — one full optical wavelength per lattice site, set by single-photon momentum",
+        "$d = 2\\lambda$ — twice the wavelength, fixed by the Rayleigh resolution criterion",
+        "Lattice spacing $d$ depends on the atomic species due to the different polarisabilities"
       ],
       "correct": 0,
       "explanation": "Two counter-propagating beams $e^{\\pm ikz}$ interfere to give $I \\propto \\cos^2(kz) = \\cos^2(\\pi z/d)$ with $d = \\pi/k = \\lambda/2$. For 780 nm light: $d = 390$ nm. The band structure with lattice momentum $q \\in [-\\hbar k, \\hbar k]$ enables Bloch oscillations and Wannier-Stark ladders. The Hubbard model (superfluid-Mott insulator transition) is realised by loading BECs into lattices — a landmark quantum simulation experiment."

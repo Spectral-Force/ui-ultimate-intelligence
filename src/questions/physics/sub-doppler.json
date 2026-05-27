@@ -115,10 +115,10 @@
     "question": "Grey molasses cooling uses blue-detuned light on a $F \\to F$ transition (same $F$ in ground and excited state). The cooling mechanism relies on:",
     "passive": {
       "options": [
-        "Dark states on the $F \\to F$ transition providing velocity-selective population trapping, combined with a light-shift that is positive (repulsive) for bright states",
-        "Stimulated Raman transitions between hyperfine levels",
-        "The Autler-Townes splitting creating a velocity-dependent absorption dip",
-        "Standard Sisyphus with reversed sign of light-shift because of blue detuning"
+        "Dark states on the $F \\to F$ transition trap atoms; bright-state light shift is positive (repulsive) at blue detuning",
+        "Stimulated Raman transitions between hyperfine levels remove kinetic energy after each absorption cycle",
+        "Autler-Townes splitting of the bright state creates a velocity-dependent absorption dip used for cooling",
+        "Standard Sisyphus cooling with the light-shift sign reversed because the laser is blue-detuned instead of red"
       ],
       "correct": 0,
       "explanation": "On a $F \\to F$ transition, dark states exist (atoms in specific superpositions don't couple to light). Blue detuning gives a positive light shift for bright states (they are pushed away from intensity maxima), while dark-state atoms feel no force. The combination provides cooling similar to Sisyphus but without the need for a polarisation gradient structure. Grey molasses on the $D_1$ line of $^{40}$K has reached temperatures of $\\sim 6\\,\\mu$K in a single step from a MOT."

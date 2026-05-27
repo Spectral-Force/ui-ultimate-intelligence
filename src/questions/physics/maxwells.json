@@ -101,10 +101,10 @@
     "question": "At the interface between two linear media with permittivities $\\varepsilon_1, \\varepsilon_2$ and permeabilities $\\mu_1, \\mu_2$, the boundary conditions derived from Maxwell's equations require:",
     "passive": {
       "options": [
-        "The tangential $\\mathbf{E}$ and tangential $\\mathbf{H}$ are continuous; normal $\\mathbf{D}$ and normal $\\mathbf{B}$ are continuous (in the absence of surface charges/currents)",
-        "All components of $\\mathbf{E}$ and $\\mathbf{B}$ are continuous at all boundaries",
-        "Only the normal component of $\\mathbf{E}$ is continuous",
-        "The tangential $\\mathbf{B}$ and normal $\\mathbf{E}$ are continuous"
+        "Tangential $\\mathbf E$ and $\\mathbf H$ continuous; normal $\\mathbf D$ and $\\mathbf B$ continuous (no surface charge/current)",
+        "All components of $\\mathbf E$ and $\\mathbf B$ are continuous across boundaries, regardless of media",
+        "Only the normal component of $\\mathbf E$ is continuous; tangential components jump at any interface",
+        "Tangential $\\mathbf B$ and normal $\\mathbf E$ are continuous (with tangential $\\mathbf E$ and normal $\\mathbf B$ free to jump)"
       ],
       "correct": 0,
       "explanation": "From $\\nabla\\times\\mathbf{E}=0$ (in static case) → tangential $\\mathbf{E}$ continuous; from $\\nabla\\cdot\\mathbf{D}=0$ → normal $\\mathbf{D}=\\varepsilon\\mathbf{E}$ continuous; from $\\nabla\\cdot\\mathbf{B}=0$ → normal $\\mathbf{B}$ continuous; from $\\nabla\\times\\mathbf{H}=0$ → tangential $\\mathbf{H}=\\mathbf{B}/\\mu$ continuous. These four conditions, applied to plane waves, give the Fresnel equations for reflection and transmission."

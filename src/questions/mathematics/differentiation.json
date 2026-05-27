@@ -73,10 +73,10 @@
     "equation": "f(x) = \\sum_{n=0}^{\\infty}\\frac{f^{(n)}(a)}{n!}(x-a)^n",
     "passive": {
       "options": [
-        "Truncated to first order: $f(x) \\approx f(a) + f'(a)(x-a)$ — linear approximation valid when $|x-a| \\ll 1$",
-        "The series always converges for all $x$",
-        "$f^{(n)}(a)$ is the $n$-th integral of $f$",
-        "The series requires $f$ to be periodic"
+        "Truncated to first order: $f(x) \\approx f(a) + f'(a)(x-a)$ — the basis of linear approximations",
+        "Always converges for all $x \\in \\mathbb{R}$, with no need to check the radius of convergence",
+        "$f^{(n)}(a)$ denotes the $n$-th iterated integral of $f$ evaluated at $a$, not the $n$-th derivative",
+        "Requires the function to be periodic; aperiodic functions do not admit Taylor expansions"
       ],
       "correct": 0,
       "explanation": "The linear approximation $f(x) \\approx f(a) + f'(a)(x-a)$ is the basis of small-angle approximations (pendulum: $\\sin\\theta \\approx \\theta$), linearisation of ODEs around fixed points, and the harmonic approximation to interatomic potentials. The quadratic term gives the effective spring constant $k = f''(a)$ for small oscillations."
@@ -121,9 +121,9 @@
     "passive": {
       "options": [
         "$d/dx(e^{ax}) = ae^{ax}$ — eigenfunction of $d/dx$ with eigenvalue $a$",
-        "$d/dx(e^{ax}) = e^{ax}/a$",
-        "$d/dx(e^{ax}) = ae^{ax-1}$",
-        "$d/dx(e^{ax}) = a^2 e^{ax}$"
+        "$d/dx(e^{ax}) = e^{ax}/a$ — power-rule-style: divide by the exponent",
+        "$d/dx(e^{ax}) = ae^{ax-1}$ — power rule applied to the exponential",
+        "$d/dx(e^{ax}) = a^2 e^{ax}$ — exponent squared in the prefactor"
       ],
       "correct": 0,
       "explanation": "Exponential functions are eigenfunctions of the derivative operator: $d/dx\\,e^{ax} = a\\,e^{ax}$. This is why exponential (and trigonometric) ansätze work for linear ODEs with constant coefficients — substituting $y = e^{ax}$ turns a differential equation into an algebraic one in $a$. In quantum mechanics, plane waves $e^{ikx}$ are eigenfunctions of $\\hat{p} = -i\\hbar\\,d/dx$ with eigenvalue $\\hbar k$."

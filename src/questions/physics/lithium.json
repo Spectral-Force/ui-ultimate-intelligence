@@ -7,10 +7,10 @@
     "question": "Lithium has two stable isotopes with very different quantum statistics: $^6$Li (fermion, nuclear spin $I=1$) and $^7$Li (boson, $I=3/2$). The D2 cooling transition for both is:",
     "passive": {
       "options": [
-        "$2S_{1/2} \\to 2P_{3/2}$ at $\\lambda = 671$ nm (red), natural linewidth $\\Gamma/2\\pi = 5.87$ MHz — the excited state hyperfine structure is unresolved because $\\Delta E_{\\rm hfs}' \\sim \\Gamma$",
-        "The D2 line is at 780 nm for both Li isotopes",
-        "$^6$Li and $^7$Li have different D2 wavelengths due to the mass difference",
-        "Li has no D2 line because of its small nuclear spin"
+        "$2S_{1/2} \\to 2P_{3/2}$ at 671 nm; $\\Gamma/2\\pi = 5.87$ MHz; excited hyperfine unresolved because $\\Delta E_{\\rm hfs}' \\sim \\Gamma$",
+        "D$_2$ line at 780 nm for both Li isotopes, identical to rubidium (mass effect negligible)",
+        "$^6$Li and $^7$Li have measurably different D$_2$ wavelengths due to the substantial isotope mass shift",
+        "Li lacks a D$_2$ line entirely because of its small nuclear spin and absence of $P_{3/2}$ level"
       ],
       "correct": 0,
       "explanation": "Li's excited $2P_{3/2}$ state has unresolved hyperfine structure (splitting $\\sim 2\\Gamma$), making standard MOT and sub-Doppler techniques less efficient than for Rb. The Doppler limit is $T_D = \\hbar\\Gamma/2k_B \\approx 140\\,\\mu$K. Single-photon recoil velocity: $v_r = \\hbar k/m \\approx 9.9$ cm/s — the largest of the alkalis, leading to significant recoil heating. $^6$Li is the primary platform for studying degenerate Fermi gases and the BCS-BEC crossover."
@@ -35,10 +35,10 @@
     "question": "The broad Feshbach resonance in $^6$Li near $B = 832$ G allows tuning the s-wave scattering length from $a \\to +\\infty$ (BEC side) through unitarity to $a \\to -\\infty$ (BCS side). At the resonance centre:",
     "passive": {
       "options": [
-        "The unitarity regime: $|a| \\to \\infty$, mean free path $\\lambda_{\\rm mfp} \\sim 1/(n\\sigma) \\to 0$ as $\\sigma = 4\\pi a^2 \\to \\infty$ — the gas is maximally interacting and universal (properties depend only on density and temperature)",
-        "At the Feshbach resonance, the gas becomes non-interacting ($a = 0$)",
-        "The BCS gap $\\Delta$ diverges at the resonance centre",
-        "At unitarity, the scattering cross-section is $\\sigma = 4\\pi/k^2$ (saturated at the quantum limit)"
+        "Unitarity: $|a| \\to \\infty$, $\\sigma$ saturated at $4\\pi/k^2$; gas maximally interacting; properties universal in $n$ and $T$",
+        "At the Feshbach resonance the gas becomes non-interacting ($a = 0$) — the resonance is a zero-crossing of $a$",
+        "BCS gap $\\Delta$ diverges at the centre of the resonance because the dimer binding energy goes to infinity",
+        "At unitarity the scattering cross-section is saturated at $\\sigma = 8\\pi/k^2$ (twice the s-wave unitarity limit)"
       ],
       "correct": 0,
       "explanation": "At unitarity, the scattering cross-section reaches the quantum limit $\\sigma = 4\\pi/k^2$ (unitarity limit) — the gas is as strongly interacting as quantum mechanics allows. All thermodynamic quantities are universal: $E/E_F = (3/5)\\xi E_F$ where $\\xi \\approx 0.376$ (Bertsch parameter from QMC). The broad Li resonance ($\\Delta B \\approx 300$ G) allows precise field positioning to within 1 mG on the crossover. $^6$Li is the system where fermionic superfluidity was first confirmed (vortex lattices observed in 2005, MIT)."

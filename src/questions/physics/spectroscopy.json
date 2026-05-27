@@ -36,10 +36,10 @@
     "equation": "\\Gamma = 1/\\tau",
     "passive": {
       "options": [
-        "By the energy-time uncertainty principle: $\\Delta E \\cdot \\tau \\sim \\hbar$, giving a Lorentzian lineshape with FWHM $= \\Gamma/2\\pi$",
-        "The linewidth is determined by the ground-state lifetime",
-        "Longer-lived states have broader linewidths",
-        "$\\Gamma = 2\\pi/\\tau$"
+        "Energy-time uncertainty $\\Delta E\\cdot\\tau \\sim \\hbar$; lineshape is Lorentzian with FWHM $\\Gamma/2\\pi$ in Hz",
+        "Linewidth is determined by the ground-state lifetime; excited-state decay plays no role in the spectral width",
+        "Longer-lived excited states produce broader linewidths because phase coherence is preserved for longer",
+        "$\\Gamma = 2\\pi/\\tau$ — the angular linewidth includes an extra factor of $2\\pi$ over the natural definition"
       ],
       "correct": 0,
       "explanation": "The excited state decays exponentially $\\rho_{ee}(t) \\propto e^{-\\Gamma t}$, and the Fourier transform of this exponential is a Lorentzian with FWHM $= \\Gamma$ (in rad/s) or $\\Gamma/2\\pi$ (in Hz). For $^{87}$Rb D$_2$: $\\tau = 26.2$ ns, $\\Gamma/2\\pi = 6.07$ MHz. For the Sr clock transition: $\\tau \\sim 160$ s, $\\Gamma/2\\pi \\sim 1$ mHz — an extraordinary quality factor."
@@ -119,10 +119,10 @@
     "equation": "\\frac{dI}{dz} = -n\\sigma I \\implies I(z) = I_0 e^{-n\\sigma z}",
     "passive": {
       "options": [
-        "At saturation ($I \\gg I_{\\rm sat}$), the effective cross-section $\\sigma_{\\rm eff} = \\sigma/(1 + I/I_{\\rm sat})$ is reduced and the medium becomes transparent",
-        "The Beer-Lambert law is exact for all intensities",
-        "The absorption coefficient $n\\sigma$ increases with intensity",
-        "$\\sigma$ is independent of laser detuning from resonance"
+        "At $I \\gg I_{\\rm sat}$: effective $\\sigma_{\\rm eff} = \\sigma/(1 + I/I_{\\rm sat})$ shrinks and the medium bleaches transparent",
+        "Beer-Lambert law is exact at every intensity, with no saturation effects even near resonance",
+        "Absorption coefficient $n\\sigma$ grows with intensity because stimulated emission enhances absorption probability",
+        "$\\sigma$ is independent of laser detuning from atomic resonance, so the cross-section is constant"
       ],
       "correct": 0,
       "explanation": "The on-resonance absorption cross-section is $\\sigma_0 = \\hbar\\omega\\Gamma/2I_{\\rm sat}$. At saturation, stimulated emission balances absorption and the medium bleaches. The saturation intensity $I_{\\rm sat} = \\pi hc\\Gamma/3\\lambda^3$ for a two-level atom. For Rb at 780 nm: $I_{\\rm sat} \\approx 1.67$ mW/cm$^2$. This bleaching is exploited in saturated absorption spectroscopy and optical trapping."

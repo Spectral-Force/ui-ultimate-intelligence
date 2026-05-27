@@ -39,10 +39,10 @@
     "equation": "\\oint_C f(z)\\,dz = 0",
     "passive": {
       "options": [
-        "The integral vanishes because analytic functions have no net circulation — this underlies Cauchy's integral formula and the residue theorem",
-        "The integral equals $2\\pi i f(z_0)$ for any interior point $z_0$",
-        "The theorem applies only to circular contours",
-        "The theorem holds even when $f$ has poles inside $C$"
+        "Vanishes because analytic functions have no net circulation; underlies Cauchy's integral formula and the residue theorem",
+        "Equals $2\\pi i f(z_0)$ for any interior point $z_0$, regardless of whether $f$ has poles or not",
+        "Applies only to circular contours; holds for non-circular curves only if $f$ has no singularities inside",
+        "Holds even when $f$ has poles inside $C$, since the integral measures the total enclosed singularity content"
       ],
       "correct": 0,
       "explanation": "Cauchy's integral formula (for $z_0$ inside $C$): $f(z_0) = \\frac{1}{2\\pi i}\\oint_C \\frac{f(z)}{z-z_0}dz$, which follows because $1/(z-z_0)$ has a simple pole at $z_0$. This gives: $f^{(n)}(z_0) = \\frac{n!}{2\\pi i}\\oint_C \\frac{f(z)}{(z-z_0)^{n+1}}dz$ — analytic functions are completely determined by their boundary values. In physics, contour integrals evaluate Fourier transforms, Green's functions, and dispersion relations."
@@ -104,10 +104,10 @@
     "question": "The Laurent series of a function around an isolated singularity $z_0$ includes negative powers of $(z-z_0)$. The types of singularity are classified as:",
     "passive": {
       "options": [
-        "Removable (finite many $c_n = 0$ for $n < 0$ and $c_{-1} = 0$), pole of order $m$ ($c_{-m} \\neq 0$ but $c_n = 0$ for $n < -m$), essential singularity (infinitely many non-zero $c_{-n}$)",
-        "Only poles and essential singularities exist for analytic functions",
-        "A removable singularity has $c_{-1} \\neq 0$ but all higher negative terms vanish",
-        "Essential singularities occur only at infinity"
+        "Removable ($c_n = 0$ for all $n < 0$); pole of order $m$ ($c_{-m} \\neq 0$, $c_n = 0$ for $n < -m$); essential (infinitely many non-zero $c_{-n}$)",
+        "Only poles and essential singularities are possible — removable singularities are a fictitious limit case",
+        "Removable singularity defined as $c_{-1} \\neq 0$ with higher negative terms vanishing — a simple pole in disguise",
+        "Essential singularities can occur only at $z = \\infty$ on the Riemann sphere; finite essential singularities do not exist"
       ],
       "correct": 0,
       "explanation": "Examples: $\\sin z/z$ has a removable singularity at $z=0$ (Laurent series has no negative powers). $1/z^3$ has a pole of order 3 at $z=0$. $e^{1/z}$ has an essential singularity at $z=0$: $e^{1/z} = \\sum_{n=0}^\\infty 1/(n!z^n)$ — infinitely many negative powers. By the Great Picard theorem, near an essential singularity, $f$ takes every complex value infinitely often with at most one exception."
@@ -121,10 +121,10 @@
     "question": "The Kramers-Kronig relations connect the real and imaginary parts of any causal, analytic response function $\\chi(\\omega) = \\chi'(\\omega) + i\\chi''(\\omega)$:",
     "passive": {
       "options": [
-        "$\\chi'(\\omega) = \\frac{1}{\\pi}\\mathcal{P}\\int_{-\\infty}^\\infty \\frac{\\chi''(\\omega')}{\\omega'-\\omega}d\\omega'$ — the real (dispersive) part is determined by the imaginary (absorptive) part",
-        "The Kramers-Kronig relations apply only to electromagnetic response functions",
-        "The relations require $\\chi(\\omega)$ to have poles on the real axis",
-        "Real and imaginary parts of $\\chi$ are independent for a causal system"
+        "$\\chi'(\\omega) = \\frac{1}{\\pi}\\mathcal{P}\\int \\chi''(\\omega')/(\\omega'-\\omega)d\\omega'$ — real (dispersive) part determined by imaginary (absorptive) part via a Hilbert transform",
+        "Kramers-Kronig applies only to electromagnetic susceptibility, not to mechanical or magnetic response functions",
+        "Relations require $\\chi(\\omega)$ to have poles on the real axis; analytic responses do not obey K-K",
+        "Real and imaginary parts of $\\chi$ are independent for any causal linear-response system"
       ],
       "correct": 0,
       "explanation": "Causality ($\\chi(t) = 0$ for $t < 0$) places poles of $\\chi(\\omega)$ in the lower half-plane, allowing Cauchy's theorem to relate $\\chi'$ and $\\chi''$ via a Hilbert transform (the $\\mathcal{P}$ denotes Cauchy principal value). Physical consequences: you can't have absorption without dispersion. In AMO: the real (dispersive) part of atomic susceptibility gives the refractive index and dipole force; the imaginary (absorptive) part gives photon scattering and laser cooling."
@@ -138,10 +138,10 @@
     "question": "A conformal map is an analytic function with non-zero derivative that preserves angles between curves. The Schwarz-Christoffel mapping transforms the upper half-plane to a polygon. In physics, conformal maps are used because:",
     "passive": {
       "options": [
-        "Harmonic functions (solutions of Laplace's equation) are preserved under conformal maps — a complex electrostatics or fluid dynamics problem in a complicated geometry can be mapped to a simpler one",
-        "Conformal maps preserve distances as well as angles",
-        "Every harmonic function is the real part of a conformal map",
-        "Conformal invariance only applies in 2D for linear PDEs with constant coefficients"
+        "Harmonic functions are preserved: a Laplace problem in a complicated 2D geometry can be mapped to a simpler one (disk or half-plane) and solved there",
+        "Conformal maps preserve distances as well as angles — they are 2D isometries",
+        "Every harmonic function is the real part of an entire (conformal) map, so all 2D potentials are conformal images of $u = x$",
+        "Conformal invariance applies only to linear PDEs with constant coefficients; the Laplace equation is a coincidence"
       ],
       "correct": 0,
       "explanation": "If $w = f(z)$ is analytic with $f' \\neq 0$, and $U(x,y)$ satisfies $\\nabla^2 U = 0$ in the $z$-plane, then $U(x(u,v), y(u,v))$ satisfies $\\nabla^2 U = 0$ in the $w$-plane. Classic example: the flow around a cylinder maps to flow around an airfoil (Joukowski transform). In string theory and 2D critical phenomena, conformal symmetry is the infinite-dimensional Virasoro algebra — the basis of conformal field theory."

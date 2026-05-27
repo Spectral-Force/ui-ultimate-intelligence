@@ -35,10 +35,10 @@
     "question": "A group representation assigns to each group element $g$ a matrix $D(g)$ such that the group multiplication is preserved: $D(g_1)D(g_2) = D(g_1 g_2)$. An irreducible representation (irrep) is one that cannot be block-diagonalised. For $SU(2)$:",
     "passive": {
       "options": [
-        "Irreps are labelled by $j = 0, 1/2, 1, 3/2, \\ldots$ with dimension $2j+1$; the $j=1/2$ irrep is the spinor representation with generators $\\sigma_i/2$ (Pauli matrices divided by 2)",
-        "All irreps of $SU(2)$ are 2-dimensional",
-        "The $j=0$ (trivial) irrep has dimension 2",
-        "Irreducible representations of $SU(2)$ are only defined for integer $j$"
+        "Labelled by $j = 0, 1/2, 1, 3/2, \\ldots$ with dimension $2j+1$; $j = 1/2$ is the spinor rep with generators $\\sigma_i/2$",
+        "All irreps of $SU(2)$ are 2-dimensional regardless of $j$ — the spinor representation is the only one",
+        "The trivial ($j = 0$) irrep is 2-dimensional; higher $j$ doubles the size each step",
+        "Irreps of $SU(2)$ are only defined for integer $j$; half-integer values belong to $SO(3)$ alone"
       ],
       "correct": 0,
       "explanation": "The generators of $SU(2)$ satisfy $[J_i, J_j] = i\\varepsilon_{ijk}J_k$. The $j$ irrep has basis $|j, m\\rangle$, $m = -j, -j+1, \\ldots, j$. In quantum mechanics, $j$ is the total angular momentum quantum number; the $2j+1$ states are the magnetic substates $m_j$. Adding angular momenta: $j_1 \\otimes j_2 = |j_1-j_2| \\oplus \\ldots \\oplus (j_1+j_2)$ (Clebsch-Gordan decomposition)."
@@ -52,10 +52,10 @@
     "question": "Schur's lemma states that if $D$ is an irrep of a group $G$ and $[M, D(g)] = 0$ for all $g \\in G$, then $M = \\lambda I$. This implies:",
     "passive": {
       "options": [
-        "Any operator that commutes with all symmetry operations of a Hamiltonian is proportional to the identity on each irreducible subspace — degeneracies within an irrep are exact (not accidental)",
-        "Schur's lemma requires the group to be Abelian",
-        "If $[H, D(g)] = 0$ for all $g$, then $H = 0$",
-        "The lemma implies that irreps are always 1-dimensional"
+        "Operators commuting with all symmetry operations are $\\lambda I$ on each irrep — degeneracies within an irrep are exact, not accidental",
+        "Schur's lemma applies only to Abelian groups; non-Abelian groups need a separate argument",
+        "If $[H, D(g)] = 0$ for all $g$ then $H = 0$ — symmetric Hamiltonians must vanish identically",
+        "The lemma forces all irreducible representations of any group to be one-dimensional"
       ],
       "correct": 0,
       "explanation": "Schur's lemma underlies the Wigner-Eckart theorem: matrix elements of a tensor operator between angular momentum states factorise into a Clebsch-Gordan coefficient (geometry) times a reduced matrix element (dynamics). This dramatically reduces the number of independent matrix elements. In spectroscopy, selection rules ($\\Delta m = 0, \\pm 1$) follow from the $m$-dependence of the Clebsch-Gordan coefficients."
@@ -86,10 +86,10 @@
     "question": "In crystallography and molecular physics, point groups classify the symmetry of molecules. Irreps of the point group label molecular orbitals and normal modes. The symmetry operation $\\hat{C}_n$ is:",
     "passive": {
       "options": [
-        "A rotation by $2\\pi/n$ about the principal symmetry axis; $\\hat{C}_2$ is a 180° rotation, $\\hat{C}_4$ is 90°; irreps labelled $A, B, E, T$ have dimension 1, 1, 2, 3 respectively",
-        "$\\hat{C}_n$ is a reflection through $n$ planes",
-        "The $\\hat{C}_n$ operator commutes with all other point group operations",
-        "Irreps of point groups always have dimension 1"
+        "Rotation by $2\\pi/n$ about the principal axis; irreps labelled $A,B$ (1-dim), $E$ (2-dim), $T$ (3-dim) classify orbitals and modes",
+        "A composite operation that reflects the molecule through $n$ mirror planes in sequence",
+        "Commutes with every other point-group operation, so the irrep structure is always Abelian",
+        "All irreducible representations of any point group have dimension 1 — multidimensional irreps belong to space groups only"
       ],
       "correct": 0,
       "explanation": "Point group notation: $C_{2v}$ (water — 2-fold axis + 2 mirror planes), $T_d$ (methane — tetrahedral), $O_h$ (SF$_6$ — octahedral). Irreps label vibrational modes as IR-active (transform as $x,y,z$) or Raman-active (transform as $x^2, y^2, z^2, xy$, etc). In AMO: atomic orbitals in crystal fields split according to the site symmetry irreps — this explains $d$-level splitting in transition metals."
@@ -103,10 +103,10 @@
     "question": "The permutation group $S_N$ describes the symmetry of $N$ identical particles. Its irreps label the symmetry of multiparticle wavefunctions under exchange. For bosons and fermions:",
     "passive": {
       "options": [
-        "Bosons: totally symmetric irrep of $S_N$ (Young tableau with one row); fermions: totally antisymmetric irrep (one column) — Pauli exclusion means no two fermions in the same single-particle state",
-        "Bosons use all irreps of $S_N$; fermions use only 1-dimensional irreps",
-        "The permutation group is only relevant for spin-statistics in 3D",
-        "The antisymmetric irrep of $S_N$ has dimension $N$"
+        "Bosons: totally symmetric irrep (Young tableau one row); fermions: totally antisymmetric (one column) — Pauli exclusion follows",
+        "Bosons use all irreps; only fermions are restricted, to the 1-dimensional alternating representation",
+        "The permutation group is only relevant in 3D spacetime; in 2D and higher it has no role",
+        "The antisymmetric irrep of $S_N$ has dimension $N$, matching the particle count"
       ],
       "correct": 0,
       "explanation": "The spin-statistics theorem (Pauli, 1940) connects particle statistics to spin in relativistic quantum field theory: integer spin → bosons (symmetric, Bose-Einstein statistics), half-integer spin → fermions (antisymmetric, Fermi-Dirac statistics). In 2D systems, anyons can have fractional statistics (irreps of the braid group, not permutation group). Anyons appear as quasiparticles in the fractional quantum Hall effect and as the basis for topological quantum computation."

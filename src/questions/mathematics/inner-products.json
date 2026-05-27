@@ -8,7 +8,7 @@
     "equation": "\\langle f, g\\rangle = \\int_{-\\infty}^\\infty f^*(x)\\,g(x)\\,dx",
     "passive": {
       "options": [
-        "Conjugate-linear in the first argument $\\langle\\alpha f, g\\rangle = \\alpha^*\\langle f,g\\rangle$; linear in the second $\\langle f,\\alpha g\\rangle = \\alpha\\langle f,g\\rangle$; $\\langle f,f\\rangle \\geq 0$ with equality iff $f = 0$",
+        "Conjugate-linear in first slot, linear in second; $\\langle f,f\\rangle \\geq 0$ with equality iff $f = 0$",
         "Fully linear in both arguments for complex spaces — conjugation is unnecessary in either slot",
         "Symmetric: $\\langle f,g\\rangle = \\langle g,f\\rangle$ identically, without complex conjugation",
         "Defined only on finite-dimensional spaces; the integral $\\int f^* g\\,dx$ is a coincidental notation"
@@ -53,7 +53,7 @@
     "question": "The adjoint $A^\\dagger$ is defined by $\\langle A^\\dagger f,g\\rangle = \\langle f, Ag\\rangle$. Which classification is correct?",
     "passive": {
       "options": [
-        "Hermitian $A^\\dagger = A$: real eigenvalues, orthogonal eigenvectors (observables). Anti-Hermitian $A^\\dagger = -A$: purely imaginary spectrum. Unitary $A^\\dagger A = I$: eigenvalues on the unit circle",
+        "Hermitian: real eigenvalues, orthogonal eigenvectors. Anti-Hermitian: imaginary spectrum. Unitary: eigenvalues on unit circle",
         "Hermitian operators have generic complex eigenvalues — only the eigenvectors are orthogonal",
         "Unitary operators are a special case of Hermitian operators with $A = A^\\dagger$ and $A^2 = I$",
         "Anti-Hermitian operators have no eigenvalues; they only generate unitary group elements"

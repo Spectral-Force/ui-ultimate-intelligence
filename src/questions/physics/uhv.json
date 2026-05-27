@@ -69,10 +69,10 @@
     "question": "Atomic vapour dispensers (Rb, Cs) are commonly used to load MOTs in UHV chambers. Why are they preferred over breaking a glass ampule in vacuum?",
     "passive": {
       "options": [
-        "Dispensers release Rb only when electrically heated, so loading rate and background pressure are independently controllable; the released amount per shot is small, avoiding pressure spikes",
-        "Glass ampules cannot be manufactured to the purity required for MOT loading",
-        "Dispensers permanently release vapour without any power input, simplifying the wiring",
-        "Glass ampules release too little Rb to load a MOT in any reasonable time"
+        "Heated only when current applied — loading rate and background pressure independently controlled; small release per shot avoids spikes",
+        "Glass ampules cannot be manufactured to the chemical purity required for reliable MOT loading of cold atoms",
+        "Dispensers continuously release Rb vapour without power input, simplifying the wiring and control electronics",
+        "Glass ampules release far too little Rb vapour to load a working MOT within any reasonable experiment time"
       ],
       "correct": 0,
       "explanation": "SAES Getters (e.g., Rb/NF/3.4/12 FT10+10) contain Rb in a zeolite compound. At low current (3–5 A): slow release (MOT loading $\\sim$ 5 s to steady state). At higher current: fast release, pressure spike. Typical operating current: 3.5–4.5 A. Dispenser lifetime: $\\sim 10^{5}$ ampere-hours. When the dispenser is off, the Rb vapour pressure drops in $\\sim 5$ s (gettered by NEG and ion pump). Light-induced atomic desorption (LIAD) using UV/blue light is an alternative for all-UHV operation."

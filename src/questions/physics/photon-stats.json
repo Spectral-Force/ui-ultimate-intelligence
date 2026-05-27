@@ -8,10 +8,10 @@
     "equation": "Q = \\frac{\\langle(\\Delta n)^2\\rangle - \\langle n\\rangle}{\\langle n\\rangle}",
     "passive": {
       "options": [
-        "$Q < 0$: sub-Poissonian (non-classical, squeezed number); $Q = 0$: Poissonian (coherent); $Q > 0$: super-Poissonian (thermal/bunched)",
-        "$Q > 0$ is non-classical; $Q = 0$ is thermal",
-        "$Q$ is always positive for quantum light",
-        "Thermal light has $Q = 0$"
+        "$Q < 0$: sub-Poissonian (non-classical, number-squeezed); $Q = 0$: Poissonian (coherent); $Q > 0$: super-Poissonian (thermal/bunched)",
+        "$Q > 0$ is the signature of non-classical light; $Q = 0$ describes thermal radiation",
+        "$Q$ is always strictly positive for any quantum light field, by definition of variance",
+        "Thermal blackbody light has $Q = 0$, matching Poissonian statistics"
       ],
       "correct": 0,
       "explanation": "A coherent state $|\\alpha\\rangle$ has Poissonian statistics: $\\langle(\\Delta n)^2\\rangle = \\langle n\\rangle$, so $Q = 0$. Thermal light: $\\langle(\\Delta n)^2\\rangle = \\langle n\\rangle + \\langle n\\rangle^2$, giving $Q = \\langle n\\rangle > 0$. Fock states $|n\\rangle$ have $Q = -1$ (minimum). Sub-Poissonian light ($Q < 0$) has no classical analogue and requires a quantum description. It is produced by antibunched single-photon emitters."
@@ -37,10 +37,10 @@
     "equation": "g^{(2)}(\\tau) = \\frac{\\langle:\\hat{n}(t)\\hat{n}(t+\\tau):\\rangle}{\\langle\\hat{n}\\rangle^2}",
     "passive": {
       "options": [
-        "$g^{(2)}(0) < 1$: photon antibunching (non-classical); $g^{(2)}(0) = 1$: coherent; $g^{(2)}(0) = 2$: thermal (Hanbury Brown-Twiss effect)",
-        "$g^{(2)}(0) = 2$ always for quantum fields",
-        "Classical fields always have $g^{(2)}(0) < 1$",
-        "$g^{(2)}(\\tau)$ is always constant for monochromatic light"
+        "$g^{(2)}(0) < 1$ = antibunching (non-classical); $g^{(2)}(0) = 1$ = coherent; $g^{(2)}(0) = 2$ = thermal (HBT)",
+        "$g^{(2)}(0) = 2$ holds for all quantum field states — both single photons and thermal light",
+        "Classical wave fields always satisfy $g^{(2)}(0) < 1$ — antibunching is a classical optical effect",
+        "$g^{(2)}(\\tau)$ is independent of $\\tau$ for any monochromatic light, regardless of statistics"
       ],
       "correct": 0,
       "explanation": "The HBT experiment (1956) measured $g^{(2)}(\\tau) > 1$ for thermal starlight — photon bunching. Mandel (1977) demonstrated antibunching from a single atom: $g^{(2)}(0) = 0$, a hallmark of a single-photon source. Single-photon emitters (quantum dots, NV centres, single atoms) are characterised by this measurement. Antibunching has no classical wave explanation and is definitive evidence for photon quantisation."
@@ -54,10 +54,10 @@
     "question": "A coherent state $|\\alpha\\rangle$ is defined as an eigenstate of the annihilation operator: $\\hat{a}|\\alpha\\rangle = \\alpha|\\alpha\\rangle$. Its photon number distribution is:",
     "passive": {
       "options": [
-        "Poissonian: $P(n) = e^{-|\\alpha|^2}|\\alpha|^{2n}/n!$ with mean $\\bar{n} = |\\alpha|^2$ and variance equal to mean",
-        "Binomial with parameter $|\\alpha|$",
-        "Uniform over all $n$",
-        "Thermal Bose-Einstein with mean $|\\alpha|^2$"
+        "Poisson distribution $P(n) = e^{-|\\alpha|^2}|\\alpha|^{2n}/n!$; mean $\\bar n = |\\alpha|^2$; variance equals mean (Poissonian)",
+        "Binomial distribution with success probability $|\\alpha|$ and a fixed number of trials set by laser intensity",
+        "Uniform distribution over all $n \\geq 0$ — every photon number is equally likely in a coherent state",
+        "Bose-Einstein (thermal) distribution with mean photon number $|\\alpha|^2$, since lasers are blackbody-like"
       ],
       "correct": 0,
       "explanation": "A coherent state $|\\alpha\\rangle = e^{-|\\alpha|^2/2}\\sum_n (\\alpha^n/\\sqrt{n!})|n\\rangle$ has Poissonian photon statistics because successive photons are emitted independently. Coherent states are the quantum states closest to classical radiation fields — they satisfy the Heisenberg minimum uncertainty and have equal amplitude and phase fluctuations. Laser light above threshold is well described as a coherent state."
@@ -88,10 +88,10 @@
     "question": "Shot noise in optical measurements arises from Poissonian photon detection statistics. The shot-noise-limited signal-to-noise ratio for detecting $N$ photons is:",
     "passive": {
       "options": [
-        "$\\rm SNR = \\sqrt{N}$ — detection of $N$ photons gives noise $\\sqrt{N}$, setting the standard quantum limit for optical measurements",
-        "$\\rm SNR = N$ for coherent detection",
-        "$\\rm SNR = N^2$ for homodyne detection",
-        "Shot noise can be fully eliminated with coherent states"
+        "$\\rm SNR = \\sqrt N$: detecting $N$ photons gives Poissonian noise $\\sqrt N$, setting the standard quantum limit (SQL)",
+        "$\\rm SNR = N$ for coherent detection — signal grows as $N$ and noise is independent of photon count",
+        "$\\rm SNR = N^2$ for homodyne detection because the local oscillator amplifies signal quadratically",
+        "Shot noise can be completely eliminated by using coherent states above some threshold intensity"
       ],
       "correct": 0,
       "explanation": "For Poissonian detection of $N$ photons: signal $\\propto N$, noise $\\propto \\sqrt{N}$, $\\rm SNR = \\sqrt{N}$. Shot noise sets the standard quantum limit (SQL) for interferometry. Squeezed light redistributes quantum noise between quadratures: reduced noise in the signal quadrature at the cost of excess noise in the conjugate. LIGO uses squeezed light injection to push below the SQL at high frequencies, improving gravitational wave sensitivity."

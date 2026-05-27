@@ -118,10 +118,10 @@
     "question": "The third law of thermodynamics (Nernst's heat theorem) states:",
     "passive": {
       "options": [
-        "$S \\to 0$ as $T \\to 0$ for a system in its unique ground state; absolute zero is unattainable in a finite number of steps",
-        "$S \\to \\infty$ as $T \\to 0$ due to quantum fluctuations",
-        "$S = 0$ at all temperatures for a perfect crystal",
-        "The entropy change of any adiabatic process is zero"
+        "$S \\to 0$ as $T \\to 0$ for a unique ground state; absolute zero is unreachable in finitely many steps",
+        "$S \\to \\infty$ as $T \\to 0$ because zero-point quantum fluctuations dominate at zero temperature",
+        "$S = 0$ at every temperature for a perfect crystal — only impurities cause non-zero entropy at any $T$",
+        "Entropy change of any adiabatic process is exactly zero, since adiabatic and isentropic are synonyms"
       ],
       "correct": 0,
       "explanation": "For a non-degenerate ground state, $\\Omega = 1$ at $T=0$, so $S = k_B\\ln 1 = 0$. This makes absolute entropy (not just $\\Delta S$) well-defined. The unattainability follows from the entropy going to zero: each cooling step requires removing less entropy, requiring exponentially more resources. In experiments, laser-cooled atoms reach $\\sim$ nK but exactly zero temperature remains impossible."

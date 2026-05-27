@@ -8,10 +8,10 @@
     "equation": "E_F = \\frac{\\hbar^2}{2m}(3\\pi^2 n)^{2/3}",
     "passive": {
       "options": [
-        "$E_F$ depends only on the number density $n = N/V$ — fermions with higher density have higher $E_F$ and Fermi temperature $T_F = E_F/k_B$",
-        "$E_F$ is the average energy per particle at $T = 0$",
-        "The Fermi energy equals $k_BT$ at the quantum degeneracy temperature",
-        "$E_F$ is proportional to $N$, not $N^{2/3}$"
+        "Depends only on number density $n = N/V$; higher density → higher $E_F$ and Fermi temperature $T_F = E_F/k_B$",
+        "$E_F$ is the average energy per particle at $T = 0$, not the maximum occupied energy",
+        "$E_F$ equals $k_BT$ at the quantum degeneracy temperature, marking the classical-quantum crossover",
+        "$E_F$ scales linearly with particle number $N$, not as $N^{2/3}$, at fixed volume"
       ],
       "correct": 0,
       "explanation": "The Fermi energy marks where the Fermi-Dirac distribution drops from 1 to 0 at $T = 0$. The average energy per particle at $T = 0$ is $\\bar{E} = 3E_F/5$ (not $E_F$). In ultracold atoms: $^6$Li and $^{40}$K are fermionic isotopes (odd mass number); typical $E_F/k_B \\sim 1\\,\\mu$K. In metals: $E_F \\sim$ eV, so $T/T_F \\sim 10^{-4}$ — electrons are highly degenerate at room temperature."
@@ -36,10 +36,10 @@
     "question": "Ultracold fermionic atoms in two different internal states ($|\\uparrow\\rangle$ and $|\\downarrow\\rangle$) can undergo $s$-wave collisions. Pauli exclusion forbids $s$-wave collisions between identical fermions. The BCS-BEC crossover is tuned by a Feshbach resonance changing the scattering length $a$:",
     "passive": {
       "options": [
-        "$a > 0$ (repulsive, BEC side): tightly bound molecular dimers Bose-condense; $a < 0$ (attractive, BCS side): Cooper pairs form at $T < T_c$; at unitarity $k_F|a| \\gg 1$: a strongly interacting universal state",
-        "Negative scattering length always leads to collapse of the gas",
-        "BCS pairing requires $a > 0$ and BEC requires $a < 0$",
-        "The crossover is only possible when $a = 0$ (non-interacting limit)"
+        "$a > 0$ (BEC side): tightly bound dimers Bose-condense; $a < 0$ (BCS side): Cooper pairs at $T < T_c$; $k_F|a| \\gg 1$: unitary regime",
+        "Negative scattering length always destabilises the gas via three-body recombination, causing collapse",
+        "BCS pairing requires positive scattering length ($a > 0$); BEC of dimers requires negative ($a < 0$) — opposite of the actual situation",
+        "Crossover is observable only when $a = 0$ (non-interacting limit); pairing physics turns on only at finite $a$"
       ],
       "correct": 0,
       "explanation": "The BCS-BEC crossover (Leggett, 1980; Nozières-Schmitt-Rink, 1985) smoothly connects two limits: (1) BEC of tightly bound dimers when $k_Fa \\gg 1$; (2) BCS superfluidity of weakly overlapping Cooper pairs when $k_F|a| \\ll 1$ (a < 0). At unitarity ($1/k_Fa = 0$): universal behavior, $T_c/T_F$ is a universal constant $\\approx 0.17$. First realised with $^6$Li and $^{40}$K in 2003-2004; confirmed superfluidity by vortex formation."
@@ -53,10 +53,10 @@
     "question": "In a harmonically trapped Fermi gas at $T = 0$, the Thomas-Fermi radius $R_F$ and Fermi energy $E_F$ are related to the trap frequency $\\bar{\\omega}$ and particle number $N$ by:",
     "passive": {
       "options": [
-        "$E_F = \\hbar\\bar{\\omega}(6N)^{1/3}$ and $R_F = \\sqrt{2E_F/m\\bar{\\omega}^2}$ — the Thomas-Fermi profile fills a region up to $R_F$ where the local chemical potential equals $E_F$",
-        "$E_F = N\\hbar\\bar{\\omega}$ — the Fermi energy is simply $N$ times the trap level spacing",
-        "The Thomas-Fermi profile of a Fermi gas is identical to that of a BEC",
-        "$R_F = \\sqrt{N}\\cdot\\ell_{\\rm ho}$ where $\\ell_{\\rm ho} = \\sqrt{\\hbar/m\\bar{\\omega}}$"
+        "$E_F = \\hbar\\bar\\omega(6N)^{1/3}$ and $R_F = \\sqrt{2E_F/(m\\bar\\omega^2)}$; the Thomas-Fermi profile fills a region where local $\\mu = E_F$",
+        "$E_F = N\\hbar\\bar\\omega$ — Fermi energy equals $N$ times the harmonic trap level spacing",
+        "Thomas-Fermi profile of a trapped Fermi gas is identical to that of a trapped BEC at the same density",
+        "$R_F = \\sqrt N \\cdot \\ell_{\\rm ho}$ with $\\ell_{\\rm ho} = \\sqrt{\\hbar/m\\bar\\omega}$ — half-power scaling rather than 1/6 scaling"
       ],
       "correct": 0,
       "explanation": "For a 3D harmonic trap with geometric mean frequency $\\bar{\\omega} = (\\omega_x\\omega_y\\omega_z)^{1/3}$: $E_F = \\hbar\\bar{\\omega}(6N)^{1/3}$. The in-situ density is a parabolic profile $n(r) = (8N/\\pi^2 R_F^3)(1 - r^2/R_F^2)^{3/2}$. Unlike a BEC (which has a sharper Thomas-Fermi profile $n \\propto (1-r^2/R^2)$), the Fermi gas has a smoother boundary reflecting the Pauli-distributed occupation. Expansion after trap release reveals characteristic Fermi-shaped momentum distribution."
@@ -87,10 +87,10 @@
     "question": "Two-dimensional (2D) Fermi gases and the BKT transition: in 2D, long-range order is forbidden at any $T > 0$ (Mermin-Wagner theorem), but the Berezinskii-Kosterlitz-Thouless (BKT) transition occurs. Below $T_{\\rm BKT}$:",
     "passive": {
       "options": [
-        "Vortex-antivortex pairs are bound, giving algebraic (quasi-long-range) order and superfluidity without true long-range order — the superfluid fraction jumps discontinuously at $T_{\\rm BKT}$",
-        "True BEC occurs in 2D at $T_{\\rm BKT}$",
-        "The BKT transition requires a Feshbach resonance to change the effective dimensionality",
-        "In 2D, the Fermi gas is always in the normal phase for $T > 0$"
+        "Vortex-antivortex pairs bind; algebraic (quasi-long-range) order and superfluidity emerge; $\\rho_s$ jumps discontinuously at $T_{\\rm BKT}$",
+        "True 3D-style BEC occurs in 2D at the BKT temperature, with off-diagonal long-range order",
+        "BKT transition requires a Feshbach resonance to tune the effective dimensionality from 3D down to 2D",
+        "A 2D Fermi gas always remains in the normal (non-superfluid) phase for any $T > 0$ by Mermin-Wagner"
       ],
       "correct": 0,
       "explanation": "The BKT transition was predicted by Berezinskii (1971) and Kosterlitz-Thouless (1973), Nobel 2016. Below $T_{\\rm BKT}$: vortices bind in pairs (net circulation zero), correlations decay as power laws $G(r) \\sim r^{-\\eta}$. Above $T_{\\rm BKT}$: free vortices proliferate, exponential decay of correlations. The superfluid density jumps from $\\rho_s = 0$ to $\\rho_s = 2mk_BT_{\\rm BKT}/\\pi\\hbar^2$ (Nelson-Kosterlitz universal jump). Observed in 2D $^6$Li films in optical potentials."

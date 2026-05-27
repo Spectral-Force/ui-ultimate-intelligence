@@ -90,7 +90,7 @@
     "equation": "P = \\frac{\\omega^4 d_0^2}{12\\pi\\varepsilon_0 c^3}",
     "passive": {
       "options": [
-        "The induced dipole moment $d_0 \\propto E_0$ is fixed (in linear-response regime); radiated power from an oscillating dipole goes as $\\omega^4 d_0^2$ — blue scatters $\\sim 5.5\\times$ more than red, explaining the blue sky",
+        "Induced dipole $d_0 \\propto E_0$ in linear response; oscillator radiates as $\\omega^4 d_0^2$; blue $\\sim 5.5\\times$ stronger than red (blue sky)",
         "Rayleigh scattering is approximately wavelength-independent in the optical regime",
         "The $\\omega^4$ dependence dominates long-wavelength radiation, making radio waves the most strongly scattered",
         "The scattering cross-section equals the geometric cross-section of the particle, independent of wavelength"

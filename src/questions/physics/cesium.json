@@ -35,10 +35,10 @@
     "question": "Cesium has a large negative s-wave scattering length $a_{Cs} \\approx -2400\\,a_0$ at zero magnetic field (largest among alkali atoms). This creates challenges for BEC:",
     "passive": {
       "options": [
-        "Large negative $a$ causes an attractive mean-field interaction that leads to collapse of the condensate above a critical atom number — Cs BEC required tuning $a$ positive via a Feshbach resonance",
-        "Large positive scattering length prevents BEC formation",
-        "The scattering length of Cs cannot be tuned by magnetic field",
-        "Negative scattering length always leads to a stable BEC"
+        "Negative $a$ gives attractive mean-field; BEC collapses above $N_c$; Cs BEC needed Feshbach tuning to $a > 0$ (Innsbruck 2002)",
+        "Large positive scattering length actively prevents BEC formation because of strong repulsive mean-field interactions",
+        "Cesium scattering length is fixed at its zero-field value and cannot be tuned by magnetic field at any strength",
+        "Negative scattering length always produces a stable, long-lived BEC because attractive interactions enhance condensation"
       ],
       "correct": 0,
       "explanation": "Cs BEC was achieved in 2002 (Grimm group, Innsbruck) by using Feshbach resonances to tune $a > 0$. At zero field, the enormous $|a|$ causes catastrophic three-body losses at the densities needed for BEC. With Feshbach tuning to $a \\approx 200\\,a_0$: BEC with $N \\sim 10^4$ atoms. Cs also has a wealth of Feshbach resonances and was the first system where universality in three-body physics (Efimov states) was observed."
@@ -69,10 +69,10 @@
     "question": "Efimov states in Cs arise near a Feshbach resonance. Three-body bound states appear at geometrically spaced scattering lengths:",
     "passive": {
       "options": [
-        "Efimov states appear at $a_n^- = \\lambda^n a_0^-$ where $\\lambda = e^{\\pi/s_0} \\approx 22.7$ for identical bosons — a geometric (discrete scale-invariant) spectrum with ratio $\\sim 22.7$ between successive states",
-        "Efimov states are equally spaced in $a$ like Bohr levels in hydrogen",
-        "Efimov states only occur for fermions with resonant interactions",
-        "The Efimov parameter $\\lambda = 2\\pi$ for all atomic systems"
+        "Geometric spectrum $a_n^- = \\lambda^n a_0^-$ with $\\lambda = e^{\\pi/s_0} \\approx 22.7$ for identical bosons (discrete scale invariance)",
+        "Efimov states are equally spaced in scattering length $a$ like Bohr energy levels in hydrogen",
+        "Efimov states occur only for fermions with resonant interactions; identical bosons cannot host them",
+        "The Efimov scale parameter is $\\lambda = 2\\pi$ universally for every atomic system, regardless of statistics"
       ],
       "correct": 0,
       "explanation": "Efimov (1970) predicted three-body bound states near a two-body zero-energy resonance: as $|a| \\to \\infty$, infinitely many three-body states appear. First observed experimentally in $^{133}$Cs by Grimm group (2006): enhanced three-body loss at a specific magnetic field (Efimov resonance), with subsequent resonances at fields corresponding to $a$ ratios of $\\sim 22.7$. The Efimov spectrum is governed by a universal parameter $\\kappa_*$ (three-body parameter) that has been measured to be nearly universal ($\\kappa_* r_{\\rm vdW} \\approx 1$)."

@@ -8,10 +8,10 @@
     "equation": "|\\psi\\rangle = \\cos(\\theta/2)|0\\rangle + e^{i\\phi}\\sin(\\theta/2)|1\\rangle",
     "passive": {
       "options": [
-        "$\\theta \\in [0,\\pi]$ is the polar angle, $\\phi \\in [0,2\\pi]$ the azimuthal; the north/south poles are $|0\\rangle$/$|1\\rangle$, the equator contains equal superpositions",
-        "The global phase $e^{i\\phi}$ is physically observable",
-        "A qubit can only be in $|0\\rangle$ or $|1\\rangle$, not superpositions",
-        "The Bloch sphere has radius $1/2$ for spin-1/2 particles"
+        "$\\theta \\in [0,\\pi]$ polar, $\\phi \\in [0,2\\pi]$ azimuthal; poles are $|0\\rangle, |1\\rangle$; equator holds equal superpositions",
+        "Global phase $e^{i\\phi}$ in front of the whole state is physically observable as a measurement outcome",
+        "A qubit can only be in $|0\\rangle$ or $|1\\rangle$, not in arbitrary complex superpositions of the two",
+        "Bloch sphere has radius $1/2$ for spin-1/2 particles because angular momentum is half-quantised"
       ],
       "correct": 0,
       "explanation": "The Bloch sphere provides a one-to-one map between pure single-qubit states and points on the unit sphere. Mixed states map to points inside the sphere. The three Pauli operators $\\sigma_x, \\sigma_y, \\sigma_z$ rotate the Bloch vector about the $x$, $y$, $z$ axes. $|+\\rangle = (|0\\rangle+|1\\rangle)/\\sqrt{2}$ is on the equator at $\\phi=0$; $|R\\rangle = (|0\\rangle+i|1\\rangle)/\\sqrt{2}$ at $\\phi = \\pi/2$."
@@ -36,10 +36,10 @@
     "question": "The Pauli matrices $\\sigma_x, \\sigma_y, \\sigma_z$ and identity $I$ form a basis for single-qubit operators. The Hadamard gate $H$ is:",
     "passive": {
       "options": [
-        "$H = (\\sigma_x + \\sigma_z)/\\sqrt{2}$ — maps $|0\\rangle \\to |+\\rangle$ and $|1\\rangle \\to |-\\rangle$, creating superpositions",
-        "$H = \\sigma_x$ — the bit-flip gate",
-        "$H = e^{i\\pi\\sigma_z/4}$ — a phase rotation",
-        "$H$ maps $|0\\rangle$ to $|1\\rangle$ and vice versa"
+        "$H = (\\sigma_x + \\sigma_z)/\\sqrt 2$; maps $|0\\rangle \\to |+\\rangle$ and $|1\\rangle \\to |-\\rangle$ — creates equal-weight superpositions",
+        "$H = \\sigma_x$, identical to the bit-flip gate, with the same matrix and action on basis states",
+        "$H = e^{i\\pi\\sigma_z/4}$ — a pure phase rotation about the $z$-axis with no mixing of $|0\\rangle$ and $|1\\rangle$",
+        "$H$ maps $|0\\rangle \\to |1\\rangle$ and $|1\\rangle \\to |0\\rangle$, swapping the two computational basis states"
       ],
       "correct": 0,
       "explanation": "$H = \\frac{1}{\\sqrt{2}}\\begin{pmatrix}1 & 1 \\\\ 1 & -1\\end{pmatrix}$. It is its own inverse ($H^2 = I$). The key gates: $X = \\sigma_x$ (NOT, bit flip), $Z = \\sigma_z$ (phase flip), $Y = i\\sigma_x\\sigma_z$, $S = \\sqrt{Z}$ ($\\pi/2$ phase), $T = \\sqrt{S}$ ($\\pi/4$ phase). Together $\\{H, T, \\rm CNOT\\}$ form a universal gate set for quantum computation."
@@ -71,10 +71,10 @@
     "question": "Physical qubit implementations include atomic hyperfine levels, electron spins, superconducting circuits, and trapped ions. The key figure of merit is the ratio of coherence time $T_2$ to gate time $t_{\\rm gate}$:",
     "passive": {
       "options": [
-        "More gate operations before decoherence is better; state-of-the-art trapped ions achieve $T_2/t_{\\rm gate} \\sim 10^6$ and superconducting qubits $\\sim 10^4$",
-        "Faster gate time is always better regardless of coherence time",
-        "Superconducting qubits have longer coherence times than trapped ions",
-        "The ratio $T_2/t_{\\rm gate}$ is always greater than 1 for any qubit"
+        "More gate operations before decoherence is better; trapped ions reach $T_2/t_{\\rm gate} \\sim 10^6$, superconducting qubits $\\sim 10^4$",
+        "Faster gate time is always preferable, regardless of how short the coherence time is — speed dominates fidelity",
+        "Superconducting transmons have longer coherence times than trapped-ion qubits, despite their cryogenic environment",
+        "The ratio $T_2/t_{\\rm gate}$ is always greater than 1 for any physical qubit by an information-theoretic argument"
       ],
       "correct": 0,
       "explanation": "Trapped ion qubits (e.g., $^{40}$Ca$^+$, $^{171}$Yb$^+$): $T_2 \\sim$ seconds, gate times $\\sim$ microseconds, giving $\\sim 10^6$ gates. Superconducting transmon qubits: $T_2 \\sim 100$ $\\mu$s, gate times $\\sim 10{-}100$ ns. Neutral atom arrays (Rydberg qubits): $T_2 \\sim$ seconds, gate times $\\sim$ microseconds. Surface codes for error correction require $\\sim 10^3$ physical qubits per logical qubit and gate error rates below $\\sim 10^{-3}$."
@@ -99,10 +99,10 @@
     "question": "The CNOT (controlled-NOT) gate flips the target qubit if and only if the control qubit is $|1\\rangle$. Its action on the computational basis is:",
     "passive": {
       "options": [
-        "$|00\\rangle \\to |00\\rangle$, $|01\\rangle \\to |01\\rangle$, $|10\\rangle \\to |11\\rangle$, $|11\\rangle \\to |10\\rangle$ — the target bit is XORed with the control",
-        "$|00\\rangle \\to |11\\rangle$, $|11\\rangle \\to |00\\rangle$",
-        "The CNOT always creates entanglement regardless of input",
-        "The CNOT gate has a $4\\times 4$ unitary matrix with determinant $-1$"
+        "$|00\\rangle \\to |00\\rangle$, $|01\\rangle \\to |01\\rangle$, $|10\\rangle \\to |11\\rangle$, $|11\\rangle \\to |10\\rangle$ — target XORed with control",
+        "$|00\\rangle \\to |11\\rangle$, $|11\\rangle \\to |00\\rangle$ — CNOT swaps the all-zero and all-one computational states",
+        "CNOT always produces an entangled output state, regardless of whether the input is separable or entangled",
+        "CNOT is a $4\\times 4$ unitary matrix with determinant $-1$, distinguishing it from other two-qubit gates"
       ],
       "correct": 0,
       "explanation": "CNOT matrix: $\\begin{pmatrix}1&0&0&0\\\\0&1&0&0\\\\0&0&0&1\\\\0&0&1&0\\end{pmatrix}$. Applying CNOT to $|+\\rangle|0\\rangle = \\frac{1}{\\sqrt{2}}(|0\\rangle+|1\\rangle)|0\\rangle$ gives $\\frac{1}{\\sqrt{2}}(|00\\rangle+|11\\rangle)$ — a Bell state. This shows that CNOT + Hadamard generates entanglement and forms a universal gate set together with single-qubit rotations."
@@ -116,10 +116,10 @@
     "question": "The no-cloning theorem states that an unknown quantum state cannot be perfectly copied. The proof follows directly from linearity of quantum mechanics:",
     "passive": {
       "options": [
-        "If $U|\\psi\\rangle|0\\rangle = |\\psi\\rangle|\\psi\\rangle$ and $U|\\phi\\rangle|0\\rangle = |\\phi\\rangle|\\phi\\rangle$, then $U(|\\psi\\rangle+|\\phi\\rangle)|0\\rangle$ cannot equal $(|\\psi\\rangle+|\\phi\\rangle)^{\\otimes 2}$ by linearity",
-        "Cloning is forbidden only for entangled states",
-        "The no-cloning theorem applies only to mixed states",
-        "A quantum state can be cloned if measured first"
+        "Linearity forces $U(|\\psi\\rangle+|\\phi\\rangle)|0\\rangle = |\\psi\\rangle|\\psi\\rangle + |\\phi\\rangle|\\phi\\rangle \\neq (|\\psi\\rangle+|\\phi\\rangle)^{\\otimes 2}$",
+        "Cloning is forbidden only for entangled states; product states can be copied perfectly by a separable map",
+        "No-cloning theorem applies only to mixed states; pure quantum states have a universal cloning machine",
+        "A quantum state can be cloned perfectly if measured first; the measurement record contains all the information needed"
       ],
       "correct": 0,
       "explanation": "Linearity gives $U(|\\psi\\rangle+|\\phi\\rangle)|0\\rangle = |\\psi\\rangle|\\psi\\rangle + |\\phi\\rangle|\\phi\\rangle$, but perfect cloning would require $(|\\psi\\rangle+|\\phi\\rangle)^{\\otimes 2} = |\\psi\\rangle|\\psi\\rangle + |\\psi\\rangle|\\phi\\rangle + |\\phi\\rangle|\\psi\\rangle + |\\phi\\rangle|\\phi\\rangle$. These are not equal for $\\langle\\psi|\\phi\\rangle \\neq 0, 1$. No-cloning underpins quantum key distribution security: an eavesdropper cannot copy a qubit without disturbing it."

@@ -82,10 +82,10 @@
     "question": "Noether's theorem states that every continuous symmetry of the Lagrangian corresponds to a conserved quantity. If the Lagrangian is invariant under $q_i \\to q_i + \\epsilon\\,\\delta q_i$ (infinitesimal), the conserved quantity is:",
     "passive": {
       "options": [
-        "$Q = \\sum_i \\dfrac{\\partial L}{\\partial \\dot{q}_i}\\delta q_i = $ constant along any solution",
-        "$Q = L\\,\\delta t$ — the action increment",
-        "$Q = \\sum_i p_i q_i$ — the virial",
-        "$Q = \\delta L$ — the change in the Lagrangian"
+        "$Q = \\sum_i (\\partial L/\\partial\\dot q_i)\\,\\delta q_i$ — conserved along any classical trajectory",
+        "$Q = L\\,\\delta t$ — the action increment along the symmetry direction; conserved by stationarity",
+        "$Q = \\sum_i p_i q_i$ — the virial-style inner product of canonical momenta and coordinates",
+        "$Q = \\delta L$ — the infinitesimal change in the Lagrangian itself is the Noether charge"
       ],
       "correct": 0,
       "explanation": "The conserved Noether charge is the inner product of the generalised momenta $p_i = \\partial L/\\partial\\dot{q}_i$ with the symmetry direction $\\delta q_i$. For spatial translation ($\\delta q_i = 1$ for one Cartesian coordinate), $Q = p = m\\dot{x}$. Noether's theorem has profound consequences in field theory: gauge symmetry → charge conservation; Lorentz symmetry → energy-momentum tensor."

@@ -8,10 +8,10 @@
     "equation": "\\frac{1}{f} = \\frac{1}{v} + \\frac{1}{u}",
     "passive": {
       "options": [
-        "A converging lens ($f > 0$) forms a real, inverted image when $u > f$; a virtual, upright image when $u < f$",
-        "The thin lens equation only applies to concave lenses",
-        "The focal length depends on the object distance",
-        "A diverging lens can form a real image"
+        "Converging lens ($f > 0$): real inverted image when $u > f$; virtual upright image when $u < f$",
+        "Thin-lens equation applies only to concave (diverging) lenses; convex lenses need the lensmaker's formula directly",
+        "Focal length $f$ depends on object distance $u$ via the small-angle paraxial correction $f(u) \\approx f_0(1 - u/R)$",
+        "A diverging lens ($f < 0$) can form a real image whenever the object is closer than the focal length"
       ],
       "correct": 0,
       "explanation": "Sign convention (real-is-positive): real objects $u > 0$, real images $v > 0$. For a converging lens, when $u > 2f$ the image is smaller; at $u = 2f$ same size; $f < u < 2f$ magnified. The lensmaker's equation $1/f = (n-1)(1/R_1 - 1/R_2)$ relates focal length to glass index $n$ and surface radii. In laser labs, lenses are used to collimate beams, match modes, and focus into vapour cells."
@@ -39,10 +39,10 @@
     "equation": "\\theta = \\frac{\\lambda}{\\pi w_0}",
     "passive": {
       "options": [
-        "Tighter focus ($w_0$ smaller) gives larger divergence — the beam-waist product $w_0\\theta = \\lambda/\\pi$ is a diffraction limit",
-        "Tighter focus gives less divergence",
-        "The divergence is independent of wavelength",
-        "The Rayleigh range $z_R = w_0/\\theta$"
+        "Tighter focus → larger divergence; $w_0\\theta = \\lambda/\\pi$ is the diffraction-limited beam parameter product",
+        "Tighter focus gives less divergence because the angular spread scales inversely with waist size — wave-optical limit reversed",
+        "Divergence is independent of wavelength, depending only on geometric optics of the focusing lens system",
+        "Rayleigh range satisfies $z_R = w_0/\\theta$ rather than the actual $z_R = \\pi w_0^2/\\lambda$"
       ],
       "correct": 0,
       "explanation": "The beam waist–divergence product $w_0 \\theta = \\lambda/\\pi$ is the ideal Gaussian beam's diffraction limit ($M^2 = 1$). Real beams have $M^2 > 1$. The Rayleigh range $z_R = \\pi w_0^2/\\lambda$ sets the depth of focus — beyond $z_R$, the beam area doubles. For 780 nm and $w_0 = 1$ mm: $z_R \\approx 4$ m — essentially collimated over lab distances."
@@ -57,10 +57,10 @@
     "equation": "\\Delta\\nu_{\\rm FSR} = \\frac{c}{2L}",
     "passive": {
       "options": [
-        "FSR is the frequency spacing between adjacent transmission peaks; the finesse $\\mathcal{F} = \\Delta\\nu_{\\rm FSR}/\\delta\\nu_{\\rm linewidth}$ measures the cavity's frequency resolution",
-        "FSR is the frequency at which the cavity resonates",
-        "FSR decreases with mirror reflectivity",
-        "The cavity linewidth equals the FSR divided by the speed of light"
+        "FSR = frequency spacing between adjacent transmission peaks; finesse $\\mathcal F = \\Delta\\nu_{\\rm FSR}/\\delta\\nu$ measures resolution",
+        "FSR is the single frequency at which the cavity resonates — like the resonance of a tuning fork",
+        "FSR decreases as mirror reflectivity rises, because higher $R$ tightens the spacing between resonances",
+        "Cavity linewidth equals the FSR divided by the speed of light, giving an inverse-time quantity"
       ],
       "correct": 0,
       "explanation": "Round-trip condition: $2L = m\\lambda$, so $\\nu_m = mc/2L$, giving $\\Delta\\nu_{\\rm FSR} = c/2L$. Finesse $\\mathcal{F} = \\pi\\sqrt{R}/(1-R)$ for mirror reflectivity $R$. A high-finesse cavity (e.g., $R = 0.9999$, $\\mathcal{F} \\sim 30{,}000$) can resolve MHz features within a 10 GHz FSR. Used in laser linewidth measurement, optical frequency combs, and cavity-QED experiments."
@@ -85,10 +85,10 @@
     "question": "An acousto-optic modulator (AOM) uses a piezoelectric transducer to launch sound waves into a crystal, creating a diffraction grating. A beam diffracted into the first order is shifted in frequency by:",
     "passive": {
       "options": [
-        "The acoustic drive frequency $f_{\\rm RF}$ — the AOM shifts the optical frequency by exactly $f_{\\rm RF}$ (typically 80–200 MHz)",
-        "Twice the acoustic frequency due to Bragg reflection",
-        "The acoustic frequency divided by the diffraction order",
-        "The frequency shift depends on beam diameter, not RF frequency"
+        "Acoustic drive frequency $f_{\\rm RF}$; first-order diffraction shifts optical frequency by exactly $f_{\\rm RF}$ (typically 80–200 MHz)",
+        "Twice the acoustic drive frequency $2f_{\\rm RF}$ due to Bragg reflection geometry doubling the shift",
+        "Acoustic frequency divided by the diffraction order $n$, so first-order shift is $f_{\\rm RF}$ but higher orders give less",
+        "Frequency shift is independent of $f_{\\rm RF}$ and depends only on the beam diameter and crystal acoustic velocity"
       ],
       "correct": 0,
       "explanation": "Conservation of energy and momentum: $\\omega_{\\rm out} = \\omega_{\\rm in} \\pm \\Omega_{\\rm RF}$ and $k_{\\rm out} = k_{\\rm in} \\pm k_{\\rm sound}$. The $\\pm$ sign gives $+1$ or $-1$ diffraction orders. Double-passing an AOM shifts by $2f_{\\rm RF}$ and provides pointing stability. AOMs are essential tools in AMO labs: they tune laser frequencies relative to atomic transitions (probe–repump detuning), chop beams on microsecond timescales, and generate coherent frequency sidebands for heterodyne detection."
@@ -102,10 +102,10 @@
     "question": "A half-wave plate (HWP) retards one polarisation component by $\\pi$ relative to the other. Its effect on linearly polarised light incident at angle $\\theta$ to the fast axis is:",
     "passive": {
       "options": [
-        "The polarisation direction rotates by $2\\theta$ — an HWP rotates linear polarisation by twice the plate angle",
-        "The polarisation rotates by $\\theta$",
-        "The HWP converts linear to circular polarisation",
-        "The output polarisation is always along the fast axis"
+        "Polarisation direction rotates by $2\\theta$ — HWP rotates linear polarisation by twice the plate angle",
+        "Polarisation rotates by $\\theta$, matching the angle between the input and the plate's fast axis directly",
+        "HWP converts linear polarisation into circular polarisation, equivalent to a quarter-wave plate at 45°",
+        "Output polarisation is always aligned with the fast axis of the HWP, regardless of input polarisation"
       ],
       "correct": 0,
       "explanation": "A HWP with fast axis at angle $\\theta$ transforms $|H\\rangle \\to \\cos 2\\theta|H\\rangle + \\sin 2\\theta|V\\rangle$ — equivalent to a rotation by $2\\theta$. A quarter-wave plate (QWP) at 45° converts linear to circular polarisation: $|H\\rangle \\to (|H\\rangle \\pm i|V\\rangle)/\\sqrt{2}$. In MOT setups, $\\sigma^+$ and $\\sigma^-$ polarisations for Zeeman slower and MOT beams are set with QWPs. HWPs are used to set power ratios at polarising beamsplitters."

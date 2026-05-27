@@ -54,10 +54,10 @@
     "question": "The spectral theorem states that for a Hermitian matrix $H = H^\\dagger$:",
     "passive": {
       "options": [
-        "All eigenvalues are real, eigenvectors for different eigenvalues are orthogonal, and $H$ is unitarily diagonalisable: $H = U\\Lambda U^\\dagger$",
-        "All eigenvalues are purely imaginary",
-        "$H$ can always be diagonalised but eigenvectors need not be orthogonal",
-        "The eigenvalues are the diagonal entries of $H$"
+        "Eigenvalues are real; eigenvectors for distinct eigenvalues are orthogonal; $H$ is unitarily diagonalisable as $H = U\\Lambda U^\\dagger$",
+        "Eigenvalues are purely imaginary; eigenvectors come in conjugate pairs but no real spectrum exists",
+        "$H$ is diagonalisable but eigenvectors need not be orthogonal — Hermiticity adds no orthogonality guarantee",
+        "Eigenvalues are exactly the diagonal entries of $H$, regardless of off-diagonal structure"
       ],
       "correct": 0,
       "explanation": "The spectral theorem is the cornerstone of quantum mechanics: all observables are Hermitian operators, so their eigenvalues (measurement outcomes) are real and their eigenstates form an orthonormal basis. The decomposition $H = \\sum_i \\lambda_i |v_i\\rangle\\langle v_i|$ (spectral decomposition) allows functions of operators: $f(H) = \\sum_i f(\\lambda_i)|v_i\\rangle\\langle v_i|$."

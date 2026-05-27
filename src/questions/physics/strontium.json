@@ -7,10 +7,10 @@
     "question": "Strontium ($Z = 38$) is an alkaline-earth metal with a two-valence-electron structure (like Ca and Yb). It has four stable isotopes: $^{84}$Sr, $^{86}$Sr, $^{87}$Sr (fermion, $I=9/2$), $^{88}$Sr (boson, most abundant). The primary cooling transition is:",
     "passive": {
       "options": [
-        "$^1S_0 \\to ^1P_1$ at 461 nm (blue, $\\Gamma/2\\pi = 32$ MHz) for initial cooling; $^1S_0 \\to ^3P_1$ at 689 nm (red, $\\Gamma/2\\pi = 7.5$ kHz) for narrow-line Doppler cooling to $\\mu$K",
-        "The primary transition is at 780 nm, identical to Rb",
-        "Sr has only one cooling transition at 461 nm",
-        "The 689 nm transition has $\\Gamma/2\\pi = 6$ MHz (same as Rb D2)"
+        "$^1S_0 \\to ^1P_1$ at 461 nm ($\\Gamma/2\\pi = 32$ MHz, blue) for initial cooling; $^1S_0 \\to ^3P_1$ at 689 nm ($\\Gamma/2\\pi = 7.5$ kHz, red) for narrow-line cooling to μK",
+        "Primary transition is at 780 nm, identical to rubidium, requiring no special Sr laser system",
+        "Strontium has only a single accessible cooling transition at 461 nm, with no narrow-line option",
+        "The 689 nm transition has $\\Gamma/2\\pi = 6$ MHz, the same broadband linewidth as Rb D$_2$"
       ],
       "correct": 0,
       "explanation": "Two-stage cooling: (1) Blue MOT on $^1S_0 \\to ^1P_1$ (461 nm) cools to $\\sim 1$ mK but leaks population to metastable $^3P_2$ via $^1D_2$; repumpers at 707 nm and 679 nm are needed. (2) Red MOT on $^1S_0 \\to ^3P_1$ (689 nm, intercombination line): $\\Gamma/2\\pi = 7.5$ kHz gives Doppler limit $T_D = \\hbar\\Gamma/2k_B \\approx 180$ nK — 100$\\times$ colder than possible with a typical alkali MOT. Red MOTs reach $\\sim 1{-}2\\,\\mu$K."
@@ -35,10 +35,10 @@
     "question": "The Sr optical lattice clock uses the $^1S_0 \\to ^3P_0$ transition in $^{87}$Sr trapped in a 1D optical lattice at the 'magic wavelength' $\\lambda_m = 813$ nm. The magic wavelength condition is:",
     "passive": {
       "options": [
-        "At $\\lambda_m$, the AC Stark shifts of the $^1S_0$ and $^3P_0$ levels are equal — the differential light shift (which would shift the clock frequency) cancels to first order for all atoms regardless of their location in the lattice",
-        "The magic wavelength cancels the Zeeman shift from stray magnetic fields",
-        "At $\\lambda_m$, photon scattering from the lattice laser is zero",
-        "The magic wavelength condition requires circularly polarised lattice light"
+        "AC Stark shifts of $^1S_0$ and $^3P_0$ are equal at $\\lambda_m$; differential clock shift cancels to first order for atoms at any lattice site",
+        "The magic wavelength cancels Zeeman shifts arising from stray magnetic fields in the chamber",
+        "At the magic wavelength the photon scattering rate from the lattice beam goes identically to zero",
+        "Magic-wavelength condition requires circularly polarised lattice light to symmetrise the Stark shift"
       ],
       "correct": 0,
       "explanation": "The differential AC Stark shift $\\delta\\nu = (\\alpha_{^3P_0} - \\alpha_{^1S_0})I/2\\varepsilon_0 c$ is zero at $\\lambda_m = 813$ nm where the dynamic polarisabilities $\\alpha$ of the two states are equal. Atoms at different lattice sites see different intensities but all have the same (zero) differential shift — the 'Lamb-Dicke' regime also suppresses Doppler and recoil shifts. Current Sr lattice clocks achieve systematic uncertainties of $10^{-18}$–$10^{-19}$, sensitive enough to measure the gravitational redshift over 1 cm height differences."
@@ -52,10 +52,10 @@
     "question": "$^{87}$Sr has nuclear spin $I = 9/2$, giving 10 magnetic sublevels $m_F = -9/2, -7/2, \\ldots, +9/2$ in the ground state. In a magic-wavelength optical lattice, this creates an SU(10) symmetric Fermi gas:",
     "passive": {
       "options": [
-        "The SU($N$) symmetry with $N = 2I+1 = 10$ arises because the lattice and interactions do not mix the nuclear spin states — this is the largest SU($N$) fermionic system realised, analogous to QCD SU(3) colour symmetry but more tractable",
-        "SU(10) symmetry requires equal populations of all 10 sublevels",
-        "The SU(10) symmetry is broken by the magnetic field used to address the clock transition",
-        "The nuclear spin makes $^{87}$Sr behave like a boson in optical lattices"
+        "SU($N$) symmetry with $N = 2I + 1 = 10$ because interactions don't mix nuclear spin; largest tabletop SU($N$) Fermi gas — QCD-like",
+        "SU(10) symmetry is realised only when the populations of all 10 nuclear sublevels are equalised",
+        "Magnetic bias field used to address the clock transition breaks the SU(10) symmetry irreversibly",
+        "Nuclear spin causes $^{87}$Sr to behave like a boson in optical lattices despite its half-integer total spin"
       ],
       "correct": 0,
       "explanation": "Because the two-body interaction (van der Waals, contact) is insensitive to nuclear spin in the ground state, and the clock photon couples to nuclear spin independently of orbital degrees of freedom, the SU(10) symmetry is nearly exact. The Kondo effect, SU($N$) Hubbard model, chiral spin liquids, and colour superfluidity have been explored using this system. First realised by the Ye group at JILA (2014). BEC of $^{84}$Sr (the bosonic isotope with near-zero scattering length that can be tuned) was demonstrated in 2009."

@@ -74,10 +74,10 @@
     "equation": "\\nabla f = \\lambda\\,\\nabla g",
     "passive": {
       "options": [
-        "The gradient of the objective is parallel to the gradient of the constraint — the level curves of $f$ are tangent to the constraint surface",
-        "The constraint forces $\\nabla f = 0$ at the extremum",
-        "Lagrange multipliers require the constraint to be linear",
-        "The multiplier $\\lambda$ equals the value of $f$ at the extremum"
+        "Gradient of objective is parallel to gradient of constraint: level curves of $f$ are tangent to the constraint surface at the extremum",
+        "The constraint forces $\\nabla f = 0$ at the constrained extremum, the same condition as for unconstrained extrema",
+        "Lagrange multipliers require the constraint $g(\\mathbf{x}) = 0$ to be linear in the variables; nonlinear constraints need a different method",
+        "The multiplier $\\lambda$ equals the value of $f$ at the constrained extremum, providing a closed-form solution"
       ],
       "correct": 0,
       "explanation": "Geometrically: at the constrained max/min, the level curve of $f$ touches the constraint curve tangentially — if they crossed, you could move along the constraint to increase $f$. The extended system: $\\nabla(f - \\lambda g) = 0$ and $g = 0$ gives $n+1$ equations for $n$ unknowns plus $\\lambda$. The multiplier $\\lambda = \\partial f^*/\\partial c$ (sensitivity of optimum to constraint $c$) — it has a dual interpretation as a shadow price in economics and as energy in statistical mechanics (where $\\lambda = \\beta$ in the derivation of the Boltzmann distribution)."
@@ -121,10 +121,10 @@
     "equation": "\\left(\\frac{\\partial P}{\\partial V}\\right)_T \\left(\\frac{\\partial V}{\\partial T}\\right)_P \\left(\\frac{\\partial T}{\\partial P}\\right)_V = -1",
     "passive": {
       "options": [
-        "The cyclic triple product is $-1$ (not $+1$) because each partial involves holding a different variable fixed — follows from the implicit function theorem applied twice",
-        "The cyclic triple product equals $+1$ for ideal gases",
-        "The product rule requires the equation of state to be linear",
-        "The $-1$ only appears for PVT systems, not other thermodynamic triples"
+        "Product equals $-1$, not $+1$, because each partial holds a different variable fixed — follows from the implicit function theorem applied twice",
+        "Product equals $+1$ for ideal gases and $-1$ only for non-ideal equations of state with interaction terms",
+        "Triple product rule requires the equation of state to be linear in $P$, $V$, and $T$ — nonlinear equations like van der Waals fail",
+        "$-1$ result is unique to PVT systems; other thermodynamic triples (e.g., $T,S,U$) follow a different rule"
       ],
       "correct": 0,
       "explanation": "From $F(P,V,T) = 0$: applying the chain rule for implicit differentiation gives $(\\partial P/\\partial V)_T = -(\\partial F/\\partial V)/(\\partial F/\\partial P)$, and similarly for the other partials. The product of all three gives $-1$. Verified for ideal gas: $(\\partial P/\\partial V)_T = -nRT/V^2$, $(\\partial V/\\partial T)_P = nR/P$, $(\\partial T/\\partial P)_V = V/(nR)$; product $= -nRT/V^2 \\cdot nR/P \\cdot V/(nR) = -nRT/(PV) = -1$ (using $PV = nRT$) ✓."
