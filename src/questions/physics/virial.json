@@ -1,0 +1,116 @@
+[
+  {
+    "id": "vir001",
+    "path": ["physics", "theorems", "virial"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "The virial theorem (classical) relates time-averaged kinetic and potential energies for a bounded system. What does it state for a power-law potential $V \\propto r^n$?",
+    "equation": "2\\langle T\\rangle = n\\langle V\\rangle",
+    "passive": {
+      "options": [
+        "$2\\langle T\\rangle = n\\langle V\\rangle$; for $V \\propto 1/r$ ($n = -1$): $2\\langle T\\rangle = -\\langle V\\rangle$; for SHO ($n = 2$): $\\langle T\\rangle = \\langle V\\rangle$",
+        "$2\\langle V\\rangle = n\\langle T\\rangle$ — kinetic and potential are exchanged in the virial relation",
+        "$\\langle T\\rangle = \\langle V\\rangle$ for any power-law potential regardless of exponent $n$",
+        "The virial theorem requires $n > 0$; it fails for attractive Coulomb potentials with $n = -1$"
+      ],
+      "correct": 0,
+      "explanation": "Classical proof: define $G = \\sum_i\\mathbf p_i\\cdot\\mathbf r_i$, take time average of $dG/dt$. For bounded motion, $\\langle dG/dt\\rangle = 0$, giving $2\\langle T\\rangle = \\langle\\mathbf r\\cdot\\nabla V\\rangle = n\\langle V\\rangle$ for $V \\propto r^n$ (using Euler's theorem on homogeneous functions). Total energy: $E = \\langle T\\rangle + \\langle V\\rangle = \\langle V\\rangle(1 + n/2) = (n+2)/(2)\\langle V\\rangle = (n+2)/n\\langle T\\rangle$."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each potential to its virial-theorem consequences:",
+      "pairs": [
+        {"id": "p1", "term": "Hydrogen / Kepler ($V \\propto 1/r$, $n=-1$)", "definition": "$2\\langle T\\rangle = -\\langle V\\rangle$; $E = -\\langle T\\rangle = \\langle V\\rangle/2$ (bound states have negative energy)"},
+        {"id": "p2", "term": "Harmonic oscillator ($V \\propto r^2$, $n=2$)", "definition": "$\\langle T\\rangle = \\langle V\\rangle = E/2$ — equal sharing of energy"},
+        {"id": "p3", "term": "Linear confining ($V \\propto r$, $n=1$)", "definition": "$2\\langle T\\rangle = \\langle V\\rangle$; $E = 3\\langle T\\rangle$ — used in quark confinement models"},
+        {"id": "p4", "term": "Self-gravitating system", "definition": "$V \\propto -1/r$ ($n=-1$): $2\\langle T\\rangle + \\langle V\\rangle = 0$ — Chandrasekhar's stellar virial"}
+      ],
+      "explanation": "For self-gravitating systems, the virial theorem is the backbone of stellar structure — total kinetic energy equals half the magnitude of gravitational binding energy. Used by Zwicky (1933) to measure dark matter in the Coma cluster: observed kinetic energy implied much more mass than visible."
+    }
+  },
+  {
+    "id": "vir002",
+    "path": ["physics", "theorems", "virial"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "The quantum virial theorem applies to energy eigenstates rather than time averages. For an eigenstate of $\\hat H = \\hat T + V(\\hat{\\mathbf r})$, what does it state?",
+    "passive": {
+      "options": [
+        "$2\\langle\\hat T\\rangle = \\langle\\hat{\\mathbf r}\\cdot\\nabla V\\rangle$ taken in the eigenstate; for $V \\propto r^n$ this reduces to $2\\langle\\hat T\\rangle = n\\langle V\\rangle$",
+        "$\\langle\\hat T\\rangle = \\langle V\\rangle$ always for any eigenstate of any Hamiltonian (kinetic equipartition)",
+        "The quantum virial theorem only applies in the WKB (semiclassical) limit",
+        "Quantum mechanics breaks the classical virial relation by a factor that depends on $\\hbar$"
+      ],
+      "correct": 0,
+      "explanation": "Quantum proof: use the commutator identity $[\\hat H, \\hat{\\mathbf r}\\cdot\\hat{\\mathbf p}] = i\\hbar(2\\hat T - \\hat{\\mathbf r}\\cdot\\nabla V)$. In a stationary state $|n\\rangle$, $\\langle n|[\\hat H, \\hat O]|n\\rangle = 0$ for any $\\hat O$ (since $\\hat H|n\\rangle = E_n|n\\rangle$). Therefore $\\langle 2\\hat T\\rangle = \\langle\\hat{\\mathbf r}\\cdot\\nabla V\\rangle$. This is an exact quantum statement, not a semiclassical limit."
+    }
+  },
+  {
+    "id": "vir003",
+    "path": ["physics", "theorems", "virial"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "For the hydrogen atom ground state with energy $E_1 = -13.6$ eV, the virial theorem fixes the kinetic and potential expectation values. What are they?",
+    "passive": {
+      "options": [
+        "$\\langle T\\rangle = +13.6$ eV and $\\langle V\\rangle = -27.2$ eV; $E = \\langle T\\rangle + \\langle V\\rangle = -13.6$ eV ✓",
+        "$\\langle T\\rangle = -6.8$ eV and $\\langle V\\rangle = -6.8$ eV (equal split as in the SHO case)",
+        "$\\langle T\\rangle = -13.6$ eV and $\\langle V\\rangle = 0$ — kinetic energy carries the entire binding",
+        "$\\langle T\\rangle = +27.2$ eV and $\\langle V\\rangle = -13.6$ eV — the kinetic dominates by factor 2"
+      ],
+      "correct": 0,
+      "explanation": "For hydrogen ($n=-1$): $2\\langle T\\rangle = -\\langle V\\rangle$, so $\\langle V\\rangle = -2\\langle T\\rangle$. Then $E = \\langle T\\rangle + \\langle V\\rangle = \\langle T\\rangle - 2\\langle T\\rangle = -\\langle T\\rangle$. Hence $\\langle T\\rangle = -E_1 = +13.6$ eV (the kinetic Rydberg energy) and $\\langle V\\rangle = 2E_1 = -27.2$ eV. The compact form is $E = -\\langle T\\rangle = \\tfrac12\\langle V\\rangle$."
+    }
+  },
+  {
+    "id": "vir004",
+    "path": ["physics", "theorems", "virial"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The virial theorem in stellar astrophysics says that for a self-gravitating system in equilibrium, $2K + U = 0$ where $K$ is kinetic energy and $U$ is gravitational potential energy. What is the physical consequence of cooling a self-gravitating system (radiating energy)?",
+    "passive": {
+      "options": [
+        "Losing energy makes the system more bound: $\\Delta K > 0$ and $\\Delta U < 0$ with $|\\Delta U| > |\\Delta K|$; the system 'heats up' as it loses total energy — negative heat capacity",
+        "The system cools to absolute zero as expected from ordinary thermodynamics",
+        "Energy loss reduces both kinetic and potential energies proportionally, with no change in mean radius",
+        "The system gains energy from gravitational potential, violating energy conservation"
+      ],
+      "correct": 0,
+      "explanation": "From $E = K + U = -K$ (using virial $U = -2K$), $dE = -dK$ → losing energy ($dE < 0$) means GAINING kinetic energy ($dK > 0$). This 'negative specific heat' explains why stars contract and heat up as they radiate — the gravitational binding energy converts to kinetic (thermal) energy faster than the surface can radiate. This is the engine of stellar evolution, from Kelvin-Helmholtz contraction to gravothermal collapse in dense star clusters."
+    }
+  },
+  {
+    "id": "vir005",
+    "path": ["physics", "theorems", "virial"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "In molecular physics, the virial theorem provides a powerful self-consistency check on variational wavefunctions. For an approximate ground-state wavefunction $\\psi$, the virial ratio $\\eta = -\\langle V\\rangle/\\langle T\\rangle$ should equal what?",
+    "passive": {
+      "options": [
+        "$\\eta = 2$ exactly for any Coulombic system at its true minimum; deviation from 2 indicates the wavefunction is not optimal (e.g., wrong overall scale)",
+        "$\\eta = 1$ for any bound system (equal kinetic and potential energy)",
+        "The virial ratio is meaningless for variational calculations because $\\psi$ is approximate",
+        "$\\eta$ depends on the choice of trial function but the optimum gives $\\eta = \\eta_{\\rm trial}$, not the exact value"
+      ],
+      "correct": 0,
+      "explanation": "If $\\psi(\\mathbf r)$ has been optimised over a scale parameter $\\alpha$ (so $\\psi_\\alpha(\\mathbf r) = \\alpha^{3/2}\\psi(\\alpha\\mathbf r)$), then $E(\\alpha) = \\alpha^2\\langle T\\rangle + \\alpha\\langle V\\rangle$ for Coulombic $V$, and $dE/d\\alpha = 0$ at the minimum gives $\\eta = 2$. A Hartree-Fock calculation that doesn't satisfy the virial ratio has missed degrees of freedom in the wavefunction. The Roothaan-Hall procedure typically yields $\\eta \\approx 1.999...$, monitoring convergence."
+    }
+  },
+  {
+    "id": "vir006",
+    "path": ["physics", "theorems", "virial"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The virial expansion in statistical mechanics expresses the pressure of a non-ideal gas as a power series in density. The first few terms are $p/k_BT = n + B_2(T)n^2 + B_3(T)n^3 + \\ldots$. What is $B_2(T)$?",
+    "passive": {
+      "options": [
+        "$B_2(T) = -\\tfrac12\\int [e^{-U(r)/k_BT} - 1]\\,d^3r$ — the second virial coefficient from the two-body Mayer cluster integral",
+        "$B_2(T) = U(r)/k_BT$ averaged over all pair distances $r$",
+        "$B_2(T) = N/V$ — second-order density correction equals the density itself",
+        "$B_2(T)$ is temperature-independent and equals the Lennard-Jones excluded volume $4N\\sigma^3/3$"
+      ],
+      "correct": 0,
+      "explanation": "Mayer cluster expansion: $B_2 < 0$ for attractive interactions (dimer formation) and $B_2 > 0$ for repulsive (excluded-volume) interactions. For a hard sphere $\\sigma$: $B_2 = 2\\pi\\sigma^3/3$ (positive, $T$-independent). For Lennard-Jones $4\\varepsilon[(\\sigma/r)^{12} - (\\sigma/r)^6]$: $B_2$ is negative at low $T$ (attractive-dominated) and crosses zero at the Boyle temperature $T_B$. Higher coefficients $B_n$ require summing three-body, four-body, ... cluster diagrams."
+    }
+  }
+]

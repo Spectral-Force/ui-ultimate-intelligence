@@ -1,0 +1,117 @@
+[
+  {
+    "id": "adi001",
+    "path": ["physics", "theorems", "adiabatic-theorem"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "The adiabatic theorem (Born-Fock 1928) says that a quantum system remains in its instantaneous eigenstate when the Hamiltonian changes slowly. What is the slowness condition?",
+    "passive": {
+      "options": [
+        "$\\hbar|\\langle m|\\partial H/\\partial t|n\\rangle| / (E_n - E_m)^2 \\ll 1$ — the rate of change must be small compared to the level spacing squared (divided by $\\hbar$)",
+        "$\\partial H/\\partial t = 0$ exactly — adiabatic requires literally time-independent $H$",
+        "$|dH/dt| \\ll k_BT$ at all times — the change must be slow relative to thermal energy",
+        "Adiabatic theorem requires the slowest change to be much faster than any internal dynamics"
+      ],
+      "correct": 0,
+      "explanation": "The criterion comes from first-order perturbation theory in the slowness parameter. Roughly: rate of change × dwell time at any instant must be $\\ll$ energy gap. If the Hamiltonian changes over time $T$, $|dH/dt| \\sim |\\Delta H|/T$, so $|\\Delta H|\\hbar/(T\\Delta E^2) \\ll 1$ → $T \\gg \\hbar|\\Delta H|/\\Delta E^2$. Level crossings ($\\Delta E = 0$) are catastrophic — non-adiabatic transitions are inevitable there (Landau-Zener)."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each adiabatic-physics phenomenon to its setting:",
+      "pairs": [
+        {"id": "p1", "term": "STIRAP (stimulated Raman adiabatic passage)", "definition": "Three-level atom; counter-intuitive pulse ordering transfers population via dark state; insensitive to laser intensity fluctuations"},
+        {"id": "p2", "term": "Landau-Zener transition", "definition": "Avoided crossing traversed at finite speed $v$; probability of adiabatic following $P = 1 - e^{-2\\pi\\Gamma}$, $\\Gamma = \\Omega^2/(4|d\\Delta/dt|)$"},
+        {"id": "p3", "term": "Berry phase", "definition": "Geometric phase accumulated when parameters traverse a closed loop adiabatically; $\\gamma = i\\oint\\langle n|\\nabla|n\\rangle\\cdot d\\mathbf R$"},
+        {"id": "p4", "term": "Adiabatic quantum computing", "definition": "Encode problem solution in ground state of final $H$; slow evolution from easy initial $H$ keeps system in ground state; D-Wave architecture"}
+      ],
+      "explanation": "Adiabatic protocols are robust because they depend on the spectrum's structure, not on precise timing. STIRAP enables high-fidelity coherent population transfer in atomic clocks and qubit operations. Berry phase is the basis of geometric quantum computing and explains the Aharonov-Bohm effect."
+    }
+  },
+  {
+    "id": "adi002",
+    "path": ["physics", "theorems", "adiabatic-theorem"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Berry phase is the geometric phase a quantum state acquires when transported adiabatically around a closed path in parameter space. What is its mathematical form?",
+    "equation": "\\gamma_n(C) = i\\oint_C \\langle n(\\mathbf R)|\\nabla_\\mathbf R|n(\\mathbf R)\\rangle\\cdot d\\mathbf R",
+    "passive": {
+      "options": [
+        "Line integral of Berry connection $\\mathbf A_n = i\\langle n|\\nabla|n\\rangle$ over a closed path; depends on path geometry only, not on timing",
+        "Berry phase equals the dynamical phase $-\\int E_n dt/\\hbar$ for closed loops",
+        "Berry phase is always zero in real-valued Hamiltonians by symmetry",
+        "Berry phase is observable only via interference of nearly-degenerate states"
+      ],
+      "correct": 0,
+      "explanation": "Berry phase (1984) generalised earlier observations by Pancharatnam (optics) and Aharonov-Bohm (magnetic). The Berry connection $\\mathbf A_n$ is the analog of the EM vector potential in parameter space; the Berry curvature $F = \\nabla \\times \\mathbf A$ acts like a magnetic field. For non-degenerate spectra: $\\gamma_n$ depends on the path and the geometry but not on speed (as long as adiabatic). For degenerate cases: non-Abelian generalisation (Wilczek-Zee, 1984)."
+    }
+  },
+  {
+    "id": "adi003",
+    "path": ["physics", "theorems", "adiabatic-theorem"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "For a spin-1/2 in an adiabatically-rotated magnetic field tracing a solid angle $\\Omega$ on the Bloch sphere, the Berry phase is:",
+    "passive": {
+      "options": [
+        "$\\gamma_\\pm = \\mp\\Omega/2$ for the spin-aligned/anti-aligned states; observable via interference of the two spin components in NMR or atomic experiments",
+        "$\\gamma = 2\\pi$ regardless of the path traversed, by topology",
+        "$\\gamma = \\Omega$ (solid angle directly, with no factor of 1/2)",
+        "Berry phase vanishes for spin-1/2 because the Berry curvature is identically zero"
+      ],
+      "correct": 0,
+      "explanation": "For spin-$s$ in a slowly varying $\\mathbf B(t)$ tracing solid angle $\\Omega$: $\\gamma = -s\\Omega$. For spin-1/2: $\\gamma = \\mp\\Omega/2$, half the solid angle (the half comes from the SU(2) double cover of SO(3)). For spin-1 photons: $\\gamma = \\pm\\Omega$ — observed in optical fibre experiments (rotating polarisation traces a circle on the Poincaré sphere). The 'Foucault pendulum' phase is the classical Berry phase for parallel transport on a sphere."
+    }
+  },
+  {
+    "id": "adi004",
+    "path": ["physics", "theorems", "adiabatic-theorem"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The Landau-Zener (LZ) formula gives the probability of staying in the same instantaneous adiabatic state when traversing an avoided crossing at finite rate. What is it?",
+    "equation": "P_{\\rm LZ} = e^{-2\\pi\\Gamma}, \\quad \\Gamma = \\frac{\\Omega^2/4}{|d\\Delta/dt|}",
+    "passive": {
+      "options": [
+        "$P_{\\rm diabatic} = e^{-\\pi\\Omega^2/2|d\\Delta/dt|}$: fast sweep $\\to$ diabatic state; slow sweep $\\to$ adiabatic following",
+        "$P_{\\rm LZ} = 1 - e^{-\\Gamma t}$ — exponential decay with first-order rate $\\Gamma$",
+        "$P = 1/2$ always at an avoided crossing — pure quantum coin flip",
+        "LZ formula applies only when the sweep is sinusoidal in time"
+      ],
+      "correct": 0,
+      "explanation": "Two-level system $\\hat H(t) = (\\hbar/2)[\\Delta(t)\\sigma_z + \\Omega\\sigma_x]$ with $\\Delta(t) = \\alpha t$ swept linearly through zero. Probability of diabatic transition: $P = e^{-2\\pi\\Omega^2/(4\\alpha\\hbar)}$. The exponent $2\\pi\\Gamma$ contains $(\\text{gap})^2 / (\\text{sweep rate})$ — adiabatic when sweep is slow compared to gap squared. LZ is the prototype for non-adiabatic transitions; appears in molecular collisions, MOT atomic-state-changing collisions, and dressed-state physics."
+    }
+  },
+  {
+    "id": "adi005",
+    "path": ["physics", "theorems", "adiabatic-theorem"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "STIRAP (Stimulated Raman Adiabatic Passage) uses two laser pulses in a counter-intuitive order to transfer population between two atomic ground states via a dark state. Which sequence is correct?",
+    "passive": {
+      "options": [
+        "Stokes pulse on first; dark state $|D\\rangle = \\cos\\theta|g_1\\rangle - \\sin\\theta|g_2\\rangle$ rotates $|g_1\\rangle \\to |g_2\\rangle$ without populating $|e\\rangle$",
+        "Pump pulse first, then Stokes — intuitive sequence with intermediate state populated",
+        "Both pulses applied simultaneously and continuously",
+        "Stokes then Pump, but pulses must be ultra-short ($< \\Gamma^{-1}$) for STIRAP to work"
+      ],
+      "correct": 0,
+      "explanation": "STIRAP's 'counter-intuitive' order (Stokes before Pump) keeps the system in the dark state $|D\\rangle = \\cos\\theta|g_1\\rangle - \\sin\\theta|g_2\\rangle$ (decoupled from $|e\\rangle$) throughout. Mixing angle $\\tan\\theta = \\Omega_P/\\Omega_S$ rotates from 0 (Stokes on alone) to $\\pi/2$ (Pump on alone), driving population $|g_1\\rangle \\to |g_2\\rangle$ without ever populating the intermediate $|e\\rangle$. Robust against spontaneous emission from $|e\\rangle$ (never populated) and laser intensity fluctuations (depends only on ratio $\\Omega_P/\\Omega_S$). Used in atomic clocks and Rydberg gates."
+    }
+  },
+  {
+    "id": "adi006",
+    "path": ["physics", "theorems", "adiabatic-theorem"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "Topological band structures arise when the Berry curvature integrated over the Brillouin zone gives a non-trivial integer. For a 2D system, what is the topological invariant?",
+    "passive": {
+      "options": [
+        "Chern number $C_n = (1/2\\pi)\\int_{\\rm BZ} F_n\\,d^2k \\in \\mathbb Z$; quantum Hall conductance $\\sigma_{xy} = (e^2/h)\\sum C_n$ (TKNN)",
+        "Berry curvature integrated over BZ gives a real number, not necessarily an integer",
+        "Topological invariant equals the number of band crossings within the BZ",
+        "All 2D band structures have Chern number zero by time-reversal symmetry"
+      ],
+      "correct": 0,
+      "explanation": "TKNN (Thouless-Kohmoto-Nightingale-den Nijs 1982): the integer-quantum-Hall conductance is a topological invariant equal to the sum of Chern numbers of filled bands. Chern number is quantised because $F = \\nabla \\times \\mathbf A$ on a closed surface (torus = BZ) integrates to $2\\pi\\cdot\\mathbb Z$ by Stokes' theorem and the global obstruction. Time-reversal symmetric systems have $C = 0$ for each band, but $\\mathbb Z_2$ invariants distinguish trivial from topological insulators (quantum spin Hall effect; topological insulators)."
+    }
+  }
+]

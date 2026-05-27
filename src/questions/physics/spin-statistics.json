@@ -1,0 +1,115 @@
+[
+  {
+    "id": "spst001",
+    "path": ["physics", "theorems", "spin-statistics"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "The spin-statistics theorem (Pauli 1940) connects intrinsic spin to particle statistics. What does it state?",
+    "passive": {
+      "options": [
+        "Integer spin → bosons (symmetric multi-particle wavefunction, Bose-Einstein statistics); half-integer spin → fermions (antisymmetric, Fermi-Dirac, Pauli exclusion)",
+        "All particles obey Bose-Einstein statistics; Fermi-Dirac is an effective description at high density",
+        "Spin determines mass, not statistics; the statistics-spin connection is empirical only",
+        "The connection holds only for elementary particles; composite particles can violate spin-statistics"
+      ],
+      "correct": 0,
+      "explanation": "Pauli's proof: in relativistic QFT, fields with half-integer spin must be quantised with anticommutators (giving antisymmetric exchange) for the theory to be consistent. Specifically: (1) microcausality (operators commute at spacelike separation), (2) positive-energy spectrum (no negative-energy states), (3) Lorentz invariance, plus (4) Hermitian Hamiltonian — together force the spin-statistics connection. Composite particles inherit statistics from their constituents (e.g., $^4$He is a boson, $^3$He is a fermion)."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each particle to its statistics and example consequence:",
+      "pairs": [
+        {"id": "p1", "term": "Photon (spin-1, boson)", "definition": "Bose-Einstein: many photons can occupy the same mode → laser, Bose-Einstein condensation of photons in dye cavities"},
+        {"id": "p2", "term": "Electron (spin-1/2, fermion)", "definition": "Fermi-Dirac: Pauli exclusion → atomic shell structure, electron degeneracy pressure in white dwarfs"},
+        {"id": "p3", "term": "$^4$He (composite boson)", "definition": "Two protons + two neutrons + two electrons = even number of fermions → bosonic statistics → superfluidity at 2.17 K"},
+        {"id": "p4", "term": "$^3$He (composite fermion)", "definition": "Odd number of fermions (2p + 1n + 2e) → fermionic statistics → BCS-like pairing for superfluidity at 2.6 mK"}
+      ],
+      "explanation": "Composite particles obey the statistics of the parity of their constituents. Cooper pairs of electrons (two fermions) act as effective bosons → BCS superconductivity. Excitons (electron-hole pairs) are bosons. In 2D, exotic 'anyons' with fractional statistics emerge — neither boson nor fermion."
+    }
+  },
+  {
+    "id": "spst002",
+    "path": ["physics", "theorems", "spin-statistics"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Pauli exclusion (a direct consequence of fermionic antisymmetry) explains atomic shell structure. How does it manifest in the periodic table?",
+    "passive": {
+      "options": [
+        "Each $(n, l)$ subshell holds at most $2(2l+1)$ electrons (factor 2 for spin); 's' = 2, 'p' = 6, 'd' = 10 — gives the row lengths 2, 8, 8, 18, 18, 32, 32 in the periodic table",
+        "Each subshell holds an arbitrary number of electrons; the periodic table is empirical only",
+        "Each shell holds exactly $2n^2$ electrons regardless of $l$ — no subshell distinction",
+        "Pauli exclusion forbids electrons in the same atom; only one electron per atom is allowed"
+      ],
+      "correct": 0,
+      "explanation": "Filling: 1s² (He, n=2 closes K shell). 2s²2p⁶ (Ne, 8 electrons in L shell). 3s²3p⁶3d¹⁰ then 4s comes in before 3d by Madelung rule — explains why transition metals are at the 'right' place in the periodic table. The Madelung (n + l, n) ordering is approximate and breaks for heavy elements where relativistic effects matter (lanthanide contraction, gold's yellow colour from relativistic d→s transition energy)."
+    }
+  },
+  {
+    "id": "spst003",
+    "path": ["physics", "theorems", "spin-statistics"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Pauli exclusion pressure of electrons stabilises white dwarf stars against gravitational collapse. The Chandrasekhar mass is the maximum mass a white dwarf can have. What is its approximate value?",
+    "passive": {
+      "options": [
+        "$M_{\\rm Ch} \\approx 1.44 M_\\odot$ — set by balancing relativistic Fermi degeneracy pressure against self-gravity; depends on electron fraction $\\mu_e$",
+        "$M_{\\rm Ch} = M_\\odot$ exactly — fixed by the solar mass",
+        "$M_{\\rm Ch} = 5.0 M_\\odot$ — close to the Schwarzschild limit for neutron stars",
+        "Chandrasekhar mass is undefined; white dwarfs can have arbitrarily large mass"
+      ],
+      "correct": 0,
+      "explanation": "Chandrasekhar limit (1931): in the ultra-relativistic Fermi gas limit, $P \\propto n_e^{4/3}$ — same density-dependence as gravitational pressure for a polytropic star. The total degeneracy pressure cannot support increasing mass: $M_{\\rm Ch} = (5.76/\\mu_e^2) M_\\odot \\approx 1.44 M_\\odot$ for $\\mu_e = 2$ (typical composition). Above this, electron degeneracy is insufficient — collapse to neutron star or Type Ia supernova explosion. Used to standardise Type Ia distances for cosmology."
+    }
+  },
+  {
+    "id": "spst004",
+    "path": ["physics", "theorems", "spin-statistics"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "In 2D, the spin-statistics theorem can be circumvented: particles called anyons exist with fractional statistics interpolating between bosons and fermions. How does this arise?",
+    "passive": {
+      "options": [
+        "In 2+1D, particle exchange path topology is the braid group (not just permutation): exchanging twice = nontrivial loop; phase $e^{i\\theta}$ for arbitrary $\\theta$ is allowed",
+        "Anyons arise from a 2D Lorentz-symmetry breakdown",
+        "Statistics in 2D depends on energy; below threshold all particles are bosons, above are fermions",
+        "Anyons require gauge fields with magnetic monopoles to exist"
+      ],
+      "correct": 0,
+      "explanation": "In 3D, exchanging two indistinguishable particles twice returns to identity — only $\\pm 1$ phases possible. In 2D, double exchange = nontrivial loop in configuration space; the braid group $B_n$ (not permutation $S_n$) classifies particle exchanges. This permits unitary irreps with arbitrary phase $e^{i\\theta}$ (Abelian anyons) or even non-Abelian unitaries (non-Abelian anyons). Observed: fractional quantum Hall quasiparticles with statistics $\\theta = \\pi\\nu$. Sought: Majorana zero modes in topological superconductors as building blocks for topological quantum computing."
+    }
+  },
+  {
+    "id": "spst005",
+    "path": ["physics", "theorems", "spin-statistics"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The spin-statistics theorem has been tested experimentally to extraordinary precision. What kind of experiment looks for violation?",
+    "passive": {
+      "options": [
+        "Search for non-Pauli atomic transitions: an X-ray transition into a fully filled K-shell, forbidden by Pauli, would indicate a tiny violation; current bounds: $\\beta_{\\rm Pauli} < 10^{-29}$",
+        "Bose-Einstein condensation experiments — failure of BEC would falsify the spin-statistics theorem",
+        "Measuring electron g-factor — any deviation from QED prediction would falsify spin-statistics",
+        "Searching for primordial black holes with non-standard statistics"
+      ],
+      "correct": 0,
+      "explanation": "VIP-2 experiment (Gran Sasso) searches for forbidden K-shell X-ray transitions in copper conductor. Sets the strongest experimental bound on possible Pauli violation: $\\beta_{\\rm Pauli}^2/2 < 10^{-29}$. Theoretical motivation: some quantum-gravity models predict tiny statistics violation; very general theorems (Greenberg quon statistics, q-deformed Bose/Fermi) leave room for it. So far no positive signal — spin-statistics is one of the most precisely-verified principles in physics."
+    }
+  },
+  {
+    "id": "spst006",
+    "path": ["physics", "theorems", "spin-statistics"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "Beyond the original Pauli proof, modern derivations of spin-statistics use the topological structure of the configuration space. What is the simplified topological argument?",
+    "passive": {
+      "options": [
+        "Configuration space has $\\pi_1 = S_N$ (permutation; $\\mathbb Z_2$ for two particles); irreps give $\\pm 1$ exchange phase, with spin selecting which",
+        "Topology of 3D space directly forces $2\\pi$ rotation = $-1$ for fermions, $+1$ for bosons",
+        "Topological argument requires Calabi-Yau compactification of spacetime",
+        "Topological derivation gives identical content to QFT version but no further insight"
+      ],
+      "correct": 0,
+      "explanation": "Configuration space of $N$ identical particles in $\\mathbb R^3$ is $(\\mathbb R^{3N} - \\Delta)/S_N$, where $\\Delta$ is the diagonal (coincident particles). Its first homotopy group $\\pi_1 = S_N$. The wavefunction is a section of a unitary bundle over this space; the bundle's holonomy gives the exchange phase. For $S_2 = \\mathbb Z_2$ (two-particle): only $\\pm 1$ irreps, corresponding to bosons/fermions. In 2D, configuration space has $\\pi_1 = B_N$ (braid group), giving anyons."
+    }
+  }
+]

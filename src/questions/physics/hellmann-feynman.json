@@ -1,0 +1,116 @@
+[
+  {
+    "id": "hf001",
+    "path": ["physics", "theorems", "hellmann-feynman"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "The Hellmann-Feynman theorem relates the derivative of an energy eigenvalue with respect to a parameter $\\lambda$ to the expectation value of $\\partial H/\\partial\\lambda$. What is the precise statement?",
+    "equation": "\\frac{dE_n}{d\\lambda} = \\left\\langle n(\\lambda)\\left|\\frac{\\partial\\hat H}{\\partial\\lambda}\\right|n(\\lambda)\\right\\rangle",
+    "passive": {
+      "options": [
+        "$dE_n/d\\lambda = \\langle n|\\partial\\hat H/\\partial\\lambda|n\\rangle$ — only the explicit parameter dependence of $\\hat H$ contributes; eigenstate variations cancel by normalisation",
+        "$dE_n/d\\lambda = \\langle n|\\partial\\hat H/\\partial\\lambda|n\\rangle + (\\partial E_n/\\partial|n\\rangle)(\\partial|n\\rangle/\\partial\\lambda)$ — additional terms from eigenstate dependence",
+        "Hellmann-Feynman applies only to non-degenerate eigenstates of time-independent Hamiltonians at zero temperature",
+        "$dE_n/d\\lambda$ equals the diagonal matrix element of $\\hat H$ itself, not its derivative — a normalisation effect"
+      ],
+      "correct": 0,
+      "explanation": "Proof: $E_n = \\langle n|\\hat H|n\\rangle$ with $\\langle n|n\\rangle = 1$. Differentiate: $dE_n/d\\lambda = \\langle\\partial n/\\partial\\lambda|\\hat H|n\\rangle + \\langle n|\\partial\\hat H/\\partial\\lambda|n\\rangle + \\langle n|\\hat H|\\partial n/\\partial\\lambda\\rangle$. Use $\\hat H|n\\rangle = E_n|n\\rangle$ on each side: the two bracket-derivative terms become $E_n(\\langle\\partial n/\\partial\\lambda|n\\rangle + \\langle n|\\partial n/\\partial\\lambda\\rangle) = E_n\\partial_\\lambda\\langle n|n\\rangle = 0$. Result: only $\\langle n|\\partial\\hat H/\\partial\\lambda|n\\rangle$ survives."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each application of Hellmann-Feynman to its identified $\\lambda$ and $\\partial H/\\partial\\lambda$:",
+      "pairs": [
+        {"id": "p1", "term": "Force on a nucleus in a molecule", "definition": "$\\lambda$ = nuclear coordinate $R$; $\\partial H/\\partial R$ = derivative of nuclear-electron Coulomb attraction at the nucleus"},
+        {"id": "p2", "term": "Magnetic moment via Zeeman shift", "definition": "$\\lambda = B$; $\\partial H/\\partial B = -\\hat\\mu_z$; $\\partial E/\\partial B = -\\langle\\hat\\mu_z\\rangle$"},
+        {"id": "p3", "term": "Polarisability from electric field", "definition": "$\\lambda = E$; $\\partial H/\\partial E = -\\hat d_z$; $\\partial E_n/\\partial E = -\\langle\\hat d_z\\rangle$ gives dipole moment"},
+        {"id": "p4", "term": "Coupling-constant derivative", "definition": "$\\lambda$ = coupling $g$; $\\partial E/\\partial g = \\langle\\partial H/\\partial g\\rangle$ — used to integrate exact energies vs $g$"}
+      ],
+      "explanation": "Hellmann-Feynman is one of the most useful 'shortcut' theorems in QM: avoid computing eigenstate variations by exploiting normalisation. Born-Oppenheimer molecular dynamics uses it for the force on nuclei, computed from the electron density alone."
+    }
+  },
+  {
+    "id": "hf002",
+    "path": ["physics", "theorems", "hellmann-feynman"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Hellmann-Feynman applies to the force on a nucleus in a molecule (electrostatic theorem, Feynman 1939). For a molecule with electron density $\\rho(\\mathbf r)$ and nuclei at $\\mathbf R_\\alpha$, the force on nucleus $A$ is:",
+    "passive": {
+      "options": [
+        "$\\mathbf F_A$ = classical Coulomb force from the electron density $\\rho(\\mathbf r)$ plus other nuclei at $\\mathbf R_B$; pure electrostatics once $\\rho$ is known",
+        "$\\mathbf F_A$ depends on the kinetic-energy contribution of the electrons; Hellmann-Feynman is only an approximation",
+        "Hellmann-Feynman vanishes by symmetry at any nuclear configuration",
+        "The force is given by $-\\nabla\\langle\\hat T\\rangle$, where $\\hat T$ is the electronic kinetic energy operator"
+      ],
+      "correct": 0,
+      "explanation": "Feynman's electrostatic theorem: once you have the exact ground-state electron density, the force on a nucleus is the classical Coulomb force from that density plus the other nuclei. Hartree-Fock and DFT use this for analytic geometry optimisation. The 'Pulay forces' arise in finite-basis-set calculations when the basis depends on nuclear positions — the basis-set part is the difference between the true HF gradient and the Hellmann-Feynman value."
+    }
+  },
+  {
+    "id": "hf003",
+    "path": ["physics", "theorems", "hellmann-feynman"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "For the hydrogen atom with $\\hat H = \\hat T - e^2/(4\\pi\\varepsilon_0 r)$, applying Hellmann-Feynman with $\\lambda = $ effective charge $Z_{\\rm eff}$ gives a relationship between $\\langle 1/r\\rangle$ and energy. What is it?",
+    "passive": {
+      "options": [
+        "$dE_n/dZ = -e^2/(4\\pi\\varepsilon_0)\\langle 1/r\\rangle$; combined with $E_n = -Z^2\\text{Ry}/n^2$, gives $\\langle 1/r\\rangle_n = Z/(n^2 a_0)$",
+        "$\\langle 1/r\\rangle = 0$ for any hydrogenic state by Hellmann-Feynman",
+        "$\\langle 1/r\\rangle = n a_0/Z$ — proportional to principal quantum number, not inverse-squared",
+        "Hellmann-Feynman does not yield $\\langle 1/r\\rangle$ for the Coulomb problem"
+      ],
+      "correct": 0,
+      "explanation": "Write $\\hat H = \\hat T - (Ze^2/4\\pi\\varepsilon_0)/r$, treat $Z$ as parameter. Hellmann-Feynman: $dE_n/dZ = -\\langle(e^2/4\\pi\\varepsilon_0)/r\\rangle = -(e^2/4\\pi\\varepsilon_0)\\langle 1/r\\rangle_n$. With $E_n = -Z^2 R_y/n^2$: $dE/dZ = -2ZR_y/n^2$. Equating: $\\langle 1/r\\rangle_n = 2ZR_y/(e^2/4\\pi\\varepsilon_0)n^2 = Z/(n^2 a_0)$. Powerful shortcut compared to evaluating the integral over Laguerre polynomials directly."
+    }
+  },
+  {
+    "id": "hf004",
+    "path": ["physics", "theorems", "hellmann-feynman"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The Hellmann-Feynman theorem can fail in subtle ways when applied to approximate wavefunctions. Which condition guarantees its validity?",
+    "passive": {
+      "options": [
+        "$|n\\rangle$ must satisfy $(\\hat H - E_n)|n\\rangle = 0$ exactly OR $|n\\rangle$ must be variationally optimal — Hartree-Fock satisfies this, but truncated CI does not in general",
+        "$|n\\rangle$ must be a Slater determinant of one-electron orbitals, regardless of any other condition",
+        "Hellmann-Feynman holds for any state $|n\\rangle$ regardless of whether it is an eigenstate",
+        "The theorem requires $|n\\rangle$ to be the ground state; it does not apply to excited eigenstates"
+      ],
+      "correct": 0,
+      "explanation": "If $|n\\rangle$ is approximate but variationally optimal within some basis (so $\\delta E/\\delta|n\\rangle = 0$ at fixed $\\lambda$), then Hellmann-Feynman still holds within that basis. HF and DFT (with the exact functional) satisfy this. Configuration interaction (CI) with truncated active space does not — additional 'Pulay correction' terms arise from the implicit dependence of the truncated basis on $\\lambda$. Coupled-cluster CCSD(T) doesn't strictly satisfy it either, but gradients are computed via Lagrangian methods that recover the theorem."
+    }
+  },
+  {
+    "id": "hf005",
+    "path": ["physics", "theorems", "hellmann-feynman"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Pauli's strong form of the Hellmann-Feynman theorem (the generalised Hellmann-Feynman) extends to off-diagonal matrix elements. For two eigenstates $|m\\rangle, |n\\rangle$ of $H(\\lambda)$, what does it state?",
+    "passive": {
+      "options": [
+        "$\\langle m|\\partial\\hat H/\\partial\\lambda|n\\rangle = (E_n - E_m)\\langle m|\\partial n/\\partial\\lambda\\rangle$ for $m \\neq n$ — connects off-diagonal $H'$ to wavefunction overlap derivatives",
+        "Off-diagonal matrix elements all vanish at every $\\lambda$ by Hellmann-Feynman",
+        "$\\langle m|\\partial\\hat H/\\partial\\lambda|n\\rangle = E_n + E_m$, independent of $\\lambda$",
+        "The generalised form only applies to degenerate states; non-degenerate cases use the standard theorem"
+      ],
+      "correct": 0,
+      "explanation": "Derivation: differentiate $H|n\\rangle = E_n|n\\rangle$ and take inner product with $\\langle m|$: $\\langle m|H'|n\\rangle + \\langle m|H|n'\\rangle = E_n'\\delta_{mn} + E_n\\langle m|n'\\rangle$. Use $\\langle m|H = E_m\\langle m|$: $\\langle m|H'|n\\rangle = (E_n - E_m)\\langle m|n'\\rangle$. For $m \\neq n$: gives off-diagonal matrix elements of $H'$ in terms of state derivatives. Useful in perturbation theory: first-order correction to $|n\\rangle$ is $|n^{(1)}\\rangle = \\sum_{m\\neq n}\\langle m|H'|n\\rangle/(E_n - E_m)\\,|m\\rangle$ — same formula."
+    }
+  },
+  {
+    "id": "hf006",
+    "path": ["physics", "theorems", "hellmann-feynman"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The Hellmann-Feynman theorem provides a non-perturbative way to compute the second-order Stark shift in atomic states. How?",
+    "passive": {
+      "options": [
+        "Integrate $\\partial E/\\partial E_{\\rm field} = -\\langle d_z\\rangle = \\alpha E_{\\rm field}$ from $0$ to $E_0$; gives $\\Delta E = -\\tfrac12\\alpha E_0^2$ exactly",
+        "Hellmann-Feynman gives only the linear (first-order) Stark shift; second-order requires perturbation theory",
+        "The second-order Stark shift vanishes by parity symmetry, eliminating any need for Hellmann-Feynman",
+        "Hellmann-Feynman is only formally exact and gives wrong numerical values for the polarisability"
+      ],
+      "correct": 0,
+      "explanation": "If the system has no permanent dipole (parity eigenstate, $\\langle d_z\\rangle_0 = 0$), then for small field $\\langle d_z\\rangle = -\\alpha E + O(E^3)$ where $\\alpha$ is the polarisability. Hellmann-Feynman: $\\partial E/\\partial E_{\\rm field} = -\\langle d_z\\rangle = \\alpha E_{\\rm field}$. Integrate: $\\Delta E = +\\tfrac12\\alpha E_0^2 - 0 = $ ... wait, with sign: $\\hat H = \\hat H_0 - \\hat d_z E$, so $\\partial H/\\partial E = -\\hat d_z$, $\\partial E/\\partial E_{\\rm field} = -\\langle\\hat d_z\\rangle$. From the induced dipole $\\langle\\hat d_z\\rangle = \\alpha E$: $\\partial E/\\partial E_{\\rm field} = -\\alpha E$, so $E(E_{\\rm field}) = E_0 - \\tfrac12\\alpha E_{\\rm field}^2$ — the standard quadratic Stark shift, recovered without explicit second-order PT."
+    }
+  }
+]

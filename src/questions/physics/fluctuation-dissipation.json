@@ -1,0 +1,118 @@
+[
+  {
+    "id": "fdt001",
+    "path": ["physics", "theorems", "fluctuation-dissipation"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "The fluctuation-dissipation theorem (FDT, Callen-Welton 1951) relates equilibrium fluctuations of an observable to its linear response to an external perturbation. What is the classical form?",
+    "equation": "S_{xx}(\\omega) = \\frac{2k_BT}{\\omega}\\,\\text{Im}\\,\\chi(\\omega)",
+    "passive": {
+      "options": [
+        "Power spectral density of fluctuations equals $(2k_BT/\\omega)\\text{Im}\\chi(\\omega)$ where $\\chi$ is the linear susceptibility; dissipation (Im $\\chi$) and equilibrium fluctuations are linked",
+        "Fluctuations are entirely independent of dissipation in equilibrium; FDT is a coincidence specific to electromagnetism",
+        "FDT requires the system to be far from equilibrium with active driving",
+        "$S_{xx}$ is proportional to $\\chi'$ (real part), not the imaginary part"
+      ],
+      "correct": 0,
+      "explanation": "Two complementary pictures: (a) Apply a small force $F(t)$; response is $\\langle x(t)\\rangle = \\int\\chi(t-t')F(t')dt'$. (b) With no force, $x(t)$ fluctuates with PSD $S_{xx}(\\omega) = \\int\\langle x(0)x(t)\\rangle e^{i\\omega t}dt$. FDT says (a) and (b) are tied: dissipation in (a) and fluctuations in (b) come from the same coupling to the bath. Famous corollary: Johnson noise $\\langle V^2\\rangle = 4k_BTR\\Delta f$ (Nyquist 1928)."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each FDT application to its setting:",
+      "pairs": [
+        {"id": "p1", "term": "Johnson-Nyquist noise", "definition": "Resistor at temperature $T$: voltage fluctuations $S_V = 4k_BTR$ (white spectrum classically)"},
+        {"id": "p2", "term": "Brownian motion", "definition": "Einstein relation $D = k_BT\\mu$ — diffusion coefficient = $k_BT$ × mobility (response to force)"},
+        {"id": "p3", "term": "Optomechanical thermal noise", "definition": "Mirror's $x$-fluctuations $S_{xx} \\propto k_BT/(m\\omega^2)$ at low $f$; limits LIGO/optomechanics"},
+        {"id": "p4", "term": "Dielectric loss", "definition": "Im $\\varepsilon(\\omega) \\propto S_{P}(\\omega)/k_BT$ — absorption and equilibrium polarisation fluctuations linked"}
+      ],
+      "explanation": "FDT is one of the most useful results in non-equilibrium statistical mechanics. It says that probing dissipation in a slightly non-equilibrium experiment tells you the equilibrium noise — and vice versa. Modern extensions: Jarzynski equality, Crooks fluctuation theorem (non-equilibrium FDT)."
+    }
+  },
+  {
+    "id": "fdt002",
+    "path": ["physics", "theorems", "fluctuation-dissipation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Nyquist (1928) derived the Johnson noise formula $S_V(\\omega) = 4k_BTR$ from the FDT. For a resistor connected to a transmission line in equilibrium at temperature $T$:",
+    "passive": {
+      "options": [
+        "Transmission-line modes carry $k_BT$ each (equipartition); impedance matching + detailed balance gives $V_n^2 = 4k_BTR\\Delta f$",
+        "Johnson noise vanishes when impedance is matched; only mismatched circuits radiate",
+        "$S_V$ is proportional to $R^2$ rather than $R$ as Nyquist's argument suggests",
+        "Johnson noise is set by the bandgap of the resistor material, not by temperature"
+      ],
+      "correct": 0,
+      "explanation": "Nyquist's argument: a resistor at $T$ in series with another at the same $T$ exchanges no net energy in equilibrium. Each must therefore emit power equal to what it absorbs. Detailed balance + equipartition gives the famous result. Quantum form (1976): $S_V(\\omega) = 2\\hbar\\omega R\\coth(\\hbar\\omega/2k_BT)$ — recovers $4k_BTR$ at $\\hbar\\omega \\ll k_BT$, becomes $2\\hbar\\omega R$ (vacuum noise) at $\\hbar\\omega \\gg k_BT$. The crossover is at $T \\sim 1$ K for 1 GHz, important in quantum-limited microwave amplifiers."
+    }
+  },
+  {
+    "id": "fdt003",
+    "path": ["physics", "theorems", "fluctuation-dissipation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Einstein relation $D = k_BT\\mu$ for Brownian motion connects diffusion to mobility. It can be derived from FDT applied to a particle in a viscous medium. What is the physical content?",
+    "passive": {
+      "options": [
+        "Random force from the bath has PSD $4k_BT\\gamma$ (Nyquist-like); this drives diffusion $D = k_BT/\\gamma = k_BT\\mu$, where $\\gamma$ is friction and $\\mu = 1/\\gamma$ is mobility",
+        "Diffusion and drift are statistically independent; Einstein relation requires additional assumptions",
+        "$D = k_BT\\gamma$ — diffusion proportional to friction, not inversely proportional",
+        "Einstein relation holds only for spherical particles in a continuous viscous fluid"
+      ],
+      "correct": 0,
+      "explanation": "Langevin equation: $m\\dot v = -\\gamma v + \\xi(t)$ with $\\langle\\xi(t)\\xi(t')\\rangle = 2\\gamma k_BT\\delta(t-t')$ (white noise, amplitude fixed by FDT). For an applied force $F$: steady drift $\\langle v\\rangle = F/\\gamma = \\mu F$. Free particle: $\\langle x^2(t)\\rangle = 2Dt$ with $D = k_BT/\\gamma$. Einstein's 1905 Brownian motion paper derived this and used it to estimate Avogadro's number — confirmed by Perrin's 1908 experiments (Nobel 1926)."
+    }
+  },
+  {
+    "id": "fdt004",
+    "path": ["physics", "theorems", "fluctuation-dissipation"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The quantum FDT replaces $k_BT$ by $(\\hbar\\omega/2)\\coth(\\hbar\\omega/2k_BT)$. What is the physical interpretation of the limits?",
+    "passive": {
+      "options": [
+        "$\\hbar\\omega \\ll k_BT$: classical equipartition $k_BT$ per mode. $\\hbar\\omega \\gg k_BT$: zero-point fluctuations $\\hbar\\omega/2$ — vacuum noise persists at $T = 0$",
+        "Quantum form reduces to classical at all temperatures; FDT is only a classical theorem at heart",
+        "Quantum FDT predicts infinite noise at zero temperature, signaling theory breakdown",
+        "$\\coth$ is a notational convenience; substituting $\\tanh$ would give the same physics"
+      ],
+      "correct": 0,
+      "explanation": "$\\coth(x) = 1/x + x/3 + \\ldots$ at $x \\ll 1$, giving $\\hbar\\omega/2 \\cdot \\coth(\\hbar\\omega/2k_BT) \\to k_BT$. At $x \\gg 1$: $\\coth \\to 1$, giving $\\hbar\\omega/2$ — the zero-point noise. Vacuum fluctuations at high frequency (e.g., $\\hbar\\omega \\gg k_BT$ in microwave/optical bands at cryogenic temperatures) are quantum-mechanically real and set the noise floor of amplifiers (Caves bound: 1/2 quantum noise per mode for phase-insensitive amplification). Squeezed-light injection circumvents this for one quadrature."
+    }
+  },
+  {
+    "id": "fdt005",
+    "path": ["physics", "theorems", "fluctuation-dissipation"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Onsager reciprocity relations follow from FDT for systems with multiple coupled fluxes and forces. What do they state?",
+    "equation": "L_{ij}(\\mathbf B) = L_{ji}(-\\mathbf B)",
+    "passive": {
+      "options": [
+        "Off-diagonal kinetic coefficients are symmetric under sign-reversal of $\\mathbf B$: $L_{ij}(\\mathbf B) = L_{ji}(-\\mathbf B)$ — consequence of microscopic time-reversal symmetry",
+        "Onsager relations hold only when $\\mathbf B = 0$; non-zero $\\mathbf B$ breaks all reciprocity",
+        "$L_{ij} = L_{ji}$ for all fluxes regardless of magnetic field; magnetic field doesn't enter",
+        "Onsager relations are a special case of Newton's third law, not FDT"
+      ],
+      "correct": 0,
+      "explanation": "Onsager's 1931 derivation (Nobel 1968) uses microscopic reversibility: under $t \\to -t$, $\\mathbf B \\to -\\mathbf B$, and equilibrium correlations are unchanged. This gives $L_{ij}(\\mathbf B) = L_{ji}(-\\mathbf B)$. Without magnetic field: $L_{ij} = L_{ji}$ (Onsager symmetry). Examples: Thomson and Peltier coefficients in thermoelectricity, electric-thermal cross-couplings, ionic transport in membranes. Underpins efficiency bounds of irreversible thermodynamics (linear regime)."
+    }
+  },
+  {
+    "id": "fdt006",
+    "path": ["physics", "theorems", "fluctuation-dissipation"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "Non-equilibrium fluctuation theorems (Jarzynski 1997, Crooks 1999) generalise FDT to far-from-equilibrium processes. Jarzynski's equality states:",
+    "equation": "\\langle e^{-W/k_BT}\\rangle = e^{-\\Delta F/k_BT}",
+    "passive": {
+      "options": [
+        "Average $\\langle e^{-W/k_BT}\\rangle$ over many realisations of a non-equilibrium process equals $e^{-\\Delta F/k_BT}$, recovering free-energy differences from arbitrarily fast work measurements",
+        "$\\langle W\\rangle = \\Delta F$ in any process (always equality, never inequality)",
+        "Jarzynski's equality holds only in the slow (reversible) limit — same content as $\\Delta F = W_{\\rm rev}$",
+        "$\\langle W\\rangle \\leq \\Delta F$ with no fluctuation theorem; equality only on average"
+      ],
+      "correct": 0,
+      "explanation": "Jarzynski's equality is a striking generalisation of $\\langle W\\rangle \\geq \\Delta F$ (second law for averages) to an equality involving the *exponentiated* work. The trick: rare events with $W < \\Delta F$ contribute disproportionately to $\\langle e^{-W/k_BT}\\rangle$. Verified in single-molecule pulling experiments (RNA hairpins, Liphardt 2002), used to compute protein folding free energies from steered MD simulations, and a foundation of stochastic thermodynamics."
+    }
+  }
+]

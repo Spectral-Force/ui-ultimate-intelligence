@@ -1,0 +1,115 @@
+[
+  {
+    "id": "ncl001",
+    "path": ["physics", "theorems", "no-cloning"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "The no-cloning theorem (Wootters-Zurek 1982; Dieks 1982) states that no quantum operation can perfectly copy an arbitrary unknown quantum state. What is the structure of the proof?",
+    "passive": {
+      "options": [
+        "Linearity: suppose $U|\\psi\\rangle|0\\rangle = |\\psi\\rangle|\\psi\\rangle$ for all $|\\psi\\rangle$. Linearity forces $U(|\\psi\\rangle + |\\phi\\rangle)|0\\rangle = |\\psi\\rangle|\\psi\\rangle + |\\phi\\rangle|\\phi\\rangle$, but cloning would give $(|\\psi\\rangle + |\\phi\\rangle)^{\\otimes 2}$ — these differ if $\\langle\\psi|\\phi\\rangle \\neq 0, 1$",
+        "Unitarity: cloning would require $|\\psi\\rangle|\\psi\\rangle$ to be unitary-evolvable from $|\\psi\\rangle|0\\rangle$, but unitary maps preserve inner products and cloning does not",
+        "Measurement: cloning is forbidden because every measurement destroys the original state",
+        "Energy conservation: cloning would require infinite energy to copy a high-amplitude state"
+      ],
+      "correct": 0,
+      "explanation": "Both linearity and unitarity arguments work; the linearity proof is most direct. Suppose a unitary $U$ exists with $U|\\psi\\rangle|0\\rangle = |\\psi\\rangle|\\psi\\rangle$ and $U|\\phi\\rangle|0\\rangle = |\\phi\\rangle|\\phi\\rangle$. Taking inner products: $\\langle\\phi|\\psi\\rangle = \\langle\\phi|\\psi\\rangle^2$, which requires $\\langle\\phi|\\psi\\rangle \\in \\{0, 1\\}$ — orthogonal or identical. Therefore no $U$ can clone non-orthogonal states perfectly. Classical bits can be cloned freely because non-orthogonal distinct states don't exist."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each no-go theorem to its statement:",
+      "pairs": [
+        {"id": "p1", "term": "No-cloning theorem", "definition": "No unitary can produce $|\\psi\\rangle|\\psi\\rangle$ from $|\\psi\\rangle|0\\rangle$ for all $|\\psi\\rangle$"},
+        {"id": "p2", "term": "No-broadcasting theorem", "definition": "Mixed-state generalisation: no operation $\\Lambda$ gives marginals equal to $\\rho$ on both subsystems unless states commute"},
+        {"id": "p3", "term": "No-deleting theorem", "definition": "Given two copies $|\\psi\\rangle|\\psi\\rangle$, no unitary erases one to $|\\psi\\rangle|0\\rangle$ for arbitrary $|\\psi\\rangle$"},
+        {"id": "p4", "term": "No-signalling theorem", "definition": "Local operations on a subsystem cannot transmit classical information to the partner — vacuum entanglement is non-signalling"}
+      ],
+      "explanation": "These together form the 'no-go' family. No-cloning and no-deleting are time-reversal counterparts. No-broadcasting generalises no-cloning to mixed states (Barnum 1996). No-signalling is what prevents Bell-non-locality from contradicting relativity."
+    }
+  },
+  {
+    "id": "ncl002",
+    "path": ["physics", "theorems", "no-cloning"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "No-cloning prevents perfect copying but does NOT prevent approximate cloning. What is the optimal universal cloning fidelity for a qubit (Buzek-Hillery 1996)?",
+    "passive": {
+      "options": [
+        "Symmetric universal 1→2 cloning fidelity $F = 5/6 \\approx 0.833$ per copy — exceeds the no-cloning trivial bound and the classical measurement-and-prepare limit of 2/3",
+        "Optimal approximate cloning fidelity is exactly 1/2 (random guessing), so no improvement over no copy",
+        "Universal cloning can reach $F = 1$ minus an exponentially small error for any qubit input state",
+        "Approximate cloning gives at most $F = 2/3$, the same as classical measure-and-prepare"
+      ],
+      "correct": 0,
+      "explanation": "Buzek-Hillery (1996) showed that the optimal universal symmetric 1→2 cloning machine achieves fidelity $F = 5/6$ on each copy for any input qubit state — improving over the 'measure-and-prepare' classical limit $F = 2/3$. For $N \\to M$ universal cloning: $F_{N\\to M} = (NM + M + N)/(M(N + 2))$. As $N \\to \\infty$, $F \\to 1$ (measurement on many copies recovers the state). Asymmetric cloners trade fidelity between copies; phase-covariant cloners are better for restricted state families."
+    }
+  },
+  {
+    "id": "ncl003",
+    "path": ["physics", "theorems", "no-cloning"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "No-cloning is the foundation of quantum key distribution (QKD) security. How does BB84 exploit it?",
+    "passive": {
+      "options": [
+        "Eve cannot copy the qubits Alice sends to Bob without disturbing them; measuring in the wrong basis induces detectable errors, so any eavesdropping leaves a signature",
+        "BB84 uses a one-time pad shared at preparation; no-cloning is irrelevant to its security",
+        "Bob makes infinitely many measurements on each qubit, defeating any Eve who cannot match the rate",
+        "Alice encodes the key using a quantum error-correcting code that's resistant to cloning attacks"
+      ],
+      "correct": 0,
+      "explanation": "BB84 (Bennett-Brassard 1984): Alice encodes bits in $\\{|0\\rangle, |1\\rangle, |+\\rangle, |-\\rangle\\}$, randomly chosen basis. Bob measures in a random basis; keep only events where bases agreed. Eve's optimal strategy (intercept-resend) causes 25% bit-error rate on the agreed-basis subset because non-orthogonal states cannot be perfectly distinguished. Alice and Bob detect the eavesdropper via error-rate monitoring. The security proof is information-theoretic: by no-cloning, eavesdropping = disturbance, quantifiable via mutual information bounds."
+    }
+  },
+  {
+    "id": "ncl004",
+    "path": ["physics", "theorems", "no-cloning"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "No-cloning prevents superluminal signalling via entanglement, even though measurements on one half of a Bell pair instantaneously affect the joint state. Why?",
+    "passive": {
+      "options": [
+        "If Bob could clone his half of the Bell pair, he could distinguish remote measurement bases and signal FTL; no-cloning blocks this, so the marginal $\\rho_B = I/2$ regardless of Alice's choice",
+        "Measurement does not affect Bob's state at all; there is nothing for him to detect",
+        "Superluminal signalling is forbidden by special relativity, not by no-cloning specifically",
+        "Quantum measurement is a fundamentally classical process and so cannot transmit quantum information"
+      ],
+      "correct": 0,
+      "explanation": "If Bob possessed many copies of his half of an entangled pair, he could distinguish whether Alice projected onto $|0\\rangle/|1\\rangle$ vs $|+\\rangle/|-\\rangle$ by performing tomography on his copies. This would allow FTL signalling. No-cloning blocks the duplication step. Mathematically: Bob's reduced state is $\\rho_B = \\text{tr}_A|\\Phi^+\\rangle\\langle\\Phi^+| = I/2$ regardless of Alice's choice — the maximally mixed state. The non-local correlations only become visible when Alice and Bob compare results via a classical channel."
+    }
+  },
+  {
+    "id": "ncl005",
+    "path": ["physics", "theorems", "no-cloning"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The no-cloning theorem implies that quantum error correction cannot work by 'redundancy' as classical codes do (simply duplicating bits). How does QEC circumvent this?",
+    "passive": {
+      "options": [
+        "Encode one logical qubit into a multi-qubit entangled state (e.g. $|0_L\\rangle = |000\\rangle$); syndromes detect errors without copying logical state",
+        "QEC violates no-cloning to function; it relies on imperfect copying with high probability",
+        "QEC works only on classical errors that arise from decoherence, not on coherent quantum errors",
+        "Quantum error correction is impossible because of no-cloning; it can only be approximate"
+      ],
+      "correct": 0,
+      "explanation": "Stabiliser codes encode the logical state as a (highly non-product) superposition: $\\alpha|0_L\\rangle + \\beta|1_L\\rangle = \\alpha|000\\rangle + \\beta|111\\rangle$. The full state is one quantum state, not three copies of one qubit. Syndrome measurement extracts only parity information (Did qubit 1 flip relative to qubit 2?) — this commutes with the logical operators and so doesn't disturb $\\alpha, \\beta$. This is why Shor's 9-qubit code and the surface code work despite no-cloning."
+    }
+  },
+  {
+    "id": "ncl006",
+    "path": ["physics", "theorems", "no-cloning"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The 'no-cloning' result has a time-reversed counterpart: the no-deleting theorem (Pati-Braunstein 2000). What does it state, and what is its physical content?",
+    "passive": {
+      "options": [
+        "Given two copies $|\\psi\\rangle|\\psi\\rangle$, no unitary can produce $|\\psi\\rangle|0\\rangle$ for all $|\\psi\\rangle$ — quantum information cannot be deleted into a fixed reference state, only swapped or scrambled",
+        "Once two copies exist, quantum no-go theorems no longer apply; deletion is always possible",
+        "Deletion is freely allowed in QM as long as the deleted information is encoded in environment",
+        "No-deleting holds only for orthogonal states; arbitrary states can be deleted by partial-trace operations"
+      ],
+      "correct": 0,
+      "explanation": "Pati-Braunstein (2000): no unitary $U|\\psi\\rangle|\\psi\\rangle|A\\rangle = |\\psi\\rangle|0\\rangle|A_\\psi\\rangle$ exists for arbitrary $|\\psi\\rangle$, where $|A\\rangle$ is an ancilla. Proof similar to no-cloning, via linearity. Physical meaning: deletion would erase information; conserving information is part of the unitarity of QM. Information can only be redistributed (entangled with environment), never destroyed. This is also the resolution of the black-hole information paradox: information must be released somehow (Hawking radiation correlations) rather than truly deleted."
+    }
+  }
+]

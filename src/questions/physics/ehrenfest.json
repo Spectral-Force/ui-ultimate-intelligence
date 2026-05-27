@@ -1,0 +1,130 @@
+[
+  {
+    "id": "ehr001",
+    "path": ["physics", "theorems", "ehrenfest"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "Ehrenfest's theorem relates the time evolution of an expectation value to the commutator with the Hamiltonian. What is its general statement?",
+    "equation": "\\frac{d}{dt}\\langle\\hat A\\rangle = \\frac{i}{\\hbar}\\langle[\\hat H, \\hat A]\\rangle + \\left\\langle\\frac{\\partial\\hat A}{\\partial t}\\right\\rangle",
+    "passive": {
+      "options": [
+        "$d\\langle\\hat A\\rangle/dt = (i/\\hbar)\\langle[\\hat H, \\hat A]\\rangle + \\langle\\partial\\hat A/\\partial t\\rangle$, valid for any operator $\\hat A$ in the Schrödinger picture",
+        "$d\\langle\\hat A\\rangle/dt = (1/\\hbar)\\langle[\\hat A, \\hat H]\\rangle$, with no $i$ and no explicit time-derivative term in any case",
+        "Ehrenfest applies only to position and momentum, not to general observables built from the canonical pair",
+        "$d\\langle\\hat A\\rangle/dt = \\langle d\\hat A/dt\\rangle$ exactly, identifying expectation-value evolution with classical motion"
+      ],
+      "correct": 0,
+      "explanation": "Derivation: $d\\langle\\psi|\\hat A|\\psi\\rangle/dt$ via product rule; substitute $i\\hbar\\partial_t|\\psi\\rangle = \\hat H|\\psi\\rangle$. The result is the closest quantum analogue of Hamilton's equations $\\dot q = \\partial H/\\partial p$, $\\dot p = -\\partial H/\\partial q$ via $\\dot A = \\{A, H\\}$ in classical mechanics. The replacement is $[\\hat A, \\hat H]/(i\\hbar) \\to \\{A, H\\}_{\\rm PB}$ in the $\\hbar \\to 0$ limit."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each operator to its Ehrenfest equation of motion in a Hamiltonian $H = p^2/2m + V(x)$:",
+      "pairs": [
+        {"id": "p1", "term": "Position $\\hat x$", "definition": "$d\\langle\\hat x\\rangle/dt = \\langle\\hat p\\rangle/m$ — quantum analogue of $\\dot x = p/m$"},
+        {"id": "p2", "term": "Momentum $\\hat p$", "definition": "$d\\langle\\hat p\\rangle/dt = -\\langle\\partial V/\\partial x\\rangle$ — quantum analogue of $\\dot p = -\\partial V/\\partial x$"},
+        {"id": "p3", "term": "Hamiltonian $\\hat H$ (no explicit $t$-dependence)", "definition": "$d\\langle\\hat H\\rangle/dt = 0$ — energy expectation conserved"},
+        {"id": "p4", "term": "Time-evolution operator $\\hat U(t)$", "definition": "$d\\hat U/dt = -i\\hat H\\hat U/\\hbar$ — Schrödinger equation in operator form"}
+      ],
+      "explanation": "Ehrenfest's theorem is the most direct correspondence-principle statement: classical trajectories emerge from the expectation values of quantum operators when the potential is locally linear. The classical-quantum link breaks down for nonlinear $V$ where $\\langle V'(x)\\rangle \\neq V'(\\langle x\\rangle)$."
+    }
+  },
+  {
+    "id": "ehr002",
+    "path": ["physics", "theorems", "ehrenfest"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Ehrenfest's theorem gives $d\\langle\\hat p\\rangle/dt = -\\langle\\partial V/\\partial x\\rangle$. When does this NOT reduce to the classical equation $\\dot p_{\\rm cl} = -V'(x_{\\rm cl})$?",
+    "passive": {
+      "options": [
+        "Whenever the potential is nonlinear: $\\langle V'(\\hat x)\\rangle \\neq V'(\\langle\\hat x\\rangle)$ in general; equal only for linear or harmonic $V$, or in the narrow wavepacket limit",
+        "Only when the wavefunction has zero overlap with the classical trajectory, which is a measure-zero condition",
+        "Only at the precise moment of quantum measurement — Schrödinger evolution always satisfies classical EOMs exactly",
+        "Never — Ehrenfest's theorem makes $\\langle x(t)\\rangle$ identical to the classical trajectory for any $V$"
+      ],
+      "correct": 0,
+      "explanation": "For harmonic $V = \\tfrac12 m\\omega^2 x^2$: $V'(x) = m\\omega^2 x$ is linear, so $\\langle V'(\\hat x)\\rangle = m\\omega^2\\langle\\hat x\\rangle = V'(\\langle\\hat x\\rangle)$ — the wavepacket centre follows the classical orbit exactly. For anharmonic $V$ (e.g. $V \\propto x^4$), the spread of the wavepacket alters the average force. A narrow wavepacket recovers the classical limit until the wavepacket spreads."
+    }
+  },
+  {
+    "id": "ehr003",
+    "path": ["physics", "theorems", "ehrenfest"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "In the Heisenberg picture, operators carry the time dependence: $\\hat A_H(t) = U^\\dagger(t)\\hat A U(t)$. Their equation of motion is the Heisenberg equation. How does it relate to Ehrenfest's theorem?",
+    "equation": "\\frac{d\\hat A_H}{dt} = \\frac{i}{\\hbar}[\\hat H, \\hat A_H] + \\frac{\\partial\\hat A_H}{\\partial t}",
+    "passive": {
+      "options": [
+        "Identical operator-level equation; Ehrenfest is its expectation value $\\langle\\psi|\\cdots|\\psi\\rangle$ taken in Schrödinger-picture states",
+        "Heisenberg equation describes operator evolution while Ehrenfest gives a different and inequivalent dynamics for $\\langle A\\rangle$",
+        "Heisenberg equation has the opposite sign convention; Ehrenfest cannot be derived from it",
+        "Only Ehrenfest's theorem applies to time-independent operators; Heisenberg requires explicit time dependence"
+      ],
+      "correct": 0,
+      "explanation": "The Heisenberg equation is the operator statement; Ehrenfest's theorem is the corresponding statement for expectation values. Both pictures predict the same expectation values: $\\langle\\psi(t)|\\hat A|\\psi(t)\\rangle_S = \\langle\\psi(0)|\\hat A_H(t)|\\psi(0)\\rangle_H$. The interaction (Dirac) picture interpolates between the two for time-dependent perturbations."
+    }
+  },
+  {
+    "id": "ehr004",
+    "path": ["physics", "theorems", "ehrenfest"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Ehrenfest's theorem implies a conservation law whenever an observable commutes with the Hamiltonian and has no explicit time dependence. Which of the following is a direct consequence?",
+    "passive": {
+      "options": [
+        "$[\\hat A, \\hat H] = 0$ and $\\partial\\hat A/\\partial t = 0$ together give $d\\langle\\hat A\\rangle/dt = 0$ — the expectation is a constant of motion",
+        "$[\\hat A, \\hat H] = 0$ alone is sufficient even with explicit time dependence, since unitary evolution preserves expectation values",
+        "Conservation in the expectation value requires $\\hat A = \\hat H$ — only the Hamiltonian itself is conserved",
+        "Conservation requires $\\hat A$ to be Hermitian and positive definite, not merely commuting with $\\hat H$"
+      ],
+      "correct": 0,
+      "explanation": "This is the QM version of Noether-like reasoning. Examples: $[L_z, H] = 0$ in a central potential → $\\langle L_z\\rangle$ conserved; $[H, H] = 0$ trivially → energy expectation conserved when $H$ is time-independent. The expectation value is conserved, but on an individual measurement the spread $\\Delta A$ is fixed — a strong statement about the entire probability distribution, not just the mean."
+    }
+  },
+  {
+    "id": "ehr005",
+    "path": ["physics", "theorems", "ehrenfest"],
+    "level": "P",
+    "modes": ["passive", "active"],
+    "question": "A coherent state of the harmonic oscillator $|\\alpha\\rangle$ has $\\langle\\hat x\\rangle = \\sqrt{2\\hbar/m\\omega}\\,\\text{Re}\\,\\alpha$ and $\\langle\\hat p\\rangle = \\sqrt{2\\hbar m\\omega}\\,\\text{Im}\\,\\alpha$. Ehrenfest's theorem predicts their time evolution. Which is correct?",
+    "passive": {
+      "options": [
+        "$\\langle\\hat x\\rangle(t)$ and $\\langle\\hat p\\rangle(t)$ trace the classical oscillator orbit with $\\Delta x$ and $\\Delta p$ remaining minimum-uncertainty — coherent states are 'most classical'",
+        "$\\Delta x$ grows linearly in time even for the harmonic oscillator, breaking Ehrenfest's classical correspondence",
+        "$\\langle\\hat x\\rangle$ decays exponentially due to spontaneous emission of phonons in the harmonic ladder",
+        "Coherent states violate Ehrenfest's theorem at long times because of revivals every $T = 2\\pi/\\omega$"
+      ],
+      "correct": 0,
+      "explanation": "For the SHO with linear $\\hat x$ and $\\hat p$ EOMs, coherent states $|\\alpha\\rangle$ evolve as $|\\alpha e^{-i\\omega t}\\rangle$ — the centre traces the classical ellipse $(\\langle\\hat x\\rangle,\\langle\\hat p\\rangle)$ at angular velocity $\\omega$, while the wave-packet width is invariant ($\\Delta x\\Delta p = \\hbar/2$ throughout). This is the only Schrödinger state that remains a minimum-uncertainty Gaussian and follows the classical orbit exactly for all time.",
+      "correct_": 0
+    },
+    "active": {
+      "type": "step-order",
+      "prompt": "Order the derivation of $d\\langle\\hat A\\rangle/dt$ via Ehrenfest's theorem:",
+      "steps": [
+        {"id": "s1", "text": "Write $\\langle\\hat A\\rangle = \\langle\\psi|\\hat A|\\psi\\rangle$ and differentiate using the product rule: $d/dt = \\langle\\dot\\psi|\\hat A|\\psi\\rangle + \\langle\\psi|\\hat A|\\dot\\psi\\rangle + \\langle\\psi|\\partial\\hat A/\\partial t|\\psi\\rangle$"},
+        {"id": "s2", "text": "Substitute Schrödinger equation $|\\dot\\psi\\rangle = -i\\hat H|\\psi\\rangle/\\hbar$ and its conjugate $\\langle\\dot\\psi| = +i\\langle\\psi|\\hat H/\\hbar$ (since $\\hat H = \\hat H^\\dagger$)"},
+        {"id": "s3", "text": "Combine: $(i/\\hbar)\\langle\\psi|\\hat H\\hat A|\\psi\\rangle - (i/\\hbar)\\langle\\psi|\\hat A\\hat H|\\psi\\rangle = (i/\\hbar)\\langle[\\hat H, \\hat A]\\rangle$"},
+        {"id": "s4", "text": "Final result: $d\\langle\\hat A\\rangle/dt = (i/\\hbar)\\langle[\\hat H, \\hat A]\\rangle + \\langle\\partial\\hat A/\\partial t\\rangle$"}
+      ],
+      "solution": ["s1", "s2", "s3", "s4"],
+      "explanation": "Ehrenfest's theorem is one of the most-derived results in QM. The proof relies only on (a) Hermiticity of $\\hat H$ (so that bra-Schrödinger has the opposite sign), and (b) unitarity of evolution (so that the norm of $|\\psi\\rangle$ is preserved)."
+    }
+  },
+  {
+    "id": "ehr006",
+    "path": ["physics", "theorems", "ehrenfest"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Ehrenfest's theorem suggests classical mechanics emerges in the $\\hbar \\to 0$ limit. What is the modern, more careful statement of the classical limit?",
+    "passive": {
+      "options": [
+        "Classicality emerges when the de Broglie wavelength is much smaller than potential variation scales AND decoherence prevents superposition build-up — Ehrenfest alone is insufficient",
+        "$\\hbar \\to 0$ taken naively in the equations is sufficient; no decoherence argument is required",
+        "Classical mechanics is recovered only for the harmonic oscillator; nonlinear systems remain quantum at all scales",
+        "Ehrenfest's theorem proves rigorously that classical mechanics is exact for all macroscopic objects"
+      ],
+      "correct": 0,
+      "explanation": "Ehrenfest's theorem alone fails to recover classical mechanics for chaotic systems because wavepackets spread on the Lyapunov timescale $\\tau_E \\sim \\ln(S/\\hbar)/\\lambda$, where $\\lambda$ is the Lyapunov exponent. Decoherence (entanglement with environment) is needed to select a pointer basis and suppress macroscopic superpositions — Zurek's einselection. The full classical limit involves both vanishing $\\hbar/S$ and effective irreversibility from environmental coupling."
+    }
+  }
+]

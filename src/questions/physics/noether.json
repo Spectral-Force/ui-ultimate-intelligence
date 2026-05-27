@@ -1,0 +1,134 @@
+[
+  {
+    "id": "nth001",
+    "path": ["physics", "theorems", "noether"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "Noether's theorem (1918) connects continuous symmetries of an action to conservation laws. What does it state in its first form?",
+    "passive": {
+      "options": [
+        "Every continuous symmetry of the action $S = \\int L\\,dt$ corresponds to a conserved current/charge; symmetries of the Lagrangian, not just the equations of motion",
+        "Every discrete symmetry of $L$ corresponds to a conserved charge — parity gives the parity operator as a constant of motion",
+        "Conservation laws and symmetries are independent in classical mechanics; they coincide only in quantum theory",
+        "Noether's theorem is a statement about boundary conditions only; bulk dynamics need not respect any symmetry"
+      ],
+      "correct": 0,
+      "explanation": "Noether's first theorem: continuous global symmetries → conserved Noether charges/currents. Her second theorem (1918) treats local gauge symmetries → algebraic identities (Bianchi-type), distinct from conserved currents. Continuous symmetries here means a parameter (e.g., translation distance, rotation angle) that can be smoothly varied — discrete symmetries like parity give a different kind of conservation (quantum number, not a current)."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each continuous symmetry to its Noether-conserved charge:",
+      "pairs": [
+        {"id": "p1", "term": "Time translation", "definition": "Energy / Hamiltonian — $L$ has no explicit $t$-dependence"},
+        {"id": "p2", "term": "Spatial translation", "definition": "Linear momentum $\\mathbf p$ — $L$ has no explicit $\\mathbf r$-dependence"},
+        {"id": "p3", "term": "Rotation", "definition": "Angular momentum $\\mathbf L$ — $L$ invariant under rotations of all coordinates"},
+        {"id": "p4", "term": "Internal U(1) phase", "definition": "Conserved $U(1)$ charge — e.g., electric charge in QED, particle number in non-relativistic QM"}
+      ],
+      "explanation": "These four cover most of physics' conservation laws. Lorentz boosts give a less-familiar conserved quantity: the centre of energy. Galilean boosts give the centre of mass. Conformal symmetry (if present, as in massless theories) gives further conserved quantities related to scale invariance."
+    }
+  },
+  {
+    "id": "nth002",
+    "path": ["physics", "theorems", "noether"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "For a Lagrangian $L(q_i, \\dot q_i)$ with an infinitesimal symmetry $q_i \\to q_i + \\epsilon\\delta q_i$ that leaves $L$ invariant ($\\delta L = 0$), the conserved Noether charge is:",
+    "equation": "Q = \\sum_i \\frac{\\partial L}{\\partial\\dot q_i}\\delta q_i",
+    "passive": {
+      "options": [
+        "$Q = \\sum_i p_i\\delta q_i$ — inner product of canonical momenta with the symmetry direction $\\delta q_i$",
+        "$Q = \\sum_i q_i\\delta q_i$ — proportional to coordinates only, not momenta",
+        "$Q = \\sum_i \\delta q_i\\cdot\\delta L$ — vanishes by construction since $\\delta L = 0$",
+        "$Q$ is the change in the Lagrangian itself, $Q = \\delta L$, which vanishes by symmetry"
+      ],
+      "correct": 0,
+      "explanation": "Derivation: under $q_i \\to q_i + \\epsilon\\delta q_i$, $\\delta L = \\sum_i(\\partial L/\\partial q_i)\\delta q_i + (\\partial L/\\partial\\dot q_i)\\delta\\dot q_i$. Use Euler-Lagrange to replace $\\partial L/\\partial q_i = d/dt(\\partial L/\\partial\\dot q_i)$. Then $\\delta L = d/dt[(\\partial L/\\partial\\dot q_i)\\delta q_i] = dQ/dt$. If $\\delta L = 0$: $dQ/dt = 0$, so $Q$ is conserved."
+    }
+  },
+  {
+    "id": "nth003",
+    "path": ["physics", "theorems", "noether"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "If the Lagrangian transforms by a total time derivative under a symmetry ($\\delta L = dF/dt$ rather than $\\delta L = 0$), the conserved charge picks up an extra term. What is the modified charge?",
+    "passive": {
+      "options": [
+        "$Q = \\sum_i p_i\\delta q_i - F$ — subtract the 'quasi-symmetric' boundary term; e.g., Galilean boosts have non-vanishing $\\delta L = m\\dot{\\mathbf r}\\cdot\\delta\\mathbf v$",
+        "$Q$ is identically zero if $\\delta L = dF/dt$ since the symmetry is not strict",
+        "$Q = \\sum_i p_i\\delta q_i + F$ (sign reversed from the actual formula)",
+        "The Noether procedure breaks down for non-strict symmetries; no conserved charge exists"
+      ],
+      "correct": 0,
+      "explanation": "If $\\delta L = dF/dt$ for some function $F(q, t)$, integrating by parts gives $\\delta S = [F]_{t_1}^{t_2}$, which vanishes if $F$ vanishes at the endpoints (fixed endpoints in the action principle). The conserved charge becomes $Q = \\sum_i p_i\\delta q_i - F$. Example: Galilean boost $\\mathbf r \\to \\mathbf r + \\mathbf v t$ gives $\\delta L = m\\dot{\\mathbf r}\\cdot\\mathbf v$. The conserved charge is $\\mathbf G = m\\mathbf r - \\mathbf p t$ — the centre-of-mass motion (which is uniform)."
+    }
+  },
+  {
+    "id": "nth004",
+    "path": ["physics", "theorems", "noether"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "In field theory with Lagrangian density $\\mathcal L(\\phi, \\partial_\\mu\\phi)$, Noether's theorem gives a conserved current $J^\\mu$. The conservation law is:",
+    "equation": "\\partial_\\mu J^\\mu = 0, \\quad J^\\mu = \\frac{\\partial\\mathcal L}{\\partial(\\partial_\\mu\\phi)}\\delta\\phi - K^\\mu",
+    "passive": {
+      "options": [
+        "$\\partial_\\mu J^\\mu = 0$; the conserved charge is the spatial integral $Q = \\int J^0 d^3x$, constant if $J^i$ vanishes at infinity",
+        "$\\partial_\\mu J^\\mu = $ source term; only the 'free' currents are truly conserved in interacting theories",
+        "The conservation law $\\partial_\\mu J^\\mu = 0$ holds only in flat spacetime; curved spacetime breaks Noether",
+        "Field-theory Noether currents are conserved only when integrated; the local statement $\\partial_\\mu J^\\mu = 0$ does not hold"
+      ],
+      "correct": 0,
+      "explanation": "The Noether current for a global symmetry $\\phi \\to \\phi + \\epsilon\\delta\\phi$ that shifts $\\mathcal L \\to \\mathcal L + \\partial_\\mu K^\\mu$ is $J^\\mu = (\\partial\\mathcal L/\\partial(\\partial_\\mu\\phi))\\delta\\phi - K^\\mu$. The conserved charge $Q = \\int J^0 d^3x$ generates the symmetry transformation via Poisson brackets (or commutators in QFT). Examples: U(1) symmetry $\\phi \\to e^{i\\theta}\\phi$ gives electromagnetic four-current; SU(N) gives flavour/colour currents."
+    }
+  },
+  {
+    "id": "nth005",
+    "path": ["physics", "theorems", "noether"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Noether's second theorem applies to local (gauge) symmetries where the parameter is a function of spacetime: $\\alpha(x)$ not constant. What does it produce?",
+    "passive": {
+      "options": [
+        "An identity among the equations of motion (Bianchi-type), NOT a new conservation law beyond those from global subgroup; gauge invariance constrains the dynamics but doesn't give independent charges",
+        "Infinitely many conserved charges — one per spacetime point",
+        "Conserved currents that are local in the gauge field, equal to the global Noether currents of the corresponding rigid symmetry",
+        "No conserved quantities at all — local symmetries are gauge redundancies and yield no Noether charges"
+      ],
+      "correct": 0,
+      "explanation": "Noether's second theorem (1918, less famous): local symmetries give differential identities among equations of motion. In GR: Bianchi identity $\\nabla_\\mu G^{\\mu\\nu} = 0$ follows from diffeomorphism invariance. In Yang-Mills: $D_\\mu(D_\\nu F^{\\mu\\nu}) = 0$ from local gauge invariance. These are constraints on dynamics, not conserved physical charges. The corresponding global subgroup (e.g., rigid U(1) inside local U(1)) gives the standard Noether charge — electric charge."
+    }
+  },
+  {
+    "id": "nth006",
+    "path": ["physics", "theorems", "noether"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Spontaneous symmetry breaking modifies Noether's theorem: the symmetry of the Lagrangian is not a symmetry of the vacuum. What is the most important physical consequence?",
+    "passive": {
+      "options": [
+        "Goldstone's theorem: every spontaneously broken continuous global symmetry gives rise to a massless Nambu-Goldstone boson (one per broken generator)",
+        "Noether currents are no longer conserved when the vacuum breaks the symmetry; the theorem fails outright",
+        "Spontaneous breaking automatically gives a non-zero gauge boson mass without any Higgs mechanism",
+        "The broken symmetry's charge becomes infinite, and the theorem must be regularised in IR"
+      ],
+      "correct": 0,
+      "explanation": "Goldstone theorem (1961): for SSB of a continuous global symmetry with $n$ broken generators, the spectrum contains $n$ massless bosons. Examples: pions are pseudo-Goldstones of broken chiral SU(2)_L × SU(2)_R → SU(2)_V in QCD; spin waves (magnons) in ferromagnets are Goldstones of SO(3) → SO(2). For gauged broken symmetries (Higgs mechanism): the Goldstone is 'eaten' by the gauge boson, which becomes massive — Anderson-Higgs mechanism in superconductors and the Standard Model."
+    }
+  },
+  {
+    "id": "nth007",
+    "path": ["physics", "theorems", "noether"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "Conformal symmetry in field theory adds new conserved currents beyond Poincaré (translation + Lorentz). What additional symmetries are involved?",
+    "passive": {
+      "options": [
+        "Dilatation $x \\to \\lambda x$ (1 generator) + $d$ special conformal transformations $x^\\mu \\to (x^\\mu + b^\\mu x^2)/(\\ldots)$ — total $d+1$ new generators",
+        "Only dilatation; special conformal is a derived symmetry of dilatation in any spacetime dimension",
+        "Conformal symmetry adds only one generator: the scale transformation",
+        "Conformal symmetry includes parity reversal and time reversal as continuous parameters"
+      ],
+      "correct": 0,
+      "explanation": "Conformal group in $d$ Minkowski dimensions has $(d+1)(d+2)/2$ generators total (in $d=4$: 15). Decomposition: $d$ translations + $d(d-1)/2$ Lorentz + 1 dilatation + $d$ special conformal. The conserved currents include the energy-momentum tensor (for translations, $T^{\\mu\\nu}$), the angular momentum tensor (for Lorentz), the dilatation current ($D^\\mu = x_\\nu T^{\\nu\\mu}$, conserved iff $T$ is traceless), and special conformal currents. In 2D, the conformal algebra is infinite-dimensional (Virasoro algebra) — the basis of 2D CFT and string theory."
+    }
+  }
+]

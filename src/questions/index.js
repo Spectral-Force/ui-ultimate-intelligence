@@ -50,6 +50,18 @@ import uhv            from './physics/uhv.json'
 import bakeout        from './physics/bakeout.json'
 import laserSystems   from './physics/laser-systems.json'
 import electronics    from './physics/electronics.json'
+import ehrenfest               from './physics/ehrenfest.json'
+import virial                  from './physics/virial.json'
+import hellmannFeynman         from './physics/hellmann-feynman.json'
+import noetherTh               from './physics/noether.json'
+import bellChsh                from './physics/bell-chsh.json'
+import noCloning               from './physics/no-cloning.json'
+import wignerEckart            from './physics/wigner-eckart.json'
+import adiabaticTheorem        from './physics/adiabatic-theorem.json'
+import fluctuationDissipation  from './physics/fluctuation-dissipation.json'
+import opticalTheorem          from './physics/optical-theorem.json'
+import spinStatistics          from './physics/spin-statistics.json'
+import cptTheorem              from './physics/cpt-theorem.json'
 
 export const allQuestions = [
   ...dopplerCooling,
@@ -104,6 +116,18 @@ export const allQuestions = [
   ...bakeout,
   ...laserSystems,
   ...electronics,
+  ...ehrenfest,
+  ...virial,
+  ...hellmannFeynman,
+  ...noetherTh,
+  ...bellChsh,
+  ...noCloning,
+  ...wignerEckart,
+  ...adiabaticTheorem,
+  ...fluctuationDissipation,
+  ...opticalTheorem,
+  ...spinStatistics,
+  ...cptTheorem,
 ]
 
 /**

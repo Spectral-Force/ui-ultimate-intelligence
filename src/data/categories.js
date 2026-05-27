@@ -97,6 +97,24 @@ export const CATEGORIES = [
       { id: 'optics', label: 'Optics' },
       { id: 'key-quantities', label: 'Key Quantities & Constants' },
       {
+        id: 'theorems',
+        label: 'Theorems & Principles',
+        children: [
+          { id: 'ehrenfest',               label: "Ehrenfest's Theorem" },
+          { id: 'virial',                  label: 'Virial Theorem' },
+          { id: 'hellmann-feynman',        label: 'Hellmann-Feynman Theorem' },
+          { id: 'noether',                 label: "Noether's Theorem" },
+          { id: 'bell-chsh',               label: 'Bell / CHSH Inequalities' },
+          { id: 'no-cloning',              label: 'No-Cloning Theorem' },
+          { id: 'wigner-eckart',           label: 'Wigner-Eckart Theorem' },
+          { id: 'adiabatic-theorem',       label: 'Adiabatic Theorem & Berry Phase' },
+          { id: 'fluctuation-dissipation', label: 'Fluctuation-Dissipation' },
+          { id: 'optical-theorem',         label: 'Optical Theorem' },
+          { id: 'spin-statistics',         label: 'Spin-Statistics Theorem' },
+          { id: 'cpt-theorem',             label: 'CPT Theorem' },
+        ],
+      },
+      {
         id: 'equipment',
         label: 'Lab Equipment & Techniques',
         children: [

@@ -1,0 +1,115 @@
+[
+  {
+    "id": "cpt001",
+    "path": ["physics", "theorems", "cpt-theorem"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "The CPT theorem (Lüders 1954, Pauli 1955) states that any local, Lorentz-invariant, Hermitian quantum field theory is invariant under the combined operation CPT. What are the three transformations?",
+    "passive": {
+      "options": [
+        "C = charge conjugation (particle ↔ antiparticle); P = parity ($\\mathbf x \\to -\\mathbf x$); T = time reversal ($t \\to -t$, $\\mathbf p \\to -\\mathbf p$, $\\mathbf L \\to -\\mathbf L$)",
+        "C = chiral projection (left ↔ right); P = position-momentum swap; T = Hermitian conjugation",
+        "C = colour swap (SU(3) symmetry); P = parity; T = trace operation on the density matrix",
+        "C, P, T are three independent symmetries, each individually preserved in nature"
+      ],
+      "correct": 0,
+      "explanation": "Definitions: C reverses all internal quantum numbers (charge, lepton number, baryon number, etc.); P inverts spatial coordinates (left-right mirror); T reverses motion (anti-unitary operator, takes complex conjugate). Each individually is violated by the weak interaction (P-violation 1956, CP-violation 1964). CPT remains as the strongest discrete symmetry — its violation would require giving up locality, Lorentz invariance, or unitarity."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each discrete symmetry to its action on particles:",
+      "pairs": [
+        {"id": "p1", "term": "Parity P", "definition": "$\\mathbf x \\to -\\mathbf x$; $\\mathbf p \\to -\\mathbf p$; $\\mathbf L \\to +\\mathbf L$ (axial); $\\mathbf S \\to +\\mathbf S$ (axial). Strong/EM conserved; weak violated"},
+        {"id": "p2", "term": "Time reversal T", "definition": "$t \\to -t$; $\\mathbf p \\to -\\mathbf p$; $\\mathbf S \\to -\\mathbf S$; anti-unitary operator. Strong/EM conserved; weak violates via CKM phase"},
+        {"id": "p3", "term": "Charge conjugation C", "definition": "Particle ↔ antiparticle: $\\nu \\to \\bar\\nu$, $e^- \\to e^+$; all internal charges flipped. Strong/EM conserved; weak maximally violated"},
+        {"id": "p4", "term": "CP combined", "definition": "Mirror image with antiparticles; preserved in strong/EM; violated in weak via CKM (Cronin-Fitch 1964; B-meson, J/$\\psi$ since)"}
+      ],
+      "explanation": "C, P, T were thought conserved separately. Wu et al. (1957) showed P-violation in $^{60}$Co decay. Cronin-Fitch (1964) showed CP-violation in $K^0$ system. CPT remains experimentally inviolate. The Sakharov conditions for baryogenesis require CP violation — confirmed source ($CP$ in CKM) is too small to explain matter-antimatter asymmetry; ongoing search for new CP-violating physics."
+    }
+  },
+  {
+    "id": "cpt002",
+    "path": ["physics", "theorems", "cpt-theorem"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "CPT invariance has powerful experimental consequences. Which of the following is a direct prediction of the CPT theorem?",
+    "passive": {
+      "options": [
+        "Particles and antiparticles must have exactly equal mass and lifetime (and equal-magnitude electric charge); any difference would violate CPT",
+        "Particles and antiparticles must have opposite spin",
+        "Particles and antiparticles cannot have different decay channels — only branching ratios may differ",
+        "CPT implies all interactions are short-ranged"
+      ],
+      "correct": 0,
+      "explanation": "From CPT: $H |p\\rangle = E|p\\rangle$ and $H|\\bar p\\rangle = E|\\bar p\\rangle$ (same eigenvalues). So $m_p = m_{\\bar p}$ exactly, $\\tau_p = \\tau_{\\bar p}$, $|q_p| = |q_{\\bar p}|$. Experimental tests: $|m_p - m_{\\bar p}|/m_p < 10^{-10}$ (CPLEAR), $|m_{K^0} - m_{\\bar K^0}|/m_K < 10^{-18}$ (one of the most precise measurements in physics, via $K^0$-$\\bar K^0$ oscillation). Antimatter gravity (AEgIS, ALPHA at CERN) is just below current sensitivity for a direct test."
+    }
+  },
+  {
+    "id": "cpt003",
+    "path": ["physics", "theorems", "cpt-theorem"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "CP-violation in the kaon system (Cronin-Fitch 1964) was the first experimental evidence of distinct C and CP non-conservation. What was observed?",
+    "passive": {
+      "options": [
+        "$K_L^0$ (long-lived neutral kaon, nominally CP-odd) decays into 2 pions (CP-even) at branching ratio $\\sim 2\\times 10^{-3}$ — direct evidence for CP-violation",
+        "$K^0$ and $\\bar K^0$ have different masses, distinguishing matter from antimatter",
+        "Kaons decay only via the weak interaction, which violates parity but not CP",
+        "Cronin-Fitch observed CPT-violation in kaon oscillations"
+      ],
+      "correct": 0,
+      "explanation": "$K_L^0$ was expected to decay only to 3-pion final states (CP-odd) if CP were conserved. Observation of $K_L^0 \\to \\pi^+\\pi^-$ (2-pion, CP-even) with branching ratio $\\sim 2 \\times 10^{-3}$ proved CP-violation. The CKM mechanism (Kobayashi-Maskawa 1973, Nobel 2008) accounts for it via a complex phase in the quark mixing matrix — requires at least 3 quark generations, predicting the third (top quark, observed 1995)."
+    }
+  },
+  {
+    "id": "cpt004",
+    "path": ["physics", "theorems", "cpt-theorem"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Neutral-meson oscillations ($K^0 \\leftrightarrow \\bar K^0$, $B^0 \\leftrightarrow \\bar B^0$, $D^0 \\leftrightarrow \\bar D^0$, $B_s^0 \\leftrightarrow \\bar B_s^0$) provide some of the most precise CPT tests. What is the experimental quantity tested?",
+    "passive": {
+      "options": [
+        "Mass difference $\\Delta m_{K^0,\\bar K^0}/m_K < 10^{-18}$ (CPT bound); similar bounds in $B^0$ system from time-dependent decay asymmetries",
+        "Lifetime difference; mass equality is automatic by CPT",
+        "Branching ratios to specific final states are tested for CPT, not the masses",
+        "Oscillation frequency itself is a direct CPT observable, not requiring comparison with antiparticles"
+      ],
+      "correct": 0,
+      "explanation": "Mass differences between particle and antiparticle are tested at the level of oscillation interferometry. $K^0$-$\\bar K^0$ system has $\\Delta m \\sim 10^{10}$ Hz; observing this with $10^{-8}$ precision tests masses to $10^{-18}$ relative precision. B-meson system at LHCb has similar sensitivity. The combined CPT bound on the proton-antiproton mass difference is $\\sim 10^{-10}$ (from BASE at CERN, comparing antiproton and H$^-$ cyclotron frequencies in Penning traps). No CPT violation has been observed."
+    }
+  },
+  {
+    "id": "cpt005",
+    "path": ["physics", "theorems", "cpt-theorem"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "T-violation is sometimes confusingly framed in popular discussions. What is the proper meaning, and what is the experimental status?",
+    "passive": {
+      "options": [
+        "T-violation = different rates under time reversal; directly seen in B-meson decay (BaBar 2012); also follows from CP-violation + CPT",
+        "T-violation means absolute thermodynamic irreversibility, which has no fundamental theory connection",
+        "T-violation has never been observed; only CP-violation is established",
+        "T-symmetry is automatically preserved by any quantum theory with Hermitian Hamiltonian"
+      ],
+      "correct": 0,
+      "explanation": "BaBar (2012) directly observed T-violation in $B^0$ system by reconstructing entangled $B$-meson pairs and comparing forward/backward asymmetries in flavour-CP eigenstate transitions. CP-violation observed earlier + CPT exact ⇒ T-violation by consistency. T-violation is fundamental, not 'thermodynamic' (which is statistical/emergent, from low-entropy initial conditions). Searches for permanent electric dipole moments (EDMs) of electron, neutron, atoms are T-violation tests with $> 10^{12}$ improvement potential — a window to physics beyond Standard Model."
+    }
+  },
+  {
+    "id": "cpt006",
+    "path": ["physics", "theorems", "cpt-theorem"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "The Standard Model Extension (SME, Kostelecký-Colladay) parametrises possible Lorentz and CPT violation as a low-energy effective theory. What is the motivation?",
+    "passive": {
+      "options": [
+        "Quantum gravity may break Lorentz/CPT at high energies; the SME captures all possible low-energy signatures while preserving SM gauge structure",
+        "SME is a complete theory of CPT violation already verified experimentally",
+        "SME is mathematically equivalent to the Standard Model with renamed parameters",
+        "SME predicts neutrino masses without any CPT violation"
+      ],
+      "correct": 0,
+      "explanation": "Some quantum-gravity scenarios (string theory, loop quantum gravity, doubly special relativity) suggest Lorentz invariance may break at the Planck scale, with small effects at low energy. SME (1997) adds all possible Lorentz/CPT-violating but $SU(3)\\times SU(2)\\times U(1)$-invariant operators to the SM Lagrangian. Experimental constraints: SME coefficients are bounded at $10^{-30}$ in many channels (gravitational tests, atomic clocks, kaon oscillations). The SME framework organises modern experimental searches for Lorentz/CPT violation."
+    }
+  }
+]

@@ -1,0 +1,116 @@
+[
+  {
+    "id": "bell001",
+    "path": ["physics", "theorems", "bell-chsh"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "Bell's theorem (1964) addresses the EPR paradox by deriving an inequality that any local-realistic theory must satisfy. The CHSH form (Clauser-Horne-Shimony-Holt 1969) is the most experimentally tested. What is it?",
+    "equation": "S = |E(a,b) - E(a,b') + E(a',b) + E(a',b')| \\leq 2",
+    "passive": {
+      "options": [
+        "$S \\leq 2$ for any local hidden-variable theory; QM permits up to $S = 2\\sqrt 2 \\approx 2.83$ (Tsirelson bound); experimental violation rules out local realism",
+        "$S \\leq 1$ for local theories; quantum mechanics can violate this and reach $S = 2$",
+        "$S \\leq 4$ in any theory; CHSH only constrains the absolute correlation strength, not local realism",
+        "$S = 2\\sqrt 2$ is the classical maximum; quantum theory matches but does not exceed it"
+      ],
+      "correct": 0,
+      "explanation": "Setting: Alice chooses measurement $a$ or $a'$, Bob chooses $b$ or $b'$, each yielding $\\pm 1$ outcomes. Correlations: $E(a, b) = \\langle A_a B_b\\rangle$. Local realism: pre-existing values $A_a, A_{a'} \\in \\{\\pm 1\\}$ independent of Bob's choice. Algebraic identity: $|A_a B_b - A_a B_{b'} + A_{a'} B_b + A_{a'} B_{b'}| = |A_a(B_b - B_{b'}) + A_{a'}(B_b + B_{b'})| \\leq 2$. Quantum: $E(a, b) = -\\cos\\theta_{ab}$ for the singlet; choosing $\\theta = 45°$ between adjacent angles gives $S = 4\\cdot(1/\\sqrt 2) = 2\\sqrt 2$."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each Bell-experiment loophole to its description and the experiment that closed it:",
+      "pairs": [
+        {"id": "p1", "term": "Locality loophole", "definition": "Choice of measurement could be transmitted to the distant detector; closed by spacelike separation (Aspect 1982, with switches; Weihs et al. 1998)"},
+        {"id": "p2", "term": "Detection (fair-sampling) loophole", "definition": "Lossy detectors might preferentially detect events that obey LR predictions; closed with high-efficiency detectors (Rowe 2001, ions; Giustina 2013, photons)"},
+        {"id": "p3", "term": "Freedom-of-choice loophole", "definition": "Measurement settings could be correlated with hidden variables in the past; closed using cosmic photons or random sources (Big Bell Test 2018)"},
+        {"id": "p4", "term": "Coincidence-time loophole", "definition": "Coincidence windows could bias the post-selection of events; closed by using truly fixed windows independent of outcome"}
+      ],
+      "explanation": "All major loopholes were closed simultaneously in 2015 (Delft, NIST, Vienna) — these are the 'loophole-free Bell tests'. Hensen et al. used electron spins in NV centres in diamond separated by 1.3 km; both detection and locality closed in one experiment. The conclusion: nature is non-local OR not realistic OR superdeterministic — but not all three classical assumptions can hold."
+    }
+  },
+  {
+    "id": "bell002",
+    "path": ["physics", "theorems", "bell-chsh"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "For the singlet state $|\\Psi^-\\rangle = (|01\\rangle - |10\\rangle)/\\sqrt 2$, the correlation $E(a, b)$ between Alice measuring spin along $\\hat a$ and Bob measuring along $\\hat b$ is:",
+    "passive": {
+      "options": [
+        "$E(\\hat a, \\hat b) = -\\hat a\\cdot\\hat b = -\\cos\\theta_{ab}$ — perfect anti-correlation when $\\hat a = \\hat b$ (singlet is rotationally invariant)",
+        "$E(\\hat a, \\hat b) = +\\cos\\theta_{ab}$ — perfect correlation along any common axis",
+        "$E(\\hat a, \\hat b) = 0$ for any choice of $\\hat a, \\hat b$ because the singlet is unentangled in any single basis",
+        "$E(\\hat a, \\hat b) = \\sin\\theta_{ab}/2$ — the correlation oscillates linearly in the angle"
+      ],
+      "correct": 0,
+      "explanation": "The singlet is the unique two-qubit state invariant under $U \\otimes U$ for any unitary $U$, equivalently under rotations. Compute: $\\langle\\Psi^-|(\\hat a\\cdot\\boldsymbol\\sigma)\\otimes(\\hat b\\cdot\\boldsymbol\\sigma)|\\Psi^-\\rangle$. Using identity $\\langle\\Psi^-|\\sigma^A_i\\sigma^B_j|\\Psi^-\\rangle = -\\delta_{ij}$ gives $E = -\\hat a\\cdot\\hat b$. Maximal CHSH violation: $\\hat a = \\hat z$, $\\hat a' = \\hat x$, $\\hat b = (\\hat z + \\hat x)/\\sqrt 2$, $\\hat b' = (\\hat z - \\hat x)/\\sqrt 2$ gives $S = 2\\sqrt 2$."
+    }
+  },
+  {
+    "id": "bell003",
+    "path": ["physics", "theorems", "bell-chsh"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The Tsirelson bound $S \\leq 2\\sqrt 2$ is the maximum CHSH value achievable in quantum mechanics. What characterises this bound and why is it tighter than the algebraic limit $S = 4$?",
+    "passive": {
+      "options": [
+        "Tsirelson 1980: from $A^2 = B^2 = I$, the Cauchy-Schwarz-style bound $S^2 \\leq 4 + \\langle 2[A_+ - A_-][B_+ - B_-]\\rangle$ yields $S \\leq 2\\sqrt 2$",
+        "Tsirelson bound is a remnant of nonlocality, with no quantum-mechanical proof; only conjectured",
+        "$S \\leq 2\\sqrt 2$ holds only for two-qubit systems; higher-dimensional entanglement violates it",
+        "Tsirelson bound is the algebraic maximum $S = 4$ divided by $\\sqrt 2$ by an arbitrary convention"
+      ],
+      "correct": 0,
+      "explanation": "Tsirelson's proof (1980) uses operator algebra. Boris Tsirelson showed quantum theory respects $S \\leq 2\\sqrt 2$ but doesn't reach the no-signalling bound $S \\leq 4$. The latter is achieved only by Popescu-Rohrlich (PR) boxes — hypothetical resources that satisfy no-signalling but violate CHSH maximally. Why doesn't nature allow PR boxes? Open question with information-theoretic answers (information causality, nontrivial communication complexity), but no mechanism-level derivation."
+    }
+  },
+  {
+    "id": "bell004",
+    "path": ["physics", "theorems", "bell-chsh"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The GHZ (Greenberger-Horne-Zeilinger) state $|\\rm GHZ\\rangle = (|000\\rangle + |111\\rangle)/\\sqrt 2$ provides a 'Bell test without inequalities' — a single experiment that contradicts local realism. How does it work?",
+    "passive": {
+      "options": [
+        "QM predicts $\\sigma_x\\sigma_y\\sigma_y = \\sigma_y\\sigma_x\\sigma_y = \\sigma_y\\sigma_y\\sigma_x = +1$ but $\\sigma_x\\sigma_x\\sigma_x = -1$; local realism's pre-existing values give product $+1$, contradicting QM deterministically",
+        "GHZ states violate CHSH by a larger amount than singlets, so a single shot rules out local realism statistically",
+        "GHZ requires three space-like separated measurements with shared randomness for the contradiction",
+        "GHZ argument requires asymptotically many copies and only converges to a contradiction in the thermodynamic limit"
+      ],
+      "correct": 0,
+      "explanation": "Greenberger-Horne-Zeilinger (1989) and Mermin (1990): QM predicts perfect correlation $\\sigma_x\\sigma_y\\sigma_y = +1$ etc. for GHZ. Multiply the four correlators: $(\\sigma_x\\sigma_y\\sigma_y)(\\sigma_y\\sigma_x\\sigma_y)(\\sigma_y\\sigma_y\\sigma_x)(\\sigma_x\\sigma_x\\sigma_x) = $ (each $\\sigma_a^2 = 1$) $= +1$. But each Pauli appears an even number of times in the product if local realistic, so the LR prediction is $(+1)(+1)(+1)\\cdot$(LR prediction for $\\sigma_x\\sigma_x\\sigma_x$). QM gives $-1$ for this last correlator → contradiction in a single perfect experiment, no statistics needed."
+    }
+  },
+  {
+    "id": "bell005",
+    "path": ["physics", "theorems", "bell-chsh"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Device-independent quantum cryptography uses Bell-inequality violation as a security primitive. What does device-independence guarantee that traditional QKD does not?",
+    "passive": {
+      "options": [
+        "Security from observed CHSH violation alone; even devices built by the eavesdropper certify quantum behaviour if $S > 2$ is observed",
+        "Device-independent QKD is equivalent to BB84 with the same security guarantees and the same key rates",
+        "Device-independence eliminates the need for shared random keys altogether",
+        "It provides faster-than-light key distribution by exploiting non-local correlations"
+      ],
+      "correct": 0,
+      "explanation": "Standard QKD (BB84, etc.) assumes that the devices behave as the protocol dictates. Device-independent QKD (Ekert 1991 first idea; Acín, Pironio et al. 2007 formal) drops this: if CHSH violation is observed, by Bell's theorem the underlying correlations cannot be classical, so an eavesdropper cannot fully predict the outcomes. Recently demonstrated experimentally (Nadlinger et al. 2022, Zhang et al. 2022). The price is far lower key rates than standard QKD."
+    }
+  },
+  {
+    "id": "bell006",
+    "path": ["physics", "theorems", "bell-chsh"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "Kochen-Specker theorem strengthens Bell's argument by removing reliance on locality. What does it state?",
+    "passive": {
+      "options": [
+        "No non-contextual hidden-variable theory reproduces QM for Hilbert space dim $\\geq 3$; an observable's value depends on co-measured context",
+        "Hidden-variable theories are impossible in any dimension; classical mechanics also fails Kochen-Specker",
+        "The theorem only applies to spin-1 systems and has no extension to higher dimensions",
+        "Kochen-Specker is equivalent to Bell's theorem with no additional assumptions or content"
+      ],
+      "correct": 0,
+      "explanation": "Kochen-Specker (1967): in $d \\geq 3$, no map $v: \\{\\text{projectors}\\} \\to \\{0, 1\\}$ exists satisfying (a) for any orthonormal basis exactly one projector maps to 1, (b) $v(P)$ depends only on $P$. The original proof used 117 vectors in $\\mathbb R^3$; later proofs use as few as 18 vectors in 4D (Cabello). Contextuality is a deeper statement than Bell non-locality — it applies even to single-particle systems with no spatial separation. Resource theory of contextuality is a current research area in quantum foundations and computation."
+    }
+  }
+]

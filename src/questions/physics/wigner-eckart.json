@@ -1,0 +1,118 @@
+[
+  {
+    "id": "we001",
+    "path": ["physics", "theorems", "wigner-eckart"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "The Wigner-Eckart theorem factorises matrix elements of spherical tensor operators between angular-momentum eigenstates. What is its statement?",
+    "equation": "\\langle j', m' | T^k_q | j, m\\rangle = \\langle j, m; k, q | j', m'\\rangle \\langle j' \\| T^k \\| j\\rangle",
+    "passive": {
+      "options": [
+        "Matrix element factorises as Clebsch-Gordan coefficient (geometry, $m$-dependence) times reduced matrix element (dynamics, $m$-independent)",
+        "Matrix element vanishes unless $k = 0$ — only scalar operators have non-trivial matrix elements",
+        "Wigner-Eckart applies only to electric dipole transitions; magnetic operators need a different theorem",
+        "The reduced matrix element $\\langle j'\\|T^k\\|j\\rangle$ depends explicitly on $m, m'$ but not on the operator $T^k$"
+      ],
+      "correct": 0,
+      "explanation": "Spherical tensor operators $T^k_q$ transform as the $j = k$ irrep of SO(3): $[J_z, T^k_q] = q T^k_q$, $[J_\\pm, T^k_q] = \\sqrt{k(k+1) - q(q\\pm 1)}T^k_{q\\pm 1}$. The CG coefficient $\\langle j, m; k, q | j', m'\\rangle$ encodes all $m$-dependence; the reduced matrix element captures the radial/dynamical content. Selection rules: $m' = m + q$, $|j - k| \\leq j' \\leq j + k$ (triangle inequality)."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each tensor rank to its examples and selection rules:",
+      "pairs": [
+        {"id": "p1", "term": "Rank-0 (scalar) $T^0_0$", "definition": "Examples: Hamiltonian, $\\hat r^2$, $\\hat p^2$. Selection: $j' = j$, $m' = m$"},
+        {"id": "p2", "term": "Rank-1 (vector) $T^1_q$", "definition": "Examples: position $\\hat r$, momentum $\\hat p$, angular momentum $\\hat J$. Selection: $|j' - j| \\leq 1$, $\\Delta m = q \\in \\{-1, 0, +1\\}$"},
+        {"id": "p3", "term": "Rank-2 (tensor) $T^2_q$", "definition": "Examples: $\\hat r \\otimes \\hat r$ traceless, electric quadrupole moment. Selection: $|j' - j| \\leq 2$, $\\Delta m \\in \\{-2, -1, 0, +1, +2\\}$"},
+        {"id": "p4", "term": "Selection rules from CG coefficients", "definition": "$\\langle j, m; k, q|j', m'\\rangle \\neq 0$ requires $m + q = m'$ and triangle inequality $|j - k| \\leq j' \\leq j + k$"}
+      ],
+      "explanation": "Wigner-Eckart gives the systematic origin of all angular-momentum selection rules in spectroscopy. The reduced matrix elements are computed once, then all $m$-dependences follow from tabulated CG coefficients. Hyperfine and Zeeman matrix elements are organised this way."
+    }
+  },
+  {
+    "id": "we002",
+    "path": ["physics", "theorems", "wigner-eckart"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Applying Wigner-Eckart to the electric dipole operator $\\hat{\\mathbf d} = e\\hat{\\mathbf r}$ in atomic spectroscopy yields familiar selection rules. What are they for E1 transitions?",
+    "passive": {
+      "options": [
+        "$\\Delta l = \\pm 1$ (parity), $\\Delta m_l \\in \\{-1, 0, +1\\}$, $\\Delta s = 0$ (no spin coupling); also $\\Delta j = 0, \\pm 1$ (but not $j = 0 \\to j' = 0$)",
+        "$\\Delta l = 0$ and $\\Delta m_l = 0$ for all dipole transitions; otherwise the matrix element vanishes",
+        "$\\Delta j = \\pm 1$ only; $\\Delta j = 0$ is strictly forbidden in any dipole transition",
+        "$\\Delta l = 0, \\pm 2$ and $\\Delta m_l$ arbitrary; the dipole is a rank-2 tensor in $l$"
+      ],
+      "correct": 0,
+      "explanation": "Dipole $\\hat{\\mathbf d} = e\\hat{\\mathbf r}$ is a rank-1 spherical tensor with parity $-1$. Wigner-Eckart gives $\\Delta j = 0, \\pm 1$ and $\\Delta m_j \\in \\{0, \\pm 1\\}$. Parity requires $\\Delta l = \\pm 1$ (not 0 or $\\pm 2$). The $0 \\to 0$ transition is forbidden because no rank-1 operator connects two $j = 0$ states (triangle violation). The clock transition in Sr ($^1S_0 \\to ^3P_0$) is doubly forbidden — $\\Delta j = 0$ AND $\\Delta s = 1$ (spin-orbit mixing makes it weakly allowed)."
+    }
+  },
+  {
+    "id": "we003",
+    "path": ["physics", "theorems", "wigner-eckart"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The projection theorem (Landé formula) follows from Wigner-Eckart applied to vector operators. For a vector $\\hat{\\mathbf V}$ within a fixed-$j$ manifold:",
+    "equation": "\\langle j, m'|\\hat V_q|j, m\\rangle = \\frac{\\langle j\\|\\hat V\\|j\\rangle}{\\langle j\\|\\hat J\\|j\\rangle}\\langle j, m'|\\hat J_q|j, m\\rangle",
+    "passive": {
+      "options": [
+        "All vector operators within a single $j$ manifold are proportional to $\\hat{\\mathbf J}$; the proportionality factor is $\\langle\\hat{\\mathbf V}\\cdot\\hat{\\mathbf J}\\rangle / [j(j+1)\\hbar^2]$",
+        "Vector operators have identical matrix elements to $\\hat{\\mathbf J}$, with proportionality factor 1",
+        "The projection theorem applies only to position and momentum, not to angular-momentum vectors",
+        "Within a fixed-$j$ manifold, vector operators have purely off-diagonal matrix elements"
+      ],
+      "correct": 0,
+      "explanation": "Within a fixed $j$, only one reduced matrix element exists for each rank-1 tensor (since $j' = j$). The projection theorem $\\hat{\\mathbf V} \\to (\\langle\\hat{\\mathbf V}\\cdot\\hat{\\mathbf J}\\rangle/[j(j+1)\\hbar^2])\\hat{\\mathbf J}$ replaces $\\hat{\\mathbf V}$ by its projection onto $\\hat{\\mathbf J}$. Applied to the magnetic moment $\\hat{\\boldsymbol\\mu} = g_L\\hat{\\mathbf L} + g_S\\hat{\\mathbf S}$ within a $|j, l, s\\rangle$ manifold gives the Landé g-factor $g_J = 1 + [j(j+1) + s(s+1) - l(l+1)]/[2j(j+1)]$ — central to the Zeeman effect."
+    }
+  },
+  {
+    "id": "we004",
+    "path": ["physics", "theorems", "wigner-eckart"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The dipole approximation $\\hat{\\mathbf d}\\cdot\\hat{\\mathbf E}$ is the leading term in the multipole expansion of atom-light coupling. The next term involves magnetic dipole $\\hat{\\boldsymbol\\mu}\\cdot\\hat{\\mathbf B}$ and electric quadrupole $\\hat Q^{(2)}\\cdot\\nabla\\hat{\\mathbf E}$. How are these suppressed relative to E1?",
+    "passive": {
+      "options": [
+        "M1 and E2 transitions are suppressed by $(\\alpha Z)^2 \\sim 10^{-4}$ in matrix element (factor $(v/c)^2$ in transition rate), giving lifetimes ms–s for forbidden transitions vs ns for E1",
+        "M1 and E2 are forbidden completely; only electric dipole transitions exist physically",
+        "Suppression is $\\alpha^4 \\sim 10^{-9}$, making M1/E2 transitions unobservable in any experiment",
+        "M1 and E2 transitions are enhanced by factor $(c/v)^2$ relative to E1 because relativistic corrections dominate"
+      ],
+      "correct": 0,
+      "explanation": "From $kr \\sim \\alpha Z$ (size of atom times wavevector of emitted photon), higher multipoles bring in factors of $\\alpha Z \\sim 10^{-2}$. Rates scale as $\\alpha^{2n+1}Z^{2n+2}$ where $n$ is the multipole order. M1/E2 lifetimes: typically ms-s for $\\Delta l = 0$ transitions in light atoms; reach the seconds for narrow optical clock lines (Sr $^1S_0 \\to ^3P_0$, Yb$^+$ E3 octupole transition with $\\tau \\sim 6$ years!)."
+    }
+  },
+  {
+    "id": "we005",
+    "path": ["physics", "theorems", "wigner-eckart"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Wigner-Eckart applied to hyperfine structure: the hyperfine Hamiltonian $\\hat H_{\\rm hf} = A\\hat{\\mathbf I}\\cdot\\hat{\\mathbf J}$ is diagonal in the $|F, m_F\\rangle$ basis where $\\hat{\\mathbf F} = \\hat{\\mathbf I} + \\hat{\\mathbf J}$. What are the hyperfine energies?",
+    "equation": "E_F = A\\langle\\hat{\\mathbf I}\\cdot\\hat{\\mathbf J}\\rangle = \\frac{A}{2}[F(F+1) - I(I+1) - J(J+1)]",
+    "passive": {
+      "options": [
+        "$E_F = (A/2)[F(F+1) - I(I+1) - J(J+1)]$; level spacings $E_{F+1} - E_F = A(F+1)$ — the Landé interval rule",
+        "$E_F$ proportional to $I + J$ (sum of quantum numbers, not squared sum)",
+        "Hyperfine splitting is independent of $F$ — all hyperfine levels are degenerate",
+        "$E_F = A\\hbar\\omega_F$ where $\\omega_F$ is the precession frequency, with no Casimir-style structure"
+      ],
+      "correct": 0,
+      "explanation": "From $\\hat F^2 = \\hat I^2 + \\hat J^2 + 2\\hat{\\mathbf I}\\cdot\\hat{\\mathbf J}$: $\\hat{\\mathbf I}\\cdot\\hat{\\mathbf J} = (\\hat F^2 - \\hat I^2 - \\hat J^2)/2$, giving the stated $E_F$. The Landé interval rule $E_{F+1} - E_F = A(F+1)$ allows the hyperfine constant $A$ to be extracted from observed splittings. For $^{87}$Rb $5S_{1/2}$ ($I = 3/2, J = 1/2$): $F = 1$ at $E = -5A/4$, $F = 2$ at $E = +3A/4$; splitting $= 2A = 6.835$ GHz."
+    }
+  },
+  {
+    "id": "we006",
+    "path": ["physics", "theorems", "wigner-eckart"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "Wigner 3-$j$ symbols are an alternative convention to Clebsch-Gordan coefficients with cleaner symmetry properties. The relation is:",
+    "passive": {
+      "options": [
+        "$\\langle j_1 m_1; j_2 m_2|j_3 m_3\\rangle = (-1)^{j_1-j_2+m_3}\\sqrt{2j_3+1}\\begin{pmatrix}j_1 & j_2 & j_3 \\\\ m_1 & m_2 & -m_3\\end{pmatrix}$; 3-$j$ symbols invariant under even permutations of columns",
+        "3-$j$ symbols are identical to CG coefficients up to a sign convention with no factor of $\\sqrt{2j_3+1}$",
+        "3-$j$ symbols are used only in nuclear physics; atomic physics uses CG exclusively",
+        "Wigner symbols denote the eigenvalue of the total $\\hat J^2$, not coupling coefficients"
+      ],
+      "correct": 0,
+      "explanation": "3-$j$ symbols are invariant under cyclic permutations of columns and pick up phase $(-1)^{j_1+j_2+j_3}$ under odd permutations. They vanish unless $m_1 + m_2 + m_3 = 0$ (vs $m_1 + m_2 = m_3$ for CG with opposite sign convention) and the triangle inequality holds. 6-$j$ and 9-$j$ symbols extend to four and six angular momenta, used in nuclear shell models and multi-electron atomic spectra. Numerical packages (e.g., SymPy `wigner_3j`) compute these for any $j$."
+    }
+  }
+]

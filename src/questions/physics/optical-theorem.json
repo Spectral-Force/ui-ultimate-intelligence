@@ -1,0 +1,116 @@
+[
+  {
+    "id": "opt001",
+    "path": ["physics", "theorems", "optical-theorem"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "The optical theorem relates the total scattering cross-section to the imaginary part of the forward scattering amplitude. What is its statement?",
+    "equation": "\\sigma_{\\rm tot} = \\frac{4\\pi}{k}\\,\\text{Im}\\,f(\\theta = 0)",
+    "passive": {
+      "options": [
+        "$\\sigma_{\\rm tot} = (4\\pi/k)\\text{Im}\\,f(0)$ — total cross-section (elastic + inelastic) determined by the forward elastic amplitude alone, via unitarity of the S-matrix",
+        "Optical theorem connects forward amplitude to the real part Re $f(0)$, not the imaginary part",
+        "Total cross-section is the integral of $|f(\\theta)|^2$ over all angles — no relation to forward amplitude specifically",
+        "Optical theorem applies only to massless particles; massive scattering requires a different formula"
+      ],
+      "correct": 0,
+      "explanation": "Derivation: incoming plane wave $e^{ikz}$ plus scattered wave $f(\\theta)e^{ikr}/r$. Conservation of probability flux requires the forward direction to lose intensity (to feed scattering in other directions) — this 'shadow' is precisely $-\\text{Im}\\,f(0)$. Quantum-mechanically: from the optical theorem one can derive $\\sigma_{\\rm tot} = \\sigma_{\\rm el} + \\sigma_{\\rm inel}$ for any scattering process. Discovered by H.A. Lorentz; the form for QM in Sakurai/Sakurai."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each cross-section to its physical meaning:",
+      "pairs": [
+        {"id": "p1", "term": "Total cross-section $\\sigma_{\\rm tot}$", "definition": "Sum of all elastic + inelastic outgoing channels; given by Im $f(0)$ via optical theorem"},
+        {"id": "p2", "term": "Elastic cross-section $\\sigma_{\\rm el}$", "definition": "$\\sigma_{\\rm el} = \\int|f(\\theta)|^2 d\\Omega$ — outgoing particles have same energy/identity"},
+        {"id": "p3", "term": "Inelastic cross-section $\\sigma_{\\rm inel}$", "definition": "$\\sigma_{\\rm tot} - \\sigma_{\\rm el}$; outgoing particles include reaction products, excitation, etc."},
+        {"id": "p4", "term": "Differential cross-section $d\\sigma/d\\Omega$", "definition": "$|f(\\theta)|^2$ at fixed energy; angular distribution of elastically scattered particles"}
+      ],
+      "explanation": "Optical theorem is among the few QM identities valid for both relativistic and non-relativistic scattering. It is a direct consequence of unitarity $S^\\dagger S = I$ applied to the partial-wave amplitudes, giving an exact relation between $\\sigma_{\\rm tot}$ and the elastic forward amplitude."
+    }
+  },
+  {
+    "id": "opt002",
+    "path": ["physics", "theorems", "optical-theorem"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "In partial-wave expansion $f(\\theta) = (1/k)\\sum_l (2l+1)f_l P_l(\\cos\\theta)$ where $f_l = (e^{2i\\delta_l} - 1)/(2i)$ (purely elastic). The unitarity bound on each partial wave is:",
+    "passive": {
+      "options": [
+        "$|f_l|^2 \\leq \\text{Im}\\,f_l = \\sin^2\\delta_l \\leq 1$ — partial-wave unitarity; elastic at this maximum",
+        "$|f_l| = 0$ for all $l$ in pure elastic scattering",
+        "$\\text{Im}\\,f_l = 1$ always for elastic scattering, regardless of phase shift",
+        "Unitarity gives $\\text{Re}\\,f_l = 0$ — only imaginary partial waves are allowed"
+      ],
+      "correct": 0,
+      "explanation": "Each partial-wave amplitude lies on the unitarity circle $|f_l - i/2|^2 = 1/4$ in the complex plane. For elastic only: $f_l = e^{i\\delta_l}\\sin\\delta_l$. Inelastic channels open: $f_l = (\\eta_l e^{2i\\delta_l} - 1)/(2i)$ with $0 \\leq \\eta_l \\leq 1$, lies inside the circle. Partial-wave cross-section: $\\sigma_l = (4\\pi/k^2)(2l+1)\\sin^2\\delta_l$, maxed at $\\sigma_l^{\\max} = (2l+1)\\pi\\lambda^2$ at $\\delta_l = \\pi/2$ (resonance)."
+    }
+  },
+  {
+    "id": "opt003",
+    "path": ["physics", "theorems", "optical-theorem"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The optical theorem provides a powerful check on amplitudes computed via perturbation theory. To leading order in perturbation, the LHS and RHS often appear at different orders. How is this consistent?",
+    "passive": {
+      "options": [
+        "Im $f(0)$ vanishes at first Born (where amplitude is real); first non-trivial check at 2nd Born — analogous to Cutkosky rules in QFT for cut diagrams",
+        "Optical theorem fails in perturbation theory because of order mismatch",
+        "Born approximation already saturates the optical theorem, with no inconsistency",
+        "Higher-order corrections always violate the optical theorem; only the exact amplitude satisfies it"
+      ],
+      "correct": 0,
+      "explanation": "First Born: $f(\\theta) = -m/(2\\pi\\hbar^2)\\tilde V(\\mathbf q)$ — real if $V$ is. So Im $f(0) = 0$ at first Born. At second Born, complex contributions arise from the propagator's $i\\varepsilon$ prescription, giving an imaginary part proportional to $|f_{\\rm 1st Born}|^2$ — recovering the optical theorem perturbatively. In QFT this is generalised by Cutkosky rules: the imaginary part of a loop diagram equals (sum of cuts), enforcing unitarity order by order."
+    }
+  },
+  {
+    "id": "opt004",
+    "path": ["physics", "theorems", "optical-theorem"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "In the context of forward-elastic atom-photon scattering, the optical theorem is closely related to absorption and refractive index. What relation emerges?",
+    "passive": {
+      "options": [
+        "$n - 1 \\propto \\text{Re}\\,f(0)$ (dispersion); $\\alpha \\propto \\text{Im}\\,f(0)$ (absorption); both linked by Kramers-Kronig",
+        "Refractive index and absorption are entirely independent — no relation via optical theorem",
+        "$n - 1$ and $\\alpha$ are equal in magnitude at all frequencies",
+        "Optical theorem applies only to free-particle scattering, not to atom-light coupling"
+      ],
+      "correct": 0,
+      "explanation": "For a dilute gas of $N$ atoms per volume, the refractive index $n - 1 = (2\\pi N/k^2)f(0)$. The real part gives dispersion (phase shift); the imaginary part gives absorption (intensity loss). Kramers-Kronig relations connect Re $f(\\omega)$ and Im $f(\\omega)$ via Hilbert transforms — same physics as the FDT (causality). Slow light in EIT and dispersion compensation in optical fibres are both rooted in this $n(\\omega)$-vs-$\\alpha(\\omega)$ relationship."
+    }
+  },
+  {
+    "id": "opt005",
+    "path": ["physics", "theorems", "optical-theorem"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The Froissart-Martin bound (1961) is a rigorous high-energy bound on $\\sigma_{\\rm tot}$ derived from analyticity and unitarity. What does it state?",
+    "passive": {
+      "options": [
+        "$\\sigma_{\\rm tot}(s) \\leq C \\log^2(s/s_0)$ at high CM energy $s$ — total cross-section can grow at most logarithmically squared in $\\sqrt{s}$",
+        "$\\sigma_{\\rm tot}(s)$ grows as $\\sqrt{s}$ asymptotically with no logarithmic factor",
+        "Froissart-Martin gives a power-law bound $\\sigma_{\\rm tot} \\propto s^a$ with $a < 1$",
+        "There is no high-energy bound — cross-sections can grow arbitrarily fast"
+      ],
+      "correct": 0,
+      "explanation": "Froissart (1961), refined by Martin (1963): combine analyticity of the $T$-matrix in cosine of scattering angle (Lehmann ellipse) with partial-wave unitarity. The bound is saturated by some high-energy hadron processes (rising total cross-sections at LHC). The logarithmic growth scale is the inverse pion mass $\\sim 1/m_\\pi$, related to the longest-range nuclear force. Testing this bound at $pp$ colliders is a long-running experimental program."
+    }
+  },
+  {
+    "id": "opt006",
+    "path": ["physics", "theorems", "optical-theorem"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "Unitarity bounds combined with crossing symmetry yield positivity constraints on Wilson coefficients in effective field theories. This 'EFT positivity' technology has recently produced striking results. What is the basic statement?",
+    "passive": {
+      "options": [
+        "Certain dimension-8 Wilson coefficients must be positive; wrong sign $\\Rightarrow$ superluminal propagation or non-unitary UV completion",
+        "EFT coefficients can take any sign without physical restriction",
+        "Positivity is only a Standard Model peculiarity, not a general EFT result",
+        "EFT positivity constraints are equivalent to gauge invariance"
+      ],
+      "correct": 0,
+      "explanation": "Adams et al. (2006) showed: certain dimension-8 operators in an EFT must have positive Wilson coefficients to admit a unitary, causal, Lorentz-invariant UV completion. Modern extensions (Caron-Huot, Mateu, Riembau et al.) give complete sets of positivity bounds for SMEFT and gravitational EFTs. These are non-perturbative, IR–to–UV consistency conditions that constrain new physics — much stronger than naïve dimensional analysis."
+    }
+  }
+]
