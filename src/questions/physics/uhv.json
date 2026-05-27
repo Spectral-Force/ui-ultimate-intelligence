@@ -4,16 +4,16 @@
     "path": ["physics", "equipment", "vacuum-systems", "uhv"],
     "level": "M",
     "modes": ["passive", "active"],
-    "question": "Ultra-high vacuum (UHV) systems require special materials, surface preparation, and construction techniques. The dominant outgassing source at UHV is hydrogen from stainless steel. Key material choices:",
+    "question": "UHV systems require special materials, surface preparation, and construction. Which combination of materials is the standard choice for a UHV chamber?",
     "passive": {
       "options": [
-        "316L stainless steel (low carbon, reduces carbide precipitation); oxygen-free high-conductivity (OFHC) copper for CF gaskets; aluminium-free borosilicate glass (Pyrex) or fused silica for viewports; viton O-rings only for HV (not UHV — too much outgassing)",
-        "Aluminium is the preferred material for UHV chambers because it has low outgassing",
-        "Rubber O-rings are acceptable for UHV if the pump is powerful enough",
-        "Brass fittings are UHV-compatible if cleaned with acetone"
+        "316L stainless steel chamber; OFHC copper CF gaskets; aluminium-free borosilicate (Pyrex) or fused silica viewports; no Viton O-rings",
+        "6061 aluminium chamber for low outgassing; rubber O-rings backed by ion pump; brass viewports for ease of machining",
+        "Mild steel chamber; copper gaskets; soda-lime glass viewports; Viton O-rings everywhere for vacuum seals",
+        "PTFE-lined steel chamber; aluminium gaskets; PMMA viewports; silicone grease on every flange"
       ],
       "correct": 0,
-      "explanation": "Outgassing rates at room temperature after bakeout: stainless steel $\\sim 10^{-13}$ mbar·L/(s·cm$^2$); copper $\\sim 10^{-13}$; PTFE (Teflon) $\\sim 10^{-8}$ — 5 orders of magnitude higher, thus UHV-incompatible. Permitted polymers in UHV: PEEK, PTFE (sparingly), Kapton. Avoid: zinc, cadmium, all lubricants, tape, fingerprints. Every component must be degreased (acetone, IPA, ultrasonic bath), handled with clean-room gloves, and stored in vacuum or nitrogen atmosphere."
+      "explanation": "Outgassing rates at room temperature after bakeout: stainless steel $\\sim 10^{-13}$ mbar·L/(s·cm$^2$); copper $\\sim 10^{-13}$; PTFE (Teflon) $\\sim 10^{-8}$ — 5 orders of magnitude higher, thus UHV-incompatible in bulk. Permitted polymers: PEEK, PTFE (sparingly), Kapton. Avoid: zinc, cadmium, all lubricants, tape, fingerprints. Every component must be degreased (acetone, IPA, ultrasonic), handled with clean-room gloves, and stored in vacuum or nitrogen."
     },
     "active": {
       "type": "term-match",
@@ -24,7 +24,7 @@
         {"id": "p3", "term": "Ion pump + controller", "definition": "Maintains UHV after initial turbo pump-down; no vibration; can measure pressure from pump current; typical speed 25–300 L/s"},
         {"id": "p4", "term": "Non-evaporable getter (NEG) cartridge", "definition": "Zr/V/Fe alloy activated at 350°C; pumps H$_2$, CO, CO$_2$, N$_2$, H$_2$O; no power after activation; ideal for small chambers"}
       ],
-      "explanation": "CF flanges are the standard UHV connection. The knife edge cuts into the copper gasket under bolt torque — torque sequence: cross-pattern, 3 rounds to full torque (typically 8–12 Nm for 2¾\" CF). Never re-use copper gaskets. Silver-plated bolts are preferred to prevent galling at bakeout temperatures. Electropolishing the inner surface of stainless steel chambers reduces the hydrogen outgassing rate by $5{-}10\\times$."
+      "explanation": "CF flanges are the standard UHV connection. The knife edge cuts into the copper gasket under bolt torque — cross-pattern torque, 3 rounds to full torque (typically 8–12 Nm for 2¾\" CF). Never re-use copper gaskets. Silver-plated bolts prevent galling at bakeout temperatures. Electropolishing the inner surface of stainless steel reduces H$_2$ outgassing by $5{-}10\\times$."
     }
   },
   {
@@ -32,16 +32,16 @@
     "path": ["physics", "equipment", "vacuum-systems", "uhv"],
     "level": "M",
     "modes": ["passive"],
-    "question": "Outgassing is the release of dissolved or adsorbed gas from vacuum chamber walls. For stainless steel at room temperature after bakeout, the dominant outgassing species and rate are:",
+    "question": "Outgassing is the release of dissolved or adsorbed gas from vacuum-chamber walls. After a proper bakeout, what is the dominant outgassing species at room temperature and what is its rate?",
     "passive": {
       "options": [
-        "H$_2$ dominates ($> 90\\%$ of residual gas) — dissolved in the bulk during steel manufacture; outgassing rate $Q_{\\rm H_2} \\propto t^{-1}$ after pumpdown and $\\sim 10^{-13}$ mbar·L/(s·cm$^2$) after 24 h bakeout at 250°C",
-        "Water vapour dominates in stainless steel chambers even after bakeout",
-        "Outgassing rate is constant (independent of time) for stainless steel",
-        "Baking at higher temperature ($> 400°$C) reduces outgassing but causes the steel to become porous"
+        "H$_2$ dominates ($> 90\\%$ of residual gas); rate $\\sim 10^{-13}$ mbar·L/(s·cm$^2$) after 24 h bakeout at 250°C; $Q_{\\rm H_2} \\propto 1/t$ time dependence",
+        "Water vapour dominates in stainless steel chambers even after a 24 h bakeout at 250°C",
+        "The outgassing rate is constant in time and independent of temperature for stainless steel",
+        "Baking at $> 400°$C reduces outgassing further, but only by making the steel porous and allowing trapped gas to escape"
       ],
       "correct": 0,
-      "explanation": "Without bakeout: water (adsorbed on surfaces) dominates at $\\sim 10^{-9}$ mbar·L/(s·cm$^2$). After bakeout at 200°C for 24 h: H$_2$ from bulk diffusion dominates at $\\sim 10^{-12}$ mbar·L/(s·cm$^2$). The $Q \\propto t^{-1}$ time dependence of H$_2$ outgassing (vs $t^{-1/2}$ for diffusion-limited) suggests the dominant mechanism is surface desorption. Chamber surface area: a 40 cm diameter, 30 cm long cylinder has $A \\approx 3000$ cm$^2$; total outgassing $Q \\approx 3\\times 10^{-10}$ mbar·L/s, requiring a pump speed $> S = Q/p = 300$ L/s for $p = 10^{-12}$ mbar."
+      "explanation": "Without bakeout: water (adsorbed on surfaces) dominates at $\\sim 10^{-9}$ mbar·L/(s·cm$^2$). After bakeout at 200°C for 24 h: H$_2$ from bulk diffusion dominates at $\\sim 10^{-12}$ mbar·L/(s·cm$^2$). The $Q \\propto 1/t$ time dependence of H$_2$ outgassing (vs $1/\\sqrt{t}$ for diffusion-limited) suggests the dominant mechanism is surface desorption. A 40 cm × 30 cm cylindrical chamber has $A \\approx 3000$ cm$^2$; total outgassing $Q \\approx 3\\times 10^{-10}$ mbar·L/s, requiring $S > 300$ L/s for $p = 10^{-12}$ mbar."
     }
   },
   {
@@ -49,16 +49,16 @@
     "path": ["physics", "equipment", "vacuum-systems", "uhv"],
     "level": "M",
     "modes": ["passive"],
-    "question": "Leak detection is critical when a UHV system fails to reach base pressure. The standard technique for detecting real leaks (path to atmosphere) uses:",
+    "question": "A UHV system fails to reach base pressure. What is the standard technique for detecting a real leak (path to atmosphere)?",
     "passive": {
       "options": [
-        "A helium leak detector: spray He gas around suspected leak points while monitoring a mass-spectrometer tuned to He ($m/e = 4$) on the vacuum side; He is ideal because it is small, chemically inert, non-toxic, rare in air (5 ppm), and highly permeable through leaks",
-        "Squirting water around flanges and watching for bubbles in the vacuum",
-        "Spraying acetone and watching for pressure spikes on the ion gauge",
-        "Increasing the fore-vacuum pressure and watching for turbomolecular pump frequency changes"
+        "Spray helium around suspected leak points while monitoring an He-tuned mass spectrometer on the vacuum side; sensitivity $\\sim 10^{-12}$ mbar·L/s",
+        "Squirt water around flanges and look for bubbles forming as the leak draws water in through the chamber wall",
+        "Spray acetone on suspected joints and watch for downward pressure spikes on the ion gauge",
+        "Increase the fore-line pressure deliberately and look for frequency changes in the turbomolecular pump"
       ],
       "correct": 0,
-      "explanation": "Helium leak detector sensitivity: $\\sim 10^{-12}$ mbar·L/s (1 pcc/s) — can detect leaks far too small to cause measurable pressure rise. Procedure: connect a turbo-backed He leak detector to the system via its own port or the turbo foreline. Spray He around each flange, feedthrough, viewport, and weld (with 3–5 second wait per location for He to diffuse to the leak). A positive signal means flow from that location. Virtual leaks (trapped gas pockets) appear as slow, sustained signals that do not respond to He spray — fix by adding venting holes to trapped volumes."
+      "explanation": "Helium leak detector sensitivity: $\\sim 10^{-12}$ mbar·L/s — can detect leaks far too small to cause measurable pressure rise. Procedure: connect a turbo-backed He leak detector via its own port or the turbo foreline. Spray He around each flange, feedthrough, viewport, and weld (3–5 second wait per location for He to diffuse to the leak). A positive signal means flow from that location. Virtual leaks (trapped gas pockets) appear as slow, sustained signals that do not respond to He spray — fix by adding venting holes to trapped volumes."
     }
   },
   {
@@ -66,16 +66,16 @@
     "path": ["physics", "equipment", "vacuum-systems", "uhv"],
     "level": "P",
     "modes": ["passive"],
-    "question": "Atomic vapour dispensers (Rb, Cs) are commonly used to load MOTs inside UHV chambers. Alkali-metal dispensers are preferred over glass ampules broken in vacuum because:",
+    "question": "Atomic vapour dispensers (Rb, Cs) are commonly used to load MOTs in UHV chambers. Why are they preferred over breaking a glass ampule in vacuum?",
     "passive": {
       "options": [
-        "Dispensers release Rb vapour only when electrically heated — they can be switched on/off to independently control MOT loading rate vs background pressure; dispensers also release less gas at a time, preventing pressure spikes that would overwhelm the UHV",
-        "Alkali metal glass ampules cannot be made at the required purity",
-        "Dispensers permanently release vapour without any power input",
-        "Glass ampules release too little Rb to load a MOT"
+        "Dispensers release Rb only when electrically heated, so loading rate and background pressure are independently controllable; the released amount per shot is small, avoiding pressure spikes",
+        "Glass ampules cannot be manufactured to the purity required for MOT loading",
+        "Dispensers permanently release vapour without any power input, simplifying the wiring",
+        "Glass ampules release too little Rb to load a MOT in any reasonable time"
       ],
       "correct": 0,
-      "explanation": "SAES Getters (type: Rb/NF/3.4/12 FT10+10) contain Rb in a zeolite compound. At low current (3–5 A): slow release (typical MOT loading: 5 s to steady state). At higher current: fast release, pressure spike. Typical operating current for Rb dispensers: 3.5–4.5 A. Dispenser lifetime: $\\sim 10^{5}$ ampere-hours. When the dispenser is off, the Rb vapour pressure drops in $\\sim 5$ s (gettered by NEG and ion pump). This allows shot-to-shot variation in Rb pressure — critical for repeatable BEC experiments. Light-induced atomic desorption (LIAD) using UV/blue light is an alternative for all-UHV operation."
+      "explanation": "SAES Getters (e.g., Rb/NF/3.4/12 FT10+10) contain Rb in a zeolite compound. At low current (3–5 A): slow release (MOT loading $\\sim$ 5 s to steady state). At higher current: fast release, pressure spike. Typical operating current: 3.5–4.5 A. Dispenser lifetime: $\\sim 10^{5}$ ampere-hours. When the dispenser is off, the Rb vapour pressure drops in $\\sim 5$ s (gettered by NEG and ion pump). Light-induced atomic desorption (LIAD) using UV/blue light is an alternative for all-UHV operation."
     }
   },
   {
@@ -83,16 +83,16 @@
     "path": ["physics", "equipment", "vacuum-systems", "uhv"],
     "level": "P",
     "modes": ["passive"],
-    "question": "A differential pumping stage separates two vacuum regions at different pressures, allowing a low-pressure science chamber to be connected to a higher-pressure source chamber. The pressure ratio achievable is:",
+    "question": "A differential pumping stage connects two vacuum regions at very different pressures. What sets the achievable pressure ratio?",
     "passive": {
       "options": [
-        "$p_1/p_2 = S_2/(C_{12} + S_1)$ where $C_{12}$ is the conductance of the differential tube and $S_1, S_2$ are the pumping speeds in each chamber — small conductance (long, narrow tube) allows pressure ratios of $10^3{-}10^5$",
-        "A differential pumping stage can only achieve a pressure ratio of $\\sim 10$",
-        "The pressure ratio equals the ratio of chamber volumes",
-        "Differential pumping works only for noble gases, not reactive species"
+        "$p_1/p_2 \\approx S_2/(C_{12} + S_1)$ where $C_{12}$ is the conductance of the connecting tube; long narrow tubes give ratios of $10^3{-}10^5$",
+        "Differential pumping can at most produce a $\\sim 10\\times$ pressure difference between the two chambers",
+        "The achievable pressure ratio equals the ratio of chamber volumes",
+        "Differential pumping works only for noble gases — reactive species can still equilibrate across the stage"
       ],
       "correct": 0,
-      "explanation": "Differential pumping enables, e.g., a Zeeman slower connecting a hot oven at $10^{-8}$ mbar to a UHV science chamber at $10^{-11}$ mbar. The Zeeman slower tube (inner diameter $\\sim 1$ cm, length $\\sim 50$ cm) acts as the differential pumping aperture: $C \\approx 3$ L/s. With the slower pumped by a 60 L/s ion pump at its midpoint: ratio $\\sim 10^4$. Multiple differential pumping stages (e.g., in a two-chamber design with a pyramid MOT + science cell) achieve $p_{\\rm science}/p_{\\rm source} \\sim 10^5{-}10^7$."
+      "explanation": "Differential pumping enables, e.g., a Zeeman slower connecting a hot oven at $10^{-8}$ mbar to a UHV science chamber at $10^{-11}$ mbar. The Zeeman slower tube (inner diameter $\\sim 1$ cm, length $\\sim 50$ cm) acts as the differential pumping aperture: $C \\approx 3$ L/s. With the slower pumped by a 60 L/s ion pump at its midpoint: ratio $\\sim 10^4$. Multiple differential pumping stages (e.g., pyramid MOT + science cell) achieve $p_{\\rm science}/p_{\\rm source} \\sim 10^5{-}10^7$."
     }
   }
 ]

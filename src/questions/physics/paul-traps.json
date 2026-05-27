@@ -4,27 +4,27 @@
     "path": ["physics", "electromagnetism", "paul-traps"],
     "level": "U",
     "modes": ["passive", "active"],
-    "question": "A Paul trap (RF ion trap) confines charged particles using a combination of static and oscillating electric fields. Earnshaw's theorem forbids static 3D confinement by electric fields alone, so a Paul trap uses:",
+    "question": "A Paul trap confines charged particles with electric fields. Earnshaw's theorem forbids static 3D electric confinement; what does a Paul trap use instead?",
     "passive": {
       "options": [
-        "A rapidly oscillating RF quadrupole field that creates a time-averaged ponderomotive (pseudopotential) restoring force — ions spend more time near field minima than maxima when the field alternates fast enough",
-        "A static magnetic field to confine ions along one axis combined with static electric fields for the other two",
-        "A laser beam to push ions back to the centre when they stray",
-        "An alternating gradient of DC fields to achieve 3D confinement"
+        "A rapidly oscillating RF quadrupole field whose time-averaged ponderomotive potential has a stable minimum at the RF node — ions experience net inward force despite no static minimum",
+        "A static magnetic field along one axis combined with static electric fields for the other two axes",
+        "A laser beam directed at the trap centre that pushes ions back via scattering force whenever they stray",
+        "An alternating-gradient stack of pure DC fields that geometrically averages to a 3D static minimum"
       ],
       "correct": 0,
-      "explanation": "Earnshaw's theorem: $\\nabla^2\\phi = 0$ in free space means a static field has no stable minimum — the force is inward in some directions and outward in others. A Paul trap alternates the sign of the potential at frequency $\\Omega_{\\rm RF}$: when the field pushes an ion out along $x$, it's simultaneously pulling it in along $y$, and vice versa half an RF period later. The net time-averaged force is always inward — a ponderomotive potential $U^* \\propto |\\mathbf{E}|^2/m$ with a minimum at the RF node."
+      "explanation": "Earnshaw's theorem: $\\nabla^2\\phi = 0$ in free space means a static field has no stable minimum. A Paul trap alternates the sign of the potential at $\\Omega_{\\rm RF}$: when the field pushes outward along $x$, it pulls inward along $y$, swapping roles half an RF period later. Time-averaged force is always inward — a ponderomotive potential $U^* \\propto |\\mathbf{E}|^2/m$ with a minimum at the RF node."
     },
     "active": {
       "type": "term-match",
       "prompt": "Match each Paul trap configuration to its geometry and application:",
       "pairs": [
-        {"id": "p1", "term": "3D Paul trap (spherical quadrupole)", "definition": "Ring electrode + two endcaps; small ion clouds; early QIP and precision spectroscopy (Penning trap comparison)"},
+        {"id": "p1", "term": "3D Paul trap (spherical quadrupole)", "definition": "Ring electrode + two endcaps; small ion clouds; early QIP and precision spectroscopy"},
         {"id": "p2", "term": "Linear Paul trap (quadrupole rod trap)", "definition": "4 parallel rods + endcap electrodes; ion strings along axis; quantum computing platform for $^{40}$Ca$^+$, $^{171}$Yb$^+$"},
-        {"id": "p3", "term": "Surface trap (planar Paul trap)", "definition": "Electrodes on a chip; scalable micro-fabricated; shuttling ions between trap zones; NIST/Oxford ion-chip experiments"},
-        {"id": "p4", "term": "Segmented linear trap", "definition": "Multiple electrode sections along the trap axis; allows ion shuttling, splitting, and merging of ion chains for modular QC"}
+        {"id": "p3", "term": "Surface trap (planar Paul trap)", "definition": "Electrodes on a chip; scalable micro-fabricated; shuttling ions between trap zones"},
+        {"id": "p4", "term": "Segmented linear trap", "definition": "Multiple electrode sections along the trap axis; allows ion shuttling, splitting, and merging of ion chains"}
       ],
-      "explanation": "The linear Paul trap is the dominant platform for trapped-ion quantum computing (IonQ, Quantinuum, Oxford Ionics). Ions form a 1D Coulomb crystal along the trap axis; collective phonon modes serve as a quantum bus. Surface traps enable miniaturisation and integration with microwave delivery — toward scalable trapped-ion processors."
+      "explanation": "Linear Paul traps dominate trapped-ion QC (IonQ, Quantinuum, Oxford Ionics). Ions form a 1D Coulomb crystal; collective phonon modes serve as a quantum bus. Surface traps enable miniaturisation and integration with microwave delivery."
     }
   },
   {
@@ -32,17 +32,17 @@
     "path": ["physics", "electromagnetism", "paul-traps"],
     "level": "M",
     "modes": ["passive"],
-    "question": "An ion trapped in a linear Paul trap at position $\\mathbf{r}$ from the RF node experiences a pseudopotential. For a trap with rod spacing $r_0$, RF voltage amplitude $V_0$ at frequency $\\Omega_{\\rm RF}$, the radial secular frequency is:",
+    "question": "An ion in a linear Paul trap experiences different confinement in radial vs axial directions. Which statement is correct?",
     "equation": "\\omega_r = \\frac{eV_0}{\\sqrt{2}m\\Omega_{\\rm RF}r_0^2}",
     "passive": {
       "options": [
-        "Radial confinement is set by the RF parameters; axial confinement is set by the static endcap voltage $U_{\\rm ec}$, giving $\\omega_z = \\sqrt{2eU_{\\rm ec}\\kappa/mL^2}$ where $L$ is the endcap spacing and $\\kappa$ is a geometric factor",
-        "Radial and axial frequencies are always equal in a linear Paul trap",
-        "The secular frequency increases linearly with RF frequency $\\Omega_{\\rm RF}$",
-        "The pseudopotential approximation gives $\\omega_r \\propto V_0^2$"
+        "Radial confinement comes from RF (pseudopotential); axial confinement comes from static endcap voltage $U_{\\rm ec}$: $\\omega_z = \\sqrt{2eU_{\\rm ec}\\kappa/(mL^2)}$",
+        "Radial and axial frequencies must be equal in a linear Paul trap; geometric asymmetry is forbidden",
+        "Secular frequency grows linearly with RF drive frequency $\\Omega_{\\rm RF}$ at fixed RF voltage",
+        "In the pseudopotential approximation $\\omega_r \\propto V_0^2$ — quadratic, not linear, in RF amplitude"
       ],
       "correct": 0,
-      "explanation": "Typical values for a linear Ca$^+$ trap: $r_0 = 0.5$ mm, $\\Omega_{\\rm RF}/2\\pi = 20$ MHz, $V_0 = 400$ V gives $\\omega_r/2\\pi \\approx 1$ MHz, with $\\omega_z/2\\pi \\approx 200$ kHz from static endcap voltage. The aspect ratio $\\omega_r/\\omega_z \\gg 1$ ensures ions form a linear chain along $z$. The equilibrium spacing between $N$ ions scales as $d \\propto (e^2/m\\omega_z^2)^{1/3}$ — typically 5–10 $\\mu$m for Ca$^+$."
+      "explanation": "Typical Ca$^+$ trap: $r_0 = 0.5$ mm, $\\Omega_{\\rm RF}/2\\pi = 20$ MHz, $V_0 = 400$ V gives $\\omega_r/2\\pi \\approx 1$ MHz; with static endcaps $\\omega_z/2\\pi \\approx 200$ kHz. Aspect ratio $\\omega_r/\\omega_z \\gg 1$ ensures linear chain along $z$. Equilibrium spacing for $N$ ions: $d \\propto (e^2/m\\omega_z^2)^{1/3}$ — typically 5–10 μm for Ca$^+$."
     }
   },
   {
@@ -50,16 +50,16 @@
     "path": ["physics", "electromagnetism", "paul-traps"],
     "level": "M",
     "modes": ["passive"],
-    "question": "Micromotion in a Paul trap is the fast ion oscillation at the RF drive frequency $\\Omega_{\\rm RF}$. Intrinsic (unavoidable) micromotion exists for any ion displaced from the RF null. Excess micromotion has additional causes:",
+    "question": "Micromotion is the fast oscillation of a Paul-trapped ion at the RF drive frequency. Which statement correctly contrasts intrinsic and excess micromotion?",
     "passive": {
       "options": [
-        "Stray static electric fields push the ion off the RF node, adding driven micromotion at $\\Omega_{\\rm RF}$; RF pickup on endcap electrodes, geometric imperfections, and patch charges on trap surfaces are common sources",
-        "Micromotion only occurs when the ion is in a superposition of quantum states",
-        "Excess micromotion is suppressed by increasing the RF amplitude",
-        "Micromotion does not affect laser-cooled ions since cooling removes all fast oscillations"
+        "Intrinsic micromotion exists for any ion displaced from the RF null; excess micromotion is driven by stray DC fields, RF pickup, or patch charges pushing the ion off-axis",
+        "Micromotion only appears when the ion is in a superposition of internal states — it is a quantum coherence effect",
+        "Excess micromotion is suppressed by raising the RF drive voltage — bigger pseudopotential damps the driven motion",
+        "Micromotion is fully eliminated by laser cooling and so plays no role in trapped-ion clocks or qubits"
       ],
       "correct": 0,
-      "explanation": "Micromotion is harmful because: (1) it causes the second-order Doppler shift (time dilation) in clock experiments — the dominant systematic in Yb$^+$ and Ca$^+$ optical clocks; (2) it limits laser cooling (a photon absorbed during the high-velocity micromotion phase carries away less than a full recoil); (3) it modulates the Doppler shift, appearing as RF sidebands in the fluorescence spectrum. Compensation: applied DC fields null the stray fields until micromotion is minimised, detected by photon-correlation or resolved-sideband methods."
+      "explanation": "Micromotion is harmful because: (1) it causes the second-order Doppler (time-dilation) shift — the dominant systematic in Yb$^+$ and Ca$^+$ optical clocks; (2) it limits laser cooling (a photon absorbed during high-velocity micromotion carries away less than a full recoil); (3) it modulates the Doppler shift, appearing as RF sidebands in fluorescence. Compensation: applied DC fields null the stray fields; detected by photon-correlation or resolved-sideband methods."
     }
   },
   {
@@ -67,16 +67,16 @@
     "path": ["physics", "electromagnetism", "paul-traps"],
     "level": "M",
     "modes": ["passive"],
-    "question": "A Coulomb crystal forms when the kinetic energy of trapped ions falls below the Coulomb repulsion energy. For $N$ ions, the equilibrium positions $z_i$ along the trap axis satisfy:",
+    "question": "A Coulomb crystal forms in a Paul trap when ion kinetic energy falls below the Coulomb repulsion. What sets the equilibrium positions $z_i$ along the trap axis?",
     "passive": {
       "options": [
-        "$m\\omega_z^2 z_i = \\sum_{j\\neq i} e^2/(4\\pi\\varepsilon_0)(z_i-z_j)/|z_i-z_j|^3$ — ions space themselves so the trapping force balances Coulomb repulsion; spacing is non-uniform (denser at edges)",
-        "Ions are equally spaced by $d = 2r_0/N$ independent of Coulomb repulsion",
-        "The equilibrium spacing decreases with ion number $N$",
-        "The crystal forms only when $\\omega_r > \\omega_z$ (radial confinement stronger)"
+        "Force balance: $m\\omega_z^2 z_i = \\sum_{j\\neq i} (e^2/4\\pi\\varepsilon_0)(z_i - z_j)/|z_i - z_j|^3$; spacing is non-uniform — denser at the edges, sparser in the middle",
+        "Ions are uniformly spaced by $d = 2r_0/N$, set only by trap geometry — independent of Coulomb repulsion",
+        "Equilibrium spacing increases with ion number $N$ because mutual repulsion pushes ions apart",
+        "A Coulomb crystal only forms when the radial confinement is weaker than the axial: $\\omega_r < \\omega_z$"
       ],
       "correct": 0,
-      "explanation": "The ion spacing in the centre of an $N$-ion chain scales as $d_{\\rm centre} \\propto (e^2/m\\omega_z^2)^{1/3}/N^{0.56}$ (numerically). For 2 ions: exact solution $z_{1,2} = \\pm(e^2/4m\\omega_z^2)^{1/3}$; for 5 ions in a $^{40}$Ca$^+$ trap with $\\omega_z/2\\pi = 0.5$ MHz: spacings $\\sim 5{-}10\\,\\mu$m. The normal modes of the chain (centre-of-mass, stretch, tilt, etc.) are used as quantum gates between non-adjacent ions. The crystal melts when $\\Gamma_{\\rm coupling} = e^2/(4\\pi\\varepsilon_0 d k_BT) < 174$ (Wigner-Seitz criterion)."
+      "explanation": "Centre spacing scales as $d_{\\rm centre} \\propto (e^2/m\\omega_z^2)^{1/3}/N^{0.56}$ numerically. For 2 ions, exact: $z_{1,2} = \\pm(e^2/4m\\omega_z^2)^{1/3}$. For 5 Ca$^+$ ions with $\\omega_z/2\\pi = 0.5$ MHz: spacing $\\sim 5{-}10$ μm. Normal modes (COM, stretch, tilt, ...) are used as quantum gates between non-adjacent ions. Wigner-Seitz coupling parameter $\\Gamma > 174$ for crystal phase."
     }
   },
   {
@@ -84,16 +84,17 @@
     "path": ["physics", "electromagnetism", "paul-traps"],
     "level": "M",
     "modes": ["passive", "active"],
-    "question": "Sideband cooling of a trapped ion in the Lamb-Dicke regime uses resolved sidebands of an optical transition to remove phonons from the trap mode. Starting from motional state $|n\\rangle$, driving the red sideband ($\\omega_{\\rm laser} = \\omega_0 - \\omega_{\\rm sec}$) causes:",
+    "question": "Sideband cooling of a trapped ion in the Lamb-Dicke regime removes one phonon per cycle by driving the red sideband. What is the cycle structure?",
     "passive": {
       "options": [
-        "$|g,n\\rangle \\to |e,n-1\\rangle \\to |g,n-1\\rangle$ (via spontaneous emission on the carrier) — each cycle removes one phonon; iterating reaches the ground state $|n=0\\rangle$",
-        "Driving the red sideband heats the ion by adding phonons",
-        "Sideband cooling requires the secular frequency to exceed the carrier linewidth ($\\omega_{\\rm sec} > \\Gamma$, resolved sideband regime)",
-        "The final state after sideband cooling has $\\langle n\\rangle \\gg 1$"
+        "$|g,n\\rangle \\xrightarrow{\\rm red\\ sb} |e,n-1\\rangle \\xrightarrow{\\rm carrier\\ spontaneous\\ emission} |g,n-1\\rangle$ — phonon removed, ion returns to ground state",
+        "Driving the red sideband heats the ion by adding phonons; cooling requires the blue sideband",
+        "Sideband cooling needs the secular frequency below the carrier linewidth ($\\omega_{\\rm sec} < \\Gamma$, unresolved regime)",
+        "The final state of sideband cooling has $\\langle n\\rangle \\gg 1$ — only Doppler cooling can drive $\\langle n\\rangle$ below unity"
       ],
       "correct": 0,
-      "explanation": "The resolved sideband condition requires $\\omega_{\\rm sec} \\gg \\Gamma$ — the trap frequency must exceed the optical linewidth. For Ca$^+$: $\\omega_z/2\\pi \\sim 1$ MHz, linewidth of the 729 nm clock transition $\\Gamma/2\\pi \\approx 140$ mHz — well resolved. Final mean phonon number: $\\langle n\\rangle_{\\rm final} \\approx (\\Gamma/(2\\omega_{\\rm sec}))^2 \\ll 1$. First demonstrated 1989 (Diedrich et al., NIST) achieving $\\langle n\\rangle < 1$ for a single Be$^+$ ion. Prerequisite for all trapped-ion quantum computing experiments."
+      "explanation": "Resolved-sideband condition: $\\omega_{\\rm sec} \\gg \\Gamma$. For Ca$^+$: $\\omega_z/2\\pi \\sim 1$ MHz, 729 nm clock linewidth $\\Gamma/2\\pi \\approx 140$ mHz — easily resolved. Final mean phonon number: $\\langle n\\rangle_{\\rm final} \\approx (\\Gamma/(2\\omega_{\\rm sec}))^2 \\ll 1$. First demonstrated 1989 (Diedrich et al., NIST). Prerequisite for all trapped-ion QC experiments.",
+      "correct_": 0
     },
     "active": {
       "type": "step-order",
@@ -105,7 +106,7 @@
         {"id": "s4", "text": "Cycle repeated; population accumulates in $|g,0\\rangle$ since $|g,0\\rangle$ has no red sideband to drive"}
       ],
       "solution": ["s1", "s2", "s3", "s4"],
-      "explanation": "The cooling rate is $\\dot{\\langle n\\rangle} = -\\Gamma_{\\rm cool}\\langle n\\rangle$ where $\\Gamma_{\\rm cool} = \\eta^2\\Omega_{\\rm Rabi}^2/\\Gamma$ (stimulated emission on red sideband, competing with carrier emission). Multiple modes must be cooled sequentially or simultaneously for multi-qubit gates."
+      "explanation": "Cooling rate: $\\dot{\\langle n\\rangle} = -\\Gamma_{\\rm cool}\\langle n\\rangle$, $\\Gamma_{\\rm cool} = \\eta^2\\Omega_{\\rm Rabi}^2/\\Gamma$. Multiple modes must be cooled sequentially or in parallel for multi-qubit gates."
     }
   },
   {
@@ -113,16 +114,16 @@
     "path": ["physics", "electromagnetism", "paul-traps"],
     "level": "P",
     "modes": ["passive"],
-    "question": "The Mølmer-Sørensen (MS) gate entangles two trapped ions via a bichromatic light field simultaneously driving the upper and lower motional sidebands. The entangling interaction is:",
+    "question": "The Mølmer-Sørensen (MS) gate entangles two trapped ions via a bichromatic field driving both motional sidebands. What is its key advantage?",
     "passive": {
       "options": [
-        "Driving both $\\omega_0 \\pm \\omega_{\\rm sec}$ simultaneously creates a spin-spin coupling $H_{\\rm MS} \\propto \\sigma_\\phi^{(1)}\\sigma_\\phi^{(2)}$ that does not require the ions to actually occupy the motional mode — the gate is insensitive to initial motional state",
-        "The MS gate requires both ions to be cooled to the motional ground state $|n=0\\rangle$",
-        "The gate drives only the centre-of-mass mode and is insensitive to the stretch mode",
-        "The MS interaction creates a SWAP gate between the two qubits"
+        "Robust to thermal motional state: the gate trajectory in phase space returns to its starting point so $\\langle n\\rangle \\sim 1{-}10$ works, not just $n = 0$; effective $H \\propto \\sigma_\\phi^{(1)}\\sigma_\\phi^{(2)}$",
+        "Requires the ions cooled to the motional ground state $|n = 0\\rangle$ before each gate — fails for any thermal occupation",
+        "Couples only the centre-of-mass mode; it is completely insensitive to the stretch mode of the chain",
+        "Implements a SWAP between the two qubit states, not an entangling operation"
       ],
       "correct": 0,
-      "explanation": "The MS gate advantage: it is robust to thermal initial states (works for $\\langle n\\rangle \\sim 1{-}10$, not just $n=0$) because the phonon bus is only virtually populated — the gate trajectory in phase space returns to its starting point. Gate time $\\tau = \\pi/(4\\eta^2\\Omega)$; for $\\eta = 0.1$, $\\Omega/2\\pi = 200$ kHz: $\\tau \\approx 200\\,\\mu$s. Current fidelities $> 99.9\\%$ in academic settings. The MS gate is the dominant entangling gate in most trapped-ion quantum computers (IonQ, Quantinuum)."
+      "explanation": "MS gate uses the motional bus only virtually — phase space trajectory closes back to origin, giving thermal-state robustness. Gate time $\\tau = \\pi/(4\\eta^2\\Omega)$; for $\\eta = 0.1$, $\\Omega/2\\pi = 200$ kHz: $\\tau \\approx 200$ μs. Current fidelity $> 99.9\\%$ in lab settings. Dominant entangling gate in IonQ/Quantinuum systems."
     }
   },
   {
@@ -130,16 +131,16 @@
     "path": ["physics", "electromagnetism", "paul-traps"],
     "level": "P",
     "modes": ["passive"],
-    "question": "Ion loading into a Paul trap is typically done by photoionisation of neutral atoms from an atomic oven or dispensers. The two-photon (resonance-enhanced) photoionisation of $^{40}$Ca uses:",
+    "question": "Ion loading into a Paul trap is typically done by photoionisation of neutral atoms. For $^{40}$Ca, which scheme is standard?",
     "passive": {
       "options": [
-        "First step: 423 nm laser excites $4s^1S_0 \\to 4p^1P_1$ (strong resonance); second step: 375 nm ionises from $4p^1P_1$ above the ionisation threshold — isotope-selective loading of specific Ca isotopes",
-        "Single-photon ionisation at 202 nm (the Ca ionisation potential wavelength)",
-        "Electron beam bombardment from an electron gun directed at the atomic beam",
-        "Penning ionisation between Ca atoms and metastable noble gas atoms"
+        "Two-step resonance-enhanced: 423 nm drives $4s^1S_0 \\to 4p^1P_1$; 375 nm photoionises from $^1P_1$ — isotope-selective via the 423 nm isotope shift",
+        "Single-photon at 202 nm (the Ca ionisation potential wavelength), directly from the ground state",
+        "Electron beam ionisation: an electron gun directed at the atomic beam strips one electron",
+        "Penning ionisation: metastable noble-gas atoms collide with Ca and transfer ionisation energy"
       ],
       "correct": 0,
-      "explanation": "Two-photon resonance-enhanced photoionisation: (1) 423 nm pre-excites Ca to $^1P_1$ (natural linewidth 34 MHz, cross-section large); (2) 375 nm ionises from the excited state. This is isotope-selective: the isotope shift of the 423 nm transition ($\\sim 1$ GHz between isotopes) allows loading only $^{40}$Ca, $^{43}$Ca, or $^{44}$Ca by tuning the 423 nm laser. Typical loading rates $\\sim 1{-}10$ ions/s from an oven at 600°C. For Yb$^+$: 399 nm + 370 nm; for Ba$^+$: 413 nm (or 553 nm) + 337 nm."
+      "explanation": "Two-step photoionisation: (1) 423 nm pre-excites Ca $^1S_0 \\to ^1P_1$ (linewidth 34 MHz, large cross-section); (2) 375 nm ionises from the excited state. Isotope-selective: 423 nm transition has $\\sim 1$ GHz isotope shifts → choose $^{40}$Ca, $^{43}$Ca, or $^{44}$Ca by laser tuning. Loading rates $\\sim 1{-}10$ ions/s from a 600°C oven. Yb$^+$: 399 nm + 370 nm. Ba$^+$: 413/553 nm + 337 nm."
     }
   }
 ]

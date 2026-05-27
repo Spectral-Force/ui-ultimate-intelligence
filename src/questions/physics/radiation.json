@@ -4,28 +4,28 @@
     "path": ["physics", "electromagnetism", "radiation"],
     "level": "M",
     "modes": ["passive", "active"],
-    "question": "An accelerating electric charge radiates electromagnetic power. The Larmor formula for the total power radiated by a non-relativistic charge $q$ with acceleration $a$ is:",
+    "question": "An accelerating non-relativistic charge $q$ with acceleration $a$ radiates total power $P = q^2 a^2/(6\\pi\\varepsilon_0 c^3)$ (Larmor). What is the angular distribution?",
     "equation": "P = \\frac{q^2 a^2}{6\\pi\\varepsilon_0 c^3}",
     "passive": {
       "options": [
-        "Radiated power scales as $a^2$ and $q^2$; the angular distribution is $dP/d\\Omega \\propto \\sin^2\\theta$ (dipole pattern, zero along acceleration axis, maximum perpendicular)",
-        "Radiation is emitted uniformly in all directions",
-        "The Larmor formula applies only to circular motion",
-        "The power scales as $q^2 a^3$ (cubic in acceleration)"
+        "$dP/d\\Omega \\propto \\sin^2\\theta$ (dipole donut): zero along the acceleration axis, maximum perpendicular; total power scales as $a^2$ and $q^2$",
+        "Radiation is emitted isotropically — equal in all directions — for any motion of the charge",
+        "Larmor formula applies only to circular motion (synchrotron); linear acceleration radiates by a different mechanism",
+        "Radiated power scales as $a^3$, not $a^2$, in non-relativistic motion"
       ],
       "correct": 0,
-      "explanation": "Dipole radiation pattern: a charge oscillating along $\\hat{z}$ radiates as $dP/d\\Omega = (q^2 a^2/32\\pi^2\\varepsilon_0 c^3)\\sin^2\\theta$, giving the familiar donut shape. Spontaneous emission from an atom is dipole radiation with $a = -d\\ddot{}/q = $ oscillating dipole. The Larmor rate gives $\\Gamma = e^2\\omega^2 d_{\\rm matrix}^2/(3\\pi\\varepsilon_0 \\hbar m_e c^3)$ — classical estimate for atomic linewidth. The relativistic generalisation (Liénard formula) adds a Lorentz factor."
+      "explanation": "Dipole pattern: a charge oscillating along $\\hat{z}$ radiates $dP/d\\Omega = (q^2 a^2/32\\pi^2\\varepsilon_0 c^3)\\sin^2\\theta$ — donut shape. Atomic spontaneous emission is dipole radiation with $a$ from the oscillating dipole. Larmor gives $\\Gamma = e^2\\omega^2 d_{\\rm matrix}^2/(3\\pi\\varepsilon_0\\hbar m_e c^3)$ — classical estimate for atomic linewidth. Relativistic generalisation: Liénard formula with $\\gamma$ factor."
     },
     "active": {
       "type": "term-match",
       "prompt": "Match each radiation source to its emitted power scaling:",
       "pairs": [
-        {"id": "p1", "term": "Electric dipole radiation (E1)", "definition": "$P \\propto \\omega^4 d_0^2$ where $d_0$ is dipole moment; dominant for atomic transitions with $\\Delta l = \\pm 1$"},
-        {"id": "p2", "term": "Magnetic dipole / electric quadrupole (M1/E2)", "definition": "$P$ suppressed by $(v/c)^2$ relative to E1 — forbidden transitions, longer lifetimes (ms to s)"},
-        {"id": "p3", "term": "Synchrotron radiation", "definition": "Relativistic circular motion: $P = q^2 c\\gamma^4/(6\\pi\\varepsilon_0 R^2)$ — very bright, broad spectrum from UV to X-ray"},
-        {"id": "p4", "term": "Bremsstrahlung (braking radiation)", "definition": "Acceleration of charges by Coulomb field; continuous X-ray spectrum; basis of X-ray tube emission"}
+        {"id": "p1", "term": "Electric dipole radiation (E1)", "definition": "$P \\propto \\omega^4 d_0^2$; dominant for atomic transitions with $\\Delta l = \\pm 1$"},
+        {"id": "p2", "term": "Magnetic dipole / electric quadrupole (M1/E2)", "definition": "Suppressed by $(v/c)^2$ relative to E1 — \"forbidden\" transitions, ms–s lifetimes"},
+        {"id": "p3", "term": "Synchrotron radiation", "definition": "Relativistic circular motion: $P = q^2 c\\gamma^4/(6\\pi\\varepsilon_0 R^2)$ — bright, UV to X-ray"},
+        {"id": "p4", "term": "Bremsstrahlung", "definition": "Acceleration by Coulomb field; continuous X-ray spectrum; basis of X-ray tubes"}
       ],
-      "explanation": "The $\\omega^4$ scaling of E1 radiation comes from $a \\propto \\omega^2 x_0$ for oscillation, combined with $P \\propto a^2$. This is why optical transitions ($\\omega_{\\rm opt}^4$) have $\\sim 10^8$ times larger rates than radio-frequency transitions at the same dipole moment."
+      "explanation": "$\\omega^4$ E1 scaling comes from $a \\propto \\omega^2 x_0$ and $P \\propto a^2$. Optical transitions ($\\omega_{\\rm opt}^4$) have $\\sim 10^8\\times$ larger rates than RF transitions at the same dipole moment."
     }
   },
   {
@@ -33,17 +33,17 @@
     "path": ["physics", "electromagnetism", "radiation"],
     "level": "M",
     "modes": ["passive"],
-    "question": "The radiation reaction force on an accelerating charge (Abraham-Lorentz force) represents the back-reaction of the emitted radiation on the charge itself:",
+    "question": "The Abraham-Lorentz force describes the back-reaction of emitted radiation on an accelerating charge. Which statement correctly characterises it?",
     "equation": "\\mathbf{F}_{\\rm rad} = \\frac{\\mu_0 q^2}{6\\pi c}\\dot{\\mathbf{a}}",
     "passive": {
       "options": [
-        "The force is proportional to the time derivative of acceleration (jerk) $\\dot{a}$; without external forces, the equation has 'runaway' solutions where the charge accelerates exponentially — requiring pre-acceleration (non-causal) solutions to be rejected",
-        "The radiation reaction is always in the direction of motion",
-        "The Abraham-Lorentz force is conservative and derivable from a potential",
-        "The force is proportional to $a$, not $\\dot{a}$"
+        "Proportional to jerk $\\dot a$, not $a$; equation of motion has unphysical runaway solutions, requiring the Landau-Lifshitz approximation to eliminate them",
+        "Always acts along the instantaneous direction of motion of the charge",
+        "Conservative and derivable from a velocity-independent potential, like ordinary mechanical forces",
+        "Proportional to $a$ rather than $\\dot a$ — same functional form as ordinary friction"
       ],
       "correct": 0,
-      "explanation": "The Abraham-Lorentz force is a fundamental challenge in classical electrodynamics: the equation $m\\ddot{x} = F_{\\rm ext} + (\\mu_0 q^2/6\\pi c)\\dddot{x}$ has pathological solutions. The Landau-Lifshitz approximation replaces $\\dddot{x}$ by $\\dot{F}_{\\rm ext}/m$ to avoid runaway solutions. In quantum mechanics, the problem is resolved by renormalisation (the electron mass absorbs the divergent self-energy). Radiation reaction sets the atomic linewidth: $\\Gamma = e^2\\omega^2/6\\pi\\varepsilon_0 m_e c^3$ — the classical estimate agrees with QED to within factors of order unity."
+      "explanation": "Abraham-Lorentz: $m\\ddot x = F_{\\rm ext} + (\\mu_0 q^2/6\\pi c)\\dddot x$ has runaway solutions ($\\ddot x$ grows exponentially without external force). Landau-Lifshitz replaces $\\dddot x$ with $\\dot F_{\\rm ext}/m$ to avoid this. In QED the issue is resolved by mass renormalisation. Radiation reaction sets the atomic linewidth: classical $\\Gamma = e^2\\omega^2/(6\\pi\\varepsilon_0 m_e c^3)$ agrees with QED to order unity."
     }
   },
   {
@@ -51,16 +51,16 @@
     "path": ["physics", "electromagnetism", "radiation"],
     "level": "M",
     "modes": ["passive"],
-    "question": "A half-wave dipole antenna of length $\\lambda/2$ has a radiation resistance of approximately 73 $\\Omega$ and a directivity of 1.64 (2.15 dBi). The far-field electric field pattern is:",
+    "question": "A half-wave dipole antenna of length $\\lambda/2$ has radiation resistance $\\sim 73$ Ω and directivity 1.64. What is its far-field pattern?",
     "passive": {
       "options": [
-        "$E \\propto \\cos(\\pi\\cos\\theta/2)/\\sin\\theta$ — slightly more directive than a short dipole (which has $E \\propto \\sin\\theta$), with nulls along the antenna axis",
-        "$E \\propto \\sin\\theta$ for the half-wave dipole, same as a Hertz dipole",
-        "The half-wave dipole radiates equally in all directions",
-        "The half-wave dipole has zero radiation resistance"
+        "$E(\\theta) \\propto \\cos(\\pi\\cos\\theta/2)/\\sin\\theta$ — slightly more directive than a short dipole's $\\sin\\theta$, with nulls along the antenna axis",
+        "Same $\\sin\\theta$ pattern as a Hertz (short) dipole; only the impedance differs",
+        "Isotropic radiation in all directions — half-wave length makes it omnidirectional",
+        "Zero radiation resistance because the resonant length matches free-space wavelength exactly"
       ],
       "correct": 0,
-      "explanation": "The half-wave dipole is the simplest resonant antenna: its impedance is purely real at 73 $\\Omega$ (compared to the imaginary, reactive impedance of a short dipole). The radiation resistance $R_{\\rm rad}$ comes from integrating the Poynting vector over a sphere. Antenna gain $G = 4\\pi D_{\\rm eff}/\\lambda^2$ where $D_{\\rm eff}$ is the effective aperture. In AMO physics, the coupling efficiency of an atom to a single optical mode (e.g., a focused Gaussian beam) is given by a similar aperture calculation: $\\sigma_0/(\\pi w_0^2) \\ll 1$ typically."
+      "explanation": "Half-wave dipole: impedance purely real at 73 Ω (vs reactive for short dipole). Radiation resistance from integrating Poynting over a sphere. Antenna gain $G = 4\\pi A_{\\rm eff}/\\lambda^2$. The AMO analogue: coupling of an atom to a Gaussian beam is set by $\\sigma_0/(\\pi w_0^2) \\ll 1$ — same aperture argument."
     }
   },
   {
@@ -68,17 +68,17 @@
     "path": ["physics", "electromagnetism", "radiation"],
     "level": "P",
     "modes": ["passive"],
-    "question": "Blackbody radiation from an object at temperature $T$ follows the Planck distribution. The spectral energy density is:",
+    "question": "Blackbody radiation follows the Planck distribution. Which set of limits is correct?",
     "equation": "u(\\nu,T) = \\frac{8\\pi h\\nu^3}{c^3}\\frac{1}{e^{h\\nu/k_BT} - 1}",
     "passive": {
       "options": [
-        "Limits: Rayleigh-Jeans ($h\\nu \\ll k_BT$): $u \\approx 8\\pi\\nu^2 k_BT/c^3$ (classical, UV catastrophe); Wien ($h\\nu \\gg k_BT$): $u \\approx 8\\pi h\\nu^3/c^3 \\cdot e^{-h\\nu/k_BT}$ (quantum exponential cutoff)",
-        "The Planck distribution is the same as the Maxwell-Boltzmann distribution",
-        "Blackbody radiation spectrum peaks at a wavelength independent of temperature",
-        "The total radiated power per unit area is $\\sigma_B T^2$ (linear in $T$)"
+        "Rayleigh-Jeans ($h\\nu \\ll k_BT$): $u \\approx 8\\pi\\nu^2 k_BT/c^3$ (classical, UV catastrophe). Wien ($h\\nu \\gg k_BT$): exponential cutoff $\\propto e^{-h\\nu/k_BT}$",
+        "Planck distribution is identical to Maxwell-Boltzmann; the only difference is the unit choice for $T$",
+        "Spectrum peaks at a wavelength independent of temperature — set by physical constants alone",
+        "Total radiated power per unit area scales as $T^2$, not $T^4$"
       ],
       "correct": 0,
-      "explanation": "Wien's displacement law: $\\lambda_{\\rm max} T = 2.898\\times 10^{-3}$ m·K. Stefan-Boltzmann: $P = \\sigma_B T^4$ where $\\sigma_B = 5.67\\times 10^{-8}$ W·m$^{-2}$·K$^{-4}$. The CMB is a perfect blackbody at $T = 2.725$ K ($\\lambda_{\\rm max} = 1.06$ mm, microwave). Room temperature ($300$ K): $\\lambda_{\\rm max} = 9.7\\,\\mu$m (mid-IR). The Planck distribution is formally a Bose-Einstein distribution with $\\mu = 0$ (photons, chemical potential forced to zero by photon number non-conservation)."
+      "explanation": "Wien's displacement: $\\lambda_{\\rm max} T = 2.898\\times 10^{-3}$ m·K. Stefan-Boltzmann: $P/A = \\sigma_B T^4$, $\\sigma_B = 5.67\\times 10^{-8}$ W/(m²·K⁴). CMB: perfect blackbody at $T = 2.725$ K ($\\lambda_{\\rm max} = 1.06$ mm). Room temperature: $\\lambda_{\\rm max} = 9.7$ μm (mid-IR). Planck = Bose-Einstein at $\\mu = 0$ (photon number not conserved)."
     }
   },
   {
@@ -86,17 +86,17 @@
     "path": ["physics", "electromagnetism", "radiation"],
     "level": "P",
     "modes": ["passive"],
-    "question": "The vector potential $\\mathbf{A}(\\mathbf{r},t)$ in the radiation (Coulomb) gauge ($\\nabla\\cdot\\mathbf{A} = 0$) describes the transverse EM field. The quantised field in mode $(\\mathbf{k}, s)$ contributes:",
+    "question": "In the radiation (Coulomb) gauge, the quantised vector potential is a sum of mode operators. What is the physical consequence of its zero-point fluctuations?",
     "equation": "\\hat{\\mathbf{A}} = \\sum_{\\mathbf{k},s}\\sqrt{\\frac{\\hbar}{2\\varepsilon_0\\omega_k V}}\\hat{\\varepsilon}_{\\mathbf{k}s}\\left(\\hat{a}_{\\mathbf{k}s}e^{i\\mathbf{k}\\cdot\\mathbf{r}} + \\hat{a}^\\dagger_{\\mathbf{k}s}e^{-i\\mathbf{k}\\cdot\\mathbf{r}}\\right)",
     "passive": {
       "options": [
-        "The zero-point fluctuations of $\\hat{\\mathbf{A}}$ ($\\propto \\sqrt{\\hbar\\omega/V}$) drive spontaneous emission and the Lamb shift — even the vacuum has fluctuating electromagnetic fields",
-        "The vacuum has no electromagnetic field fluctuations ($\\langle 0|\\hat{\\mathbf{E}}|0\\rangle = 0$ exactly)",
-        "Spontaneous emission requires photons to already be present in the cavity",
-        "The factor $\\sqrt{\\hbar/2\\varepsilon_0\\omega_k V}$ goes to zero in the thermodynamic limit $V\\to\\infty$"
+        "Vacuum fluctuations of $\\hat{\\mathbf{A}}$ (amplitude $\\propto \\sqrt{\\hbar\\omega/V}$) drive spontaneous emission and produce the Lamb shift — the vacuum has fluctuating EM fields",
+        "Vacuum has identically zero electromagnetic field fluctuations: $\\langle 0|\\hat{\\mathbf{E}}^2|0\\rangle = 0$",
+        "Spontaneous emission requires photons already present in the cavity — pure vacuum cannot trigger decay",
+        "The factor $\\sqrt{\\hbar/2\\varepsilon_0\\omega_k V}$ vanishes in the thermodynamic limit $V \\to \\infty$, so vacuum effects disappear in free space"
       ],
       "correct": 0,
-      "explanation": "$\\langle 0|\\hat{\\mathbf{E}}|0\\rangle = 0$ (no mean field in vacuum) but $\\langle 0|\\hat{\\mathbf{E}}^2|0\\rangle = \\sum_{\\mathbf{k},s}\\hbar\\omega_k/(2\\varepsilon_0 V) \\to \\infty$ — divergent zero-point energy (renormalised in QED). The interaction $H_{\\rm int} = -q\\hat{\\mathbf{A}}\\cdot\\hat{\\mathbf{p}}/m$ with the vacuum fluctuations of $\\hat{\\mathbf{A}}$ causes spontaneous emission (absorption from vacuum). The single-mode coupling $g = d\\sqrt{\\omega/(2\\varepsilon_0\\hbar V)}$ is the vacuum Rabi frequency — smaller mode volume gives stronger coupling."
+      "explanation": "$\\langle 0|\\hat{\\mathbf{E}}|0\\rangle = 0$ but $\\langle 0|\\hat{\\mathbf{E}}^2|0\\rangle = \\sum_{\\mathbf{k},s}\\hbar\\omega_k/(2\\varepsilon_0 V)$ — divergent zero-point energy, renormalised in QED. Interaction $H_{\\rm int} = -q\\hat{\\mathbf{A}}\\cdot\\hat{\\mathbf{p}}/m$ with $\\hat{\\mathbf{A}}$ vacuum fluctuations causes spontaneous emission. Single-mode coupling $g = d\\sqrt{\\omega/(2\\varepsilon_0\\hbar V)}$ — smaller $V$ gives stronger coupling (cavity QED)."
     }
   }
 ]

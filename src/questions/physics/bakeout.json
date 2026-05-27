@@ -4,16 +4,16 @@
     "path": ["physics", "equipment", "vacuum-systems", "bakeout"],
     "level": "M",
     "modes": ["passive", "active"],
-    "question": "Baking out a vacuum system is the process of heating the chamber to elevated temperature while pumping, to drive off adsorbed water and accelerate outgassing of H$_2$ from bulk metal. The typical bakeout procedure for a stainless steel UHV chamber is:",
+    "question": "Baking out a vacuum system drives off adsorbed water and accelerates H$_2$ outgassing from bulk metal. What is the standard bakeout procedure for a stainless-steel UHV chamber?",
     "passive": {
       "options": [
-        "Heat to 150–250°C for 24–72 hours while pumping; bake all components that will be in vacuum including gauges, valves, viewports, and feedthroughs; cool slowly (< 2°C/min near 120°C to avoid water recondensation); activate ion pump and NEG during final cooldown",
-        "Bake at 450°C overnight; cool as quickly as possible to fix the low outgassing state",
-        "Bake at 100°C for 1 hour — sufficient to remove all outgassing from stainless steel",
-        "Bakeout is only needed for the first-ever pump-down; subsequent pump-downs do not require baking"
+        "150–250°C for 24–72 h while pumping; bake all in-vacuum components; cool slowly ($< 2°$C/min near 120°C); activate ion pump and NEG during cooldown",
+        "450°C overnight; cool as fast as possible to lock in the low-outgassing state of the steel",
+        "100°C for 1 h — sufficient to remove all outgassing from stainless steel",
+        "Bakeout is only needed for the first-ever pump-down; subsequent pump-downs reach the same base pressure without baking"
       ],
       "correct": 0,
-      "explanation": "Bakeout physics: at room temperature, water is strongly adsorbed (sticking coefficient $\\sim 1$). Above $\\sim 120°$C, water desorption rate greatly exceeds adsorption — baking drives it off. H$_2$ diffuses from the bulk much faster at elevated temperature (diffusivity $\\propto e^{-E_a/k_BT}$ with $E_a \\approx 0.6$ eV for H in Fe). After bakeout: residual gas is dominated by H$_2$ at pressures $< 10^{-10}$ mbar. Rule of thumb: one decade improvement in base pressure per 24 h at 200°C vs unbaked."
+      "explanation": "Bakeout physics: at room temperature, water is strongly adsorbed (sticking coefficient $\\sim 1$). Above $\\sim 120°$C, water desorption rate greatly exceeds adsorption — baking drives it off. H$_2$ diffuses from the bulk much faster at elevated temperature (diffusivity $\\propto e^{-E_a/k_BT}$ with $E_a \\approx 0.6$ eV for H in Fe). After bakeout: residual gas dominated by H$_2$ at $< 10^{-10}$ mbar. Rule of thumb: one decade improvement in base pressure per 24 h at 200°C vs unbaked."
     },
     "active": {
       "type": "step-order",
@@ -25,7 +25,7 @@
         {"id": "s4", "text": "Ramp temperature back down slowly ($< 2°$C/min below 120°C); at $< 10^{-8}$ mbar and $< 50°$C, start ion pump; activate NEG at 400°C then cool; isolate turbo pump; verify base pressure with BA gauge"}
       ],
       "solution": ["s1", "s2", "s3", "s4"],
-      "explanation": "Critical points: (1) Never bake with a rotary pump oil connected — it backstreams. (2) Degas the ion gauge during bakeout (electron bombardment heating). (3) Seal the leak valve and blank viewports not in use. (4) NEG activation requires the getter to reach 350–450°C — can be done with a resistive heater or with the bakeout oven if the NEG is included. After cooldown, base pressure should be 10–100× lower than before bakeout."
+      "explanation": "Critical points: (1) Never bake with a rotary pump oil connected — it backstreams. (2) Degas the ion gauge during bakeout (electron bombardment heating). (3) Seal the leak valve and blank viewports not in use. (4) NEG activation requires the getter to reach 350–450°C. After cooldown, base pressure should be 10–100× lower than before bakeout."
     }
   },
   {
@@ -33,16 +33,16 @@
     "path": ["physics", "equipment", "vacuum-systems", "bakeout"],
     "level": "M",
     "modes": ["passive"],
-    "question": "Not all components in a UHV system tolerate the same bakeout temperature. Maximum bakeout temperatures for common UHV components:",
+    "question": "Not all UHV components tolerate the same bakeout temperature. Which combination correctly lists the maximum bakeout temperatures for common components?",
     "passive": {
       "options": [
-        "Stainless steel CF chambers: 450°C; copper CF gaskets: 450°C; all-metal valves: 250–350°C (manufacturer-dependent); Pyrex/borosilicate viewports: 200°C; glass-to-metal seals (kovar): 200–250°C; Viton O-rings: 150°C (limits whole system if present); SMA/BNC feedthroughs: 150–200°C",
-        "All UHV components can be baked to 400°C without damage",
-        "Viewports must be excluded from bakeout because they are not UHV-compatible",
-        "Metal gaskets cannot withstand bakeout and must be replaced after each bakeout cycle"
+        "Stainless steel CF + Cu gaskets 450°C; all-metal valves 250–350°C; Pyrex viewports 200°C; kovar glass-to-metal seals 200–250°C; Viton O-rings 150°C; SMA/BNC feedthroughs 150–200°C",
+        "All UHV components can safely be baked to 400°C; only PTFE seals must be removed before bakeout",
+        "Viewports must always be excluded from bakeout because they are not UHV-compatible",
+        "Copper gaskets are damaged by bakeout and must be replaced after every cycle"
       ],
       "correct": 0,
-      "explanation": "The limiting component sets the whole system's maximum bakeout temperature. Viton O-rings (if present, e.g., on a roughing port or rough valve) limit the bake to 150°C. All-metal valves with PEEK seats: 200°C. Ion gauges: 250°C (controlled separately). Channels for laser light through viewport flanges: bake viewports separately at their limit. In a system with Rb dispensers: the dispensers themselves can tolerate 200°C but should not be activated during bake-in. IOT (indium oxide) coated viewports (for spectroscopy) should not exceed 200°C to avoid ITO damage."
+      "explanation": "The limiting component sets the whole system's maximum bakeout temperature. Viton O-rings (if present, e.g., on a roughing port) limit the bake to 150°C. All-metal valves with PEEK seats: 200°C. Ion gauges: 250°C (controlled separately). Bake viewports separately at their limit. Rb dispensers tolerate 200°C but should not be activated during bake-in. ITO-coated viewports (for spectroscopy) should not exceed 200°C to avoid coating damage."
     }
   },
   {
@@ -50,16 +50,16 @@
     "path": ["physics", "equipment", "vacuum-systems", "bakeout"],
     "level": "M",
     "modes": ["passive"],
-    "question": "During bakeout, an RGA (residual gas analyser) is a valuable diagnostic tool. The mass spectrum evolves characteristically as the bake progresses:",
+    "question": "An RGA (residual gas analyser) is a valuable diagnostic during bakeout. How does the mass spectrum characteristically evolve as the bake progresses?",
     "passive": {
       "options": [
-        "Early bakeout: water (18 amu), OH (17), O (16), H (1) dominant; mid-bakeout: H$_2$ (2) and CO (28) rise as water falls; end of bakeout and cooling: H$_2$ (2) dominates; unexpected peaks (44 = CO$_2$, 28 = CO/N$_2$, 32 = O$_2$) may indicate leaks or contaminated sources",
-        "During bakeout, the pressure immediately drops to the final base value",
-        "Water at 18 amu only appears after bakeout is complete",
-        "CO$_2$ (44 amu) is always the dominant gas during and after bakeout"
+        "Early: water (18), OH (17), O (16), H (1) dominate; mid: H$_2$ (2) and CO (28) rise as water falls; end: H$_2$ (2) dominates; unexpected peaks (44 CO$_2$, 32 O$_2$, 40 Ar) indicate leaks",
+        "Pressure immediately drops to the final base value when the bakeout begins; the mass spectrum is featureless throughout",
+        "Water (18 amu) only appears after the bakeout is complete, when the chamber is cooled and re-exposes adsorbed monolayers",
+        "CO$_2$ (44 amu) is always the dominant residual gas before, during, and after bakeout"
       ],
       "correct": 0,
-      "explanation": "RGA interpretation table: mass 2 = H$_2$ (dominant post-bakeout); 4 = He (leak indicator); 12, 16, 28, 44 = CO/CO$_2$ fragments (contamination or pump oil); 14/28 = N$_2$ fragments (air leak); 18 = H$_2$O (pre-bakeout, surface water); 32 = O$_2$ (air leak when $\\sim 1/4$ the N$_2$ peak); 40 = Ar (air leak — Ar is $\\sim 1\\%$ of air). A clean bakeout ends with only mass 2 visible; any other peaks warrant investigation. Methane (16 amu) can indicate organics or pump oil backstreaming."
+      "explanation": "RGA interpretation: mass 2 = H$_2$ (dominant post-bakeout); 4 = He (leak indicator); 12, 16, 28, 44 = CO/CO$_2$ fragments (contamination or pump oil); 14/28 = N$_2$ fragments (air leak); 18 = H$_2$O (pre-bakeout, surface water); 32 = O$_2$ (air leak when $\\sim 1/4$ the N$_2$ peak); 40 = Ar (air leak — Ar is $\\sim 1\\%$ of air). A clean bakeout ends with only mass 2 visible. Methane (16 amu) can indicate organics or pump oil backstreaming."
     }
   },
   {
@@ -67,16 +67,16 @@
     "path": ["physics", "equipment", "vacuum-systems", "bakeout"],
     "level": "M",
     "modes": ["passive"],
-    "question": "Titanium sublimation pumping (TSP) is often used during and after bakeout to boost pumping speed for reactive gases. A TSP consists of:",
+    "question": "A titanium sublimation pump (TSP) boosts pumping speed for reactive gases. How does it actually work?",
     "passive": {
       "options": [
-        "A titanium wire or rod heated by passing a large current (50–60 A) until Ti sublimes and coats the cold chamber walls; the fresh Ti film chemisorbs H$_2$, N$_2$, CO, O$_2$ at room temperature; fired every few days or hours depending on gas load",
-        "A heated titanium block that evaporates Ti atoms which ionise and are collected on a biased plate",
-        "A Ti-coated surface that is cooled to liquid nitrogen temperature to cryopump reactive gases",
-        "TSP uses photoionisation of Ti atoms to trap gas molecules"
+        "A Ti wire is heated to sublimation (50–60 A current); fresh Ti coats the cold chamber walls and chemisorbs H$_2$, N$_2$, CO, O$_2$; fired every few days or hours depending on gas load",
+        "Heated Ti block evaporates atoms that are ionised and collected on a biased plate, like a small ion pump",
+        "A Ti-coated surface is cooled to liquid-nitrogen temperature to cryopump reactive gases by physisorption",
+        "TSP uses photoionisation of background Ti vapour to trap gas molecules at the chamber walls"
       ],
       "correct": 0,
-      "explanation": "TSP parameters: firing current 40–60 A for 1–2 minutes produces a fresh Ti film 5–50 nm thick. Pumping speed for H$_2$: $\\sim 8$ L/(s·cm$^2$) of coated surface — a 10 cm diameter TSP shroud gives $\\sim 600$ L/s. Does NOT pump noble gases (He, Ar, Ne) or CH$_4$ effectively — only reactive gases. TSP is complementary to NEG (which pumps at the NEG surface, no sublimation needed) and ion pumps (which can pump noble gases via burial). After TSP firing, the base pressure typically drops by 5–10× within minutes, then slowly recovers as the fresh film saturates."
+      "explanation": "TSP parameters: firing current 40–60 A for 1–2 minutes produces a fresh Ti film 5–50 nm thick. Pumping speed for H$_2$: $\\sim 8$ L/(s·cm$^2$) of coated surface — a 10 cm diameter TSP shroud gives $\\sim 600$ L/s. Does NOT pump noble gases (He, Ar, Ne) or CH$_4$ effectively — only reactive gases. Complementary to NEG (pumps at the NEG surface, no sublimation needed) and ion pumps (pump noble gases via burial). After firing, base pressure drops by 5–10× within minutes, then recovers as the film saturates."
     }
   },
   {
@@ -84,16 +84,16 @@
     "path": ["physics", "equipment", "vacuum-systems", "bakeout"],
     "level": "P",
     "modes": ["passive"],
-    "question": "In-vacuum optical components (mirrors, waveplates, lenses, retroreflectors) must be UHV-compatible and bakeable. Special considerations for optical elements inside a UHV chamber:",
+    "question": "In-vacuum optical components must be UHV-compatible and bakeable. Which combination correctly describes the standard choices?",
     "passive": {
       "options": [
-        "Fused silica substrates (not borosilicate) and ion-beam sputtered (IBS) coatings are preferred — no binders or organic compounds in the coating; maximum bakeout $\\sim 200°$C (IBS coatings) or 150°C (ion-assisted evaporation); mount with UHV-compatible screws (stainless or titanium)",
-        "Standard coated optics from any vendor are suitable for UHV if cleaned with acetone",
-        "Optical cements (e.g., NOA) are UHV-compatible if used in small quantities",
-        "Antireflection (AR) coatings must be removed before placing optics in UHV"
+        "Fused silica substrates with ion-beam-sputtered (IBS) coatings; max bakeout $\\sim 200°$C (IBS) or 150°C (ion-assisted evaporation); UHV-compatible mounting screws (stainless or titanium)",
+        "Any standard coated optic is suitable for UHV if first wiped with acetone and stored in a desiccator before installation",
+        "Optical cements (NOA, Norland) are UHV-compatible in small quantities and routinely used in trap viewports",
+        "Antireflection coatings must be stripped off the substrate before placing optics in UHV"
       ],
       "correct": 0,
-      "explanation": "UHV optics checklist: (1) Substrate: fused silica preferred ($< 10^{-11}$ mbar·L/(s·cm$^2$) outgassing). BK7 glass is borderline (slightly higher outgassing). (2) Coating: IBS (sputtered, no binders) > electron beam (may contain organics in binder layer). (3) Mounting: contact area minimised to avoid bimetallic stress; Torr Seal epoxy (for vacuum side bonds) has outgassing $\\sim 10^{-8}$ mbar·L/s — use sparingly or avoid. (4) Cleaning: ultrasonic bath in IPA/acetone, then drag-wipe with cleanroom lens paper; no touching with bare hands after cleaning. (5) Bakeout: 150–200°C limit for most coated optics."
+      "explanation": "UHV optics checklist: (1) Substrate: fused silica preferred ($< 10^{-11}$ mbar·L/(s·cm$^2$) outgassing). BK7 is borderline. (2) Coating: IBS (sputtered, no binders) > e-beam (may contain organics in binder layer). (3) Mounting: contact area minimised to avoid bimetallic stress; Torr Seal epoxy outgassing $\\sim 10^{-8}$ mbar·L/s — use sparingly or avoid. (4) Cleaning: ultrasonic IPA/acetone, then drag-wipe with cleanroom lens paper; no bare-hand contact after cleaning. (5) Bakeout: 150–200°C limit for most coated optics."
     }
   },
   {
@@ -101,16 +101,16 @@
     "path": ["physics", "equipment", "vacuum-systems", "bakeout"],
     "level": "P",
     "modes": ["passive"],
-    "question": "After a successful bakeout, the system is 'vented' to atmosphere only when necessary (e.g., for a component change). Best practice for venting and re-pumping a UHV system:",
+    "question": "After a successful bakeout, the system is vented only when necessary. What is the best-practice procedure for venting and recovering UHV?",
     "passive": {
       "options": [
-        "Vent slowly with dry nitrogen or argon (not air — avoids water adsorption); work quickly with clean gloves; re-seal; rough pump then turbo; bake again at 150°C for 24 h (a 'mini-bake') to recover UHV without a full re-bake",
-        "Vent with laboratory air — any gas works since the pump will remove it",
+        "Vent slowly with dry nitrogen (not air — avoids water adsorption); work quickly with clean gloves; reseal; rough pump then turbo; bake again at 150°C for 24 h (\"mini-bake\")",
+        "Vent with laboratory air — any gas works since the pump will remove it again",
         "After venting, a full 72-hour bakeout is always required to recover base pressure",
-        "Dry nitrogen venting is no better than air venting since both contain similar outgassing gases"
+        "Dry-nitrogen venting is no better than air venting since both contain similar outgassing gases at the partial-pressure level"
       ],
       "correct": 0,
-      "explanation": "Why nitrogen vent: at room temperature, water adsorption on steel is nearly instantaneous (sticking coefficient $\\approx 1$ for sub-monolayer coverage). Air at 50% RH contains $\\sim 10^{22}$ H$_2$O molecules/m$^3$; in 10 minutes of exposure, $\\sim 10^{15}$ molecules/cm$^2$ adsorb — a complete monolayer on every surface. Dry N$_2$ (< 1 ppm H$_2$O) reduces adsorbed water by orders of magnitude. Rule of thumb: 1 minute air exposure requires $\\ sim 2$ hours extra bakeout; dry N$_2$ exposure requires 2–4× less. After a mini-bake, base pressures of $10^{-10}$ mbar are typically recovered within 24 h."
+      "explanation": "Why nitrogen: at room temperature, water adsorption on steel is nearly instantaneous (sticking coefficient $\\approx 1$ for sub-monolayer coverage). Air at 50% RH contains $\\sim 10^{22}$ H$_2$O molecules/m$^3$; in 10 minutes of exposure $\\sim 10^{15}$ molecules/cm$^2$ adsorb — a complete monolayer on every surface. Dry N$_2$ (< 1 ppm H$_2$O) reduces adsorbed water by orders of magnitude. Rule of thumb: 1 minute air exposure requires $\\sim 2$ hours extra bakeout; dry N$_2$ exposure requires 2–4× less. After a mini-bake, base pressures of $10^{-10}$ mbar typically recovered within 24 h."
     }
   }
 ]
