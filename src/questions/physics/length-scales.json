@@ -1,0 +1,169 @@
+[
+  {
+    "id": "ls101",
+    "path": ["physics", "named-quantities", "length-scales"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "The Bohr radius $a_0$ sets the atomic-physics length scale. Which value and expression are correct?",
+    "equation": "a_0 = \\frac{4\\pi\\varepsilon_0\\hbar^2}{m_e e^2} = \\frac{\\hbar}{\\alpha m_e c} \\approx 5.29\\times 10^{-11}\\,{\\rm m}",
+    "passive": {
+      "options": [
+        "$a_0 = \\hbar/(\\alpha m_e c) \\approx 5.29 \\times 10^{-11}$ m; most probable electron distance in hydrogen ground state",
+        "$a_0 \\approx 10^{-15}$ m — the size of a proton nucleus rather than the atomic radius itself",
+        "$a_0$ depends on the principal quantum number $n$ and grows linearly with $n$ (rather than quadratically)",
+        "Bohr radius is defined in terms of the proton mass $m_p$ rather than the electron mass $m_e$"
+      ],
+      "correct": 0,
+      "explanation": "$a_0$ comes from balancing Coulomb attraction against quantum kinetic energy: $a_0$ minimises $E(a) = \\hbar^2/(2m_e a^2) - e^2/(4\\pi\\varepsilon_0 a)$. For hydrogenic ion with nuclear charge $Z$: $a_Z = a_0/Z$. Atomic-radius scaling: shell radii $r_n \\sim n^2 a_0/Z$. Used as atomic-unit length; corresponding atomic-unit energy is the Hartree $E_h = 2 R_\\infty \\approx 27.21$ eV."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each length scale to its value and physical setting:",
+      "pairs": [
+        {"id": "p1", "term": "Planck length $\\ell_P = \\sqrt{\\hbar G/c^3}$", "definition": "$1.6\\times 10^{-35}$ m; quantum-gravity scale; below this, classical spacetime is thought to break down"},
+        {"id": "p2", "term": "Compton wavelength $\\lambda_C = h/(m_ec)$", "definition": "$2.4\\times 10^{-12}$ m for electron; below this, pair production becomes important"},
+        {"id": "p3", "term": "Bohr radius $a_0$", "definition": "$5.3\\times 10^{-11}$ m; size of hydrogen atom ground state; benchmark for atomic physics"},
+        {"id": "p4", "term": "Schwarzschild radius $r_s = 2GM/c^2$", "definition": "Black-hole horizon; $r_s = 3$ km for solar mass, $\\sim$ 9 mm for Earth"}
+      ],
+      "explanation": "Length-scale hierarchy spans $\\sim 60$ orders of magnitude in physics — from Planck length to observable universe ($\\sim 10^{26}$ m). Each scale defines a regime where particular interactions dominate: gravity at $\\ell_P$, EM at $a_0$, strong at fm, weak at $10^{-18}$ m, gravity again at AU and above."
+    }
+  },
+  {
+    "id": "ls102",
+    "path": ["physics", "named-quantities", "length-scales"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "The Compton wavelength $\\lambda_C = h/(mc)$ for a particle of mass $m$ marks where quantum field theory becomes essential. What is its physical significance?",
+    "passive": {
+      "options": [
+        "Below $\\lambda_C$: localising a particle gives momentum uncertainty $\\Delta p \\gtrsim mc$, enough to create particle-antiparticle pairs — single-particle QM breaks down, QFT required",
+        "$\\lambda_C$ is the de Broglie wavelength at the speed of light; always equals $\\hbar/(2mc)$",
+        "Compton wavelength applies only to photons (massless particles)",
+        "$\\lambda_C$ is the maximum wavelength of light that can scatter off the particle"
+      ],
+      "correct": 0,
+      "explanation": "Electron Compton wavelength $\\lambda_C^e = 2.43 \\times 10^{-12}$ m, reduced $\\bar\\lambda_C = \\hbar/(m_e c) = 3.86 \\times 10^{-13}$ m. Pion: $\\bar\\lambda_C^\\pi \\sim 1.4$ fm — the range of nuclear force. Compton scattering: photon shifts wavelength by $\\Delta\\lambda = \\lambda_C(1 - \\cos\\theta)$ when scattering off an electron — discovered by Compton (1923, Nobel 1927)."
+    }
+  },
+  {
+    "id": "ls103",
+    "path": ["physics", "named-quantities", "length-scales"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "The Planck length $\\ell_P = \\sqrt{\\hbar G/c^3} \\approx 1.6 \\times 10^{-35}$ m. What does it physically represent?",
+    "passive": {
+      "options": [
+        "Length where the Compton wavelength of a particle equals its Schwarzschild radius — quantum-gravity scale below which classical spacetime concept likely breaks down",
+        "Planck length is the smallest measurable length in any laboratory, $\\sim 10^{-19}$ m, set by particle accelerators",
+        "$\\ell_P$ equals the size of a proton",
+        "Planck length is the wavelength of the cosmic microwave background"
+      ],
+      "correct": 0,
+      "explanation": "Setting $\\lambda_C = r_s$: $\\hbar/mc = 2GM/c^2$ gives $m = m_P = \\sqrt{\\hbar c/G}$, $\\ell = \\hbar/m_P c = \\sqrt{\\hbar G/c^3}$. Below $\\ell_P$ a particle's mass-energy curls up spacetime stronger than its quantum spread can resolve. String theory and loop quantum gravity propose different microscopic structures at this scale. Direct experimental probes are unreachable: LHC reaches $10^{-19}$ m, still $10^{16}$ above $\\ell_P$."
+    }
+  },
+  {
+    "id": "ls104",
+    "path": ["physics", "named-quantities", "length-scales"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "In plasma physics, the Debye length $\\lambda_D$ characterises charge screening. What is the relation and consequence?",
+    "equation": "\\lambda_D = \\sqrt{\\frac{\\varepsilon_0 k_B T}{n e^2}}",
+    "passive": {
+      "options": [
+        "$\\lambda_D = \\sqrt{\\varepsilon_0 k_BT/(ne^2)}$; charge potential falls as $e^{-r/\\lambda_D}/r$; sets collective vs non-ideal plasma regime",
+        "Debye length grows with density $n$ as $\\lambda_D \\propto \\sqrt n$ — higher density gives longer screening length",
+        "$\\lambda_D$ depends only on plasma temperature and is independent of charge density $n$",
+        "Debye length is identical to the plasma skin depth $c/\\omega_p$ — same quantity in different units"
+      ],
+      "correct": 0,
+      "explanation": "Solar interior: $\\lambda_D \\sim 10^{-9}$ m. Fusion plasma: $\\lambda_D \\sim 10^{-5}$ m. Ionosphere: $\\lambda_D \\sim 10$ cm. Intergalactic medium: $\\lambda_D \\sim 1$ km. The 'plasma parameter' $\\Lambda = (4\\pi/3)n\\lambda_D^3$ counts charges per Debye sphere; $\\Lambda \\gg 1$ is the ideal plasma regime where binary collisions are subdominant compared to collective fields. Distinct from plasma skin depth $c/\\omega_p$ which governs EM penetration."
+    }
+  },
+  {
+    "id": "ls105",
+    "path": ["physics", "named-quantities", "length-scales"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Schwarzschild radius $r_s = 2GM/c^2$ defines the event horizon of a non-rotating black hole. What is $r_s$ for typical astrophysical masses?",
+    "passive": {
+      "options": [
+        "$r_s \\approx 3$ km for solar mass; 9 mm for Earth ($M_\\oplus$); $\\sim 10^{10}$ km for supermassive black holes ($10^9 M_\\odot$)",
+        "$r_s = 1$ light-year for solar mass — black holes are macroscopic objects",
+        "Schwarzschild radius equals the Compton wavelength of the central mass",
+        "$r_s$ is the size of the singularity at the centre of a black hole"
+      ],
+      "correct": 0,
+      "explanation": "$r_s = 2GM/c^2 \\approx 3\\,(M/M_\\odot)$ km. Solar Schwarzschild radius $3$ km vs solar radius $7 \\times 10^5$ km — Sun is far from a black hole. Sgr A* (Milky Way centre, $4 \\times 10^6 M_\\odot$): $r_s \\sim 12$ million km (about 20 solar radii). M87 black hole ($6.5 \\times 10^9 M_\\odot$, EHT image 2019): $r_s \\sim 2 \\times 10^{10}$ km. The horizon is a coordinate-only feature in Schwarzschild metric; nothing locally identifies it as 'the edge'."
+    }
+  },
+  {
+    "id": "ls106",
+    "path": ["physics", "named-quantities", "length-scales"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Length scales in atomic/molecular physics span Bohr radius to chemical-bond and van der Waals ranges. Which ordering and approximate value is correct?",
+    "passive": {
+      "options": [
+        "Nuclear ($\\sim 1$ fm) $\\ll$ Bohr radius ($\\sim 0.05$ nm) $\\sim$ chemical bond ($\\sim 0.1$ nm) $\\sim$ vdW radius ($\\sim 0.3$ nm) $\\ll$ DNA helix pitch ($\\sim 3$ nm)",
+        "Nuclear and atomic scales are similar in magnitude (both $\\sim$ pm)",
+        "vdW radius is much smaller than the Bohr radius — chemical interactions are short-range",
+        "Chemical bonds are at the micrometer scale, like cellular structures"
+      ],
+      "correct": 0,
+      "explanation": "Nucleus: $\\sim 10^{-15}$ m. Bohr radius: $5.3 \\times 10^{-11}$ m. Covalent bonds: typically 0.1–0.2 nm (C–C 0.154 nm, C=C 0.134 nm, O–H 0.097 nm). van der Waals contact radii: 0.15–0.2 nm (H), 0.17 nm (C), 0.15 nm (O), 0.18 nm (N). H-bond: $\\sim 0.27$ nm O–O distance. DNA double helix: 3.4 nm per turn. Protein folds: 1–10 nm. Cell organelles: 100 nm–10 $\\mu$m."
+    }
+  },
+  {
+    "id": "ls107",
+    "path": ["physics", "named-quantities", "length-scales"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The thermal de Broglie wavelength $\\lambda_{\\rm dB}$ marks where quantum statistics matter. At what temperature/density combination is it relevant?",
+    "equation": "\\lambda_{\\rm dB} = \\frac{h}{\\sqrt{2\\pi m k_B T}}",
+    "passive": {
+      "options": [
+        "$n\\lambda_{\\rm dB}^3 \\sim 1$ marks classical/quantum crossover (BEC: 2.612); Rb at $T = 1$ μK: $\\lambda_{\\rm dB} \\sim 200$ nm $\\gg$ spacing",
+        "$\\lambda_{\\rm dB}$ is independent of temperature and depends only on particle mass — same at all T for given species",
+        "Quantum effects begin only when $\\lambda_{\\rm dB}$ exceeds the speed of light divided by Planck's constant",
+        "$\\lambda_{\\rm dB} \\propto T$ — grows linearly with temperature, so hotter atoms are more quantum-mechanical"
+      ],
+      "correct": 0,
+      "explanation": "Air at room T: $\\lambda_{\\rm dB} \\sim 0.02$ nm $\\ll$ molecular spacing $\\sim 3$ nm, $n\\lambda_{\\rm dB}^3 \\sim 10^{-7}$ — classical regime. Liquid He at $T \\sim 1$ K: $\\lambda_{\\rm dB} \\sim 1$ nm comparable to spacing — superfluid transition. Electrons in metal at $T_F \\sim 10^4$ K (effective): $\\lambda_{\\rm dB} \\sim$ Fermi wavelength $\\sim 0.2$ nm. Ultracold atoms ($T \\sim$ nK): $\\lambda_{\\rm dB}$ reaches $\\mu$m scale → BEC."
+    }
+  },
+  {
+    "id": "ls108",
+    "path": ["physics", "named-quantities", "length-scales"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Astronomical length scales use distance units adapted to the scale. Which set of values is correct?",
+    "passive": {
+      "options": [
+        "AU $\\approx 1.5\\times 10^{11}$ m; ly $\\approx 9.46\\times 10^{15}$ m; pc $\\approx 3.09\\times 10^{16}$ m (1″ parallax); Mpc $\\sim 3.26$ Mly",
+        "1 light-year equals 1 AU; they are identical definitions and only the name differs between contexts",
+        "1 parsec equals exactly 1 light-year by definition; they are interchangeable units in cosmology",
+        "Astronomical distances use only SI metres in scientific papers; no special units are used in practice"
+      ],
+      "correct": 0,
+      "explanation": "1 AU defined as $149\\,597\\,870\\,700$ m exactly (since 2012). 1 parsec = distance at which 1 AU subtends 1 arcsec = 206265 AU $\\approx 3.26$ ly. Nearest star (Proxima Centauri): 1.3 pc = 4.2 ly. Galactic centre: 8 kpc. Andromeda: 0.78 Mpc. Hubble distance: $c/H_0 \\approx 4.3$ Gpc — sets the observable universe horizon at $\\sim 14$ Gpc."
+    }
+  },
+  {
+    "id": "ls109",
+    "path": ["physics", "named-quantities", "length-scales"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The van der Waals length $R_{\\rm vdW} = (2\\mu C_6/\\hbar^2)^{1/4}$ sets the long-range interaction scale in ultracold collisions. For Rb-Rb collisions, what is its typical value?",
+    "passive": {
+      "options": [
+        "$R_{\\rm vdW} \\approx 82 a_0 \\approx 4.2$ nm for $^{87}$Rb ($C_6 \\approx 4691$ a.u.); sets the natural scale of scattering length",
+        "$R_{\\rm vdW} \\sim a_0 \\sim 0.05$ nm — same order as the Bohr radius, since vdW is just contact-interaction range",
+        "$R_{\\rm vdW} \\sim 1$ $\\mu$m — far larger than any atomic scale, comparable to optical wavelengths",
+        "vdW length depends only on collision temperature; species mass and polarisability play no role"
+      ],
+      "correct": 0,
+      "explanation": "For $^{87}$Rb: $C_6 = 4691\\,E_h a_0^6$, giving $R_{\\rm vdW} \\approx 82 a_0$. Scattering length $a$ in absence of resonances is typically $\\sim R_{\\rm vdW}$ in magnitude but with random sign. Universal physics near Feshbach resonance: properties depend only on $a/R_{\\rm vdW}$. The Efimov 3-body parameter $\\kappa_*$ is also universally tied to $R_{\\rm vdW}$ (Berninger et al. 2011 — Innsbruck Cs experiments)."
+    }
+  }
+]

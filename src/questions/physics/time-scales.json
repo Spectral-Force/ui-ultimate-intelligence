@@ -1,0 +1,166 @@
+[
+  {
+    "id": "ts001",
+    "path": ["physics", "named-quantities", "time-scales"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "Physics time scales span $\\sim 60$ orders of magnitude. Which ordering and approximate value is correct?",
+    "passive": {
+      "options": [
+        "Planck ($10^{-44}$ s) $<$ strong ($10^{-23}$) $<$ atomic ($10^{-17}$) $<$ optical ns $<$ everyday s $<$ cosmological ($10^{17}$ s)",
+        "All fundamental physical processes happen on the same time scale, around 1 second — laboratory and cosmic alike",
+        "Atomic time scales are longer than cosmological time scales because nuclei outlast astrophysical structures",
+        "Time scales of physical processes are independent of the relevant interaction strength and energy scale"
+      ],
+      "correct": 0,
+      "explanation": "Planck time $5.4\\times 10^{-44}$ s. Strong interaction $10^{-23}$ s. Atomic Bohr period $1.5\\times 10^{-16}$ s. Molecular vibration $10^{-13}$ s. Rotation $10^{-12}$ s. ns-scale (optical transitions). $\\mu$s–s (qubit coherence, MOT). Day $\\sim 10^5$ s. Year $\\sim 3 \\times 10^7$ s. Age of universe $\\sim 4\\times 10^{17}$ s ($13.8 \\times 10^9$ yr)."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each time scale to its setting:",
+      "pairs": [
+        {"id": "p1", "term": "Planck time $t_P \\approx 10^{-44}$ s", "definition": "Quantum-gravity scale; $\\ell_P/c$; shortest meaningful time in current theory"},
+        {"id": "p2", "term": "Atomic unit of time $\\hbar/E_h \\approx 2.4\\times 10^{-17}$ s", "definition": "Bohr period; classical electron orbit time in hydrogen ground state $\\sim 10^{-16}$ s"},
+        {"id": "p3", "term": "Femtosecond ($10^{-15}$ s)", "definition": "Molecular vibration, optical period for visible light, chirped-pulse amplification regime"},
+        {"id": "p4", "term": "Age of universe ($\\sim 4.3\\times 10^{17}$ s)", "definition": "$13.8$ Gyr; from CMB anisotropy fits; sets cosmological horizon"}
+      ],
+      "explanation": "Time scales correlate with energy via $\\hbar/E$. Optical photon ($\\hbar\\omega \\sim 2$ eV): period $\\sim 2$ fs. X-ray ($\\sim 10$ keV): $\\sim$ as. Microwave clock transition ($\\sim 10$ GHz): period $\\sim 0.1$ ns. Spectroscopic linewidth $\\Gamma$ × lifetime $\\tau \\sim 1$ — natural broadening."
+    }
+  },
+  {
+    "id": "ts002",
+    "path": ["physics", "named-quantities", "time-scales"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "The Bohr period — time for an electron to complete one orbit in the hydrogen ground state — is the natural atomic unit of time. What is its value?",
+    "passive": {
+      "options": [
+        "$T_B = 2\\pi a_0/(\\alpha c) \\approx 1.52 \\times 10^{-16}$ s — sub-femtosecond, accessible with attosecond pulses",
+        "$T_B \\approx 1$ ns — same scale as atomic spontaneous emission",
+        "$T_B \\approx 10^{-12}$ s (picosecond) — molecular vibration scale",
+        "Bohr period is undefined because the orbit is non-classical"
+      ],
+      "correct": 0,
+      "explanation": "Bohr period $T_B = 2\\pi a_0/v_{\\rm Bohr}$ where $v_{\\rm Bohr} = \\alpha c \\approx c/137$. Numerically $T_B \\approx 152$ as = $1.52 \\times 10^{-16}$ s. This is the natural attosecond scale of atomic dynamics — accessible with the high-harmonic-generation attosecond pulses developed in the 2000s (Nobel 2023, L'Huillier-Krausz-Agostini). For higher principal $n$: period $T_n = T_B n^3$ — for Rydberg $n = 100$: $T \\sim 150$ ps."
+    }
+  },
+  {
+    "id": "ts003",
+    "path": ["physics", "named-quantities", "time-scales"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "In NMR and qubit coherence, $T_1$ and $T_2$ relaxation times have distinct meanings. What is the relationship?",
+    "passive": {
+      "options": [
+        "$T_1$ = longitudinal (energy) relaxation; $T_2$ = transverse (phase) decoherence; always $T_2 \\leq 2T_1$ (Bloembergen)",
+        "$T_1 = T_2$ for any quantum system in thermal equilibrium",
+        "$T_2 \\geq 2T_1$ by the uncertainty principle",
+        "$T_1$ and $T_2$ refer to the same process and only differ by sign convention"
+      ],
+      "correct": 0,
+      "explanation": "$1/T_2 = 1/(2T_1) + 1/T_\\phi$ where $T_\\phi$ is pure dephasing. $T_1$ requires energy exchange with the bath; $T_\\phi$ comes from phase noise (field fluctuations, electric noise). For a transmon qubit: $T_1 \\sim T_2 \\sim 100\\,\\mu$s. For trapped ions: $T_1 \\sim$ minutes (forbidden transition, no decay channel), $T_2 \\sim$ seconds (magnetic field noise). $T_2^* < T_2$ from inhomogeneous broadening, refocused by Hahn echo."
+    }
+  },
+  {
+    "id": "ts004",
+    "path": ["physics", "named-quantities", "time-scales"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Rabi period and atomic decay lifetime are the two key time scales in coherent control. For Rb on the D2 line ($\\Gamma/2\\pi = 6$ MHz), what are typical Rabi periods?",
+    "passive": {
+      "options": [
+        "At $I = I_{\\rm sat}$: $\\Omega/2\\pi \\approx 4$ MHz, Rabi period $\\sim 250$ ns, lifetime $\\tau = 26$ ns — overlap of regimes",
+        "Rabi periods are always much longer than atomic excited-state lifetimes by orders of magnitude",
+        "Rabi periods are temperature-dependent and follow a $T^{3/2}$ scaling with atomic gas temperature",
+        "Rabi period and excited-state lifetime are unrelated quantities, with no physical connection"
+      ],
+      "correct": 0,
+      "explanation": "Rabi frequency $\\Omega = \\Gamma\\sqrt{I/(2I_{\\rm sat})}$. At $I = I_{\\rm sat}$: $\\Omega = \\Gamma/\\sqrt 2$, so period $\\sim 1/\\Gamma$. To do coherent control (multiple $\\pi$-pulses before decay): need $\\Omega \\gg \\Gamma$, achieved with $I \\gg I_{\\rm sat}$. $\\pi$-pulse on Raman transitions in ultracold atoms: $\\sim$ ns to ms depending on intensity. Rabi flopping at MHz frequency observed by direct detection of fluorescence vs pulse area."
+    }
+  },
+  {
+    "id": "ts005",
+    "path": ["physics", "named-quantities", "time-scales"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Particle lifetimes in the Standard Model span 25 orders of magnitude. Which examples and orders are correct?",
+    "passive": {
+      "options": [
+        "$Z$ boson $\\sim 10^{-25}$ s; muon $2.2\\,\\mu$s; charged pion 26 ns; neutron 880 s; proton $> 10^{34}$ years (effectively stable)",
+        "All elementary particles have lifetimes around 1 ns",
+        "Heavier particles always live longer than lighter ones",
+        "Particle lifetimes are independent of mass and only depend on charge"
+      ],
+      "correct": 0,
+      "explanation": "Decay rates scale roughly as (mass)$^5$ (weak phase space) or (mass)$^3$ (electromagnetic). Top quark ($\\sim 10^{-25}$ s) decays before hadronising. Muon decays via weak interaction. Free neutron decays via $\\beta$ (in nucleus stable due to binding). Proton decay (predicted by GUTs): not yet observed; lifetime bound $> 10^{34}$ years (Super-Kamiokande). Some unstable nuclei: $^8$Be $7 \\times 10^{-17}$ s (decays to 2$\\alpha$), $^{180m}$Ta isomer $> 10^{16}$ years."
+    }
+  },
+  {
+    "id": "ts006",
+    "path": ["physics", "named-quantities", "time-scales"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The thermal de Broglie wavelength has a corresponding 'thermal time' $\\tau_{\\rm th} = \\hbar/(k_BT)$. What is it called and what role does it play?",
+    "passive": {
+      "options": [
+        "Thermal/KMS time $\\tau_{\\rm th} = \\hbar/(k_BT)$ = 26 fs at 300 K, 76 μs at 100 nK; appears in finite-T QFT",
+        "$\\tau_{\\rm th}$ is meaningless because thermal equilibrium quantities only describe statics, not any dynamics",
+        "$\\tau_{\\rm th}$ equals the temperature $T$ in natural units, conflating two physically distinct quantities",
+        "Thermal time grows linearly with temperature, so hotter systems have longer thermal time scales"
+      ],
+      "correct": 0,
+      "explanation": "$\\tau_{\\rm th} = \\hbar/(k_B T)$: appears in thermal Green's function $G(\\tau) = \\langle T_\\tau A(\\tau) B(0)\\rangle$ with imaginary-time period $\\beta = 1/k_BT$. Tomita-Takesaki / KMS theory: thermal equilibrium has a built-in 'modular time' equal to $\\beta$. In quantum gravity, has been proposed (Rovelli, Connes) as the origin of macroscopic time itself. Decoherence rate of a macroscopic superposition in thermal bath: $\\sim 1/\\tau_{\\rm th}$."
+    }
+  },
+  {
+    "id": "ts007",
+    "path": ["physics", "named-quantities", "time-scales"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Astrophysical and cosmological time scales characterise stellar evolution and structure formation. Which are correct?",
+    "passive": {
+      "options": [
+        "Free-fall $\\sim 1/\\sqrt{G\\rho}$ (min for Sun); Kelvin-Helmholtz $\\sim GM^2/RL$ (10 Myr for Sun); nuclear $10^{10}$ yr; Hubble 14 Gyr",
+        "All stellar processes happen on million-year scales regardless of stellar mass — universal nuclear-burning rate",
+        "Free-fall time is identical to the orbital period for any astrophysical body in stable orbit around a central mass",
+        "Kelvin-Helmholtz time exceeds the Hubble time for typical main-sequence stars by many orders of magnitude"
+      ],
+      "correct": 0,
+      "explanation": "Free-fall: $t_{\\rm ff} = \\sqrt{3\\pi/(32G\\rho)}$, $\\sim 30$ minutes for solar density. Kelvin-Helmholtz time: how long gravitational energy lasts if luminosity stays constant; for Sun: $\\sim 30$ Myr — much shorter than its age, so nuclear burning must sustain it. Main-sequence lifetime: $\\sim 10^{10}(M/M_\\odot)^{-2.5}$ years. Hubble time $1/H_0 \\approx 14$ Gyr — comparable to oldest stars (giving age-of-universe upper bound)."
+    }
+  },
+  {
+    "id": "ts008",
+    "path": ["physics", "named-quantities", "time-scales"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Optical-clock fractional stability is now $\\sim 10^{-18}$, surpassing the SI second (Cs fountain at $\\sim 10^{-16}$). What does this enable physically?",
+    "passive": {
+      "options": [
+        "GR redshift over 1 cm; $\\dot\\alpha/\\alpha$ bounds $< 10^{-17}$/yr; cm-scale geodesy; ultralight dark-matter searches via constants",
+        "Definition of the speed of light at improved accuracy — needed for redefining the SI metre",
+        "Direct measurement of the Hubble constant $H_0$ via optical-frequency comparison between Earth-bound clocks",
+        "Detection of gravitational waves at frequencies above 1 THz using optical-clock frequency comb interferometry"
+      ],
+      "correct": 0,
+      "explanation": "Earth's gravitational potential gradient causes a clock redshift of $\\sim 10^{-18}$ per cm height — measurable. JILA Sr clock (2022) saw clock differences at 1 cm separation in vertical lattice. Optical clocks at MIT/NIST/PTB/RIKEN now exchange frequencies via fibre at $10^{-18}$ over hundreds of km. Such precision will redefine the SI second (move to optical reference $\\sim$ 2030). Dark-matter searches: scalar dark matter coupling to $\\alpha$ would modulate clock frequencies — null result so far constrains coupling."
+    }
+  },
+  {
+    "id": "ts009",
+    "path": ["physics", "named-quantities", "time-scales"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Attosecond physics ($1$ as $= 10^{-18}$ s) probes electron dynamics in atoms and molecules. What enables generation of such short pulses?",
+    "passive": {
+      "options": [
+        "High-harmonic generation in noble gases (intense fs drive): ionised electron returns, emits XUV; broad spectrum $\\to$ as pulse (Nobel 2023)",
+        "Direct compression of mode-locked femtosecond lasers below 100 attoseconds is straightforward with chirped mirrors",
+        "Attosecond pulses are produced by reducing the laser repetition rate while maintaining the same pulse duration",
+        "Attosecond pulses are radio-frequency RF pulses with very narrow bandwidth used for resonance experiments"
+      ],
+      "correct": 0,
+      "explanation": "HHG: intense fs IR pulse ionises atom; freed electron oscillates in the laser field, recombines with the ion, emits high-energy photon (up to keV). Many cycles → comb of harmonics up to cutoff $\\sim I_p + 3.17 U_p$. Spectral bandwidth $\\sim$ 100 eV gives time-bandwidth limited pulses $\\sim 100$ as. Used to study photoionisation delays, charge migration in molecules, attosecond chronoscopy of bound electrons. Anne L'Huillier, Pierre Agostini, Ferenc Krausz — Nobel 2023."
+    }
+  }
+]

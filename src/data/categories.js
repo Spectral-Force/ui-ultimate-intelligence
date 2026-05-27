@@ -97,6 +97,17 @@ export const CATEGORIES = [
       { id: 'optics', label: 'Optics' },
       { id: 'key-quantities', label: 'Key Quantities & Constants' },
       {
+        id: 'named-quantities',
+        label: 'Named Quantities & Constants',
+        children: [
+          { id: 'dimensionless-numbers', label: 'Dimensionless Numbers' },
+          { id: 'fundamental-constants', label: 'Fundamental Constants' },
+          { id: 'length-scales',         label: 'Length Scales' },
+          { id: 'time-scales',           label: 'Time Scales' },
+          { id: 'atomic-notation',       label: 'Atomic Notation & Term Symbols' },
+        ],
+      },
+      {
         id: 'theorems',
         label: 'Theorems & Principles',
         children: [

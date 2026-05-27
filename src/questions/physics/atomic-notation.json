@@ -1,0 +1,185 @@
+[
+  {
+    "id": "atn001",
+    "path": ["physics", "named-quantities", "atomic-notation"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "Atomic spectroscopic term symbols use the format $^{2S+1}L_J$. What is the meaning of each label?",
+    "equation": "{}^{2S+1}L_J",
+    "passive": {
+      "options": [
+        "$S$ = total spin; $2S+1$ = spin multiplicity; $L$ = total orbital (S, P, D, F, G, H = 0..5); $J = L + S$",
+        "$2S+1$ is the principal quantum number $n$; $L$ is the orbital label and $J$ corrects for relativistic effects",
+        "$L$ is the spin quantum number; $S$ is the orbital quantum number; $J = L \\times S$ (product, not sum)",
+        "$^{2S+1}L_J$ encodes the energy in eV directly; the letter is a unit prefix and $J$ a small correction"
+      ],
+      "correct": 0,
+      "explanation": "Letter codes: $L = 0 \\to $ S (sharp), $L = 1 \\to $ P (principal), $L = 2 \\to$ D (diffuse), $L = 3 \\to$ F (fundamental), $L = 4 \\to$ G, $L = 5 \\to$ H ... alphabetically thereafter (skipping J). For hydrogen ground state: $^2S_{1/2}$ ($n = 1$, $\\ell = 0$, $s = 1/2$, $j = 1/2$). For Sr clock states: $^1S_0$ (ground) and $^3P_0$ (clock excited state). $J = |L-S|, \\ldots, L+S$ — spin-orbit splitting splits a term into $2 \\min(L, S) + 1$ levels."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each spectroscopic notation to its meaning:",
+      "pairs": [
+        {"id": "p1", "term": "${}^2S_{1/2}$", "definition": "Doublet S ($L = 0, S = 1/2$); $J = 1/2$; hydrogen and alkali ground state"},
+        {"id": "p2", "term": "${}^2P_{3/2}$", "definition": "Doublet P ($L = 1, S = 1/2$); $J = 3/2$; upper level of alkali D2 transition (Na D2, Rb D2)"},
+        {"id": "p3", "term": "${}^3P_0$", "definition": "Triplet P ($L = 1, S = 1$); $J = 0$; metastable upper clock state in Sr, Yb"},
+        {"id": "p4", "term": "${}^1S_0$", "definition": "Singlet S ($L = 0, S = 0$); $J = 0$; ground state of two-valence-electron atoms (alkaline earth, He, Sr, Yb)"}
+      ],
+      "explanation": "Term symbols compress a lot of information. Alkalis ($s^1$ valence) are all doublets. Alkaline earths ($s^2$) have $^1S_0$ ground + low-lying $^1P_1, ^3P_J$ states. Transition metals have many open-shell terms with detailed Russell-Saunders ordering."
+    }
+  },
+  {
+    "id": "atn002",
+    "path": ["physics", "named-quantities", "atomic-notation"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "Hund's rules predict the ground-state term symbol for a partially filled shell. What are they?",
+    "passive": {
+      "options": [
+        "(1) Maximise $S$ (Pauli-permitted); (2) then maximise $L$; (3) then $J = |L - S|$ if shell less-than-half-full, $J = L + S$ if more-than-half-full",
+        "Always minimise $S$ and $L$ — lower angular momentum is more stable",
+        "$J$ depends on the principal quantum number $n$, not on shell occupancy",
+        "Hund's rules apply only to noble gases (closed shells); open shells follow different rules"
+      ],
+      "correct": 0,
+      "explanation": "Rules from electron correlation: (1) parallel spins reduce Coulomb repulsion (exchange interaction favours triplets); (2) high $L$ means electrons orbit in the same direction, reducing repulsion; (3) spin-orbit coupling $\\hbar^2 \\xi \\mathbf L \\cdot \\mathbf S$: $\\xi > 0$ for less-than-half full shell, $\\xi < 0$ for more (sign comes from hole-vs-particle interpretation). Example: carbon $1s^2 2s^2 2p^2$: ground state $^3P_0$ (max $S = 1$, $L = 1$, $J = 0$ since less than half full). Fluorine $2p^5$: $^2P_{3/2}$ ($J = L + S$ since more than half full)."
+    }
+  },
+  {
+    "id": "atn003",
+    "path": ["physics", "named-quantities", "atomic-notation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Russell-Saunders (LS) coupling and jj coupling are two limits for combining angular momenta. When does each apply?",
+    "passive": {
+      "options": [
+        "LS: electrostatic > spin-orbit (light atoms); combine $\\mathbf l_i \\to L$, $\\mathbf s_i \\to S$. jj: spin-orbit > electrostatic (heavy); combine $\\mathbf j_i = \\mathbf l_i + \\mathbf s_i$",
+        "LS coupling holds for atoms of all $Z$ values regardless of element; jj coupling is purely a theoretical construct",
+        "jj coupling applies to light atoms ($Z < 30$); LS coupling applies to heavy atoms in the lanthanide/actinide series",
+        "LS and jj coupling give identical predictions and energy ordering; the names refer to bookkeeping notation only"
+      ],
+      "correct": 0,
+      "explanation": "LS works for light atoms ($Z \\lesssim 30$) where spin-orbit $\\sim Z^4 \\alpha^2$ is small vs electrostatic. Term symbols $^{2S+1}L_J$ meaningful. jj coupling for heavy ($Z \\gtrsim 70$, lanthanides/actinides). Intermediate coupling between. Pb $6p^2$ is an example where neither limit is clean — jj gives ($1/2, 1/2$), ($1/2, 3/2$), ($3/2, 3/2$) configurations mixed with LS terms $^3P_0, ^3P_1, ^3P_2, ^1D_2, ^1S_0$."
+    }
+  },
+  {
+    "id": "atn004",
+    "path": ["physics", "named-quantities", "atomic-notation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Hyperfine structure couples nuclear spin $I$ to total electronic angular momentum $J$ via $\\mathbf F = \\mathbf I + \\mathbf J$. The notation for hyperfine states includes which?",
+    "passive": {
+      "options": [
+        "$|F, m_F\\rangle$ at low field; $F = |I - J|, \\ldots, I + J$; Rb $5S_{1/2}$ ($I=3/2, J=1/2$): $F = 1, 2$",
+        "Hyperfine structure couples only $L$ and $S$, leaving nuclear spin $I$ outside the angular-momentum hierarchy",
+        "$F = I \\cdot J$ (scalar product), not the standard angular-momentum coupling — different formula",
+        "Hyperfine notation drops the magnetic quantum number $m_F$ entirely and uses only the total $F$ label"
+      ],
+      "correct": 0,
+      "explanation": "Rb $5S_{1/2}$: $J = 1/2$, $I = 3/2$ → $F = 1, 2$. Hyperfine splitting $\\sim$ GHz (6.835 GHz for $^{87}$Rb 5S). At low magnetic field, $|F, m_F\\rangle$ is the good basis; at high field, $|m_J, m_I\\rangle$ (Paschen-Back regime). Hyperfine clock transitions: $|1, 0\\rangle \\to |2, 0\\rangle$ in Rb, $|F=3, m=0\\rangle \\to |F=4, m=0\\rangle$ in Cs (defines the SI second at 9.192631770 GHz)."
+    }
+  },
+  {
+    "id": "atn005",
+    "path": ["physics", "named-quantities", "atomic-notation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Electron configurations of atoms follow the Aufbau (filling) principle with order set by approximate Madelung rule. What is the rule?",
+    "passive": {
+      "options": [
+        "Fill by increasing $n + l$, then by increasing $n$ when $(n+l)$ ties: 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, 5s, 4d, ...",
+        "Strict $n$ ordering ignoring $l$: 1s, 2s, 2p, 3s, 3p, 3d, 4s, 4p, 4d, 4f, ... — gives wrong filling for transition metals",
+        "Fill all s shells first, then all p, then d: 1s, 2s, 3s, 4s, ..., 2p, 3p, ..., 3d, 4d, ... — alphabetic by orbital letter",
+        "The Aufbau filling order is purely empirical, requiring measurement element-by-element; no rule predicts the sequence"
+      ],
+      "correct": 0,
+      "explanation": "Madelung rule explains transition-metal location and periodic-table structure. Deviations: Cr ([Ar] $3d^5 4s^1$ instead of $4s^2 3d^4$) and Cu ([Ar] $3d^{10} 4s^1$) — half-filled/filled shells have extra stability. Relativistic effects increasingly important for heavy elements (Au, Hg, U) — change orbital energies. The 'lanthanide contraction' shrinks 5d-block elements via filled $4f^{14}$ shell that incompletely shields nuclear charge."
+    }
+  },
+  {
+    "id": "atn006",
+    "path": ["physics", "named-quantities", "atomic-notation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Spectroscopic notation for transitions uses $\\to$ between term symbols. The $5\\,^2S_{1/2} \\to 5\\,^2P_{3/2}$ transition in $^{87}$Rb is at 780 nm. What is this line conventionally called?",
+    "passive": {
+      "options": [
+        "D2 line (connects to $P_{3/2}$); D1 is $5\\,^2S_{1/2} \\to 5\\,^2P_{1/2}$ at 795 nm; both are principal-series alkali transitions",
+        "Lyman alpha (always reserved for hydrogen $n=1 \\to 2$ regardless of element under discussion)",
+        "Balmer line — any visible transition in any element with $\\lambda > 400$ nm, including alkalis",
+        "Mossbauer transition — gamma resonance fluorescence in solid-state nuclei, not optical atomic"
+      ],
+      "correct": 0,
+      "explanation": "Naming convention from Fraunhofer's solar absorption lines. Sodium D line is the famous yellow doublet (D1 at 589.6 nm, D2 at 589.0 nm). For Rb: D1 = 794.98 nm, D2 = 780.24 nm. Cs D1 = 894.59 nm, D2 = 852.35 nm. K D1 = 770.11 nm, D2 = 766.70 nm. These are the workhorse transitions of alkali laser cooling. Hydrogen Lyman-alpha is $1\\,^2S_{1/2} \\to 2\\,^2P_{3/2}$ at 121.6 nm — UV. Balmer-alpha (H-alpha) is $n = 3 \\to 2$ at 656.3 nm — red, ubiquitous in astronomy."
+    }
+  },
+  {
+    "id": "atn007",
+    "path": ["physics", "named-quantities", "atomic-notation"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Selection rules for electric-dipole transitions are encoded by Wigner-Eckart. In LS-coupling notation:",
+    "passive": {
+      "options": [
+        "$\\Delta L = 0, \\pm 1$ ($0\\nrightarrow 0$); $\\Delta S = 0$; $\\Delta J = 0, \\pm 1$ ($0\\nrightarrow 0$); parity change required ($\\Delta l = \\pm 1$)",
+        "Only $\\Delta L = \\pm 1$ is allowed; $\\Delta S$ and $\\Delta J$ are completely unconstrained by symmetry",
+        "E1 selection rules forbid $\\Delta m_J \\neq 0$ entirely — only $\\pi$-polarised transitions on the $z$-axis are allowed",
+        "All electric-dipole transitions are allowed in principle; selection rules apply only to higher-multipole transitions"
+      ],
+      "correct": 0,
+      "explanation": "Sr $^1S_0 \\to ^3P_0$ violates $\\Delta S = 0$ (singlet to triplet) AND $J = 0 \\to 0$ — doubly forbidden, hence ultra-narrow (mHz). Allowed only through spin-orbit mixing of $^3P_0$ with singlet states. M1 transitions: $\\Delta L = 0$, parity preserved, weaker by $(v/c)^2$. E2 (quadrupole): $\\Delta L = 0, \\pm 2$, parity preserved. Hyperfine selection: $\\Delta F = 0, \\pm 1$ but not $F = 0 \\to 0$."
+    }
+  },
+  {
+    "id": "atn008",
+    "path": ["physics", "named-quantities", "atomic-notation"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The Landé g-factor $g_J$ for an LS-coupled atom in a weak magnetic field is:",
+    "equation": "g_J = 1 + \\frac{J(J+1) + S(S+1) - L(L+1)}{2 J(J+1)}",
+    "passive": {
+      "options": [
+        "$g_J = 1 + [J(J+1)+S(S+1)-L(L+1)]/[2J(J+1)]$; recovers $g_e \\approx 2$ (pure spin) and $g_L = 1$ (pure orbital)",
+        "$g_J = J(J+1)/[L(L+1) + S(S+1)]$ — a quite different functional form involving only Casimir eigenvalues",
+        "$g_J = 1$ identically for all atomic states, regardless of orbital or spin angular momentum",
+        "Landé g-factor depends only on the principal quantum number $n$ and is independent of $L, S, J$ details"
+      ],
+      "correct": 0,
+      "explanation": "Derived via projection theorem (Wigner-Eckart). For Rb $5S_{1/2}$: $L = 0$, $S = 1/2$, $J = 1/2$, $g_J = 2$ (pure spin). For $5P_{1/2}$: $L = 1$, $S = 1/2$, $J = 1/2$, $g_J = 2/3$. For $5P_{3/2}$: $L = 1$, $S = 1/2$, $J = 3/2$, $g_J = 4/3$. Including hyperfine: $g_F = g_J [F(F+1) + J(J+1) - I(I+1)]/[2F(F+1)]$ — for Rb $|F=2\\rangle$: $g_F = +1/2$, $|F=1\\rangle$: $g_F = -1/2$. Magnetic-trap states (weak-field seekers): $g_Fm_F > 0$."
+    }
+  },
+  {
+    "id": "atn009",
+    "path": ["physics", "named-quantities", "atomic-notation"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "Closed-shell electronic configurations have extra stability. The 'noble-gas configurations' end in:",
+    "passive": {
+      "options": [
+        "$1s^2$ (He), $[\\text{He}]2s^22p^6$ (Ne), $[\\text{Ne}]3s^23p^6$ (Ar), $[\\text{Ar}]3d^{10}4s^24p^6$ (Kr), $[\\text{Kr}]4d^{10}5s^25p^6$ (Xe), $[\\text{Xe}]4f^{14}5d^{10}6s^26p^6$ (Rn)",
+        "All noble gases have configurations ending in $s^2 p^6$ (8 electrons), starting from He",
+        "Noble-gas configurations are $1s^2 2s^2 2p^6 3s^2 3p^6 \\ldots$ — equally spaced like a Bohr-like model",
+        "Noble gases differ in their configurations only by mass number; all chemistry is identical"
+      ],
+      "correct": 0,
+      "explanation": "Closed-shell stability comes from full subshell rotational symmetry — total $L = S = J = 0$ (singlet S). Noble gases have low chemical reactivity but exhibit subtle effects: Xe forms compounds (XeF₂, XeF₄), Kr only under extreme conditions. Helium ($1s^2$) is uniquely stable — its $^2S \\to ^2P$ transition at 21 eV is in the deep UV; superfluidity arises from being closed-shell bosons. Radon is radioactive (all isotopes unstable, longest-lived $^{222}$Rn 3.8 days)."
+    }
+  },
+  {
+    "id": "atn010",
+    "path": ["physics", "named-quantities", "atomic-notation"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "Isotope notation $^A_Z X$ specifies a nuclide. For nuclear physics calculations, what do these symbols represent?",
+    "passive": {
+      "options": [
+        "$A$ = mass number (protons + neutrons), $Z$ = atomic number (protons), $X$ = element symbol; neutron count $N = A - Z$; same $Z$ = same element, different $A$ = isotopes",
+        "$A$ = atomic number (protons), $Z$ = mass number — swapped from the actual convention",
+        "$A$ and $Z$ are interchangeable; only the element symbol matters",
+        "$A$ counts electrons in the neutral atom, $Z$ counts protons"
+      ],
+      "correct": 0,
+      "explanation": "Example: $^{12}_6\\text C$ has 6 protons + 6 neutrons. $^{14}_6\\text C$ has 6 protons + 8 neutrons (heavy carbon, radioactive). $^4_2\\text{He}$ = alpha particle. $^{235}_{92}\\text U$ vs $^{238}_{92}\\text U$ — both uranium but $^{235}$ is fissile. Isobars: same $A$, different $Z$ (e.g. $^{60}$Co and $^{60}$Ni). Isotones: same $N = A - Z$. Isomers: same $A, Z$ but different nuclear state (long-lived $^{99m}$Tc used in medical imaging). The 'm' superscript denotes metastable isomers."
+    }
+  }
+]

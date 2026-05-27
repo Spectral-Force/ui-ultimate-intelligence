@@ -1,0 +1,184 @@
+[
+  {
+    "id": "dim001",
+    "path": ["physics", "named-quantities", "dimensionless-numbers"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "The Reynolds number is the ratio of inertial to viscous forces in a fluid flow. For a flow with characteristic velocity $v$, length $L$, density $\\rho$, and dynamic viscosity $\\mu$, it is:",
+    "equation": "Re = \\frac{\\rho v L}{\\mu} = \\frac{vL}{\\nu}",
+    "passive": {
+      "options": [
+        "$Re = \\rho v L/\\mu$; low $Re$ (< $\\sim 2000$ for a pipe) → laminar, high $Re$ → turbulent; sets the transition scale and similarity in fluid experiments",
+        "$Re = \\mu/(\\rho v L)$ — viscous over inertial (reciprocal of the actual definition)",
+        "$Re = vL/c$ where $c$ is the speed of sound — Reynolds is a Mach-number variant",
+        "$Re = \\rho v^2/(\\mu g)$ — Reynolds includes gravity and so depends on orientation"
+      ],
+      "correct": 0,
+      "explanation": "$\\nu = \\mu/\\rho$ is the kinematic viscosity (m$^2$/s). Pipe flow: $Re < 2300$ laminar, $Re > 4000$ fully turbulent, transitional between. Aircraft wings operate at $Re \\sim 10^7$–$10^8$. Microswimmers (bacteria, sperm) at $Re < 1$ — viscous-dominated, time-reversible, Purcell's 'scallop theorem'. Dynamic similarity: two flows at the same $Re$ have geometrically similar streamlines (basis of wind-tunnel testing)."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each dimensionless number to its definition and physical meaning:",
+      "pairs": [
+        {"id": "p1", "term": "Reynolds $Re = \\rho vL/\\mu$", "definition": "Inertial / viscous forces; sets laminar-turbulent transition"},
+        {"id": "p2", "term": "Mach $M = v/c_s$", "definition": "Flow speed / sound speed; $M < 1$ subsonic, $M > 1$ supersonic, shocks at transonic"},
+        {"id": "p3", "term": "Froude $Fr = v/\\sqrt{gL}$", "definition": "Inertial / gravitational; ship waves, hydraulic jumps, fluvial flows"},
+        {"id": "p4", "term": "Knudsen $Kn = \\lambda_{\\rm mfp}/L$", "definition": "Mean free path / system size; $Kn \\ll 1$ continuum, $Kn \\gg 1$ free molecular flow"}
+      ],
+      "explanation": "Most physics regimes are characterised by one or two dimensionless ratios. Reynolds dominates flow problems, Mach compressibility, Knudsen the validity of continuum mechanics. Their values place a system in 'phase space': laminar/turbulent, subsonic/supersonic, continuum/molecular."
+    }
+  },
+  {
+    "id": "dim002",
+    "path": ["physics", "named-quantities", "dimensionless-numbers"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "The Mach number $M = v/c_s$ characterises compressibility in a flow. What are the physical regimes?",
+    "passive": {
+      "options": [
+        "$M < 0.3$: incompressible flow (density variations negligible); $0.8 < M < 1.2$: transonic (shock formation); $M > 5$: hypersonic (chemical dissociation effects)",
+        "$M < 1$ is always incompressible; only supersonic flow shows compressibility",
+        "Mach number is identical to the Reynolds number divided by a velocity scaling factor",
+        "$M$ is a property of the fluid only, independent of the flow speed"
+      ],
+      "correct": 0,
+      "explanation": "Subsonic ($M<1$): pressure disturbances propagate ahead of the body; the flow 'knows' it's coming. Supersonic ($M>1$): pressure can't catch up, creating bow shocks. Compressibility correction $(1 - M^2)$ multiplies viscous-like terms (Prandtl-Glauert). Hypersonic ($M>5$): shock heating becomes ionising. The speed of sound in air at 20 °C is 343 m/s; jet airliners cruise at $M \\sim 0.8$, supersonic fighters at $M \\sim 2$."
+    }
+  },
+  {
+    "id": "dim003",
+    "path": ["physics", "named-quantities", "dimensionless-numbers"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Strouhal number $St = fL/v$ relates a characteristic oscillation frequency $f$ to a flow velocity $v$ and length $L$. What is its most famous application?",
+    "passive": {
+      "options": [
+        "Vortex shedding from a cylinder/bluff body has $St \\approx 0.21$ over a wide $Re$ range — Kármán vortex streets, aeroelastic flutter",
+        "$St$ measures viscosity directly; it is independent of any characteristic oscillation frequency in the flow",
+        "Strouhal number governs the boiling-to-condensation transition in two-phase heat-transfer problems",
+        "$St = M \\cdot Re$ — Strouhal is a composite of the Mach and Reynolds numbers, not an independent ratio"
+      ],
+      "correct": 0,
+      "explanation": "For a cylinder of diameter $D$ in a flow of speed $v$ at $Re \\sim 10^2$–$10^5$: vortices shed alternately from each side at $f = 0.21 v/D$ (von Kármán vortex street). This causes tonal noise (eolian tones), structural vibration (Tacoma Narrows collapse mechanism), and energy harvesting via vortex-induced vibration. Bird flight at flapping frequencies: $St \\sim 0.2$–0.4 — efficient propulsion. Universal across scales from insects to whales."
+    }
+  },
+  {
+    "id": "dim004",
+    "path": ["physics", "named-quantities", "dimensionless-numbers"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Prandtl number $Pr = \\nu/\\alpha = \\mu c_p/k$ compares momentum diffusivity to thermal diffusivity. What does its value indicate?",
+    "passive": {
+      "options": [
+        "$Pr \\sim 1$: heat and momentum similar (gases). $Pr \\ll 1$: heat diffuses fast (Hg $\\sim 0.025$). $Pr \\gg 1$: oils $\\sim 100$",
+        "$Pr$ is always between 0 and 1 for liquids; values greater than 1 indicate non-Newtonian rheological behaviour",
+        "Prandtl number characterises only forced convection; it does not enter natural convection or pure conduction regimes",
+        "$Pr$ depends on flow geometry and boundary conditions; it has no value as an intrinsic fluid property at given T, P"
+      ],
+      "correct": 0,
+      "explanation": "For air: $Pr \\approx 0.71$ (boundary layers for momentum and temperature have similar thicknesses). For water: $Pr \\approx 7$. For mercury: $Pr \\approx 0.025$ (thermal BL much thicker than viscous). For lubricating oil at room T: $Pr \\sim 100$. In heat-exchanger design, $Pr$ appears in correlations like $Nu = 0.023\\,Re^{0.8} Pr^{0.4}$ (Dittus-Boelter for turbulent pipe flow). The thermal-boundary-layer thickness $\\delta_T/\\delta \\sim Pr^{-1/3}$ for $Pr > 1$."
+    }
+  },
+  {
+    "id": "dim005",
+    "path": ["physics", "named-quantities", "dimensionless-numbers"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Rayleigh number $Ra = g\\beta\\Delta T L^3/(\\nu\\alpha)$ governs natural convection. What is the critical value $Ra_c$ for the onset of Rayleigh-Bénard convection?",
+    "passive": {
+      "options": [
+        "$Ra_c \\approx 1708$ for a fluid heated from below between rigid plates; below this conduction dominates, above this convection rolls form",
+        "$Ra_c = 1$ — convection begins at any non-zero temperature difference",
+        "$Ra_c = 10^6$ — convection requires very large temperature gradients",
+        "$Ra_c$ depends on the fluid and has no universal value"
+      ],
+      "correct": 0,
+      "explanation": "Lord Rayleigh's 1916 stability analysis: for two rigid plates, $Ra_c = 1707.76$. For two free surfaces: $Ra_c = 657.5$. Below $Ra_c$: heat moves by conduction. Just above: hexagonal Bénard cells. Higher $Ra$: rolls, then turbulent convection at $Ra \\gtrsim 10^7$. In stellar convection, $Ra \\sim 10^{20}$ — extremely turbulent. Rayleigh-Bénard is the canonical pattern-forming system in nonlinear dynamics."
+    }
+  },
+  {
+    "id": "dim006",
+    "path": ["physics", "named-quantities", "dimensionless-numbers"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Knudsen number $Kn = \\lambda_{\\rm mfp}/L$ classifies gas flow regimes. What governs the choice of continuum vs molecular description?",
+    "passive": {
+      "options": [
+        "$Kn < 0.01$ continuum (Navier-Stokes valid); $0.01 < Kn < 0.1$ slip flow; $0.1 < Kn < 10$ transition; $Kn > 10$ free molecular flow (Boltzmann eq, ballistic particles)",
+        "$Kn$ describes only liquid flows, not gases; gases are always molecular",
+        "Navier-Stokes equations are valid for all $Kn$ since they are derived from kinetic theory",
+        "$Kn > 1$ means continuum is valid; $Kn < 1$ molecular flow"
+      ],
+      "correct": 0,
+      "explanation": "At sea level, $\\lambda_{\\rm mfp} \\sim 70$ nm; for a 1 cm pipe $Kn \\sim 7 \\times 10^{-6}$, deeply continuum. At UHV ($10^{-9}$ mbar): $\\lambda_{\\rm mfp} \\sim 50$ km, $Kn \\gg 1$ for any lab object — molecular flow, conductance set by geometry not viscosity. MEMS devices at atmospheric pressure: micron-scale features push $Kn$ into the slip regime, requiring slip boundary conditions. Knudsen number organisations vacuum-technology choices."
+    }
+  },
+  {
+    "id": "dim007",
+    "path": ["physics", "named-quantities", "dimensionless-numbers"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Several dimensionless numbers describe heat and mass transfer. Which is the correct identification?",
+    "passive": {
+      "options": [
+        "Nusselt $Nu = hL/k$ (convective/conductive heat); Sherwood $Sh = h_m L/D$ (mass transfer analogue of $Nu$); Péclet $Pe = vL/\\alpha$ (advection/diffusion of heat)",
+        "Nusselt and Sherwood are identical; both describe pressure-driven flow",
+        "Péclet number is the ratio of conductive to convective heat transfer",
+        "$Nu, Sh, Pe$ are all proportional to $Re$; one cannot vary independently of the others"
+      ],
+      "correct": 0,
+      "explanation": "Heat-mass transfer analogy: equations for heat ($\\nabla^2 T = \\alpha^{-1}\\partial T/\\partial t$) and species ($\\nabla^2 c = D^{-1}\\partial c/\\partial t$) are mathematically identical, so $Nu \\leftrightarrow Sh$, $Pr \\leftrightarrow Sc$ (Schmidt $= \\nu/D$). Mass-transfer correlations follow from heat-transfer ones by the substitution $Pr \\to Sc$ — Chilton-Colburn analogy. Used in dehumidification, gas separation, drying processes."
+    }
+  },
+  {
+    "id": "dim008",
+    "path": ["physics", "named-quantities", "dimensionless-numbers"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The Weber number $We = \\rho v^2 L/\\sigma$ compares inertial forces to surface tension. What does it govern?",
+    "passive": {
+      "options": [
+        "Droplet break-up ($We > 10$ for atomisation), capillary waves, jet stability — sets where surface tension is overwhelmed by inertia",
+        "Weber number describes only static fluid-fluid interfaces and is irrelevant to droplet dynamics or atomisation",
+        "$We$ is dimensionally equivalent to $Re$ once viscosity is expressed in surface-tension units, so it has no independent role",
+        "Weber number applies only to gases under pressure and never enters liquid hydrodynamics or surface phenomena"
+      ],
+      "correct": 0,
+      "explanation": "Surface tension $\\sigma$ (N/m) tends to minimise surface area; inertia tries to deform the interface. Spray atomisation: liquid jets fragment when $We > 10$–100, with droplet size $D \\sim L \\cdot We^{-1/2}$. Inkjet printing: drop formation in the regime $We \\sim 1$, $Re \\sim 100$. Ocean wave whitecaps appear when $We > $ critical. Bond number $Bo = \\rho g L^2/\\sigma$ is the static counterpart (gravity vs surface tension)."
+    }
+  },
+  {
+    "id": "dim009",
+    "path": ["physics", "named-quantities", "dimensionless-numbers"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Dimensional analysis via the Buckingham $\\pi$ theorem reduces a physics problem with $n$ variables and $k$ fundamental dimensions to $n - k$ dimensionless groups. What is its significance?",
+    "passive": {
+      "options": [
+        "Law $F(\\pi_1, \\pi_2, \\ldots) = 0$ in dimensionless groups; e.g. drag coefficient $C_D(Re)$ replaces five-variable parameter space",
+        "Buckingham $\\pi$ theorem applies only to fluid dynamics; not used in electromagnetism, quantum, or thermodynamic problems",
+        "The theorem gives exact equations directly without any empirical input — no measurement needed for the dimensionless function",
+        "$\\pi$-groups are unique up to multiplication by constants; there is only one valid choice of group set for any system"
+      ],
+      "correct": 0,
+      "explanation": "Example: drag on a sphere depends on $\\rho, v, D, \\mu$ → 4 variables, 3 dimensions (M, L, T) → 1 dimensionless group: $Re$. So drag coefficient $C_D = $ drag$/(\\tfrac12\\rho v^2 \\pi D^2/4) = f(Re)$ — a single universal curve. Saves enormous experimental effort: instead of varying 4 parameters, sweep one. Used to design scale models in wind tunnels (matching $Re$) and validate CFD simulations."
+    }
+  },
+  {
+    "id": "dim010",
+    "path": ["physics", "named-quantities", "dimensionless-numbers"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "In turbulence, the Kolmogorov microscale $\\eta = (\\nu^3/\\varepsilon)^{1/4}$ defines the dissipation scale where viscosity becomes important. What is its role and how does it relate to $Re$?",
+    "passive": {
+      "options": [
+        "$\\eta$ = smallest eddy; $L/\\eta \\sim Re^{3/4}$; DNS grid count $(L/\\eta)^3 \\sim Re^{9/4}$ — only modest $Re$ is feasible",
+        "$\\eta$ is independent of fluid viscosity; only the inertial range and energy injection rate determine the dissipation scale",
+        "Kolmogorov microscale $\\eta$ is universally 1 mm across all turbulent flows regardless of Reynolds number or fluid",
+        "The smallest eddies in turbulence are always larger than the integral scale $L$, set by the largest forced motion"
+      ],
+      "correct": 0,
+      "explanation": "Kolmogorov's 1941 theory: energy injected at scale $L$ cascades through inertial range with energy spectrum $E(k) \\propto \\varepsilon^{2/3}k^{-5/3}$ (the famous 5/3 law) until dissipated at $\\eta$. For atmospheric turbulence $Re \\sim 10^8$: $L/\\eta \\sim 10^6$ — impossible to resolve all scales. DNS is limited to $Re \\sim 10^4$. Large-eddy simulation (LES) and Reynolds-averaged Navier-Stokes (RANS) model the small scales to access higher $Re$."
+    }
+  }
+]

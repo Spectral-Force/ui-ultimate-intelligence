@@ -62,6 +62,11 @@ import fluctuationDissipation  from './physics/fluctuation-dissipation.json'
 import opticalTheorem          from './physics/optical-theorem.json'
 import spinStatistics          from './physics/spin-statistics.json'
 import cptTheorem              from './physics/cpt-theorem.json'
+import dimensionlessNumbers   from './physics/dimensionless-numbers.json'
+import fundamentalConstants   from './physics/fundamental-constants.json'
+import lengthScales           from './physics/length-scales.json'
+import timeScales             from './physics/time-scales.json'
+import atomicNotation         from './physics/atomic-notation.json'
 
 export const allQuestions = [
   ...dopplerCooling,
@@ -128,6 +133,11 @@ export const allQuestions = [
   ...opticalTheorem,
   ...spinStatistics,
   ...cptTheorem,
+  ...dimensionlessNumbers,
+  ...fundamentalConstants,
+  ...lengthScales,
+  ...timeScales,
+  ...atomicNotation,
 ]
 
 /**

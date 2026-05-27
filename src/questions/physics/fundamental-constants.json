@@ -1,0 +1,169 @@
+[
+  {
+    "id": "fc001",
+    "path": ["physics", "named-quantities", "fundamental-constants"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "The Planck constant $h$ is the quantum of action. Which value and unit are correct, and how does it relate to $\\hbar$?",
+    "passive": {
+      "options": [
+        "$h = 6.62607015\\times 10^{-34}$ J·s (exact since 2019 SI); $\\hbar = h/2\\pi = 1.0546\\times 10^{-34}$ J·s — the 'reduced' or 'rationalised' Planck constant",
+        "$h = 6.626\\times 10^{-23}$ J·s; $\\hbar = h \\cdot 2\\pi$ (multiplication, not division)",
+        "$h$ has units of energy alone (joules) since action is dimensionless",
+        "Planck's constant is defined up to a measured value with $\\sim 10^{-9}$ relative uncertainty"
+      ],
+      "correct": 0,
+      "explanation": "Since the 2019 SI redefinition, $h$ is exactly $6.62607015 \\times 10^{-34}$ J·s by definition — it defines the kilogram via the Kibble balance. $\\hbar$ appears in Schrödinger eq, commutators ($[\\hat x, \\hat p] = i\\hbar$), and angular momentum quantisation ($L = n\\hbar$). Units: J·s = kg·m²/s = N·m·s — energy × time, momentum × length."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each fundamental constant to its value and primary role:",
+      "pairs": [
+        {"id": "p1", "term": "Speed of light $c$", "definition": "$299\\,792\\,458$ m/s (exact); defines the metre; max signal speed; appears in $E = mc^2$, $\\sqrt{1-v^2/c^2}$"},
+        {"id": "p2", "term": "Elementary charge $e$", "definition": "$1.602\\,176\\,634\\times 10^{-19}$ C (exact since 2019); defines the ampere; appears in QED, fine-structure constant $\\alpha = e^2/(4\\pi\\varepsilon_0\\hbar c)$"},
+        {"id": "p3", "term": "Boltzmann constant $k_B$", "definition": "$1.380\\,649\\times 10^{-23}$ J/K (exact since 2019); defines the kelvin; converts temperature to energy"},
+        {"id": "p4", "term": "Avogadro number $N_A$", "definition": "$6.022\\,140\\,76\\times 10^{23}$ mol$^{-1}$ (exact since 2019); defines the mole; molecules per macroscopic amount"}
+      ],
+      "explanation": "The 2019 SI redefinition (the 'New SI') made $h$, $c$, $e$, $k_B$, $N_A$ all exactly defined values — they no longer have measurement uncertainty. The base units (kilogram, ampere, kelvin, mole) are now derived from these constants via fundamental experiments like the Kibble balance. Only $G$ retains its ~$10^{-5}$ measurement uncertainty among the major fundamental constants."
+    }
+  },
+  {
+    "id": "fc002",
+    "path": ["physics", "named-quantities", "fundamental-constants"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "The fine-structure constant $\\alpha$ characterises the strength of electromagnetic coupling. Which expression and value is correct?",
+    "passive": {
+      "options": [
+        "$\\alpha = e^2/(4\\pi\\varepsilon_0\\hbar c) \\approx 1/137.036$; sets atomic energy ($\\alpha^2$), fine-structure ($\\alpha^4$), Lamb ($\\alpha^5$)",
+        "$\\alpha = 1/137$ exactly by international convention adopted in 1928 — a defined value, not measured",
+        "$\\alpha$ has dimensions of electric-charge squared per unit energy and converts charge to energy",
+        "Fine-structure constant equals $h/c$ divided by Avogadro's number — a thermodynamic origin"
+      ],
+      "correct": 0,
+      "explanation": "$\\alpha \\approx 1/137.036$ is one of the most precisely measured numbers in physics — to $\\sim 10^{-10}$ via the electron $g$-factor in atomic experiments. Hydrogen energies: $E_n = -\\alpha^2 m_e c^2 / (2 n^2) = -13.6$ eV/$n^2$. Bohr radius: $a_0 = \\hbar/(\\alpha m_e c) = 5.29 \\times 10^{-11}$ m. Whether $\\alpha$ varies in time/space is a long-running cosmological question (no convincing evidence so far)."
+    }
+  },
+  {
+    "id": "fc003",
+    "path": ["physics", "named-quantities", "fundamental-constants"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "The Bohr magneton $\\mu_B$ and nuclear magneton $\\mu_N$ are atomic and nuclear magnetic moment units. Why does $\\mu_B \\gg \\mu_N$?",
+    "equation": "\\mu_B = \\frac{e\\hbar}{2m_e}, \\quad \\mu_N = \\frac{e\\hbar}{2m_p}",
+    "passive": {
+      "options": [
+        "$\\mu_B/\\mu_N = m_p/m_e \\approx 1836$; electrons have $\\sim$ 1836× larger magnetic moments than nucleons because their mass is smaller — hence atomic Zeeman shifts dominate over nuclear hyperfine",
+        "$\\mu_B$ and $\\mu_N$ differ only in sign — same magnitude",
+        "Nuclear magneton is larger because nucleons have spin-1/2 and electrons have orbital plus spin contributions",
+        "The ratio $\\mu_B/\\mu_N$ depends on temperature"
+      ],
+      "correct": 0,
+      "explanation": "$\\mu_B = 9.274 \\times 10^{-24}$ J/T = 1.4 MHz/G; $\\mu_N = 5.051 \\times 10^{-27}$ J/T. Electron $g$-factor $g_e \\approx 2.002$ (with QED correction); proton $g_p \\approx 5.586$, neutron $g_n \\approx -3.826$ (anomalous due to internal quark structure). NMR uses MHz/T scaling via $\\mu_N$; ESR uses MHz/G scaling via $\\mu_B$. Hyperfine splitting in Rb (6.835 GHz) is small precisely because of nuclear-magneton vs Bohr-magneton ratio."
+    }
+  },
+  {
+    "id": "fc004",
+    "path": ["physics", "named-quantities", "fundamental-constants"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Planck units are formed from $G$, $\\hbar$, $c$ to express quantities at natural quantum-gravity scale. Which is correct?",
+    "passive": {
+      "options": [
+        "$\\ell_P \\approx 1.6\\times 10^{-35}$ m; $t_P \\approx 5.4\\times 10^{-44}$ s; $m_P \\approx 2.2\\times 10^{-8}$ kg; $E_P \\approx 10^{19}$ GeV",
+        "Planck units are arbitrary unit-system conventions with no quantum-gravity significance — pure dimensional bookkeeping",
+        "Planck mass is approximately equal to the electron mass: $m_P \\sim m_e \\sim 10^{-30}$ kg, accessible in atomic physics",
+        "Planck length equals the typical size of an atom or molecule, around $10^{-10}$ m — easily resolved with X-rays"
+      ],
+      "correct": 0,
+      "explanation": "Planck scales are where quantum effects of gravity become comparable to gravity itself. Planck energy $\\sim 10^{19}$ GeV is unreachable in any conceivable accelerator (LHC at $10^4$ GeV). Planck mass is much larger than elementary-particle masses ($m_P \\sim 2\\times 10^{-8}$ kg = $10^{19}$ proton masses) — the 'hierarchy problem'. Black holes with mass below $m_P$ may be unstable to quantum-gravity effects. Whether Planck length is a minimum length is an open question."
+    }
+  },
+  {
+    "id": "fc005",
+    "path": ["physics", "named-quantities", "fundamental-constants"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Rydberg constant $R_\\infty$ and Rydberg energy $E_\\infty$ characterise hydrogen-like atom spectra. The relations are:",
+    "equation": "R_\\infty = \\frac{\\alpha^2 m_e c}{4\\pi\\hbar}, \\quad E_\\infty = \\frac{\\alpha^2 m_e c^2}{2} \\approx 13.605\\text{ eV}",
+    "passive": {
+      "options": [
+        "$E_\\infty \\approx 13.6$ eV; $R_\\infty \\approx 1.097 \\times 10^7$ m$^{-1}$; appears in $1/\\lambda = R_\\infty Z^2(1/n_1^2 - 1/n_2^2)$",
+        "$R_\\infty$ and Rydberg energy $E_\\infty$ are unrelated quantities; each is measured independently with separate experiments",
+        "Rydberg energy is the binding energy of the helium atom (the first ionisation potential), not of hydrogen",
+        "$R_\\infty$ depends on the proton mass; it differs from the hydrogen Rydberg $R_H$ by a factor of order unity (~2)"
+      ],
+      "correct": 0,
+      "explanation": "$R_\\infty$ corresponds to infinite nuclear mass; for real hydrogen, the reduced mass correction gives $R_H = R_\\infty/(1 + m_e/m_p) \\approx R_\\infty \\cdot 0.99946$. Measured to $\\sim 10^{-12}$ via 2-photon spectroscopy of $1S \\to 2S$. One of the most precisely known atomic constants — used in the 2019 SI redefinition and the proton-radius puzzle."
+    }
+  },
+  {
+    "id": "fc006",
+    "path": ["physics", "named-quantities", "fundamental-constants"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Stefan-Boltzmann constant $\\sigma_B$ governs blackbody radiation. What is its value and how does it derive from fundamental constants?",
+    "equation": "\\sigma_B = \\frac{\\pi^2 k_B^4}{60\\hbar^3 c^2} \\approx 5.67 \\times 10^{-8}\\,{\\rm W/(m^2 K^4)}",
+    "passive": {
+      "options": [
+        "$\\sigma_B = \\pi^2 k_B^4/(60\\hbar^3 c^2)$ from Planck distribution integral; $P/A = \\sigma_B T^4$ for a black body",
+        "$\\sigma_B$ is a fundamental input, not derivable from $k_B$ and $\\hbar$",
+        "$P/A = \\sigma_B T$ — linear in temperature, not fourth power",
+        "Stefan-Boltzmann constant has different values for different materials"
+      ],
+      "correct": 0,
+      "explanation": "Derivation: integrate Planck's law $u(\\omega, T) = \\hbar\\omega^3/(\\pi^2 c^3)(e^{\\hbar\\omega/k_BT} - 1)^{-1}$ over all frequencies, multiply by $c/4$ for the emitted power per unit area. Result: $\\sigma_B = (\\pi^2/60)(k_B^4/\\hbar^3 c^2)$. Sun ($T \\approx 5778$ K): emits $\\sim 6.3 \\times 10^7$ W/m². CMB at $T = 2.725$ K: $\\sigma_B T^4 \\sim 3 \\times 10^{-6}$ W/m². Used in stellar luminosity-temperature relation and cosmological radiation balance."
+    }
+  },
+  {
+    "id": "fc007",
+    "path": ["physics", "named-quantities", "fundamental-constants"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The fine-structure constant $\\alpha$ runs with energy due to vacuum polarisation in QED. What is its qualitative behaviour?",
+    "passive": {
+      "options": [
+        "$\\alpha(Q^2)$ increases with energy: $\\alpha(m_Z^2) \\approx 1/127.9$ vs $\\alpha(0) \\approx 1/137.04$; QED is asymptotically slave (opposite of QCD's asymptotic freedom)",
+        "$\\alpha$ is a true constant; running is a renormalisation artefact with no physical content",
+        "$\\alpha$ decreases with energy, becoming weaker at high momentum transfer",
+        "$\\alpha$ runs only in the presence of strong electromagnetic fields"
+      ],
+      "correct": 0,
+      "explanation": "QED $\\beta$-function $\\beta(\\alpha) > 0$: electric charge is partially shielded by virtual electron-positron pairs. At high energies, probes get closer to the bare charge, so effective coupling grows. Landau pole: $\\alpha$ would diverge at unphysically high energy ($\\sim 10^{286}$ GeV). At low energies, only logarithmic running. Measured at $Z$-pole: $\\alpha(m_Z^2) \\approx 1/127.94$ via $e^+e^- \\to e^+e^-$ Bhabha scattering."
+    }
+  },
+  {
+    "id": "fc008",
+    "path": ["physics", "named-quantities", "fundamental-constants"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Natural units (used in particle physics) set $\\hbar = c = 1$. What happens to dimensions and orders of magnitude?",
+    "passive": {
+      "options": [
+        "Energy/mass/momentum in GeV; length/time in GeV$^{-1}$; $\\hbar c = 0.197$ GeV·fm — so 1 fm $\\approx 5$ GeV$^{-1}$",
+        "Natural units make all quantities dimensionless pure integers; particle masses become small integers near 1",
+        "Setting $\\hbar = c = 1$ is impossible because they have different dimensions; the system is inconsistent",
+        "Natural units set $\\hbar = 1$ but leave $c$ retaining its full dimensions of length over time"
+      ],
+      "correct": 0,
+      "explanation": "$[\\hbar] = $ energy·time, $[c] = $ length/time. With $\\hbar = c = 1$: energy = mass = momentum; length = time = 1/energy. Useful conversions: $\\hbar c = 197$ MeV·fm; $\\hbar c^2/k_B = 0.86$ MeV/K (rare unit); 1 GeV$^{-2}$ = 0.389 mb (cross-section). Pion mass: $m_\\pi c^2 = 140$ MeV; Compton $\\hbar/m_\\pi c = 1.4$ fm — the range of nuclear force. Particle masses are quoted in eV/c² conventionally, GeV in natural units."
+    }
+  },
+  {
+    "id": "fc009",
+    "path": ["physics", "named-quantities", "fundamental-constants"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "Tests of the time-variation of fundamental constants (especially $\\alpha$, $m_e/m_p$) are a sensitive probe of new physics. What is the current observational bound?",
+    "passive": {
+      "options": [
+        "$|\\dot\\alpha/\\alpha| < 10^{-17}$/yr (optical-clock comparisons); quasar absorption $\\Delta\\alpha/\\alpha \\sim 10^{-6}$ over Gyr — null",
+        "$\\dot\\alpha = 0$ exactly by general relativity; no varying-constant scenarios are consistent with Einstein's equations",
+        "Cosmological observations show $\\Delta\\alpha/\\alpha \\sim 10^{-2}$ between the present day and the Big Bang epoch",
+        "Atomic clocks have insufficient sensitivity to detect $\\alpha$ variation; only astronomical quasar observations apply"
+      ],
+      "correct": 0,
+      "explanation": "Optical clocks at different transitions have different $\\alpha$-sensitivity (Dirac equation gives relativistic corrections $\\propto (\\alpha Z)^2$). Comparing Hg$^+$, Yb$^+$, Al$^+$, and Sr clocks over years yields the strongest bounds. Webb et al. (2001-2011) reported a controversial dipole pattern in $\\alpha$ across the sky from quasar absorption ($\\Delta\\alpha/\\alpha \\sim 10^{-5}$), but it has not been confirmed. Theories with varying constants (dilaton, axions, scalar-tensor gravity) make specific predictions."
+    }
+  }
+]
