@@ -67,6 +67,12 @@ import fundamentalConstants   from './physics/fundamental-constants.json'
 import lengthScales           from './physics/length-scales.json'
 import timeScales             from './physics/time-scales.json'
 import atomicNotation         from './physics/atomic-notation.json'
+import diracNotation         from './physics/dirac-notation.json'
+import einsteinSummation     from './physics/einstein-summation.json'
+import pauliMatrices         from './physics/pauli-matrices.json'
+import gammaMatrices         from './physics/gamma-matrices.json'
+import spinorNotation        from './physics/spinor-notation.json'
+import physicsSymbols        from './physics/physics-symbols.json'
 
 export const allQuestions = [
   ...dopplerCooling,
@@ -138,6 +144,12 @@ export const allQuestions = [
   ...lengthScales,
   ...timeScales,
   ...atomicNotation,
+  ...diracNotation,
+  ...einsteinSummation,
+  ...pauliMatrices,
+  ...gammaMatrices,
+  ...spinorNotation,
+  ...physicsSymbols,
 ]
 
 /**

@@ -1,0 +1,167 @@
+[
+  {
+    "id": "ein001",
+    "path": ["physics", "notation", "einstein-summation"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "Einstein summation convention sums over repeated indices implicitly. What does $a_i b^i$ mean?",
+    "passive": {
+      "options": [
+        "$a_i b^i = \\sum_i a_i b^i$ — repeated indices (one upper, one lower) are summed automatically; gives an inner product, scalar",
+        "$a_i b^i$ denotes the product without any summation; explicit $\\sum$ is required",
+        "Implicit summation works only for spatial indices in 3D Cartesian coordinates",
+        "Repeated indices indicate a tensor product, not a sum, giving a higher-rank object"
+      ],
+      "correct": 0,
+      "explanation": "Einstein convention (1916): repeated index = summation. Standard convention: one upper (contravariant), one lower (covariant). In Cartesian + Euclidean metric the distinction collapses ($a_i = a^i$) so all indices written low. Free indices (appearing once) label the tensor type; contracted (repeated) indices vanish from the final expression."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each Einstein-summation expression to its meaning:",
+      "pairs": [
+        {"id": "p1", "term": "$\\delta^i_j$", "definition": "Kronecker delta: 1 if $i = j$, 0 otherwise; identity tensor / metric trace"},
+        {"id": "p2", "term": "$\\epsilon_{ijk}$", "definition": "Levi-Civita: $+1$ for even permutation of $(1,2,3)$, $-1$ for odd, 0 otherwise; totally antisymmetric"},
+        {"id": "p3", "term": "$A^i_{\\ j} B^j$", "definition": "Matrix-vector product summed over $j$; result is a vector with index $i$"},
+        {"id": "p4", "term": "$g_{\\mu\\nu}x^\\mu y^\\nu$", "definition": "Inner product with metric $g_{\\mu\\nu}$: gives scalar; in Minkowski metric is $-x^0y^0 + \\mathbf x \\cdot \\mathbf y$ (or opposite sign)"}
+      ],
+      "explanation": "Useful identities: $\\delta^i_i = $ dimension; $\\epsilon_{ijk}\\epsilon^{ilm} = \\delta_j^l\\delta_k^m - \\delta_j^m\\delta_k^l$; $\\delta^i_j A_{ik} = A_{jk}$ (index renaming). Cross product: $(\\mathbf a \\times \\mathbf b)_i = \\epsilon_{ijk}a^j b^k$. Curl: $(\\nabla \\times \\mathbf v)_i = \\epsilon_{ijk}\\partial^j v^k$."
+    }
+  },
+  {
+    "id": "ein002",
+    "path": ["physics", "notation", "einstein-summation"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "Upper indices (contravariant) and lower indices (covariant) transform oppositely under coordinate change. What distinguishes them?",
+    "passive": {
+      "options": [
+        "$V^i$ ~ $\\partial\\tilde x^i/\\partial x^j$ (Jacobian); $V_i$ ~ $\\partial x^j/\\partial\\tilde x^i$ (inverse); $V^iV_i$ invariant",
+        "Upper and lower indices are physically identical; they differ only in typographical display convention and style",
+        "Both transform identically under coordinate change; appear at different positions for visual clarity in textbooks",
+        "Upper indices denote dimensionless quantities; lower indices always carry SI physical units like metres or seconds"
+      ],
+      "correct": 0,
+      "explanation": "Vectors (with arrows) are naturally contravariant: $V^i$. Gradients $\\partial_i \\phi$ are naturally covariant: lower index. Raising/lowering: $V^i = g^{ij}V_j$, $V_i = g_{ij}V^j$ using metric tensor. In flat Euclidean space, $g_{ij} = \\delta_{ij}$, so distinction collapses. In Minkowski: $g_{\\mu\\nu} = \\text{diag}(-1, 1, 1, 1)$ (mostly-plus) or $(+1, -1, -1, -1)$ (mostly-minus) — convention varies."
+    }
+  },
+  {
+    "id": "ein003",
+    "path": ["physics", "notation", "einstein-summation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "In flat Minkowski spacetime, the four-vector inner product uses the metric $\\eta_{\\mu\\nu}$. With 'mostly-plus' signature $(-,+,+,+)$, what is $x^\\mu x_\\mu$ for a timelike $x^\\mu = (ct, \\mathbf x)$?",
+    "passive": {
+      "options": [
+        "$x^\\mu x_\\mu = -c^2 t^2 + |\\mathbf x|^2 < 0$ for timelike separation (causally connected events); positive for spacelike; zero for lightlike",
+        "$x^\\mu x_\\mu = +c^2 t^2 + |\\mathbf x|^2$ — always positive, no signature change",
+        "$x^\\mu x_\\mu$ = pure spatial part $|\\mathbf x|^2$, time component dropped",
+        "Four-vector products are coordinate-dependent and have no invariant value"
+      ],
+      "correct": 0,
+      "explanation": "Sign depends on convention. Mostly-plus ($-,+,+,+$): timelike $< 0$, spacelike $> 0$. Mostly-minus ($+,-,-,-$): timelike $> 0$, spacelike $< 0$. Both used in literature — particle physicists prefer mostly-minus (so $p^2 = m^2c^4$), GR mostly-plus. Proper time $\\tau$: $d\\tau^2 = -dx^\\mu dx_\\mu/c^2$ in mostly-plus. Lorentz invariant: same value in all inertial frames."
+    }
+  },
+  {
+    "id": "ein004",
+    "path": ["physics", "notation", "einstein-summation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Levi-Civita symbol $\\epsilon_{ijk}$ in 3D Euclidean space is totally antisymmetric with $\\epsilon_{123} = +1$. Which of these is correct?",
+    "passive": {
+      "options": [
+        "$\\epsilon_{ijk}\\epsilon_{ilm} = \\delta_{jl}\\delta_{km} - \\delta_{jm}\\delta_{kl}$ (contracting first index); used to derive BAC-CAB rule $\\mathbf a\\times(\\mathbf b\\times\\mathbf c) = \\mathbf b(\\mathbf a\\cdot\\mathbf c) - \\mathbf c(\\mathbf a\\cdot\\mathbf b)$",
+        "$\\epsilon_{ijk}\\epsilon_{ilm} = \\delta_{jl}\\delta_{km} + \\delta_{jm}\\delta_{kl}$ — symmetric in $l, m$, but actual identity is antisymmetric",
+        "$\\epsilon_{ijk}\\epsilon_{lmn} = \\epsilon_{(i+l)(j+m)(k+n)}$ — addition of indices forming a new Levi-Civita",
+        "Levi-Civita products always reduce to a single $\\epsilon$; never to delta functions"
+      ],
+      "correct": 0,
+      "explanation": "Key identity for vector calculus. $\\epsilon\\epsilon$ identities are the engine that converts cross-product expressions to dot-product ones. Also: $\\epsilon_{ijk}\\epsilon_{ijk} = 6 = 3!$ (full contraction in 3D). In $n$ dimensions, $\\epsilon$ has $n$ indices and $\\epsilon\\cdots\\epsilon$ with all but one contracted gives the determinant of $\\delta$-symbols. Useful proofs: divergence of curl ($\\partial_i\\epsilon^{ijk}\\partial_j v_k = 0$ by antisymmetry of $\\epsilon$ vs symmetry of $\\partial_i\\partial_j$)."
+    }
+  },
+  {
+    "id": "ein005",
+    "path": ["physics", "notation", "einstein-summation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "In GR, tensor indices are raised and lowered using the metric $g_{\\mu\\nu}$ (with $g^{\\mu\\nu}$ its inverse, $g^{\\mu\\alpha}g_{\\alpha\\nu} = \\delta^\\mu_\\nu$). What is the result of raising both indices of $T_{\\mu\\nu}$?",
+    "passive": {
+      "options": [
+        "$T^{\\mu\\nu} = g^{\\mu\\alpha}g^{\\nu\\beta}T_{\\alpha\\beta}$ — two metric tensors needed, one per index raised; sums over dummy indices $\\alpha, \\beta$ implicit",
+        "$T^{\\mu\\nu} = g^{\\mu\\nu}T$ — single metric times the trace, scalar times metric",
+        "$T^{\\mu\\nu} = T_{\\mu\\nu}$ — raising and lowering indices makes no difference in any spacetime",
+        "$T^{\\mu\\nu} = T_{\\nu\\mu}$ — raising indices is equivalent to transposing the tensor"
+      ],
+      "correct": 0,
+      "explanation": "Generally: each index requires its own metric factor for raising/lowering. Mixed tensor: $T^\\mu_{\\ \\nu} = g^{\\mu\\alpha}T_{\\alpha\\nu}$. In Minkowski, raising/lowering a time index flips sign; spatial indices unchanged. Covariant derivatives also follow: $\\nabla_\\mu V^\\nu = \\partial_\\mu V^\\nu + \\Gamma^\\nu_{\\mu\\alpha}V^\\alpha$ for upper, $\\nabla_\\mu V_\\nu = \\partial_\\mu V_\\nu - \\Gamma^\\alpha_{\\mu\\nu}V_\\alpha$ for lower."
+    }
+  },
+  {
+    "id": "ein006",
+    "path": ["physics", "notation", "einstein-summation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Why must repeated indices come in upper-lower pairs in general (curved) spaces?",
+    "passive": {
+      "options": [
+        "To produce coordinate-invariant scalars: $V^\\mu V_\\mu = V^\\mu g_{\\mu\\nu}V^\\nu$ transforms as scalar; $V^\\mu V^\\mu$ alone is not coordinate-invariant",
+        "Convention only; mixing upper-upper or lower-lower gives the same coordinate-invariant result",
+        "Lower-lower contractions are forbidden by general relativity",
+        "Upper-lower is required only in Minkowski space; curved spacetimes use lower-lower"
+      ],
+      "correct": 0,
+      "explanation": "Coordinate change $x \\to \\tilde x$: contravariant $V^\\mu \\to (\\partial \\tilde x^\\mu/\\partial x^\\nu) V^\\nu$, covariant $V_\\mu \\to (\\partial x^\\nu/\\partial \\tilde x^\\mu)V_\\nu$. The Jacobian and its inverse cancel in $V^\\mu V_\\mu$ (since the chain rule gives $\\delta^\\mu_\\nu$) but not in $V^\\mu V^\\mu$. In flat Cartesian Euclidean, all metrics are $\\delta$ and the distinction is hidden — but you must restore it for curvilinear/curved coordinates. In particle physics in flat space the upper-lower convention is still kept for consistency with the Lorentz metric."
+    }
+  },
+  {
+    "id": "ein007",
+    "path": ["physics", "notation", "einstein-summation"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "In Einstein's field equations $G_{\\mu\\nu} = 8\\pi G T_{\\mu\\nu}/c^4$, both sides are symmetric rank-2 tensors. Why does this require special tensor properties?",
+    "passive": {
+      "options": [
+        "$G_{\\mu\\nu} = G_{\\nu\\mu}$ from Ricci construction; $T_{\\mu\\nu}$ symmetric from $\\nabla^\\mu T_{\\mu\\nu} = 0$; 10 independent components in 4D",
+        "Symmetric rank-2 tensors in 4D have 16 independent components, matching the number of spacetime coordinates",
+        "Symmetry of both sides is coincidental; Einstein equations work equally well for antisymmetric rank-2 tensors",
+        "$G_{\\mu\\nu}$ is antisymmetric; the symmetric-looking field equation arises from sign cancellation in the components"
+      ],
+      "correct": 0,
+      "explanation": "Symmetric rank-2 tensor in $n$ dimensions has $n(n+1)/2$ independent components — 10 in 4D. Einstein equations are 10 equations, of which 4 are constraints (Bianchi identity $\\nabla^\\mu G_{\\mu\\nu} = 0$) and 6 are dynamical. Energy-momentum $T_{\\mu\\nu}$ is symmetric for non-spinning matter; gauge field $T_{\\mu\\nu}$ from EM is also symmetric. Asymmetric stress-energy (Belinfante) exists for spinning matter but can be symmetrised."
+    }
+  },
+  {
+    "id": "ein008",
+    "path": ["physics", "notation", "einstein-summation"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "In QFT, the four-derivative $\\partial_\\mu$ acts as a covariant index. How does the d'Alembertian operator $\\Box$ relate to it?",
+    "equation": "\\Box = \\partial^\\mu\\partial_\\mu = -\\frac{1}{c^2}\\partial_t^2 + \\nabla^2",
+    "passive": {
+      "options": [
+        "$\\Box = \\partial^\\mu\\partial_\\mu = g^{\\mu\\nu}\\partial_\\nu\\partial_\\mu$; in mostly-plus signature: $\\Box = -\\partial_t^2/c^2 + \\nabla^2$ (Lorentz-invariant wave operator)",
+        "$\\Box = \\partial^\\mu + \\partial_\\mu$ — sum of upper and lower derivatives",
+        "$\\Box$ contains only spatial derivatives; time derivatives are separate in Lorentz-invariant equations",
+        "$\\Box$ is not Lorentz invariant; only $\\nabla^2$ part is"
+      ],
+      "correct": 0,
+      "explanation": "$\\Box$ is the 4D Laplacian (d'Alembertian, sometimes written $\\square$ or $\\partial^2$). Klein-Gordon equation $(\\Box - m^2)\\phi = 0$ uses it. Maxwell's equations in Lorenz gauge: $\\Box A^\\mu = \\mu_0 J^\\mu$. EM wave equation in vacuum: $\\Box A^\\mu = 0$. Sign convention reverses in mostly-minus signature: $\\Box = +\\partial_t^2/c^2 - \\nabla^2$ — same physics, different sign on each term."
+    }
+  },
+  {
+    "id": "ein009",
+    "path": ["physics", "notation", "einstein-summation"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "In differential geometry, tensors are defined as multilinear maps. How does this relate to the index notation?",
+    "passive": {
+      "options": [
+        "Indexed $T^{\\mu_1\\ldots}_{\\ \\ \\ \\nu_1\\ldots}$ are basis components of an abstract tensor: basis-free multilinear map",
+        "Indices and abstract tensors are entirely different objects; index notation has no underlying geometric interpretation",
+        "Tensors are always rank-2 objects (matrices); higher ranks are not considered tensors in differential geometry",
+        "Abstract tensors only exist in finite-dimensional vector spaces; the concept fails in infinite-dim settings"
+      ],
+      "correct": 0,
+      "explanation": "Tensor of rank $(p, q)$: multilinear map from $V^* \\times \\cdots \\times V^* \\times V \\times \\cdots \\times V$ ($p$ copies $V^*$, $q$ copies $V$) to scalars. Coordinate-free definition (DG). Components $T^{\\mu_1\\ldots\\mu_p}_{\\ \\ \\ \\nu_1\\ldots\\nu_q}$ depend on basis but transform consistently. Penrose's abstract index notation marks indices as labels of slots, not literal numbers, allowing index notation to coexist with coordinate-free geometry. Differential forms are antisymmetric covariant tensors."
+    }
+  }
+]

@@ -108,6 +108,18 @@ export const CATEGORIES = [
         ],
       },
       {
+        id: 'notation',
+        label: 'Notation & Conventions',
+        children: [
+          { id: 'dirac-notation',     label: 'Dirac (Bra-Ket) Notation' },
+          { id: 'einstein-summation', label: 'Einstein Summation & Indices' },
+          { id: 'pauli-matrices',     label: 'Pauli Matrices' },
+          { id: 'gamma-matrices',     label: 'Gamma (Dirac) Matrices' },
+          { id: 'spinor-notation',    label: 'Spinors & Spinor Indices' },
+          { id: 'physics-symbols',    label: 'Greek Letters & Variable Conventions' },
+        ],
+      },
+      {
         id: 'theorems',
         label: 'Theorems & Principles',
         children: [

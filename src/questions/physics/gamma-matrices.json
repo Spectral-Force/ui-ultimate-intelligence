@@ -1,0 +1,153 @@
+[
+  {
+    "id": "gam001",
+    "path": ["physics", "notation", "gamma-matrices"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "The Dirac gamma matrices $\\gamma^\\mu$ satisfy the Clifford algebra of Minkowski spacetime. What is the defining anticommutation relation?",
+    "equation": "\\{\\gamma^\\mu, \\gamma^\\nu\\} = 2\\eta^{\\mu\\nu} I_4",
+    "passive": {
+      "options": [
+        "$\\{\\gamma^\\mu,\\gamma^\\nu\\} = 2\\eta^{\\mu\\nu}I_4$ with Minkowski metric; smallest representation is $4\\times 4$",
+        "$[\\gamma^\\mu, \\gamma^\\nu] = 0$ — gamma matrices commute pairwise like ordinary diagonal matrices",
+        "$\\{\\gamma^\\mu, \\gamma^\\nu\\} = \\delta^{\\mu\\nu}I$ — Euclidean Clifford signature with no Lorentz metric structure",
+        "Gamma matrices are $2\\times 2$ like Pauli matrices but augmented with extra metric structure for Lorentz invariance"
+      ],
+      "correct": 0,
+      "explanation": "Dirac matrices satisfy Clifford algebra of 4D Minkowski spacetime. Smallest dimension where this can be realised: $4\\times 4$ matrices (cannot be $2\\times 2$ because Pauli's anticommutation gives Euclidean, not Lorentzian). Many representations equivalent up to similarity: Dirac (= standard), Weyl (chiral), Majorana. All have $\\text{tr}(\\gamma^\\mu) = 0$, $\\text{tr}(\\gamma^\\mu\\gamma^\\nu) = 4\\eta^{\\mu\\nu}$. Used in writing the Dirac equation $(i\\gamma^\\mu\\partial_\\mu - m)\\psi = 0$."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each gamma-matrix identity / construction:",
+      "pairs": [
+        {"id": "p1", "term": "Dirac slash $\\not{a} = \\gamma^\\mu a_\\mu$", "definition": "Feynman slash notation: contraction of 4-vector $a$ with $\\gamma$ matrices; $(\\not{a})^2 = a^\\mu a_\\mu I$"},
+        {"id": "p2", "term": "$\\gamma^5 = i\\gamma^0\\gamma^1\\gamma^2\\gamma^3$", "definition": "Chirality matrix; anticommutes with all $\\gamma^\\mu$; $(\\gamma^5)^2 = I$; eigenstates are L/R Weyl spinors"},
+        {"id": "p3", "term": "$\\sigma^{\\mu\\nu} = (i/2)[\\gamma^\\mu, \\gamma^\\nu]$", "definition": "Spin tensor; generates Lorentz transformations on spinors; appears in dipole moments"},
+        {"id": "p4", "term": "$\\bar\\psi = \\psi^\\dagger\\gamma^0$", "definition": "Dirac conjugate (not Hermitian conjugate alone); $\\bar\\psi\\psi$ is a Lorentz scalar"}
+      ],
+      "explanation": "Mostly-plus and mostly-minus conventions give different signs. Weyl basis (chiral): block-off-diagonal $\\gamma^0$, useful for separating left and right Weyl components. Dirac basis: $\\gamma^0$ diagonal, useful for non-relativistic limit. Majorana basis: all $\\gamma^\\mu$ purely imaginary, allows real spinors."
+    }
+  },
+  {
+    "id": "gam002",
+    "path": ["physics", "notation", "gamma-matrices"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The Dirac equation $(i\\gamma^\\mu\\partial_\\mu - mc/\\hbar)\\psi = 0$ describes relativistic spin-1/2 particles. What was Dirac's key insight that led to it?",
+    "passive": {
+      "options": [
+        "Factor Klein-Gordon operator $(\\Box - m^2)$ into linear factors $(\\gamma^\\mu\\partial_\\mu)^2 = \\Box$ via anticommuting matrices",
+        "Just write the Schrödinger equation directly with the relativistic mass-energy expression substituted in",
+        "Use the standard principle of least action with no special matrix structure or anticommutators",
+        "Solve the Klein-Gordon equation directly without any factorisation into first-order pieces"
+      ],
+      "correct": 0,
+      "explanation": "Dirac sought a relativistic equation linear in time derivative (so probability density is positive-definite). $(i\\gamma^\\mu\\partial_\\mu)^2 = (i\\gamma^\\mu\\partial_\\mu)(i\\gamma^\\nu\\partial_\\nu) = -\\gamma^\\mu\\gamma^\\nu\\partial_\\mu\\partial_\\nu = -(1/2)\\{\\gamma^\\mu, \\gamma^\\nu\\}\\partial_\\mu\\partial_\\nu$ (symmetric part of $\\partial_\\mu\\partial_\\nu$). Requiring this to equal $\\Box = \\eta^{\\mu\\nu}\\partial_\\mu\\partial_\\nu$ forces $\\{\\gamma^\\mu, \\gamma^\\nu\\} = 2\\eta^{\\mu\\nu}$. Predicted antimatter (positron, found 1932)."
+    }
+  },
+  {
+    "id": "gam003",
+    "path": ["physics", "notation", "gamma-matrices"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The chirality matrix $\\gamma^5 = i\\gamma^0\\gamma^1\\gamma^2\\gamma^3$ projects left and right Weyl spinors. The chirality projectors are:",
+    "equation": "P_L = \\frac{1 - \\gamma^5}{2}, \\quad P_R = \\frac{1 + \\gamma^5}{2}",
+    "passive": {
+      "options": [
+        "$P_{L,R} = (1 \\mp \\gamma^5)/2$ project onto left/right chirality; satisfy $P_L^2 = P_L$, $P_LP_R = 0$, $P_L + P_R = I$",
+        "$P_{L,R} = (1 \\pm \\gamma^0)/2$ — projection by time-like gamma",
+        "$P_L = \\gamma^5$, $P_R = -\\gamma^5$ — direct chirality assignment",
+        "There is no chirality projection in 4D spinor space"
+      ],
+      "correct": 0,
+      "explanation": "Chirality: $\\gamma^5$ eigenstates with eigenvalues $\\pm 1$ are right/left-handed Weyl spinors. In Weyl (chiral) basis: $\\gamma^5 = \\text{diag}(-I_2, I_2)$, so upper 2 components are L, lower 2 are R. Weak interaction is chiral: $W$ bosons couple only to L fermions (and R antifermions) — parity violation! For massless fermions, helicity = chirality; massive fermions mix chirality during propagation."
+    }
+  },
+  {
+    "id": "gam004",
+    "path": ["physics", "notation", "gamma-matrices"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Feynman slash notation $\\not{a} = \\gamma^\\mu a_\\mu$ provides a compact way to write contractions. What is $\\not{a}\\not{b}$?",
+    "equation": "\\not{a}\\not{b} = a\\cdot b\\,I - i\\sigma^{\\mu\\nu}a_\\mu b_\\nu",
+    "passive": {
+      "options": [
+        "$\\not a\\not b = (a\\cdot b)I + \\tfrac12[\\not a,\\not b] = (a\\cdot b)I - i\\sigma^{\\mu\\nu}a_\\mu b_\\nu$ — sym + antisym parts",
+        "$\\not a\\not b = \\not{ab}$ — slash of the product simply equals the product of slashes, with no extra terms",
+        "$\\not a\\not b = a\\cdot b$ as a pure scalar, since the antisymmetric Pauli-like part vanishes identically",
+        "Feynman slash notation is purely typographic shorthand without algebraic content beyond the original gamma matrices"
+      ],
+      "correct": 0,
+      "explanation": "Using $\\gamma^\\mu\\gamma^\\nu = (1/2)\\{\\gamma^\\mu,\\gamma^\\nu\\} + (1/2)[\\gamma^\\mu,\\gamma^\\nu] = \\eta^{\\mu\\nu}I - i\\sigma^{\\mu\\nu}$ gives the result. Key identity: $\\not{a}\\not{a} = a^\\mu a_\\mu I = a^2 I$ — the slash squared is the four-vector squared. Useful in evaluating Feynman amplitudes: $(\\not{p} - m)(\\not{p} + m) = p^2 - m^2$, so on-shell $\\not{p}u(p) = mu(p)$ (Dirac equation in momentum space)."
+    }
+  },
+  {
+    "id": "gam005",
+    "path": ["physics", "notation", "gamma-matrices"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Dirac bilinears $\\bar\\psi\\Gamma\\psi$ with $\\Gamma \\in \\{I, \\gamma^\\mu, \\sigma^{\\mu\\nu}, \\gamma^5, \\gamma^\\mu\\gamma^5\\}$ classify by Lorentz transformation. What are the five types?",
+    "passive": {
+      "options": [
+        "Scalar, vector, tensor, pseudoscalar, axial-vector ($\\bar\\psi\\psi, \\gamma^\\mu, \\sigma^{\\mu\\nu}, \\gamma^5, \\gamma^\\mu\\gamma^5$); total 16 components",
+        "Only scalar and vector bilinears exist physically; tensor and pseudoquantities are derived from these and not fundamental",
+        "All five bilinear types share the same Lorentz transformation properties and are physically equivalent observables",
+        "Bilinears classified by spin only: $s = 0, 1, 2$ correspond respectively to scalar, vector, and tensor structures alone"
+      ],
+      "correct": 0,
+      "explanation": "Used to construct interaction Lagrangians. QED current: $j^\\mu = \\bar\\psi\\gamma^\\mu\\psi$ (vector, conserved). Weak current: $\\bar\\psi\\gamma^\\mu(1-\\gamma^5)\\psi$ (V-A, mixing vector and axial-vector). Yukawa coupling: $\\bar\\psi\\psi\\phi$ (scalar). Magnetic moment: $\\bar\\psi\\sigma^{\\mu\\nu}\\psi F_{\\mu\\nu}$ (anomalous moment term). Pseudoscalar bilinear $\\bar\\psi\\gamma^5\\psi$ appears in pion-nucleon coupling (parity odd)."
+    }
+  },
+  {
+    "id": "gam006",
+    "path": ["physics", "notation", "gamma-matrices"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Trace identities of gamma-matrix products are essential for Feynman amplitude calculations. Which is correct?",
+    "passive": {
+      "options": [
+        "$\\text{tr}\\gamma^\\mu = 0$; $\\text{tr}(\\gamma^\\mu\\gamma^\\nu) = 4\\eta^{\\mu\\nu}$; odd $\\gamma$-products vanish; 4-$\\gamma$ trace gives metric combination",
+        "All traces of products of gamma matrices vanish identically due to the anticommutation relations holding under trace",
+        "$\\text{tr}(\\gamma^\\mu\\gamma^\\nu) = \\eta^{\\mu\\nu}$ (factor 1 instead of 4) because the trace normalises out one factor",
+        "Trace identities depend on the chosen gamma matrix representation (Dirac, Weyl, Majorana) and are not basis-independent"
+      ],
+      "correct": 0,
+      "explanation": "These follow from $\\{\\gamma^\\mu, \\gamma^\\nu\\} = 2\\eta^{\\mu\\nu}I_4$ and cyclicity of trace. With $\\gamma^5$: $\\text{tr}(\\gamma^5) = 0$, $\\text{tr}(\\gamma^5\\gamma^\\mu\\gamma^\\nu) = 0$, $\\text{tr}(\\gamma^5\\gamma^\\mu\\gamma^\\nu\\gamma^\\rho\\gamma^\\sigma) = -4i\\epsilon^{\\mu\\nu\\rho\\sigma}$ (gives axial-anomaly terms). FORM and FeynCalc programs automate these calculations for amplitudes. In $d$ dimensions (dim reg): $\\text{tr}(I) = $ some function $f(d)$, often taken $f(d) = 4$ by convention (Mertig-Bohm convention)."
+    }
+  },
+  {
+    "id": "gam007",
+    "path": ["physics", "notation", "gamma-matrices"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The Majorana representation uses imaginary gamma matrices, allowing real spinors. Why is this useful for some physics?",
+    "passive": {
+      "options": [
+        "Real Dirac equation in Majorana rep allows real spinors; describes neutral self-conjugate fermions, key for neutrinos and topological SC",
+        "Majorana representation gives identical physics to the standard Dirac representation with no observable difference",
+        "All elementary particles in the Standard Model are described by Majorana spinors as their natural representation",
+        "Majorana representation is only relevant for massless particles such as the photon and gluon and gravitons"
+      ],
+      "correct": 0,
+      "explanation": "Majorana condition: $\\psi^c = \\psi$ (charge conjugate equals self) — only possible for electrically neutral fermions. Neutrinos: if Majorana, then lepton number is violated; testable via neutrinoless double-beta decay (search ongoing: KamLAND-Zen, MAJORANA). Majorana zero modes in topological superconductors: half of a Dirac fermion bound to a defect; non-Abelian anyon statistics; basis for topological quantum computing (Microsoft StationQ approach)."
+    }
+  },
+  {
+    "id": "gam008",
+    "path": ["physics", "notation", "gamma-matrices"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "The Lorentz spin generators $\\sigma^{\\mu\\nu} = (i/2)[\\gamma^\\mu, \\gamma^\\nu]$ transform Dirac spinors. What is the finite Lorentz transformation rule?",
+    "equation": "\\psi(x) \\to S(\\Lambda)\\psi(\\Lambda^{-1}x), \\quad S(\\Lambda) = \\exp\\left(-\\frac{i}{4}\\omega_{\\mu\\nu}\\sigma^{\\mu\\nu}\\right)",
+    "passive": {
+      "options": [
+        "$\\psi \\to S(\\Lambda)\\psi$ with $S = \\exp(-i\\omega_{\\mu\\nu}\\sigma^{\\mu\\nu}/4)$; $\\omega_{\\mu\\nu}$ encodes boosts + rotations",
+        "$\\psi$ transforms as a 4-vector $\\psi'^\\mu = \\Lambda^\\mu{}_\\nu\\psi^\\nu$, same as ordinary spacetime four-vectors",
+        "Dirac spinors are Lorentz-invariant scalars; no transformation needed when changing inertial reference frames",
+        "$\\psi \\to \\Lambda\\psi$ — same Lorentz matrix as for tensors; no spinor-specific transformation needed"
+      ],
+      "correct": 0,
+      "explanation": "Six parameters $\\omega_{\\mu\\nu}$: 3 rotations ($\\omega_{ij}$) + 3 boosts ($\\omega_{0i}$). The spinor representation of the Lorentz group is $(\\tfrac12, 0) \\oplus (0, \\tfrac12)$ — left + right Weyl spinors. In Weyl basis, the boost generators are non-Hermitian (giving non-unitary representation) — characteristic of finite-dim Lorentz reps. Bilinears like $\\bar\\psi\\psi$ are Lorentz scalars because the dagger and conjugate gamma cancel: $\\bar\\psi\\to\\bar\\psi S^{-1}$."
+    }
+  }
+]

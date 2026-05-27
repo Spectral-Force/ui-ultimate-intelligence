@@ -1,0 +1,183 @@
+[
+  {
+    "id": "sym001",
+    "path": ["physics", "notation", "physics-symbols"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "Greek letters carry conventional meanings across physics. What does $\\omega$ typically denote, vs $\\nu$?",
+    "passive": {
+      "options": [
+        "$\\omega$ = angular frequency (rad/s); $\\nu$ = ordinary frequency (Hz, cycles/s); relation $\\omega = 2\\pi\\nu$ — factor of $2\\pi$ between them",
+        "$\\omega$ and $\\nu$ are interchangeable names for the same quantity",
+        "$\\omega$ = neutrino, $\\nu$ = angular frequency — opposite of the actual convention",
+        "$\\omega$ is dimensionless; $\\nu$ has units of inverse time"
+      ],
+      "correct": 0,
+      "explanation": "Both are 'frequencies' but with different conventions. Most physics formulas use $\\omega$ for clean equations (e.g., $E = \\hbar\\omega$, $e^{i\\omega t}$). Engineers and undergrads often use $\\nu$ (or $f$). Tricky case: $\\nu$ also denotes kinematic viscosity (fluid mechanics) and neutrinos (particle physics) — context disambiguates. Wavelength: $\\lambda$. Wavenumber: $k$ (or sometimes also $\\nu$ in spectroscopy: 'wavenumber' in cm$^{-1}$)."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each common Greek letter to its primary physics meaning:",
+      "pairs": [
+        {"id": "p1", "term": "$\\Gamma$ (capital gamma)", "definition": "Decay rate / natural linewidth (1/lifetime); also Christoffel symbol in GR"},
+        {"id": "p2", "term": "$\\gamma$ (lowercase gamma)", "definition": "Lorentz factor $1/\\sqrt{1-v^2/c^2}$; also damping rate; gamma-ray photon"},
+        {"id": "p3", "term": "$\\Omega$ (capital omega)", "definition": "Rabi frequency; solid angle; cosmological density parameter; ohm (resistance)"},
+        {"id": "p4", "term": "$\\omega$ (lowercase omega)", "definition": "Angular frequency; trap frequency in AMO; also natural frequency in oscillator"}
+      ],
+      "explanation": "Greek letters are heavily overloaded across physics. Context-dependent: $\\gamma$ in atomic physics often means decay rate but in special relativity means Lorentz factor. $\\Omega$ as Rabi frequency in AMO but as solid angle in scattering theory. The capitalisation usually distinguishes related but distinct quantities."
+    }
+  },
+  {
+    "id": "sym002",
+    "path": ["physics", "notation", "physics-symbols"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "$\\phi$ and $\\psi$ are both common wavefunction labels. What's the typical convention distinguishing them?",
+    "passive": {
+      "options": [
+        "$\\psi$: QM wavefunction (Schrödinger); $\\phi$: scalar field (Klein-Gordon, Higgs) or scalar potential",
+        "$\\psi$ and $\\phi$ are fully interchangeable across all physics contexts; convention is purely stylistic preference",
+        "$\\psi$ is used only in non-relativistic quantum mechanics; $\\phi$ is restricted to relativistic QFT scalars only",
+        "$\\phi$ is always reserved for the electrostatic potential and is never used for any field or wavefunction"
+      ],
+      "correct": 0,
+      "explanation": "Conventions: $\\psi$ — Schrödinger wavefunction, Dirac spinor; $\\phi$ — scalar field (Klein-Gordon, Higgs), or electromagnetic scalar potential; $\\chi$ — auxiliary field, spinor part; $\\xi$ — random force/noise, also Grassmann variable. In SUSY: $\\phi$ for chiral superfield scalar component, $\\psi$ for spinor component. The Greek $\\Phi$ (capital) often means flux (magnetic flux through a loop), or vacuum expectation value of a Higgs field."
+    }
+  },
+  {
+    "id": "sym003",
+    "path": ["physics", "notation", "physics-symbols"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Time variables $t$, $\\tau$, $T$ have distinct conventional meanings. Which is correct?",
+    "passive": {
+      "options": [
+        "$t$: coordinate time (frame-dep); $\\tau$: proper time (Lorentz invariant); $T$: period or temperature",
+        "$t$ and $\\tau$ are the same physical quantity; difference is only in notational style without physical content",
+        "$T$ always means a time interval regardless of context; it never denotes temperature in any physics discipline",
+        "$\\tau$ refers exclusively to torque or twist angle; it never has a temporal meaning in standard physics conventions"
+      ],
+      "correct": 0,
+      "explanation": "$d\\tau^2 = -dx^\\mu dx_\\mu/c^2$ (mostly-plus signature). Twin paradox: proper time $\\tau$ along a worldline is the elapsed time on a clock following that worldline; observer time $t$ varies between frames. $T$ overloaded: period ($T = 1/\\nu$), temperature (Kelvin), kinetic energy ($T = p^2/2m$), tension. $\\tau$ also lifetime ($\\tau = 1/\\Gamma$), relaxation time, time constant. Context disambiguates."
+    }
+  },
+  {
+    "id": "sym004",
+    "path": ["physics", "notation", "physics-symbols"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "$\\sigma$ has many distinct meanings across physics subfields. Which best characterises them?",
+    "passive": {
+      "options": [
+        "Cross-section, Pauli matrices, std deviation, stress tensor, conductivity, surface tension, Stefan-Boltzmann — context disambiguates",
+        "$\\sigma$ has a single universal meaning across all physics — denoting standard deviation in statistics globally",
+        "$\\sigma$ is reserved for thermodynamic entropy; other reuse of the symbol is technically notation abuse",
+        "$\\sigma$ always denotes spin angular momentum regardless of physics subfield or notational context in use"
+      ],
+      "correct": 0,
+      "explanation": "Among the most overloaded symbols. Greek letter $\\sigma$ chosen for Pauli matrices (from German 'spin' notation by Pauli). Stress tensor inherits from continuum-mechanics tradition. Cross-section is from particle-physics scattering. Surface tension from fluid dynamics. Standard deviation from statistics. Disambiguation by typography (boldface $\\boldsymbol\\sigma$ for Pauli vector), context (cross-section in cm² has units), or subscript/superscript ($\\sigma^{\\mu\\nu}$ tensor, $\\sigma_{xy}$ Hall conductivity)."
+    }
+  },
+  {
+    "id": "sym005",
+    "path": ["physics", "notation", "physics-symbols"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "$\\hbar$ vs $h$ are both Planck constants, but with different conventional uses. Which is correct?",
+    "passive": {
+      "options": [
+        "$h = 6.626\\times 10^{-34}$ J·s; $\\hbar = h/(2\\pi)$; $E = h\\nu = \\hbar\\omega$; $\\hbar$ used with angular frequency",
+        "$\\hbar$ and $h$ are the same quantity expressed in different unit systems (SI vs CGS or atomic units)",
+        "$\\hbar$ is used only in relativistic quantum theory; $h$ is restricted to non-relativistic quantum mechanics",
+        "$\\hbar = h \\cdot 2\\pi$ (multiplication, not division) — reduced means scaled up rather than scaled down"
+      ],
+      "correct": 0,
+      "explanation": "Reduced Planck constant $\\hbar$ avoids cluttering equations with $2\\pi$ factors when angular frequencies are natural. de Broglie: $\\lambda = h/p$ (with $h$, ordinary momentum), or $k = p/\\hbar$ (with $\\hbar$, wavenumber). Bohr quantisation: $L = n\\hbar$ (with $\\hbar$). Both constants are 'exact' in 2019 SI redefinition: $h = 6.62607015 \\times 10^{-34}$ J·s by definition. The relationship $\\hbar = h/2\\pi$ then exactly defines $\\hbar$."
+    }
+  },
+  {
+    "id": "sym006",
+    "path": ["physics", "notation", "physics-symbols"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Hat notation $\\hat{}$ versus bold $\\mathbf{}$ versus arrow $\\vec{}$ — what conventions exist?",
+    "passive": {
+      "options": [
+        "$\\hat A$: operator or unit vector; $\\mathbf A$: vector/matrix; $\\vec A$: vector (alt); $\\bar A$: average/conjugate/Dirac bar",
+        "Hat $\\hat A$ and arrow $\\vec A$ are always equivalent symbols; bold $\\mathbf A$ is universally reserved for matrices only",
+        "Hat $\\hat A$ means operator only and is never used to denote a unit vector in any physics context",
+        "Vector arrow $\\vec{}$ is reserved exclusively for 3-vectors; bold $\\mathbf{}$ is exclusively for 4-vectors in relativity"
+      ],
+      "correct": 0,
+      "explanation": "Confusion: $\\hat{\\mathbf p}$ could mean 'operator vector $\\mathbf p$' or 'unit vector p' depending on context. Hats usually mean operators in QM contexts. Unit vectors: $\\hat x, \\hat y, \\hat z, \\hat r, \\hat n$ etc. Vectors: $\\mathbf v$ or $\\vec v$ — bold preferred in modern texts. Tensors: just symbol without decoration, or with index pattern $T^{\\mu\\nu}$. Dirac bar $\\bar\\psi = \\psi^\\dagger\\gamma^0$ (NOT $(\\psi)^*$). Overdots: $\\dot x = dx/dt$ (Newton's notation for time derivative)."
+    }
+  },
+  {
+    "id": "sym007",
+    "path": ["physics", "notation", "physics-symbols"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "$\\alpha$ and $\\beta$ are both common but with very different meanings. Which is correct?",
+    "passive": {
+      "options": [
+        "$\\alpha$: fine-structure $\\sim 1/137$. $\\beta$: $v/c$ in SR; $1/(k_BT)$ in stat mech; also Lorentz boost generator",
+        "$\\alpha$ and $\\beta$ have identical meanings across all physics subfields, with no context-dependence whatsoever",
+        "$\\beta$ is always the speed of light; $\\alpha$ is always Planck's constant — fixed meanings",
+        "Both $\\alpha$ and $\\beta$ refer to spinor components in QFT only; they have no other physical use"
+      ],
+      "correct": 0,
+      "explanation": "$\\alpha$ universally fine-structure constant in atomic physics. In thermal physics: $\\beta = 1/k_BT$ is inverse temperature — appears in Boltzmann factor $e^{-\\beta E}$. $\\beta = v/c$ in special relativity (so $\\gamma = 1/\\sqrt{1-\\beta^2}$). $\\beta$-decay (nuclear): emission of electron/positron. $\\alpha$-decay: helium nucleus emission. $\\alpha$-particle = $^4$He nucleus. Context!"
+    }
+  },
+  {
+    "id": "sym008",
+    "path": ["physics", "notation", "physics-symbols"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "$\\nabla$ has multiple roles. Which is correct?",
+    "passive": {
+      "options": [
+        "$\\nabla f$: gradient; $\\nabla\\cdot\\mathbf F$: divergence; $\\nabla\\times\\mathbf F$: curl; $\\nabla^2$: Laplacian",
+        "$\\nabla$ always denotes the curl operator regardless of whether it acts on a scalar or vector field",
+        "Gradient, divergence, and curl are completely independent operators that share no underlying notation",
+        "$\\nabla^2$ refers only to a generic second-order spatial differential and never specifically to the Laplacian"
+      ],
+      "correct": 0,
+      "explanation": "$\\nabla = (\\partial_x, \\partial_y, \\partial_z)$ in Cartesian — formal vector operator. Acts on scalars and vectors differently. In curvilinear coordinates, $\\nabla$ has metric factors. Covariant derivative in GR: $\\nabla_\\mu$ includes Christoffel symbol corrections. d'Alembertian $\\Box = \\eta^{\\mu\\nu}\\partial_\\mu\\partial_\\nu$ is the 4D Laplacian. Heat equation: $\\partial_t u = \\alpha\\nabla^2 u$. Wave equation: $\\Box u = 0$. Poisson: $\\nabla^2\\phi = \\rho/\\varepsilon_0$."
+    }
+  },
+  {
+    "id": "sym009",
+    "path": ["physics", "notation", "physics-symbols"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Convention for Fourier transforms varies — $2\\pi$ factors can go in different places. Which is standard in physics?",
+    "passive": {
+      "options": [
+        "Asym: $\\int f e^{-ikx}dx$ + $\\int \\tilde f e^{ikx}dk/2\\pi$; sym: $1/\\sqrt{2\\pi}$ each side; eng: $e^{-i2\\pi\\nu t}$",
+        "Only one Fourier-transform convention exists in physics; all subfields uniformly adopt the symmetric form",
+        "Fourier transforms differ between subfields only in the variable name (e.g. $k$ vs $\\omega$) but never in factors",
+        "Sign of the exponent $e^{\\pm ikx}$ is universal across all conventions; only the $2\\pi$ factor placement varies"
+      ],
+      "correct": 0,
+      "explanation": "Multiple conventions in use. Physics often: $\\tilde f(k) = \\int f(x) e^{-ikx}dx$, inverse with $dk/2\\pi$. Mathematics often: $\\tilde f(\\xi) = \\int f(x)e^{-2\\pi i\\xi x}dx$, symmetric. Sign of exponent: $-ikx$ vs $+ikx$ — varies by field (some QM uses $e^{+i(\\omega t - kx)}$ for plane wave going in $+x$ direction, others $e^{-i(\\omega t - kx)}$). Always check conventions before comparing formulas across papers."
+    }
+  },
+  {
+    "id": "sym010",
+    "path": ["physics", "notation", "physics-symbols"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "$d$ vs $\\partial$ vs $D$ denote different kinds of derivatives. Which is correct?",
+    "passive": {
+      "options": [
+        "$d/dt$: total; $\\partial$: partial; $D/Dt$: material ($\\partial_t + \\mathbf v\\cdot\\nabla$); $D_\\mu$: covariant (gauge/GR)",
+        "$d, \\partial, D$ are entirely interchangeable symbols meaning the same thing in any physical equation",
+        "$d$ is reserved for spatial derivatives, $\\partial$ for temporal — opposite conventions from what's standard",
+        "$D$ refers only to spatial dimension (number of dimensions of space) and never denotes a derivative operator"
+      ],
+      "correct": 0,
+      "explanation": "Material derivative in fluids: $Df/Dt = \\partial f/\\partial t + \\mathbf v\\cdot\\nabla f$ — how $f$ changes following a fluid element. Covariant derivative in GR: $\\nabla_\\mu V^\\nu = \\partial_\\mu V^\\nu + \\Gamma^\\nu_{\\mu\\rho}V^\\rho$. Gauge covariant derivative in QED: $D_\\mu = \\partial_\\mu - ieA_\\mu$. Functional derivative $\\delta/\\delta f(x)$ acts on functionals (entire functions as input). Lagrangian mechanics: $d/dt(\\partial L/\\partial\\dot q) - \\partial L/\\partial q = 0$ — Euler-Lagrange combines both partial and full derivatives."
+    }
+  }
+]

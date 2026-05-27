@@ -1,0 +1,186 @@
+[
+  {
+    "id": "dir001",
+    "path": ["physics", "notation", "dirac-notation"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "Dirac bra-ket notation distinguishes ket vectors $|\\psi\\rangle$ from bra vectors $\\langle\\psi|$. What is the fundamental relationship between them?",
+    "passive": {
+      "options": [
+        "Bra $\\langle\\psi|$ is the Hermitian conjugate (conjugate transpose) of ket $|\\psi\\rangle$; ket lives in $\\mathcal H$, bra in the dual space $\\mathcal H^*$; their inner product $\\langle\\phi|\\psi\\rangle$ is a complex scalar",
+        "Ket and bra both live in the same Hilbert space and differ only in display convention; the dual space is unnecessary",
+        "Bra is the real part of a ket: $\\langle\\psi| = \\text{Re}|\\psi\\rangle$ — taken to remove imaginary phase ambiguity",
+        "$\\langle\\phi|\\psi\\rangle$ is a vector in $\\mathcal H$, not a complex scalar — bras transform vectors to vectors"
+      ],
+      "correct": 0,
+      "explanation": "In matrix terms: a ket is a column vector, a bra is a row vector that is the conjugate transpose. For $|\\psi\\rangle = \\begin{pmatrix}\\alpha\\\\\\beta\\end{pmatrix}$: $\\langle\\psi| = (\\alpha^*, \\beta^*)$. Inner product $\\langle\\phi|\\psi\\rangle$ yields a complex number; outer product $|\\psi\\rangle\\langle\\phi|$ yields a matrix (operator). Properties: $\\langle\\phi|\\psi\\rangle^* = \\langle\\psi|\\phi\\rangle$ (conjugate symmetry); $\\langle\\psi|\\psi\\rangle \\geq 0$ (positivity)."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each Dirac expression to its mathematical type:",
+      "pairs": [
+        {"id": "p1", "term": "$|\\psi\\rangle$", "definition": "Ket — column vector / element of Hilbert space $\\mathcal H$"},
+        {"id": "p2", "term": "$\\langle\\phi|$", "definition": "Bra — row vector / element of dual space $\\mathcal H^*$; Hermitian conjugate of ket"},
+        {"id": "p3", "term": "$\\langle\\phi|\\psi\\rangle$", "definition": "Inner product — complex scalar; gives probability amplitude in QM"},
+        {"id": "p4", "term": "$|\\psi\\rangle\\langle\\phi|$", "definition": "Outer product — operator (matrix); rank-1 if $|\\psi\\rangle$ and $|\\phi\\rangle$ are vectors"}
+      ],
+      "explanation": "Dirac's notation (1939) cleanly separates the spaces and operations of QM. The 'sandwich' $\\langle\\phi|\\hat A|\\psi\\rangle$ is a complex matrix element. Resolution of identity $\\sum_n |n\\rangle\\langle n| = \\hat I$ uses outer products. Projectors $\\hat P_n = |n\\rangle\\langle n|$ satisfy $\\hat P_n^2 = \\hat P_n$ (idempotent)."
+    }
+  },
+  {
+    "id": "dir002",
+    "path": ["physics", "notation", "dirac-notation"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "The completeness relation (resolution of identity) for an orthonormal basis $\\{|n\\rangle\\}$ is:",
+    "equation": "\\sum_n |n\\rangle\\langle n| = \\hat I",
+    "passive": {
+      "options": [
+        "$\\sum_n |n\\rangle\\langle n| = \\hat I$; any state expands as $|\\psi\\rangle = \\sum_n c_n|n\\rangle$ with $c_n = \\langle n|\\psi\\rangle$",
+        "$\\sum_n \\langle n|n\\rangle = \\hat I$ — sum of inner products (gives a scalar, not the identity operator)",
+        "$\\prod_n |n\\rangle\\langle n| = \\hat I$ — product (not sum) of projectors gives identity",
+        "$|\\sum_n n\\rangle = \\hat I$ — sum is taken inside the ket, giving a single state called identity"
+      ],
+      "correct": 0,
+      "explanation": "Completeness lets you insert $\\hat I$ between any operators: $\\langle\\phi|\\hat A|\\psi\\rangle = \\sum_n\\langle\\phi|\\hat A|n\\rangle\\langle n|\\psi\\rangle$. For continuous bases: $\\int|x\\rangle\\langle x|dx = \\hat I$. The position-momentum overlap is $\\langle x|p\\rangle = e^{ipx/\\hbar}/\\sqrt{2\\pi\\hbar}$ — converting between bases by Fourier transform. Used constantly in computing matrix elements, expectation values, time evolutions."
+    }
+  },
+  {
+    "id": "dir003",
+    "path": ["physics", "notation", "dirac-notation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "How does the Hermitian conjugate (dagger $\\dagger$) act on operators in bra-ket notation?",
+    "passive": {
+      "options": [
+        "$(\\hat A|\\psi\\rangle)^\\dagger = \\langle\\psi|\\hat A^\\dagger$ — reverses order; for matrices, $A^\\dagger = (A^T)^*$ (transpose then conjugate)",
+        "$\\hat A^\\dagger = \\hat A^{-1}$ — daggering an operator gives its inverse",
+        "$(\\hat A\\hat B)^\\dagger = \\hat A^\\dagger\\hat B^\\dagger$ — order preserved on Hermitian conjugation",
+        "$\\hat A^\\dagger$ acts on the operator's eigenvalues by complex conjugation, not on the operator structure"
+      ],
+      "correct": 0,
+      "explanation": "Properties: $(\\hat A\\hat B)^\\dagger = \\hat B^\\dagger\\hat A^\\dagger$ (reversed order, like inverse). $(\\hat A^\\dagger)^\\dagger = \\hat A$. For complex scalars $c$: $c^\\dagger = c^*$. Hermitian operators $\\hat A = \\hat A^\\dagger$ have real eigenvalues — basis of QM observables. Unitary operators $\\hat U^\\dagger \\hat U = \\hat I$ have eigenvalues on the unit circle — basis of QM evolution."
+    }
+  },
+  {
+    "id": "dir004",
+    "path": ["physics", "notation", "dirac-notation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Tensor products of states combine independent systems. For two qubits in states $|\\psi\\rangle_A$ and $|\\phi\\rangle_B$, the joint state is:",
+    "passive": {
+      "options": [
+        "$|\\psi\\rangle_A \\otimes |\\phi\\rangle_B$ (also $|\\psi\\phi\\rangle$); joint space $\\mathcal H_A \\otimes \\mathcal H_B$ has dim $d_A d_B$",
+        "$|\\psi\\rangle + |\\phi\\rangle$ — direct addition of states in one shared Hilbert space, giving a superposition state",
+        "$\\langle\\psi|\\phi\\rangle$ — inner product of the two subsystem states giving the joint amplitude as a complex number",
+        "Equal-weight superposition $(|\\psi\\rangle + |\\phi\\rangle)/\\sqrt 2$ — averaged combination of the two subsystem kets"
+      ],
+      "correct": 0,
+      "explanation": "Tensor product: $\\begin{pmatrix}a\\\\b\\end{pmatrix} \\otimes \\begin{pmatrix}c\\\\d\\end{pmatrix} = \\begin{pmatrix}ac\\\\ad\\\\bc\\\\bd\\end{pmatrix}$ — Kronecker product. Two-qubit basis: $|00\\rangle, |01\\rangle, |10\\rangle, |11\\rangle$. Operators on subsystem $A$ alone: $\\hat A \\otimes \\hat I_B$. Entangled states (e.g. Bell states) cannot be written as a single tensor product $|\\psi\\rangle_A \\otimes |\\phi\\rangle_B$ — that's their defining property."
+    }
+  },
+  {
+    "id": "dir005",
+    "path": ["physics", "notation", "dirac-notation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The 'sandwich' notation $\\langle\\phi|\\hat A|\\psi\\rangle$ is the matrix element of operator $\\hat A$ between states. What does it equal?",
+    "passive": {
+      "options": [
+        "$A_{\\phi\\psi} = \\sum_{mn}\\langle\\phi|m\\rangle A_{mn}\\langle n|\\psi\\rangle$ in any orthonormal basis — combines basis-expansion of states with the matrix representation of $\\hat A$",
+        "$\\langle\\phi|\\hat A|\\psi\\rangle = \\langle\\phi|\\psi\\rangle\\cdot\\hat A$ — inner product times operator (gives an operator)",
+        "$\\langle\\phi|\\hat A|\\psi\\rangle = A_{\\rm tr}$ — trace of the operator, independent of the states",
+        "Matrix elements vanish whenever $|\\phi\\rangle$ and $|\\psi\\rangle$ are not eigenstates of $\\hat A$"
+      ],
+      "correct": 0,
+      "explanation": "Matrix elements are complex numbers, sandwiches of operators between specific states. Examples: $\\langle n|\\hat H|m\\rangle = H_{nm}$ (Hamiltonian matrix entry); $\\langle e|\\hat d|g\\rangle$ (atomic dipole moment between ground and excited state). Computing them via insertion of complete sets: $\\langle\\phi|\\hat A|\\psi\\rangle = \\sum_n \\langle\\phi|n\\rangle\\langle n|\\hat A|\\psi\\rangle$. For Hermitian $\\hat A$: $\\langle\\phi|\\hat A|\\psi\\rangle = \\langle\\psi|\\hat A|\\phi\\rangle^*$."
+    }
+  },
+  {
+    "id": "dir006",
+    "path": ["physics", "notation", "dirac-notation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The density matrix formalism uses outer products to describe pure or mixed quantum states. How is $\\rho$ constructed?",
+    "passive": {
+      "options": [
+        "Pure: $\\rho = |\\psi\\rangle\\langle\\psi|$. Mixed: $\\rho = \\sum_i p_i |\\psi_i\\rangle\\langle\\psi_i|$ with classical probabilities $p_i \\geq 0$ and $\\sum p_i = 1$",
+        "Density matrix is always $\\rho = |\\psi\\rangle$, a column vector — pure states only",
+        "$\\rho = \\langle\\psi|\\psi\\rangle$ — a scalar (the norm squared)",
+        "Mixed states require $p_i < 0$ to distinguish them from pure states"
+      ],
+      "correct": 0,
+      "explanation": "Density matrix properties: Hermitian $\\rho^\\dagger = \\rho$; positive semi-definite ($\\rho \\succeq 0$); unit trace $\\text{tr}\\rho = 1$. Pure-state criterion: $\\rho^2 = \\rho$ (idempotent), equivalently $\\text{tr}(\\rho^2) = 1$. Mixed: $\\text{tr}(\\rho^2) < 1$. Expectation values: $\\langle\\hat A\\rangle = \\text{tr}(\\rho\\hat A)$. Time evolution: $i\\hbar\\dot\\rho = [\\hat H, \\rho]$ (von Neumann equation, like Schrödinger for the operator)."
+    }
+  },
+  {
+    "id": "dir007",
+    "path": ["physics", "notation", "dirac-notation"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The partial trace generalises 'tracing out' a subsystem. For a bipartite state $\\rho_{AB}$, the reduced state of $A$ is:",
+    "equation": "\\rho_A = \\text{tr}_B(\\rho_{AB}) = \\sum_b \\langle b|_B\\,\\rho_{AB}\\,|b\\rangle_B",
+    "passive": {
+      "options": [
+        "$\\rho_A = \\sum_b\\langle b|_B\\rho_{AB}|b\\rangle_B$: sum over a complete basis $\\{|b\\rangle\\}$ of $B$, gives operator on $A$ alone",
+        "$\\rho_A = \\rho_{AB}$ — partial trace leaves the operator unchanged",
+        "$\\rho_A = \\text{tr}(\\rho_{AB})$ — full trace, a single scalar",
+        "Partial trace is undefined for entangled states; works only for product states"
+      ],
+      "correct": 0,
+      "explanation": "Partial trace is mathematically the natural marginalisation on operators (analogous to integrating out variables in probability). For the Bell state $|\\Phi^+\\rangle = (|00\\rangle + |11\\rangle)/\\sqrt 2$: $\\rho_{AB} = |\\Phi^+\\rangle\\langle\\Phi^+|$ is pure, but $\\rho_A = \\text{tr}_B \\rho_{AB} = \\hat I/2$ is maximally mixed — entanglement makes the parts more mixed than the whole. Partial trace satisfies: $\\langle\\hat O_A\\rangle = \\text{tr}_A(\\rho_A\\hat O_A) = \\text{tr}_{AB}(\\rho_{AB}\\hat O_A \\otimes \\hat I_B)$."
+    }
+  },
+  {
+    "id": "dir008",
+    "path": ["physics", "notation", "dirac-notation"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Schrödinger, Heisenberg, and interaction pictures distribute time-dependence differently between states and operators. In bra-ket notation:",
+    "passive": {
+      "options": [
+        "S: $|\\psi(t)\\rangle = \\hat U|\\psi(0)\\rangle$ (operators fixed). H: $\\hat A(t) = \\hat U^\\dagger\\hat A\\hat U$ (states fixed). I: split $\\hat H = \\hat H_0 + \\hat V$",
+        "All three pictures are physically identical; the names refer only to historical attribution and conventions of style",
+        "Schrödinger and Heisenberg disagree on the expectation values of operators for the same physical state preparation",
+        "The interaction picture uses only Hermitian operators; the other two use unitary operators for time evolution"
+      ],
+      "correct": 0,
+      "explanation": "All three pictures give identical observable predictions: expectation values are invariant under the equivalent unitary transformation. Schrödinger most intuitive for state evolution; Heisenberg parallels classical mechanics ($d\\hat A/dt = [i\\hat H, \\hat A]/\\hbar + \\partial\\hat A/\\partial t$); interaction picture is the workhorse for time-dependent perturbation theory in QFT and atomic physics."
+    }
+  },
+  {
+    "id": "dir009",
+    "path": ["physics", "notation", "dirac-notation"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The wavefunction $\\psi(x)$ is the position-basis amplitude. In Dirac notation, what is its relationship to the abstract ket $|\\psi\\rangle$?",
+    "equation": "\\psi(x) = \\langle x|\\psi\\rangle",
+    "passive": {
+      "options": [
+        "$\\psi(x) = \\langle x|\\psi\\rangle$; momentum form $\\tilde\\psi(p) = \\langle p|\\psi\\rangle$ via $\\langle x|p\\rangle = e^{ipx/\\hbar}/\\sqrt{2\\pi\\hbar}$",
+        "$\\psi(x) = |\\psi\\rangle$ — the wavefunction is the ket itself; Dirac notation drops position dependence implicitly",
+        "$\\psi(x)$ has no Dirac representation; the two notations are mutually exclusive and used in different formalisms",
+        "$\\psi(x) = \\langle\\psi|x\\rangle$ with opposite slot from the standard convention; gives complex-conjugated wavefunction"
+      ],
+      "correct": 0,
+      "explanation": "Going between Dirac and position-space: $\\hat p \\to -i\\hbar\\partial_x$, $\\hat x \\to x$, $\\langle\\phi|\\psi\\rangle = \\int\\phi^*(x)\\psi(x)dx$. Translating equations: Schrödinger eq $\\hat H|\\psi\\rangle = E|\\psi\\rangle$ becomes $-\\hbar^2\\psi''(x)/2m + V(x)\\psi(x) = E\\psi(x)$. Momentum-space wavefunction: $\\tilde\\psi(p) = \\int e^{-ipx/\\hbar}\\psi(x)dx/\\sqrt{2\\pi\\hbar}$ — same physics, different basis."
+    }
+  },
+  {
+    "id": "dir010",
+    "path": ["physics", "notation", "dirac-notation"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "The Stone-von Neumann theorem distinguishes which observables admit a well-defined Dirac formalism in infinite-dimensional Hilbert space. What is its content?",
+    "passive": {
+      "options": [
+        "On $L^2(\\mathbb R)$ irreducible reps of $[\\hat x, \\hat p] = i\\hbar$ are unique up to unitary equivalence (Schrödinger rep)",
+        "Stone-von Neumann theorem asserts that every operator in quantum mechanics is bounded and well-defined",
+        "There are infinitely many inequivalent unitary representations of $[\\hat x, \\hat p] = i\\hbar$ in standard QM",
+        "Stone-von Neumann theorem applies only to finite-dimensional Hilbert spaces, not the continuum spectrum"
+      ],
+      "correct": 0,
+      "explanation": "For finite-dim $\\mathcal H$: $[\\hat x, \\hat p] = i\\hbar \\hat I$ forces $\\text{tr}([\\hat x, \\hat p]) = 0 \\neq i\\hbar\\,d$ — no finite-dim solution. Infinite-dim: Stone-von Neumann (1930s) says representations of the Heisenberg algebra are unique up to unitary, justifying the position/momentum representations as equivalent. Fails in QFT (Haag's theorem) — different vacuum states give inequivalent reps, requiring renormalisation."
+    }
+  }
+]

@@ -1,0 +1,133 @@
+[
+  {
+    "id": "spn001",
+    "path": ["physics", "notation", "spinor-notation"],
+    "level": "M",
+    "modes": ["passive", "active"],
+    "question": "Weyl (two-component) spinors are the irreducible spinor reps of the Lorentz group SL(2, $\\mathbb C$). What's the difference between left ($\\psi_L$) and right ($\\psi_R$) Weyl spinors?",
+    "passive": {
+      "options": [
+        "$\\psi_L$ in $(\\tfrac12, 0)$, $\\psi_R$ in $(0, \\tfrac12)$ of Lorentz; $\\gamma^5 = \\mp 1$ eigenstates; Dirac $\\psi = (\\psi_L, \\psi_R)^T$",
+        "Left and right Weyl spinors differ only in spatial orientation; they share the same underlying Lorentz representation",
+        "Left and right Weyl spinors are physically equivalent and can be converted into each other by a simple complex phase",
+        "Only one Weyl representation exists in 4D spacetime; the labels L and R are merely conventional notational tags"
+      ],
+      "correct": 0,
+      "explanation": "Weyl reps are complex 2-dim and inequivalent (related by parity/complex conjugation). Dirac spinor = direct sum of L+R (4-dim). Mass term $m\\bar\\psi\\psi = m(\\bar\\psi_L\\psi_R + \\bar\\psi_R\\psi_L)$ couples L and R, so massive fermions cannot stay purely chiral. Massless fermions (neutrinos, in early SM) can be purely L (the SM electroweak interactions only see L for leptons and quarks). Notation: $\\psi_L = \\chi^\\alpha$, $\\psi_R = \\bar\\chi_{\\dot\\alpha}$ in van der Waerden's dotted-index convention."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each spinor representation to its property:",
+      "pairs": [
+        {"id": "p1", "term": "Weyl (2-component, $\\psi_L$ or $\\psi_R$)", "definition": "Massless fermions; chirality eigenstate; minimal Lorentz spinor rep; SM left-handed leptons"},
+        {"id": "p2", "term": "Dirac (4-component, $\\psi_L \\oplus \\psi_R$)", "definition": "Charged massive fermions (electron, muon, quark); both chiralities present"},
+        {"id": "p3", "term": "Majorana (4-component, $\\psi = \\psi^c$)", "definition": "Self-conjugate; neutral, possibly with mass; candidate for neutrino if lepton number violated"},
+        {"id": "p4", "term": "Symplectic Majorana (in higher dim or extended SUSY)", "definition": "Reality condition in dimensions where standard Majorana is impossible; uses 'symplectic' index"}
+      ],
+      "explanation": "Number of independent spinor components varies with spacetime dimension (Bott periodicity). 4D: Dirac 4, Weyl 2, Majorana 4 (real) = 2 complex. 10D string theory: Majorana-Weyl 8 real (= 16 real Dirac/2). 11D supergravity: Majorana 32. These count fermionic degrees of freedom needed for supersymmetry."
+    }
+  },
+  {
+    "id": "spn002",
+    "path": ["physics", "notation", "spinor-notation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Van der Waerden's dotted/undotted index notation handles complex conjugation of spinors elegantly. What's the rule?",
+    "passive": {
+      "options": [
+        "Undotted $\\alpha = 1, 2$ for left $\\psi^\\alpha$; dotted $\\dot\\alpha$ for right $\\bar\\psi^{\\dot\\alpha}$; complex conjugation swaps dot/undot",
+        "Dotted and undotted indices are interchangeable in all contexts; they convey the same information about the spinor",
+        "The dot above an index indicates differentiation with respect to time, as in Newton's $\\dot x$ notation for velocity",
+        "Only undotted indices represent physical spinor components; the dotted versions are mathematical artefacts of notation"
+      ],
+      "correct": 0,
+      "explanation": "Standard in SUSY notation (Wess-Bagger). Complex conjugate $(\\psi^\\alpha)^* = \\bar\\psi^{\\dot\\alpha}$ swaps index type. Indices raised/lowered with antisymmetric $\\epsilon_{\\alpha\\beta}, \\epsilon^{\\alpha\\beta}$ (numerical $\\pm 1$, two values). Contractions are $\\psi\\chi = \\psi^\\alpha\\chi_\\alpha = \\epsilon_{\\alpha\\beta}\\psi^\\alpha\\chi^\\beta$ (antisymmetric — Grassmann variables anticommute, so $\\psi\\chi = -\\chi\\psi$). The Pauli matrices in Lorentz form: $(\\sigma^\\mu)_{\\alpha\\dot\\beta} = (I, \\vec\\sigma)$, $(\\bar\\sigma^\\mu)^{\\dot\\alpha\\beta} = (I, -\\vec\\sigma)$."
+    }
+  },
+  {
+    "id": "spn003",
+    "path": ["physics", "notation", "spinor-notation"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "Charge conjugation $\\psi \\to \\psi^c$ converts a Dirac spinor to its antiparticle spinor. In Dirac representation, what is the operation?",
+    "equation": "\\psi^c = C\\bar\\psi^T, \\quad C = i\\gamma^2\\gamma^0",
+    "passive": {
+      "options": [
+        "$\\psi^c = C\\bar\\psi^T$ with $C = i\\gamma^2\\gamma^0$; converts +energy electron solution to +energy positron solution",
+        "$\\psi^c = -\\psi$ — charge conjugation is just an overall sign flip with no gamma matrix structure required",
+        "$\\psi^c = \\psi^*$ — pure complex conjugation alone, with no involvement of gamma matrices or transposition",
+        "Charge conjugation does not exist for Dirac spinors; it is defined only for scalar fields and complex scalars"
+      ],
+      "correct": 0,
+      "explanation": "$C$ satisfies $C\\gamma^{\\mu T}C^{-1} = -\\gamma^\\mu$, ensuring $\\psi^c$ obeys the same Dirac equation with opposite charge sign. In QFT, $C$ is the antiunitary operator implementing charge conjugation on field operators: $\\hat C a \\hat C^{-1} = b$, exchanging particle and antiparticle. Majorana condition: $\\psi^c = \\psi$ — particle = antiparticle. For charged particles (electron), $\\psi^c \\neq \\psi$ since they carry distinct charges."
+    }
+  },
+  {
+    "id": "spn004",
+    "path": ["physics", "notation", "spinor-notation"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Helicity is the projection of spin on the momentum direction: $h = \\hat{\\mathbf S}\\cdot\\hat{\\mathbf p}/|\\mathbf p|$. How is it related to chirality for massive vs massless particles?",
+    "passive": {
+      "options": [
+        "Massless: helicity = chirality (Lorentz invariant). Massive: helicity is frame-dependent; chirality intrinsic but mixes via mass",
+        "Helicity and chirality are always identical for any particle regardless of whether it has mass or is massless",
+        "Helicity is intrinsic for any particle of any mass; chirality is the frame-dependent quantity instead",
+        "Neither helicity nor chirality concept applies meaningfully to spin-1/2 particles in relativistic dynamics"
+      ],
+      "correct": 0,
+      "explanation": "For massless fermions: travel at $c$, no rest frame, helicity ±1/2 is invariant. For massive fermions: in rest frame, helicity is not defined ($\\mathbf p = 0$); in moving frame, helicity ±1/2 depends on observer (a fast-moving observer sees opposite helicity). Photons (massless): helicity ±1 — only two physical polarisations (left/right circular). The chiral/helicity distinction is crucial in the weak interaction where only L-chiral states couple to W bosons."
+    }
+  },
+  {
+    "id": "spn005",
+    "path": ["physics", "notation", "spinor-notation"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Grassmann variables $\\theta^\\alpha$ are anticommuting spinor parameters in supersymmetry. What are the key algebraic rules?",
+    "passive": {
+      "options": [
+        "$\\{\\theta^\\alpha,\\theta^\\beta\\} = 0$ (anticommute); Berezin $\\int d\\theta\\,1 = 0$, $\\int d\\theta\\,\\theta = 1$; basis of SUSY superspace",
+        "Grassmann variables commute with each other like ordinary real or complex numbers in standard analysis",
+        "$\\theta^\\alpha\\theta^\\alpha$ is nonzero in general; products of identical Grassmann variables give nontrivial Grassmann squares",
+        "Berezin integral satisfies $\\int d\\theta\\,1 = 1$ (normalised like the Lebesgue measure on $\\mathbb R$ or the unit interval)"
+      ],
+      "correct": 0,
+      "explanation": "Berezin's calculus (1966): integration over Grassmann variables defined so that $\\int d\\theta = 0$, $\\int d\\theta \\theta = 1$ — opposite of ordinary integration. Gauss integral over Grassmann: $\\int d\\bar\\eta d\\eta e^{-\\bar\\eta M\\eta} = \\det M$ (vs $(\\det M)^{-1/2}$ for bosonic). This is why fermionic path integrals give determinants in the denominator/numerator opposite to bosons. SUSY parameter $\\theta^\\alpha$ is anticommuting; superspace coordinates $(x^\\mu, \\theta^\\alpha, \\bar\\theta^{\\dot\\alpha})$."
+    }
+  },
+  {
+    "id": "spn006",
+    "path": ["physics", "notation", "spinor-notation"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "In string theory and supergravity, spinors in higher dimensions follow Bott periodicity (mod 8). What's the structure?",
+    "passive": {
+      "options": [
+        "Spinor properties (Majorana/Weyl/Majorana-Weyl possible?) repeat mod 8; 2D and 10D both admit Majorana-Weyl spinors",
+        "Spinor structure is identical in all spacetime dimensions; only the matrix dimension grows with $d$ but properties unchanged",
+        "No higher-dimensional spinors exist beyond 4D Minkowski; the Dirac equation is unique to four spacetime dimensions",
+        "Bott periodicity applies only to even spacetime dimensions; odd dimensions have a different, non-periodic structure"
+      ],
+      "correct": 0,
+      "explanation": "Bott periodicity in Clifford algebras: $\\text{Cl}(d+8) \\cong \\text{Cl}(d) \\otimes \\mathbb R(16)$ (16-dim real matrix algebra). Implications: spinor dim is $2^{\\lfloor d/2 \\rfloor}$; reality (Majorana possible?) depends on $d \\mod 8$. In particular: Majorana-Weyl spinors exist only for $d \\equiv 2 \\mod 8$ (so $d = 2, 10, 18$). Type IIA/B superstring: 10D Majorana-Weyl, 8 real degrees of freedom. M-theory: 11D Majorana, 32 real components."
+    }
+  },
+  {
+    "id": "spn007",
+    "path": ["physics", "notation", "spinor-notation"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "Twistor theory (Penrose) replaces 4D spacetime with twistor space using spinor products. What are twistors?",
+    "passive": {
+      "options": [
+        "Twistors $Z^A = (\\omega^\\alpha, \\pi_{\\dot\\alpha})$ encode points and lightrays in Minkowski; modern use in BCFW amplitudes",
+        "Twistors are simply standard 4-vectors given a new name; no new geometric or analytical content beyond Minkowski space",
+        "Twistor space is 6-dimensional and entirely unrelated to spacetime geometry or scattering amplitudes",
+        "Twistors are useful only in 2D conformal field theory; they have no application to 4D Lorentz-invariant physics"
+      ],
+      "correct": 0,
+      "explanation": "Penrose's twistor program (1967): twistors $Z^A$ are points in $\\mathbb{CP}^3$; spacetime points are sets of twistors satisfying an incidence relation. Massless fields satisfy linear equations in twistor space → many simplifications. Modern resurgence: scattering amplitudes in $\\mathcal N = 4$ super-Yang-Mills are best computed in twistor space (Witten, Cachazo, Hodges...). BCFW shift uses twistor variables to recursively build tree amplitudes. Connection to Grassmannian geometry: amplituhedron (Arkani-Hamed et al.)."
+    }
+  }
+]

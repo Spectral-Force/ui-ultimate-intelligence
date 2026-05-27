@@ -1,0 +1,152 @@
+[
+  {
+    "id": "pli001",
+    "path": ["physics", "notation", "pauli-matrices"],
+    "level": "U",
+    "modes": ["passive", "active"],
+    "question": "The Pauli matrices $\\sigma_x, \\sigma_y, \\sigma_z$ are the generators of SU(2) and represent spin-1/2 operators. What are their explicit forms?",
+    "equation": "\\sigma_x = \\begin{pmatrix}0 & 1\\\\1 & 0\\end{pmatrix},\\ \\sigma_y = \\begin{pmatrix}0 & -i\\\\i & 0\\end{pmatrix},\\ \\sigma_z = \\begin{pmatrix}1 & 0\\\\0 & -1\\end{pmatrix}",
+    "passive": {
+      "options": [
+        "$\\sigma_x$ swaps $|0\\rangle\\leftrightarrow|1\\rangle$; $\\sigma_y$ adds $\\pm i$; $\\sigma_z$ gives $\\pm 1$; all Hermitian traceless with $\\sigma_i^2 = I$",
+        "Pauli matrices are simultaneously diagonal in any chosen basis and therefore pairwise commute with each other",
+        "The three Pauli matrices form an Abelian (commutative) group under matrix multiplication and addition",
+        "$\\sigma_x = \\sigma_y = \\sigma_z = I$ in some natural basis adapted to the spin-1/2 quantum-mechanical representation"
+      ],
+      "correct": 0,
+      "explanation": "Pauli matrices are Hermitian ($\\sigma_i^\\dagger = \\sigma_i$), unitary ($\\sigma_i^\\dagger \\sigma_i = I$), traceless ($\\text{tr}\\sigma_i = 0$), and satisfy $\\det\\sigma_i = -1$, $\\sigma_i^2 = I$. Eigenvalues all $\\pm 1$. The eigenstates of $\\sigma_z$ are $|0\\rangle = |{\\uparrow}\\rangle$, $|1\\rangle = |{\\downarrow}\\rangle$ (computational basis). Eigenstates of $\\sigma_x$: $|\\pm\\rangle = (|0\\rangle\\pm|1\\rangle)/\\sqrt 2$. Of $\\sigma_y$: $|R/L\\rangle = (|0\\rangle\\pm i|1\\rangle)/\\sqrt 2$."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each Pauli-matrix identity to its content:",
+      "pairs": [
+        {"id": "p1", "term": "$[\\sigma_i, \\sigma_j] = 2i\\epsilon_{ijk}\\sigma_k$", "definition": "Commutator: angular-momentum algebra of su(2); structure constants $2\\epsilon_{ijk}$"},
+        {"id": "p2", "term": "$\\{\\sigma_i, \\sigma_j\\} = 2\\delta_{ij} I$", "definition": "Anticommutator: Clifford-algebra-like; underlies Dirac equation"},
+        {"id": "p3", "term": "$\\sigma_i\\sigma_j = \\delta_{ij}I + i\\epsilon_{ijk}\\sigma_k$", "definition": "Full product rule; combines commutator and anticommutator"},
+        {"id": "p4", "term": "$\\text{tr}(\\sigma_i\\sigma_j) = 2\\delta_{ij}$", "definition": "Orthogonality: Pauli matrices form an orthonormal basis (with $I$) for Hermitian $2\\times 2$ matrices"}
+      ],
+      "explanation": "Pauli matrices + identity span the space of Hermitian $2\\times 2$ matrices. Any single-qubit operator: $A = (a_0 I + \\mathbf a \\cdot \\boldsymbol\\sigma)$ with $a_0 = \\text{tr}A/2$ and $\\mathbf a = \\text{tr}(A\\boldsymbol\\sigma)/2$. Bloch-vector representation: $\\rho = (I + \\mathbf r \\cdot \\boldsymbol\\sigma)/2$."
+    }
+  },
+  {
+    "id": "pli002",
+    "path": ["physics", "notation", "pauli-matrices"],
+    "level": "U",
+    "modes": ["passive"],
+    "question": "The spin-1/2 operator is $\\hat{\\mathbf S} = (\\hbar/2)\\boldsymbol\\sigma$. Why the factor of $\\hbar/2$?",
+    "passive": {
+      "options": [
+        "Eigenvalues of $\\hat S_z$ are $\\pm\\hbar/2$ (the two values that spin-1/2 measurement returns); without the $\\hbar/2$ factor, $\\sigma_z$ would give $\\pm 1$ — dimensionless",
+        "The factor is conventional; using just $\\boldsymbol\\sigma$ gives identical physics with different units",
+        "$\\hbar/2$ is for half-integer spin; integer spins use $\\hbar$ instead",
+        "The factor accounts for relativistic mass-energy of the electron"
+      ],
+      "correct": 0,
+      "explanation": "Angular momentum quantum has units $\\hbar$. Spin-1/2 has $m_s = \\pm 1/2$, so $\\hat S_z = m_s\\hbar = \\pm\\hbar/2$. The Pauli matrices have eigenvalues $\\pm 1$ — multiplying by $\\hbar/2$ gives the physical operator. Total spin: $\\hat S^2 = (3\\hbar^2/4) I = s(s+1)\\hbar^2 I$ with $s = 1/2$. For higher spins, the matrices are $(2s+1)$-dimensional and given by Wigner D-matrices or angular-momentum-ladder construction."
+    }
+  },
+  {
+    "id": "pli003",
+    "path": ["physics", "notation", "pauli-matrices"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The exponential of a Pauli matrix gives a rotation on the Bloch sphere. What is $e^{-i\\theta\\boldsymbol\\sigma\\cdot\\hat n/2}$?",
+    "equation": "e^{-i\\theta\\boldsymbol\\sigma\\cdot\\hat n/2} = \\cos(\\theta/2)I - i\\sin(\\theta/2)\\,\\boldsymbol\\sigma\\cdot\\hat n",
+    "passive": {
+      "options": [
+        "$\\cos(\\theta/2)I - i\\sin(\\theta/2)(\\boldsymbol\\sigma\\cdot\\hat n)$ — rotation by $\\theta$ about axis $\\hat n$ on the Bloch sphere",
+        "$e^{-i\\theta}I$ — pure phase factor with no rotational effect; just multiplies the identity matrix by a phase",
+        "$(1 - i\\theta)\\boldsymbol\\sigma\\cdot\\hat n$ — linear in $\\theta$ for any angle, treating the exponential as just first-order Taylor",
+        "Pauli matrices cannot be exponentiated to give a finite unitary because they don't commute with one another"
+      ],
+      "correct": 0,
+      "explanation": "Uses identity $(\\boldsymbol\\sigma\\cdot\\hat n)^2 = I$ (since $|\\hat n| = 1$). Taylor series: $e^{-i\\theta\\boldsymbol\\sigma\\cdot\\hat n/2} = \\sum_k (-i\\theta/2)^k(\\boldsymbol\\sigma\\cdot\\hat n)^k/k!$; even powers give $I$, odd give $\\boldsymbol\\sigma\\cdot\\hat n$. Single-qubit gates: $R_z(\\theta) = e^{-i\\theta\\sigma_z/2}$, $R_x(\\theta) = e^{-i\\theta\\sigma_x/2}$, etc. Hadamard $H = (\\sigma_x + \\sigma_z)/\\sqrt 2 = R_y(\\pi/2) R_x(\\pi)$ (one of several decompositions)."
+    }
+  },
+  {
+    "id": "pli004",
+    "path": ["physics", "notation", "pauli-matrices"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The factor of 2 in the SU(2) → SO(3) rotation (the 'double cover' relationship) appears in spin rotations. What is its physical manifestation?",
+    "passive": {
+      "options": [
+        "A $2\\pi$ rotation of a spin-1/2 gives $|\\psi\\rangle \\to -|\\psi\\rangle$; need $4\\pi$ to return — Werner et al. 1975 neutron interferometry",
+        "Spin-1/2 states are invariant under $2\\pi$ rotation, exactly like classical vectors in 3D Euclidean space",
+        "$4\\pi$ rotation gives the same state as $2\\pi$ does; the SU(2)$\\to$SO(3) double cover is purely a mathematical artefact",
+        "Spin-1/2 rotation transforms identically to vector rotation in 3D Euclidean space, with no extra sign factors"
+      ],
+      "correct": 0,
+      "explanation": "$R_z(2\\pi) = e^{-i\\pi\\sigma_z} = -I$ on spinors — a $-1$ overall phase. Classical vectors return to themselves after $2\\pi$. The $-1$ is observable in interference: send spin through interferometer with one path rotated by $2\\pi$, recombine — destructive interference. Confirmed by Werner et al. with neutrons (1975, Rev. Mod. Phys.). This is the topological signature of the SU(2) covering of SO(3) — $\\pi_1(SO(3)) = \\mathbb Z_2$, two homotopy classes of paths."
+    }
+  },
+  {
+    "id": "pli005",
+    "path": ["physics", "notation", "pauli-matrices"],
+    "level": "M",
+    "modes": ["passive"],
+    "question": "The trace identities of Pauli matrices are crucial for computing expectation values. Which is correct?",
+    "passive": {
+      "options": [
+        "$\\text{tr}(\\sigma_i) = 0$; $\\text{tr}(\\sigma_i\\sigma_j) = 2\\delta_{ij}$; $\\text{tr}(\\sigma_i\\sigma_j\\sigma_k) = 2i\\epsilon_{ijk}$",
+        "$\\text{tr}(\\sigma_i) = 1$ — trace of each Pauli matrix equals 1",
+        "$\\text{tr}(\\sigma_i\\sigma_j) = \\delta_{ij}$ (factor 1 instead of 2)",
+        "All trace identities for Pauli matrices give zero in 2D"
+      ],
+      "correct": 0,
+      "explanation": "Trace of products encode Bloch-vector projections. Density matrix $\\rho = (I + \\mathbf r\\cdot\\boldsymbol\\sigma)/2$ has $r_i = \\text{tr}(\\rho\\sigma_i) = \\langle\\sigma_i\\rangle$. Useful for state tomography: measure $\\langle\\sigma_x\\rangle, \\langle\\sigma_y\\rangle, \\langle\\sigma_z\\rangle$ → $\\mathbf r$ → $\\rho$. The triple-product trace gives $2i\\epsilon_{ijk}$ — same structure constants as the commutator (consistent with cyclic permutation invariance of trace)."
+    }
+  },
+  {
+    "id": "pli006",
+    "path": ["physics", "notation", "pauli-matrices"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "Pauli matrices form a basis for the algebra of $2\\times 2$ Hermitian matrices (with $I$). Any qubit observable can be decomposed as:",
+    "equation": "\\hat A = a_0 I + \\mathbf a \\cdot \\boldsymbol\\sigma, \\quad a_0 = \\frac{1}{2}\\text{tr}\\hat A, \\quad a_i = \\frac{1}{2}\\text{tr}(\\hat A \\sigma_i)",
+    "passive": {
+      "options": [
+        "$\\hat A = a_0 I + \\mathbf a\\cdot\\boldsymbol\\sigma$ with $a_0 = \\text{tr}\\hat A/2$ and $a_i = \\text{tr}(\\hat A\\sigma_i)/2$; 4 real params",
+        "Only the $\\sigma_z$ component is needed for any Hermitian operator; $\\sigma_x$ and $\\sigma_y$ are redundant in 2D",
+        "Decomposition requires 6 real parameters in 2D Hermitian space rather than 4 ($I$ + three $\\sigma$)",
+        "The Pauli decomposition works only for diagonal Hermitian matrices, not for general 2x2 Hermitian operators"
+      ],
+      "correct": 0,
+      "explanation": "Hermitian $2\\times 2$ matrices form a 4-dim real vector space; $\\{I, \\sigma_x, \\sigma_y, \\sigma_z\\}$ is an orthonormal basis under Hilbert-Schmidt inner product $\\langle A, B\\rangle = \\text{tr}(A^\\dagger B)$. Used in state tomography, process tomography, and quantum information. Density matrices are positive semi-definite, requires $|\\mathbf a| \\leq a_0 = 1/2$ (Bloch ball)."
+    }
+  },
+  {
+    "id": "pli007",
+    "path": ["physics", "notation", "pauli-matrices"],
+    "level": "P",
+    "modes": ["passive"],
+    "question": "The Pauli-Lubanski pseudovector $W_\\mu = -\\tfrac12 \\epsilon_{\\mu\\nu\\rho\\sigma}J^{\\nu\\rho}P^\\sigma$ extends spin to relativistic settings. Why is it important?",
+    "passive": {
+      "options": [
+        "$W^\\mu W_\\mu = -m^2 s(s+1)\\hbar^2 c^2$ is a Casimir of the Poincaré group; classifies particle representations by mass and spin together",
+        "Pauli-Lubanski is just $W^\\mu = J^\\mu$ (angular momentum 4-vector) with no new content",
+        "$W^\\mu$ is the spin in the rest frame; vanishes in moving frames",
+        "Only $W^0$ is meaningful; spatial components are gauge-dependent"
+      ],
+      "correct": 0,
+      "explanation": "Poincaré group has two Casimir invariants: $P^\\mu P_\\mu = m^2 c^2$ (mass) and $W^\\mu W_\\mu = -m^2 s(s+1)\\hbar^2 c^2$ (intrinsic spin). Wigner's classification (1939): irreducible representations of Poincaré group are labeled by $(m, s)$ — these are the particle states. For massless particles, $W^\\mu$ has a different role giving helicity (only $\\pm s$ states for photons, gluons, gravitons). The Pauli-Lubanski 4-vector is the relativistic generalisation of intrinsic angular momentum."
+    }
+  },
+  {
+    "id": "pli008",
+    "path": ["physics", "notation", "pauli-matrices"],
+    "level": "A",
+    "modes": ["passive"],
+    "question": "Pauli matrices generate Clifford algebra $\\text{Cl}(3, 0) \\cong \\mathbb H \\oplus \\mathbb H$. What is the connection to higher-dimensional generalisations?",
+    "passive": {
+      "options": [
+        "Clifford algebras vary with dimension/signature; Dirac matrices in 4D Minkowski; SUSY uses Clifford-like generators in 10D/11D",
+        "Pauli matrices are unique to 3D Euclidean space; no higher-dimensional analogues of the Clifford structure exist",
+        "Clifford algebras and Lie algebras are identical mathematical structures, differing only in name and notation",
+        "Generalisations of Pauli matrices to higher dimensions commute pairwise, unlike the original 2x2 Pauli set"
+      ],
+      "correct": 0,
+      "explanation": "Clifford algebra $\\text{Cl}(p, q)$ is generated by $\\{e_i\\}$ with $\\{e_i, e_j\\} = 2\\eta_{ij}I$ ($\\eta$ signature). $\\text{Cl}(3, 0)$: Pauli matrices. $\\text{Cl}(1, 3)$ or $\\text{Cl}(3, 1)$: Dirac gamma matrices. $\\text{Cl}(8, 0)$: octonion-like structure used in string theory's E8 symmetry. Clifford algebras classify division algebras and relate to topology via Bott periodicity. Geometric algebra (Hestenes) uses Clifford algebra as a unifying framework for physics."
+    }
+  }
+]
