@@ -1,0 +1,168 @@
+[
+  {
+    "id": "ope001",
+    "path": [
+      "physics",
+      "quantum-chromodynamics",
+      "ope-and-sum-rules"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "The Operator Product Expansion (OPE) systematises short-distance behaviour of products of operators. State the OPE.",
+    "passive": {
+      "options": [
+        "$A(x)B(0) \\xrightarrow{x\\to 0} \\sum_n C_n(x) \\mathcal O_n(0)$ — products factorise into Wilson coefficients $C_n(x)$ (short-distance, perturbatively computable) times local operators $\\mathcal O_n$ (long-distance, non-perturbative matrix elements); ordered by canonical dimension",
+        "$A(x)B(0) = A(0)B(0) + O(x^2)$ — Taylor expansion in $x$ around $0$ (ruled out by experimental constraints from collider and low-energy data)",
+        "$A(x)B(0) = \\int d^4y\\,K(x,y)A(y)B(y)$ — convolution with a kernel (disagrees with the standard textbook treatment in Peskin-Schroeder) (contradicted by both lattice simulations and dispersive analyses)",
+        "OPE only applies to free field theory and breaks down in interacting QCD (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "Wilson's OPE (1969): the product of two local operators at short separation can be expanded into a series of local operators times c-number coefficients. Dimensional analysis: $C_n(x) \\sim x^{d_n - d_A - d_B}$ where $d_n$ is the canonical dimension of $\\mathcal O_n$. Leading terms have lowest-dimension operators. Factorisation: $C_n$ depend only on short distances $\\ll \\Lambda_{\\rm QCD}^{-1}$, calculable in perturbation theory; matrix elements $\\langle\\mathcal O_n\\rangle$ encode hadronic physics, fit to data or computed on lattice. Essential for deep inelastic scattering, $\\tau$ decays, $B$ physics."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each operator in a typical QCD OPE with its physical role:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Identity $\\mathbb 1$ (dim 0)",
+          "definition": "Leading term; coefficient = perturbative result; OPE corrections refine this"
+        },
+        {
+          "id": "p2",
+          "term": "Quark condensate $\\langle\\bar qq\\rangle$ (dim 3)",
+          "definition": "Lowest non-trivial condensate; signals spontaneous chiral breaking; $\\sim -(250 \\text{ MeV})^3$"
+        },
+        {
+          "id": "p3",
+          "term": "Gluon condensate $\\langle G_{\\mu\\nu}^a G^{a\\,\\mu\\nu}\\rangle$ (dim 4)",
+          "definition": "Non-perturbative vacuum gluon density; $\\sim 0.012 \\text{ GeV}^4$ from SVZ sum rules"
+        },
+        {
+          "id": "p4",
+          "term": "Mixed condensate $\\langle\\bar q\\sigma G q\\rangle$ (dim 5)",
+          "definition": "Quark-gluon condensate $\\sim m_0^2\\langle\\bar qq\\rangle$ with $m_0^2 \\approx 0.8 \\text{ GeV}^2$; subleading correction"
+        }
+      ],
+      "explanation": "Power corrections in OPE for a correlator at large $Q^2$: $\\Pi(Q^2) = C_0(Q^2)\\mathbb 1 + C_3(Q^2)\\langle\\bar qq\\rangle/Q^3 + C_4(Q^2)\\langle\\alpha_s GG\\rangle/Q^4 + C_5\\langle\\bar q\\sigma Gq\\rangle/Q^5 + \\ldots$. Each higher operator gives $1/Q^n$ suppression. Wilson coefficients computed in perturbative QCD; condensates determined from data, lattice, or instanton models."
+    }
+  },
+  {
+    "id": "ope002",
+    "path": [
+      "physics",
+      "quantum-chromodynamics",
+      "ope-and-sum-rules"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What's the physical idea behind SVZ (Shifman-Vainshtein-Zakharov) QCD sum rules?",
+    "passive": {
+      "options": [
+        "Equate two representations of a correlator $\\Pi(Q^2) = i\\int d^4x e^{iqx}\\langle T J(x)J(0)\\rangle$: OPE at large $Q^2$ (perturbative + power corrections) versus dispersion relation over hadron spectrum (resonance + continuum). Borel transform suppresses higher resonances; extract resonance properties (masses, decay constants)",
+        "Use Schwinger-Dyson equations to solve QCD non-perturbatively for all hadron masses (not consistent with the operator product expansion at large momentum) (would conflict with renormalisation group flow and cross-section data)",
+        "Numerical integration of the QCD action on a Euclidean lattice (would imply unphysical infinite or negative observables) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Apply Cutkosky rules to one-loop QCD diagrams; sum the imaginary parts (ruled out by experimental constraints from collider and low-energy data) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "SVZ (1979): bridge between quark-gluon and hadronic descriptions. (1) For a current $J$ creating hadron of interest (e.g.\\ $J = \\bar u\\gamma_\\mu d$ for $\\rho$ meson), compute $\\Pi(Q^2)$ via OPE: perturbative coefficient + condensate corrections. (2) Insert hadronic states: $\\Pi(Q^2) = \\sum_n |\\langle 0|J|n\\rangle|^2/(m_n^2 + Q^2) + $ continuum. (3) Apply Borel transform $\\hat B$ in $Q^2 \\to M_B^2$: factorially suppresses higher resonances, suppresses high-dim OPE corrections. Match to extract $f_\\rho, m_\\rho$. Original SVZ paper: $m_\\rho \\approx 770$ MeV from $\\langle\\alpha_s GG\\rangle/Q^4$ correction."
+    }
+  },
+  {
+    "id": "ope003",
+    "path": [
+      "physics",
+      "quantum-chromodynamics",
+      "ope-and-sum-rules"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "In deep inelastic scattering (DIS), the OPE for $J^\\mu(x) J^\\nu(0)$ at light-like separation gives moments of structure functions in terms of...?",
+    "passive": {
+      "options": [
+        "Matrix elements of twist-2 operators $\\bar\\psi\\gamma^{\\{\\mu_1}D^{\\mu_2}\\cdots D^{\\mu_n\\}}\\psi$ (symmetric, traceless) — parton distribution moments; twist = dimension − spin; higher twist = $1/Q^2$ suppressed corrections",
+        "Just the quark masses $m_q$ (disagrees with the standard textbook treatment in Peskin-Schroeder) (would conflict with renormalisation group flow and cross-section data)",
+        "Pion decay constant $f_\\pi$ alone (contradicted by both lattice simulations and dispersive analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Wilson loops of the gauge field along light-like contours (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Light-cone OPE for DIS: $J^\\mu(x) J^\\nu(0) \\sim \\sum_n C_n^{\\mu\\nu}(x) \\mathcal O_n(0)$ where the relevant operators are bilocal quark-quark and gluon-gluon operators. Expanded in twist $\\tau = d - s$ (dimension minus spin): twist-2 dominate at large $Q^2$. Mellin moments of structure functions: $\\int_0^1 x^{n-1} F_2(x,Q^2) dx = C_n(Q^2/\\mu^2, \\alpha_s) \\langle\\mathcal O_n(\\mu)\\rangle$. Wilson coefficients computed perturbatively; matrix elements = parton-distribution moments (non-perturbative, fit to data). Higher twist (3, 4, …): $1/Q^{2(\\tau-2)}$ suppressed corrections. Foundation for DGLAP evolution and global PDF fits."
+    }
+  },
+  {
+    "id": "ope004",
+    "path": [
+      "physics",
+      "quantum-chromodynamics",
+      "ope-and-sum-rules"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "The $\\tau \\to \\nu_\\tau + \\text{hadrons}$ branching ratio gives one of the cleanest extractions of $\\alpha_s$. Why is this 'inclusive' OPE prediction so reliable?",
+    "passive": {
+      "options": [
+        "Inclusive ratio $R_\\tau$ is dispersion integral; OPE applies on circle $|s| = m_\\tau^2$ in complex plane avoiding resonances; perturbative QCD up to $\\alpha_s^4$; power corrections small ($m_\\tau^2 \\sim 3 \\text{ GeV}^2$ marginal); yields $\\alpha_s(m_\\tau) \\approx 0.33$, equivalent to $\\alpha_s(m_Z) \\approx 0.120$",
+        "$\\tau$ decay involves only leptons, so perturbative QED suffices (not consistent with the operator product expansion at large momentum) (would imply unphysical infinite or negative observables)",
+        "Hadronic $\\tau$ decay has no QCD corrections — pure electroweak (unsupported by perturbative expansions in the coupling) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "$R_\\tau$ is dominated by the $\\rho$ meson, which is well-measured (disagrees with the standard textbook treatment in Peskin-Schroeder) (contradicted by both lattice simulations and dispersive analyses)"
+      ],
+      "correct": 0,
+      "explanation": "$R_\\tau = \\Gamma(\\tau\\to\\nu+\\text{hadrons})/\\Gamma(\\tau\\to\\nu_\\tau e\\bar\\nu_e)$. Express as contour integral of correlator $\\Pi(s)$ around $|s| = m_\\tau^2$ in complex $s$-plane (Cauchy theorem). On the circle, $|s|$ large $\\Rightarrow$ OPE valid. Contour avoids the physical cut where resonances are messy. Perturbative series known to $\\alpha_s^4$ (Baikov-Chetyrkin-Kühn). Power corrections at dim 4 ($\\langle GG\\rangle/m_\\tau^4$) and dim 6 ($\\langle\\bar qq\\rangle^2/m_\\tau^6$): few percent each. Result: $\\alpha_s(m_\\tau) = 0.325 \\pm 0.015$, runs to $\\alpha_s(m_Z) = 0.1180 \\pm 0.0008$ — competitive with lattice and $Z$-pole values."
+    }
+  },
+  {
+    "id": "ope005",
+    "path": [
+      "physics",
+      "quantum-chromodynamics",
+      "ope-and-sum-rules"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Heavy-quark expansion (HQE) for inclusive $B$ decays uses an OPE in $1/m_b$. What's the leading non-trivial correction?",
+    "passive": {
+      "options": [
+        "No $1/m_b$ correction (eliminated by equations of motion); leading correction at $1/m_b^2$ from kinetic operator $\\mu_\\pi^2 = -\\langle B|\\bar b(iD)^2 b|B\\rangle/(2m_B)$ and chromomagnetic $\\mu_G^2 = \\langle B|\\bar b\\sigma\\cdot G b|B\\rangle/(2m_B)$ — few percent corrections to free-quark result",
+        "Leading $1/m_b$ correction from the quark mass alone (would imply unphysical infinite or negative observables) (would conflict with renormalisation group flow and cross-section data)",
+        "OPE in $1/m_b$ doesn't apply to $B$ decays — they're purely non-perturbative (ruled out by experimental constraints from collider and low-energy data)",
+        "Leading correction is $\\alpha_s$ at order $1/m_b^0$, larger than all power corrections (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "HQE for inclusive semileptonic $B\\to X_c\\ell\\nu$ width: $\\Gamma = \\Gamma_0[1 + 0/m_b + c_2 \\mu_\\pi^2/m_b^2 + c_2' \\mu_G^2/m_b^2 + c_3 \\rho^3/m_b^3 + \\ldots]\\,$. Leading $\\Gamma_0$ = free-quark decay. No $1/m_b$ term (Chay-Georgi-Grinstein theorem): use $iD^\\mu \\to (v\\cdot iD)v^\\mu + \\ldots$ and EOM. $\\mu_\\pi^2 \\sim 0.4 \\text{ GeV}^2$ (kinetic energy of $b$ in $B$), $\\mu_G^2 \\sim 0.35 \\text{ GeV}^2$ (chromomagnetic, from $B^* - B$ splitting). Extracts $|V_{cb}|$ to ~1% precision. Foundation: heavy quark effective theory (HQET)."
+    }
+  },
+  {
+    "id": "ope006",
+    "path": [
+      "physics",
+      "quantum-chromodynamics",
+      "ope-and-sum-rules"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "Renormalons are factorial growth of perturbative coefficients signalling sensitivity to OPE condensates. Explain the IR renormalon.",
+    "passive": {
+      "options": [
+        "Perturbative series for correlator has coefficients $a_n \\sim n!(\\beta_0/2)^n/Q^{2k}$ from bubble chains; Borel transform has poles on positive real axis at $u = k$ → ambiguity $\\sim e^{-2k/\\beta_0\\alpha_s} = (\\Lambda_{\\rm QCD}^2/Q^2)^k$; precisely matched (cancelled) by ambiguity in dimension-$2k$ condensate $\\Rightarrow$ OPE + perturbation theory consistent",
+        "UV renormalons signal Landau poles and require new physics (would conflict with renormalisation group flow and cross-section data) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Renormalons are spurious artefacts of dimensional regularisation only (ruled out by experimental constraints from collider and low-energy data) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Renormalons appear in QED but not in QCD (would imply unphysical infinite or negative observables) (contradicted by both lattice simulations and dispersive analyses) (historically considered but disfavoured by modern QFT analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Renormalons (`t Hooft, Beneke): in QCD, summing fermion-bubble chains gives $a_n \\sim n! K^n$ with $K = -2/\\beta_0$ for IR renormalon, $K = +2/\\beta_0$ for UV renormalon (in $\\beta_0 = (11N_c - 2N_f)/3 > 0$). IR renormalon at Borel parameter $u = k$ produces ambiguity $\\delta = e^{-2k/\\beta_0\\alpha_s(Q)} = (\\Lambda/Q)^{2k}$ exactly the size of dim-$2k$ condensate contribution to OPE. Resolution: Wilson coefficient $C_n$ and matrix element $\\langle\\mathcal O_n\\rangle$ are individually ambiguous, but their product is unambiguous when condensate is defined consistently with perturbative scheme. Famous example: pole-mass renormalon at $u = 1/2$, $\\delta m_b \\sim \\Lambda_{\\rm QCD}$, motivates switching to MS-bar or kinetic mass."
+    }
+  }
+]

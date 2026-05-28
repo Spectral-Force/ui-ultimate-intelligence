@@ -1,0 +1,168 @@
+[
+  {
+    "id": "cnf001",
+    "path": [
+      "physics",
+      "quantum-chromodynamics",
+      "confinement"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "Wilson's criterion for quark confinement uses the Wilson loop. What's the area-law signature?",
+    "passive": {
+      "options": [
+        "$\\langle W(C)\\rangle \\propto e^{-\\sigma A}$ for large rectangular loop (area $A$): area law → confinement, linear quark-antiquark potential $V = \\sigma r$; $\\sigma$ = string tension $\\sim 1$ GeV/fm",
+        "$\\langle W(C)\\rangle \\propto e^{-mL}$ (perimeter law): area law indicates deconfinement (historically considered but disfavoured by modern QFT analyses)",
+        "Wilson loop has no expectation value in confining phase (ruled out by experimental constraints from collider and low-energy data)",
+        "Wilson loop scales linearly with area — non-exponential (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Wilson loop: $W(C) = \\text{tr}[\\mathcal P \\exp(ig\\oint_C A_\\mu dx^\\mu)]$, gauge-invariant. For a rectangular loop $R \\times T$ in the limit $T \\gg R$: $W \\sim e^{-V(R)T}$, extracts static quark-antiquark potential. In confined phase: $V(R) = \\sigma R$ (linear), area law $W \\sim e^{-\\sigma RT} = e^{-\\sigma A}$. In deconfined (Coulomb-like): $V(R) \\sim 1/R$, perimeter law $W \\sim e^{-c\\cdot\\text{perimeter}}$. Lattice QCD: $\\sigma \\approx 0.94$ GeV²."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each confinement-related concept:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "String tension $\\sigma$",
+          "definition": "$\\sim 1$ GeV/fm $\\approx 0.94$ GeV²; energy per unit length stored in colour flux tube between $q\\bar q$"
+        },
+        {
+          "id": "p2",
+          "term": "Quark-antiquark potential",
+          "definition": "$V(r) = -\\alpha_s/r + \\sigma r$ (Cornell form); Coulomb-like at short range, linear at long range"
+        },
+        {
+          "id": "p3",
+          "term": "Wilson area law",
+          "definition": "$\\langle W(C)\\rangle \\sim e^{-\\sigma\\cdot\\text{area}}$; non-perturbative signature of confined phase"
+        },
+        {
+          "id": "p4",
+          "term": "Flux tube / string",
+          "definition": "Tube of colour electric field connecting $q\\bar q$; explains linear potential; breaks via $q\\bar q$ pair production"
+        }
+      ],
+      "explanation": "Confinement remains an unsolved problem analytically in 4D Yang-Mills, but well-established numerically via lattice QCD. Cornell potential $V(r) = -\\alpha_s/r + \\sigma r$ fits charmonium/bottomonium spectra. The flux-tube picture connects QCD to string theory (Nambu-Goto string)."
+    }
+  },
+  {
+    "id": "cnf002",
+    "path": [
+      "physics",
+      "quantum-chromodynamics",
+      "confinement"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Why does the linear quark-antiquark potential lead to colour confinement?",
+    "passive": {
+      "options": [
+        "Pulling $q\\bar q$ apart costs energy $\\sigma r$ growing without bound; eventually energy exceeds $2m_q$ → pair creation $q\\bar q \\to q\\bar q + q\\bar q$ that screens the string; no isolated quark observed",
+        "Linear potential allows free quarks at sufficient energy (contradicted by both lattice simulations and dispersive analyses)",
+        "Confinement comes from Pauli exclusion of quarks at short range (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Linear potential is bounded above by string tension, preventing infinite energy (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Energy in a $q\\bar q$ pair separated by $r$: $E(r) \\sim \\sigma r$. At $r \\sim 1$ fm: $E \\sim 1$ GeV $\\sim 2m_{q,{\\rm light}}$ — enough to create a new $q\\bar q$ pair from vacuum. The new quark pairs with the old antiquark (and vice versa), producing two colour-singlet mesons. Net result: no isolated quark. This is the QCD analogue of pulling apart a magnet: domains form rather than isolated north/south poles. The 'string breaking' is observed in lattice QCD simulations."
+    }
+  },
+  {
+    "id": "cnf003",
+    "path": [
+      "physics",
+      "quantum-chromodynamics",
+      "confinement"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Glueballs are predicted bound states of gluons alone. What are their properties?",
+    "passive": {
+      "options": [
+        "Hypothetical colour-singlet states of gluons; lightest predicted mass $\\sim 1.5$ GeV ($0^{++}$ scalar); difficult to distinguish from $q\\bar q$ mesons; lattice QCD predicts spectrum but experimental identification ambiguous",
+        "Glueballs are routinely observed and have well-measured masses below 100 MeV (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Forbidden by colour confinement (only $q\\bar q$ and $qqq$ allowed) (not consistent with the operator product expansion at large momentum)",
+        "Equivalent to pions; the term 'glueball' is a historical misnomer (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "Glueballs: lightest predicted scalar $0^{++}$ at $\\sim 1.7$ GeV from lattice. Candidates: $f_0(1500)$, $f_0(1710)$ — but mix strongly with $q\\bar q$ mesons in same channels. Pseudoscalar glueball ($0^{-+}$) $\\sim 2.6$ GeV. Tensor ($2^{++}$) $\\sim 2.4$ GeV. Open question: which observed scalar mesons are 'mostly' glueball? PANDA experiment at FAIR aims to systematically search for exotic states including glueballs. Confined gluon dynamics is one of the deepest tests of non-perturbative QCD."
+    }
+  },
+  {
+    "id": "cnf004",
+    "path": [
+      "physics",
+      "quantum-chromodynamics",
+      "confinement"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "The Polyakov loop is the finite-temperature analogue of the Wilson loop. What's its role as deconfinement order parameter?",
+    "passive": {
+      "options": [
+        "$\\langle L\\rangle = 0$ in confined phase ($T < T_c$); $\\langle L\\rangle \\neq 0$ in deconfined phase ($T > T_c$); centre symmetry $Z(N_c)$ broken by deconfinement",
+        "$\\langle L\\rangle = 1$ in confined phase, vanishes in deconfined (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Polyakov loop is identical to Wilson loop; no temperature dependence (ruled out by experimental constraints from collider and low-energy data)",
+        "$\\langle L\\rangle = \\sigma T^2$; grows linearly with temperature (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "Polyakov loop: $L(\\mathbf x) = \\text{tr}[\\mathcal P\\exp(ig\\int_0^\\beta A_0 d\\tau)]$ — Wilson loop wrapping around Euclidean time circle (period $\\beta = 1/T$). Free-energy of static quark: $F_q = -T\\ln\\langle L\\rangle$. Confined: $F_q = \\infty$, $\\langle L\\rangle = 0$. Deconfined: $F_q$ finite, $\\langle L\\rangle \\neq 0$. Centre symmetry $Z(N_c)$: $L \\to zL$ where $z^{N_c} = 1$; broken in deconfined phase. Deconfinement transition: pure SU(3) gauge theory at $T_c \\approx 270$ MeV. With dynamical quarks: crossover at $T_c \\approx 155$ MeV."
+    }
+  },
+  {
+    "id": "cnf005",
+    "path": [
+      "physics",
+      "quantum-chromodynamics",
+      "confinement"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Dual superconductor picture proposed by 't Hooft and Mandelstam explains confinement via magnetic monopole condensation. How?",
+    "passive": {
+      "options": [
+        "QCD vacuum behaves like a superconductor of colour-magnetic monopoles; electric (colour) flux squeezed into Abrikosov-like tubes (dual Meissner effect); $q\\bar q$ flux tube has fixed cross-section $\\to$ linear potential",
+        "Confinement comes from electric charges screening colour gluons (unsupported by perturbative expansions in the coupling)",
+        "QCD vacuum is a normal conductor; confinement requires resistance (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Magnetic monopoles are charged particles in QCD whose existence has been verified (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "Analogy: ordinary type-II superconductor has electron condensate; expels magnetic field (Meissner); inserted magnetic flux confined to flux tubes (Abrikosov vortices). Dual picture: QCD vacuum has condensate of (hypothetical) chromomagnetic monopoles; expels chromoelectric field; quark-antiquark electric flux confined to tubes — linear potential, confinement. Supported by lattice studies (abelian projection shows monopole condensation). Not rigorous but explains key qualitative features."
+    }
+  },
+  {
+    "id": "cnf006",
+    "path": [
+      "physics",
+      "quantum-chromodynamics",
+      "confinement"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "Confinement is one of the Millennium Prize problems (mass gap in 4D Yang-Mills). What's the precise mathematical question?",
+    "passive": {
+      "options": [
+        "Prove rigorously that 4D pure SU(N) Yang-Mills theory exists as a quantum field theory and has a strictly positive mass gap (lightest particle has mass $> 0$); 1M USD prize from Clay Mathematics Institute",
+        "Prove that quarks are confined in the sense of being unable to leave nucleons (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Show that lattice QCD simulations converge to the continuum limit (contradicted by both lattice simulations and dispersive analyses)",
+        "Establish CP violation in the QCD vacuum via the strong-CP problem (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "Yang-Mills existence and mass gap problem (Clay Millennium Prize, 1M USD, since 2000). Establish constructively that 4D pure SU(N) YM theory satisfies the Wightman axioms AND has mass gap $\\Delta > 0$ (i.e., no massless excitations beyond the vacuum). Lattice provides numerical evidence (lightest glueball $\\sim 1.5$ GeV), but rigorous continuum existence remains open. Partial progress: rigorous construction in 2D, 3D; perturbative renormalisability proven; non-perturbative gap remains open in 4D."
+    }
+  }
+]

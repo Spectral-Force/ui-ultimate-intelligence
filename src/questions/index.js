@@ -89,6 +89,14 @@ import qedRenormalisation    from './physics/qed-renormalisation.json'
 import lambShift             from './physics/lamb-shift.json'
 import irDivergences         from './physics/ir-divergences.json'
 import qedApplications       from './physics/qed-applications.json'
+import qcdColour             from './physics/qcd-colour.json'
+import asymptoticFreedom     from './physics/asymptotic-freedom.json'
+import confinement           from './physics/confinement.json'
+import chiralSymmetry        from './physics/chiral-symmetry.json'
+import opeAndSumRules        from './physics/ope-and-sum-rules.json'
+import disPartonModel        from './physics/dis-parton-model.json'
+import hadronPhysics         from './physics/hadron-physics.json'
+import quarkGluonPlasma      from './physics/quark-gluon-plasma.json'
 
 export const allQuestions = [
   ...dopplerCooling,
@@ -182,6 +190,14 @@ export const allQuestions = [
   ...lambShift,
   ...irDivergences,
   ...qedApplications,
+  ...qcdColour,
+  ...asymptoticFreedom,
+  ...confinement,
+  ...chiralSymmetry,
+  ...opeAndSumRules,
+  ...disPartonModel,
+  ...hadronPhysics,
+  ...quarkGluonPlasma,
 ]
 
 /**

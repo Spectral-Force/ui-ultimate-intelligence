@@ -1,0 +1,169 @@
+[
+  {
+    "id": "af001",
+    "path": [
+      "physics",
+      "quantum-chromodynamics",
+      "asymptotic-freedom"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "Asymptotic freedom in QCD: the coupling becomes weak at high energy. What's the one-loop $\\beta$-function?",
+    "equation": "\\beta(g) = -\\frac{g^3}{16\\pi^2}\\left(\\frac{11N_c}{3} - \\frac{2n_f}{3}\\right)",
+    "passive": {
+      "options": [
+        "$\\beta = -g^3(11N_c/3 - 2n_f/3)/(16\\pi^2)$; negative sign for $n_f < 17$ in QCD ($N_c = 3$): $\\alpha_s$ decreases with energy",
+        "$\\beta = +g^3/(16\\pi^2)$; positive sign like QED (would conflict with renormalisation group flow and cross-section data)",
+        "$\\beta = 0$ identically because QCD is conformal (violates basic gauge invariance and Lorentz covariance requirements)",
+        "$\\beta < 0$ only for massless quarks; massive quarks reverse the sign"
+      ],
+      "correct": 0,
+      "explanation": "Two contributions to one-loop $\\beta$: gluon self-interaction (antiscreening, positive contribution $11N_c/3$ to $-\\beta$); fermion loops (screening, like QED, negative contribution $-2n_f/3$). For $N_c = 3$, $n_f \\leq 16$: antiscreening dominates, $\\beta < 0$, asymptotic freedom. Discovered Gross-Wilczek-Politzer (1973, Nobel 2004). At one loop: $\\alpha_s(Q^2) = \\alpha_s(\\mu^2)/[1 + (\\alpha_s(\\mu^2)/4\\pi)\\beta_0\\ln(Q^2/\\mu^2)]$ with $\\beta_0 = 11 - 2n_f/3$."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each asymptotic-freedom concept:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Gluon antiscreening",
+          "definition": "Gluon self-coupling makes vacuum behave as 'paramagnetic' — bare colour charge enhanced at long distances; opposite of QED screening"
+        },
+        {
+          "id": "p2",
+          "term": "$\\Lambda_{\\rm QCD}$",
+          "definition": "Scale where perturbative running diverges; $\\sim 200$ MeV; dimensionally transmuted from dimensionless $\\alpha_s$"
+        },
+        {
+          "id": "p3",
+          "term": "$\\alpha_s(m_Z)$",
+          "definition": "World-average $\\sim 0.118$ at $Z$-pole; benchmark coupling for QCD predictions at colliders"
+        },
+        {
+          "id": "p4",
+          "term": "Gross-Wilczek-Politzer",
+          "definition": "1973 discovery of negative $\\beta$; Nobel 2004; opened systematic perturbative QCD calculation at high $Q^2$"
+        }
+      ],
+      "explanation": "Asymptotic freedom transforms QCD from intractable into calculable at high energy. The same property makes QCD non-perturbative at low energy (confinement). $\\Lambda_{\\rm QCD}$ is the dynamically-generated mass scale — sets all of low-energy QCD."
+    }
+  },
+  {
+    "id": "af002",
+    "path": [
+      "physics",
+      "quantum-chromodynamics",
+      "asymptotic-freedom"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the value of $\\alpha_s$ at the $Z$-pole and how does it compare to QED's $\\alpha$?",
+    "passive": {
+      "options": [
+        "$\\alpha_s(m_Z) \\approx 0.118$, $\\alpha(m_Z) \\approx 1/128 \\approx 0.0078$ — QCD coupling at $Z$ scale is $\\sim 15\\times$ stronger than QED",
+        "$\\alpha_s(m_Z) \\approx 1/137$, similar to QED $\\alpha$ (violates basic gauge invariance and Lorentz covariance requirements)",
+        "$\\alpha_s(m_Z) \\approx 1$, deep in non-perturbative regime (historically considered but disfavoured by modern QFT analyses)",
+        "$\\alpha_s \\ll \\alpha$ at all energy scales (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "World-average $\\alpha_s(m_Z^2) = 0.1179(10)$ (PDG 2022). QED $\\alpha(m_Z^2) \\approx 0.0078$ (running from $\\alpha(0) = 1/137$). Asymptotic freedom: $\\alpha_s$ drops to $\\sim 0.10$ at LHC energies (TeV), to $\\sim 0.4$ at 1 GeV. Crosses $\\alpha$ EM coupling around $\\sim 10^{14}$ GeV (within GUT range), suggestive of unification. Determinations: lattice QCD, $\\tau$ decay, jet rates, DIS — all agree at $\\sim 1\\%$ level."
+    }
+  },
+  {
+    "id": "af003",
+    "path": [
+      "physics",
+      "quantum-chromodynamics",
+      "asymptotic-freedom"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "$\\Lambda_{\\rm QCD}$ is the QCD scale parameter. What's its value and physical meaning?",
+    "passive": {
+      "options": [
+        "$\\Lambda_{\\rm QCD} \\approx 200{-}300$ MeV; scale where perturbative $\\alpha_s$ formally diverges; sets hadronic mass scale; dimensional transmutation from classically scale-invariant Lagrangian",
+        "$\\Lambda_{\\rm QCD} \\sim$ TeV; sets electroweak scale (historically considered but disfavoured by modern QFT analyses)",
+        "$\\Lambda_{\\rm QCD}$ is undefined without reference to a specific scheme (unsupported by perturbative expansions in the coupling)",
+        "$\\Lambda_{\\rm QCD} \\approx m_Z$, the natural cutoff (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "$\\Lambda_{\\rm QCD}^{\\overline{\\rm MS}} = 213 \\pm 8$ MeV for $n_f = 5$ (typical). One-loop: $\\alpha_s(Q^2) \\sim 4\\pi/[\\beta_0\\ln(Q^2/\\Lambda^2)]$. Sets scale of hadron masses ($m_p \\sim 1$ GeV $\\sim 5\\Lambda$). Origin of mass: classical QCD is scale-invariant for $m_q = 0$; quantum running breaks conformal invariance and dynamically generates $\\Lambda$. Most of proton mass comes from $\\Lambda_{\\rm QCD}$, not Higgs."
+    }
+  },
+  {
+    "id": "af004",
+    "path": [
+      "physics",
+      "quantum-chromodynamics",
+      "asymptotic-freedom"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Asymptotic freedom enables systematic perturbative QCD calculations. What's the high-energy logic?",
+    "passive": {
+      "options": [
+        "At high $Q^2$: $\\alpha_s$ small, perturbation theory works; cross-sections expanded in $\\alpha_s$; factorisation separates calculable hard process from non-perturbative PDFs",
+        "Perturbation theory works at low energy where $\\alpha_s$ is small (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Asymptotic freedom doesn't help with calculations; only useful conceptually (would conflict with renormalisation group flow and cross-section data)",
+        "QCD becomes free at high energy — no interactions at all (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "Modern collider phenomenology relies on this. Factorisation: $\\sigma = \\sum_{ij} f_i(x_1, \\mu) \\otimes f_j(x_2, \\mu) \\otimes \\hat\\sigma_{ij}(Q^2, \\mu, \\alpha_s(\\mu))$ where $f_i$ are PDFs and $\\hat\\sigma$ is the perturbative hard cross-section. NLO ($\\alpha_s^1$) accuracy standard; NNLO ($\\alpha_s^2$) increasingly common for benchmark processes (Higgs production, top pair). N3LO available for some inclusive observables."
+    }
+  },
+  {
+    "id": "af005",
+    "path": [
+      "physics",
+      "quantum-chromodynamics",
+      "asymptotic-freedom"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Two-loop $\\beta$-function in QCD adds the next correction. What's the modification?",
+    "passive": {
+      "options": [
+        "$\\beta = -g^3\\beta_0/(16\\pi^2) - g^5\\beta_1/(16\\pi^2)^2 - \\ldots$ with $\\beta_1 = 102 - 38 n_f/3$ (positive for small $n_f$); modifies running of $\\alpha_s$ at next-to-leading order",
+        "Two-loop $\\beta$ vanishes; only one-loop matters (would conflict with renormalisation group flow and cross-section data)",
+        "Two-loop $\\beta$ has opposite sign, reversing asymptotic freedom at sufficiently low energy",
+        "Higher-loop $\\beta$ is scheme-dependent and so unphysical (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "$\\beta_1 = 102 - 38n_f/3$ (universal, scheme-independent). Higher orders ($\\beta_2, \\beta_3$) scheme-dependent but standard in $\\overline{\\rm MS}$. Currently known to 5-loop accuracy (Baikov, Chetyrkin, Kühn 2017). NLL evolution: $\\alpha_s(Q^2) \\approx 1/[\\beta_0\\ln(Q^2/\\Lambda^2)] - \\beta_1\\ln\\ln(Q^2/\\Lambda^2)/[\\beta_0^3\\ln^2(Q^2/\\Lambda^2)] + \\ldots$. Important for precision predictions at LHC."
+    }
+  },
+  {
+    "id": "af006",
+    "path": [
+      "physics",
+      "quantum-chromodynamics",
+      "asymptotic-freedom"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "Banks-Zaks fixed point: for some $n_f$ values, QCD has a non-trivial conformal IR fixed point. What's the condition?",
+    "passive": {
+      "options": [
+        "For $9 \\lesssim n_f \\lesssim 16$: two-loop $\\beta_0$ and $\\beta_1$ have opposite signs; perturbative IR fixed point at $\\alpha_s^* = 4\\pi\\beta_0/\\beta_1$; theory IR-conformal not confined",
+        "Banks-Zaks applies only to QED with many fermions (not consistent with the operator product expansion at large momentum)",
+        "Fixed point exists for any QCD, regardless of $n_f$ (historically considered but disfavoured by modern QFT analyses)",
+        "Banks-Zaks gives the same physics as $\\Lambda_{\\rm QCD}$ scale generation (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "Banks-Zaks (1982): for QCD with sufficient flavours $n_f^* < n_f < 17$, IR fixed point at small enough $\\alpha_s^*$ that perturbation theory is reliable. Theory becomes interacting conformal field theory at long distances — no confinement, no chiral symmetry breaking. Modern interest: 'walking technicolor' models, conformal window. Lattice QCD studies establish $n_f^* \\approx 8-12$. Not our world ($n_f = 6$, with only $u, d, s$ light enough at typical energies to affect running)."
+    }
+  }
+]

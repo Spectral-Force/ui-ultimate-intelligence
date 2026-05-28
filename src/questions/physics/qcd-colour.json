@@ -1,0 +1,169 @@
+[
+  {
+    "id": "qcdc001",
+    "path": [
+      "physics",
+      "quantum-chromodynamics",
+      "qcd-colour"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "Quarks carry SU(3) colour charge. What is the dimension of the colour representation and how many gluons mediate it?",
+    "passive": {
+      "options": [
+        "Quarks in the fundamental ($N_c = 3$, 'colour triplet'); gluons in the adjoint (8-dimensional, $N_c^2 - 1 = 8$ gluons); each gluon carries a colour-anticolour combination",
+        "Quarks in 8-dim (octet); 3 gluons that mediate colour exchange among quarks (contradicted by both lattice simulations and dispersive analyses)",
+        "Quarks in singlet (1-dim); 9 gluons including a colourless one (historically considered but disfavoured by modern QFT analyses)",
+        "All quarks share a single colour charge; gluons form a 3-dim representation (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "SU(3) fundamental rep dim 3: three colours conventionally labelled red, green, blue. Adjoint rep dim $3^2 - 1 = 8$ (the eight Gell-Mann matrices). Eight gluons, not nine: the colour-singlet combination (RR̄+GḠ+BB̄)/√3 would mediate long-range force violating confinement; explicitly removed by SU(3) traceless condition. Gluons themselves carry colour, leading to gluon self-interactions and crucial physics differences from QED."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each QCD field to its colour representation:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Quark $q$ (e.g. $u, d$)",
+          "definition": "Fundamental representation, dim 3 (red/green/blue); colour triplet"
+        },
+        {
+          "id": "p2",
+          "term": "Antiquark $\\bar q$",
+          "definition": "Antifundamental, dim 3 (anti-red/green/blue); colour antitriplet"
+        },
+        {
+          "id": "p3",
+          "term": "Gluon $G^a_\\mu$",
+          "definition": "Adjoint representation, dim 8; labelled by colour index $a = 1, \\ldots, 8$"
+        },
+        {
+          "id": "p4",
+          "term": "Meson $q\\bar q$",
+          "definition": "Singlet (colourless): $3 \\otimes \\bar 3 = 1 \\oplus 8$; only singlet is a colour-neutral physical particle"
+        }
+      ],
+      "explanation": "Hadrons must be colour singlets (confinement). Mesons: $3 \\otimes \\bar 3$ contains a singlet. Baryons: $3 \\otimes 3 \\otimes 3 = 1 \\oplus 8 \\oplus 8 \\oplus 10$ — contains a singlet (the totally antisymmetric colour combination). Exotic hadrons (tetraquarks, pentaquarks): different colour structures, also singlets but with more quarks."
+    }
+  },
+  {
+    "id": "qcdc002",
+    "path": [
+      "physics",
+      "quantum-chromodynamics",
+      "qcd-colour"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "The QCD Lagrangian has the same structure as QED but with non-Abelian generalisations. What's the explicit form?",
+    "equation": "\\mathcal L_{\\rm QCD} = \\bar q_i(i\\gamma^\\mu D^{ij}_\\mu - m\\delta^{ij})q_j - \\frac{1}{4}G^a_{\\mu\\nu}G^{a\\mu\\nu}",
+    "passive": {
+      "options": [
+        "$\\mathcal L = \\bar q(i\\not D - m)q - \\tfrac14 G^a_{\\mu\\nu}G^{a\\mu\\nu}$ with $D_\\mu = \\partial_\\mu - igT^a G^a_\\mu$, $G^a_{\\mu\\nu} = \\partial_\\mu G^a_\\nu - \\partial_\\nu G^a_\\mu + gf^{abc}G^b_\\mu G^c_\\nu$",
+        "Identical to QED with $e \\to g$ replacement and no other changes (violates basic gauge invariance and Lorentz covariance requirements)",
+        "QCD Lagrangian has no gauge-boson kinetic term; gluons are pure auxiliary fields (unsupported by perturbative expansions in the coupling)",
+        "Includes mass term for gluons $m_g^2 G^a_\\mu G^{a\\mu}/2$ (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Non-Abelian features: (1) Covariant derivative contains gauge group generators $T^a$; (2) Field strength contains $gf^{abc}G^bG^c$ — quadratic in gauge field, the source of gluon self-interaction. (3) Structure constants $f^{abc}$: $[T^a, T^b] = if^{abc}T^c$. Yields 3- and 4-gluon vertices that QED lacks. Massless gluons: gauge invariance forbids $m^2 G^aG^a$. Single coupling $g$; renormalised $\\alpha_s = g^2/4\\pi$."
+    }
+  },
+  {
+    "id": "qcdc003",
+    "path": [
+      "physics",
+      "quantum-chromodynamics",
+      "qcd-colour"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "The Gell-Mann matrices $\\lambda^a$ are the SU(3) generators. How are they related to QCD interactions?",
+    "passive": {
+      "options": [
+        "$T^a = \\lambda^a/2$ are the 8 generators; satisfy $[T^a, T^b] = if^{abc}T^c$ with structure constants $f^{abc}$; appear in quark-gluon vertex factor $-ig\\gamma^\\mu T^a$",
+        "Gell-Mann matrices are 4×4 and equivalent to gamma matrices in QED (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "There are only 3 Gell-Mann matrices (one per colour) (ruled out by experimental constraints from collider and low-energy data)",
+        "Gell-Mann matrices commute, making SU(3) Abelian like U(1) in QED (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "8 Gell-Mann matrices $\\lambda^1, \\ldots, \\lambda^8$ are 3×3 traceless Hermitian — the SU(3) analogue of Pauli matrices for SU(2). $T^a = \\lambda^a/2$ normalised so $\\text{tr}(T^aT^b) = \\delta^{ab}/2$. Structure constants $f^{abc}$ totally antisymmetric. Key invariants: Casimir $C_F = (N_c^2-1)/(2N_c) = 4/3$ for fundamental (quark loops); $C_A = N_c = 3$ for adjoint (gluon loops). Appears in colour factors of Feynman diagrams."
+    }
+  },
+  {
+    "id": "qcdc004",
+    "path": [
+      "physics",
+      "quantum-chromodynamics",
+      "qcd-colour"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "QCD has 3- and 4-gluon self-interaction vertices not present in QED. What's their origin?",
+    "passive": {
+      "options": [
+        "From $G^a_{\\mu\\nu}G^{a\\mu\\nu}$ expansion: linear term gives kinetic, cubic in $G$ gives 3-gluon vertex ($\\sim g f^{abc}$), quartic gives 4-gluon vertex ($\\sim g^2 f^{abe}f^{cde}$)",
+        "Self-interaction added by hand to make QCD renormalisable (unsupported by perturbative expansions in the coupling)",
+        "Gluon self-interactions come from quark loops; no direct vertex from Lagrangian (historically considered but disfavoured by modern QFT analyses)",
+        "Vertex structures identical to QED; no new diagrams in QCD (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "Expand $G^a_{\\mu\\nu}G^{a\\mu\\nu} = (\\partial G - \\partial G + gfGG)^2$: quadratic (kinetic), cubic (3-gluon vertex factor $\\sim gf^{abc}$), quartic (4-gluon vertex factor $\\sim g^2(ff)^{abcd}$). These are the source of asymptotic freedom (gluon loops contribute opposite sign to fermion loops in $\\beta$-function) and confinement (energy stored in gluon field grows linearly with quark separation). QED has no analogue: photons electrically neutral, don't self-interact."
+    }
+  },
+  {
+    "id": "qcdc005",
+    "path": [
+      "physics",
+      "quantum-chromodynamics",
+      "qcd-colour"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Colour confinement is enforced by requiring all observable states to be colour singlets. What experimental evidence supports this?",
+    "passive": {
+      "options": [
+        "Free quarks never observed (Millikan-style experiments find no fractional charges); jets at colliders are colour-neutral hadronic showers; QCD-induced 'colour string' breaks via $q\\bar q$ pair creation",
+        "Free quarks have been routinely observed in cosmic rays and at LHC (historically considered but disfavoured by modern QFT analyses)",
+        "Confinement is a theoretical postulate with no direct experimental evidence (contradicted by both lattice simulations and dispersive analyses)",
+        "Coloured states exist at high energy and only confine at low temperature (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Free-quark searches: Millikan-style oil drop experiments (Fairbank 1981) initially claimed fractional charges, never reproduced. Modern bounds: $\\rho_q/\\rho_p < 10^{-27}$ in matter. Why no free quarks: pulling quarks apart costs energy $\\sigma r$ (linear potential); at $r \\sim 1$ fm, energy enough to make a $q\\bar q$ pair, which screens — string breaks into colour-singlet mesons. This is QCD's confinement mechanism. Lattice QCD computes string tension $\\sigma \\approx 1$ GeV/fm = $0.94$ GeV$^2$."
+    }
+  },
+  {
+    "id": "qcdc006",
+    "path": [
+      "physics",
+      "quantum-chromodynamics",
+      "qcd-colour"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "Why is the number of colours $N_c = 3$? What experimental evidence pins down this number?",
+    "passive": {
+      "options": [
+        "$\\pi^0 \\to \\gamma\\gamma$ decay rate scales as $N_c^2$; observed rate gives $N_c \\approx 3$. R-ratio at colliders: $R = N_c\\sum Q_q^2$ matches with $N_c = 3$. Drell-Yan, jet rates all consistent with $N_c = 3$",
+        "$N_c = 3$ is a postulate with no experimental support (violates basic gauge invariance and Lorentz covariance requirements)",
+        "$N_c = 1$ matches all data; the '3 colours' name is historical (would imply unphysical infinite or negative observables)",
+        "$N_c$ is variable and depends on collision energy (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "Multiple direct measurements: (1) $\\pi^0 \\to 2\\gamma$ rate from chiral anomaly: $\\Gamma \\propto N_c^2$, measured $\\Gamma = 7.8$ eV matches $N_c = 3$ to better than 1%. (2) $R = \\sigma(e^+e^- \\to {\\rm hadrons})/\\sigma(e^+e^- \\to \\mu^+\\mu^-) = N_c\\sum Q_q^2$: $R \\approx 2$ below charm, $\\approx 10/3$ above, $\\approx 11/3$ above bottom — matches $N_c = 3$. (3) Hadronic jet multiplicities, Drell-Yan rates. Together, $N_c = 3$ established to high precision."
+    }
+  }
+]

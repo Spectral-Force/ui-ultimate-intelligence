@@ -148,6 +148,20 @@ export const CATEGORIES = [
         ],
       },
       {
+        id: 'quantum-chromodynamics',
+        label: 'Quantum Chromodynamics (QCD)',
+        children: [
+          { id: 'qcd-colour',            label: 'Colour & QCD Lagrangian' },
+          { id: 'asymptotic-freedom',    label: 'Asymptotic Freedom' },
+          { id: 'confinement',           label: 'Confinement & Wilson Loops' },
+          { id: 'chiral-symmetry',       label: 'Chiral Symmetry Breaking' },
+          { id: 'ope-and-sum-rules',     label: 'OPE & Sum Rules' },
+          { id: 'dis-parton-model',      label: 'DIS & Parton Model' },
+          { id: 'hadron-physics',        label: 'Hadron Physics & EFTs' },
+          { id: 'quark-gluon-plasma',    label: 'Quark-Gluon Plasma' },
+        ],
+      },
+      {
         id: 'theorems',
         label: 'Theorems & Principles',
         children: [
