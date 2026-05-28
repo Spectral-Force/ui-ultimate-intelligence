@@ -1,0 +1,168 @@
+[
+  {
+    "id": "bsm001",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "beyond-sm"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "What are the main motivations for physics beyond the Standard Model?",
+    "passive": {
+      "options": [
+        "(1) Neutrino masses (need RH neutrinos or new dynamics); (2) Dark matter (~27% of universe, not in SM); (3) Baryon asymmetry (SM CP violation too small); (4) Hierarchy problem (Higgs mass naturalness); (5) Strong CP problem ($\\bar\\theta < 10^{-10}$ unnatural); (6) Gravity (no quantum theory in SM); (7) Flavour puzzle (Yukawa hierarchy); (8) Dark energy ($10^{-122}M_{\\rm Pl}^4$); plus (9) gauge coupling unification hints",
+        "SM is complete and consistent; no motivation for BSM (historically considered but disfavoured by modern QFT analyses) (would conflict with renormalisation group flow and cross-section data) (not consistent with the operator product expansion at large momentum)",
+        "Only the hierarchy problem motivates BSM (contradicted by both lattice simulations and dispersive analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would imply unphysical infinite or negative observables)",
+        "Gravity is built into the SM via Higgs sector (disagrees with the standard textbook treatment in Peskin-Schroeder) (unsupported by perturbative expansions in the coupling) (violates basic gauge invariance and Lorentz covariance requirements)"
+      ],
+      "correct": 0,
+      "explanation": "Experimentally established beyond SM: $\\nu$ masses (oscillations), dark matter (galactic rotation curves, CMB, structure formation, lensing), baryon asymmetry ($\\eta_B \\sim 10^{-10}$), dark energy ($\\Omega_\\Lambda \\sim 0.69$). Theoretical motivations: naturalness/hierarchy, strong CP, gauge coupling unification, gravity at Planck scale. Some pieces fit together: BSM physics at $10^{12}-10^{16}$ GeV could simultaneously address see-saw $\\nu$ masses, leptogenesis (BAU), gauge unification. Lower-scale BSM ($\\sim$ TeV) could solve hierarchy + dark matter (SUSY, extra dimensions, composite Higgs)."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each BSM scenario with its target problem:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Supersymmetry (SUSY)",
+          "definition": "Cancels quadratic divergences in $m_h^2$; superpartners every $\\sim$ TeV; lightest neutralino = dark matter candidate"
+        },
+        {
+          "id": "p2",
+          "term": "Axion + Peccei-Quinn",
+          "definition": "Solves strong CP problem dynamically; axion = ultralight dark matter candidate; signatures: ADMX, IAXO"
+        },
+        {
+          "id": "p3",
+          "term": "See-saw + leptogenesis",
+          "definition": "Explains tiny $\\nu$ masses (heavy RH neutrinos) and baryon asymmetry (CP-violating $N_R$ decays)"
+        },
+        {
+          "id": "p4",
+          "term": "Composite Higgs / Technicolour",
+          "definition": "Higgs as pseudo-Goldstone of new strong dynamics at $\\sim$ TeV; addresses hierarchy without elementary scalars"
+        }
+      ],
+      "explanation": "Each BSM target one or more SM shortcomings. LHC has searched many scenarios; null results push minimal versions to multi-TeV scale, motivating new approaches: relaxion, $\\mathcal N$-naturalness, asymptotic safety, anthropic landscape. ATLAS/CMS plan ~3000 fb$^{-1}$ HL-LHC by 2040; future colliders (FCC-hh 100 TeV, muon collider, ILC/CLIC) could close fundamental questions."
+    }
+  },
+  {
+    "id": "bsm002",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "beyond-sm"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "MSSM (Minimal Supersymmetric Standard Model): what's added and what does it predict?",
+    "passive": {
+      "options": [
+        "Each SM field gets a superpartner: bosons $\\to$ fermions and vice versa; squarks, sleptons, gauginos (gluino, wino, bino), higgsinos; two Higgs doublets needed (for anomaly cancellation, holomorphy). Predicts: gauge unification at $2\\times 10^{16}$ GeV, $m_h \\le M_Z$ at tree level (raised by radiative corrections), lightest neutralino dark matter, proton decay if R-parity broken — null LHC results push $m_{\\rm SUSY} \\gtrsim 2$ TeV (squark, gluino)",
+        "MSSM removes all SM particles, replacing with superpartners only (contradicted by both lattice simulations and dispersive analyses) (ruled out by experimental constraints from collider and low-energy data) (unsupported by perturbative expansions in the coupling)",
+        "Single new particle (gravitino) added to SM (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (violates basic gauge invariance and Lorentz covariance requirements) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "MSSM is equivalent to GUT, no new content (historically considered but disfavoured by modern QFT analyses) (would imply unphysical infinite or negative observables) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Field content: 12 squark generations (3 generations × $(u_L, u_R, d_L, d_R)$ + colour and spin), 6 sleptons, 8 gluinos, 4 neutralinos ($\\tilde W^0, \\tilde B, \\tilde H_1^0, \\tilde H_2^0$ mixing), 2 charginos ($\\tilde W^\\pm, \\tilde H^\\pm$ mixing). Two Higgs doublets $H_u, H_d$ give 5 physical Higgs bosons ($h, H, A, H^\\pm$); SM-like $h$ has bound $m_h \\le M_Z|\\cos 2\\beta|$ at tree, lifted by loop $\\sim m_t^4\\ln(m_{\\tilde t}^2/m_t^2)$, $m_h \\approx 125$ GeV requires $m_{\\tilde t} \\gtrsim 1$ TeV or large $A$-term mixing. R-parity ($R = (-1)^{3(B-L)+2s}$) conserved: lightest SUSY particle stable = dark matter candidate. LHC searches: gluino $m_{\\tilde g} \\gtrsim 2.3$ TeV, squark $m_{\\tilde q} \\gtrsim 1.8$ TeV — natural SUSY increasingly squeezed."
+    }
+  },
+  {
+    "id": "bsm003",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "beyond-sm"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Dark matter candidates: what are the leading particle-physics options and their detection strategies?",
+    "passive": {
+      "options": [
+        "WIMPs (weakly-interacting massive particle, $\\sim 10-1000$ GeV): direct detection (XENONnT, LUX-ZEPLIN nuclear recoil), indirect (Fermi $\\gamma$-ray, IceCube $\\nu$), collider (missing $E_T$). Axions ($\\mu$eV-meV): haloscopes (ADMX), helioscopes (IAXO). Sterile neutrinos (keV): X-ray lines. Primordial black holes: micro-lensing, GW. Multi-fronted search; no confirmed signal beyond gravitational",
+        "All DM is composed of dark photons; only mode of search (ruled out by experimental constraints from collider and low-energy data) (unsupported by perturbative expansions in the coupling) (historically considered but disfavoured by modern QFT analyses)",
+        "DM = ordinary neutrinos with mass $\\sim$ eV (would imply unphysical infinite or negative observables) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (not consistent with the operator product expansion at large momentum)",
+        "DM is purely gravitational; no other interactions possible (would conflict with renormalisation group flow and cross-section data) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "Evidence: galaxy rotation curves (Rubin 1970s), galaxy cluster lensing (e.g.\\ Bullet Cluster — DM separated from baryonic gas), CMB acoustic peaks ($\\Omega_{\\rm DM}h^2 = 0.120$, Planck), large-scale structure formation. Candidate masses span 80 orders of magnitude. WIMP miracle: thermally produced relic with $\\langle\\sigma v\\rangle \\sim 10^{-26}$ cm$^3$/s gives correct abundance, points to weak-scale physics — strongly motivates SUSY neutralino. Direct DM: SI WIMP cross-section limits now below $10^{-47}$ cm² at 30 GeV (LZ 2022) — neutrino floor approaches. Axion: in DFSZ window $m_a \\sim 50$ μeV, ADMX scanning. Alternative: feebly-interacting (FIMP), warm DM (keV sterile), self-interacting DM (small-scale structure puzzles), fuzzy DM ($\\sim 10^{-22}$ eV)."
+    }
+  },
+  {
+    "id": "bsm004",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "beyond-sm"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Extra dimensions / Kaluza-Klein: how do they address the hierarchy problem?",
+    "passive": {
+      "options": [
+        "ADD (Arkani-Hamed-Dimopoulos-Dvali): $n$ large extra dimensions of size $R$ for gravity (SM fields confined to brane); fundamental Planck scale $M_*^{n+2} = M_{\\rm Pl}^2/R^n$; with $R \\sim$ mm and $n = 2$, $M_* \\sim$ TeV — no hierarchy! Randall-Sundrum (RS): warped 5D AdS, $M_{\\rm Pl}$ on UV brane, EW scale on IR brane via exponential warping; explains $M_W/M_{\\rm Pl} = e^{-kR\\pi}$",
+        "Extra dimensions cannot affect SM observables (disagrees with the standard textbook treatment in Peskin-Schroeder) (ruled out by experimental constraints from collider and low-energy data) (unsupported by perturbative expansions in the coupling)",
+        "Extra dimensions multiply Planck mass by factor $R^n$; problem worsens (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Forbidden by Lorentz invariance (not consistent with the operator product expansion at large momentum) (historically considered but disfavoured by modern QFT analyses) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "ADD (1998): gravity propagates in 4+n dimensions, SM on 3-brane. Newton's law modified at $r < R$: $V(r) \\sim m_1 m_2/(M_*^{n+2} r^{n+1})$. Matching to observed $G_N$ at $r \\gg R$ requires $M_{\\rm Pl}^2 = M_*^{n+2} R^n$. With $M_* \\sim$ TeV: $n = 1$ needs $R \\sim 10^{12}$ m (excluded), $n = 2$ needs $R \\sim 1$ mm (tested by torsion balances, currently $R < 30$ μm), $n \\ge 3$ unconstrained by gravity tests. Signatures: KK gravitons at LHC (missing energy + jet), modified Newton's law sub-mm. RS (1999): single extra dim with warped metric $ds^2 = e^{-2k|y|}\\eta_{\\mu\\nu}dx^\\mu dx^\\nu + dy^2$; EW scale on IR brane is $M_{\\rm Pl} e^{-k\\pi R}$ — modest $kR \\sim 12$ gives huge hierarchy. KK gluon, gauge, graviton resonances at TeV — LHC searches set $\\gtrsim 4$ TeV bounds."
+    }
+  },
+  {
+    "id": "bsm005",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "beyond-sm"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Effective Field Theory (SMEFT) as model-independent BSM framework: what is it?",
+    "passive": {
+      "options": [
+        "$\\mathcal L_{\\rm SMEFT} = \\mathcal L_{\\rm SM} + \\sum_d c_i^{(d)}\\mathcal O_i^{(d)}/\\Lambda^{d-4}$ with operators built from SM fields (with $SU(3)\\times SU(2)\\times U(1)$ invariance); dim 5: Weinberg's $\\nu$ Majorana mass operator; dim 6: 59 operators (Warsaw basis); fit Wilson coefficients $c_i$ from data to constrain $\\Lambda$ — current bounds $\\Lambda/\\sqrt c \\sim 1-50$ TeV depending on operator",
+        "SMEFT is identical to SM, no new operators (contradicted by both lattice simulations and dispersive analyses) (would conflict with renormalisation group flow and cross-section data) (not consistent with the operator product expansion at large momentum)",
+        "SMEFT includes only dim-4 operators (would imply unphysical infinite or negative observables) (unsupported by perturbative expansions in the coupling) (historically considered but disfavoured by modern QFT analyses)",
+        "SMEFT requires explicit BSM model to apply (ruled out by experimental constraints from collider and low-energy data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "SMEFT (Standard Model Effective Field Theory): assume new physics at scale $\\Lambda \\gg v$, integrate out, expand in $1/\\Lambda$. Operator catalogue (Warsaw basis, Grzadkowski et al.\\ 2010): 1 dim-5 (Majorana $\\nu$ mass: $(\\bar L^c\\tilde\\Phi^*)(\\tilde\\Phi^\\dagger L)/\\Lambda$), 59 dim-6 (after dropping baryon-number-violating ones, considering flavour structure: thousands), 273 dim-7, etc. Constraints: EW precision, Higgs couplings, top, flavour, dipole moments, low-energy. Global SMEFT fits: ATLAS/CMS, individual + combined; coefficients of common operators $|c_i|/\\Lambda^2 \\lesssim$ few/(TeV)$^2$. Provides model-independent way to interpret data: any BSM model with mass scale $\\Lambda$ matches onto specific Wilson coefficients. Complementary: HEFT (Higgs EFT) if Higgs not in SM doublet; LEFT (low-energy below EW)."
+    }
+  },
+  {
+    "id": "bsm006",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "beyond-sm"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "Grand Unified Theories: what are the simplest options and characteristic predictions?",
+    "passive": {
+      "options": [
+        "$SU(5)$ (Georgi-Glashow 1974): smallest simple group embedding SM, one generation in $\\bar{\\mathbf 5} + \\mathbf{10}$; predicts proton decay $p \\to e^+\\pi^0$ via X/Y gauge boson exchange, $\\tau_p \\sim 10^{34}-10^{36}$ yr; gauge coupling unification needs SUSY for precision. $SO(10)$: one generation in $\\mathbf{16}$ including $\\nu_R$; gives see-saw automatically; embeds $SU(5)$ + $U(1)$. Pati-Salam $SU(4)\\times SU(2)\\times SU(2)$ unifies quarks and leptons partially",
+        "GUTs require quarks and gluons to be elementary photons (not consistent with the operator product expansion at large momentum) (violates basic gauge invariance and Lorentz covariance requirements) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Only $U(1)$ unification possible (unsupported by perturbative expansions in the coupling) (would imply unphysical infinite or negative observables) (contradicted by both lattice simulations and dispersive analyses) (ruled out by experimental constraints from collider and low-energy data)",
+        "GUTs predict no proton decay (disagrees with the standard textbook treatment in Peskin-Schroeder) (historically considered but disfavoured by modern QFT analyses) (would conflict with renormalisation group flow and cross-section data) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "$SU(5)$: minimal; $\\bar{\\mathbf 5} \\ni (d^c, L)$, $\\mathbf{10} \\ni (Q, u^c, e^c)$; 24 gauge bosons = 12 SM + 12 X/Y (leptoquarks). Spontaneous breaking $SU(5) \\to SU(3)\\times SU(2)\\times U(1)$ at $M_{\\rm GUT} \\sim 10^{16}$ GeV. Proton decay: $p \\to e^+\\pi^0$ rate $\\propto 1/M_{\\rm GUT}^4 \\sim (10^{16})^{-4}$ giving $\\tau_p \\sim 10^{31}$ yr (minimal SU(5), excluded), $10^{35}$ yr (SUSY SU(5), still searched). Super-K bound: $\\tau(p\\to e^+\\pi^0) > 2.4\\times 10^{34}$ yr (2020). $SO(10)$: bigger, contains right-handed neutrino, predicts $b-\\tau$ Yukawa unification ($y_b(M_{\\rm GUT}) = y_\\tau(M_{\\rm GUT})$, approximately observed). Beyond: $E_6$, flipped SU(5), trinification. Strings naturally give GUT-like groups, e.g.\\ $E_8\\times E_8$ heterotic."
+    }
+  }
+]

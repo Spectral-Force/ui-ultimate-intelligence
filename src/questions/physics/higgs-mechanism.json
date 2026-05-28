@@ -1,0 +1,168 @@
+[
+  {
+    "id": "hgs001",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "higgs-mechanism"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "In the Higgs mechanism, why do gauge bosons acquire mass without breaking gauge invariance?",
+    "passive": {
+      "options": [
+        "Goldstone bosons of spontaneously broken gauge symmetry are 'eaten' by the gauge bosons, becoming their longitudinal polarisations; gauge invariance still holds — only the vacuum is non-invariant; mass term $M^2 A_\\mu A^\\mu$ appears in unitary gauge but the underlying Lagrangian remains gauge invariant",
+        "Gauge invariance is explicitly broken by a mass term $M^2 A_\\mu A^\\mu$ (contradicted by both lattice simulations and dispersive analyses) (historically considered but disfavoured by modern QFT analyses)",
+        "Goldstone bosons remain physical and add new light scalars to the spectrum (violates basic gauge invariance and Lorentz covariance requirements) (not consistent with the operator product expansion at large momentum)",
+        "Bosons get mass via radiative corrections only, not from Higgs vev (would imply unphysical infinite or negative observables) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "Without Higgs: 4 gauge bosons (2 d.o.f.\\ each = 8) + 4 Higgs (4 scalar d.o.f.) = 12 d.o.f. After EWSB: 1 massless photon (2 d.o.f.) + 3 massive $W^\\pm, Z$ (3 d.o.f.\\ each = 9) + 1 physical Higgs (1 d.o.f.) = 12. Counting is preserved! The 3 would-be Goldstones become longitudinal polarisations. In unitary gauge: Goldstones explicitly absorbed, Lagrangian has $M_W^2 W^+W^- + M_Z^2 Z^2/2$ — looks like explicit breaking but actually arises from gauge-invariant covariant derivative $|D_\\mu\\Phi|^2$ evaluated at $\\Phi = (0, v/\\sqrt 2)$. R$_\\xi$ gauges keep Goldstones manifest with $\\xi$-dependent masses."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each component of the EW Higgs sector with its role:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Higgs potential $V(\\Phi)$",
+          "definition": "$V = -\\mu^2|\\Phi|^2 + \\lambda|\\Phi|^4$ with $\\mu^2 > 0$; Mexican-hat shape; minimum at $|\\Phi| = v/\\sqrt 2 = 174$ GeV"
+        },
+        {
+          "id": "p2",
+          "term": "Higgs vev $v$",
+          "definition": "$v = 246$ GeV from $G_F$; sets EW scale; gives $M_W = gv/2$, all fermion masses from Yukawas"
+        },
+        {
+          "id": "p3",
+          "term": "Higgs boson $h$",
+          "definition": "Radial excitation around vev; mass $m_h = \\sqrt{2\\lambda}\\,v \\approx 125$ GeV; couples to SM particles $\\propto $ mass"
+        },
+        {
+          "id": "p4",
+          "term": "Goldstones $\\pi^a$",
+          "definition": "Phase excitations; eaten by $W^\\pm, Z$; become longitudinal polarisations of massive bosons"
+        }
+      ],
+      "explanation": "Higgs potential parameters: $\\mu^2$ negative-squared (tachyonic) at high scales — necessary for SSB; $\\lambda > 0$ for bounded-below. Vev $v \\equiv \\sqrt{\\mu^2/\\lambda} \\approx 246$ GeV from $G_F = 1/(\\sqrt 2 v^2)$. Higgs mass $m_h^2 = 2\\lambda v^2$, so $\\lambda \\approx 0.13$ — perturbative. Higgs couples to every massive SM particle proportional to mass: $g_{hff} = m_f/v$, $g_{hVV} = 2m_V^2/v$, $g_{hhh} = 3m_h^2/v$ (trilinear self-coupling, not yet measured precisely)."
+    }
+  },
+  {
+    "id": "hgs002",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "higgs-mechanism"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Yukawa couplings: how does the Higgs give mass to charged fermions in the SM?",
+    "passive": {
+      "options": [
+        "Gauge-invariant Yukawa terms: $\\mathcal L_Y = -y_e \\bar L_L \\Phi e_R - y_d \\bar Q_L \\Phi d_R - y_u \\bar Q_L \\tilde\\Phi u_R + \\text{h.c.}$ with $\\tilde\\Phi = i\\sigma_2\\Phi^*$; on EWSB substitute $\\Phi \\to (0, v/\\sqrt 2)$ to get $m_f = y_f v/\\sqrt 2$",
+        "Higgs gives mass only to gauge bosons; fermions get mass from QCD (contradicted by both lattice simulations and dispersive analyses)",
+        "Quark masses come from CKM matrix elements only (would conflict with renormalisation group flow and cross-section data) (not consistent with the operator product expansion at large momentum)",
+        "Yukawa couplings forbidden in SM by gauge invariance (disagrees with the standard textbook treatment in Peskin-Schroeder) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "Yukawa couplings are dimensionless free parameters of SM, one per fermion mass. With $\\Phi$ a $Y = 1/2$ doublet and $\\tilde\\Phi$ a $Y = -1/2$ doublet (needed for $u$-type), all Yukawa terms gauge invariant. After EWSB: $m_e = y_e v/\\sqrt 2$, etc. Hierarchy: $y_t \\approx 1$ (top), $y_b \\approx 0.024$, $y_\\tau \\approx 0.01$, $y_e \\approx 3\\times 10^{-6}$ — spans 6 orders of magnitude (flavour puzzle). Higgs coupling to each fermion ATLAS+CMS measure: $g_{htt}, g_{hbb}, g_{h\\tau\\tau}, g_{h\\mu\\mu}$ all consistent with SM. Neutrinos have no Yukawa in minimal SM (no $\\nu_R$) — must extend for masses."
+    }
+  },
+  {
+    "id": "hgs003",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "higgs-mechanism"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "The Higgs boson was discovered in 2012. What were the dominant production channels and decay modes used?",
+    "passive": {
+      "options": [
+        "Production: gluon fusion $gg \\to h$ (via top loop, dominant), vector-boson fusion ($qq \\to qqh$), associated production ($Wh, Zh, t\\bar th$). Decays: $h \\to \\gamma\\gamma$ (clean, loop-induced 0.2%), $h \\to ZZ \\to 4\\ell$ (clean 4-lepton), $h \\to WW \\to \\ell\\nu\\ell\\nu$, $h \\to b\\bar b$ (largest, 58%), $h \\to \\tau\\tau$",
+        "Higgs found in single quark decay $t \\to bh$ (disagrees with the standard textbook treatment in Peskin-Schroeder) (not consistent with the operator product expansion at large momentum)",
+        "Discovery via $h \\to e^+e^-$ — main decay mode (violates basic gauge invariance and Lorentz covariance requirements) (unsupported by perturbative expansions in the coupling)",
+        "Discovery through $h\\to gg$ direct gluon decay (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "LHC Higgs (Run 1 + 2): production cross sections (13 TeV): $\\sigma(gg\\to h) \\sim 50$ pb (dominant), VBF $\\sim 4$ pb, $Vh \\sim 2$ pb, $t\\bar th \\sim 0.5$ pb. Branching ratios (125 GeV): $b\\bar b$ 58%, $WW^*$ 22%, $gg$ 8%, $\\tau\\tau$ 6%, $c\\bar c$ 3%, $ZZ^*$ 3%, $\\gamma\\gamma$ 0.2%, $\\mu\\mu$ 2e-4. Discovery channels (2012): $\\gamma\\gamma$ (high resolution) and $ZZ^* \\to 4\\ell$ (clean, low background). Mass: $m_h = 125.10 \\pm 0.14$ GeV (PDG 2022). Couplings to fermions and bosons measured at 5-20% precision — all consistent with SM Higgs. Spin/CP: $0^+$ confirmed via angular distributions."
+    }
+  },
+  {
+    "id": "hgs004",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "higgs-mechanism"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Vacuum stability of the SM Higgs potential — what's the question and where does it stand?",
+    "passive": {
+      "options": [
+        "Quartic coupling $\\lambda(\\mu)$ runs with energy; with measured $m_h, m_t$, $\\lambda$ becomes negative around $\\mu \\sim 10^{10}$ GeV — would imply our vacuum is metastable (lower vacuum at large $\\Phi$). Tunnelling lifetime calculated $\\gg t_{\\rm universe}$, so 'metastable' but safe. Sensitive to top Yukawa: small $m_t$ shifts could push to stable or unstable",
+        "SM vacuum is rigorously stable; no question (historically considered but disfavoured by modern QFT analyses) (violates basic gauge invariance and Lorentz covariance requirements) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Higgs potential is unstable, predicts vacuum decay within seconds (contradicted by both lattice simulations and dispersive analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Stability already proved by lattice QCD (would conflict with renormalisation group flow and cross-section data) (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "RGE: $\\beta_\\lambda = (24\\lambda^2 + \\ldots - 6y_t^4 + \\ldots)/(16\\pi^2)$. Top Yukawa drives $\\lambda$ down at high scales (negative contribution). For $m_h = 125$ GeV, $m_t = 173$ GeV: $\\lambda \\to 0$ around $10^{10}-10^{11}$ GeV, goes slightly negative. Implies SM vacuum metastable: there's a deeper minimum at $\\Phi \\sim M_{\\rm Pl}$, separated by barrier. Tunnelling rate $\\Gamma/V \\sim M_{\\rm Pl}^4 e^{-S_{\\rm bounce}}$ with $S \\sim 4\\pi^2/(3|\\lambda|) \\sim$ 1000+, so lifetime astronomically larger than age of universe. New physics (SUSY, BSM) could lift $\\lambda$ — vacuum stability is a powerful probe of physics up to Planck scale."
+    }
+  },
+  {
+    "id": "hgs005",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "higgs-mechanism"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "The hierarchy problem: why is the Higgs mass natural-looking value $\\ll M_{\\rm Pl}$ a puzzle?",
+    "passive": {
+      "options": [
+        "Scalar mass term $m_h^2$ is technically UV-sensitive: loops contribute $\\Delta m_h^2 \\sim \\Lambda^2/(16\\pi^2)$ from top, gauge, Higgs self-loops; if $\\Lambda \\sim M_{\\rm Pl}$, requires fine-tuning of $\\sim 10^{-32}$ between bare mass and counterterms to get $m_h \\sim 100$ GeV. Natural solutions: SUSY (cancel quadratic divergences via superpartners), composite Higgs, extra dimensions, anthropic. No SUSY at LHC yet — open problem",
+        "There's no hierarchy problem; Higgs mass is naturally small (would imply unphysical infinite or negative observables) (contradicted by both lattice simulations and dispersive analyses) (unsupported by perturbative expansions in the coupling)",
+        "$m_h^2$ has only logarithmic UV sensitivity, like fermion masses (would conflict with renormalisation group flow and cross-section data) (disagrees with the standard textbook treatment in Peskin-Schroeder) (ruled out by experimental constraints from collider and low-energy data)",
+        "Resolved by Yang-Mills mass gap (historically considered but disfavoured by modern QFT analyses) (violates basic gauge invariance and Lorentz covariance requirements) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "Scalar mass dimension 2 (not protected by chiral symmetry as fermion mass would be); quantum corrections $\\delta m_h^2 \\propto \\Lambda^2$ where $\\Lambda$ is the UV cutoff of effective theory. If new physics not until $M_{\\rm Pl} = 10^{19}$ GeV: $\\delta m_h^2 \\sim (10^{19})^2$, needs cancellation with bare $m_0^2$ to $\\sim 10^{-32}$ accuracy → unnatural. SUSY: every scalar paired with fermion; loops cancel exactly in unbroken limit, leaving $\\delta m_h^2 \\sim m_{\\rm SUSY}^2$ — naturalness requires $m_{\\rm SUSY} \\sim$ TeV. LHC has not found SUSY up to ~2 TeV, increasing 'little hierarchy' tension. Alternatives: pseudo-Nambu-Goldstone Higgs (composite, like pions), anthropic landscape, relaxion. One of the central open questions in particle physics."
+    }
+  },
+  {
+    "id": "hgs006",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "higgs-mechanism"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "Coleman-Weinberg radiative symmetry breaking: how can a scale-invariant theory generate masses?",
+    "passive": {
+      "options": [
+        "1-loop effective potential in massless scalar QED has form $V_{\\rm eff}(\\phi) = \\lambda\\phi^4/4! + (B\\phi^4/4)\\ln(\\phi^2/\\mu^2)$; balances tree quartic vs.\\ log term; new minimum at $\\langle\\phi\\rangle \\neq 0$ — dimensional transmutation generates mass scale from renormalisation point; classically scale-invariant theory dynamically breaks scale invariance",
+        "Coleman-Weinberg is identical to standard EWSB (unsupported by perturbative expansions in the coupling) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would conflict with renormalisation group flow and cross-section data)",
+        "Only works with explicit mass terms (disagrees with the standard textbook treatment in Peskin-Schroeder) (ruled out by experimental constraints from collider and low-energy data) (contradicted by both lattice simulations and dispersive analyses)",
+        "Forbidden by Goldstone theorem (violates basic gauge invariance and Lorentz covariance requirements) (historically considered but disfavoured by modern QFT analyses) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Coleman-Weinberg (1973): start with $V = \\lambda\\phi^4/4!$ — classically no SSB, scale invariant. Compute 1-loop effective potential: $V_{\\rm eff} = \\lambda\\phi^4/4! + (3e^4/64\\pi^2)\\phi^4[\\ln(\\phi^2/M^2) - 25/6]$ in scalar QED. At small $\\lambda$, log term dominates → minimum at nonzero $\\phi$. Mass scale comes from $M$ (renormalisation point) — example of dimensional transmutation, like $\\Lambda_{\\rm QCD}$ from running coupling. Mechanism gives masses $m_\\phi^2 = (3/8\\pi^2)e^4\\langle\\phi\\rangle^2$, $m_A = e\\langle\\phi\\rangle$. Not realised in SM (top loop dominates and is destabilising) but inspires conformal extensions of SM that may solve hierarchy problem differently."
+    }
+  }
+]

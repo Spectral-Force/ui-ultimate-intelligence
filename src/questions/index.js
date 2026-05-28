@@ -97,6 +97,14 @@ import opeAndSumRules        from './physics/ope-and-sum-rules.json'
 import disPartonModel        from './physics/dis-parton-model.json'
 import hadronPhysics         from './physics/hadron-physics.json'
 import quarkGluonPlasma      from './physics/quark-gluon-plasma.json'
+import weakInteraction       from './physics/weak-interaction.json'
+import electroweakUnification from './physics/electroweak-unification.json'
+import higgsMechanism        from './physics/higgs-mechanism.json'
+import ckmMatrix             from './physics/ckm-matrix.json'
+import neutrinoPhysics       from './physics/neutrino-physics.json'
+import cpViolation           from './physics/cp-violation.json'
+import precisionEw           from './physics/precision-ew.json'
+import beyondSm              from './physics/beyond-sm.json'
 
 export const allQuestions = [
   ...dopplerCooling,
@@ -198,6 +206,14 @@ export const allQuestions = [
   ...disPartonModel,
   ...hadronPhysics,
   ...quarkGluonPlasma,
+  ...weakInteraction,
+  ...electroweakUnification,
+  ...higgsMechanism,
+  ...ckmMatrix,
+  ...neutrinoPhysics,
+  ...cpViolation,
+  ...precisionEw,
+  ...beyondSm,
 ]
 
 /**

@@ -1,0 +1,168 @@
+[
+  {
+    "id": "ewu001",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "electroweak-unification"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "Glashow-Weinberg-Salam: what's the electroweak gauge group and the unifying idea?",
+    "passive": {
+      "options": [
+        "$SU(2)_L \\times U(1)_Y$ with couplings $g, g'$; LH fermions in $SU(2)$ doublets, RH in singlets; spontaneously broken to $U(1)_{\\rm EM}$ by Higgs vev; physical bosons: $W^\\pm$, $Z$, $\\gamma$ via mixing $(W^3, B) \\to (Z, \\gamma)$ with Weinberg angle $\\tan\\theta_W = g'/g$",
+        "$SU(2)$ alone, unified gauge group (would conflict with renormalisation group flow and cross-section data) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "$SU(3) \\times U(1)$ — same as QCD plus EM (unsupported by perturbative expansions in the coupling) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "$SO(10)$ at low energies, broken to electromagnetism (disagrees with the standard textbook treatment in Peskin-Schroeder) (historically considered but disfavoured by modern QFT analyses)"
+      ],
+      "correct": 0,
+      "explanation": "GWS model (1961–68): unify weak and EM by enlarging $U(1)_{\\rm EM}$ to $SU(2)_L\\times U(1)_Y$. Gauge fields: $W^a_\\mu$ ($a=1,2,3$) for $SU(2)_L$, $B_\\mu$ for $U(1)_Y$. Doublets: $(\\nu_e, e)_L$, $(u, d)_L$ etc. Hypercharge $Y$: $Q = T_3 + Y$, e.g.\\ $Y_L = -1/2$ (lepton doublet), $Y_{e_R} = -1$. Higgs doublet $\\Phi$ with $Y = 1/2$ gets vev $v = 246$ GeV → 3 of 4 gauge bosons get mass ($W^\\pm, Z$), photon remains massless. Mixing: $A_\\mu = \\cos\\theta_W B_\\mu + \\sin\\theta_W W^3_\\mu$, $Z_\\mu = -\\sin\\theta_W B_\\mu + \\cos\\theta_W W^3_\\mu$; $\\sin^2\\theta_W \\approx 0.231$."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each electroweak boson with its mass and role:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "$W^\\pm$",
+          "definition": "Charged weak boson; mass 80.4 GeV; mediates charged-current (flavour-changing) interactions"
+        },
+        {
+          "id": "p2",
+          "term": "$Z^0$",
+          "definition": "Neutral weak boson; mass 91.2 GeV; mediates neutral current; discovered 1973 at Gargamelle"
+        },
+        {
+          "id": "p3",
+          "term": "Photon $\\gamma$",
+          "definition": "Massless gauge boson of unbroken $U(1)_{\\rm EM}$; QED's mediator"
+        },
+        {
+          "id": "p4",
+          "term": "Higgs $h$",
+          "definition": "Scalar excitation of the Higgs field; mass 125 GeV; discovered 2012 at ATLAS/CMS"
+        }
+      ],
+      "explanation": "Mass relations: $M_W = gv/2$, $M_Z = \\sqrt{g^2 + g'^2}\\,v/2$, so $M_W/M_Z = \\cos\\theta_W$ at tree level. This 'rho parameter' $\\rho = M_W^2/(M_Z^2\\cos^2\\theta_W) = 1$ at tree level, gets small ($\\lesssim 1\\%$) corrections — extremely tight test of SM. Z and W discovered at CERN UA1/UA2 (1983), Higgs at LHC (2012)."
+    }
+  },
+  {
+    "id": "ewu002",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "electroweak-unification"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What's the Weinberg angle and how is it measured?",
+    "passive": {
+      "options": [
+        "$\\sin\\theta_W = g'/\\sqrt{g^2 + g'^2}$ parametrises mixing of $W^3$ and $B$ to give $Z$ and $\\gamma$; measured via $M_W/M_Z$ ratio, $Z$-pole asymmetries, neutrino-electron scattering, atomic parity violation; on-shell value $\\sin^2\\theta_W \\approx 0.2229$, $\\overline{MS}$ $\\sin^2\\hat\\theta_W \\approx 0.2312$; values depend on renormalisation scheme",
+        "$\\theta_W$ is the angle between proton and neutron in $\\beta$-decay (would conflict with renormalisation group flow and cross-section data) (unsupported by perturbative expansions in the coupling)",
+        "$\\sin^2\\theta_W = 1$ exactly — no mixing in modern view (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (not consistent with the operator product expansion at large momentum)",
+        "Weinberg angle is the QCD running coupling at $m_Z$ (historically considered but disfavoured by modern QFT analyses) (would imply unphysical infinite or negative observables) (violates basic gauge invariance and Lorentz covariance requirements)"
+      ],
+      "correct": 0,
+      "explanation": "Defines mixing of neutral gauge bosons: $\\begin{pmatrix}A\\\\Z\\end{pmatrix} = \\begin{pmatrix}\\cos\\theta_W & \\sin\\theta_W \\\\ -\\sin\\theta_W & \\cos\\theta_W\\end{pmatrix}\\begin{pmatrix}B\\\\W^3\\end{pmatrix}$. Photon couples to $Q = T_3 + Y$ with strength $e = g\\sin\\theta_W = g'\\cos\\theta_W$. Measurements: (i) $M_W/M_Z$ → on-shell scheme; (ii) forward-backward asymmetry $A_{FB}$ at $Z$ pole (LEP, SLD); (iii) atomic parity violation in cesium; (iv) Møller scattering $e^-e^-$ at SLAC E158; (v) NuTeV $\\nu N$ scattering. Different schemes (on-shell vs.\\ $\\overline{MS}$ vs.\\ effective leptonic) differ by few-permille — central to precision EW tests."
+    }
+  },
+  {
+    "id": "ewu003",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "electroweak-unification"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Neutral currents were a smoking-gun prediction of GWS. What process is the cleanest discovery?",
+    "passive": {
+      "options": [
+        "$\\bar\\nu_\\mu + e^- \\to \\bar\\nu_\\mu + e^-$ via $Z$ exchange (no charged-current alternative since $\\bar\\nu_\\mu$ can't make $\\mu^-$); first observed at Gargamelle bubble chamber, CERN, 1973; also hadronic $\\nu_\\mu N \\to \\nu_\\mu X$",
+        "$e^+e^- \\to \\mu^+\\mu^-$ — clean leptonic NC test (would imply unphysical infinite or negative observables) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "$\\beta$ decay — first observation of weak interactions (would conflict with renormalisation group flow and cross-section data)",
+        "$\\gamma\\gamma \\to W^+W^-$ pair production (violates basic gauge invariance and Lorentz covariance requirements) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "Pre-1973: only charged-current weak interactions known ($\\beta$ decay etc.). GWS predicted $Z$ exchange → neutral currents preserving lepton flavour. Discovery: Gargamelle heavy-liquid bubble chamber at CERN, 1973, observed $\\bar\\nu_\\mu e \\to \\bar\\nu_\\mu e$ scattering events. Hadronic NC discovery simultaneous: $\\nu_\\mu N \\to \\nu_\\mu X$ (no muon in final state). Confirmation at HPWF (Fermilab). Direct $Z$ production at $p\\bar p \\to Z + X$ (UA1, 1983). LEP Z factory (1989-2000) measured $Z$ properties to permille precision; $\\Gamma_Z = 2.495$ GeV, $N_\\nu = 2.984$ (three light neutrino species)."
+    }
+  },
+  {
+    "id": "ewu004",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "electroweak-unification"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Without spontaneous symmetry breaking, the SM has bad UV behaviour. Cite an example needing the Higgs.",
+    "passive": {
+      "options": [
+        "$W_L W_L \\to W_L W_L$ scattering (longitudinal Ws): without Higgs, amplitude grows as $E^2/v^2$ and violates unitarity around $\\sqrt s \\sim 1$ TeV; Higgs exchange cancels bad high-energy growth via $h$ couplings $\\propto m_W^2/v$ — restores unitarity precisely (signature of gauge-Higgs interplay)",
+        "QED running coupling diverges at Landau pole; needs Higgs to fix (violates basic gauge invariance and Lorentz covariance requirements) (would conflict with renormalisation group flow and cross-section data)",
+        "Quark confinement breaks down without the Higgs field (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would imply unphysical infinite or negative observables)",
+        "Neutrino oscillations would not occur without the Higgs (not consistent with the operator product expansion at large momentum) (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "Equivalence theorem: at high energy, longitudinal $W$/$Z$ scattering ≈ Goldstone scattering ($\\pi^a$ from broken $SU(2)$). Without Higgs as new state, $W_L W_L \\to W_L W_L$ amplitude grows as $s/v^2$; partial-wave unitarity ($|a_0| \\le 1$) violated at $\\sqrt s \\sim \\sqrt{16\\pi v^2} \\sim 1.2$ TeV. Higgs $s$- and $t$-channel exchange supplies amplitude $\\propto -s/v^2$ that exactly cancels growing piece — final amplitude flat at high $E$. This 'unitarisation' is theoretical evidence that something Higgs-like must exist below $\\sim 1$ TeV. Found at 125 GeV (2012), well within the bound. Alternative unitarisations (technicolour, composite Higgs) would manifest as new resonances near 1 TeV — being probed at LHC."
+    }
+  },
+  {
+    "id": "ewu005",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "electroweak-unification"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Anomaly cancellation in the SM: what mathematical condition is satisfied and why is it remarkable?",
+    "passive": {
+      "options": [
+        "Sum of $Y^3, Y\\cdot T^2, Y\\cdot c$ (and $SU(2)^3$, gravitational) over each generation vanishes — chiral fermion content arranged so triangle anomalies cancel between quarks and leptons within each family. Requires quarks to come in 3 colours; provides theoretical link colour-anomaly cancellation",
+        "Only gauge bosons contribute to anomalies; fermions are irrelevant (ruled out by experimental constraints from collider and low-energy data) (contradicted by both lattice simulations and dispersive analyses)",
+        "Anomalies cancel by adding extra heavy fermions; not from SM content alone (not consistent with the operator product expansion at large momentum) (would conflict with renormalisation group flow and cross-section data)",
+        "SM is anomalous; consistent only as an effective theory (violates basic gauge invariance and Lorentz covariance requirements) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "Gauge anomalies from chiral fermion triangle diagrams. For $U(1)_Y$: $\\sum_L Y_L^3 - \\sum_R Y_R^3 = 0$ must hold (similarly for mixed $SU(2)^2 Y$, $SU(3)^2 Y$, gravitational $Y$). With one SM family: $L: 2\\cdot(-1/2)^3$, $e_R: -(-1)^3$, $Q: 3\\cdot 2\\cdot(1/6)^3$, $u_R: -3\\cdot(2/3)^3$, $d_R: -3\\cdot(-1/3)^3$ → carefully sum to zero. Factor of 3 from colour: anomaly cancellation requires $N_c = 3$ given lepton-quark assignment. Beautiful consistency check; major hint that SM is part of grand unification (e.g.\\ SU(5), SO(10), where anomaly cancellation is automatic from group theory)."
+    }
+  },
+  {
+    "id": "ewu006",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "electroweak-unification"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "Custodial $SU(2)$ symmetry: what is it and why does $\\rho = 1$ at tree level?",
+    "passive": {
+      "options": [
+        "Higgs sector has accidental global $SU(2)_L \\times SU(2)_R$ symmetry; vev breaks to diagonal $SU(2)_{L+R}$ = custodial. This protects $\\rho = M_W^2/(M_Z^2\\cos^2\\theta_W) = 1$ at tree level; broken by $U(1)_Y$ gauging and Yukawa asymmetry — gives small loop corrections $\\Delta\\rho \\propto m_t^2 - m_b^2$",
+        "$\\rho = 1$ is gauge-fixing artefact, not a physical statement (unsupported by perturbative expansions in the coupling) (would conflict with renormalisation group flow and cross-section data)",
+        "Custodial is QCD's chiral symmetry; same idea (historically considered but disfavoured by modern QFT analyses) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "$\\rho = 1$ holds only if all Yukawas are equal (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Write Higgs as $\\Phi = (\\phi^+, \\phi^0)^T$, regroup into bidoublet $M = (\\tilde\\Phi, \\Phi)$ with $\\tilde\\Phi = i\\sigma_2\\Phi^*$. Then $\\text{tr}(M^\\dagger M)$ has global $SU(2)_L \\times SU(2)_R$: $M \\to LMR^\\dagger$. Vev $\\langle M\\rangle = v\\mathbb 1/\\sqrt 2$ breaks to diagonal $SU(2)_V$ — custodial. Custodial guarantees $M_W = M_Z\\cos\\theta_W$ even after EWSB. Explicitly broken by: (i) gauging only $U(1)_Y \\subset SU(2)_R$, contributes $\\Delta\\rho \\sim \\sin^2\\theta_W \\alpha/\\pi$; (ii) Yukawa $y_t \\neq y_b$ → $\\Delta\\rho \\sim 3G_F m_t^2/(8\\pi^2\\sqrt 2) \\sim 0.01$ — measured, agrees with SM, contributed to top-mass prediction before discovery. Hint: BSM models must usually preserve custodial to satisfy $\\rho \\approx 1$."
+    }
+  }
+]

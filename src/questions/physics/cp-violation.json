@@ -1,0 +1,168 @@
+[
+  {
+    "id": "cpv001",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "cp-violation"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "CP violation was discovered in 1964 in neutral kaon decays. What was the signal?",
+    "passive": {
+      "options": [
+        "Cronin-Fitch experiment: long-lived $K_L$ (mostly CP-odd) observed to decay to $\\pi^+\\pi^-$ (CP-even final state) at branching $\\sim 2\\times 10^{-3}$; would be forbidden if CP exactly conserved; established CP violation in nature, parameter $|\\varepsilon_K| \\approx 2.23 \\times 10^{-3}$",
+        "Direct observation of antimatter creation from CP violation (disagrees with the standard textbook treatment in Peskin-Schroeder) (would conflict with renormalisation group flow and cross-section data)",
+        "Asymmetric pion angular distribution in $K^+ \\to \\pi^+\\pi^0$ (would imply unphysical infinite or negative observables) (not consistent with the operator product expansion at large momentum)",
+        "$K_L$ never decays — CP would be violated if it did (historically considered but disfavoured by modern QFT analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "Strong eigenstates: $K^0(d\\bar s), \\bar K^0(\\bar d s)$. CP eigenstates: $K_1 = (K^0 - \\bar K^0)/\\sqrt 2$ (CP-even), $K_2 = (K^0 + \\bar K^0)/\\sqrt 2$ (CP-odd). $\\pi\\pi$ is CP-even, so $K_2$ can't decay there if CP conserved; goes to $3\\pi$ (phase-space suppressed, longer lifetime). $K_L$ = mostly $K_2$ + small admixture $\\varepsilon$ of $K_1$. Cronin-Fitch (1964, Nobel 1980): at 17 m from target (much longer than $K_S$ decay length), still see $\\pi^+\\pi^-$ at branching $\\sim 2\\times 10^{-3}$ — direct CP violation in mixing. Modern: $\\varepsilon_K = (2.228 \\pm 0.011)\\times 10^{-3} e^{i\\phi_\\varepsilon}$, $\\phi_\\varepsilon \\approx 43.5°$."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each type of CP violation with its physical meaning:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Indirect (mixing) CPV",
+          "definition": "$|p/q| \\neq 1$; mass eigenstates are not CP eigenstates; characterised by $\\varepsilon_K$ in kaons"
+        },
+        {
+          "id": "p2",
+          "term": "Direct CPV in decay",
+          "definition": "$|A_f/\\bar A_{\\bar f}| \\neq 1$; rates differ for $P \\to f$ vs $\\bar P \\to \\bar f$; $\\varepsilon'_K, A_{CP}(B \\to K\\pi)$"
+        },
+        {
+          "id": "p3",
+          "term": "CPV in interference",
+          "definition": "Between mixing and decay amplitudes; $\\sin 2\\beta$ measured in $B \\to J/\\psi K_S$"
+        },
+        {
+          "id": "p4",
+          "term": "Sakharov condition",
+          "definition": "Necessary for matter-antimatter asymmetry: B violation + C/CP violation + departure from thermal equilibrium"
+        }
+      ],
+      "explanation": "Modern CP-violation measurements span K, B, B_s, D systems. Both indirect ($\\varepsilon_K$) and direct ($\\varepsilon'/\\varepsilon \\approx 1.7\\times 10^{-3}$) CPV established in kaons. B factories (BaBar, Belle 1999-2010, Belle II 2018+): $\\sin 2\\beta = 0.70 \\pm 0.02$ from $B \\to J/\\psi K_S$; LHCb $\\gamma$ from $B \\to DK$. CPV in $D \\to KK, \\pi\\pi$: $A_{CP} \\sim 1.5\\times 10^{-3}$ (LHCb 2019), at edge of SM predictions."
+    }
+  },
+  {
+    "id": "cpv002",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "cp-violation"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Sakharov conditions for baryogenesis (1967): what are the three?",
+    "passive": {
+      "options": [
+        "(1) Baryon number violation (otherwise net B remains zero); (2) C and CP violation (otherwise opposite-sign asymmetries cancel); (3) Departure from thermal equilibrium (otherwise CPT-related forward/backward rates equilibrate). All three necessary for net matter asymmetry from initial B=0 universe",
+        "Just (1) CP violation alone suffices (violates basic gauge invariance and Lorentz covariance requirements) (would conflict with renormalisation group flow and cross-section data)",
+        "(1) Energy conservation, (2) momentum conservation, (3) angular momentum conservation (ruled out by experimental constraints from collider and low-energy data)",
+        "Sakharov conditions: 3 generations, 3 colours, 3 spatial dimensions (unsupported by perturbative expansions in the coupling) (historically considered but disfavoured by modern QFT analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Sakharov (1967) recognised matter-antimatter asymmetry of universe ($n_B/n_\\gamma \\approx 6\\times 10^{-10}$) needs dynamical explanation. (1) B violation: SM electroweak sphalerons preserve B-L but violate B+L; GUTs predict B violation. (2) C and CP: ensures matter and antimatter rates differ. (3) Out of equilibrium: in equilibrium CPT relates particle/antiparticle distributions, so net B remains zero. SM has all three in principle (sphalerons, CKM phase, electroweak phase transition) — but quantitatively SM is short: CKM CP gives $\\eta_B \\sim 10^{-20}$ vs.\\ observed $10^{-10}$; EW transition is crossover (not 1st order) for $m_h = 125$ GeV — insufficient out-of-equilibrium dynamics. Therefore: BSM CP violation needed. Leading candidates: leptogenesis via heavy $N_R$ decays, EW baryogenesis in BSM extensions."
+    }
+  },
+  {
+    "id": "cpv003",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "cp-violation"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "The 'golden mode' $B^0 \\to J/\\psi K_S$ measures $\\sin 2\\beta$ cleanly. Why?",
+    "passive": {
+      "options": [
+        "Both $B^0$ and $\\bar B^0$ can decay to common CP eigenstate $J/\\psi K_S$; interference between direct decay and mixing-then-decay produces time-dependent CP asymmetry $A_{CP}(t) = \\sin 2\\beta\\sin(\\Delta m_d t)$. Tree-dominated decay (no penguin pollution), known phase $\\arg(V_{cb}V_{cd}^*)$ — measures $\\beta$ cleanly with small hadronic uncertainty",
+        "Only $B^0$ decays to $J/\\psi K_S$; mode is forbidden for $\\bar B^0$ (would conflict with renormalisation group flow and cross-section data) (unsupported by perturbative expansions in the coupling)",
+        "Mode dominated by penguin diagrams with unknown phases (historically considered but disfavoured by modern QFT analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Phase information lost in $K_S \\to \\pi^+\\pi^-$ — only rate measurable (ruled out by experimental constraints from collider and low-energy data) (violates basic gauge invariance and Lorentz covariance requirements)"
+      ],
+      "correct": 0,
+      "explanation": "Mechanism: $B^0$ produced at $\\Upsilon(4S)$ or at LHC, mixes to $\\bar B^0$ via box diagrams (phase $e^{-2i\\beta}$ from $V_{td}^2$ piece); both $B$ and $\\bar B$ can decay to $J/\\psi K_S$ via tree $b \\to c\\bar cs$ (phase $\\arg V_{cb}V_{cs}^*\\approx 0$); interference of paths gives CP asymmetry. Penguin contribution suppressed by GIM. Decay amplitude $A_f/\\bar A_f$ has CP-violating phase from CKM. Time-dependent asymmetry: $A_{CP}(t) = -\\eta_f \\sin(2\\beta)\\sin(\\Delta m_d t)$ where $\\eta_f = -1$ for $J/\\psi K_S$. Measurements: BaBar (2001), Belle (2001), LHCb: combined $\\sin 2\\beta = 0.699 \\pm 0.017$ — currently consistent with global CKM fit. Foundation of $B$-factory program."
+    }
+  },
+  {
+    "id": "cpv004",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "cp-violation"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "$\\varepsilon'/\\varepsilon$ measures direct CP violation in $K\\to\\pi\\pi$. Why is it hard to predict?",
+    "passive": {
+      "options": [
+        "Strong cancellation between two amplitudes (gluon penguin $Q_6$ contributing $\\sim$+1 vs electroweak penguin $Q_8$ contributing $\\sim -0.5$, in suitable units) makes prediction depend on precise hadronic matrix elements (B-parameters $B_6, B_8$). Lattice + ChPT calculations have ~30% uncertainty; current prediction $\\varepsilon'/\\varepsilon \\approx (1-2)\\times 10^{-3}$, agreeing with experimental $(16.6 \\pm 2.3)\\times 10^{-4}$ within uncertainties",
+        "No cancellation; prediction is straightforward (ruled out by experimental constraints from collider and low-energy data) (not consistent with the operator product expansion at large momentum) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Requires perturbative QCD to all orders (unsupported by perturbative expansions in the coupling) (would imply unphysical infinite or negative observables) (violates basic gauge invariance and Lorentz covariance requirements) (contradicted by both lattice simulations and dispersive analyses)",
+        "$\\varepsilon'/\\varepsilon$ is purely kinematic (historically considered but disfavoured by modern QFT analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "$\\varepsilon'/\\varepsilon$ measures CP violation in decay amplitude (versus $\\varepsilon$ in mixing). Effective $\\Delta S = 1$ Hamiltonian has 10 operators $Q_1, ..., Q_{10}$; only QCD penguin $Q_6$ and electroweak penguin $Q_8$ contribute significantly. Strong cancellation: $Q_6$ has $\\Im(V_{td}V_{ts}^*) > 0$ contribution while $Q_8$ has $\\Im(V_{td}V_{ts}^*) < 0$ (different sign of weak operator coefficients), so $\\varepsilon'/\\varepsilon \\propto (B_6 - 0.4\\cdot B_8)$ — bag parameters $B_6, B_8$ encode hadronic matrix elements, computed in lattice QCD. NA48 (CERN) + KTeV (Fermilab) experimental measurement (1999): $\\varepsilon'/\\varepsilon = (1.66\\pm 0.23)\\times 10^{-3}$ — first observation of direct CPV. Theory now consistent within ~$1\\sigma$ after improved lattice (RBC/UKQCD, 2020+)."
+    }
+  },
+  {
+    "id": "cpv005",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "cp-violation"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Electric dipole moments (EDMs) probe CP violation in T-violating interactions. Why are they so sensitive?",
+    "passive": {
+      "options": [
+        "EDM $d$ is T-odd, P-odd → CP-odd by CPT; SM CKM contributions appear only at 3-loop, predicting $d_e \\sim 10^{-38}$ e·cm, $d_n \\sim 10^{-32}$ e·cm — orders below current bounds. Most BSM models predict EDMs at 1- or 2-loop, much larger. Best limits: $|d_e| < 1.1\\times 10^{-29}$ e·cm (ACME ThO 2018, JILA HfF$^+$ 2023); $|d_n| < 1.8\\times 10^{-26}$ e·cm — already exclude many BSM scenarios with weak-scale CP phases",
+        "EDMs measure ordinary electric dipole moment of dielectrics (unsupported by perturbative expansions in the coupling) (historically considered but disfavoured by modern QFT analyses) (ruled out by experimental constraints from collider and low-energy data)",
+        "EDMs proportional to particle mass; only useful for heavy atoms (disagrees with the standard textbook treatment in Peskin-Schroeder) (violates basic gauge invariance and Lorentz covariance requirements) (not consistent with the operator product expansion at large momentum)",
+        "SM predicts $d_e \\sim 10^{-20}$ e·cm; not very sensitive (contradicted by both lattice simulations and dispersive analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "EDM operator $\\mathcal H = -d\\,\\mathbf S\\cdot\\mathbf E$ violates P and T (hence CP). For elementary particle EDMs in SM: must combine charged current + neutral current + flavour-changing — first nonzero contribution at 3 (electron) or 4 (neutron) loops, with strong GIM-like suppression. Predictions: $d_e \\sim 10^{-38}$, $d_n \\sim 10^{-32}$ e·cm. Most BSM (SUSY, leptoquarks, 2HDM): generically generates EDM at 1-loop with new CP phases, giving $d \\sim 10^{-25}\\sin\\phi_{CP}$ e·cm at weak scale. Experimental bounds from atomic systems (Cs, Hg, Xe, Tl, ThO, HfF$^+$, neutron storage, future muon storage rings). ACME II (2018) $|d_e| < 1.1\\times 10^{-29}$ e·cm rules out many SUSY benchmarks. Strong CP problem: $\\bar\\theta < 10^{-10}$ from neutron EDM."
+    }
+  },
+  {
+    "id": "cpv006",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "cp-violation"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "Strong CP problem: why is $\\bar\\theta$ in QCD so small, and what's the leading solution?",
+    "passive": {
+      "options": [
+        "QCD allows $\\theta$-term $(\\theta g^2/32\\pi^2)G\\tilde G$ generating CP violation; combined with weak-interaction Yukawa phase gives physical $\\bar\\theta = \\theta + \\arg\\det M_q$; would give $d_n \\sim 10^{-16}\\bar\\theta$ e·cm but experiment $d_n < 1.8\\times 10^{-26}$ → $\\bar\\theta < 10^{-10}$, unnaturally small. Peccei-Quinn: $U(1)_{PQ}$ symmetry spontaneously broken, axion is the pseudo-Goldstone, $\\bar\\theta$ driven dynamically to zero",
+        "$\\bar\\theta$ is identically zero by gauge invariance (contradicted by both lattice simulations and dispersive analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Strong CP problem is solved by $N_c = 3$ alone (would conflict with renormalisation group flow and cross-section data) (not consistent with the operator product expansion at large momentum) (ruled out by experimental constraints from collider and low-energy data)",
+        "Resolved by chiral symmetry breaking automatically (would imply unphysical infinite or negative observables) (violates basic gauge invariance and Lorentz covariance requirements) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "Topology of $SU(N)$ gauge field: $\\int G\\tilde G$ takes integer values (Pontryagin index). Adding $\\theta$-term: $\\mathcal L \\supset (\\theta/32\\pi^2)\\text{tr}(G_{\\mu\\nu}\\tilde G^{\\mu\\nu})$. CP-violating: $G\\tilde G$ is P-odd, T-even → CP-odd. Physical $\\bar\\theta = \\theta - \\arg\\det(Y_u Y_d)$ — chiral rotations relate gauge and Yukawa contributions. Experimental neutron EDM bound: $\\bar\\theta \\lesssim 10^{-10}$, while naturally $\\bar\\theta \\sim O(1)$. Solutions: (i) Peccei-Quinn (1977): global $U(1)_{PQ}$ spontaneously broken, $\\theta$ becomes dynamical axion field, settles to zero by potential generated by QCD instantons; axion mass $m_a \\sim \\Lambda_{\\rm QCD}^2/f_a$; current axion searches (ADMX, IAXO, CASPEr); (ii) Nelson-Barr models (small explicit P-violation arrangement); (iii) massless up quark (ruled out by lattice $m_u \\neq 0$). PQ axion may also be dark matter."
+    }
+  }
+]

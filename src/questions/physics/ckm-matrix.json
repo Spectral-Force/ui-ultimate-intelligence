@@ -1,0 +1,168 @@
+[
+  {
+    "id": "ckm001",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "ckm-matrix"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "The CKM (Cabibbo-Kobayashi-Maskawa) matrix appears in charged-current weak interactions. What is it and why does it exist?",
+    "passive": {
+      "options": [
+        "Unitary $3 \\times 3$ matrix $V_{ij}$ rotating quark flavour eigenstates to mass eigenstates: charged-current vertex is $(g/\\sqrt 2) \\bar u_i \\gamma^\\mu V_{ij} d_j W_\\mu^+$; with 3 generations has 3 mixing angles + 1 CP-violating phase; arises because Yukawa matrices $Y_u, Y_d$ not simultaneously diagonalisable",
+        "$2 \\times 2$ matrix of Cabibbo angle only; no Kobayashi-Maskawa phase (would conflict with renormalisation group flow and cross-section data) (ruled out by experimental constraints from collider and low-energy data)",
+        "Real orthogonal matrix; no CP violation possible (unsupported by perturbative expansions in the coupling) (not consistent with the operator product expansion at large momentum)",
+        "Diagonal matrix; no flavour mixing in SM (disagrees with the standard textbook treatment in Peskin-Schroeder) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "In SM, quark mass eigenstates $\\neq$ weak (flavour) eigenstates because Yukawas $Y_u, Y_d$ are general complex matrices. Diagonalise: $Y_u = U_L^u Y_u^{\\rm diag} U_R^{u\\dagger}$, $Y_d = U_L^d Y_d^{\\rm diag} U_R^{d\\dagger}$. Charged current $W^+(\\bar u_L\\gamma^\\mu d_L)$ in mass basis: $W^+\\bar u^{\\rm mass}_L\\gamma^\\mu (U_L^{u\\dagger} U_L^d)d^{\\rm mass}_L = W^+ \\bar u V_{\\rm CKM} d$. With $N$ generations: $V$ is $N\\times N$ unitary $\\Rightarrow N^2$ parameters; rephasing absorbs $2N - 1$; leaves $N(N-1)/2$ angles + $(N-1)(N-2)/2$ phases. For $N = 3$: 3 angles + 1 phase. For $N = 2$ (Cabibbo): 1 angle, no phase, no CP violation."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each CKM matrix element with its dominant measurement:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "$|V_{ud}| \\approx 0.974$",
+          "definition": "Super-allowed nuclear $\\beta$ decays (e.g.\\ $0^+\\to 0^+$); precision $\\sim 0.02\\%$"
+        },
+        {
+          "id": "p2",
+          "term": "$|V_{us}| \\approx 0.225$",
+          "definition": "$K \\to \\pi\\ell\\nu$ semileptonic ($K_{\\ell 3}$); also $\\tau \\to K\\nu_\\tau$; tests CKM unitarity"
+        },
+        {
+          "id": "p3",
+          "term": "$|V_{cb}| \\approx 0.041$",
+          "definition": "Inclusive $B \\to X_c\\ell\\nu$ and exclusive $B \\to D^*\\ell\\nu$ (HQET); $\\sim 2\\%$ precision"
+        },
+        {
+          "id": "p4",
+          "term": "$|V_{ub}| \\approx 0.0036$",
+          "definition": "Inclusive $B \\to X_u\\ell\\nu$ (charmless); long-standing inclusive vs exclusive tension"
+        }
+      ],
+      "explanation": "Magnitudes obey strong hierarchy: $V_{ud}, V_{cs}, V_{tb} \\approx 1$; off-diagonal Cabibbo-like $V_{us}, V_{cd} \\approx 0.22$; second off-diagonal $V_{cb}, V_{ts} \\approx 0.04$; smallest $V_{ub}, V_{td} \\approx 0.004$. Wolfenstein parametrisation: $V_{us} = \\lambda \\approx 0.225$, $V_{cb} = A\\lambda^2$, $V_{ub} = A\\lambda^3(\\rho - i\\eta)$ — captures hierarchy."
+    }
+  },
+  {
+    "id": "ckm002",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "ckm-matrix"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Why did Kobayashi-Maskawa propose a third generation in 1973, predicting bottom and top quarks?",
+    "passive": {
+      "options": [
+        "With only 2 generations ($u, d, s$ + GIM's $c$): CKM is $2\\times 2$ real orthogonal — no CP-violating phase possible. To accommodate observed CP violation in neutral kaons ($\\varepsilon_K$, 1964), need at least 3 generations giving complex $3\\times 3$ CKM with one physical phase. Predicted $b$ (discovered 1977 at Fermilab) and $t$ (discovered 1995 at CDF/D0)",
+        "Three generations were postulated to explain quark confinement (historically considered but disfavoured by modern QFT analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Predicted from grand unification, not CP violation (would conflict with renormalisation group flow and cross-section data) (would imply unphysical infinite or negative observables) (ruled out by experimental constraints from collider and low-energy data)",
+        "Two generations would give too much CP violation, three needed to suppress it (contradicted by both lattice simulations and dispersive analyses) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "Cronin-Fitch (1964): $K_L \\to \\pi\\pi$ — first evidence of CP violation in nature, characterised by parameter $\\varepsilon_K \\approx 2.2 \\times 10^{-3}$. Kobayashi-Maskawa (1973): proved a $2\\times 2$ Cabibbo mixing matrix cannot accommodate CP violation (real entries). With $N$ generations, get $(N-1)(N-2)/2$ CP-violating phases: $N = 2 \\Rightarrow 0$; $N = 3 \\Rightarrow 1$. Therefore postulated $b$ and $t$ to complete 3rd generation. Bottom discovered 1977 (Upsilon at Fermilab, Lederman et al.); top discovered 1995 (CDF, D0 — $m_t \\approx 173$ GeV). KM awarded Nobel 2008 for this prediction. Now: CP violation observed in $K, B, B_s, D$ systems — all consistent with single CKM phase."
+    }
+  },
+  {
+    "id": "ckm003",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "ckm-matrix"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "The unitarity triangle is a graphical way to test CKM unitarity. What does it test?",
+    "passive": {
+      "options": [
+        "From unitarity $\\sum_k V_{ik}V_{jk}^* = 0$ for $i\\neq j$; the $bd$ triangle $V_{ud}V_{ub}^* + V_{cd}V_{cb}^* + V_{td}V_{tb}^* = 0$ has three terms of comparable size, forming a non-degenerate triangle in complex plane; angles $\\alpha, \\beta, \\gamma$ measured in $B$ decays; all sides + angles must be consistent — over-constrained test for new physics",
+        "Triangle inequality on quark masses (not consistent with the operator product expansion at large momentum) (would conflict with renormalisation group flow and cross-section data)",
+        "Triangle of generations: $u, d, s$ corners (violates basic gauge invariance and Lorentz covariance requirements) (unsupported by perturbative expansions in the coupling) (would imply unphysical infinite or negative observables)",
+        "Test of triangle anomaly cancellation (disagrees with the standard textbook treatment in Peskin-Schroeder) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "There are 6 such unitarity triangles (one per off-diagonal pair); the $bd$ triangle is most often plotted because all three sides are $O(\\lambda^3)$ — comparable, well-shaped triangle. Angles: $\\beta = \\arg(-V_{cd}V_{cb}^*/V_{td}V_{tb}^*)$, $\\alpha = \\arg(-V_{td}V_{tb}^*/V_{ud}V_{ub}^*)$, $\\gamma = \\arg(-V_{ud}V_{ub}^*/V_{cd}V_{cb}^*)$. Measurements: $\\sin 2\\beta$ from $B_d \\to J/\\psi K_S$ ($\\sin 2\\beta = 0.70$); $\\alpha$ from $B \\to \\pi\\pi, \\rho\\rho$; $\\gamma$ from $B \\to DK$. Sides: $|V_{ub}/V_{cb}|$ ratio and $\\Delta m_d/\\Delta m_s$ from oscillation. Closure test: angles + sides over-constrained $\\Rightarrow$ probes new physics in loops contributing to $\\Delta F = 2$ amplitudes."
+    }
+  },
+  {
+    "id": "ckm004",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "ckm-matrix"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "The Jarlskog invariant $J$ characterises CP violation in the CKM matrix. What is it and what's its magnitude?",
+    "passive": {
+      "options": [
+        "$J = \\Im(V_{us}V_{cb}V_{ub}^*V_{cs}^*)$ (any rephasing-invariant quartic product equals $\\pm J$); measures area of unitarity triangle; $J \\approx 3 \\times 10^{-5}$ in SM; CP violation in any process is proportional to $J$ times appropriate kinematic factors; far too small for matter-antimatter asymmetry of universe",
+        "$J = \\det V_{\\rm CKM}$ (historically considered but disfavoured by modern QFT analyses) (would imply unphysical infinite or negative observables) (would conflict with renormalisation group flow and cross-section data)",
+        "$J = $ Cabibbo angle in radians (not consistent with the operator product expansion at large momentum) (unsupported by perturbative expansions in the coupling)",
+        "$J$ is undefined; CP violation cannot be quantified by single invariant (disagrees with the standard textbook treatment in Peskin-Schroeder) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "Jarlskog (1985): rephasing-invariant measure of CP violation, $J = \\Im(V_{ij}V_{kl}V_{il}^*V_{kj}^*)$ for any choice $(i\\neq k, j\\neq l)$ — value same up to sign. SM value: $J \\approx (3.0 \\pm 0.1)\\times 10^{-5}$. Maximum possible if all mixings maximal: $J_{\\rm max} = 1/(6\\sqrt 3) \\approx 0.1$ — actual $J$ tiny because of CKM hierarchy. CP-violating amplitude differences $\\propto J\\cdot(\\text{mass}^2 \\text{ differences})$. Baryon asymmetry of universe (BAU) $\\eta_B \\sim 10^{-10}$: CKM contribution $\\sim J\\times\\Delta_q/T^{12} \\sim 10^{-20}$ — many orders too small. Therefore: new sources of CP violation needed for baryogenesis (leptogenesis, BSM physics)."
+    }
+  },
+  {
+    "id": "ckm005",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "ckm-matrix"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Neutral meson mixing ($K\\bar K, B\\bar B, B_s\\bar B_s, D\\bar D$) probes CKM via box diagrams. What's the SM prediction?",
+    "passive": {
+      "options": [
+        "Mass splitting $\\Delta m_q \\propto G_F^2 M_W^2 f_{B_q}^2 B_{B_q}|V_{tq}^*V_{tb}|^2 S_0(x_t)$ with Inami-Lim function $S_0(x_t)$, $x_t = m_t^2/M_W^2$; box diagram dominated by top quark in loop. $\\Delta m_d \\approx 0.51$/ps, $\\Delta m_s \\approx 17.7$/ps; ratio gives $|V_{td}/V_{ts}|^2$ with reduced hadronic uncertainty",
+        "Mixing is forbidden in the SM (ruled out by experimental constraints from collider and low-energy data) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Mixing comes from tree-level $W$ exchange (would imply unphysical infinite or negative observables) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Box diagrams give $\\Delta m \\propto m_d^4$ (unsupported by perturbative expansions in the coupling) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "$B_q\\bar B_q$ mixing via 4 box diagrams (two W exchanges, $t$ usually dominant due to large $m_t$). Effective Hamiltonian: $\\mathcal H_{\\rm eff} = (G_F^2/16\\pi^2)M_W^2 (V_{tq}^*V_{tb})^2 S_0(x_t) C(\\mu) \\mathcal O$ with $\\mathcal O = (\\bar q b)_{V-A}(\\bar qb)_{V-A}$. Hadronic matrix element $\\langle\\bar B|\\mathcal O|B\\rangle = (8/3)f_{B_q}^2 B_{B_q} M_{B_q}^2$ — needs lattice. Measured (LHCb, Tevatron, B factories): $\\Delta m_d = 0.5065$/ps, $\\Delta m_s = 17.765$/ps. Ratio $\\Delta m_d/\\Delta m_s = (|V_{td}|^2/|V_{ts}|^2)\\xi^2 M_{B_d}/M_{B_s}$ where SU(3)-breaking $\\xi = 1.21$ from lattice — gives $|V_{td}/V_{ts}| \\approx 0.21$. Charm $D\\bar D$ mixing: very small (GIM-suppressed), $x_D \\sim 0.4\\%$ observed."
+    }
+  },
+  {
+    "id": "ckm006",
+    "path": [
+      "physics",
+      "electroweak-standard-model",
+      "ckm-matrix"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "The Wolfenstein parametrisation expresses the CKM hierarchy as expansion in $\\lambda \\approx 0.225$. Write it out.",
+    "passive": {
+      "options": [
+        "$V_{\\rm CKM} = \\begin{pmatrix}1-\\lambda^2/2 & \\lambda & A\\lambda^3(\\rho - i\\eta)\\\\ -\\lambda & 1-\\lambda^2/2 & A\\lambda^2 \\\\ A\\lambda^3(1-\\rho - i\\eta) & -A\\lambda^2 & 1\\end{pmatrix} + O(\\lambda^4)$ with $A \\approx 0.81$, $\\rho \\approx 0.16$, $\\eta \\approx 0.36$; CP violation in $\\eta$",
+        "$V_{ij} = \\lambda^{|i-j|}$ for all entries (violates basic gauge invariance and Lorentz covariance requirements) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Diagonal matrix with $\\lambda$ on diagonal (historically considered but disfavoured by modern QFT analyses) (would imply unphysical infinite or negative observables)",
+        "$V_{\\rm CKM}$ has no useful expansion parameter (ruled out by experimental constraints from collider and low-energy data) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "Wolfenstein parametrisation (1983): exposes the hierarchy $|V_{us}| \\sim \\lambda$, $|V_{cb}| \\sim \\lambda^2$, $|V_{ub}|, |V_{td}| \\sim \\lambda^3$. Convenient for analysing CP asymmetries to needed order. Four real parameters: $\\lambda = |V_{us}|$, $A = |V_{cb}|/\\lambda^2$, plus complex $\\bar\\rho + i\\bar\\eta = -V_{ud}V_{ub}^*/(V_{cd}V_{cb}^*)$ (apex of $bd$ unitarity triangle). Current fits (CKMfitter, UTfit): $\\lambda = 0.2251(7)$, $A = 0.826(12)$, $\\bar\\rho = 0.159(10)$, $\\bar\\eta = 0.348(10)$. All measurements consistent — global SM CKM picture works at $\\sim 10\\%$ precision across many independent processes. New physics constraints: contributions to $\\Delta F = 2$ amplitudes bounded to $\\lesssim 10\\%$ of SM, pushing BSM scales above $\\sim 10^4$ TeV (generically)."
+    }
+  }
+]

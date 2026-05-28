@@ -162,6 +162,20 @@ export const CATEGORIES = [
         ],
       },
       {
+        id: 'electroweak-standard-model',
+        label: 'Electroweak & Standard Model',
+        children: [
+          { id: 'weak-interaction',     label: 'Weak Interaction & V-A' },
+          { id: 'electroweak-unification', label: 'Electroweak Unification' },
+          { id: 'higgs-mechanism',      label: 'Higgs Mechanism' },
+          { id: 'ckm-matrix',           label: 'CKM Matrix & Flavour' },
+          { id: 'neutrino-physics',     label: 'Neutrino Physics & PMNS' },
+          { id: 'cp-violation',         label: 'CP Violation' },
+          { id: 'precision-ew',         label: 'Precision EW & Oblique' },
+          { id: 'beyond-sm',            label: 'Beyond the Standard Model' },
+        ],
+      },
+      {
         id: 'theorems',
         label: 'Theorems & Principles',
         children: [
