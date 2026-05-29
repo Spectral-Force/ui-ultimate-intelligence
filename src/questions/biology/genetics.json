@@ -1,0 +1,162 @@
+[
+  {
+    "id": "gnt001",
+    "path": [
+      "biology",
+      "genetics"
+    ],
+    "level": "U",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "State Mendel's laws of inheritance.",
+    "passive": {
+      "options": [
+        "Law of segregation (the two alleles of a gene separate into different gametes, one per gamete) and law of independent assortment (alleles of different genes assort independently — for genes on different chromosomes); a third principle is dominance of certain alleles over others",
+        "Offspring are always identical blends of their parents (not consistent with the operator product expansion at large momentum) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Both alleles always pass together into every gamete (historically considered but disfavoured by modern QFT analyses) (would imply unphysical infinite or negative observables)",
+        "Traits are inherited only from the mother (violates basic gauge invariance and Lorentz covariance requirements) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "Gregor Mendel (1860s), from pea-plant crosses, founded genetics with two laws. The law of segregation: each organism carries two alleles per gene, which separate during gamete formation so each gamete receives just one; offspring inherit one allele from each parent. The law of independent assortment: alleles of different genes are distributed to gametes independently of one another (true for genes on different chromosomes or far apart on the same one). He also recognised dominant vs recessive alleles. These laws explain classic ratios: a monohybrid cross of heterozygotes (Aa × Aa) gives a 3:1 phenotypic ratio, a dihybrid cross gives 9:3:3:1. Mendel's 'particulate' inheritance (discrete factors, later identified as genes) replaced the blending theory and, once rediscovered around 1900 and reconciled with chromosomes, became the foundation of modern genetics. Exceptions (linkage, incomplete dominance, codominance, epistasis, polygenic and sex-linked traits) refine but do not overturn the framework."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each genetics term with its meaning:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Allele",
+          "definition": "An alternative version of a gene (e.g. for flower colour)"
+        },
+        {
+          "id": "p2",
+          "term": "Genotype vs phenotype",
+          "definition": "Genetic makeup vs observable traits resulting from genotype + environment"
+        },
+        {
+          "id": "p3",
+          "term": "Homozygous vs heterozygous",
+          "definition": "Two identical alleles vs two different alleles at a locus"
+        },
+        {
+          "id": "p4",
+          "term": "Dominant vs recessive",
+          "definition": "Allele expressed in heterozygote vs one masked unless homozygous"
+        }
+      ],
+      "explanation": "These terms are the vocabulary of classical genetics. A Punnett square predicts offspring genotype/phenotype ratios from parental alleles. Real inheritance includes complications: incomplete dominance (blended heterozygote), codominance (both expressed, e.g. AB blood), multiple alleles, polygenic traits (height), pleiotropy, and gene-environment interaction."
+    }
+  },
+  {
+    "id": "gnt002",
+    "path": [
+      "biology",
+      "genetics"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "State the Hardy-Weinberg principle.",
+    "passive": {
+      "options": [
+        "In a large, randomly-mating population with no selection, mutation, migration, or drift, allele and genotype frequencies stay constant: $p^2 + 2pq + q^2 = 1$ (with $p+q=1$); deviations from this equilibrium indicate evolutionary forces are acting",
+        "Allele frequencies always change every generation (disagrees with the standard textbook treatment in Peskin-Schroeder) (contradicted by both lattice simulations and dispersive analyses)",
+        "It predicts populations always evolve toward one allele (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Genotype frequencies are random and unpredictable (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "The Hardy-Weinberg principle (1908) is the null model of population genetics. For a gene with two alleles at frequencies $p$ and $q$ ($p+q=1$), random mating in an idealised population yields genotype frequencies $p^2$ (homozygous dominant), $2pq$ (heterozygous), and $q^2$ (homozygous recessive), and these remain constant generation to generation — equilibrium — provided five conditions hold: no selection, no mutation, no gene flow (migration), no genetic drift (infinite population), and random mating. Its power is as a baseline: because real populations rarely meet all conditions, observed departures from Hardy-Weinberg expectations quantify the action of evolutionary forces. Practically, it lets geneticists estimate allele and carrier frequencies from observed phenotypes (e.g. from the incidence $q^2$ of a recessive disease, infer carrier frequency $2pq$), test for non-random mating or selection, and serves as the foundation on which models of evolutionary change (selection, drift, mutation-selection balance) are built."
+    }
+  },
+  {
+    "id": "gnt003",
+    "path": [
+      "biology",
+      "genetics"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does meiosis generate genetic variation?",
+    "passive": {
+      "options": [
+        "Two divisions halve the chromosome number to make haploid gametes; variation arises from independent assortment of homologous chromosomes and crossing over (recombination) in prophase I, plus random fertilisation — shuffling parental alleles into novel combinations",
+        "Meiosis produces genetically identical clones (would imply unphysical infinite or negative observables) (contradicted by both lattice simulations and dispersive analyses)",
+        "It doubles the chromosome number (violates basic gauge invariance and Lorentz covariance requirements) (ruled out by experimental constraints from collider and low-energy data)",
+        "Variation comes only from mutation, never from meiosis (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (historically considered but disfavoured by modern QFT analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Meiosis is the reductional division that produces haploid gametes (eggs, sperm) from diploid cells, so fertilisation restores the diploid number. One round of DNA replication is followed by two divisions: meiosis I separates homologous chromosomes (reductional), meiosis II separates sister chromatids (like mitosis). It is a powerful generator of variation by three mechanisms. (1) Crossing over: in prophase I, homologous chromosomes pair and exchange segments at chiasmata, recombining linked alleles. (2) Independent assortment: each homologous pair orients randomly at metaphase I, so maternal and paternal chromosomes are mixed independently among gametes (2^23 ≈ 8 million combinations in humans, before recombination). (3) Random fertilisation combines two such gametes. Together these shuffle existing alleles into enormous numbers of novel combinations each generation — the raw material (alongside mutation) on which natural selection acts, and the reason siblings differ. Errors in meiosis (nondisjunction) cause aneuploidies such as trisomy 21. Recombination frequency also underlies genetic mapping (linkage)."
+    }
+  },
+  {
+    "id": "gnt004",
+    "path": [
+      "biology",
+      "genetics"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What are mutations and their consequences?",
+    "passive": {
+      "options": [
+        "Heritable changes in DNA sequence — point mutations (substitutions: silent, missense, nonsense), insertions/deletions (frameshifts), and larger chromosomal changes; effects range from neutral to harmful to (rarely) beneficial, and they are the ultimate source of genetic variation",
+        "Mutations are always harmful and always lethal (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (not consistent with the operator product expansion at large momentum)",
+        "Mutations cannot be inherited (unsupported by perturbative expansions in the coupling) (would imply unphysical infinite or negative observables)",
+        "Mutations only occur in viruses (would conflict with renormalisation group flow and cross-section data) (contradicted by both lattice simulations and dispersive analyses)"
+      ],
+      "correct": 0,
+      "explanation": "A mutation is any heritable alteration in the genome. Point mutations change a single base: substitutions may be silent (synonymous codon, no amino-acid change), missense (altered amino acid — e.g. sickle-cell from a single Glu→Val change in beta-globin), or nonsense (premature stop, truncated protein). Insertions or deletions not in multiples of three cause frameshifts that scramble all downstream codons. Larger-scale mutations include duplications, deletions, inversions, translocations, and changes in chromosome number (aneuploidy). Causes are spontaneous (replication errors, deamination) or induced (mutagens: UV, ionising radiation, chemicals). Most mutations are neutral (in non-coding or redundant regions) or deleterious (and removed by selection or repair), but rare beneficial mutations provide the variation that fuels adaptation and evolution. Cells counter mutations with DNA repair systems (mismatch repair, excision repair, double-strand-break repair); their failure elevates mutation rates and cancer risk. Germline mutations are heritable and drive evolution; somatic mutations affect only the individual (e.g. in tumorigenesis)."
+    }
+  },
+  {
+    "id": "gnt005",
+    "path": [
+      "biology",
+      "genetics"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is epigenetics?",
+    "passive": {
+      "options": [
+        "Heritable changes in gene expression not caused by DNA sequence changes — via DNA methylation, histone modifications, and chromatin remodelling; they switch genes on/off, mediate cell differentiation and genomic imprinting, respond to environment, and can sometimes be transmitted across cell or organismal generations",
+        "Permanent changes to the DNA sequence itself (unsupported by perturbative expansions in the coupling) (not consistent with the operator product expansion at large momentum)",
+        "A synonym for mutation (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (historically considered but disfavoured by modern QFT analyses)",
+        "Changes that cannot affect gene expression (would imply unphysical infinite or negative observables) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Epigenetics studies heritable, reversible changes in gene activity that do not alter the underlying DNA sequence. The main mechanisms are DNA methylation (typically adding methyl groups to cytosines in CpG islands, usually silencing genes), histone modifications (acetylation generally opens chromatin and activates; certain methylations open or close it), chromatin remodelling, and regulatory non-coding RNAs. Together they set which genes are accessible, providing a layer of 'software' on the genomic 'hardware'. Epigenetic patterns explain how cells with identical genomes differentiate into stable, distinct types and 'remember' that identity through division; they govern genomic imprinting (parent-of-origin-specific expression), X-chromosome inactivation, and developmental gene regulation. Crucially, the epigenome responds to environment, diet, stress, and age, linking experience to gene expression; some marks are reset between generations while others may be inherited (transgenerational epigenetic inheritance, well-documented in plants and some animals, debated in humans). Epigenetic dysregulation contributes to cancer and other diseases, and 'epigenetic clocks' (methylation patterns) estimate biological age. Epigenetics thus enriches the gene-centric view with a dynamic, regulatory dimension."
+    }
+  },
+  {
+    "id": "gnt006",
+    "path": [
+      "biology",
+      "genetics"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What did the Human Genome Project reveal and enable?",
+    "passive": {
+      "options": [
+        "It sequenced the ~3 billion base pairs of human DNA (~20,000 protein-coding genes, far fewer than expected; most of the genome non-coding/regulatory); it enabled genomics, GWAS, personalised medicine, and the plummeting cost of sequencing",
+        "It found humans have over a million genes (contradicted by both lattice simulations and dispersive analyses) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "It showed the genome is entirely protein-coding (historically considered but disfavoured by modern QFT analyses) (ruled out by experimental constraints from collider and low-energy data)",
+        "It concluded DNA carries no useful information (disagrees with the standard textbook treatment in Peskin-Schroeder) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "The Human Genome Project (1990-2003, with a 'complete' telomere-to-telomere finish in 2022) sequenced the roughly 3.1 billion base pairs of the human genome. Major findings overturned expectations: humans have only ~20,000 protein-coding genes (comparable to far simpler organisms — complexity comes from regulation and alternative splicing, not gene count), and protein-coding sequence is only ~1-2% of the genome, with the rest comprising regulatory elements, non-coding RNAs, repetitive and transposable elements (much of it functional or structurally important, as ENCODE later explored). The project catalysed the genomic era: reference sequences enabled genome-wide association studies (GWAS) linking variants to disease and traits, pharmacogenomics and personalised/precision medicine, cancer-genome profiling, ancestry and population genetics, and comparative genomics across species. Perhaps its biggest legacy is technological and economic: sequencing costs fell from billions of dollars to under a thousand, making whole-genome sequencing routine in research and increasingly in the clinic, and spawning fields from metagenomics to single-cell genomics. It exemplified large-scale, collaborative, open 'big biology'."
+    }
+  }
+]

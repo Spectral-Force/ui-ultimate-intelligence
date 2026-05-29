@@ -1,0 +1,162 @@
+[
+  {
+    "id": "bch001",
+    "path": [
+      "biology",
+      "biochemistry"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "How do enzymes catalyse reactions, and what does Michaelis-Menten describe?",
+    "passive": {
+      "options": [
+        "Enzymes are biological catalysts that lower the activation energy by stabilising the transition state, vastly speeding reactions without being consumed; Michaelis-Menten kinetics gives rate $v = V_{max}[S]/(K_m + [S])$, where $K_m$ is the substrate concentration at half-maximal velocity",
+        "Enzymes increase activation energy to slow reactions (contradicted by both lattice simulations and dispersive analyses) (not consistent with the operator product expansion at large momentum)",
+        "Enzymes are consumed stoichiometrically in the reaction (would imply unphysical infinite or negative observables) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Reaction rate is independent of substrate concentration (violates basic gauge invariance and Lorentz covariance requirements) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "Enzymes (mostly proteins, some RNA — ribozymes) are catalysts that accelerate biochemical reactions by factors of up to 10^17 without being consumed, by binding substrate at an active site and lowering the activation-energy barrier — chiefly by stabilising the reaction's transition state (and via proximity/orientation, acid-base and covalent catalysis, and strain). They do not change the reaction's equilibrium or thermodynamics, only its rate. Specificity arises from complementary active-site geometry and chemistry ('lock-and-key' refined to 'induced fit'). The Michaelis-Menten model describes the kinetics of many enzymes: at low substrate the rate rises nearly linearly with [S], saturating at $V_{max}$ when active sites are full; $v = V_{max}[S]/(K_m+[S])$. $K_m$ (the [S] giving half $V_{max}$) reflects substrate affinity, and $k_{cat}/K_m$ measures catalytic efficiency. Enzymes are regulated (allosteric effectors, covalent modification like phosphorylation, feedback inhibition) and inhibited (competitive, raising apparent $K_m$; noncompetitive, lowering $V_{max}$) — principles central to metabolism and to drug design (most drugs are enzyme inhibitors). Cofactors and coenzymes (metals, vitamins) assist many enzymes."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each biomolecule class with its role:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Proteins",
+          "definition": "Polymers of amino acids; enzymes, structure, transport, signalling; folded 3D shape determines function"
+        },
+        {
+          "id": "p2",
+          "term": "Carbohydrates",
+          "definition": "Sugars/polysaccharides; energy (glucose), storage (glycogen, starch), structure (cellulose)"
+        },
+        {
+          "id": "p3",
+          "term": "Lipids",
+          "definition": "Fats, phospholipids, steroids; membranes, energy storage, signalling hormones"
+        },
+        {
+          "id": "p4",
+          "term": "Nucleic acids",
+          "definition": "DNA/RNA; store and transmit genetic information; some catalyse (ribozymes)"
+        }
+      ],
+      "explanation": "The four major classes of biomolecules are built from simple monomers (amino acids, monosaccharides, fatty acids/glycerol, nucleotides) into functional polymers and assemblies. Protein function follows from structure (primary sequence → secondary helices/sheets → tertiary fold → quaternary assembly). Water, with its hydrogen bonding and polarity, is the essential solvent shaping all of biochemistry (hydrophobic effect, pH)."
+    }
+  },
+  {
+    "id": "bch002",
+    "path": [
+      "biology",
+      "biochemistry"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Why is ATP the cell's energy currency?",
+    "passive": {
+      "options": [
+        "Hydrolysis of ATP's high-energy phosphoanhydride bonds (ATP → ADP + Pi) releases ~30 kJ/mol under cellular conditions, which is coupled to drive otherwise unfavourable reactions; ATP is continually regenerated, linking energy-releasing (catabolic) to energy-requiring (anabolic) processes",
+        "ATP stores energy permanently and is never broken down (historically considered but disfavoured by modern QFT analyses) (not consistent with the operator product expansion at large momentum)",
+        "ATP provides energy by nuclear fission (ruled out by experimental constraints from collider and low-energy data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "ATP is a structural molecule with no energy role (contradicted by both lattice simulations and dispersive analyses) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Adenosine triphosphate (ATP) is the universal energy carrier connecting catabolism (energy-releasing breakdown of fuels) to anabolism and cellular work. Its triphosphate tail holds two phosphoanhydride bonds whose hydrolysis is strongly exergonic (ΔG ≈ −30 kJ/mol under physiological conditions, more than the standard −30.5 kJ/mol because cellular ATP/ADP ratios are kept far from equilibrium) — driven by charge repulsion relief, resonance stabilisation of products, and solvation. Cells couple this favourable hydrolysis (or, more often, transfer of a phosphoryl group) to power unfavourable processes: biosynthesis, active transport (e.g. the Na+/K+ pump), muscle contraction (myosin), and signalling. ATP is not long-term storage but a rapidly cycled intermediate — a human turns over roughly their body weight in ATP per day, constantly regenerating it from ADP. That regeneration occurs by substrate-level phosphorylation (glycolysis, the citric-acid cycle) and, dominantly, oxidative phosphorylation in mitochondria, where the electron-transport chain pumps protons to build an electrochemical gradient that ATP synthase uses to make ATP. ATP's central role across all life reflects deep evolutionary conservation."
+    }
+  },
+  {
+    "id": "bch003",
+    "path": [
+      "biology",
+      "biochemistry"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does cellular respiration extract energy from glucose?",
+    "passive": {
+      "options": [
+        "Glycolysis splits glucose to pyruvate (cytoplasm, small ATP + NADH); the citric-acid (Krebs) cycle oxidises acetyl-CoA producing NADH/FADH2 and CO2; oxidative phosphorylation uses these electron carriers to drive an electron-transport chain and ATP synthase, yielding most ATP (~30+ per glucose)",
+        "Glucose is converted to ATP in a single step (historically considered but disfavoured by modern QFT analyses) (not consistent with the operator product expansion at large momentum)",
+        "Respiration produces no carbon dioxide (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (unsupported by perturbative expansions in the coupling)",
+        "All ATP comes from glycolysis alone (violates basic gauge invariance and Lorentz covariance requirements) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "Aerobic cellular respiration harvests the energy in glucose through three coupled stages. (1) Glycolysis (cytoplasm) splits one glucose into two pyruvate, netting 2 ATP (substrate-level) and 2 NADH — anaerobic and ancient. (2) Pyruvate is oxidised to acetyl-CoA, which enters the citric-acid (Krebs/TCA) cycle in the mitochondrial matrix, fully oxidising the carbons to CO2 while harvesting high-energy electrons as NADH and FADH2 and a little GTP/ATP. (3) Oxidative phosphorylation (inner mitochondrial membrane): NADH and FADH2 donate electrons to the electron-transport chain, whose complexes pump protons into the intermembrane space, building an electrochemical proton gradient (Mitchell's chemiosmotic theory, Nobel 1978); protons flow back through ATP synthase, a molecular rotary motor, driving ATP synthesis, with O2 as the final electron acceptor (forming water). The full oxidation yields roughly 30-32 ATP per glucose — vastly more than fermentation's 2 — which is why aerobic metabolism powers complex life. Fats and proteins feed into the same pathways. This is the central energy-conversion machinery of the cell, mirrored (in reverse logic) by photosynthesis in plants."
+    }
+  },
+  {
+    "id": "bch004",
+    "path": [
+      "biology",
+      "biochemistry"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What determines protein structure and why does folding matter?",
+    "passive": {
+      "options": [
+        "The amino-acid sequence (primary structure) dictates folding into secondary (alpha-helices, beta-sheets via backbone H-bonds), tertiary (3D fold from side-chain interactions and the hydrophobic effect), and quaternary structure; the folded shape determines function, and misfolding causes disease",
+        "Protein function is independent of 3D shape (not consistent with the operator product expansion at large momentum) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Proteins are always linear chains that never fold (violates basic gauge invariance and Lorentz covariance requirements) (historically considered but disfavoured by modern QFT analyses)",
+        "Sequence has no influence on structure (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "A protein's function is inseparable from its three-dimensional shape, which is encoded by its amino-acid sequence (Anfinsen's principle: sequence determines fold). Structure is described hierarchically: primary (the linear sequence of the 20 amino acids), secondary (local backbone motifs — alpha-helices and beta-sheets stabilised by hydrogen bonds), tertiary (the overall 3D fold of a polypeptide, driven largely by burial of hydrophobic side chains away from water — the hydrophobic effect — plus hydrogen bonds, salt bridges, disulfide bonds, and van der Waals contacts), and quaternary (assembly of multiple subunits, e.g. haemoglobin's four chains). The folded native state is typically the thermodynamic free-energy minimum, reached rapidly despite the astronomical number of possible conformations (Levinthal's paradox, resolved by funnelled energy landscapes); chaperones assist folding in the crowded cell. Misfolding and aggregation cause major diseases — amyloid plaques in Alzheimer's, prion diseases, and many others. Predicting structure from sequence was a grand challenge essentially solved by deep learning (AlphaFold, 2020-2021), transforming biology by providing accurate models for nearly all known proteins and accelerating drug discovery and enzyme design."
+    }
+  },
+  {
+    "id": "bch005",
+    "path": [
+      "biology",
+      "biochemistry"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does photosynthesis convert light into chemical energy?",
+    "passive": {
+      "options": [
+        "Light-dependent reactions in the thylakoid use chlorophyll to split water, release O2, and make ATP and NADPH via an electron-transport chain; the light-independent Calvin cycle then fixes CO2 into sugars using that ATP/NADPH (RuBisCO catalysing carbon fixation)",
+        "Plants make sugar directly from sunlight with no intermediate chemistry (historically considered but disfavoured by modern QFT analyses)",
+        "Photosynthesis consumes oxygen and releases carbon dioxide (would conflict with renormalisation group flow and cross-section data) (ruled out by experimental constraints from collider and low-energy data)",
+        "It occurs without any pigments or enzymes (unsupported by perturbative expansions in the coupling) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "Photosynthesis is the energy-input engine of the biosphere, converting solar energy into chemical bonds (net: 6 CO2 + 6 H2O + light → glucose + 6 O2). It proceeds in two coupled stages in chloroplasts. The light-dependent reactions (thylakoid membranes): chlorophyll and accessory pigments in photosystems II and I absorb photons, exciting electrons; photosystem II extracts replacement electrons by splitting water (the source of atmospheric O2 and of the protons for the gradient), and the electrons pass down an electron-transport chain that pumps protons, driving ATP synthase (photophosphorylation) and ultimately reducing NADP+ to NADPH. The light-independent reactions (the Calvin-Benson cycle, in the stroma) then use that ATP and NADPH to fix inorganic CO2 onto the 5-carbon sugar RuBP via the enzyme RuBisCO (the most abundant protein on Earth), producing 3-carbon sugars that build glucose and regenerate RuBP. RuBisCO's inefficiency and oxygenase side-reaction (photorespiration) spurred the evolution of C4 and CAM carbon-concentrating adaptations in plants of hot/dry climates. Photosynthesis created Earth's oxygen atmosphere (the Great Oxidation Event), underpins nearly all food chains, and is the basis of fossil fuels — making its mechanism central to biology, agriculture, and climate."
+    }
+  },
+  {
+    "id": "bch006",
+    "path": [
+      "biology",
+      "biochemistry"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "How are metabolic pathways regulated and integrated?",
+    "passive": {
+      "options": [
+        "Through allosteric regulation, feedback inhibition (end-product inhibits an early enzyme), reversible covalent modification (phosphorylation), hormonal control (insulin/glucagon), and compartmentalisation; this keeps catabolism and anabolism balanced and responsive to the cell's energy state (e.g. ATP/AMP, NAD+/NADH ratios)",
+        "Metabolism runs at constant maximum rate at all times (disagrees with the standard textbook treatment in Peskin-Schroeder) (ruled out by experimental constraints from collider and low-energy data)",
+        "Pathways operate completely independently with no coordination (violates basic gauge invariance and Lorentz covariance requirements) (not consistent with the operator product expansion at large momentum)",
+        "There is no regulation of metabolic flux (would imply unphysical infinite or negative observables) (unsupported by perturbative expansions in the coupling) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Metabolism is a tightly integrated network, not a set of isolated pathways, and is regulated to match supply and demand while avoiding futile cycles. Key control strategies: allosteric regulation (effectors bind enzymes away from the active site to change activity — e.g. ATP inhibits and AMP activates phosphofructokinase, the key glycolytic control point, tying flux to energy charge); feedback (end-product) inhibition (a pathway's product inhibits its committed/first enzyme, preventing overproduction); reversible covalent modification (phosphorylation/dephosphorylation by kinases/phosphatases rapidly switches enzymes, central to hormone signalling cascades); transcriptional control of enzyme amounts (slower, adaptive); and substrate availability and compartmentalisation (separating opposing pathways in different organelles, e.g. fatty-acid synthesis in cytosol vs oxidation in mitochondria). Whole-body integration is hormonal: insulin (fed state) promotes storage/anabolism, glucagon and adrenaline (fasting/stress) mobilise fuels; master sensors like AMPK (low energy) and mTOR (growth signals) coordinate metabolism with nutrient status. The ratios of key indicators — ATP/ADP/AMP, NADH/NAD+, acetyl-CoA — act as readouts of metabolic state. This regulation maintains homeostasis (e.g. blood glucose), and its breakdown underlies diabetes, obesity, and metabolic disease; cancer cells famously rewire metabolism (the Warburg effect)."
+    }
+  }
+]

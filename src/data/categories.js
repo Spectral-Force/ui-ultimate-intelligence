@@ -359,6 +359,20 @@ export const CATEGORIES = [
       { id: 'evaluation-benchmarks',      label: 'Evaluation & Benchmarks' },
     ],
   },
+  {
+    id: 'biology',
+    label: 'Biology',
+    children: [
+      { id: 'cell-biology',     label: 'Cell Biology' },
+      { id: 'molecular-biology', label: 'Molecular Biology' },
+      { id: 'genetics',         label: 'Genetics' },
+      { id: 'evolution',        label: 'Evolution' },
+      { id: 'neuroscience',     label: 'Neuroscience' },
+      { id: 'biochemistry',     label: 'Biochemistry' },
+      { id: 'physiology',       label: 'Physiology' },
+      { id: 'ecology',          label: 'Ecology' },
+    ],
+  },
 ]
 
 export const LEVELS = [

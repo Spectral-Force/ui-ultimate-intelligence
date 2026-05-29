@@ -1,0 +1,162 @@
+[
+  {
+    "id": "evo001",
+    "path": [
+      "biology",
+      "evolution"
+    ],
+    "level": "U",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "What is natural selection?",
+    "passive": {
+      "options": [
+        "The differential survival and reproduction of individuals due to heritable variation in traits: those better suited to their environment leave more offspring, so advantageous heritable traits become more common over generations (Darwin-Wallace)",
+        "Organisms consciously choose to evolve useful traits (would conflict with renormalisation group flow and cross-section data)",
+        "All individuals reproduce equally regardless of traits (contradicted by both lattice simulations and dispersive analyses) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Acquired characteristics are directly inherited (Lamarckism) (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "Natural selection, proposed independently by Darwin and Wallace (1858) and detailed in Darwin's 'Origin of Species' (1859), is the central mechanism of adaptive evolution. It requires three ingredients: variation among individuals in a trait, heritability of that variation, and differential reproductive success ('fitness') tied to the trait. Individuals with traits better suited to their environment tend to survive and reproduce more, so over generations those heritable traits increase in frequency — adaptation arises without foresight or design. Selection is not random (it is the non-random filtering of random variation) and is distinct from the discredited Lamarckian inheritance of acquired characteristics. Forms include directional, stabilising, and disruptive selection, plus sexual selection. Combined with mutation (the source of variation), recombination, genetic drift, and gene flow, and reconciled with Mendelian genetics in the 20th-century 'modern synthesis', natural selection explains the diversity, adaptation, and common descent of all life — 'nothing in biology makes sense except in the light of evolution' (Dobzhansky)."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each evolutionary mechanism with its effect:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Natural selection",
+          "definition": "Non-random differential reproduction by fitness; drives adaptation"
+        },
+        {
+          "id": "p2",
+          "term": "Genetic drift",
+          "definition": "Random change in allele frequencies; strong in small populations; can fix neutral alleles"
+        },
+        {
+          "id": "p3",
+          "term": "Gene flow",
+          "definition": "Movement of alleles between populations via migration; homogenises populations"
+        },
+        {
+          "id": "p4",
+          "term": "Mutation",
+          "definition": "Ultimate source of new alleles/variation on which other forces act"
+        }
+      ],
+      "explanation": "Evolution is change in allele frequencies over time, driven by four forces: mutation (creates variation), natural selection (non-random, adaptive), genetic drift (random sampling, especially in small populations — founder effects, bottlenecks), and gene flow (migration). Together with non-random mating, these determine how populations evolve, departing from Hardy-Weinberg equilibrium."
+    }
+  },
+  {
+    "id": "evo002",
+    "path": [
+      "biology",
+      "evolution"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is genetic drift and when does it dominate?",
+    "passive": {
+      "options": [
+        "Random fluctuation in allele frequencies from chance sampling of gametes; its effect is stronger in small populations, where alleles can be fixed or lost regardless of fitness — important in founder effects and bottlenecks, and central to the neutral theory",
+        "A deterministic force that always favours the fittest allele (would imply unphysical infinite or negative observables) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Only relevant in infinitely large populations (not consistent with the operator product expansion at large momentum) (unsupported by perturbative expansions in the coupling)",
+        "The same as natural selection (contradicted by both lattice simulations and dispersive analyses) (violates basic gauge invariance and Lorentz covariance requirements)"
+      ],
+      "correct": 0,
+      "explanation": "Genetic drift is the random change in allele frequencies from generation to generation due to the chance of which gametes happen to form offspring — sampling error. Unlike selection, it is non-adaptive and directionless. Its magnitude scales inversely with population size: in large populations frequencies are stable, but in small populations drift can cause large random swings, eventually fixing some alleles (frequency 1) and losing others (frequency 0) even if they are neutral or mildly deleterious. Special cases include the founder effect (a new population started by few individuals carries a non-representative allele sample) and population bottlenecks (a crash reduces diversity, e.g. cheetahs). Drift reduces genetic variation within populations and increases divergence between isolated populations, contributing to speciation. Kimura's neutral theory of molecular evolution (1968) argues that most molecular-level variation and substitution is governed by drift acting on selectively neutral mutations rather than by positive selection, providing the null model (and the molecular clock) against which adaptive selection is detected. Drift and selection together shape genome evolution."
+    }
+  },
+  {
+    "id": "evo003",
+    "path": [
+      "biology",
+      "evolution"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does speciation occur?",
+    "passive": {
+      "options": [
+        "Populations diverge until reproductively isolated (no longer interbreeding to produce fertile offspring); allopatric speciation follows geographic separation, sympatric speciation occurs without it (e.g. polyploidy, niche specialisation), with pre- and post-zygotic isolating mechanisms",
+        "New species appear instantly by single mutations in all cases (unsupported by perturbative expansions in the coupling) (would conflict with renormalisation group flow and cross-section data)",
+        "Species never become reproductively isolated (ruled out by experimental constraints from collider and low-energy data) (contradicted by both lattice simulations and dispersive analyses)",
+        "Speciation requires conscious mate choice only (historically considered but disfavoured by modern QFT analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "Speciation is the origin of new species, typically defined (biological species concept) as the evolution of reproductive isolation so populations no longer exchange genes. The most common mode is allopatric: a geographic barrier (mountains, rivers, ocean, distance) splits a population, after which independent mutation, drift, and selection cause divergence until, even if reunited, they cannot or do not interbreed. Parapatric (adjacent populations along a gradient) and sympatric (without geographic separation — via ecological niche specialisation, disruptive selection, or, especially in plants, instantaneous polyploidy that creates a chromosomally incompatible lineage) modes also occur. Reproductive isolation arises through prezygotic barriers (temporal, behavioural, mechanical, or gametic incompatibility preventing mating/fertilisation) and postzygotic barriers (hybrid inviability or sterility, e.g. the mule). Adaptive radiations (Darwin's finches, African cichlids, Hawaiian honeycreepers) show rapid diversification when lineages invade many empty niches. Speciation links microevolution (within-population change) to macroevolution (the branching tree of life), and modern genomics now identifies the specific 'speciation genes' and genomic regions underlying reproductive barriers."
+    }
+  },
+  {
+    "id": "evo004",
+    "path": [
+      "biology",
+      "evolution"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What evidence supports common descent and evolution?",
+    "passive": {
+      "options": [
+        "Multiple independent lines: the fossil record (transitional forms), comparative anatomy (homologous structures, vestigial organs), embryology, biogeography, and especially molecular data (shared genetic code, DNA/protein sequence similarity tracking phylogeny), plus directly observed evolution",
+        "A single ambiguous fossil (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)",
+        "Only philosophical argument with no data (would conflict with renormalisation group flow and cross-section data) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "No evidence exists; it is untested (would imply unphysical infinite or negative observables) (historically considered but disfavoured by modern QFT analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Evolution by common descent is supported by converging evidence from many fields. Palaeontology: the fossil record shows life changing over time with transitional forms (e.g. Tiktaalik between fish and tetrapods, feathered dinosaurs, whale-ancestor series, hominin fossils). Comparative anatomy: homologous structures (the same bone plan in human arm, bat wing, whale flipper) reflect shared ancestry, while vestigial organs (pelvic bones in whales, the human appendix) are remnants of ancestral function. Embryology: shared developmental patterns and genes (Hox genes) across animals. Biogeography: species distributions match geological history and isolation (island endemics, marsupials of Australia). Molecular biology is the most powerful: the near-universal genetic code, and the nested hierarchy of DNA and protein sequence similarities, independently reconstruct the same tree of life and even retain 'molecular fossils' (pseudogenes, endogenous retroviruses shared by related species). Directly observed evolution — antibiotic resistance, pesticide resistance, peppered-moth coloration, Darwin's finch beaks tracking droughts, long-term experimental evolution (Lenski's E. coli) — confirms the mechanism in real time. The consilience of these independent lines makes evolution one of the best-supported theories in science."
+    }
+  },
+  {
+    "id": "evo005",
+    "path": [
+      "biology",
+      "evolution"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is kin selection and inclusive fitness?",
+    "passive": {
+      "options": [
+        "Altruistic behaviour can evolve if it benefits relatives who share genes: Hamilton's rule $rB > C$ (relatedness × benefit to recipient exceeds cost to actor); inclusive fitness counts an individual's own reproduction plus its effect on relatives' reproduction, explaining cooperation and eusociality",
+        "Altruism can never evolve under any circumstances (would conflict with renormalisation group flow and cross-section data) (historically considered but disfavoured by modern QFT analyses)",
+        "Selection acts only on the survival of the species as a whole (would imply unphysical infinite or negative observables) (ruled out by experimental constraints from collider and low-energy data)",
+        "Relatedness has no bearing on social behaviour (not consistent with the operator product expansion at large momentum) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "Apparently self-sacrificing (altruistic) behaviour posed a puzzle for natural selection: why help others at a cost to oneself? Hamilton (1964) resolved it with kin selection and inclusive fitness. Because relatives share genes by common descent, an allele promoting altruism toward kin can spread if the genetic payoff through helped relatives outweighs the cost. Hamilton's rule states altruism is favoured when $rB > C$, where $r$ is the coefficient of relatedness (e.g. 0.5 for full siblings or parent-offspring, 0.125 for cousins), $B$ the reproductive benefit to the recipient, and $C$ the cost to the altruist. Inclusive fitness redefines fitness to include not just an individual's direct reproduction but its indirect contribution to copies of its genes carried by relatives. This elegantly explains alarm calls, parental care, and especially eusociality in haplodiploid insects (bees, ants, wasps), where sisters are unusually highly related (r up to 0.75), favouring sterile workers that raise siblings. Kin selection is a cornerstone of sociobiology and behavioural ecology, complemented by reciprocal altruism (Trivers) for cooperation among non-kin, and it underpins the gene-centred view of evolution ('the selfish gene', Dawkins). Group-selection explanations are generally unnecessary where kin selection applies."
+    }
+  },
+  {
+    "id": "evo006",
+    "path": [
+      "biology",
+      "evolution"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the molecular clock and how is phylogeny reconstructed?",
+    "passive": {
+      "options": [
+        "Neutral mutations accumulate roughly steadily over time, so sequence divergence between species estimates time since common ancestry (calibrated by fossils); phylogenetic trees are built from sequence (or trait) data by methods like maximum likelihood and Bayesian inference, revealing evolutionary relationships",
+        "Mutations never accumulate at any regular rate (would imply unphysical infinite or negative observables) (would conflict with renormalisation group flow and cross-section data)",
+        "Phylogeny can only be inferred from fossils, never molecules (contradicted by both lattice simulations and dispersive analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "All species are equally related to each other (not consistent with the operator product expansion at large momentum) (violates basic gauge invariance and Lorentz covariance requirements)"
+      ],
+      "correct": 0,
+      "explanation": "The molecular clock hypothesis (Zuckerkandl and Pauling, 1960s) observes that, for selectively neutral sites, mutations fix at an approximately constant rate over time (a prediction of Kimura's neutral theory), so the number of sequence differences between two species' homologous genes is roughly proportional to the time since they diverged. Calibrating the rate against dated fossils or biogeographic events lets molecular data estimate divergence times for lineages with poor fossil records. Clocks are not perfectly uniform (rates vary by gene, lineage, and generation time), so modern 'relaxed clock' models allow rate variation. Phylogenetics reconstructs the tree of life from such data: aligning homologous DNA or protein sequences, then inferring the branching pattern (topology) and branch lengths by distance methods, maximum parsimony, maximum likelihood, or Bayesian inference (which also yield support values). The resulting phylogenies map common ancestry, date key events (e.g. mammalian radiation, human-chimp split ~6-7 Mya, SARS-CoV-2 variant emergence in real-time 'phylodynamics'), and underpin comparative biology, conservation, epidemiology, and the classification of all organisms. Molecular phylogenetics, integrating with genomics, has revolutionised our picture of the evolutionary relationships among living things — including overturning some morphology-based classifications."
+    }
+  }
+]

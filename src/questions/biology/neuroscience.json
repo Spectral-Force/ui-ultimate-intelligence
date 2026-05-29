@@ -1,0 +1,162 @@
+[
+  {
+    "id": "neu001",
+    "path": [
+      "biology",
+      "neuroscience"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "What is the action potential and the all-or-none principle?",
+    "passive": {
+      "options": [
+        "A rapid, self-propagating reversal of membrane potential triggered when depolarisation reaches threshold: voltage-gated Na+ channels open (depolarisation), then K+ channels open (repolarisation); it is all-or-none (fires fully or not at all) and information is coded in firing frequency, not amplitude",
+        "A slow graded signal whose size encodes stimulus strength (would imply unphysical infinite or negative observables) (historically considered but disfavoured by modern QFT analyses)",
+        "A purely chemical signal with no electrical component (unsupported by perturbative expansions in the coupling) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "A continuous current that never resets (ruled out by experimental constraints from collider and low-energy data) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "The action potential is the neuron's digital signal. At rest the membrane sits near −70 mV (set by K+ leak and the Na+/K+ pump). A stimulus that depolarises the membrane to threshold (~−55 mV) triggers a regenerative cycle: voltage-gated sodium channels open, Na+ rushes in driving the potential sharply positive (depolarisation/overshoot to ~+40 mV); these channels then inactivate while voltage-gated potassium channels open, K+ flows out, repolarising and briefly hyperpolarising the membrane before resting conditions are restored. The all-or-none principle: once threshold is reached the spike fires at full amplitude regardless of how strong the stimulus was; sub-threshold stimuli produce no spike. Therefore stimulus intensity is encoded not in spike size but in firing frequency (rate coding) and pattern, and across populations of neurons. A refractory period (from Na+-channel inactivation) limits maximum firing rate and enforces one-way propagation. The Hodgkin-Huxley model (1952, Nobel 1963) quantitatively described these voltage-gated conductances, founding computational neuroscience."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each neuroscience term with its meaning:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Resting potential",
+          "definition": "~−70 mV; set by K+ permeability and the Na+/K+-ATPase pump"
+        },
+        {
+          "id": "p2",
+          "term": "Synapse",
+          "definition": "Junction where a neuron signals another; chemical (neurotransmitter) or electrical (gap junction)"
+        },
+        {
+          "id": "p3",
+          "term": "Myelin / saltatory conduction",
+          "definition": "Insulating sheath; impulse jumps node to node, greatly speeding conduction"
+        },
+        {
+          "id": "p4",
+          "term": "Neurotransmitter",
+          "definition": "Chemical messenger (glutamate, GABA, dopamine, etc.) crossing the synaptic cleft"
+        }
+      ],
+      "explanation": "Neurons integrate inputs at dendrites/soma, fire action potentials down the axon, and communicate at synapses. At chemical synapses, an arriving spike triggers Ca2+ influx and neurotransmitter release; the transmitter binds postsynaptic receptors, producing excitatory or inhibitory potentials. Myelination by glia enables fast saltatory conduction. These elements underlie all neural computation."
+    }
+  },
+  {
+    "id": "neu002",
+    "path": [
+      "biology",
+      "neuroscience"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does synaptic transmission work at a chemical synapse?",
+    "passive": {
+      "options": [
+        "An action potential opens voltage-gated Ca2+ channels at the axon terminal; Ca2+ influx triggers vesicles to fuse and release neurotransmitter into the cleft, which binds postsynaptic receptors, opening ion channels to produce excitatory (EPSP) or inhibitory (IPSP) potentials; transmitter is then cleared",
+        "Neurons are physically fused and share cytoplasm directly (would conflict with renormalisation group flow and cross-section data) (not consistent with the operator product expansion at large momentum)",
+        "Signals cross the synapse as electric sparks only (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (unsupported by perturbative expansions in the coupling)",
+        "Neurotransmitters are never cleared, so signals persist forever (historically considered but disfavoured by modern QFT analyses) (contradicted by both lattice simulations and dispersive analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Chemical synaptic transmission converts an electrical signal to a chemical one and back. When an action potential reaches the presynaptic terminal, it opens voltage-gated calcium channels; the resulting Ca2+ influx triggers synaptic vesicles (loaded with neurotransmitter) to fuse with the membrane and release their contents into the synaptic cleft by exocytosis (the SNARE machinery mediates fusion; Nobel 2013). Neurotransmitter molecules diffuse across the ~20 nm cleft and bind receptors on the postsynaptic membrane. Ionotropic receptors are ligand-gated channels giving fast responses: excitatory (e.g. glutamate opening cation channels, depolarising — an EPSP) or inhibitory (e.g. GABA opening Cl− channels, hyperpolarising — an IPSP). Metabotropic (G-protein-coupled) receptors give slower, modulatory effects. The postsynaptic neuron spatially and temporally sums many EPSPs and IPSPs; if the integrated depolarisation at the axon hillock reaches threshold, it fires. Signalling is terminated by transmitter reuptake (e.g. by transporters — targets of SSRIs), enzymatic degradation (acetylcholinesterase), or diffusion. This chemical synapse is plastic (its strength changes with use), the physical substrate of learning, and the principal target of psychoactive and neurological drugs."
+    }
+  },
+  {
+    "id": "neu003",
+    "path": [
+      "biology",
+      "neuroscience"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is synaptic plasticity and its role in learning and memory?",
+    "passive": {
+      "options": [
+        "Activity-dependent change in synaptic strength: long-term potentiation (LTP) strengthens and long-term depression (LTD) weakens synapses; Hebbian plasticity ('neurons that fire together wire together', often NMDA-receptor/Ca2+-dependent) is widely regarded as the cellular basis of learning and memory",
+        "Synapses have fixed, unchangeable strength (contradicted by both lattice simulations and dispersive analyses) (ruled out by experimental constraints from collider and low-energy data)",
+        "Memory is stored in individual unchanging molecules only (historically considered but disfavoured by modern QFT analyses) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Plasticity occurs only during embryonic development (not consistent with the operator product expansion at large momentum) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Synaptic plasticity is the brain's capacity to modify the strength of connections in response to activity — the leading cellular model for learning and memory. Long-term potentiation (LTP), discovered in the hippocampus, is a persistent strengthening of a synapse following high-frequency or correlated activity; long-term depression (LTD) is its weakening counterpart. The classic mechanism is Hebbian and NMDA-receptor-dependent: the NMDA glutamate receptor acts as a coincidence detector — it passes Ca2+ only when the postsynaptic cell is depolarised (relieving its Mg2+ block) at the same time as glutamate is bound (presynaptic activity). The resulting Ca2+ signal triggers insertion of more AMPA receptors and structural changes, strengthening the synapse — embodying Hebb's postulate that 'cells that fire together wire together'. Plasticity operates over timescales from milliseconds (short-term facilitation/depression) to lifelong (consolidated memories), involves gene expression and protein synthesis for the late, lasting phase, and includes structural remodelling (dendritic spine growth/loss) and homeostatic scaling. It underlies developmental wiring, skill acquisition, and memory formation; its dysregulation is implicated in addiction, and its decline in neurodegeneration. Manipulating specific synapses (optogenetics) can now create or erase memories in animals, strongly supporting the synaptic theory of memory."
+    }
+  },
+  {
+    "id": "neu004",
+    "path": [
+      "biology",
+      "neuroscience"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "How is the nervous system organised, and what is functional localisation?",
+    "passive": {
+      "options": [
+        "Central (brain + spinal cord) and peripheral (somatic + autonomic) divisions; the brain has specialised regions (e.g. visual cortex, motor cortex, hippocampus for memory, amygdala for emotion) yet functions emerge from distributed, interconnected networks rather than isolated centres",
+        "The brain is an undifferentiated mass with no regional specialisation (not consistent with the operator product expansion at large momentum) (would conflict with renormalisation group flow and cross-section data)",
+        "Every function is housed in a single tiny spot acting alone (would imply unphysical infinite or negative observables) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "The peripheral nervous system controls all conscious thought (unsupported by perturbative expansions in the coupling) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "The nervous system divides into the central nervous system (CNS: brain and spinal cord) and peripheral nervous system (PNS), the latter split into somatic (voluntary, sensory-motor) and autonomic (involuntary; sympathetic 'fight-or-flight' vs parasympathetic 'rest-and-digest') branches. The brain shows functional localisation — specialised regions: primary sensory (visual cortex in the occipital lobe, auditory, somatosensory) and motor cortices (with topographic maps — the homunculus), association areas for higher processing, the hippocampus for declarative memory formation, the amygdala for emotional salience, the cerebellum for coordination and timing, the basal ganglia for action selection, and the prefrontal cortex for executive function. Classic lesion studies (Broca's and Wernicke's aphasias localising language; the patient H.M.'s amnesia revealing the hippocampus's role) established localisation. Yet modern neuroscience stresses that complex functions emerge from distributed, dynamically interacting networks (connectomics), with plasticity allowing some reorganisation. Mapping these circuits — from single neurons to whole-brain networks via electrophysiology, fMRI, and connectomic reconstruction — is a central goal, bridging cellular mechanisms and cognition/behaviour."
+    }
+  },
+  {
+    "id": "neu005",
+    "path": [
+      "biology",
+      "neuroscience"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What did the Hodgkin-Huxley model establish?",
+    "passive": {
+      "options": [
+        "A quantitative biophysical model (1952) of the action potential as voltage- and time-dependent Na+ and K+ conductances; its equations reproduce spike generation and propagation from measured channel kinetics, founding computational/quantitative neuroscience",
+        "That nerve impulses are purely mechanical waves (would imply unphysical infinite or negative observables) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "That neurons have no electrical properties (unsupported by perturbative expansions in the coupling) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "A purely qualitative description with no equations (contradicted by both lattice simulations and dispersive analyses) (historically considered but disfavoured by modern QFT analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Hodgkin and Huxley (1952, Nobel 1963), using the voltage clamp on the giant axon of the squid, measured how membrane ionic currents depend on voltage and time and built a quantitative mathematical model of the action potential. They represented the membrane as a capacitor in parallel with voltage-dependent conductances for sodium and potassium (plus a small leak), each governed by 'gating' variables (m, h for Na+; n for K+) that follow first-order kinetics with voltage-dependent rates. Their coupled differential equations — derived from data, before ion channels were even known as molecules — accurately predict the spike's shape, threshold, refractory period, and propagation velocity, and the existence of distinct activating and inactivating gates (later confirmed as the molecular structure of voltage-gated channels). The Hodgkin-Huxley framework is the foundational model of excitable cells: it launched computational and theoretical neuroscience, generalises to other channels and neuron types, and remains the basis of biophysically detailed neural simulation. It is a landmark example of mathematical modelling revealing mechanism in biology, comparable in influence to the structure of DNA."
+    }
+  },
+  {
+    "id": "neu006",
+    "path": [
+      "biology",
+      "neuroscience"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What are the major neurotransmitter systems and their roles?",
+    "passive": {
+      "options": [
+        "Glutamate (main excitatory) and GABA (main inhibitory) handle fast signalling; modulatory systems — dopamine (reward, movement), serotonin (mood), acetylcholine (attention, neuromuscular), noradrenaline (arousal) — broadly tune brain states and are major drug targets",
+        "There is only one neurotransmitter in the brain (historically considered but disfavoured by modern QFT analyses) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Neurotransmitters have no role in behaviour or disease (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would imply unphysical infinite or negative observables)",
+        "All neurotransmitters are excitatory (ruled out by experimental constraints from collider and low-energy data) (contradicted by both lattice simulations and dispersive analyses)"
+      ],
+      "correct": 0,
+      "explanation": "The brain uses dozens of neurotransmitters, broadly split into fast point-to-point signalling and slower diffuse modulation. The workhorses of fast transmission are glutamate (the principal excitatory transmitter, via AMPA/NMDA receptors — central to plasticity, but excitotoxic in excess) and GABA (the principal inhibitory transmitter, via GABA-A chloride channels — the target of benzodiazepines, alcohol, and many anaesthetics); their balance shapes all neural circuit dynamics, and its disruption underlies epilepsy. Modulatory systems arise from small nuclei projecting widely and set global brain states: dopamine (substantia nigra/VTA) signals reward-prediction error and motivation and enables movement — its loss causes Parkinson's, its dysregulation features in addiction and schizophrenia; serotonin (raphe nuclei) influences mood, sleep, and appetite — the target of SSRIs; acetylcholine drives the neuromuscular junction (target of nerve agents and myasthenia gravis) and modulates attention/arousal and memory (degenerating in Alzheimer's); noradrenaline (locus coeruleus) governs arousal and the stress response; plus neuropeptides (endorphins, oxytocin) and others. Because these systems control mood, cognition, movement, and reward, they are the principal targets of psychiatric and neurological pharmacology — and of recreational drugs, which hijack the same receptors and transporters."
+    }
+  }
+]

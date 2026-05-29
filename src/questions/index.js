@@ -129,6 +129,14 @@ import aiReinforcementLearning from './ai/reinforcement-learning.json'
 import aiGenerativeModels    from './ai/generative-models.json'
 import aiAlignmentSafety     from './ai/alignment-safety.json'
 import aiEvaluationBenchmarks from './ai/evaluation-benchmarks.json'
+import cellBiology          from './biology/cell-biology.json'
+import molecularBiology      from './biology/molecular-biology.json'
+import genetics              from './biology/genetics.json'
+import evolution             from './biology/evolution.json'
+import neuroscience          from './biology/neuroscience.json'
+import biochemistry          from './biology/biochemistry.json'
+import physiology            from './biology/physiology.json'
+import ecology               from './biology/ecology.json'
 import mechanicsLaws        from './physics/mechanics-laws.json'
 import emLaws               from './physics/em-laws.json'
 import thermoGasLaws        from './physics/thermo-gas-laws.json'
@@ -338,6 +346,14 @@ export const allQuestions = [
   ...opticsWaveLaws,
   ...quantumRules,
   ...atomicSpectralLaws,
+  ...cellBiology,
+  ...molecularBiology,
+  ...genetics,
+  ...evolution,
+  ...neuroscience,
+  ...biochemistry,
+  ...physiology,
+  ...ecology,
 ]
 
 /**

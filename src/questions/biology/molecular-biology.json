@@ -1,0 +1,162 @@
+[
+  {
+    "id": "mol001",
+    "path": [
+      "biology",
+      "molecular-biology"
+    ],
+    "level": "U",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "State the central dogma of molecular biology.",
+    "passive": {
+      "options": [
+        "Genetic information flows DNA → RNA → protein: DNA is replicated and transcribed into RNA, which is translated into protein; reverse transcription (RNA → DNA) occurs in retroviruses, but information does not flow from protein back to nucleic acid",
+        "Information flows protein → RNA → DNA normally (not consistent with the operator product expansion at large momentum) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Proteins directly copy themselves with no nucleic acids (violates basic gauge invariance and Lorentz covariance requirements)",
+        "DNA is translated directly into protein with no RNA (would imply unphysical infinite or negative observables) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "Crick's central dogma (1958) describes the directional flow of sequence information in cells: DNA is replicated (DNA→DNA) and transcribed into RNA (DNA→RNA), and messenger RNA is translated into protein (RNA→protein). The crucial claim is that once information passes into protein it cannot flow back out to nucleic acid — there is no 'protein→nucleic acid' transfer. Reverse transcription (RNA→DNA, discovered in retroviruses like HIV) and RNA replication were later additions that still obey the no-protein-back rule. The dogma frames genes as DNA sequences specifying proteins via the genetic code, and underpins all of molecular genetics, biotechnology (PCR, cloning, sequencing), and medicine. Modern biology enriches it with RNA's many regulatory roles (the 'RNA world', non-coding RNAs) but the core directionality remains."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each molecular process with its description:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Replication",
+          "definition": "Semi-conservative copying of DNA by DNA polymerase; each strand templates a new one"
+        },
+        {
+          "id": "p2",
+          "term": "Transcription",
+          "definition": "RNA polymerase synthesises mRNA from a DNA template strand"
+        },
+        {
+          "id": "p3",
+          "term": "Translation",
+          "definition": "Ribosome reads mRNA codons, tRNAs deliver amino acids, building a polypeptide"
+        },
+        {
+          "id": "p4",
+          "term": "Reverse transcription",
+          "definition": "RNA → DNA by reverse transcriptase; used by retroviruses (HIV) and in lab cDNA synthesis"
+        }
+      ],
+      "explanation": "DNA replication is semi-conservative (Meselson-Stahl): each daughter duplex has one old and one new strand, copied by DNA polymerase with proofreading. Transcription produces mRNA (plus tRNA, rRNA, regulatory RNAs); in eukaryotes the primary transcript is capped, polyadenylated, and spliced. Translation decodes mRNA in triplets at the ribosome. These processes are the universal machinery of gene expression."
+    }
+  },
+  {
+    "id": "mol002",
+    "path": [
+      "biology",
+      "molecular-biology"
+    ],
+    "level": "U",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the structure of DNA and the base-pairing rule?",
+    "passive": {
+      "options": [
+        "A right-handed antiparallel double helix of two sugar-phosphate backbones; bases pair by hydrogen bonds — adenine with thymine (A-T, 2 bonds) and guanine with cytosine (G-C, 3 bonds) — so the strands are complementary (Chargaff's rule, Watson-Crick 1953)",
+        "A single straight chain with random base pairing (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (not consistent with the operator product expansion at large momentum)",
+        "Adenine pairs with guanine, cytosine with thymine (contradicted by both lattice simulations and dispersive analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "The two strands run in the same direction (parallel) (would imply unphysical infinite or negative observables) (historically considered but disfavoured by modern QFT analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Watson and Crick (1953), using Franklin and Wilkins's X-ray diffraction data, deduced the DNA double helix: two antiparallel strands (one 5'→3', the other 3'→5') wound into a right-handed helix, with deoxyribose-phosphate backbones outside and nitrogenous bases paired inside. Complementary base pairing — A with T (two hydrogen bonds), G with C (three) — explains Chargaff's rules (%A=%T, %G=%C) and, crucially, suggests the copying mechanism: each strand templates its complement, so the structure 'immediately suggests a possible copying mechanism for the genetic material'. The sequence of bases encodes genetic information; the major and minor grooves allow proteins to read sequence without unwinding. This structure is the molecular foundation of heredity and the starting point for the entire molecular-biology revolution (sequencing, PCR, genetic engineering)."
+    }
+  },
+  {
+    "id": "mol003",
+    "path": [
+      "biology",
+      "molecular-biology"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does the genetic code translate mRNA into protein?",
+    "passive": {
+      "options": [
+        "Triplets of mRNA bases (codons) each specify one amino acid (or a stop); the code has 64 codons for 20 amino acids — it is degenerate (redundant), nearly universal, non-overlapping, and read from a start codon (AUG) to a stop codon by ribosomes using tRNA adaptors",
+        "Each single base codes for one amino acid (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (historically considered but disfavoured by modern QFT analyses)",
+        "The code is completely unique with one codon per amino acid (ruled out by experimental constraints from collider and low-energy data)",
+        "Codons overlap and are read in both directions simultaneously (violates basic gauge invariance and Lorentz covariance requirements) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "The genetic code maps nucleotide triplets (codons) to amino acids. With four bases read three at a time there are 4^3 = 64 codons specifying 20 standard amino acids plus stop signals, so the code is degenerate (most amino acids have several synonymous codons, often differing in the third 'wobble' position). It is read from a fixed reading frame starting at AUG (methionine), is non-overlapping and commaless, and is nearly universal across life (with minor variants in mitochondria and some organisms) — strong evidence for common descent. Translation uses transfer RNAs as adaptors: each tRNA carries a specific amino acid and bears an anticodon that base-pairs with the mRNA codon at the ribosome, which catalyses peptide-bond formation. Mutations are interpreted through the code: silent (synonymous), missense (changed amino acid), or nonsense (premature stop); frameshifts (insertions/deletions not multiples of three) garble everything downstream. Cracking the code (Nirenberg, Khorana, Holley; Nobel 1968) was a landmark of 20th-century biology."
+    }
+  },
+  {
+    "id": "mol004",
+    "path": [
+      "biology",
+      "molecular-biology"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "How is gene expression regulated?",
+    "passive": {
+      "options": [
+        "At multiple levels: transcriptional control (promoters, enhancers, transcription factors, operons in bacteria), epigenetic modification (DNA methylation, histone marks), RNA processing and stability, translational control, and protein degradation — allowing cells to express the right genes at the right time",
+        "All genes are expressed constantly at the same level (violates basic gauge invariance and Lorentz covariance requirements) (would conflict with renormalisation group flow and cross-section data)",
+        "Regulation occurs only by deleting genes (unsupported by perturbative expansions in the coupling) (historically considered but disfavoured by modern QFT analyses)",
+        "Gene expression cannot be controlled (would imply unphysical infinite or negative observables) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "Although nearly all cells of an organism share the same genome, differential gene expression makes a neuron differ from a liver cell and lets cells respond to signals. Regulation acts at many stages. Transcriptional: cis-regulatory DNA (promoters, enhancers, silencers) is bound by transcription factors; bacteria use operons (e.g. the lac operon — Jacob and Monod's paradigm of induction/repression). Epigenetic: DNA methylation and histone modifications (acetylation, methylation) open or close chromatin without changing sequence, and can be heritable. Post-transcriptional: alternative splicing (one gene, many protein isoforms), mRNA stability, and microRNAs/RNA interference silence or tune transcripts. Translational and post-translational: control of ribosome initiation, and regulated protein degradation (ubiquitin-proteasome). This layered control underlies development (cell differentiation from one genome), homeostasis, environmental responses, and disease (cancer often involves dysregulated expression). It is the basis of cellular identity and the target of much modern medicine and biotechnology."
+    }
+  },
+  {
+    "id": "mol005",
+    "path": [
+      "biology",
+      "molecular-biology"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does PCR amplify DNA, and why is it transformative?",
+    "passive": {
+      "options": [
+        "Polymerase chain reaction cycles denaturation (heat-separate strands), annealing (primers bind target ends), and extension (heat-stable Taq polymerase copies); each cycle doubles the target, giving exponential amplification of a specific DNA region from tiny samples",
+        "PCR sequences DNA directly without copying it (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (ruled out by experimental constraints from collider and low-energy data)",
+        "PCR destroys DNA rather than amplifying it (disagrees with the standard textbook treatment in Peskin-Schroeder) (not consistent with the operator product expansion at large momentum)",
+        "It amplifies all DNA non-specifically and linearly (violates basic gauge invariance and Lorentz covariance requirements) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "The polymerase chain reaction (Mullis, 1983; Nobel 1993) amplifies a chosen DNA segment exponentially in vitro. A reaction contains the template, two short primers flanking the target, free nucleotides, and a thermostable DNA polymerase (Taq, from a hot-spring bacterium, surviving the heat steps). Thermal cycling repeats three steps: denaturation (~95 °C separates the strands), annealing (~50-65 °C lets primers hybridise to their complementary sites), and extension (~72 °C, polymerase synthesises new strands). Because each cycle's products are templates for the next, the target doubles each cycle — ~30 cycles yield ~10^9-fold amplification. PCR's specificity (set by primer design) and sensitivity (from minute or degraded samples) revolutionised molecular biology and beyond: DNA cloning and mutagenesis, forensic identification, paternity and ancestry testing, ancient-DNA studies, prenatal and pathogen diagnostics (e.g. quantitative real-time PCR for viral load, including SARS-CoV-2 testing), and the groundwork for sequencing. Variants (RT-PCR for RNA, qPCR for quantification, digital PCR) extend its reach. PCR is arguably the single most important laboratory technique enabling modern genetics and biotechnology."
+    }
+  },
+  {
+    "id": "mol006",
+    "path": [
+      "biology",
+      "molecular-biology"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does CRISPR-Cas9 enable genome editing?",
+    "passive": {
+      "options": [
+        "A guide RNA directs the Cas9 nuclease to a complementary DNA target (next to a PAM site), where it makes a double-strand cut; the cell's repair (error-prone NHEJ to knock out, or template-directed HDR to edit) then alters the sequence — a programmable, precise editing tool adapted from a bacterial immune system",
+        "It randomly mutates the entire genome with no targeting (not consistent with the operator product expansion at large momentum) (unsupported by perturbative expansions in the coupling)",
+        "It only reads DNA and cannot cut it (contradicted by both lattice simulations and dispersive analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "It works only in bacteria and cannot edit eukaryotes (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "CRISPR-Cas9 (Doudna and Charpentier, Nobel 2021) repurposed a prokaryotic adaptive immune system into a revolutionary genome-editing platform. In bacteria, CRISPR arrays store fragments of past viral DNA and transcribe guide RNAs that direct Cas nucleases to destroy matching invaders. The engineered tool uses a single guide RNA (sgRNA) whose ~20-nucleotide sequence is programmed to match any genomic target lying adjacent to a short PAM motif; the Cas9 protein then creates a double-strand break there. The cell repairs the break by non-homologous end joining (NHEJ, which often introduces small insertions/deletions that disrupt a gene — a knockout) or, if a donor template is supplied, by homology-directed repair (HDR) that writes in precise changes (knock-in/correction). Compared to earlier methods (zinc-finger nucleases, TALENs), CRISPR is cheap, fast, and easily reprogrammed by changing the guide RNA. Derivatives expand its power: catalytically dead dCas9 for gene activation/repression and imaging, base editors and prime editors for precise edits without double-strand breaks, and multiplexed editing. Applications span basic research, agriculture, and therapeutics — including the first approved CRISPR therapy (for sickle-cell disease, 2023). Ethical debates (especially germline editing) accompany its rapid rise."
+    }
+  }
+]
