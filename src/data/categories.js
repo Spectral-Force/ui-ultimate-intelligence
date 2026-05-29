@@ -393,6 +393,27 @@ export const CATEGORIES = [
       { id: 'ecology',          label: 'Ecology' },
     ],
   },
+  {
+    id: 'computer-science',
+    label: 'Computer Science',
+    children: [
+      { id: 'algorithms',          label: 'Algorithms & Complexity' },
+      { id: 'data-structures',     label: 'Data Structures' },
+      { id: 'theory-of-computation', label: 'Theory of Computation' },
+      { id: 'computer-systems',    label: 'Computer Systems' },
+      { id: 'databases',           label: 'Databases' },
+      { id: 'cryptography',        label: 'Cryptography & Security' },
+      {
+        id: 'programming-languages',
+        label: 'Programming Languages',
+        children: [
+          { id: 'python',          label: 'Python' },
+          { id: 'cpp',             label: 'C++' },
+          { id: 'pl-theory',       label: 'Language Theory & Paradigms' },
+        ],
+      },
+    ],
+  },
 ]
 
 export const LEVELS = [

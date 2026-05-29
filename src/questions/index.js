@@ -129,6 +129,15 @@ import aiReinforcementLearning from './ai/reinforcement-learning.json'
 import aiGenerativeModels    from './ai/generative-models.json'
 import aiAlignmentSafety     from './ai/alignment-safety.json'
 import aiEvaluationBenchmarks from './ai/evaluation-benchmarks.json'
+import csAlgorithms         from './cs/algorithms.json'
+import csDataStructures      from './cs/data-structures.json'
+import csTheoryOfComputation from './cs/theory-of-computation.json'
+import csComputerSystems     from './cs/computer-systems.json'
+import csDatabases           from './cs/databases.json'
+import csCryptography        from './cs/cryptography.json'
+import csPython              from './cs/python.json'
+import csCpp                 from './cs/cpp.json'
+import csPlTheory            from './cs/pl-theory.json'
 import realAnalysis         from './mathematics/real-analysis.json'
 import measureTheory         from './mathematics/measure-theory.json'
 import logicSetTheory        from './mathematics/logic-set-theory.json'
@@ -370,6 +379,15 @@ export const allQuestions = [
   ...pointSetTopology,
   ...numericalMethods,
   ...optimisation,
+  ...csAlgorithms,
+  ...csDataStructures,
+  ...csTheoryOfComputation,
+  ...csComputerSystems,
+  ...csDatabases,
+  ...csCryptography,
+  ...csPython,
+  ...csCpp,
+  ...csPlTheory,
 ]
 
 /**

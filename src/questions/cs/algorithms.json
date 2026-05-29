@@ -1,0 +1,162 @@
+[
+  {
+    "id": "alg001cs",
+    "path": [
+      "computer-science",
+      "algorithms"
+    ],
+    "level": "U",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "What is Big-O notation and why is it used?",
+    "passive": {
+      "options": [
+        "An asymptotic upper bound on how an algorithm's running time (or space) grows with input size n, ignoring constants and lower-order terms; e.g. O(n), O(n log n), O(n^2) — letting algorithms be compared by scalability independent of hardware",
+        "The exact number of operations an algorithm performs (unsupported by perturbative expansions in the coupling) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "A measure of how much memory a computer has (contradicted by both lattice simulations and dispersive analyses) (historically considered but disfavoured by modern QFT analyses)",
+        "The programming language an algorithm is written in (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "Big-O notation describes the asymptotic growth rate of an algorithm's resource use (time or space) as the input size n grows large, capturing scalability while abstracting away machine-specific constants and lower-order terms. Formally, f(n) = O(g(n)) means f is eventually bounded above by a constant multiple of g. Common classes, from best to worst: O(1) constant, O(log n) logarithmic (binary search), O(n) linear, O(n log n) (efficient sorting like mergesort), O(n^2) quadratic (naive sorting), O(2^n) exponential, O(n!) factorial. Related notations: Omega (lower bound), Theta (tight bound). The point is to compare algorithms by how they scale, not their speed on a particular machine — an O(n log n) algorithm eventually beats an O(n^2) one regardless of constants, for large enough n. This analysis guides algorithm choice, predicts feasibility (an O(2^n) algorithm is hopeless for n=100), and is fundamental to computer science. One must also distinguish worst-case, average-case, and best-case, and amortised analysis for sequences of operations."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each algorithm/paradigm with its description:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Divide and conquer",
+          "definition": "Split into subproblems, solve recursively, combine; e.g. mergesort, quicksort, FFT"
+        },
+        {
+          "id": "p2",
+          "term": "Greedy algorithm",
+          "definition": "Make locally optimal choices; works when problem has matroid/greedy structure (Huffman, Dijkstra)"
+        },
+        {
+          "id": "p3",
+          "term": "Dynamic programming",
+          "definition": "Solve overlapping subproblems once, store results; optimal substructure (edit distance, knapsack)"
+        },
+        {
+          "id": "p4",
+          "term": "Binary search",
+          "definition": "O(log n) search in a sorted array by repeated halving"
+        }
+      ],
+      "explanation": "Algorithm design paradigms provide reusable strategies: divide-and-conquer (recursion with combining), greedy (locally optimal, when justified), dynamic programming (memoised overlapping subproblems), and others (backtracking, branch-and-bound). Choosing the right paradigm and data structure determines an algorithm's complexity and feasibility."
+    }
+  },
+  {
+    "id": "alg002cs",
+    "path": [
+      "computer-science",
+      "algorithms"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Why can comparison-based sorting be no faster than O(n log n)?",
+    "passive": {
+      "options": [
+        "Any comparison sort corresponds to a decision tree distinguishing all n! orderings; a binary tree with n! leaves has height at least log2(n!) ≈ n log n, so some input forces that many comparisons — a fundamental lower bound met by mergesort and heapsort",
+        "Because computers are too slow to sort faster (historically considered but disfavoured by modern QFT analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Sorting is always exactly O(n) regardless of method (unsupported by perturbative expansions in the coupling) (not consistent with the operator product expansion at large momentum)",
+        "There is no lower bound; any speed is possible (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "This is a classic and elegant lower-bound argument. Any sorting algorithm that works only by comparing pairs of elements can be modelled as a binary decision tree: each internal node is a comparison with two outcomes, and each leaf is one possible permutation of the input. To sort correctly, the tree must have a distinct leaf for every one of the n! possible orderings of n elements. A binary tree with at least n! leaves must have height at least log2(n!), and by Stirling's approximation log2(n!) = Theta(n log n). The height of the tree equals the worst-case number of comparisons, so any comparison-based sort requires Omega(n log n) comparisons in the worst case. This bound is achieved (up to constants) by mergesort and heapsort (always O(n log n)) and on average by quicksort. The result is fundamental: it proves sorting by comparison cannot be done in linear time. The bound is circumvented only by non-comparison sorts that exploit the structure of the keys — counting sort, radix sort, and bucket sort achieve O(n) or O(n + k) by using the actual values (e.g. as array indices) rather than comparing them, at the cost of assumptions about the key range. This separation between comparison and non-comparison models illustrates how lower bounds depend on the computational model assumed."
+    }
+  },
+  {
+    "id": "alg003cs",
+    "path": [
+      "computer-science",
+      "algorithms"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What are the key graph algorithms and what do they solve?",
+    "passive": {
+      "options": [
+        "BFS/DFS (traversal, connectivity), Dijkstra and Bellman-Ford (shortest paths), Prim/Kruskal (minimum spanning tree), topological sort (DAG ordering), and max-flow (Ford-Fulkerson) — fundamental tools for networks, scheduling, and routing",
+        "Graphs have no associated algorithms (contradicted by both lattice simulations and dispersive analyses) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Only sorting algorithms apply to graphs (not consistent with the operator product expansion at large momentum) (historically considered but disfavoured by modern QFT analyses)",
+        "Graph algorithms only draw pictures (disagrees with the standard textbook treatment in Peskin-Schroeder) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "Graph algorithms solve a huge range of practical problems on networks of nodes and edges. Traversal: breadth-first search (BFS, explores level by level, finds shortest paths in unweighted graphs) and depth-first search (DFS, explores deeply, used for connectivity, cycle detection, topological sorting, and strongly-connected components). Shortest paths in weighted graphs: Dijkstra's algorithm (O((V+E) log V) with a heap, requires non-negative weights — used in GPS routing and network protocols) and Bellman-Ford (handles negative weights, detects negative cycles, slower at O(VE)); Floyd-Warshall finds all-pairs shortest paths via dynamic programming. Minimum spanning tree (connect all nodes at least total cost): Prim's and Kruskal's algorithms (both greedy, justified by the cut/cycle properties — Kruskal uses a union-find data structure). Topological sort orders a directed acyclic graph respecting dependencies (build systems, task scheduling). Maximum flow (Ford-Fulkerson / Edmonds-Karp, and the max-flow min-cut theorem) models throughput in networks and underlies bipartite matching and many reductions. These algorithms, combined with the right data structures (adjacency lists, priority queues, union-find), are foundational across routing, logistics, compilers, social-network analysis, and operations research, and exemplify the design paradigms (greedy, dynamic programming, BFS/DFS frameworks) of algorithm design."
+    }
+  },
+  {
+    "id": "alg004cs",
+    "path": [
+      "computer-science",
+      "algorithms"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the P versus NP problem?",
+    "passive": {
+      "options": [
+        "Whether every problem whose solution can be verified quickly (NP) can also be solved quickly (P); P = NP would mean efficient algorithms exist for thousands of hard (NP-complete) problems — believed false but unproven, a Clay Millennium Prize problem",
+        "Whether computers can run two programs at once (ruled out by experimental constraints from collider and low-energy data) (would conflict with renormalisation group flow and cross-section data)",
+        "A proven theorem that P equals NP (violates basic gauge invariance and Lorentz covariance requirements) (would imply unphysical infinite or negative observables)",
+        "A question about programming languages named P and NP (unsupported by perturbative expansions in the coupling) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "P versus NP is the central open problem of theoretical computer science and one of the seven Clay Millennium Prize problems. P is the class of decision problems solvable in polynomial time (efficiently, by a deterministic algorithm). NP (nondeterministic polynomial time) is the class of problems whose candidate solutions can be verified in polynomial time — equivalently, solvable in polynomial time by a nondeterministic machine that could 'guess' a solution. Clearly P ⊆ NP (if you can solve quickly, you can verify quickly). The question is whether the reverse holds: P = NP? A key concept is NP-completeness (Cook-Levin theorem, 1971): the 'hardest' problems in NP, such that if any one were in P then all of NP would be (P = NP). Thousands of important practical problems are NP-complete — Boolean satisfiability (SAT), the travelling salesman (decision version), graph colouring, knapsack, scheduling, protein folding, and many more — all polynomially reducible to one another. So a polynomial algorithm for any single NP-complete problem would efficiently solve them all, revolutionising optimisation, logistics, cryptography (which relies on hardness), and AI. The overwhelming consensus is that P ≠ NP (no such efficient algorithms exist, and these problems are intrinsically hard), but no proof exists despite decades of effort, and the difficulty of even proving lower bounds is itself profound (barriers like relativisation, natural proofs, and algebrization). P vs NP probes the fundamental limits of efficient computation and the relationship between finding and checking solutions."
+    }
+  },
+  {
+    "id": "alg005cs",
+    "path": [
+      "computer-science",
+      "algorithms"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What does NP-completeness mean and why is it useful?",
+    "passive": {
+      "options": [
+        "A problem is NP-complete if it is in NP and every NP problem reduces to it in polynomial time (NP-hard); the Cook-Levin theorem established SAT as the first. Proving a problem NP-complete shows it is among the hardest in NP, justifying the use of heuristics/approximation rather than seeking an exact efficient algorithm",
+        "NP-complete means a problem is easy to solve (unsupported by perturbative expansions in the coupling) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "It is a property only of sorting algorithms (disagrees with the standard textbook treatment in Peskin-Schroeder) (not consistent with the operator product expansion at large momentum)",
+        "NP-completeness guarantees a fast exact algorithm exists (would imply unphysical infinite or negative observables) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "NP-completeness is one of the most practically important concepts in computer science, providing a rigorous way to identify computationally intractable problems. A problem is NP-hard if every problem in NP can be reduced to it in polynomial time (it is 'at least as hard as' everything in NP); it is NP-complete if it is additionally in NP itself. The Cook-Levin theorem (1971) proved Boolean satisfiability (SAT) is NP-complete, giving the first such problem; Karp (1972) then showed 21 classic problems are NP-complete by polynomial reductions, and thousands more have since been added (travelling salesman, graph colouring, clique, vertex cover, knapsack, Hamiltonian cycle, bin packing, many scheduling and layout problems). The key consequence: if any NP-complete problem had a polynomial-time algorithm, then P = NP and all of them would. Since P = NP is believed false, NP-completeness is taken as strong evidence that no efficient exact algorithm exists. Its practical value is enormous: when you can prove a problem is NP-complete (typically by reducing a known NP-complete problem to it), you know to stop searching for a fast exact solution and instead pursue alternatives — approximation algorithms (with provable bounds), heuristics and metaheuristics (simulated annealing, genetic algorithms), exact methods for special cases or small instances (integer programming, SAT solvers that work well in practice despite worst-case hardness), parameterised algorithms, or randomisation. Reductions also reveal deep structural connections between superficially different problems. NP-completeness theory thus turns the daunting question 'is this problem hard?' into a precise, provable classification that guides real-world algorithm design."
+    }
+  },
+  {
+    "id": "alg006cs",
+    "path": [
+      "computer-science",
+      "algorithms"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "What are approximation and randomised algorithms?",
+    "passive": {
+      "options": [
+        "Approximation algorithms efficiently find provably near-optimal solutions to NP-hard optimisation problems (with a guaranteed ratio to the optimum); randomised algorithms use random choices for speed or simplicity (e.g. randomised quicksort, Monte Carlo/Las Vegas methods, primality testing), with performance/correctness holding with high probability",
+        "They always give the exact optimal answer instantly (violates basic gauge invariance and Lorentz covariance requirements) (historically considered but disfavoured by modern QFT analyses)",
+        "They are slower than brute force with no benefit (unsupported by perturbative expansions in the coupling) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Randomness makes algorithms always incorrect (disagrees with the standard textbook treatment in Peskin-Schroeder) (would imply unphysical infinite or negative observables) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "When exact, efficient solutions are unavailable (NP-hard problems) or unnecessary, two powerful approaches relax the requirements. Approximation algorithms run in polynomial time and produce solutions provably within a guaranteed factor of optimal for optimisation problems. The approximation ratio quantifies quality: e.g. a 2-approximation for vertex cover (greedy matching) always returns a cover at most twice the minimum; Christofides' algorithm gives a 1.5-approximation for metric TSP; some problems admit a polynomial-time approximation scheme (PTAS, any desired ratio 1+ε), while others (like general TSP, or MAX-CLIQUE) are provably hard even to approximate (inapproximability results, often via the PCP theorem). This lets one solve intractable problems with rigorous quality guarantees. Randomised algorithms make random choices during execution, often gaining dramatic simplicity or speed. Two flavours: Las Vegas algorithms always give the correct answer but have random running time (randomised quicksort achieves expected O(n log n) regardless of input, avoiding adversarial worst cases; randomised data structures like skip lists and hashing); Monte Carlo algorithms run in bounded time but may err with small, controllable probability (the Miller-Rabin primality test, used in cryptography, declares a number prime with error driven exponentially low by repetition; randomised min-cut, polynomial identity testing). Randomness also enables algorithms that are otherwise hard to derandomise, underlies sublinear and streaming algorithms for massive data, and is central to cryptography and machine learning. Both paradigms reflect a pragmatic shift: trading exactness or determinism for efficiency, with mathematics providing the guarantees (approximation ratios, probability bounds via concentration inequalities) that keep the results trustworthy. They are essential tools for tackling the hard problems that NP-completeness theory identifies as beyond exact efficient solution."
+    }
+  }
+]

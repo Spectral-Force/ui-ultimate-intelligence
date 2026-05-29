@@ -1,0 +1,162 @@
+[
+  {
+    "id": "ds001",
+    "path": [
+      "computer-science",
+      "data-structures"
+    ],
+    "level": "U",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "What is the difference between an array and a linked list?",
+    "passive": {
+      "options": [
+        "An array stores elements contiguously with O(1) indexed access but O(n) insertion/deletion (shifting); a linked list stores nodes with pointers, giving O(1) insertion/deletion at a known position but O(n) access by index and worse cache locality",
+        "They are identical in all respects (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would conflict with renormalisation group flow and cross-section data)",
+        "Linked lists allow O(1) random access by index (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)",
+        "Arrays can only hold numbers (disagrees with the standard textbook treatment in Peskin-Schroeder) (contradicted by both lattice simulations and dispersive analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Arrays and linked lists are the two fundamental linear data structures, embodying a classic time/space trade-off. An array stores elements in contiguous memory, so the address of element i is computed directly — giving O(1) random access by index and excellent cache locality (fast in practice). But inserting or deleting in the middle requires shifting subsequent elements, costing O(n), and a fixed-size array cannot grow (dynamic arrays like C++ vector or Python list amortise growth by doubling capacity, O(1) amortised append). A linked list stores each element in a node holding a pointer to the next (and, for doubly-linked lists, previous) node; nodes can be scattered in memory. This makes insertion/deletion at a known node O(1) (just relink pointers, no shifting) and allows unbounded growth, but accessing the i-th element requires traversing from the head (O(n)), and the pointer-chasing has poor cache performance and per-node memory overhead. The choice depends on the workload: arrays for index-heavy, read-mostly data; linked lists for frequent insertion/deletion at known positions (and as building blocks for stacks, queues, and adjacency lists). This trade-off illustrates the central data-structures principle that the right structure depends on which operations dominate."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each data structure with its key property:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Hash table",
+          "definition": "Average O(1) insert/lookup/delete via a hash function; unordered; collisions handled by chaining/probing"
+        },
+        {
+          "id": "p2",
+          "term": "Balanced BST (e.g. red-black)",
+          "definition": "O(log n) ordered insert/search/delete; keeps keys sorted; supports range queries"
+        },
+        {
+          "id": "p3",
+          "term": "Heap (priority queue)",
+          "definition": "O(log n) insert/extract-min; O(1) peek-min; binary tree with heap property"
+        },
+        {
+          "id": "p4",
+          "term": "Stack / Queue",
+          "definition": "LIFO / FIFO access; O(1) push/pop; built on arrays or linked lists"
+        }
+      ],
+      "explanation": "Each data structure optimises certain operations: hash tables for fast unordered lookup, balanced trees for ordered data and range queries, heaps for priority access, stacks/queues for LIFO/FIFO. Choosing the right structure for the dominant operations is central to efficient algorithm design, and many structures are built by composing simpler ones."
+    }
+  },
+  {
+    "id": "ds002",
+    "path": [
+      "computer-science",
+      "data-structures"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does a hash table achieve average O(1) operations?",
+    "passive": {
+      "options": [
+        "A hash function maps keys to array indices (buckets), so lookup/insert/delete go directly to the right bucket in O(1) on average; collisions (different keys to the same bucket) are resolved by chaining or open addressing, with performance degrading if the load factor grows too high",
+        "It searches every element sequentially (would conflict with renormalisation group flow and cross-section data) (unsupported by perturbative expansions in the coupling)",
+        "It keeps all keys sorted and binary-searches (disagrees with the standard textbook treatment in Peskin-Schroeder) (not consistent with the operator product expansion at large momentum)",
+        "It requires keys to be small integers only (ruled out by experimental constraints from collider and low-energy data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "A hash table (hash map / dictionary) provides expected constant-time insertion, lookup, and deletion by using a hash function to convert a key into an array index. Instead of searching, you compute where an item should be and go there directly. The hash function should distribute keys uniformly across the bucket array to avoid clustering. Collisions — distinct keys hashing to the same bucket — are inevitable (pigeonhole principle) and handled by two main strategies: separate chaining (each bucket holds a linked list/tree of colliding entries) or open addressing (probe for the next free slot, via linear/quadratic probing or double hashing). Performance hinges on the load factor (entries ÷ buckets): kept low (e.g. below ~0.75) with good hashing, operations are O(1) on average; if it grows too high, collisions pile up and operations degrade toward O(n), so tables resize (rehash into a larger array) when the load factor crosses a threshold — an amortised cost. Worst case is O(n) (all keys collide, or under adversarial inputs — mitigated by randomised/universal hashing or switching long chains to balanced trees, as Java's HashMap does). Hash tables trade ordering for speed: they do not support efficient ordered traversal or range queries (use a balanced BST for that). They are among the most used data structures, underpinning dictionaries/maps in every language, database indexing, caching, symbol tables in compilers, and de-duplication. Cryptographic vs non-cryptographic hashing differ in goals (collision-resistance/security vs speed/distribution)."
+    }
+  },
+  {
+    "id": "ds003",
+    "path": [
+      "computer-science",
+      "data-structures"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Why are balanced binary search trees important?",
+    "passive": {
+      "options": [
+        "They keep keys ordered while guaranteeing O(log n) search, insert, and delete by maintaining balance (height ~log n) via rotations (red-black, AVL trees); an unbalanced BST can degrade to a linked list (O(n)), so balancing preserves efficiency and enables ordered traversal and range queries",
+        "They are always slower than linked lists (would imply unphysical infinite or negative observables) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "They cannot store ordered data (historically considered but disfavoured by modern QFT analyses) (contradicted by both lattice simulations and dispersive analyses)",
+        "Balancing makes operations O(n) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "A binary search tree (BST) stores keys so that, at every node, the left subtree holds smaller keys and the right subtree larger ones, enabling search/insert/delete by following comparisons from the root — O(h) where h is the tree height. The catch: if keys are inserted in sorted order, a naive BST degenerates into a chain of height n, making operations O(n) — no better than a list. Balanced BSTs solve this by enforcing an invariant that keeps height O(log n). Red-black trees (used in C++ std::map/std::set, Java TreeMap, the Linux kernel) maintain balance via colour rules and rotations, guaranteeing O(log n) worst-case operations with relatively few rotations on update; AVL trees keep stricter height balance (faster lookups, more rotations on update). Rotations are local O(1) restructurings that rebalance after insertion/deletion. The value of balanced BSTs over hash tables is that they keep data in sorted order, supporting operations hash tables cannot do efficiently: in-order traversal (sorted output), finding minimum/maximum, predecessor/successor, and range queries (all keys in [a,b]). They are foundational for ordered maps/sets, database indexing (B-trees and B+ trees generalise the idea for disk-based storage with high branching factor, the backbone of relational databases and filesystems), and many algorithms. The balanced-BST concept exemplifies how maintaining a structural invariant under updates yields worst-case efficiency guarantees, contrasting with the average-case guarantees of hashing."
+    }
+  },
+  {
+    "id": "ds004",
+    "path": [
+      "computer-science",
+      "data-structures"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is a heap and what is it used for?",
+    "passive": {
+      "options": [
+        "A complete binary tree satisfying the heap property (each parent ≤ its children for a min-heap), giving O(1) access to the minimum and O(log n) insert/extract-min; it implements priority queues and underlies heapsort and Dijkstra's algorithm",
+        "A region of unmanaged memory only (ruled out by experimental constraints from collider and low-energy data) (unsupported by perturbative expansions in the coupling)",
+        "A structure with O(n) access to the minimum (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (contradicted by both lattice simulations and dispersive analyses)",
+        "A sorted array with O(1) insertion anywhere (violates basic gauge invariance and Lorentz covariance requirements) (historically considered but disfavoured by modern QFT analyses)"
+      ],
+      "correct": 0,
+      "explanation": "A (binary) heap is a complete binary tree — every level full except possibly the last, filled left to right — that satisfies the heap property: in a min-heap, every parent's key is less than or equal to its children's (max-heap is the mirror). This means the minimum (or maximum) is always at the root, accessible in O(1). Because the tree is complete, it is stored compactly in an array (children of index i are at 2i+1 and 2i+2), with no pointers needed. Operations: insert (add at the end, then 'sift up' swapping with the parent until the heap property holds, O(log n)) and extract-min (remove the root, move the last element to the root, 'sift down', O(log n)). A heap can be built from an array in O(n) (not O(n log n)) by sifting down from the bottom. Heaps efficiently implement priority queues — collections where you repeatedly remove the highest-priority element — which appear everywhere: Dijkstra's and Prim's algorithms (repeatedly extract the closest/cheapest node), event-driven simulation, task scheduling, bandwidth management, the A* search algorithm, and Huffman coding. Heapsort uses a heap to sort in O(n log n) worst case in place. Generalisations (binomial, Fibonacci, pairing heaps) improve certain operations (Fibonacci heaps give O(1) amortised decrease-key, improving Dijkstra's theoretical bound). The heap exemplifies how a simple structural invariant on a tree yields efficient access to extremal elements, the core requirement of priority-based processing."
+    }
+  },
+  {
+    "id": "ds005",
+    "path": [
+      "computer-science",
+      "data-structures"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is amortised analysis?",
+    "passive": {
+      "options": [
+        "Averaging the cost of an operation over a worst-case sequence of operations, so occasional expensive operations are 'paid for' by many cheap ones; e.g. dynamic-array append is O(1) amortised despite occasional O(n) resizes — analysed by aggregate, accounting, or potential methods",
+        "Measuring only the single most expensive operation (would imply unphysical infinite or negative observables) (ruled out by experimental constraints from collider and low-energy data)",
+        "Ignoring expensive operations entirely (violates basic gauge invariance and Lorentz covariance requirements) (historically considered but disfavoured by modern QFT analyses)",
+        "The same as average-case analysis over random inputs (contradicted by both lattice simulations and dispersive analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "Amortised analysis gives the average cost per operation over a worst-case sequence of operations, providing tighter and more realistic guarantees than worst-case-per-operation analysis when occasional expensive operations are rare and 'subsidised' by many cheap ones. Crucially, it is not the same as average-case analysis (which averages over random inputs with a probability distribution) — amortised analysis makes no probabilistic assumptions; it bounds the total cost of any sequence and divides by the number of operations. The canonical example is the dynamic array (C++ vector, Python list, Java ArrayList): most appends are O(1), but when the array fills it doubles capacity and copies all n elements (O(n)). Yet because doublings happen geometrically rarely, the total cost of n appends is O(n), so each append is O(1) amortised. Three standard techniques formalise this: the aggregate method (bound the total cost of a sequence, then divide); the accounting (banker's) method (charge each cheap operation a little extra 'credit' stored to pay for future expensive ones); and the potential method (define a potential function Phi capturing 'stored energy' in the data structure, with amortised cost = actual cost + change in potential). Amortised bounds are central to many efficient structures: dynamic arrays, splay trees (O(log n) amortised, self-adjusting), Fibonacci heaps (O(1) amortised decrease-key, improving Dijkstra/Prim), union-find with path compression (near-constant inverse-Ackermann amortised), and hash-table resizing. It captures the real cost of using a data structure over its lifetime, and is essential for honestly analysing structures whose individual operations vary widely in cost but whose long-run behaviour is efficient."
+    }
+  },
+  {
+    "id": "ds006",
+    "path": [
+      "computer-science",
+      "data-structures"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What problem does the union-find (disjoint-set) structure solve?",
+    "passive": {
+      "options": [
+        "It maintains a partition of elements into disjoint sets supporting union (merge two sets) and find (which set is x in?); with union by rank and path compression, operations run in near-constant amortised time (inverse Ackermann), powering Kruskal's MST and connectivity queries",
+        "It sorts a list of numbers (violates basic gauge invariance and Lorentz covariance requirements) (not consistent with the operator product expansion at large momentum)",
+        "It stores key-value pairs for fast lookup (historically considered but disfavoured by modern QFT analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "It has no efficient implementation (contradicted by both lattice simulations and dispersive analyses) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "The union-find (disjoint-set union, DSU) data structure maintains a collection of disjoint sets (a partition of elements) and supports two operations: find(x) returns a representative ('root') identifying which set x belongs to, and union(x, y) merges the two sets containing x and y. It answers connectivity questions: are x and y in the same group? Each set is represented as a tree where every node points to a parent and the root identifies the set. Two optimisations make it extraordinarily efficient. Union by rank (or size) always attaches the shorter tree under the taller, keeping trees shallow. Path compression flattens the tree during find by pointing traversed nodes directly at the root, so future queries are faster. With both, a sequence of m operations on n elements runs in O(m · α(n)) where α is the inverse Ackermann function — less than 5 for any conceivable input, effectively constant amortised time (a famous result of Tarjan). Applications: Kruskal's minimum-spanning-tree algorithm (efficiently detect whether adding an edge forms a cycle by checking if endpoints are already connected); detecting connected components in graphs and images (e.g. percolation, image segmentation, flood fill); network connectivity and dynamic equivalence relations; Hindley-Milner type inference unification; and least-common-ancestor and many offline graph algorithms. Union-find is a beautiful example of how simple heuristics (rank + path compression) yield near-optimal amortised performance, and its inverse-Ackermann bound is one of the most striking complexity results in data structures."
+    }
+  }
+]

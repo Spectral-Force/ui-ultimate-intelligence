@@ -1,0 +1,162 @@
+[
+  {
+    "id": "sys001",
+    "path": [
+      "computer-science",
+      "computer-systems"
+    ],
+    "level": "U",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "What is the memory hierarchy and why does it exist?",
+    "passive": {
+      "options": [
+        "Layers of storage trading speed for capacity/cost: registers → L1/L2/L3 cache → RAM → SSD/disk; faster memory is smaller and costlier, so frequently-used data is kept close to the CPU, exploiting locality of reference to bridge the huge CPU-memory speed gap",
+        "All memory has identical speed and size (not consistent with the operator product expansion at large momentum) (would imply unphysical infinite or negative observables)",
+        "Disk is faster than CPU registers (contradicted by both lattice simulations and dispersive analyses) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "The hierarchy exists only to waste space (disagrees with the standard textbook treatment in Peskin-Schroeder) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "The memory hierarchy organises a computer's storage into levels that trade off speed, capacity, and cost per byte. From fastest/smallest/costliest to slowest/largest/cheapest: CPU registers (sub-nanosecond, a few hundred bytes), then on-chip caches L1/L2/L3 (nanoseconds, kilobytes to tens of megabytes), main memory RAM (tens of nanoseconds, gigabytes), and persistent storage SSD/hard disk (microseconds to milliseconds, terabytes), with network/cloud storage beyond. It exists because of a fundamental economic and physical reality: fast memory is expensive and must be small/close to the CPU, while cheap memory is large but slow — and the CPU is far faster than main memory (the 'memory wall'), so without caching the processor would stall constantly waiting for data. The hierarchy works because of locality of reference: temporal locality (recently-used data is likely to be used again soon) and spatial locality (data near recently-used data is likely to be accessed). Caches automatically keep recently/nearby-used data in fast levels, so most accesses hit the fast cache and only occasionally 'miss' down to slower levels. This is largely transparent to programmers but profoundly affects performance — cache-friendly code (sequential access, good data layout, small working sets) can run orders of magnitude faster than cache-hostile code (random access, pointer chasing), which is why arrays often outperform linked structures in practice. Virtual memory extends the hierarchy, using disk as an overflow for RAM (paging). The memory hierarchy is a cornerstone of computer architecture and a key consideration in writing high-performance software."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each systems concept with its role:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Process vs thread",
+          "definition": "Process: isolated program with its own memory; thread: lighter unit sharing the process's memory"
+        },
+        {
+          "id": "p2",
+          "term": "Virtual memory",
+          "definition": "Each process sees a private address space; OS maps pages to physical RAM/disk via page tables"
+        },
+        {
+          "id": "p3",
+          "term": "Scheduler",
+          "definition": "OS component deciding which process/thread runs next on the CPU (time-slicing)"
+        },
+        {
+          "id": "p4",
+          "term": "System call",
+          "definition": "Controlled entry to the OS kernel for privileged operations (I/O, memory, processes)"
+        }
+      ],
+      "explanation": "An operating system manages hardware and provides abstractions: processes/threads (computation), virtual memory (isolation and the illusion of large private memory), scheduling (sharing the CPU), file systems and I/O, and system calls (the user-kernel interface). These abstractions let many programs share a machine safely and efficiently."
+    }
+  },
+  {
+    "id": "sys002",
+    "path": [
+      "computer-science",
+      "computer-systems"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What does an operating system do?",
+    "passive": {
+      "options": [
+        "It manages hardware resources and provides abstractions: process/thread scheduling (CPU sharing), memory management (virtual memory, isolation), file systems, device I/O, and security/permissions — acting as the intermediary between applications and hardware via system calls",
+        "It only displays a graphical desktop (disagrees with the standard textbook treatment in Peskin-Schroeder) (would conflict with renormalisation group flow and cross-section data)",
+        "It is the same as a single application program (would imply unphysical infinite or negative observables) (not consistent with the operator product expansion at large momentum)",
+        "It has no role once a computer boots (contradicted by both lattice simulations and dispersive analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "An operating system (OS) is the software layer between hardware and applications, managing resources and providing clean abstractions so programs need not deal with hardware details and many programs can share a machine safely. Its core responsibilities: (1) Process and thread management — creating, scheduling, and isolating running programs; the scheduler time-slices the CPU among processes (using algorithms balancing fairness, throughput, and responsiveness), and handles context switches, inter-process communication, and synchronisation. (2) Memory management — virtual memory gives each process a private, contiguous-looking address space mapped to physical RAM (and disk, via paging) through page tables and the MMU, providing isolation (one process cannot corrupt another), protection, and the illusion of more memory than physically present. (3) File systems and storage — organising data into files/directories, managing disk space, caching, and journaling for crash consistency. (4) Device and I/O management — device drivers abstract diverse hardware behind uniform interfaces; the OS handles interrupts, buffering, and DMA. (5) Security and protection — user/kernel mode separation (privileged operations only in the kernel), permissions, and access control prevent programs from harming each other or the system. Applications request OS services through system calls (the controlled user-to-kernel interface — e.g. open, read, fork, mmap), trapping into the privileged kernel. The OS also handles booting, networking stacks, and provides higher-level services. Major examples (Linux, Windows, macOS, Android) embody these functions. The OS is what turns raw hardware into a usable, multi-tasking, protected platform — one of the most important pieces of software in any computer, and a rich field combining concurrency, resource allocation, and security."
+    }
+  },
+  {
+    "id": "sys003",
+    "path": [
+      "computer-science",
+      "computer-systems"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does the TCP/IP networking model enable the internet?",
+    "passive": {
+      "options": [
+        "A layered stack: link (physical/Ethernet/WiFi), internet (IP — addressing and routing packets across networks), transport (TCP reliable ordered streams / UDP fast datagrams), and application (HTTP, DNS, etc.); each layer builds on the one below, enabling interoperable global communication",
+        "A single protocol handling everything at once (not consistent with the operator product expansion at large momentum) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "It requires every device to know the whole network (would imply unphysical infinite or negative observables) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "It only works on local networks, not globally (ruled out by experimental constraints from collider and low-energy data) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "The internet works through a layered protocol architecture (the TCP/IP model, a practical relative of the 7-layer OSI model), where each layer provides a service to the one above and relies on the one below, allowing independent evolution and interoperability across wildly heterogeneous hardware. The layers: (1) Link layer — moves frames over a single physical hop (Ethernet, WiFi, fibre), handling local addressing (MAC) and media access. (2) Internet (network) layer — the Internet Protocol (IP) provides global addressing (IPv4/IPv6) and best-effort routing of packets across many interconnected networks; routers forward packets hop by hop toward the destination using routing tables and protocols (BGP between networks), with no per-connection state — the 'narrow waist' that lets any link technology carry any application. (3) Transport layer — adds end-to-end semantics atop unreliable IP: TCP provides reliable, ordered, congestion-controlled byte streams (via sequence numbers, acknowledgements, retransmission, flow and congestion control — the basis of web, email, file transfer), while UDP provides lightweight, fast, connectionless datagrams (for DNS, streaming, gaming, where speed beats reliability). (4) Application layer — protocols applications speak: HTTP/HTTPS (web), DNS (name-to-address resolution), SMTP (email), etc. Key design principles make this scale globally: layering and encapsulation (each layer wraps the layer above's data with its own header), the end-to-end principle (keep the network simple/dumb, put intelligence at the endpoints), packet switching (data split into independently-routed packets sharing links efficiently, vs dedicated circuits), and decentralisation (no central controller; routing is distributed). This architecture — robust, scalable, technology-agnostic, and incrementally deployable — is why a message can traverse dozens of independently-operated networks and diverse media to reach any of billions of devices. It is a triumph of systems design and the foundation of all networked computing."
+    }
+  },
+  {
+    "id": "sys004",
+    "path": [
+      "computer-science",
+      "computer-systems"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is concurrency and why is it challenging?",
+    "passive": {
+      "options": [
+        "Multiple computations making progress at overlapping times (via threads, processes, async); it is hard because shared mutable state leads to race conditions, deadlocks, and subtle non-determinism — requiring synchronisation (locks, semaphores, atomics) carefully to ensure correctness",
+        "Running exactly one instruction at a time, always safe (unsupported by perturbative expansions in the coupling) (historically considered but disfavoured by modern QFT analyses)",
+        "A feature that never causes bugs (violates basic gauge invariance and Lorentz covariance requirements) (not consistent with the operator product expansion at large momentum)",
+        "Identical to running programs sequentially (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "Concurrency is the composition of independently-executing computations that make progress over overlapping time periods — via OS processes, threads within a process (sharing memory), asynchronous tasks/event loops, or distributed nodes. It is increasingly essential because physical limits ended the era of ever-faster single cores (Dennard scaling/clock-speed plateau), so performance now comes from parallelism across multiple cores and machines, and because responsive software must overlap I/O with computation. But concurrency is notoriously difficult, mainly due to shared mutable state. Race conditions occur when the result depends on the unpredictable interleaving of operations on shared data (e.g. two threads incrementing a counter can lose updates because read-modify-write is not atomic). Deadlocks arise when threads wait on each other's locks in a cycle, freezing forever (the dining philosophers problem); related hazards are livelock and starvation. The non-determinism means bugs are often intermittent, timing-dependent, and hard to reproduce or test ('Heisenbugs'). Memory models complicate matters further: compilers and CPUs reorder operations for speed, so without proper synchronisation one thread may not see another's writes in the expected order. Correctness requires careful synchronisation primitives — mutual-exclusion locks (mutexes), semaphores, condition variables, read-write locks, atomic operations, and memory barriers — used to protect critical sections and coordinate, but these add overhead, risk deadlock, and can serialise execution (limiting speedup, per Amdahl's law). Higher-level approaches reduce the danger: message passing and the actor model (no shared state, communicate by sending messages — as in Erlang, Go's channels), immutable data and functional programming, transactional memory, and lock-free/wait-free data structures. Reasoning about concurrent correctness (safety: nothing bad happens; liveness: something good eventually happens) is a deep area drawing on formal methods. Concurrency's combination of necessity (for performance and responsiveness) and treacherous subtlety (non-determinism, races, deadlocks) makes it one of the hardest and most important areas of practical computer systems."
+    }
+  },
+  {
+    "id": "sys005",
+    "path": [
+      "computer-science",
+      "computer-systems"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does virtual memory work?",
+    "passive": {
+      "options": [
+        "The OS and MMU give each process a private virtual address space divided into pages, mapped to physical frames (or disk) via page tables; addresses are translated on the fly (cached in the TLB), enabling isolation, protection, more memory than physically present (paging/swapping), and features like shared/copy-on-write memory",
+        "Programs access physical RAM addresses directly (not consistent with the operator product expansion at large momentum) (contradicted by both lattice simulations and dispersive analyses)",
+        "Virtual memory is a type of cloud storage (would imply unphysical infinite or negative observables) (would conflict with renormalisation group flow and cross-section data)",
+        "Each process can read all other processes' memory freely (ruled out by experimental constraints from collider and low-energy data) (historically considered but disfavoured by modern QFT analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Virtual memory is a foundational OS/hardware abstraction giving each process the illusion of a large, private, contiguous address space, decoupled from the actual physical RAM. It works by dividing the virtual address space into fixed-size pages (typically 4 KB) and physical memory into frames of the same size; a per-process page table maps virtual pages to physical frames. When a program accesses a virtual address, the Memory Management Unit (MMU) hardware translates it to a physical address by looking up the page table — and because this lookup is frequent, recent translations are cached in the Translation Lookaside Buffer (TLB) for speed. This mechanism delivers several crucial benefits. (1) Isolation and protection — each process has its own mapping, so it cannot read or corrupt another's memory (or the kernel's), with per-page permission bits (read/write/execute) enforced by hardware; illegal accesses cause a segmentation fault. (2) The illusion of abundant memory — not all pages need be resident; when memory is full, the OS evicts ('pages out') less-used pages to disk (swap space) and brings them back on demand. A page fault occurs when a program accesses a page not currently in RAM; the OS handler loads it from disk (slow), updates the page table, and resumes — transparently, though excessive paging ('thrashing') destroys performance. (3) Flexibility and features — pages can be shared between processes (shared libraries loaded once), memory-mapped files (treating a file as memory), and copy-on-write (after fork(), parent and child share pages read-only until one writes, then a private copy is made — making process creation cheap). (4) Simplified programming and relocation — programs are written against a uniform virtual layout regardless of where they physically land. Page-replacement algorithms (LRU approximations like the clock algorithm) decide what to evict. Virtual memory is a beautiful example of a hardware-software co-designed abstraction that simultaneously provides protection, the appearance of more memory, and powerful sharing/efficiency features, underpinning all modern multi-tasking operating systems."
+    }
+  },
+  {
+    "id": "sys006",
+    "path": [
+      "computer-science",
+      "computer-systems"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "What are the key challenges and principles of distributed systems?",
+    "passive": {
+      "options": [
+        "Coordinating many networked computers despite partial failures, message delays, and no global clock; principles include the CAP theorem (consistency vs availability under partition), consensus (Paxos/Raft), replication, and eventual consistency — trading off correctness, availability, and performance",
+        "Distributed systems are just one fast computer (would imply unphysical infinite or negative observables) (contradicted by both lattice simulations and dispersive analyses)",
+        "Networks never fail, so coordination is trivial (violates basic gauge invariance and Lorentz covariance requirements) (historically considered but disfavoured by modern QFT analyses)",
+        "There are no trade-offs in distributed design (ruled out by experimental constraints from collider and low-energy data) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "A distributed system is a collection of independent computers that appear to users as a single coherent system, coordinating over a network to achieve scalability, fault tolerance, and geographic distribution beyond any single machine. Its defining difficulty is that the network is unreliable and there is no shared clock or memory: messages can be delayed, reordered, duplicated, or lost; nodes can crash or behave arbitrarily (Byzantine faults); and 'partial failure' (some components fail while others continue) creates situations impossible in a single machine. Key impossibility/trade-off results frame the field. The CAP theorem states that under a network partition, a distributed data store must choose between consistency (all nodes see the same latest data) and availability (every request gets a response) — you cannot have both during a partition, so systems are designed as CP or AP (and tune consistency in practice along a spectrum). The FLP impossibility result shows that consensus cannot be guaranteed in a fully asynchronous system with even one faulty process, motivating practical algorithms that work under realistic timing assumptions. Consensus protocols (Paxos, Raft, and Byzantine-fault-tolerant variants like PBFT, plus blockchain consensus) let nodes agree on a value/log despite failures — the backbone of replicated state machines, distributed databases, and coordination services (e.g. etcd, ZooKeeper). Other core principles and techniques: replication (copies for fault tolerance and read scaling) with consistency models ranging from strong/linearizable to eventual consistency (replicas converge over time, favouring availability — used by systems like Dynamo/Cassandra), the trade-offs captured by PACELC (which extends CAP to also consider latency vs consistency when there is no partition); partitioning/sharding for scale; idempotency and at-least/at-most/exactly-once delivery semantics; vector clocks and logical clocks (Lamport) to order events without a global clock; leader election; and end-to-end fault tolerance via retries, timeouts, and quorums. Designing distributed systems is fundamentally about making principled trade-offs among consistency, availability, latency, and fault tolerance under the harsh reality of unreliable networks and partial failure — challenges that do not exist in single-machine computing and that underpin all large-scale internet services, cloud platforms, and databases."
+    }
+  }
+]

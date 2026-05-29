@@ -1,0 +1,162 @@
+[
+  {
+    "id": "toc001",
+    "path": [
+      "computer-science",
+      "theory-of-computation"
+    ],
+    "level": "P",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "What is a Turing machine and the Church-Turing thesis?",
+    "passive": {
+      "options": [
+        "A Turing machine is an abstract model: a finite-state control reading/writing symbols on an infinite tape; the Church-Turing thesis posits that it captures exactly the intuitive notion of 'effectively computable' — anything algorithmically computable can be computed by a Turing machine (and equivalent models)",
+        "A physical computer built by Turing (not consistent with the operator product expansion at large momentum) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "A model that can solve any problem including undecidable ones (ruled out by experimental constraints from collider and low-energy data) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "A programming language from the 1940s (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "The Turing machine (Turing, 1936) is the foundational abstract model of computation: a tape of cells extending infinitely, a head that reads and writes symbols and moves left/right, and a finite-state control that, based on the current state and symbol read, writes a symbol, moves, and transitions state. Despite its simplicity, it can compute anything any modern computer can (given enough time and tape) — it formalises the notion of 'algorithm' or 'mechanical procedure.' The Church-Turing thesis (named also for Alonzo Church's equivalent lambda calculus) asserts that this model captures precisely the intuitive idea of effective computability: every function that can be computed by any effective/algorithmic procedure can be computed by a Turing machine. It is a thesis, not a theorem, because 'effectively computable' is an informal notion — but it is overwhelmingly supported by the fact that every reasonable model of computation proposed (lambda calculus, general recursive functions, register machines, cellular automata, modern programming languages) has turned out to be exactly equivalent in power (Turing-complete). The thesis underpins all of computability theory: it lets us prove that certain problems are unsolvable by ANY algorithm (since 'algorithm' = Turing machine), establishes the existence of universal machines (one Turing machine can simulate any other — the conceptual basis of the stored-program computer), and frames the limits of computation. Variants like the physical Church-Turing thesis (can physics compute more than a Turing machine?) and the extended thesis (about efficiency, challenged by quantum computing) remain subjects of inquiry."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each automaton/model with the languages it recognises:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Finite automaton (DFA/NFA)",
+          "definition": "Regular languages; described by regular expressions; no memory beyond finite state"
+        },
+        {
+          "id": "p2",
+          "term": "Pushdown automaton",
+          "definition": "Context-free languages; finite control + a stack; parses nested structure"
+        },
+        {
+          "id": "p3",
+          "term": "Turing machine",
+          "definition": "Recursively enumerable languages; full computational power; infinite tape"
+        },
+        {
+          "id": "p4",
+          "term": "Chomsky hierarchy",
+          "definition": "Regular ⊂ context-free ⊂ context-sensitive ⊂ recursively enumerable"
+        }
+      ],
+      "explanation": "The Chomsky hierarchy ranks formal languages by the computational power needed to recognise them, each level matched to an automaton model and grammar type. Finite automata (regular languages) power lexing/regex; pushdown automata (context-free) power parsing; Turing machines sit at the top. This hierarchy connects language theory, automata, and the limits of computation."
+    }
+  },
+  {
+    "id": "toc002",
+    "path": [
+      "computer-science",
+      "theory-of-computation"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the halting problem and why is it undecidable?",
+    "passive": {
+      "options": [
+        "Deciding whether an arbitrary program halts on a given input; Turing proved no algorithm can decide this for all programs, via a diagonalisation/self-reference contradiction — establishing a fundamental, absolute limit on what computation can decide",
+        "Determining how long a program takes, always computable (unsupported by perturbative expansions in the coupling) (would conflict with renormalisation group flow and cross-section data)",
+        "A problem easily solved by running the program (not consistent with the operator product expansion at large momentum) (contradicted by both lattice simulations and dispersive analyses)",
+        "A hardware fault that stops computers (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (violates basic gauge invariance and Lorentz covariance requirements)"
+      ],
+      "correct": 0,
+      "explanation": "The halting problem asks for a general algorithm that, given any program P and input x, decides whether P halts (terminates) or runs forever on x. Turing (1936) proved this is undecidable — no such algorithm can exist. The proof is a beautiful self-referential diagonalisation: suppose a decider H(P, x) exists, returning 'halts' or 'loops.' Construct a program D that takes a program P as input, runs H(P, P), and then does the opposite — if H says P halts on itself, D loops forever; if H says P loops, D halts. Now ask: what does D do on input D? If D halts on D, then by construction (since H(D,D) said 'halts') D loops — contradiction; if D loops on D, then H(D,D) said 'loops,' so D halts — contradiction. Either way is impossible, so H cannot exist. This is the computational analogue of Cantor's diagonal argument and Godel's incompleteness (all use self-reference). The undecidability of halting is not a practical limitation to be overcome with better technology — it is an absolute, mathematical limit: no algorithm, on any hardware, ever, can solve it in general. Its consequences ripple widely: by reductions, many other problems are undecidable too (Rice's theorem: essentially any non-trivial semantic property of programs is undecidable — whether two programs are equivalent, whether a program ever prints 'hello', whether code is dead, whether a program is virus-free). This bounds what compilers, verifiers, and analysis tools can fully automate, forcing approximations, conservative analyses, or restriction to decidable subcases. The halting problem is the cornerstone result delimiting the reach of computation itself."
+    }
+  },
+  {
+    "id": "toc003",
+    "path": [
+      "computer-science",
+      "theory-of-computation"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What are regular languages and finite automata used for?",
+    "passive": {
+      "options": [
+        "Regular languages are recognised by finite automata (DFA/NFA) and described by regular expressions; they handle pattern matching with finite memory — used in lexical analysis (tokenising code), text search, input validation, and network protocols",
+        "They can recognise any language including arbitrary nesting (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "They require unbounded memory (contradicted by both lattice simulations and dispersive analyses) (unsupported by perturbative expansions in the coupling)",
+        "They are unrelated to regular expressions (historically considered but disfavoured by modern QFT analyses) (violates basic gauge invariance and Lorentz covariance requirements)"
+      ],
+      "correct": 0,
+      "explanation": "Regular languages are the simplest level of the Chomsky hierarchy: those recognisable by a finite automaton, a machine with only a fixed, finite amount of memory (its current state). A deterministic finite automaton (DFA) reads input symbol by symbol, transitioning between states, and accepts if it ends in an accepting state; nondeterministic finite automata (NFAs) allow multiple/epsilon transitions but recognise the same class (NFAs convert to DFAs via the subset construction). Crucially, regular languages are exactly those describable by regular expressions (Kleene's theorem), and equivalently by regular grammars. Their power is limited precisely by finite memory: they can recognise patterns like 'strings of a's and b's with an even number of a's' or 'valid email-ish patterns,' but cannot count unboundedly or match nested structure — they cannot recognise balanced parentheses or a^n b^n (proven impossible via the pumping lemma, which exploits the fact that a long enough accepted string must revisit a state, forcing a 'pumpable' loop). Practical uses are pervasive: lexical analysis in compilers (the lexer/scanner tokenises source code using regular expressions, the first phase before parsing); text search and find-replace (grep, editors); input validation (phone numbers, dates, simple formats); protocol and log parsing; and the implementation of regex engines themselves. Because DFAs run in linear time with constant memory, regular-language recognition is extremely efficient. Regular languages illustrate the fundamental theme of theory of computation: matching a class of problems to the minimal computational model (and memory) needed to solve it, with finite automata being the weakest, most efficient, but most limited model."
+    }
+  },
+  {
+    "id": "toc004",
+    "path": [
+      "computer-science",
+      "theory-of-computation"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Why are context-free grammars central to parsing?",
+    "passive": {
+      "options": [
+        "They generate context-free languages (recognised by pushdown automata, which add a stack) capable of describing nested, recursive structure like balanced brackets and arithmetic expressions; programming-language syntax is specified by CFGs and parsed by their associated algorithms (LL, LR)",
+        "They can only describe flat, non-nested patterns (unsupported by perturbative expansions in the coupling) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "They are weaker than regular grammars (would imply unphysical infinite or negative observables) (would conflict with renormalisation group flow and cross-section data)",
+        "They have no role in compilers (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (violates basic gauge invariance and Lorentz covariance requirements)"
+      ],
+      "correct": 0,
+      "explanation": "Context-free grammars (CFGs) sit one level above regular languages in the Chomsky hierarchy and are the workhorse for describing the syntax of programming and many other languages. A CFG consists of production rules that rewrite non-terminal symbols into sequences of terminals and non-terminals (e.g. Expr → Expr + Term | Term; Term → ( Expr ) | number). The key power they add over regular languages is recursion / nesting: a CFG can describe balanced parentheses, matched begin/end blocks, nested function calls, and arithmetic expressions with precedence — structures that finite automata provably cannot handle (no unbounded counting/matching). The matching automaton is the pushdown automaton (PDA), a finite control augmented with a stack, whose unbounded last-in-first-out memory captures nesting depth. This is exactly why CFGs are central to compilers: after lexical analysis (regular languages) tokenises the source, syntax analysis (parsing) uses a CFG to build a parse tree / abstract syntax tree reflecting the program's hierarchical structure. Efficient parsing algorithms exploit grammar subclasses: top-down LL parsers (recursive descent, predictive) and bottom-up LR/LALR parsers (used by yacc/bison and most production compilers) handle deterministic context-free languages in linear time; the general CYK and Earley algorithms parse any CFG (in O(n^3)). CFGs also underpin XML/JSON structure, natural-language syntax (Chomsky introduced them in linguistics), document formats, and domain-specific languages. Their limitations (they cannot enforce context-sensitive rules like 'variables must be declared before use' or type correctness) are handled in later compiler phases (semantic analysis). Context-free grammars thus exemplify matching the right formal-language class — and its automaton/algorithms — to the structural complexity of the problem, here the nested syntax of languages."
+    }
+  },
+  {
+    "id": "toc005",
+    "path": [
+      "computer-science",
+      "theory-of-computation"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "What are complexity classes beyond P and NP?",
+    "passive": {
+      "options": [
+        "A rich hierarchy: PSPACE (polynomial space), EXPTIME, co-NP, the polynomial hierarchy, BPP (randomised), BQP (quantum), L/NL (log space), #P (counting); inclusions like P ⊆ NP ⊆ PSPACE ⊆ EXPTIME are known, but most separations (e.g. P vs NP, P vs PSPACE) remain open",
+        "P and NP are the only complexity classes (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would imply unphysical infinite or negative observables)",
+        "All complexity classes are known to be equal (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)",
+        "Complexity classes are about programming languages (not consistent with the operator product expansion at large momentum) (violates basic gauge invariance and Lorentz covariance requirements)"
+      ],
+      "correct": 0,
+      "explanation": "Computational complexity theory classifies problems by the resources (time, space, randomness, etc.) needed to solve them, forming a rich landscape far beyond P and NP. Key classes: P (polynomial time, 'efficiently solvable'); NP (polynomial-time verifiable); co-NP (complements of NP problems — efficiently verifiable 'no' answers); PSPACE (polynomial memory, regardless of time — captures problems like generalised games and quantified Boolean formulas (QBF), with PSPACE-complete problems); EXPTIME (exponential time, provably strictly larger than P by the time hierarchy theorem); the polynomial hierarchy (PH, an infinite tower of classes generalising NP/co-NP with alternating quantifiers, with NP and co-NP at its first level). Resource-restricted classes: L (logarithmic space) and NL (nondeterministic log space, with NL = co-NL by Immerman-Szelepcsenyi). Randomised classes: BPP (bounded-error probabilistic polynomial time — efficient randomised algorithms; widely believed BPP = P, i.e. randomness does not add power for decision problems), RP, ZPP. Quantum: BQP (bounded-error quantum polynomial time — what quantum computers solve efficiently; contains problems like integer factoring via Shor's algorithm believed outside P, but BQP's exact relation to NP is open and it is not believed to contain NP-complete problems). Counting: #P (counting the number of solutions, e.g. the permanent — Toda's theorem shows #P is surprisingly powerful, PH ⊆ P^#P). The known inclusions form a chain P ⊆ NP ⊆ PH ⊆ PSPACE ⊆ EXPTIME (and L ⊆ NL ⊆ P), but almost all the interesting separations are unproven — we know P ≠ EXPTIME (hierarchy theorem) and L ≠ PSPACE, but cannot prove P ≠ NP, NP ≠ PSPACE, or even P ≠ PSPACE, despite strong beliefs. This web of classes, their complete problems, and the (mostly conjectural) separations between them constitute the structure of computational complexity — a field probing the fundamental resource requirements and ultimate limits of efficient computation."
+    }
+  },
+  {
+    "id": "toc006",
+    "path": [
+      "computer-science",
+      "theory-of-computation"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the significance of reductions in complexity theory?",
+    "passive": {
+      "options": [
+        "A reduction transforms one problem into another efficiently, showing the second is at least as hard as the first; reductions define completeness (hardest problems in a class), spread hardness results, and let a single algorithm or hardness proof apply to whole families of problems",
+        "Reductions make problems disappear (historically considered but disfavoured by modern QFT analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "They are only used to simplify arithmetic (ruled out by experimental constraints from collider and low-energy data) (would conflict with renormalisation group flow and cross-section data)",
+        "Reductions prove all problems are equally easy (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "Reductions are the central technical tool of complexity (and computability) theory — the mechanism for comparing the difficulty of problems. A reduction from problem A to problem B is an efficient transformation (e.g. polynomial-time, or log-space, for complexity; computable, for decidability) that converts any instance of A into an instance of B with the same answer. This shows 'B is at least as hard as A': if you could solve B efficiently, you could solve A efficiently (transform, then solve B). Reductions accomplish several foundational things. (1) They define completeness: a problem is C-complete if it is in class C and every problem in C reduces to it — making it among the hardest in C. The Cook-Levin theorem uses a reduction to show SAT is NP-complete, and thousands of NP-completeness proofs are chains of reductions from known NP-complete problems. (2) They spread hardness: proving your problem is NP-hard (by reducing a known NP-hard problem to it) is the standard way to demonstrate intractability without proving P ≠ NP — you show it is 'as hard as the rest.' (3) They transfer algorithms: a reduction to a solved problem gives a solution to the original (e.g. reducing a scheduling problem to max-flow or linear programming). (4) In computability, reductions (mapping/many-one reductions, Turing reductions) show undecidability: reducing the halting problem to a target problem proves the target undecidable. (5) They structure complexity classes via complete problems that 'capture' a class's full power, enabling the study of class relationships through their representatives. Reductions thus turn the study of individual problems into a unified theory of relative difficulty: instead of analysing thousands of problems separately, we organise them into equivalence classes by reducibility, identify complete problems as canonical hardest representatives, and propagate both algorithms (good news) and hardness (bad news) across entire families at once. They are the connective tissue making complexity and computability coherent theories rather than collections of isolated results."
+    }
+  }
+]
