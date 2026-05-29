@@ -1,0 +1,162 @@
+[
+  {
+    "id": "bond001",
+    "path": [
+      "chemistry",
+      "chemical-bonding"
+    ],
+    "level": "U",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "What are the main types of chemical bonds?",
+    "passive": {
+      "options": [
+        "Ionic (electron transfer between metal and non-metal, electrostatic attraction of ions), covalent (electron sharing between non-metals), and metallic (a 'sea' of delocalised electrons among metal cations); bonding type follows from electronegativity differences and drives properties",
+        "All bonds are identical electron transfers (not consistent with the operator product expansion at large momentum) (ruled out by experimental constraints from collider and low-energy data)",
+        "Only covalent bonds exist in nature (would imply unphysical infinite or negative observables) (contradicted by both lattice simulations and dispersive analyses)",
+        "Bonds form by gravity between atoms (violates basic gauge invariance and Lorentz covariance requirements) (historically considered but disfavoured by modern QFT analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Chemical bonds hold atoms together, and the three principal types arise from how valence electrons are distributed, largely predicted by electronegativity differences. Ionic bonding occurs typically between a metal and a non-metal with a large electronegativity difference: the metal transfers one or more electrons to the non-metal, forming positive and negative ions (cations and anions) held together by strong electrostatic attraction in a regular lattice (e.g. NaCl). Ionic compounds are typically hard, high-melting, brittle, and conduct electricity when molten or dissolved (mobile ions). Covalent bonding occurs between non-metals of similar electronegativity: atoms share pairs of electrons to achieve stable (often octet) configurations (e.g. H₂, H₂O, CH₄). Covalent bonds are directional, forming discrete molecules (or covalent networks like diamond); molecular substances are often low-melting with weak intermolecular forces, while covalent networks are very hard. Metallic bonding occurs among metal atoms: valence electrons are delocalised into a shared 'sea' flowing among a lattice of positive cations, explaining metals' electrical and thermal conductivity, malleability/ductility, and lustre. Most real bonds lie on a continuum between pure ionic and pure covalent (polar covalent bonds have unequal sharing). The driving force in all cases is achieving lower energy, usually by attaining stable noble-gas-like electron configurations (the octet rule as a guide). Bond type and strength determine a substance's structure and properties — melting point, conductivity, hardness, solubility — making bonding the link between atomic electron structure and the macroscopic behaviour of materials."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each bonding concept with its description:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Octet rule",
+          "definition": "Atoms tend to gain/lose/share electrons to attain 8 valence electrons (noble-gas configuration)"
+        },
+        {
+          "id": "p2",
+          "term": "Electronegativity difference",
+          "definition": "Large → ionic, small/moderate → polar covalent, ~zero → nonpolar covalent"
+        },
+        {
+          "id": "p3",
+          "term": "VSEPR theory",
+          "definition": "Electron pairs repel and arrange to minimise repulsion, predicting molecular shapes"
+        },
+        {
+          "id": "p4",
+          "term": "Hybridisation",
+          "definition": "Mixing atomic orbitals (sp, sp², sp³) to form bonding orbitals matching molecular geometry"
+        }
+      ],
+      "explanation": "Bonding theories predict structure and properties: the octet rule and electronegativity guide bond type; VSEPR predicts molecular shapes (linear, trigonal, tetrahedral, etc.) from electron-pair repulsion; valence bond theory uses hybrid orbitals; and molecular orbital theory treats electrons in orbitals spread over the whole molecule, explaining bonding/antibonding and magnetism."
+    }
+  },
+  {
+    "id": "bond002",
+    "path": [
+      "chemistry",
+      "chemical-bonding"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does VSEPR theory predict molecular shapes?",
+    "passive": {
+      "options": [
+        "Valence-shell electron-pair repulsion: electron pairs (bonding and lone) around a central atom arrange to minimise mutual repulsion, giving predictable geometries — linear, trigonal planar, tetrahedral, etc.; lone pairs repel more, distorting angles (e.g. water's bent 104.5°)",
+        "Molecular shape is random and unpredictable (violates basic gauge invariance and Lorentz covariance requirements) (not consistent with the operator product expansion at large momentum)",
+        "All molecules are linear (would conflict with renormalisation group flow and cross-section data) (unsupported by perturbative expansions in the coupling)",
+        "Shape depends only on atomic mass (contradicted by both lattice simulations and dispersive analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "VSEPR (Valence-Shell Electron-Pair Repulsion) theory is a simple, powerful model for predicting the three-dimensional shapes of molecules. Its central idea: the electron pairs (both bonding pairs forming bonds and non-bonding lone pairs) in the valence shell of a central atom repel one another (like charges), so they arrange themselves in space to be as far apart as possible, minimising repulsion — and this geometry of electron domains determines the molecular shape. Counting the number of electron domains (bonds, counting multiple bonds as one domain, plus lone pairs) around the central atom gives the base geometry: 2 domains → linear (180°, e.g. CO₂), 3 → trigonal planar (120°, e.g. BF₃), 4 → tetrahedral (109.5°, e.g. CH₄), 5 → trigonal bipyramidal, 6 → octahedral (90°, e.g. SF₆). Lone pairs complicate this: they occupy more space and repel more strongly than bonding pairs, so they compress bond angles and change the observed molecular shape (which describes the positions of atoms, not lone pairs). Thus water (oxygen with 2 bonds + 2 lone pairs, 4 domains → tetrahedral electron geometry) is bent with a compressed angle of 104.5° (not 109.5°), and ammonia (3 bonds + 1 lone pair) is trigonal pyramidal at ~107°. VSEPR successfully predicts the shapes of most main-group molecules from a simple electron-counting procedure, and molecular shape in turn governs polarity (whether bond dipoles cancel), intermolecular forces, reactivity, and biological function (e.g. why water is polar and a good solvent). It is the standard introductory tool linking Lewis electron-dot structures to real 3D molecular geometry, complemented by more detailed theories (valence bond/hybridisation and molecular orbital theory) for deeper understanding."
+    }
+  },
+  {
+    "id": "bond003",
+    "path": [
+      "chemistry",
+      "chemical-bonding"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What are intermolecular forces and why do they matter?",
+    "passive": {
+      "options": [
+        "Attractions between molecules (not within them): London dispersion (induced dipoles, in all matter), dipole-dipole (polar molecules), and hydrogen bonding (H bonded to N/O/F attracted to a lone pair) — far weaker than chemical bonds, but they govern boiling/melting points, solubility, and biology",
+        "Forces that hold atoms together within a molecule only (violates basic gauge invariance and Lorentz covariance requirements) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Forces stronger than covalent bonds (contradicted by both lattice simulations and dispersive analyses) (ruled out by experimental constraints from collider and low-energy data)",
+        "They have no effect on physical properties (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "Intermolecular forces (IMFs) are attractions between separate molecules (or between different parts of a large molecule), distinct from the intramolecular chemical bonds that hold atoms together within a molecule. Though much weaker than ionic, covalent, or metallic bonds, IMFs are crucial because they determine the physical properties of substances. The main types, in increasing strength: (1) London dispersion forces — present in all atoms and molecules, arising from instantaneous, fluctuating dipoles (temporary uneven electron distributions) that induce dipoles in neighbours; they strengthen with more electrons / larger, more polarisable molecules (explaining why larger noble gases and hydrocarbons have higher boiling points). (2) Dipole-dipole forces — between polar molecules with permanent dipoles, the positive end of one attracting the negative end of another. (3) Hydrogen bonding — a especially strong dipole-dipole interaction when hydrogen is bonded to a small, highly electronegative atom (N, O, or F) and is attracted to a lone pair on another such atom; this is responsible for water's anomalously high boiling point, its high surface tension and heat capacity, ice being less dense than liquid water, and the structure of proteins and DNA (base-pairing). (Ion-dipole forces, e.g. ions dissolving in water, are stronger still.) IMFs govern: boiling and melting points (stronger IMFs → higher), volatility, viscosity, surface tension, and solubility ('like dissolves like' — polar dissolves polar, nonpolar dissolves nonpolar, because solute-solvent IMFs must be comparable to those they replace). In biology, hydrogen bonds and dispersion (van der Waals) forces drive protein folding, the DNA double helix, membrane self-assembly, and molecular recognition. So while IMFs are weak compared to chemical bonds, their collective effect explains why substances are solids, liquids, or gases at given conditions, how they interact and dissolve, and much of the molecular basis of life — making them central to chemistry, materials science, and biology."
+    }
+  },
+  {
+    "id": "bond004",
+    "path": [
+      "chemistry",
+      "chemical-bonding"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the difference between valence bond and molecular orbital theory?",
+    "passive": {
+      "options": [
+        "Valence bond theory describes bonds as localised overlap of atomic (or hybrid) orbitals between two atoms; molecular orbital theory combines atomic orbitals into delocalised molecular orbitals spread over the whole molecule (bonding/antibonding), better explaining delocalisation, bond order, and magnetism (e.g. O₂'s paramagnetism)",
+        "They are the same theory with different names (would conflict with renormalisation group flow and cross-section data) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Both treat electrons as fixed point charges (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (contradicted by both lattice simulations and dispersive analyses)",
+        "Molecular orbital theory cannot explain any real molecule (disagrees with the standard textbook treatment in Peskin-Schroeder) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "Valence bond (VB) theory and molecular orbital (MO) theory are the two major quantum-mechanical models of covalent bonding, with complementary strengths. Valence bond theory (Heitler-London, Pauling) views a covalent bond as the localised overlap of atomic orbitals from two atoms, each contributing an electron to a shared pair concentrated between the two nuclei. To match observed molecular geometries, VB theory invokes hybridisation — mixing atomic orbitals on an atom to form equivalent hybrid orbitals (sp linear, sp² trigonal planar, sp³ tetrahedral) that point toward the bonded atoms — and distinguishes sigma bonds (head-on overlap, along the bond axis) from pi bonds (sideways p-orbital overlap, in double/triple bonds). VB theory is intuitive, aligns with Lewis structures and VSEPR shapes, and handles localised bonding and resonance well. Molecular orbital theory takes a different, more delocalised view: atomic orbitals from all atoms combine (linear combination of atomic orbitals, LCAO) to form molecular orbitals that extend over the entire molecule, each holding up to two electrons. Combining orbitals produces bonding MOs (lower energy, electron density between nuclei) and antibonding MOs (higher energy, node between nuclei); filling them per Aufbau/Pauli/Hund gives the bond order = (bonding − antibonding electrons)/2, predicting bond strength and whether a molecule is even stable. MO theory's advantages: it correctly predicts the paramagnetism of O₂ (two unpaired electrons in antibonding π* orbitals — which VB/Lewis structures fail to explain), the existence of odd-electron species and fractional bond orders, the delocalisation in conjugated systems and aromatic rings (like benzene) and metals, and electronic spectra. The two theories are not contradictory but different approximations of the same quantum reality (and can be reconciled); in practice, VB/hybridisation gives an intuitive, localised picture of structure and geometry useful in organic chemistry, while MO theory gives a more accurate, delocalised picture essential for magnetism, spectroscopy, conjugation, and computational chemistry. Both are rooted in solving the Schrödinger equation for electrons in molecules, the foundation of modern bonding theory."
+    }
+  },
+  {
+    "id": "bond005",
+    "path": [
+      "chemistry",
+      "chemical-bonding"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Why is benzene's delocalisation (aromaticity) so stabilising?",
+    "passive": {
+      "options": [
+        "Benzene's six p electrons are delocalised over the ring in molecular orbitals shared by all carbons, lowering energy below that of three isolated double bonds (resonance/aromatic stabilisation); aromaticity (planar, cyclic, conjugated, 4n+2 π electrons — Hückel's rule) confers special stability and distinctive reactivity",
+        "Benzene has three fixed alternating double bonds with no delocalisation (violates basic gauge invariance and Lorentz covariance requirements) (ruled out by experimental constraints from collider and low-energy data)",
+        "Delocalisation raises the molecule's energy (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (contradicted by both lattice simulations and dispersive analyses)",
+        "Aromaticity makes benzene extremely reactive like an alkene (not consistent with the operator product expansion at large momentum) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "Benzene (C₆H₆) is the archetype of aromaticity, a special stability arising from electron delocalisation in cyclic conjugated systems. A naive Lewis structure draws benzene as a six-membered ring with three alternating single and double bonds (cyclohexatriene), but this is misleading: experimentally, all six carbon-carbon bonds are identical in length (between single and double bond lengths), the molecule is a perfect planar hexagon, and it is far more stable and far less reactive than three isolated alkene double bonds would predict. The explanation is delocalisation: each carbon is sp² hybridised and contributes one electron in an unhybridised p orbital perpendicular to the ring; these six p orbitals overlap all the way around the ring, combining (in molecular orbital terms) into delocalised π molecular orbitals shared by all six carbons, so the six π electrons are spread over the entire ring rather than localised in three double bonds. This delocalisation lowers the total electronic energy substantially below that of the hypothetical localised structure — the difference is the resonance (aromatic stabilisation) energy (~150 kJ/mol for benzene), measurable via heats of hydrogenation. The conditions for aromaticity are captured by Hückel's rule: a molecule (or ion) is aromatic if it is cyclic, planar, fully conjugated (continuous overlapping p orbitals around the ring), and contains 4n+2 π electrons (n = 0, 1, 2... — so 2, 6, 10... electrons), benzene having 6 (n=1). Systems with 4n π electrons are anti-aromatic (destabilised). Aromatic stabilisation profoundly affects chemistry: aromatic compounds resist addition reactions (which would break the delocalised system) and instead undergo electrophilic aromatic substitution (preserving the ring), and aromaticity governs the stability and reactivity of vast classes of molecules — benzene derivatives, polycyclic aromatics, heterocycles (pyridine, the nucleobases of DNA), and many drugs and dyes. Delocalisation/aromaticity is a beautiful demonstration of how the quantum sharing of electrons over multiple atoms (beyond simple two-atom bonds) confers stability and dictates the behaviour of an enormous and important part of organic and biological chemistry."
+    }
+  },
+  {
+    "id": "bond006",
+    "path": [
+      "chemistry",
+      "chemical-bonding"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does hydrogen bonding shape the properties of water and biomolecules?",
+    "passive": {
+      "options": [
+        "Each water molecule can form up to four hydrogen bonds (O–H...O), giving water its high boiling point, high heat capacity, surface tension, and ice's lower density; in biology, hydrogen bonds enable DNA base-pairing, protein secondary structure (helices/sheets), and molecular recognition",
+        "Hydrogen bonds are stronger than covalent bonds and rare (would conflict with renormalisation group flow and cross-section data) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Water has no special properties from hydrogen bonding (historically considered but disfavoured by modern QFT analyses) (not consistent with the operator product expansion at large momentum)",
+        "Hydrogen bonding occurs only in metals (would imply unphysical infinite or negative observables) (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "Hydrogen bonding is a particularly strong type of intermolecular (or intramolecular) attraction that occurs when a hydrogen atom covalently bonded to a small, highly electronegative atom (nitrogen, oxygen, or fluorine) is attracted to a lone pair of electrons on another electronegative atom. Though much weaker than a covalent bond (~5-30 kJ/mol vs ~400), it is far stronger than ordinary dipole-dipole or dispersion forces, and its consequences are enormous. In water, each molecule has two O–H bonds (hydrogen-bond donors) and two lone pairs on oxygen (acceptors), so it can form up to four hydrogen bonds with neighbours, creating an extensive, dynamic 3D network. This network explains water's remarkable, life-enabling anomalies: an unusually high boiling point (100°C, vs the much lower value expected for so small a molecule — H₂O would boil well below 0°C without H-bonding), high specific heat capacity and heat of vaporisation (moderating climate and body temperature), high surface tension (supporting capillary action and small insects), excellent solvent power for polar/ionic substances ('the universal solvent'), and — uniquely — the fact that ice is less dense than liquid water (the open hydrogen-bonded lattice of ice spaces molecules farther apart, so ice floats, insulating water bodies and enabling aquatic life to survive winters). In biology, hydrogen bonding is structurally decisive: it holds the two strands of the DNA double helix together through specific complementary base-pairing (adenine-thymine with two H-bonds, guanine-cytosine with three), encoding the fidelity of genetic information and allowing strands to be unzipped for replication and transcription; it stabilises protein secondary structures (the alpha-helix and beta-sheet are held by regular hydrogen bonds along the peptide backbone) and contributes to tertiary folding and enzyme-substrate/molecular recognition; and it underlies the behaviour of carbohydrates, the action of many drugs, and the self-assembly of biological membranes (alongside the hydrophobic effect). Hydrogen bonding thus exemplifies how a relatively modest intermolecular force, by virtue of its directionality, specificity, and ability to form extensive networks, governs the physical chemistry of water and the molecular architecture of life — arguably making it the single most important intermolecular interaction for biology and one of the most consequential in all of chemistry."
+    }
+  }
+]

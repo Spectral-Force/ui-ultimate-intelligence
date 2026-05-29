@@ -1,0 +1,162 @@
+[
+  {
+    "id": "thm001",
+    "path": [
+      "chemistry",
+      "thermochemistry"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "State Hess's law and why it is useful.",
+    "passive": {
+      "options": [
+        "The total enthalpy change of a reaction is the same regardless of the pathway taken (because enthalpy is a state function), so reactions can be added/subtracted like equations to find ΔH for processes that are hard to measure directly",
+        "Enthalpy change depends on the route taken (unsupported by perturbative expansions in the coupling) (would conflict with renormalisation group flow and cross-section data)",
+        "Energy is created along longer reaction paths (not consistent with the operator product expansion at large momentum) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "It applies only to gases (ruled out by experimental constraints from collider and low-energy data) (contradicted by both lattice simulations and dispersive analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Hess's law states that the total enthalpy change (ΔH) for a chemical reaction is independent of the route by which the reaction occurs — it depends only on the initial and final states, not the pathway. This follows directly from enthalpy being a state function (a property determined by the current state of the system, not its history), which in turn rests on the first law of thermodynamics (energy conservation). The practical power of Hess's law is that it lets chemists calculate enthalpy changes for reactions that are difficult or impossible to measure directly. If a target reaction can be expressed as the sum of a series of other reactions whose ΔH values are known, then the target ΔH is simply the sum of those known values (with reactions reversed → sign flipped, and multiplied → ΔH scaled accordingly). For example, the enthalpy of formation of CO (which is hard to measure cleanly because carbon also burns to CO₂) can be obtained by combining the easily-measured combustion enthalpies of C→CO₂ and CO→CO₂. Equivalently, ΔH_reaction = Σ ΔH_f(products) − Σ ΔH_f(reactants) using tabulated standard enthalpies of formation, and Born-Haber cycles apply the same principle to lattice energies of ionic compounds. Hess's law is foundational to thermochemistry, enabling the construction of vast tables of thermodynamic data and the prediction of reaction energetics throughout chemistry, and it beautifully illustrates the consequences of energy conservation and state functions."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each thermodynamic quantity with its meaning:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Enthalpy (H)",
+          "definition": "Heat content at constant pressure; ΔH<0 exothermic (releases heat), ΔH>0 endothermic"
+        },
+        {
+          "id": "p2",
+          "term": "Entropy (S)",
+          "definition": "Measure of disorder/number of microstates; tends to increase (2nd law)"
+        },
+        {
+          "id": "p3",
+          "term": "Gibbs free energy (G)",
+          "definition": "G = H − TS; ΔG<0 means a reaction is spontaneous at constant T, P"
+        },
+        {
+          "id": "p4",
+          "term": "Activation energy",
+          "definition": "Energy barrier reactants must overcome; sets reaction rate (kinetics, not thermodynamics)"
+        }
+      ],
+      "explanation": "Thermochemistry applies thermodynamics to reactions. Enthalpy (heat), entropy (disorder), and their combination in Gibbs free energy (ΔG = ΔH − TΔS) determine whether a reaction is spontaneous and how far it proceeds (equilibrium). Crucially, thermodynamics tells you if and how far, while kinetics (activation energy) tells you how fast."
+    }
+  },
+  {
+    "id": "thm002",
+    "path": [
+      "chemistry",
+      "thermochemistry"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What determines whether a reaction is spontaneous?",
+    "passive": {
+      "options": [
+        "The sign of the Gibbs free energy change: ΔG = ΔH − TΔS; ΔG < 0 means spontaneous (favourable) at constant temperature and pressure — balancing the enthalpy change (heat) against the temperature-weighted entropy change (disorder)",
+        "Only whether the reaction releases heat (ΔH < 0) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Only whether entropy increases (contradicted by both lattice simulations and dispersive analyses) (would imply unphysical infinite or negative observables)",
+        "Spontaneity cannot be predicted (unsupported by perturbative expansions in the coupling) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "Whether a chemical (or physical) process occurs spontaneously — proceeds without continuous external input — is governed by the Gibbs free energy change ΔG, defined as ΔG = ΔH − TΔS (at constant temperature T and pressure P). A process is thermodynamically spontaneous when ΔG < 0, at equilibrium when ΔG = 0, and non-spontaneous (the reverse is spontaneous) when ΔG > 0. This single criterion elegantly combines two competing drives. The enthalpy term ΔH reflects the heat exchanged: exothermic reactions (ΔH < 0, releasing heat, often forming stronger bonds) tend to favour spontaneity. The entropy term −TΔS reflects the change in disorder/dispersal of energy and matter: reactions that increase entropy (ΔS > 0, more microstates — e.g. producing more gas molecules, mixing, melting) are favoured, in line with the second law of thermodynamics (the entropy of the universe tends to increase). The temperature T weights the entropy term, so temperature can determine spontaneity when ΔH and ΔS oppose each other: a reaction that is endothermic (ΔH > 0, unfavourable) but entropy-increasing (ΔS > 0) becomes spontaneous only above a threshold temperature where TΔS exceeds ΔH (e.g. melting, vaporisation); conversely an exothermic, entropy-decreasing reaction is spontaneous only below a certain temperature. The four sign combinations of ΔH and ΔS thus give: always spontaneous (ΔH<0, ΔS>0), never spontaneous (ΔH>0, ΔS<0), or temperature-dependent (the mixed cases). Crucially, 'spontaneous' is a thermodynamic statement about direction and feasibility, not speed — a spontaneous reaction may be infinitesimally slow if it has a high activation-energy barrier (kinetics), like diamond's spontaneous-but-imperceptible conversion to graphite. ΔG also connects to the equilibrium constant (ΔG° = −RT ln K) and to the maximum useful (non-expansion) work obtainable. Gibbs free energy is therefore the master criterion of chemical thermodynamics, unifying heat, disorder, and temperature to predict the direction and extent of chemical change."
+    }
+  },
+  {
+    "id": "thm003",
+    "path": [
+      "chemistry",
+      "thermochemistry"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the difference between endothermic and exothermic reactions?",
+    "passive": {
+      "options": [
+        "Exothermic reactions release energy to the surroundings (ΔH < 0, e.g. combustion), often feeling warm; endothermic reactions absorb energy from the surroundings (ΔH > 0, e.g. photosynthesis, dissolving some salts), often feeling cold — reflecting whether product bonds are more or less stable than reactant bonds",
+        "Both release equal amounts of heat (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Endothermic reactions release heat; exothermic absorb it (not consistent with the operator product expansion at large momentum) (ruled out by experimental constraints from collider and low-energy data)",
+        "Neither involves any energy change (violates basic gauge invariance and Lorentz covariance requirements) (historically considered but disfavoured by modern QFT analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Chemical reactions involve breaking bonds in the reactants (which requires energy input) and forming bonds in the products (which releases energy); the net energy change determines whether a reaction is exothermic or endothermic. Exothermic reactions release energy to the surroundings, having a negative enthalpy change (ΔH < 0): the energy released by forming the product bonds exceeds the energy needed to break the reactant bonds, so the products are at lower energy and the excess is released, usually as heat (the surroundings warm up). Examples: combustion (burning fuels), respiration, neutralisation of acids and bases, and most explosions. Endothermic reactions absorb energy from the surroundings, with a positive enthalpy change (ΔH > 0): breaking the reactant bonds costs more energy than is recovered forming product bonds, so energy is taken in and the products are at higher energy (the surroundings cool down — hence cold packs). Examples: photosynthesis (absorbing light energy to build glucose), thermal decomposition (e.g. heating calcium carbonate), the dissolution of some salts like ammonium nitrate, and electrolysis. On an energy profile diagram, exothermic reactions show products below reactants (energy released), endothermic show products above (energy absorbed). The magnitude and sign of ΔH come from the difference in bond energies and, more fundamentally, the relative stabilities of reactants and products. Importantly, the sign of ΔH alone does not determine spontaneity — that requires Gibbs free energy ΔG = ΔH − TΔS, which also accounts for entropy and temperature (so some endothermic reactions are spontaneous if they sufficiently increase disorder). And ΔH is independent of pathway (Hess's law). The endothermic/exothermic distinction is fundamental to understanding energy flow in chemical and biological processes, fuel and energy technologies, and the heat effects that accompany essentially all chemical change."
+    }
+  },
+  {
+    "id": "thm004",
+    "path": [
+      "chemistry",
+      "thermochemistry"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is entropy and how does the second law apply to chemistry?",
+    "passive": {
+      "options": [
+        "Entropy (S) measures the dispersal of energy/matter among accessible microstates (disorder); the second law says the entropy of the universe (system + surroundings) increases in any spontaneous process — chemical reactions are driven partly by increasing total entropy",
+        "Entropy measures the total mass of a system (not consistent with the operator product expansion at large momentum) (historically considered but disfavoured by modern QFT analyses)",
+        "The second law says entropy always decreases (disagrees with the standard textbook treatment in Peskin-Schroeder) (ruled out by experimental constraints from collider and low-energy data)",
+        "Entropy is irrelevant to chemical reactions (would conflict with renormalisation group flow and cross-section data) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Entropy (S) is a thermodynamic state function measuring the degree of dispersal of energy and matter in a system — quantitatively, it is related to the number of accessible microstates W by Boltzmann's equation S = k_B ln W, so more ways to arrange the particles and energy means higher entropy. Loosely, it captures 'disorder' or the spreading-out of energy. The second law of thermodynamics states that the total entropy of an isolated system (or the universe = system + surroundings) never decreases in any real process and increases for spontaneous (irreversible) processes; only idealised reversible processes keep it constant. This gives a fundamental directionality to nature — the 'arrow of time.' In chemistry, entropy changes drive reactions alongside enthalpy. Reactions tend to be favoured when the system's entropy increases (ΔS_system > 0): producing more gas molecules from fewer, dissolving solids, mixing, phase changes from solid→liquid→gas, and increasing the number of particles all raise entropy. But spontaneity is governed by the total entropy of the universe, ΔS_universe = ΔS_system + ΔS_surroundings ≥ 0. The surroundings' entropy change depends on heat exchanged: an exothermic reaction releases heat to the surroundings, raising their entropy (ΔS_surroundings = −ΔH/T), which is why many exothermic reactions are spontaneous even if they decrease the system's own entropy. Combining these is exactly how the Gibbs free energy arises: ΔG = ΔH − TΔS_system, and ΔG < 0 (spontaneity) is mathematically equivalent to ΔS_universe > 0 — so minimising Gibbs free energy of the system is the same as maximising the entropy of the universe. The second law thus explains why heat flows hot→cold, why mixing is irreversible, why perpetual-motion machines are impossible, and why chemical systems evolve toward equilibrium (the state of maximum total entropy / minimum free energy). Far from being merely 'disorder,' entropy is a precise, central quantity linking the microscopic statistics of particles to the macroscopic direction of chemical and physical change, and the second law is one of the most fundamental and far-reaching principles in all of science."
+    }
+  },
+  {
+    "id": "thm005",
+    "path": [
+      "chemistry",
+      "thermochemistry"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does Gibbs free energy relate to the equilibrium constant?",
+    "passive": {
+      "options": [
+        "ΔG° = −RT ln K: a large negative standard free-energy change gives a large equilibrium constant (products favoured), while the actual ΔG = ΔG° + RT ln Q drives the reaction toward equilibrium (where ΔG = 0 and Q = K) — linking thermodynamics to the position of equilibrium",
+        "Free energy and equilibrium are unrelated (unsupported by perturbative expansions in the coupling) (would conflict with renormalisation group flow and cross-section data)",
+        "K depends only on temperature, never on ΔG (violates basic gauge invariance and Lorentz covariance requirements) (not consistent with the operator product expansion at large momentum)",
+        "ΔG° = +RT ln K, with the opposite sign (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "There is a fundamental, quantitative link between thermodynamics (free energy) and the position of chemical equilibrium, expressed by ΔG° = −RT ln K, where ΔG° is the standard Gibbs free-energy change of the reaction, R the gas constant, T the absolute temperature, and K the equilibrium constant. This equation says that a reaction with a large negative ΔG° (strongly thermodynamically favourable) has a large K (equilibrium lies far toward products), while a positive ΔG° gives a small K (reactants favoured), and ΔG° = 0 corresponds to K = 1. More generally, the free-energy change under any (non-standard) conditions is ΔG = ΔG° + RT ln Q, where Q is the reaction quotient (the same expression as K but using current, not equilibrium, concentrations/pressures). This reveals the driving force: when Q < K, ΔG < 0 and the reaction proceeds forward (toward products); when Q > K, ΔG > 0 and it runs backward; and at equilibrium Q = K, ΔG = 0, and there is no net change — the system has minimised its Gibbs free energy. So the reaction always moves spontaneously toward the equilibrium state. Combining with ΔG° = ΔH° − TΔS° gives the van 't Hoff equation describing how K varies with temperature (ln K = −ΔH°/RT + ΔS°/R): for an exothermic reaction (ΔH° < 0), K decreases as temperature rises (consistent with Le Chatelier's principle — heating shifts equilibrium toward reactants), while for an endothermic reaction K increases with temperature. This framework unifies the thermodynamic feasibility of a reaction (ΔG°, ΔH°, ΔS°) with its measurable equilibrium position (K) and its response to changing conditions, and underlies the prediction and control of yields in chemical synthesis, the behaviour of biochemical reactions (coupled reactions, ATP energetics), solubility and acid-base equilibria, and electrochemical cell potentials (via ΔG° = −nFE°). It is one of the cornerstones connecting chemical thermodynamics to practical equilibrium chemistry."
+    }
+  },
+  {
+    "id": "thm006",
+    "path": [
+      "chemistry",
+      "thermochemistry"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Why can a reaction be thermodynamically favourable yet not occur observably?",
+    "passive": {
+      "options": [
+        "Thermodynamics (ΔG) determines whether a reaction is favourable and its equilibrium position, but not its rate; a large activation-energy barrier can make a spontaneous reaction immeasurably slow (kinetic control) — e.g. diamond→graphite, or fuel-air mixtures stable until ignited",
+        "Thermodynamics directly determines reaction speed (ruled out by experimental constraints from collider and low-energy data) (would conflict with renormalisation group flow and cross-section data)",
+        "Favourable reactions always occur instantly (violates basic gauge invariance and Lorentz covariance requirements) (would imply unphysical infinite or negative observables)",
+        "Kinetics and thermodynamics are the same thing (historically considered but disfavoured by modern QFT analyses) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "This question highlights the crucial and often-misunderstood distinction between thermodynamics and kinetics in chemistry. Thermodynamics (through the Gibbs free energy change ΔG) tells us whether a reaction is favourable — whether it can occur spontaneously and where its equilibrium lies — but it says nothing about how fast it will happen. Kinetics governs the rate, which depends on the activation energy (Ea), the energy barrier that reactants must surmount to reach the transition state before they can become products. A reaction can have a large negative ΔG (highly favourable, products far more stable than reactants) yet a very high activation barrier, making it immeasurably slow at ordinary temperatures — the reactants are thermodynamically unstable but kinetically stable (metastable). Classic examples: diamond is thermodynamically less stable than graphite at room conditions, so diamond should spontaneously convert to graphite (ΔG < 0), but the activation barrier for rearranging the carbon lattice is so enormous that the conversion takes geological timescales — 'diamonds are forever' kinetically. A mixture of hydrogen and oxygen (or petrol vapour and air) is thermodynamically primed to react explosively to water (very negative ΔG), yet sits indefinitely stable at room temperature because the activation energy is high; a spark or catalyst provides the energy/pathway to overcome the barrier, and then the reaction proceeds. Many fuels, foods, and even living organisms exist in thermodynamically unstable but kinetically trapped states. The rate depends on Ea via the Arrhenius equation (k = A·e^(−Ea/RT)), so raising temperature or — importantly — adding a catalyst (which lowers Ea by providing an alternative pathway, without changing ΔG or the equilibrium position) can make a favourable-but-slow reaction proceed at a useful rate. This is why catalysts are central to industry and biology (enzymes). The key conceptual lesson: thermodynamics answers 'will it happen and how far?' while kinetics answers 'how fast?' — and a reaction needs to be both thermodynamically favourable and kinetically accessible to be observed. Confusing the two is a common error; understanding their independence is essential to predicting and controlling chemical reactions."
+    }
+  }
+]

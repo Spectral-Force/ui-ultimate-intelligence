@@ -1,0 +1,162 @@
+[
+  {
+    "id": "atm001",
+    "path": [
+      "chemistry",
+      "atomic-structure"
+    ],
+    "level": "U",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "How are electrons arranged in atoms (electron configuration)?",
+    "passive": {
+      "options": [
+        "Electrons fill orbitals (s, p, d, f) in order of increasing energy following the Aufbau principle, the Pauli exclusion principle (max 2 per orbital, opposite spins), and Hund's rule (singly fill degenerate orbitals first) — giving configurations like 1s² 2s² 2p⁶ that determine chemical behaviour",
+        "Electrons orbit randomly with no structure (contradicted by both lattice simulations and dispersive analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "All electrons occupy the lowest single orbital together (would conflict with renormalisation group flow and cross-section data) (ruled out by experimental constraints from collider and low-energy data)",
+        "Electron arrangement has no effect on chemistry (violates basic gauge invariance and Lorentz covariance requirements) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Electron configuration describes how an atom's electrons are distributed among orbitals — regions of space (s spherical, p dumbbell-shaped, d and f more complex) defined by quantum numbers from solving the Schrödinger equation. Three rules govern the filling. The Aufbau ('building-up') principle: electrons occupy the lowest-energy available orbitals first, following the approximate energy order (1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, ... — the 4s-before-3d ordering, by the Madelung n+l rule, explains the transition metals). The Pauli exclusion principle: no two electrons can have identical quantum numbers, so each orbital holds at most two electrons with opposite spins. Hund's rule: within a set of equal-energy (degenerate) orbitals, electrons singly occupy each before pairing up, with parallel spins, minimising repulsion. The result is configurations like oxygen's 1s² 2s² 2p⁴. Crucially, it is the valence (outermost) electrons that determine an element's chemical behaviour — bonding, reactivity, and position in the periodic table — so electron configuration is the quantum-mechanical foundation of all of chemistry, explaining periodic trends and why elements in the same group behave similarly."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each periodic trend with its behaviour across the table:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Atomic radius",
+          "definition": "Decreases across a period (more nuclear charge), increases down a group (more shells)"
+        },
+        {
+          "id": "p2",
+          "term": "Ionisation energy",
+          "definition": "Energy to remove an electron; increases across a period, decreases down a group"
+        },
+        {
+          "id": "p3",
+          "term": "Electronegativity",
+          "definition": "Tendency to attract bonding electrons; highest top-right (F), lowest bottom-left"
+        },
+        {
+          "id": "p4",
+          "term": "Periodic law",
+          "definition": "Properties recur periodically with atomic number Z (Mendeleev/Moseley)"
+        }
+      ],
+      "explanation": "The periodic table organises elements by atomic number, and properties recur periodically because valence electron configurations repeat. Trends (radius, ionisation energy, electron affinity, electronegativity) follow from the interplay of nuclear charge and electron shielding/shell number, all rooted in electron configuration."
+    }
+  },
+  {
+    "id": "atm002",
+    "path": [
+      "chemistry",
+      "atomic-structure"
+    ],
+    "level": "U",
+    "modes": [
+      "passive"
+    ],
+    "question": "What does the periodic table organise, and why are properties periodic?",
+    "passive": {
+      "options": [
+        "Elements arranged by increasing atomic number (protons); chemical properties recur periodically because elements in the same column (group) have the same valence-electron configuration, which governs bonding and reactivity (the periodic law)",
+        "Elements ordered by atomic mass with random properties (historically considered but disfavoured by modern QFT analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "A list where neighbouring elements are always identical (not consistent with the operator product expansion at large momentum)",
+        "An arrangement with no relation to electron structure (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "The periodic table arranges all chemical elements in order of increasing atomic number Z (the number of protons, established as the true ordering principle by Moseley's X-ray work, refining Mendeleev's mass-based table). Its power is the periodic law: chemical and physical properties recur in a periodic (repeating) pattern as Z increases. The reason is quantum-mechanical: as electrons fill shells, the valence (outermost) electron configuration repeats periodically, and since valence electrons determine bonding and reactivity, elements with similar valence configurations behave similarly. This is why the table's columns (groups) collect elements with shared chemistry — the alkali metals (group 1, one valence s electron, highly reactive), the halogens (group 17, one electron short of a full shell, also reactive), and the noble gases (group 18, full valence shells, inert). Rows (periods) correspond to filling successive principal shells. The table's blocks (s, p, d, f) reflect which subshell is being filled, explaining the main-group elements, transition metals, and lanthanides/actinides. Mendeleev's triumph was using the periodicity to predict undiscovered elements (gallium, germanium) and their properties from gaps in his table. The periodic table is chemistry's central organising framework, turning the bewildering diversity of elements into a coherent, predictive system grounded in electron structure."
+    }
+  },
+  {
+    "id": "atm003",
+    "path": [
+      "chemistry",
+      "atomic-structure"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What did quantum mechanics reveal about atomic orbitals?",
+    "passive": {
+      "options": [
+        "Electrons occupy orbitals — probability distributions (from solutions of the Schrödinger equation) labelled by quantum numbers (n, l, m, s) with characteristic shapes (s, p, d, f) and energies — replacing the classical idea of electrons in fixed circular orbits (Bohr model)",
+        "Electrons travel in fixed circular orbits like planets (unsupported by perturbative expansions in the coupling) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Electron positions are exactly determined at all times (historically considered but disfavoured by modern QFT analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Orbitals are physical solid shells around the nucleus (would conflict with renormalisation group flow and cross-section data) (contradicted by both lattice simulations and dispersive analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Quantum mechanics transformed our picture of the atom. The Bohr model (1913) had electrons in fixed circular orbits with quantised energies — successful for hydrogen's spectrum but fundamentally classical and unable to handle multi-electron atoms. Quantum mechanics, via the Schrödinger equation (1926), replaced orbits with orbitals: the wavefunction ψ for an electron, whose squared magnitude |ψ|² gives the probability density of finding the electron at each location (Born's rule) — electrons do not have definite trajectories (Heisenberg uncertainty), only probability 'clouds.' Each orbital is specified by quantum numbers: the principal quantum number n (1, 2, 3... — shell, mainly energy and size), the azimuthal/angular quantum number l (0 to n−1 — subshell shape, labelled s, p, d, f), the magnetic quantum number m_l (orientation in space), and the spin quantum number m_s (±½). These give orbitals characteristic shapes: s orbitals spherical, p orbitals dumbbell-shaped (three orientations), d and f orbitals more complex. The energies and occupancies of these orbitals (filled per the Aufbau, Pauli, and Hund rules) determine electron configuration and hence all chemical behaviour. Quantum mechanics thus explains the periodic table's structure, bonding, spectra (transitions between orbital energy levels give the Rydberg formula and beyond), and magnetism from first principles. The orbital concept — probabilistic, quantised, with definite shapes and energies — is the quantum foundation underlying modern chemistry."
+    }
+  },
+  {
+    "id": "atm004",
+    "path": [
+      "chemistry",
+      "atomic-structure"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What are isotopes and how do they relate to atomic mass?",
+    "passive": {
+      "options": [
+        "Isotopes are atoms of the same element (same proton number Z) with different numbers of neutrons (different mass number A); they share chemical properties but differ in mass and nuclear stability; an element's atomic weight is the abundance-weighted average of its isotope masses",
+        "Isotopes are atoms with different numbers of protons (disagrees with the standard textbook treatment in Peskin-Schroeder) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Isotopes of an element have completely different chemistry (historically considered but disfavoured by modern QFT analyses) (not consistent with the operator product expansion at large momentum)",
+        "Atomic mass is simply the number of protons (would conflict with renormalisation group flow and cross-section data) (contradicted by both lattice simulations and dispersive analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Isotopes are variants of a chemical element that have the same number of protons (the same atomic number Z, hence the same element and chemical identity) but different numbers of neutrons, giving different mass numbers A (= protons + neutrons). For example, carbon always has 6 protons, but carbon-12 (6 neutrons), carbon-13 (7), and carbon-14 (8) are its isotopes. Because chemistry is governed by electrons (set by proton number), isotopes of an element have essentially identical chemical properties — they react the same way and occupy the same place in the periodic table (the name means 'same place'). They differ in physical properties tied to mass (slightly different rates in some reactions — the kinetic isotope effect — diffusion, and spectroscopic signatures) and, crucially, in nuclear stability: some isotopes are stable, others radioactive (radioisotopes, decaying with characteristic half-lives — the basis of radiometric dating like carbon-14, and of nuclear medicine and tracers). The atomic weight (relative atomic mass) listed on the periodic table is not a whole number because it is the abundance-weighted average of the masses of an element's naturally-occurring isotopes (e.g. chlorine's ~35.5 reflects a mix of Cl-35 and Cl-37). Mass spectrometry measures isotopic masses and abundances precisely. Isotopes are central to nuclear chemistry and physics, dating, tracing, medical imaging and therapy, and even fundamental constants (the kilogram and other standards). The existence of isotopes — same chemistry, different mass and nuclear behaviour — neatly illustrates the separation between an atom's electronic (chemical) and nuclear identities."
+    }
+  },
+  {
+    "id": "atm005",
+    "path": [
+      "chemistry",
+      "atomic-structure"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Why do periodic trends like ionisation energy show exceptions?",
+    "passive": {
+      "options": [
+        "Subshell stability (half-filled and fully-filled subshells are extra stable) and electron-electron repulsion cause deviations — e.g. ionisation energy dips from N to O (removing a paired 2p electron is easier) and from Be to B (removing a higher-energy 2p vs 2s electron)",
+        "There are no exceptions to periodic trends (not consistent with the operator product expansion at large momentum) (would imply unphysical infinite or negative observables)",
+        "Exceptions are random measurement errors (disagrees with the standard textbook treatment in Peskin-Schroeder) (historically considered but disfavoured by modern QFT analyses)",
+        "Trends depend only on atomic mass (ruled out by experimental constraints from collider and low-energy data) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "explanation": "Periodic trends (ionisation energy, atomic radius, etc.) follow general patterns from nuclear charge and shielding, but exhibit characteristic exceptions revealing subtler quantum effects, especially the special stability of half-filled and fully-filled subshells and the details of subshell energies. Two classic dips in first ionisation energy across period 2 illustrate this. (1) Boron (1s² 2s² 2p¹) has a lower first ionisation energy than beryllium (1s² 2s²), even though nuclear charge increased — because boron's outermost electron is in a higher-energy 2p orbital (more shielded by the 2s electrons and farther out) and so is easier to remove than beryllium's 2s electron, and removing it also leaves the stable filled 2s² subshell. (2) Oxygen (2p⁴) has a lower first ionisation energy than nitrogen (2p³), against the trend — because nitrogen's 2p subshell is exactly half-filled (one electron in each of the three 2p orbitals, a stable arrangement per Hund's rule with minimal repulsion), whereas oxygen has one orbital doubly occupied; that paired electron experiences extra electron-electron repulsion and is therefore easier to remove, and removing it gives the stable half-filled 2p³. The same half-filled/full-filled stability explains anomalous electron configurations of chromium (3d⁵ 4s¹ rather than 3d⁴ 4s²) and copper (3d¹⁰ 4s¹), where an electron shifts to achieve a stable half-filled or filled d subshell. These exceptions are not noise but consequences of orbital energies, electron-electron repulsion, exchange-energy stabilisation of parallel spins, and subshell stability — deeper quantum-mechanical effects layered on top of the broad trends, and they sharpen understanding of why electron configuration, not just nuclear charge, governs chemical and physical properties.",
+      "correct": 0
+    }
+  },
+  {
+    "id": "atm006",
+    "path": [
+      "chemistry",
+      "atomic-structure"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does effective nuclear charge explain periodic trends?",
+    "passive": {
+      "options": [
+        "Inner electrons shield outer ones from the full nuclear charge, so valence electrons feel a reduced effective nuclear charge Z_eff = Z − (shielding); Z_eff increases across a period (poor same-shell shielding) shrinking atoms and raising ionisation energy, while extra shells down a group outweigh rising Z",
+        "All electrons feel the full nuclear charge equally (would conflict with renormalisation group flow and cross-section data) (ruled out by experimental constraints from collider and low-energy data)",
+        "Shielding increases with nuclear charge, cancelling all trends (would imply unphysical infinite or negative observables) (contradicted by both lattice simulations and dispersive analyses)",
+        "Effective nuclear charge is irrelevant to atomic size (not consistent with the operator product expansion at large momentum) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "Effective nuclear charge (Z_eff) is the key concept unifying periodic trends. While the nucleus has charge +Z (Z protons), a valence electron does not feel this full attraction because inner-shell (core) electrons partially shield/screen it, repelling it and reducing the net positive charge it experiences: Z_eff = Z − S, where S is the screening constant (estimable by Slater's rules). The crucial point is how Z_eff varies. Across a period (left to right): each step adds one proton (Z increases) and one electron, but the added electron goes into the same shell, where electrons shield each other poorly (same-shell electrons do not effectively block the nuclear charge from one another). So Z_eff increases steadily across a period, pulling the valence electrons in more tightly — this explains why atomic radius decreases across a period (electrons held closer), ionisation energy increases (harder to remove a more strongly-held electron), and electronegativity increases (stronger pull on bonding electrons). Down a group: each step adds a whole new shell, so although Z increases, the valence electrons are in a higher shell, farther out and shielded by all the inner shells — the increased shell number and shielding dominate, Z_eff felt by the valence electrons increases only modestly, and the larger orbital size wins. So atomic radius increases down a group, ionisation energy decreases, and elements become more metallic. Effective nuclear charge thus provides the unifying explanation: the balance between the actual nuclear charge and electron shielding determines how tightly valence electrons are held, which in turn governs size, ionisation energy, electron affinity, electronegativity, and ultimately chemical reactivity. It is the bridge from the quantum electronic structure to the observable periodic trends, making sense of the entire layout of the periodic table."
+    }
+  }
+]

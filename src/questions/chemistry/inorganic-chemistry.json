@@ -1,0 +1,162 @@
+[
+  {
+    "id": "inorg001",
+    "path": [
+      "chemistry",
+      "inorganic-chemistry"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "Why do transition metals show characteristic properties like variable oxidation states and coloured compounds?",
+    "passive": {
+      "options": [
+        "Their partially-filled d orbitals allow multiple oxidation states (losing different numbers of d/s electrons), and d-d electronic transitions (and charge transfer) absorb visible light giving colour; the d electrons also enable catalysis, complex-ion formation, and often paramagnetism",
+        "They have no d electrons (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would conflict with renormalisation group flow and cross-section data)",
+        "Their properties are identical to alkali metals (disagrees with the standard textbook treatment in Peskin-Schroeder) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Colour comes only from impurities (not consistent with the operator product expansion at large momentum) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Transition metals (the d-block elements) display a distinctive cluster of properties — variable oxidation states, coloured compounds, catalytic activity, complex-ion formation, and magnetism — all traceable to their partially-filled d orbitals and the close energies of the (n−1)d and ns electrons. (1) Variable oxidation states: because the energies of the 4s and 3d electrons are similar, transition metals can lose varying numbers of electrons to form ions of multiple charges (e.g. iron as Fe²⁺ and Fe³⁺; manganese from +2 to +7; vanadium +2 to +5), unlike main-group metals with typically one fixed oxidation state. This versatility underlies their redox chemistry and catalytic behaviour. (2) Coloured compounds: when a transition-metal ion is surrounded by ligands (in a complex), the d orbitals split into different energy levels (crystal-field/ligand-field splitting); electrons can absorb specific wavelengths of visible light to jump between these split d levels (d-d transitions), and the complementary colour is transmitted/reflected — giving the characteristic colours of transition-metal solutions and minerals (the blue of copper(II), purple of permanganate, etc.). Charge-transfer transitions can give intense colours too. The colour depends on the metal, its oxidation state, and the ligands (the spectrochemical series). (3) Complex-ion formation: the small, highly-charged metal ions with available d orbitals act as Lewis acids, binding ligands (Lewis bases with lone pairs — water, ammonia, chloride, etc.) to form coordination complexes with characteristic geometries (octahedral, tetrahedral, square planar). (4) Catalysis: the ability to adopt variable oxidation states and form/break bonds with substrates (adsorbing and providing low-energy pathways) makes transition metals superb catalysts — both heterogeneous (iron in the Haber process, platinum in catalytic converters) and homogeneous, and as the active sites of metalloenzymes (iron in haemoglobin/cytochromes, magnesium in chlorophyll, etc.). (5) Magnetism: unpaired d electrons give paramagnetism (and ferromagnetism in iron, cobalt, nickel). These interlinked properties make transition metals central to industrial catalysis, pigments and dyes, structural and functional materials, electrochemistry, and bioinorganic chemistry — and they all flow from the special role of the partially-filled, energetically-accessible d orbitals, distinguishing the transition metals from the main-group elements."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each inorganic concept with its meaning:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Coordination complex",
+          "definition": "Central metal ion bonded to surrounding ligands (Lewis bases) via coordinate bonds"
+        },
+        {
+          "id": "p2",
+          "term": "Ligand",
+          "definition": "Molecule/ion donating a lone pair to a metal (e.g. H₂O, NH₃, Cl⁻, CN⁻)"
+        },
+        {
+          "id": "p3",
+          "term": "Crystal field splitting",
+          "definition": "Ligands split the metal d orbitals in energy, causing colour and magnetic properties"
+        },
+        {
+          "id": "p4",
+          "term": "Oxidation state",
+          "definition": "Hypothetical charge on an atom; transition metals adopt several (e.g. Fe²⁺/Fe³⁺)"
+        }
+      ],
+      "explanation": "Inorganic chemistry covers the elements and their compounds beyond simple organic carbon chemistry — especially the periodic table's main groups, transition metals, and coordination chemistry. Transition-metal complexes, with their variable oxidation states, ligand bonding, colour, magnetism, and catalysis, are a central theme, bridging to materials science and bioinorganic chemistry."
+    }
+  },
+  {
+    "id": "inorg002",
+    "path": [
+      "chemistry",
+      "inorganic-chemistry"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What are coordination compounds and ligands?",
+    "passive": {
+      "options": [
+        "A central metal atom/ion bonded to surrounding molecules or ions (ligands) that donate lone pairs into the metal's empty orbitals via coordinate (dative) bonds; the number of such bonds is the coordination number, giving geometries like octahedral or square planar — central to catalysis and bioinorganic chemistry",
+        "Compounds containing only carbon and hydrogen (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Ionic salts with no metal (contradicted by both lattice simulations and dispersive analyses) (historically considered but disfavoured by modern QFT analyses) (would conflict with renormalisation group flow and cross-section data)",
+        "Molecules where atoms share electrons equally (violates basic gauge invariance and Lorentz covariance requirements) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "Coordination compounds (coordination complexes) consist of a central metal atom or ion (usually a transition metal, acting as a Lewis acid with empty orbitals) bonded to a number of surrounding molecules or ions called ligands, which are Lewis bases that donate a lone pair of electrons into the metal's orbitals to form coordinate (dative) covalent bonds — bonds where both shared electrons come from the ligand. The study of these complexes, founded by Alfred Werner (Nobel Prize 1913, who deduced their three-dimensional structures), is a cornerstone of inorganic chemistry. Key concepts: the coordination number is the number of ligand donor atoms directly bonded to the metal (commonly 6, giving octahedral geometry; 4, giving tetrahedral or square-planar; 2, linear). Ligands range from simple monodentate ones (binding through one atom — water, ammonia, chloride, cyanide) to polydentate/chelating ligands (binding through several atoms, 'grabbing' the metal like a claw — e.g. ethylenediamine binds through two nitrogens; EDTA binds through six, wrapping around the metal). Chelating ligands form especially stable complexes (the chelate effect, an entropy-driven stabilisation), exploited in sequestering metal ions (water treatment, medicine for heavy-metal poisoning, analytical titrations). The bonding and the splitting of the metal's d orbitals by the ligand field (crystal-field/ligand-field theory) explain the complexes' colours, magnetic properties (high-spin vs low-spin), and stabilities, which depend on the metal, its oxidation state, and the ligands (ordered by field strength in the spectrochemical series). Isomerism is rich in complexes (geometric cis/trans, optical, linkage isomers). Coordination compounds are profoundly important: in catalysis (many homogeneous catalysts are metal complexes, e.g. Wilkinson's catalyst, and organometallic complexes drive vast industrial processes and asymmetric synthesis); in bioinorganic chemistry (the metal complexes at the heart of life — iron in the haem group of haemoglobin and cytochromes, magnesium in chlorophyll, cobalt in vitamin B12, zinc in many enzymes, the manganese cluster in photosynthesis); in medicine (cisplatin, a platinum complex, is a major anticancer drug; gadolinium complexes are MRI contrast agents; metal chelators treat poisoning); in pigments and materials; and in analytical chemistry. Coordination chemistry thus connects the electronic structure of transition metals to function across catalysis, biology, medicine, and materials — a central and unifying theme of inorganic chemistry."
+    }
+  },
+  {
+    "id": "inorg003",
+    "path": [
+      "chemistry",
+      "inorganic-chemistry"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What are acids and bases (Bronsted-Lowry and Lewis definitions)?",
+    "passive": {
+      "options": [
+        "Bronsted-Lowry: an acid is a proton (H⁺) donor and a base a proton acceptor, forming conjugate acid-base pairs; Lewis (more general): an acid is an electron-pair acceptor and a base an electron-pair donor — encompassing reactions without protons (e.g. metal-ligand bonding)",
+        "Acids and bases cannot be defined (disagrees with the standard textbook treatment in Peskin-Schroeder) (unsupported by perturbative expansions in the coupling)",
+        "An acid always accepts protons (would imply unphysical infinite or negative observables) (ruled out by experimental constraints from collider and low-energy data)",
+        "Bases are electron-pair acceptors (not consistent with the operator product expansion at large momentum) (historically considered but disfavoured by modern QFT analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Acids and bases are defined by several complementary theories of increasing generality, each capturing important aspects of this fundamental class of reactions. The Arrhenius definition (the earliest) says an acid produces H⁺ (hydrogen) ions in water and a base produces OH⁻ (hydroxide) ions — useful but limited to aqueous solutions and to OH⁻ bases. The Bronsted-Lowry definition (1923) is broader and most commonly used: an acid is a proton (H⁺) donor and a base is a proton acceptor. This frames acid-base reactions as proton transfers and introduces conjugate acid-base pairs — when an acid donates a proton it becomes its conjugate base, and when a base accepts a proton it becomes its conjugate acid (e.g. in HCl + H₂O → H₃O⁺ + Cl⁻, HCl/Cl⁻ and H₃O⁺/H₂O are conjugate pairs). It naturally explains amphoteric species (like water, which can act as acid or base), acid/base strength (strong acids fully donate protons; weak acids only partially, characterised by the dissociation constant Ka and pKa), and the pH scale (pH = −log[H⁺]). The Lewis definition (also 1923) is the most general: a Lewis acid is an electron-pair acceptor and a Lewis base is an electron-pair donor, with acid-base reactions forming a coordinate (dative) bond. This encompasses all Bronsted acid-base reactions (a proton is an electron-pair acceptor) but also many reactions involving no protons at all — for example, the formation of coordination complexes (a metal ion accepting lone pairs from ligands is a Lewis acid-base reaction), reactions of electron-deficient species like BF₃ (a Lewis acid accepting an electron pair from NH₃), and much of organic and inorganic reactivity (electrophiles are Lewis acids, nucleophiles are Lewis bases). Each definition is useful in its domain: Arrhenius for simple aqueous acid-base chemistry, Bronsted-Lowry for proton-transfer reactions and equilibria (titrations, buffers, biological pH regulation), and Lewis for the broadest range including coordination chemistry, catalysis, and organic mechanisms. Acid-base chemistry is among the most important and ubiquitous in all of chemistry — governing pH and buffering (critical in biology, where enzymes and blood require tightly-controlled pH), neutralisation, dissolution, catalysis, and countless industrial and biological processes — and the progression from Arrhenius to Bronsted-Lowry to Lewis illustrates how scientific definitions are generalised to encompass ever-wider classes of phenomena under a unifying concept."
+    }
+  },
+  {
+    "id": "inorg004",
+    "path": [
+      "chemistry",
+      "inorganic-chemistry"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What characterises the main groups of the periodic table?",
+    "passive": {
+      "options": [
+        "Alkali metals (group 1, very reactive, +1 ions), alkaline earths (group 2, +2), halogens (group 17, reactive non-metals, −1 ions), and noble gases (group 18, inert, full shells); group number relates to valence electrons, driving characteristic reactivity and bonding",
+        "All groups behave identically (violates basic gauge invariance and Lorentz covariance requirements) (historically considered but disfavoured by modern QFT analyses)",
+        "Group number has no relation to chemistry (would conflict with renormalisation group flow and cross-section data) (not consistent with the operator product expansion at large momentum)",
+        "Noble gases are the most reactive elements (ruled out by experimental constraints from collider and low-energy data) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "The main-group (s- and p-block) elements occupy the tall columns of the periodic table, and each group shares characteristic chemistry determined by its number of valence electrons (broadly, the group number). Key groups: (1) Alkali metals (Group 1: Li, Na, K, Rb, Cs, Fr) — one valence electron, lost very easily to form +1 ions; they are soft, low-density, highly reactive metals (reactivity increases down the group as the valence electron is more easily lost), reacting vigorously with water (producing hydrogen and hydroxides) and stored under oil. (2) Alkaline earth metals (Group 2: Be, Mg, Ca, Sr, Ba) — two valence electrons, form +2 ions; reactive (though less than group 1), important biologically (calcium in bones, magnesium in chlorophyll and enzymes). (3) Halogens (Group 17: F, Cl, Br, I) — seven valence electrons, one short of a full shell, so highly reactive non-metals that readily gain an electron to form −1 ions or share to form covalent bonds; reactivity decreases down the group; they are diatomic (F₂, Cl₂...) and form salts with metals ('halogen' means salt-former). (4) Noble gases (Group 18: He, Ne, Ar, Kr, Xe, Rn) — full valence shells (octet, or duet for He), making them extremely stable and unreactive (inert), existing as monatomic gases; their stability is the basis of the octet rule (other elements react to attain noble-gas configurations). Other notable groups: the carbon group (14, with carbon's vast organic chemistry and silicon's semiconductor/materials importance), the nitrogen group (15, including biologically vital nitrogen and phosphorus), and the chalcogens (16, including oxygen and sulfur). The trend across the table from metals (left, lose electrons, form basic oxides) through metalloids (intermediate, e.g. silicon, germanium — semiconductors) to non-metals (right, gain/share electrons, form acidic oxides), and the reactivity trends within groups, all flow from electron configuration and effective nuclear charge. Understanding main-group chemistry — the reactivity, common ions, oxidation states, and bonding of these element families — is foundational to inorganic chemistry, explaining the formation of salts, acids and bases, oxides, and the behaviour of the most common elements in the environment, industry, and biology, and it complements the distinct chemistry of the transition metals."
+    }
+  },
+  {
+    "id": "inorg005",
+    "path": [
+      "chemistry",
+      "inorganic-chemistry"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does crystal field theory explain transition-metal complex colours and magnetism?",
+    "passive": {
+      "options": [
+        "Ligands approaching a metal ion split its five degenerate d orbitals into groups of different energy (e.g. octahedral t2g/eg split by Δo); d-d electronic transitions across this gap absorb visible light (colour), and the size of Δ versus electron pairing energy determines high-spin vs low-spin configurations (magnetism)",
+        "Colour and magnetism are random properties (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (historically considered but disfavoured by modern QFT analyses)",
+        "d orbitals never change energy in a complex (violates basic gauge invariance and Lorentz covariance requirements) (not consistent with the operator product expansion at large momentum)",
+        "Ligands have no effect on the metal's electrons (contradicted by both lattice simulations and dispersive analyses) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "Crystal field theory (CFT), and its refinement ligand field theory, explains the colours, magnetic properties, and stabilities of transition-metal complexes by considering how the surrounding ligands affect the energies of the metal's d orbitals. In an isolated gaseous metal ion, the five d orbitals are degenerate (equal energy). When ligands approach to form a complex, their electron pairs (negative charge) repel the d electrons, but unequally — because the five d orbitals point in different directions, those pointing directly at the ligands are raised more in energy than those pointing between them. In the common octahedral geometry, this splits the d orbitals into a lower-energy set of three (t2g, pointing between ligands) and a higher-energy set of two (eg, pointing at ligands), separated by an energy gap called the crystal-field splitting energy, Δo (Δoctahedral). (Tetrahedral and square-planar fields give different splitting patterns.) This splitting explains two hallmark properties. Colour: an electron in a lower d orbital can absorb a photon of visible light whose energy matches Δ and jump to a higher d orbital (a d-d transition); the complex absorbs that colour and we see the complementary colour. Since Δ depends on the metal, its oxidation state, and especially the ligands (ranked by field strength in the spectrochemical series, from weak-field like iodide/water to strong-field like cyanide/CO), changing any of these changes the colour — explaining why, e.g., [Cu(H₂O)₆]²⁺ is pale blue but [Cu(NH₃)₄]²⁺ is deep blue, and the rainbow of transition-metal compound colours. Magnetism: when filling the split d orbitals, there is a competition between Δ (the energy cost of putting an electron in the upper set) and the pairing energy (the cost of pairing two electrons in the same lower orbital). With weak-field ligands (small Δ), electrons spread out into the upper orbitals to stay unpaired (high-spin configuration, more unpaired electrons, more paramagnetic); with strong-field ligands (large Δ), electrons preferentially pair up in the lower orbitals (low-spin, fewer unpaired electrons). This determines the number of unpaired electrons and hence the magnetic moment (measurable, confirming the configuration). CFT thus quantitatively links the electronic structure of d-block complexes to their observable colour and magnetism, also rationalises complex stability and reaction rates (crystal-field stabilisation energy), and underpins the interpretation of spectra and the design of complexes in catalysis, materials (pigments, magnets), and bioinorganic systems. It is a beautiful example of how a relatively simple electrostatic model, grounded in the directionality of d orbitals, explains a rich array of transition-metal properties."
+    }
+  },
+  {
+    "id": "inorg006",
+    "path": [
+      "chemistry",
+      "inorganic-chemistry"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is bioinorganic chemistry and why are metals essential to life?",
+    "passive": {
+      "options": [
+        "The study of metals in biology: many essential life processes depend on metal ions at the active sites of proteins/enzymes — iron in haemoglobin (O₂ transport) and cytochromes, magnesium in chlorophyll, zinc and copper in enzymes, the manganese cluster in photosynthesis — exploiting metals' redox, Lewis-acid, and structural roles",
+        "Metals play no role in living organisms (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (historically considered but disfavoured by modern QFT analyses)",
+        "Only carbon is important in biology (unsupported by perturbative expansions in the coupling) (would imply unphysical infinite or negative observables) (contradicted by both lattice simulations and dispersive analyses)",
+        "Metals are always toxic and never beneficial (would conflict with renormalisation group flow and cross-section data) (violates basic gauge invariance and Lorentz covariance requirements)"
+      ],
+      "correct": 0,
+      "explanation": "Bioinorganic chemistry is the field at the interface of inorganic chemistry and biology, studying the roles of metal ions (and other inorganic elements) in living systems. Far from biology being purely 'organic,' metals are essential to life: roughly a third of all proteins require a metal ion to function, and many of life's most important processes are catalysed or enabled by metalloproteins and metalloenzymes. Metals are uniquely suited to biological roles that organic functional groups alone cannot fulfil, because they offer: variable oxidation states (enabling electron-transfer/redox chemistry), Lewis acidity (activating substrates, stabilising charges), the ability to bind and orient multiple ligands (organising reactions and substrates in three dimensions), and structural roles (stabilising protein and nucleic-acid structures). Key examples illustrate the breadth: iron in the haem group of haemoglobin and myoglobin reversibly binds and transports oxygen, and in cytochromes shuttles electrons in the respiratory chain (its Fe²⁺/Fe³⁺ redox couple); magnesium sits at the centre of chlorophyll (capturing light in photosynthesis) and is essential for ATP-utilising enzymes and DNA/RNA stabilisation; the oxygen-evolving complex of photosystem II contains a manganese-calcium cluster that splits water in photosynthesis (releasing the O₂ we breathe); zinc is a Lewis-acid catalyst and structural element in hundreds of enzymes (carbonic anhydrase, carboxypeptidase) and DNA-binding 'zinc finger' proteins; copper participates in electron transfer and oxygen handling (cytochrome c oxidase, some oxidases); cobalt is at the heart of vitamin B12; molybdenum and iron enable nitrogen fixation (nitrogenase converting atmospheric N₂ to ammonia); calcium is structural (bones, shells) and a key signalling ion; and sodium/potassium gradients power nerve impulses. Bioinorganic chemistry also studies metal toxicity (heavy metals like lead, mercury, cadmium disrupt metalloprotein function), metal homeostasis and transport, and the medicinal use of metals (the platinum anticancer drug cisplatin, gold antiarthritics, gadolinium MRI contrast agents, lithium for bipolar disorder, and metal chelation therapy for poisoning). The field illuminates how life harnesses the special chemistry of metal ions — their redox versatility, coordination geometry, and catalytic power — to perform reactions (oxygen transport, electron transfer, water splitting, nitrogen fixation) essential to existence, and it informs medicine, environmental science, and the design of bio-inspired catalysts. It demonstrates that the chemistry of life is deeply inorganic as well as organic, integrating the periodic table's metals into the molecular machinery of biology."
+    }
+  }
+]

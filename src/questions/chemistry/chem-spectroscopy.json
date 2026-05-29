@@ -1,0 +1,162 @@
+[
+  {
+    "id": "spec001",
+    "path": [
+      "chemistry",
+      "chem-spectroscopy"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "What is spectroscopy and how does it identify substances?",
+    "passive": {
+      "options": [
+        "The study of how matter interacts with electromagnetic radiation: molecules absorb/emit specific wavelengths corresponding to quantised energy transitions (electronic, vibrational, rotational, nuclear-spin), producing characteristic spectra that act as fingerprints revealing structure, composition, and concentration",
+        "A method of weighing samples (disagrees with the standard textbook treatment in Peskin-Schroeder) (contradicted by both lattice simulations and dispersive analyses)",
+        "A technique unrelated to light or energy (would conflict with renormalisation group flow and cross-section data) (ruled out by experimental constraints from collider and low-energy data)",
+        "A way to measure temperature only (would imply unphysical infinite or negative observables) (unsupported by perturbative expansions in the coupling) (historically considered but disfavoured by modern QFT analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Spectroscopy is the study of the interaction between matter and electromagnetic radiation (light across the spectrum, from radio waves to gamma rays), and it is the most powerful and widely-used family of techniques for determining the structure, composition, and concentration of chemical substances. Its foundation is quantisation: atoms and molecules have discrete, quantised energy levels (electronic, vibrational, rotational, and nuclear-spin), and they can only absorb or emit a photon whose energy exactly matches the gap between two levels (ΔE = hν). Since these energy gaps are characteristic of the specific atoms, bonds, and structure present, the wavelengths a substance absorbs or emits form a unique spectral 'fingerprint.' Different regions of the electromagnetic spectrum probe different transitions: radio waves drive nuclear-spin flips (NMR), microwaves drive molecular rotations, infrared drives molecular vibrations (bond stretching/bending — IR spectroscopy reveals functional groups), visible and ultraviolet drive electronic transitions (UV-Vis, revealing conjugation and used for quantitative concentration measurement via the Beer-Lambert law), and X-rays probe core electrons and crystal structure (XRD). By measuring which wavelengths are absorbed or emitted (and how strongly), and at what positions and patterns, spectroscopists can: identify what substance is present (qualitative analysis, by matching the fingerprint), determine molecular structure (which functional groups, how atoms are connected and arranged — especially via NMR and IR), and measure how much is present (quantitative analysis, since absorbance is proportional to concentration). Spectroscopy is the workhorse of analytical chemistry, structural elucidation in organic and inorganic chemistry, and characterisation across the sciences. It also underpins astronomy (identifying the composition of stars and galaxies from their light, discovering elements like helium first in the Sun, and measuring cosmic redshifts), environmental monitoring, medical diagnostics (MRI is NMR imaging), forensics, and quality control. The combination of multiple spectroscopic techniques (NMR + IR + mass spectrometry + UV-Vis) allows complete determination of unknown molecular structures, making spectroscopy indispensable to modern chemistry — a direct, practical application of quantum theory (quantised energy levels and photon absorption/emission) to revealing the identity and structure of matter."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each technique with what it reveals:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "NMR spectroscopy",
+          "definition": "Nuclear spin transitions in a magnetic field; reveals carbon-hydrogen framework/connectivity; basis of MRI"
+        },
+        {
+          "id": "p2",
+          "term": "IR spectroscopy",
+          "definition": "Molecular vibrations; identifies functional groups (C=O, O-H, etc.)"
+        },
+        {
+          "id": "p3",
+          "term": "Mass spectrometry",
+          "definition": "Ionises and sorts by mass/charge; gives molecular mass and fragmentation pattern"
+        },
+        {
+          "id": "p4",
+          "term": "UV-Vis spectroscopy",
+          "definition": "Electronic transitions; quantifies concentration via Beer-Lambert law; probes conjugation"
+        }
+      ],
+      "explanation": "Analytical techniques combine to identify and quantify substances: NMR maps the molecular skeleton, IR identifies functional groups, mass spectrometry gives molecular mass and fragments, UV-Vis measures concentration and electronic structure, and X-ray crystallography solves 3D structure. Chromatography (separating mixtures) often precedes spectroscopic analysis."
+    }
+  },
+  {
+    "id": "spec002",
+    "path": [
+      "chemistry",
+      "chem-spectroscopy"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does NMR spectroscopy determine molecular structure?",
+    "passive": {
+      "options": [
+        "Nuclei with spin (e.g. ¹H, ¹³C) in a magnetic field absorb radiofrequency energy at frequencies depending on their electronic environment (chemical shift); the number of signals, their shifts, splitting (coupling to neighbours), and integration reveal how atoms are connected — mapping the molecular framework",
+        "It weighs the molecule directly (contradicted by both lattice simulations and dispersive analyses) (ruled out by experimental constraints from collider and low-energy data)",
+        "It measures only the colour of a compound (historically considered but disfavoured by modern QFT analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "It detects nuclei without any magnetic field (unsupported by perturbative expansions in the coupling) (violates basic gauge invariance and Lorentz covariance requirements)"
+      ],
+      "correct": 0,
+      "explanation": "Nuclear magnetic resonance (NMR) spectroscopy is one of the most powerful techniques for determining the detailed structure of molecules, especially in organic chemistry. It exploits the fact that certain atomic nuclei (those with non-zero nuclear spin, most importantly the proton ¹H and the carbon isotope ¹³C) behave like tiny magnets. When placed in a strong external magnetic field, these nuclear spins align with or against the field, creating two (or more) energy levels; the nuclei can then absorb radiofrequency radiation at a resonant frequency that flips the spin between levels (ΔE = hν). The crucial point is that the exact resonant frequency of a given nucleus depends sensitively on its local electronic environment — the surrounding electrons shield the nucleus from the external field by varying amounts depending on nearby atoms and bonds. This gives the chemical shift, the position of each signal (measured in ppm relative to a reference), which reveals the type of chemical environment each hydrogen or carbon is in (e.g. a proton near an electronegative oxygen resonates at a different shift than one on a simple carbon). An NMR spectrum provides several layers of structural information: (1) the number of distinct signals indicates how many chemically distinct types of that nucleus are present; (2) the chemical shift of each signal indicates the electronic environment (what functional groups/atoms are nearby); (3) the splitting pattern (spin-spin coupling) — signals split into multiplets by interaction with neighbouring nuclei, following the n+1 rule — reveals how many neighbouring hydrogens each has, mapping connectivity; and (4) the integration (area under each peak) gives the relative number of nuclei contributing to that signal. Together, these let chemists piece together the carbon-hydrogen skeleton and connectivity of a molecule — effectively reconstructing its structure. Advanced two-dimensional NMR techniques (COSY, HSQC, NOESY, etc.) reveal even more (which atoms are bonded or close in space), enabling determination of complex structures including large proteins. NMR is non-destructive and works on solutions. Its medical incarnation, magnetic resonance imaging (MRI), images the ¹H nuclei (mostly in water and fat) throughout the body, producing detailed soft-tissue images without ionising radiation. NMR/MRI is a direct, spectacular application of nuclear-spin quantum mechanics, and is indispensable in chemistry (structure elucidation), biochemistry (protein/nucleic-acid structure and dynamics), medicine (diagnostic imaging), and materials science."
+    }
+  },
+  {
+    "id": "spec003",
+    "path": [
+      "chemistry",
+      "chem-spectroscopy"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What does mass spectrometry measure?",
+    "passive": {
+      "options": [
+        "It ionises a sample, then separates the ions by mass-to-charge ratio (m/z) and measures their abundance; this gives the molecular mass, and the fragmentation pattern (how the molecule breaks apart) provides structural clues and a fingerprint for identification",
+        "It measures the colour of light absorbed (ruled out by experimental constraints from collider and low-energy data) (historically considered but disfavoured by modern QFT analyses)",
+        "It directly images atomic positions (contradicted by both lattice simulations and dispersive analyses) (would imply unphysical infinite or negative observables)",
+        "It only works on solids and never identifies molecules (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "Mass spectrometry (MS) is a highly sensitive analytical technique that measures the masses of molecules and their fragments, providing molecular mass and structural information from very small samples. The basic process has three stages: (1) Ionisation — the sample is converted into gas-phase ions (since the instrument manipulates ions using electric and magnetic fields); various methods exist, from electron ionisation (which also fragments molecules) to gentler 'soft' methods like electrospray ionisation (ESI) and matrix-assisted laser desorption/ionisation (MALDI) that can ionise large, fragile biomolecules intact (their development earned Nobel Prizes and revolutionised biological MS). (2) Separation/analysis — the ions are sorted according to their mass-to-charge ratio (m/z) by their behaviour in electric and/or magnetic fields (in a magnetic-sector, quadrupole, time-of-flight, or ion-trap analyser); ions of different m/z are deflected or travel at different rates and thus separated. (3) Detection — the abundance of ions at each m/z is recorded, producing a mass spectrum (a plot of abundance versus m/z). The information obtained: the molecular ion peak (the intact ionised molecule) gives the molecular mass (and, at high resolution, the exact mass that determines the molecular formula); the fragmentation pattern — the characteristic ways the molecule breaks into smaller ions — provides a fingerprint for identification (matched against databases) and clues to structure (which fragments form reveals how the molecule is put together); and isotope patterns reveal the presence of elements like chlorine or bromine (from their characteristic isotope ratios). MS is extraordinarily sensitive (detecting tiny quantities) and is often coupled with a separation technique — gas chromatography (GC-MS) or liquid chromatography (LC-MS) — so that components of a complex mixture are first separated and then individually identified by their mass spectra, a combination that is the gold standard in many analytical labs. Applications are vast: identifying unknown compounds and verifying synthesised molecules in chemistry, proteomics and metabolomics (identifying and sequencing proteins and mapping metabolites in biology and medicine), drug testing and doping control, forensic analysis, environmental pollutant detection, food safety, petroleum analysis, and even dating and isotope-ratio studies in geology and archaeology. Mass spectrometry complements spectroscopic methods (NMR, IR): where NMR and IR reveal structure and functional groups, MS pins down molecular mass and formula and provides fragmentation fingerprints — together enabling complete identification and characterisation of unknown substances."
+    }
+  },
+  {
+    "id": "spec004",
+    "path": [
+      "chemistry",
+      "chem-spectroscopy"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does the Beer-Lambert law enable quantitative analysis?",
+    "passive": {
+      "options": [
+        "Absorbance is proportional to concentration and path length: A = εcl (ε = molar absorptivity); measuring how much light a sample absorbs at a characteristic wavelength gives the concentration of the absorbing species — the basis of quantitative UV-Vis spectrophotometry and colorimetric assays",
+        "Absorbance is independent of concentration (contradicted by both lattice simulations and dispersive analyses) (ruled out by experimental constraints from collider and low-energy data)",
+        "It measures mass, not concentration (historically considered but disfavoured by modern QFT analyses) (would conflict with renormalisation group flow and cross-section data)",
+        "Light intensity increases through an absorbing sample (would imply unphysical infinite or negative observables) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "The Beer-Lambert law (Beer's law) is the quantitative foundation of absorption spectrophotometry, relating the amount of light a sample absorbs to the concentration of the absorbing substance. It states that the absorbance A is directly proportional to the concentration c of the absorbing species and to the path length l of light through the sample: A = εcl, where ε (epsilon) is the molar absorptivity (or molar extinction coefficient), a constant characteristic of the substance at a given wavelength that measures how strongly it absorbs. Absorbance itself is defined logarithmically as A = log₁₀(I₀/I), where I₀ is the incident light intensity and I the transmitted intensity — so absorbance increases as more light is absorbed (and the underlying physics is that each thin layer absorbs a constant fraction of the light passing through it, giving exponential attenuation of intensity, I = I₀·10^(−εcl)). The practical power of the law is that, by measuring the absorbance of a sample at a wavelength the analyte strongly absorbs (typically using a UV-Vis spectrophotometer), one can directly determine the concentration of that substance — since A is proportional to c (for a fixed path length and known ε). In practice, a calibration curve is constructed by measuring the absorbance of standards of known concentration (giving a straight line through the origin per Beer's law), and the unknown's concentration is read off from its absorbance. This makes UV-Vis spectrophotometry one of the most widely-used quantitative analytical techniques: it is fast, simple, non-destructive, sensitive, and inexpensive. Applications are ubiquitous: measuring the concentration of coloured (or UV-absorbing) species in solution — determining protein or DNA concentration (at 280 nm and 260 nm respectively) in biochemistry, monitoring reaction kinetics by following a reactant or product's absorbance over time, clinical/medical assays (blood glucose, enzyme activity, many diagnostic colorimetric tests), environmental analysis (pollutant concentrations), pharmaceutical quality control, and water testing. Deviations from Beer's law occur at high concentrations (molecular interactions, refractive-index changes) or with non-monochromatic light, so it is most reliable in dilute solution. The Beer-Lambert law exemplifies how a simple, physically-grounded relationship between a measurable optical quantity (absorbance) and concentration turns light absorption into a precise quantitative tool, underpinning routine chemical and biochemical measurement across science, medicine, and industry."
+    }
+  },
+  {
+    "id": "spec005",
+    "path": [
+      "chemistry",
+      "chem-spectroscopy"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does chromatography separate mixtures?",
+    "passive": {
+      "options": [
+        "Components partition differently between a stationary phase and a moving mobile phase; those interacting more strongly with the stationary phase move slower, so the mixture separates as it travels — techniques include gas (GC), liquid/HPLC, thin-layer, and column chromatography, often coupled to detectors or mass spectrometry",
+        "It separates molecules purely by colour (violates basic gauge invariance and Lorentz covariance requirements) (contradicted by both lattice simulations and dispersive analyses)",
+        "It requires no difference in molecular properties (disagrees with the standard textbook treatment in Peskin-Schroeder) (would conflict with renormalisation group flow and cross-section data)",
+        "All components travel at exactly the same speed (ruled out by experimental constraints from collider and low-energy data) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Chromatography is a family of techniques for separating the components of a mixture, essential for analysis, purification, and identification — often a necessary first step before spectroscopic identification. The fundamental principle: the mixture is carried by a mobile phase (a moving fluid — a gas or liquid) over or through a stationary phase (a fixed material — a solid or a liquid coated on a solid support), and the components separate because they interact differently with the two phases. Each component continually partitions (distributes) between the mobile and stationary phases based on properties like polarity, size, charge, or volatility; a component that interacts more strongly with the stationary phase (or spends more time in it) moves more slowly, while one that prefers the mobile phase moves faster. As the mixture travels, these differing speeds cause the components to spread out and separate into distinct bands or peaks, eluting (emerging) at different times (the retention time, characteristic of each compound under given conditions). Major types: thin-layer chromatography (TLC) — quick, simple separation on a coated plate, with components rising by capillary action (used to monitor reactions); column chromatography — separation through a packed column, used preparatively to purify compounds; gas chromatography (GC) — for volatile compounds, with a gaseous mobile phase carrying vaporised sample through a long capillary column (separates by volatility and stationary-phase interaction; excellent resolution); high-performance liquid chromatography (HPLC) — a liquid mobile phase pumped at high pressure through a column packed with fine particles, the workhorse for non-volatile compounds (pharmaceuticals, biomolecules); ion-exchange (separating by charge), size-exclusion/gel filtration (separating by molecular size), and affinity chromatography (separating by specific binding, vital in biochemistry). Chromatography is often coupled to detectors and, powerfully, to mass spectrometry — GC-MS and LC-MS separate a complex mixture and then identify each component by its mass spectrum, a combination that is the gold standard in analytical chemistry. Applications are vast: identifying and quantifying components of complex mixtures in environmental analysis (pollutants), forensics (drugs, explosives), food and pharmaceutical quality control, clinical diagnostics, doping tests, and biochemical research (purifying and analysing proteins, nucleic acids, metabolites). Chromatography's ability to resolve complex mixtures into pure, identifiable, quantifiable components — exploiting subtle differences in how molecules interact with two phases — makes it one of the most important and ubiquitous techniques in all of analytical and preparative chemistry, complementing spectroscopy and mass spectrometry in the complete analysis of real-world samples."
+    }
+  },
+  {
+    "id": "spec006",
+    "path": [
+      "chemistry",
+      "chem-spectroscopy"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "How do chemists combine techniques to determine an unknown structure?",
+    "passive": {
+      "options": [
+        "By integrating complementary data: mass spectrometry gives molecular mass/formula and fragments, IR identifies functional groups, NMR maps the carbon-hydrogen connectivity and environments, and UV-Vis/X-ray add electronic/3D information — together pinning down the full structure no single method could determine alone",
+        "By using only one technique that reveals everything (unsupported by perturbative expansions in the coupling) (would imply unphysical infinite or negative observables)",
+        "By guessing without any data (contradicted by both lattice simulations and dispersive analyses) (would conflict with renormalisation group flow and cross-section data)",
+        "By measuring only the melting point (not consistent with the operator product expansion at large momentum) (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "Determining the structure of an unknown compound — a central task in chemistry — almost always requires combining several complementary analytical techniques, because each reveals different, partial information, and only together do they pin down a complete structure. A typical structure-elucidation workflow integrates: (1) Purification and separation — if the sample is a mixture, chromatography (TLC, HPLC, GC) isolates the pure compound first, since spectroscopic analysis assumes a single substance. (2) Mass spectrometry (MS) — provides the molecular mass and, at high resolution, the exact molecular formula (the elemental composition, e.g. C₈H₁₀O); the fragmentation pattern indicates how the molecule breaks apart, giving clues to substructures, and isotope patterns reveal elements like Cl/Br. Knowing the molecular formula also lets one calculate the degree of unsaturation (rings + multiple bonds), a key structural constraint. (3) Infrared (IR) spectroscopy — identifies the functional groups present from characteristic absorption bands (a strong band near 1700 cm⁻¹ indicates a carbonyl C=O; a broad band near 3300 cm⁻¹ indicates O-H or N-H; etc.), telling the chemist which reactive groups the molecule contains. (4) Nuclear magnetic resonance (NMR) — the most information-rich method, mapping the molecular skeleton: ¹H NMR reveals the number, environment (chemical shift), neighbour relationships (coupling/splitting), and relative number (integration) of hydrogens, while ¹³C NMR reveals the carbon framework; 2D NMR experiments (COSY, HSQC, HMBC, NOESY) establish which atoms are bonded or spatially close, allowing the connectivity to be assembled. (5) Sometimes UV-Vis spectroscopy (revealing conjugation/chromophores and enabling quantitation) and, for definitive three-dimensional structure (including stereochemistry and absolute configuration), X-ray crystallography (if a suitable crystal is available, giving the precise 3D atomic arrangement). The chemist synthesises all this evidence like solving a puzzle: the molecular formula sets the atom count and unsaturation; MS fragments and IR functional groups suggest pieces; NMR connectivity assembles the pieces into a consistent structure; and the proposed structure is checked for consistency with all the data. This integrative, multi-technique approach — no single method suffices for a non-trivial molecule — is the standard practice of modern structural chemistry, enabling the identification of natural products, synthetic compounds, metabolites, pollutants, and unknowns across research, pharmaceuticals, forensics, and industry. It exemplifies how complementary windows onto a molecule (its mass, its bonds, its atomic environments, its 3D shape) combine to yield complete structural knowledge, and it is a powerful demonstration of applied physical chemistry and quantum-based spectroscopy in solving real chemical problems."
+    }
+  }
+]

@@ -1,0 +1,162 @@
+[
+  {
+    "id": "ec001",
+    "path": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "What is a redox reaction and how is it described by oxidation states?",
+    "passive": {
+      "options": [
+        "A reaction involving electron transfer: oxidation is loss of electrons (oxidation state increases), reduction is gain of electrons (oxidation state decreases) — they always occur together (the oxidising agent is reduced, the reducing agent is oxidised); tracked via oxidation numbers",
+        "A reaction where only protons move (would imply unphysical infinite or negative observables) (would conflict with renormalisation group flow and cross-section data)",
+        "Oxidation is gain of electrons (historically considered but disfavoured by modern QFT analyses) (not consistent with the operator product expansion at large momentum)",
+        "Redox reactions involve no electron transfer (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (contradicted by both lattice simulations and dispersive analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Redox (reduction-oxidation) reactions are chemical reactions involving the transfer of electrons between species, and they constitute one of the most important reaction classes in chemistry. The two complementary half-processes always occur together (you cannot have one without the other, since electrons released by one species must be accepted by another): Oxidation is the loss of electrons by a species, which increases its oxidation state (oxidation number); Reduction is the gain of electrons, which decreases the oxidation state. The mnemonic 'OIL RIG' (Oxidation Is Loss, Reduction Is Gain — of electrons) captures this. The species that causes another to be oxidised (by accepting its electrons) is the oxidising agent (oxidant), and is itself reduced; the species that causes reduction (by donating electrons) is the reducing agent (reductant), and is itself oxidised. Oxidation states (oxidation numbers) are a bookkeeping tool — the hypothetical charge an atom would have if all its bonds were fully ionic — assigned by a set of rules (e.g. elements in their standard state = 0, oxygen usually −2, hydrogen usually +1, the sum equals the overall charge). Tracking how oxidation states change identifies what is oxidised and reduced: an increase signals oxidation, a decrease signals reduction. Redox reactions are balanced using half-reactions (writing the oxidation and reduction halves separately, balancing atoms and charge with electrons, and combining so electrons cancel). Redox chemistry is ubiquitous and vital: combustion (fuels oxidised by oxygen), corrosion (rusting of iron), respiration and photosynthesis (biological electron-transfer chains), metal extraction (reducing ores), bleaching and disinfection, batteries and fuel cells (harnessing redox to generate electricity), electrolysis (using electricity to drive redox), and countless industrial and biological processes. Understanding electron transfer and oxidation states is the foundation of electrochemistry — the study of the interconversion of chemical and electrical energy — and explains how spontaneous redox reactions can be harnessed to do electrical work (in galvanic cells) and how electrical energy can drive non-spontaneous reactions (in electrolytic cells)."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each electrochemistry term with its meaning:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Galvanic (voltaic) cell",
+          "definition": "Spontaneous redox reaction generates electrical energy (a battery); ΔG<0, E_cell>0"
+        },
+        {
+          "id": "p2",
+          "term": "Electrolytic cell",
+          "definition": "Electrical energy drives a non-spontaneous reaction (electrolysis, electroplating)"
+        },
+        {
+          "id": "p3",
+          "term": "Anode / Cathode",
+          "definition": "Oxidation occurs at the anode, reduction at the cathode (in any cell)"
+        },
+        {
+          "id": "p4",
+          "term": "Nernst equation",
+          "definition": "Relates cell potential to concentrations: E = E° − (RT/nF) ln Q"
+        }
+      ],
+      "explanation": "Electrochemistry interconverts chemical and electrical energy via redox reactions. Galvanic cells (batteries) harness spontaneous reactions to produce electricity; electrolytic cells use electricity to force non-spontaneous reactions. Cell potentials (linked to ΔG by ΔG° = −nFE°) and the Nernst equation quantify the driving force and its concentration dependence."
+    }
+  },
+  {
+    "id": "ec002",
+    "path": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does a galvanic (voltaic) cell generate electricity?",
+    "passive": {
+      "options": [
+        "A spontaneous redox reaction is split into two half-cells; oxidation at the anode releases electrons that flow through an external circuit (doing electrical work) to the cathode where reduction occurs, while a salt bridge maintains charge balance — converting chemical energy directly to electrical energy",
+        "It uses electricity to drive a reaction (would imply unphysical infinite or negative observables) (historically considered but disfavoured by modern QFT analyses)",
+        "Electrons flow from cathode to anode through the solution (contradicted by both lattice simulations and dispersive analyses) (would conflict with renormalisation group flow and cross-section data)",
+        "It generates power with no chemical reaction (violates basic gauge invariance and Lorentz covariance requirements) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "A galvanic (voltaic) cell converts the chemical energy of a spontaneous redox reaction directly into electrical energy — it is the principle behind every battery. The trick is to physically separate the two half-reactions (oxidation and reduction) into two half-cells, forcing the transferred electrons to travel through an external wire (where they can do useful electrical work) rather than passing directly between reactants. Setup and operation: each half-cell contains an electrode in an electrolyte. At the anode, oxidation occurs — a species loses electrons (e.g. Zn → Zn²⁺ + 2e⁻), and these electrons flow out of the anode, through the external circuit (powering a device), to the cathode. At the cathode, reduction occurs — a species gains the arriving electrons (e.g. Cu²⁺ + 2e⁻ → Cu). (Mnemonic: in any cell, oxidation is at the Anode, reduction at the Cathode; in a galvanic cell the anode is negative and cathode positive.) To complete the circuit and maintain electrical neutrality (since the anode solution accumulates positive charge as cations form, and the cathode solution loses positive charge), a salt bridge (or porous membrane) connects the two half-cells, allowing ions to migrate between them and balance the charge without letting the solutions mix freely. The cell generates a potential difference (voltage, the electromotive force or EMF), the cell potential E_cell, which measures the driving force of the reaction — the difference between the two electrodes' standard reduction potentials (E°_cell = E°_cathode − E°_anode, using the table of standard electrode potentials referenced to the standard hydrogen electrode). A positive E_cell indicates a spontaneous reaction (consistent with ΔG = −nFE_cell < 0, linking the cell potential to free energy, where n is moles of electrons and F the Faraday constant). The Nernst equation gives how the potential varies with concentration. As the reaction proceeds, reactants are consumed and the voltage eventually drops to zero (the battery 'dies' at equilibrium). The classic Daniell cell (zinc and copper half-cells) exemplifies this. Galvanic cells underlie all batteries — from simple cells to rechargeable lithium-ion batteries (which run the redox reaction in reverse during charging, acting as electrolytic cells) and fuel cells (continuously fed with fuel like hydrogen, oxidised at the anode while oxygen is reduced at the cathode, producing electricity with water as the only product). They are central to portable power, energy storage, and the transition to renewable energy and electric vehicles, embodying the practical harnessing of spontaneous redox chemistry to deliver electrical energy."
+    }
+  },
+  {
+    "id": "ec003",
+    "path": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is electrolysis and what is it used for?",
+    "passive": {
+      "options": [
+        "Using electrical energy to drive a non-spontaneous redox reaction in an electrolytic cell: an external power source pushes electrons to force oxidation at the anode and reduction at the cathode — used for extracting reactive metals (aluminium), purifying metals, electroplating, and producing chlorine, hydrogen, and other chemicals",
+        "A spontaneous reaction producing electricity (violates basic gauge invariance and Lorentz covariance requirements) (historically considered but disfavoured by modern QFT analyses)",
+        "A method requiring no electrical input (disagrees with the standard textbook treatment in Peskin-Schroeder) (contradicted by both lattice simulations and dispersive analyses)",
+        "A way to measure temperature (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Electrolysis is the use of electrical energy to drive a non-spontaneous chemical (redox) reaction — the reverse, in effect, of what happens in a galvanic cell. In an electrolytic cell, an external power source (a battery or power supply) pumps electrons into the system, forcing reactions that would not occur on their own (ΔG > 0). The setup: two electrodes are immersed in a molten ionic compound or an electrolyte solution and connected to the external power source. The power source drives electrons toward the cathode (making it negative), where reduction occurs (cations gain electrons), and pulls electrons from the anode (making it positive), where oxidation occurs (anions lose electrons, or the electrode/solvent is oxidised). (Note: as in all cells, oxidation is at the anode and reduction at the cathode, but in an electrolytic cell the polarity is reversed compared to galvanic — here the anode is positive and cathode negative because the external source drives the direction.) Faraday's laws of electrolysis quantify it: the amount of substance produced at an electrode is proportional to the quantity of electric charge passed (and to the molar mass divided by the number of electrons per ion). Electrolysis has enormous industrial importance: (1) Extraction of reactive metals — metals too reactive to extract by chemical reduction (like aluminium, sodium, magnesium) are obtained by electrolysis of their molten compounds; aluminium production (electrolysing alumina dissolved in molten cryolite, the Hall-Héroult process) is a massive global industry (and very energy-intensive). (2) Purification of metals — impure copper is refined by electrolysis (the impure metal as anode dissolves and pure copper deposits on the cathode). (3) Electroplating — depositing a thin layer of one metal onto another (chrome, silver, gold plating) for protection or appearance. (4) Production of chemicals — the chlor-alkali process electrolyses brine (sodium chloride solution) to produce chlorine, hydrogen, and sodium hydroxide, all major industrial chemicals; electrolysis of water yields hydrogen and oxygen (increasingly important for green hydrogen as a clean fuel/energy carrier). (5) Anodising (e.g. of aluminium for a protective oxide layer) and electrowinning. Electrolysis is thus the complement of the galvanic cell — using electricity to do chemistry rather than chemistry to make electricity — and is indispensable to metal production, surface finishing, the chemical industry, and emerging clean-energy technologies, all governed by the same redox and electrode principles."
+    }
+  },
+  {
+    "id": "ec004",
+    "path": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What does the standard electrode potential tell us?",
+    "passive": {
+      "options": [
+        "It ranks species' tendency to be reduced (gain electrons), measured relative to the standard hydrogen electrode (0 V); combining two half-cell potentials gives the cell EMF (E°_cell = E°_cathode − E°_anode), and a positive value indicates a spontaneous reaction",
+        "It measures the temperature of a cell (unsupported by perturbative expansions in the coupling) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "It is the same for all substances (would imply unphysical infinite or negative observables) (ruled out by experimental constraints from collider and low-energy data)",
+        "A negative value always means a reaction is spontaneous (contradicted by both lattice simulations and dispersive analyses) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "The standard electrode potential (E°) is a measure of the intrinsic tendency of a chemical species to gain electrons (be reduced) under standard conditions (1 M concentrations, 1 bar pressure, 298 K), expressed as a voltage. Because absolute single-electrode potentials cannot be measured (only potential differences between two electrodes), all values are quoted relative to a reference, the standard hydrogen electrode (SHE), which is assigned E° = 0 V by convention. The resulting table of standard reduction potentials ranks half-reactions: a more positive E° means a greater tendency to be reduced (a stronger oxidising agent — e.g. F₂ at +2.87 V is a powerful oxidiser, readily gaining electrons), while a more negative E° means a lesser tendency to be reduced, i.e. a greater tendency to be oxidised (a stronger reducing agent — e.g. Li at −3.04 V readily loses electrons). This ranking lets chemists predict redox behaviour: a species higher in the table (more positive E°) will oxidise one lower (more negative E°). To find whether a particular redox reaction is spontaneous and its driving voltage, combine the two relevant half-cell potentials: E°_cell = E°_cathode − E°_anode (cathode = the half-reaction being reduced, anode = the one being oxidised). A positive E°_cell indicates a spontaneous reaction (the basis of a working galvanic cell/battery), while a negative E°_cell means the reaction is non-spontaneous as written (and would require electrolysis to drive). This connects directly to thermodynamics through ΔG° = −nFE°_cell (n = moles of electrons transferred, F = Faraday constant): a positive E°_cell corresponds to a negative ΔG° (spontaneous), quantitatively linking electrochemistry to free energy, and E° also relates to the equilibrium constant (E°_cell = (RT/nF) ln K). Under non-standard conditions, the Nernst equation adjusts the potential for actual concentrations. Standard electrode potentials are enormously useful: they predict the feasibility and voltage of redox reactions and batteries, the order of metal reactivity (the electrochemical/activity series), which metals will displace others or corrode, the products of electrolysis, and the direction of biological electron-transfer chains (the respiratory chain is organised by increasing reduction potential). They are the quantitative backbone of electrochemistry, turning the qualitative idea of 'tendency to gain/lose electrons' into predictive, tabulated values."
+    }
+  },
+  {
+    "id": "ec005",
+    "path": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What does the Nernst equation describe?",
+    "passive": {
+      "options": [
+        "How a cell's potential depends on concentration (and temperature): E = E° − (RT/nF) ln Q, where Q is the reaction quotient; as reactants deplete and products build, the potential falls toward zero at equilibrium (Q = K) — explaining why batteries run down and enabling concentration cells and ion-selective electrodes",
+        "Only the standard potential, independent of concentration (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (unsupported by perturbative expansions in the coupling)",
+        "The temperature of the surroundings (would conflict with renormalisation group flow and cross-section data) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "That cell potential never changes (contradicted by both lattice simulations and dispersive analyses) (would imply unphysical infinite or negative observables) (violates basic gauge invariance and Lorentz covariance requirements)"
+      ],
+      "correct": 0,
+      "explanation": "The Nernst equation describes how the actual potential (voltage) of an electrochemical cell or half-cell depends on the concentrations (more precisely, activities) of the species involved and on temperature, generalising the standard electrode potential (which applies only at standard 1 M / 1 bar conditions) to real, non-standard conditions. It is written E = E° − (RT/nF) ln Q (or equivalently E = E° − (0.0592/n) log Q at 298 K), where E is the actual potential, E° the standard potential, R the gas constant, T the absolute temperature, n the number of electrons transferred, F the Faraday constant, and Q the reaction quotient (the ratio of product to reactant activities at the current, non-equilibrium composition). The equation's meaning and consequences: as a galvanic cell operates, reactants are consumed and products accumulate, so Q increases, making the −(RT/nF) ln Q term more negative and the cell potential E progressively decreases — this is precisely why batteries lose voltage and eventually 'die' as the reaction approaches equilibrium, where Q = K (the equilibrium constant), ln Q = ln K, and E = 0 (no more driving force, ΔG = 0). Setting E = 0 at equilibrium gives the link E° = (RT/nF) ln K, connecting standard cell potential to the equilibrium constant. The Nernst equation has wide applications: it underlies concentration cells (a cell generating voltage purely from a difference in concentration of the same species in its two half-cells, driving the system toward equal concentrations); it is the basis of potentiometric measurements and ion-selective electrodes — most importantly the pH meter, where a glass electrode's potential responds to hydrogen-ion concentration according to the Nernst equation (a 59 mV change per pH unit at 25°C); and it is fundamental in biology, where the Nernst equation (and its extension, the Goldman equation) calculates the equilibrium membrane potentials of ions across cell membranes, explaining the resting potential of neurons and muscle cells (the ~−70 mV resting potential arises from ionic concentration gradients of potassium, sodium, etc.) — directly connecting electrochemistry to nerve impulses and bioelectricity. The Nernst equation thus quantitatively bridges thermodynamics, concentration, and measurable voltage, and is indispensable across electrochemistry, analytical chemistry, energy storage, corrosion science, and electrophysiology."
+    }
+  },
+  {
+    "id": "ec006",
+    "path": [
+      "chemistry",
+      "electrochemistry"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "How do batteries and fuel cells store and convert energy?",
+    "passive": {
+      "options": [
+        "Both use redox reactions to convert chemical to electrical energy; batteries store the reactants internally (rechargeable types like Li-ion reverse the reaction on charging), while fuel cells are continuously fed external fuel (e.g. H₂) and oxidant (O₂), producing electricity with high efficiency and (for H₂) only water as exhaust",
+        "They generate energy from nothing (would conflict with renormalisation group flow and cross-section data) (ruled out by experimental constraints from collider and low-energy data)",
+        "Batteries and fuel cells use no chemical reactions (historically considered but disfavoured by modern QFT analyses) (unsupported by perturbative expansions in the coupling)",
+        "Fuel cells store all reactants permanently inside (violates basic gauge invariance and Lorentz covariance requirements) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "Batteries and fuel cells are both electrochemical devices that convert chemical energy directly into electrical energy through spontaneous redox reactions (functioning as galvanic cells), but they differ in how the reactants are supplied. A battery stores its chemical reactants (the electrode materials and electrolyte) internally within the sealed device; as it discharges, the redox reaction proceeds, electrons flow through the external circuit delivering power, and the reactants are gradually consumed until depleted. Primary (non-rechargeable) batteries (e.g. alkaline cells) are discarded once exhausted, while secondary (rechargeable) batteries (e.g. lithium-ion, lead-acid, nickel-metal-hydride) can be recharged by applying an external voltage that drives the redox reaction in reverse (acting as an electrolytic cell during charging), regenerating the original reactants and storing energy again. The dominant modern technology, the lithium-ion battery (Nobel Prize in Chemistry 2019 to Goodenough, Whittingham, and Yoshino), works by shuttling lithium ions between a layered cathode (e.g. lithium cobalt oxide) and a graphite anode (intercalation), offering high energy density, long cycle life, and rechargeability — powering phones, laptops, and electric vehicles and central to renewable-energy storage. A fuel cell, by contrast, is not a storage device but a continuous converter: it is supplied with external fuel and oxidant from outside the cell, producing electricity as long as the supply continues (it does not 'run down' or need recharging, only refuelling). The classic hydrogen fuel cell oxidises hydrogen gas at the anode (H₂ → 2H⁺ + 2e⁻) and reduces oxygen at the cathode (O₂ + 4H⁺ + 4e⁻ → 2H₂O), with the electrons powering the circuit and water as the only product/exhaust — making it clean (zero local emissions) and potentially efficient (not limited by the Carnot efficiency of heat engines, since it converts chemical to electrical energy directly). Fuel cells (PEM, solid-oxide, etc.) are used in vehicles, backup power, and spacecraft, and are central to the prospective 'hydrogen economy' for clean energy, though challenges remain (hydrogen production, storage, distribution, and catalyst cost). Both batteries and fuel cells exemplify the practical harnessing of redox electrochemistry to provide portable and clean electrical power, and their improvement — higher energy density, faster charging, longer life, lower cost, sustainable materials — is one of the most important technological frontiers for electrification, renewable-energy integration, and decarbonisation. They demonstrate electrochemistry's central role in the modern and future energy landscape."
+    }
+  }
+]

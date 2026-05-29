@@ -414,6 +414,20 @@ export const CATEGORIES = [
       },
     ],
   },
+  {
+    id: 'chemistry',
+    label: 'Chemistry',
+    children: [
+      { id: 'atomic-structure',   label: 'Atomic Structure & Periodicity' },
+      { id: 'chemical-bonding',   label: 'Chemical Bonding' },
+      { id: 'thermochemistry',    label: 'Thermochemistry' },
+      { id: 'chemical-kinetics',  label: 'Kinetics & Equilibrium' },
+      { id: 'organic-chemistry',  label: 'Organic Chemistry' },
+      { id: 'inorganic-chemistry', label: 'Inorganic & Transition Metals' },
+      { id: 'electrochemistry',   label: 'Electrochemistry' },
+      { id: 'chem-spectroscopy',  label: 'Analytical & Spectroscopy' },
+    ],
+  },
 ]
 
 export const LEVELS = [

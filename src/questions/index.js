@@ -129,6 +129,14 @@ import aiReinforcementLearning from './ai/reinforcement-learning.json'
 import aiGenerativeModels    from './ai/generative-models.json'
 import aiAlignmentSafety     from './ai/alignment-safety.json'
 import aiEvaluationBenchmarks from './ai/evaluation-benchmarks.json'
+import chemAtomicStructure  from './chemistry/atomic-structure.json'
+import chemBonding           from './chemistry/chemical-bonding.json'
+import chemThermo            from './chemistry/thermochemistry.json'
+import chemKinetics          from './chemistry/chemical-kinetics.json'
+import chemOrganic           from './chemistry/organic-chemistry.json'
+import chemInorganic         from './chemistry/inorganic-chemistry.json'
+import chemElectro           from './chemistry/electrochemistry.json'
+import chemSpectroscopy      from './chemistry/chem-spectroscopy.json'
 import csAlgorithms         from './cs/algorithms.json'
 import csDataStructures      from './cs/data-structures.json'
 import csTheoryOfComputation from './cs/theory-of-computation.json'
@@ -388,6 +396,14 @@ export const allQuestions = [
   ...csPython,
   ...csCpp,
   ...csPlTheory,
+  ...chemAtomicStructure,
+  ...chemBonding,
+  ...chemThermo,
+  ...chemKinetics,
+  ...chemOrganic,
+  ...chemInorganic,
+  ...chemElectro,
+  ...chemSpectroscopy,
 ]
 
 /**
