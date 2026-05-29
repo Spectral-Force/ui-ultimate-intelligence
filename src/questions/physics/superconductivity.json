@@ -1,0 +1,168 @@
+[
+  {
+    "id": "scd001",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "superconductivity"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "BCS theory explains conventional superconductivity. What is the central mechanism?",
+    "passive": {
+      "options": [
+        "Electrons near the Fermi surface form Cooper pairs via an attractive interaction mediated by phonons (lattice distortion); pairs condense into a single coherent quantum state with an energy gap $\\Delta$; gap equation gives $\\Delta(0) = 1.76\\,k_BT_c$ for weak coupling. Pairs are bosonic, condense like a charged superfluid",
+        "Electrons repel more strongly, freezing into an insulator below $T_c$ (would conflict with renormalisation group flow and cross-section data) (contradicted by both lattice simulations and dispersive analyses)",
+        "Superconductivity arises from perfectly free electrons with no interaction (would imply unphysical infinite or negative observables) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "It is purely a classical effect of zero lattice vibration at low $T$ (unsupported by perturbative expansions in the coupling) (historically considered but disfavoured by modern QFT analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Bardeen-Cooper-Schrieffer (1957, Nobel 1972). A single Cooper pair forms for arbitrarily weak attraction (Cooper instability) because the filled Fermi sea blocks decay. Phonon mechanism: an electron polarises the lattice, attracting a second electron — overscreening that overcomes Coulomb repulsion. The macroscopic wavefunction has a rigid phase → zero resistance (no phase slips) and the Meissner effect (perfect diamagnetism). Isotope effect $T_c \\propto M^{-1/2}$ confirmed phonons. Gap ratio $2\\Delta/k_BT_c = 3.53$ universal for weak-coupling BCS."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each superconductivity concept with its meaning:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Meissner effect",
+          "definition": "Active expulsion of magnetic flux below $T_c$ ($B = 0$ inside); distinguishes a superconductor from a perfect conductor"
+        },
+        {
+          "id": "p2",
+          "term": "Cooper pair",
+          "definition": "Bound pair of electrons (opposite spin/momentum) with size $\\xi$ (coherence length); charge $2e$, bosonic"
+        },
+        {
+          "id": "p3",
+          "term": "London penetration depth $\\lambda_L$",
+          "definition": "Distance magnetic field decays into a superconductor; $\\lambda_L = \\sqrt{m/\\mu_0 n_s e^2}$"
+        },
+        {
+          "id": "p4",
+          "term": "Energy gap $\\Delta$",
+          "definition": "Minimum energy to break a pair; opens at $E_F$ below $T_c$; seen in tunnelling and specific heat"
+        }
+      ],
+      "explanation": "Two key length scales: coherence length $\\xi$ (pair size) and penetration depth $\\lambda_L$. Their ratio $\\kappa = \\lambda_L/\\xi$ determines type: $\\kappa < 1/\\sqrt2$ Type I (full Meissner then abrupt loss), $\\kappa > 1/\\sqrt2$ Type II (vortex lattice between $H_{c1}, H_{c2}$). The London equations $\\mathbf E = \\partial_t(\\Lambda\\mathbf J_s)$, $\\mathbf B = -\\nabla\\times(\\Lambda\\mathbf J_s)$ phenomenologically capture zero resistance and the Meissner effect."
+    }
+  },
+  {
+    "id": "scd002",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "superconductivity"
+    ],
+    "level": "U",
+    "modes": [
+      "passive"
+    ],
+    "question": "What experimentally distinguishes a superconductor from a merely perfect conductor?",
+    "passive": {
+      "options": [
+        "The Meissner effect: a superconductor actively expels magnetic flux when cooled below $T_c$ even in a pre-existing field, whereas a perfect conductor would merely trap whatever flux was present. This makes superconductivity a true thermodynamic phase, not just $\\rho = 0$",
+        "Nothing — they are identical (disagrees with the standard textbook treatment in Peskin-Schroeder) (unsupported by perturbative expansions in the coupling)",
+        "A perfect conductor expels flux but a superconductor does not (would conflict with renormalisation group flow and cross-section data) (would imply unphysical infinite or negative observables)",
+        "Only the colour of the sample changes (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "A hypothetical perfect conductor ($\\rho = 0$) obeys $\\partial\\mathbf B/\\partial t = 0$ inside, so it freezes in whatever field existed when resistance vanished — history-dependent. A superconductor instead enforces $\\mathbf B = 0$ inside regardless of cooling path (field-cooled or zero-field-cooled give the same expelled state). This irreversibility-free behaviour shows superconductivity is an equilibrium phase with a free-energy condensation. The Meissner effect enables magnetic levitation and is the basis of the thermodynamic critical field $H_c(T)$."
+    }
+  },
+  {
+    "id": "scd003",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "superconductivity"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Type I vs Type II superconductors: what is the difference?",
+    "passive": {
+      "options": [
+        "Type I ($\\kappa < 1/\\sqrt2$): single critical field $H_c$, full Meissner then abrupt normal transition; mostly elemental SCs. Type II ($\\kappa > 1/\\sqrt2$): two fields $H_{c1} < H_{c2}$, with a mixed (Abrikosov vortex) state between them where quantised flux $\\Phi_0 = h/2e$ penetrates as a vortex lattice; allows very high $H_{c2}$ (useful magnets)",
+        "Type I has higher critical fields than Type II (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (ruled out by experimental constraints from collider and low-energy data)",
+        "Only Type I admits magnetic vortices (contradicted by both lattice simulations and dispersive analyses) (would conflict with renormalisation group flow and cross-section data)",
+        "The two types differ only in colour and have identical magnetic behaviour (violates basic gauge invariance and Lorentz covariance requirements) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "The sign of the normal/superconductor interface energy (set by $\\kappa = \\lambda_L/\\xi$) decides the type. Type II (Abrikosov 1957, Nobel 2003) admits flux vortices each carrying one flux quantum $\\Phi_0 = h/2e = 2.07\\times 10^{-15}$ Wb (the $2e$ confirms pairing). Between $H_{c1}$ and $H_{c2}$ vortices form a triangular lattice; pinning of vortices on defects is essential for high-current magnets (NbTi, Nb$_3$Sn used in MRI and the LHC). Flux flow when vortices move dissipates — hence the need for pinning."
+    }
+  },
+  {
+    "id": "scd004",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "superconductivity"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "The Josephson effect underlies SQUIDs and superconducting qubits. What is it?",
+    "passive": {
+      "options": [
+        "A supercurrent tunnels through a thin barrier between two superconductors with $I = I_c\\sin\\phi$ (DC effect, $\\phi$ = phase difference); under a voltage $V$ the phase evolves $d\\phi/dt = 2eV/\\hbar$ giving an AC current at frequency $f = 2eV/h$ (AC effect, 483.6 MHz/$\\mu$V)",
+        "Normal electrons hop randomly with no phase coherence (unsupported by perturbative expansions in the coupling) (not consistent with the operator product expansion at large momentum)",
+        "The junction behaves as an ordinary resistor (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would conflict with renormalisation group flow and cross-section data)",
+        "Current flows only above the bulk critical temperature (ruled out by experimental constraints from collider and low-energy data) (violates basic gauge invariance and Lorentz covariance requirements)"
+      ],
+      "correct": 0,
+      "explanation": "Josephson (1962, Nobel 1973). The phase of the macroscopic wavefunction is the key variable. DC effect: zero-voltage supercurrent up to $I_c$. AC effect: a constant voltage produces oscillating current — used to define the volt (Josephson constant $K_J = 2e/h = 483597.8$ GHz/V, exact in the SI). Applications: SQUID magnetometers (sensitivity $\\sim 10^{-15}$ T via flux quantisation in a loop with junctions); transmon and flux qubits in quantum computers (a Josephson junction provides the nonlinear inductance that makes a qubit anharmonic)."
+    }
+  },
+  {
+    "id": "scd005",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "superconductivity"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Ginzburg-Landau theory describes superconductivity near $T_c$. What is its structure?",
+    "passive": {
+      "options": [
+        "Free energy expanded in a complex order parameter $\\psi$: $f = f_n + \\alpha(T)|\\psi|^2 + (\\beta/2)|\\psi|^4 + (1/2m^*)|(-i\\hbar\\nabla - e^*\\mathbf A)\\psi|^2 + B^2/2\\mu_0$, with $\\alpha \\propto (T-T_c)$. Minimising gives the GL equations; $|\\psi|^2 = n_s$; derives $\\xi$, $\\lambda_L$, and the type-I/II distinction",
+        "A microscopic theory with no order parameter (disagrees with the standard textbook treatment in Peskin-Schroeder) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Identical to BCS with explicit Cooper pairs and phonons (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)",
+        "A purely magnetic theory ignoring the condensate (not consistent with the operator product expansion at large momentum) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Ginzburg-Landau (1950); later shown by Gor'kov to emerge from BCS near $T_c$ with $e^* = 2e$, $m^* = 2m$. It is a Landau theory of a second-order transition with a U(1)-symmetric complex order parameter — the prototype for spontaneous symmetry breaking and the Anderson-Higgs mechanism (the photon 'gains mass' inside a superconductor → Meissner effect). Two natural lengths emerge: coherence length $\\xi = \\hbar/\\sqrt{2m^*|\\alpha|}$ and penetration depth $\\lambda_L$; their ratio $\\kappa$ gives the type. Powerful for inhomogeneous situations: vortices, surfaces, junctions, fluctuations."
+    }
+  },
+  {
+    "id": "scd006",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "superconductivity"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is unconventional about high-$T_c$ cuprate superconductors?",
+    "passive": {
+      "options": [
+        "Pairing is not simple phonon-mediated s-wave: cuprates have $d_{x^2-y^2}$ symmetry (gap with nodes and sign changes), emerge from doping a Mott insulator, show a pseudogap and strange-metal (linear-in-$T$ resistivity) normal state, and reach $T_c \\sim 90$-160 K. The mechanism (likely spin-fluctuation mediated) is still debated",
+        "They are perfectly described by weak-coupling BCS with phonons (historically considered but disfavoured by modern QFT analyses) (unsupported by perturbative expansions in the coupling)",
+        "Their gap is fully isotropic s-wave with no nodes (disagrees with the standard textbook treatment in Peskin-Schroeder) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "They are conventional metals that never superconduct (not consistent with the operator product expansion at large momentum) (contradicted by both lattice simulations and dispersive analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Bednorz-Muller 1986 (Nobel 1987) found La-Ba-Cu-O; YBCO ($T_c = 93$ K) broke the liquid-nitrogen barrier. Key anomalies: parent compounds are antiferromagnetic Mott insulators (strong correlations, not band insulators); superconductivity appears in a dome vs hole/electron doping; $d$-wave gap confirmed by phase-sensitive (tricrystal) and ARPES experiments; the pseudogap phase and T-linear 'Planckian' resistivity defy Fermi-liquid theory. Related families: iron-based SCs (2008), and pressurised hydrides (H$_3$S, LaH$_{10}$) reaching $T_c \\sim 250$ K — the latter conventional (phonon) but at megabar pressures. Room-temperature ambient-pressure superconductivity remains the grand goal."
+    }
+  }
+]

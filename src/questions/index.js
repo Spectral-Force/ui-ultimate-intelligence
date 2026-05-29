@@ -129,6 +129,14 @@ import aiReinforcementLearning from './ai/reinforcement-learning.json'
 import aiGenerativeModels    from './ai/generative-models.json'
 import aiAlignmentSafety     from './ai/alignment-safety.json'
 import aiEvaluationBenchmarks from './ai/evaluation-benchmarks.json'
+import bandTheory           from './physics/band-theory.json'
+import superconductivity    from './physics/superconductivity.json'
+import magnetism            from './physics/magnetism.json'
+import topologicalMatter    from './physics/topological-matter.json'
+import stronglyCorrelated   from './physics/strongly-correlated.json'
+import quantumHall          from './physics/quantum-hall.json'
+import phonons              from './physics/phonons.json'
+import softMatter           from './physics/soft-matter.json'
 
 export const allQuestions = [
   ...dopplerCooling,
@@ -262,6 +270,14 @@ export const allQuestions = [
   ...aiGenerativeModels,
   ...aiAlignmentSafety,
   ...aiEvaluationBenchmarks,
+  ...bandTheory,
+  ...superconductivity,
+  ...magnetism,
+  ...topologicalMatter,
+  ...stronglyCorrelated,
+  ...quantumHall,
+  ...phonons,
+  ...softMatter,
 ]
 
 /**

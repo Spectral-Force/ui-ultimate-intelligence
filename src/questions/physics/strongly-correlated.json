@@ -1,0 +1,173 @@
+[
+  {
+    "id": "cor001",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "strongly-correlated"
+    ],
+    "level": "P",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "The Hubbard model is the minimal model of correlated electrons. Write it and explain the competition.",
+    "passive": {
+      "options": [
+        "$H = -t\\sum_{\\langle ij\\rangle\\sigma}(c^\\dagger_{i\\sigma}c_{j\\sigma} + \\text{h.c.}) + U\\sum_i n_{i\\uparrow}n_{i\\downarrow}$: hopping $t$ favours delocalisation (kinetic energy, metal), on-site repulsion $U$ penalises double occupancy (localisation). At half-filling, large $U/t$ gives a Mott insulator with effective antiferromagnetic exchange $J = 4t^2/U$",
+        "A model of free electrons with no interactions (historically considered but disfavoured by modern QFT analyses) (would imply unphysical infinite or negative observables) (would conflict with renormalisation group flow and cross-section data)",
+        "A purely classical Ising-like spin model (ruled out by experimental constraints from collider and low-energy data) (unsupported by perturbative expansions in the coupling) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "A model where electrons never hop between sites (disagrees with the standard textbook treatment in Peskin-Schroeder) (contradicted by both lattice simulations and dispersive analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Hubbard (1963): the simplest Hamiltonian capturing the metal-insulator competition. Band theory predicts a half-filled band is metallic, but strong $U$ localises electrons one-per-site to avoid the energy cost of double occupancy — a Mott insulator driven by correlation, not by band gaps. Virtual hopping then generates superexchange $J = 4t^2/U$ → antiferromagnetism (maps to Heisenberg model at large $U$). Doping the Mott insulator is believed central to cuprate superconductivity. The 2D Hubbard model is not exactly solvable and is a major target of quantum Monte Carlo, DMFT, and cold-atom quantum simulation."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each strongly-correlated concept with its meaning:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Mott insulator",
+          "definition": "Insulator from electron-electron repulsion (not band filling); half-filled but localised"
+        },
+        {
+          "id": "p2",
+          "term": "Heavy fermion",
+          "definition": "Effective mass $\\sim 100$-$1000\\,m_e$ from Kondo screening of localised f-moments; e.g. CeCu$_6$, UPt$_3$"
+        },
+        {
+          "id": "p3",
+          "term": "Kondo effect",
+          "definition": "Resistance minimum from conduction electrons screening a magnetic impurity; $\\ln T$ upturn"
+        },
+        {
+          "id": "p4",
+          "term": "Non-Fermi liquid",
+          "definition": "Breakdown of quasiparticle picture; e.g. linear-in-$T$ resistivity near quantum critical points"
+        },
+        {
+          "id": "p5",
+          "term": "Quantum criticality",
+          "definition": "Continuous phase transition at $T=0$ tuned by pressure/field/doping; quantum fluctuations dominate"
+        }
+      ],
+      "explanation": "Strong correlations break the independent-electron paradigm. When $U \\gtrsim$ bandwidth, perturbation theory fails and emergent phenomena (Mott physics, heavy fermions, unconventional superconductivity, non-Fermi liquids) arise. These materials are the frontier where the standard 'band + weak interactions' framework gives way to genuinely many-body physics."
+    }
+  },
+  {
+    "id": "cor002",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "strongly-correlated"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is Fermi liquid theory and when does it apply?",
+    "passive": {
+      "options": [
+        "Landau's theory: a weakly-interacting fermion system's low-energy excitations are long-lived quasiparticles in one-to-one correspondence with free-electron states, with renormalised mass $m^*$ and finite lifetime $\\tau \\propto 1/(E-E_F)^2$. Gives $C \\propto T$, $\\chi \\sim$ const, $\\rho \\propto T^2$. Applies to most normal metals and $^3$He",
+        "A theory in which interactions destroy all quasiparticles (would conflict with renormalisation group flow and cross-section data) (unsupported by perturbative expansions in the coupling)",
+        "A purely classical theory of liquids (ruled out by experimental constraints from collider and low-energy data) (historically considered but disfavoured by modern QFT analyses)",
+        "Valid only at infinite temperature (contradicted by both lattice simulations and dispersive analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "Landau Fermi liquid (1956): adiabatic continuity connects interacting eigenstates to the free Fermi gas, so quasiparticles inherit the Fermi surface (Luttinger's theorem fixes its volume). Interactions renormalise mass and introduce Landau parameters $F_l^{s,a}$ controlling compressibility, susceptibility, sound. Quasiparticle lifetime diverges at $E_F$ ($1/\\tau \\propto (E-E_F)^2$ from phase space) → well-defined excitations. Signatures: $T^2$ resistivity, linear specific heat, Pauli susceptibility, Wilson ratio. Breaks down in 1D (Luttinger liquid — spin-charge separation), near quantum critical points, and in strange metals (linear-in-$T$ resistivity), motivating non-Fermi-liquid physics."
+    }
+  },
+  {
+    "id": "cor003",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "strongly-correlated"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "The Kondo effect produces a resistance minimum. What is the physics?",
+    "passive": {
+      "options": [
+        "A single magnetic impurity in a metal is antiferromagnetically screened by a cloud of conduction electrons below the Kondo temperature $T_K$; spin-flip scattering grows logarithmically as $T$ drops, adding a $-\\ln T$ term to resistivity → a minimum, then saturation as a singlet forms. Solved by renormalisation group / Bethe ansatz",
+        "Impurities simply scatter electrons elastically with no temperature dependence (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "The effect requires superconductivity (would imply unphysical infinite or negative observables) (violates basic gauge invariance and Lorentz covariance requirements) (contradicted by both lattice simulations and dispersive analyses)",
+        "Resistance always decreases monotonically with temperature (historically considered but disfavoured by modern QFT analyses) (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "Observed as a resistivity minimum in dilute magnetic alloys (Fe in Au) since the 1930s; explained by Kondo (1964) who found $\\ln T$ divergence from third-order spin-flip scattering. The naive perturbation theory diverges at $T_K$; Wilson's numerical renormalisation group (Nobel 1982) showed the impurity spin is fully screened into a singlet at $T \\ll T_K$, restoring a Fermi liquid with a sharp Kondo resonance at $E_F$. Lattice version (Kondo/periodic Anderson lattice) gives heavy-fermion metals: coherent screening of a lattice of f-moments produces huge $m^*$. The Kondo resonance is seen in scanning-tunnelling spectroscopy of single magnetic adatoms."
+    }
+  },
+  {
+    "id": "cor004",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "strongly-correlated"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the Mott metal-insulator transition?",
+    "passive": {
+      "options": [
+        "A transition driven by electron correlation rather than band filling: as $U/t$ (or pressure, doping) crosses a critical value, a partially-filled band that 'should' be metallic localises into an insulator. Often first-order, accompanied by magnetic order; classic example V$_2$O$_3$. Captured by dynamical mean-field theory (DMFT)",
+        "A transition caused purely by changing the number of atoms (contradicted by both lattice simulations and dispersive analyses) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Identical to a band insulator forming from a filled band (historically considered but disfavoured by modern QFT analyses) (would conflict with renormalisation group flow and cross-section data)",
+        "A transition that only occurs above room temperature in all materials (disagrees with the standard textbook treatment in Peskin-Schroeder) (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "Mott (1949): strong on-site repulsion can open a correlation gap even at half-filling, where band theory insists on a metal. Tuning $U/t$ via pressure, chemical substitution, or temperature drives the transition (e.g. V$_2$O$_3$, NiS$_2$, organic $\\kappa$-(BEDT-TTF) salts). Often coincides with antiferromagnetic ordering (the Slater vs Mott distinction). Dynamical mean-field theory (DMFT) — mapping the lattice to a self-consistent quantum impurity, exact in infinite dimensions — captures the coexistence of a quasiparticle peak with Hubbard bands and the first-order Mott transition. Doping a Mott insulator yields the cuprate phase diagram, linking Mott physics to high-$T_c$ superconductivity."
+    }
+  },
+  {
+    "id": "cor005",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "strongly-correlated"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is a strange metal and why does linear-in-$T$ resistivity matter?",
+    "passive": {
+      "options": [
+        "A non-Fermi-liquid normal state (cuprates, some pnictides, twisted bilayer graphene) with $\\rho \\propto T$ from high $T$ down to low $T$, often persisting to a quantum critical point; scattering rate saturates the 'Planckian' bound $1/\\tau \\sim k_BT/\\hbar$. Suggests quasiparticles are ill-defined and a new transport paradigm is needed",
+        "An ordinary metal obeying $\\rho \\propto T^2$ (ruled out by experimental constraints from collider and low-energy data) (unsupported by perturbative expansions in the coupling)",
+        "A superconductor at all temperatures (would conflict with renormalisation group flow and cross-section data) (not consistent with the operator product expansion at large momentum)",
+        "An insulator with exponentially activated transport (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "Fermi liquids give $\\rho \\propto T^2$ (electron-electron) and $T^5$ (phonon) at low $T$; strange metals show robust $\\rho \\propto T$ over decades, incompatible with well-defined quasiparticles. The inferred scattering rate $\\hbar/\\tau \\approx k_BT$ hits the 'Planckian' dissipation bound — the fastest equilibration allowed, also seen in holographic (AdS/CFT) models and the quark-gluon plasma. Strange-metal behaviour appears near quantum critical points and in the normal state above the cuprate superconducting dome, and recently in magic-angle twisted bilayer graphene. Understanding it — transport without quasiparticles — is one of the central open problems of condensed-matter physics, with tools from holography, SYK models, and quantum-critical field theory."
+    }
+  },
+  {
+    "id": "cor006",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "strongly-correlated"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "Magic-angle twisted bilayer graphene: why is it a correlated-electron platform?",
+    "passive": {
+      "options": [
+        "Twisting two graphene sheets by $\\approx 1.1°$ creates a moire superlattice with nearly flat bands (bandwidth $\\sim$ few meV); the quenched kinetic energy makes Coulomb interactions dominant, producing correlated insulators, superconductivity, and magnetism tunable purely by gate voltage — a highly controllable Hubbard-like system",
+        "Twisting opens a huge band gap making it inert (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would conflict with renormalisation group flow and cross-section data)",
+        "The angle is irrelevant; properties never change (would imply unphysical infinite or negative observables) (contradicted by both lattice simulations and dispersive analyses)",
+        "It behaves exactly like single-layer graphene at all angles (not consistent with the operator product expansion at large momentum) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "Bistritzer-MacDonald (2011) predicted flat bands at 'magic' twist angles; Cao et al. (2018) discovered correlated insulating states and superconductivity. At $\\theta \\approx 1.1°$ the moire period is $\\sim 13$ nm and the lowest bands become nearly dispersionless, so $U/W \\gg 1$ (interactions overwhelm kinetic energy). The phase diagram — correlated insulators at integer moire fillings, superconducting domes nearby, orbital ferromagnetism, quantum anomalous Hall — strikingly resembles the cuprates but is fully tunable by electrostatic gating, twist angle, and displacement field. 'Twistronics' turned moire materials into a designer laboratory for strongly correlated and topological physics with unprecedented control."
+    }
+  }
+]

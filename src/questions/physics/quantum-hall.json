@@ -1,0 +1,168 @@
+[
+  {
+    "id": "qhe001",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "quantum-hall"
+    ],
+    "level": "P",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "The integer quantum Hall effect shows quantised Hall conductance. State the result.",
+    "passive": {
+      "options": [
+        "In a 2D electron gas at high field and low $T$, the Hall conductance is quantised $\\sigma_{xy} = \\nu e^2/h$ with integer $\\nu$, accurate to $\\sim 10^{-9}$ and independent of sample details; longitudinal resistance $\\rho_{xx} \\to 0$ on the plateaus. Quantisation reflects filled Landau levels with chiral edge channels",
+        "Hall conductance varies continuously with field with no plateaus (not consistent with the operator product expansion at large momentum) (unsupported by perturbative expansions in the coupling)",
+        "The effect requires zero magnetic field (violates basic gauge invariance and Lorentz covariance requirements) (ruled out by experimental constraints from collider and low-energy data)",
+        "Conductance depends sensitively on sample geometry and disorder (disagrees with the standard textbook treatment in Peskin-Schroeder) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "von Klitzing (1980, Nobel 1985): plateaus in $R_{xy} = h/(\\nu e^2)$ so precise they redefine the ohm and fix the von Klitzing constant $R_K = h/e^2 = 25812.807\\,\\Omega$ (exact in the revised SI). A perpendicular field quantises 2D motion into Landau levels $E_n = \\hbar\\omega_c(n+1/2)$, $\\omega_c = eB/m$. Disorder localises bulk states, leaving extended states only at Landau-level centres; current flows in dissipationless chiral edge channels (one per filled level). The remarkable precision and disorder-independence signal a topological origin — the Hall conductance equals a Chern number."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each quantum-Hall concept with its meaning:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Landau level",
+          "definition": "Quantised cyclotron orbit energy $E_n = \\hbar\\omega_c(n+\\tfrac12)$; macroscopic degeneracy $eB/h$ per area"
+        },
+        {
+          "id": "p2",
+          "term": "Filling factor $\\nu$",
+          "definition": "$\\nu = n_e h/(eB)$ = (electrons)/(flux quanta); integer or fractional plateaus"
+        },
+        {
+          "id": "p3",
+          "term": "Chiral edge states",
+          "definition": "One-way dissipationless current-carrying channels at the sample boundary; immune to backscattering"
+        },
+        {
+          "id": "p4",
+          "term": "TKNN invariant",
+          "definition": "Chern number = Hall conductance in units of $e^2/h$; topological origin of quantisation"
+        }
+      ],
+      "explanation": "The Thouless-Kohmoto-Nightingale-den Nijs (1982) formula identified $\\sigma_{xy}$ as a topological invariant (integral of Berry curvature = Chern number), explaining the extraordinary precision. The quantum Hall effect was the first topological phase of matter, decades before the term became central to the field."
+    }
+  },
+  {
+    "id": "qhe002",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "quantum-hall"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the fractional quantum Hall effect and what does it imply?",
+    "passive": {
+      "options": [
+        "Plateaus at fractional filling $\\nu = 1/3, 2/5, 5/2,\\dots$ arise from electron-electron interactions forming an incompressible correlated liquid (Laughlin state); excitations are fractionally charged quasiparticles ($e/3$) obeying anyonic (fractional/non-abelian) statistics — emergent particles unlike any elementary fermion or boson",
+        "Fractions arise from single-particle Landau levels alone (contradicted by both lattice simulations and dispersive analyses) (unsupported by perturbative expansions in the coupling)",
+        "It is identical to the integer effect with no interactions (would imply unphysical infinite or negative observables) (would conflict with renormalisation group flow and cross-section data)",
+        "Quasiparticles carry integer charge only (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (historically considered but disfavoured by modern QFT analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Tsui-Stormer-Gossard (1982) discovered the $\\nu = 1/3$ plateau; Laughlin (1983) wrote the trial wavefunction (Nobel 1998). Within a single partially-filled Landau level, Coulomb interaction selects a special incompressible liquid at magic fillings. Excitations are fractionally charged (confirmed by shot-noise measuring $e/3$) and anyonic — braiding two quasiparticles gives a fractional phase. The composite-fermion picture (Jain): electrons bind flux quanta, mapping FQHE to IQHE of composite fermions. The $\\nu = 5/2$ state is conjectured to host non-abelian Moore-Read anyons (Majorana-like), of interest for topological quantum computation. FQHE is the paradigm of topological order with intrinsic anyons and long-range entanglement."
+    }
+  },
+  {
+    "id": "qhe003",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "quantum-hall"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Why is the integer quantum Hall conductance so insensitive to disorder?",
+    "passive": {
+      "options": [
+        "Its value is a topological invariant (Chern number) of the filled bands — an integer that cannot change under smooth deformations (disorder, geometry) unless the gap closes. Disorder is in fact essential: it localises bulk states, creating the mobility gaps that make the plateaus wide and flat",
+        "Because the samples are perfectly clean with no disorder (violates basic gauge invariance and Lorentz covariance requirements) (not consistent with the operator product expansion at large momentum)",
+        "Because the magnetic field exactly cancels all impurity scattering (disagrees with the standard textbook treatment in Peskin-Schroeder) (historically considered but disfavoured by modern QFT analyses)",
+        "It is actually very sensitive and varies sample to sample (ruled out by experimental constraints from collider and low-energy data) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "The robustness is the hallmark of topology: $\\sigma_{xy} = (e^2/h)\\times C$ with $C$ an integer Chern number, invariant under any continuous change that keeps the bulk gapped. Counter-intuitively, disorder broadens Landau levels into bands of localised states with extended states only at the centres; as the Fermi level sweeps through localised states the Hall conductance stays pinned (plateau), jumping only when crossing an extended state. Without disorder the plateaus would shrink to points. This is why metrology-grade quantisation ($10^{-9}$) appears in real, dirty samples — the precision is protected by topology, not by sample perfection."
+    }
+  },
+  {
+    "id": "qhe004",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "quantum-hall"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the quantum anomalous Hall effect?",
+    "passive": {
+      "options": [
+        "A quantised Hall effect at zero external magnetic field, achieved by intrinsic magnetisation + strong spin-orbit coupling (e.g. magnetically-doped topological insulators like Cr-doped (Bi,Sb)$_2$Te$_3$); a single chiral edge channel gives $\\sigma_{xy} = e^2/h$ without Landau levels",
+        "An ordinary Hall effect needing very strong fields (historically considered but disfavoured by modern QFT analyses) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "A purely classical effect from sample heating (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "An effect that destroys all edge conduction (would imply unphysical infinite or negative observables) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Predicted by Haldane (1988) via a honeycomb model with staggered fluxes that breaks time-reversal without a net field (Nobel 2016) — proving a quantised Hall response needs only broken T and band topology, not Landau levels. Realised in 2013 (Chang et al.) in magnetically doped topological insulator thin films, showing $\\rho_{xy} = h/e^2$ at $B = 0$. The intrinsic magnetisation gaps the topological surface state, leaving one dissipationless chiral edge mode. Promises low-power 'topological electronics' (zero-field quantised resistance) though currently limited to very low temperatures. Conceptually the Chern insulator: a 2D insulator with nonzero Chern number absent any external field."
+    }
+  },
+  {
+    "id": "qhe005",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "quantum-hall"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "Laughlin's flux-insertion argument explains IQHE quantisation. How?",
+    "passive": {
+      "options": [
+        "Thread one flux quantum $\\Phi_0 = h/e$ through a Corbino (annular) sample adiabatically; gauge invariance requires the spectrum returns to itself, but $\\nu$ electrons are pumped radially from one edge to the other; the work done by the Hall voltage fixes $\\sigma_{xy} = \\nu e^2/h$ as an exact integer multiple",
+        "It relies on counting impurities directly (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would imply unphysical infinite or negative observables)",
+        "It assumes electrons are classical billiard balls (violates basic gauge invariance and Lorentz covariance requirements) (would conflict with renormalisation group flow and cross-section data)",
+        "It requires the flux to be a non-integer multiple of $\\Phi_0$ (contradicted by both lattice simulations and dispersive analyses) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "Laughlin (1981) gauge argument: in a Corbino geometry, inserting exactly one flux quantum is a large gauge transformation that maps the system to itself, so any net effect must be transfer of an integer number of electrons between inner and outer edges. The charge pumped per flux quantum equals $\\sigma_{xy}h/e$; consistency forces $\\sigma_{xy} = $ integer $\\times e^2/h$. This elegantly ties quantisation to gauge invariance and was the conceptual seed for understanding the topological (Chern number) nature later made precise by TKNN. The same charge-pumping idea (Thouless pump) underlies adiabatic transport and the modern theory of polarisation."
+    }
+  },
+  {
+    "id": "qhe006",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "quantum-hall"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "What are anyons and why are they possible only in two dimensions?",
+    "passive": {
+      "options": [
+        "In 2D, exchanging identical particles is described by the braid group (not the permutation group), so the wavefunction can acquire any phase $e^{i\\theta}$ (abelian anyons) or undergo a unitary rotation in a degenerate space (non-abelian anyons). In 3D+ all exchange paths are topologically equivalent, allowing only bosons ($\\theta=0$) or fermions ($\\theta=\\pi$)",
+        "Anyons exist in all dimensions equally (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would conflict with renormalisation group flow and cross-section data)",
+        "Anyons are just slow electrons (would imply unphysical infinite or negative observables) (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)",
+        "Two dimensions forbid any exchange statistics (contradicted by both lattice simulations and dispersive analyses) (violates basic gauge invariance and Lorentz covariance requirements)"
+      ],
+      "correct": 0,
+      "explanation": "Particle statistics come from the topology of the configuration space of identical particles. In 3D the first homotopy group is the permutation group $S_N$ (two 1D reps: bosons, fermions). In 2D it is the braid group $B_N$, which is infinite and non-abelian, permitting fractional statistics. Abelian anyons (FQHE quasiparticles, $\\theta = \\pi/3$ for $\\nu=1/3$) acquire a fractional phase under braiding — directly evidenced in 2020 anyon-collider and interferometry experiments. Non-abelian anyons (Moore-Read $\\nu = 5/2$, Majorana modes) have a degenerate ground-state manifold; braiding implements quantum gates, the foundation of topological quantum computation. Anyons are a genuinely emergent, dimension-specific phenomenon of strongly correlated 2D matter."
+    }
+  }
+]

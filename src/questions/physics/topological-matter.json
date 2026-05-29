@@ -1,0 +1,168 @@
+[
+  {
+    "id": "top001",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "topological-matter"
+    ],
+    "level": "P",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "What defines a topological insulator?",
+    "passive": {
+      "options": [
+        "A bulk insulator with a band gap that is topologically non-trivial (characterised by a $\\mathbb Z_2$ invariant arising from band inversion + strong spin-orbit coupling), forcing gapless conducting surface/edge states protected by time-reversal symmetry; surface states are spin-momentum locked Dirac cones, robust against non-magnetic disorder",
+        "An ordinary insulator with no surface states (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "A metal in the bulk and insulating on the surface (ruled out by experimental constraints from collider and low-energy data) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "A material that conducts equally everywhere with no gap (historically considered but disfavoured by modern QFT analyses) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "Topological insulators (Kane-Mele 2005; Bernevig-Hughes-Zhang 2006; experimental HgTe quantum wells 2007, Bi$_2$Se$_3$/Bi$_2$Te$_3$ 3D 2008). The bulk-boundary correspondence: a non-trivial bulk topological invariant guarantees protected boundary modes. In 2D (quantum spin Hall): counter-propagating spin-polarised edge channels. In 3D: an odd number of surface Dirac cones. Time-reversal symmetry ($\\mathbb Z_2$) protects against backscattering from non-magnetic impurities (would require spin flip). Distinct from a trivial insulator only globally — you cannot deform one into the other without closing the gap."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each topological-matter concept with its meaning:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Chern number",
+          "definition": "Integer topological invariant = integral of Berry curvature over BZ; quantises the Hall conductance"
+        },
+        {
+          "id": "p2",
+          "term": "Berry phase",
+          "definition": "Geometric phase acquired by a state transported around a closed loop in parameter space"
+        },
+        {
+          "id": "p3",
+          "term": "Bulk-boundary correspondence",
+          "definition": "Non-trivial bulk topology forces protected gapless edge/surface states"
+        },
+        {
+          "id": "p4",
+          "term": "Weyl semimetal",
+          "definition": "Gapless 3D bands touching at Weyl points (monopoles of Berry curvature); Fermi-arc surface states"
+        }
+      ],
+      "explanation": "Topology enters via the Berry connection $\\mathbf A_n = i\\langle u_{n\\mathbf k}|\\nabla_{\\mathbf k}|u_{n\\mathbf k}\\rangle$ and Berry curvature $\\Omega = \\nabla\\times\\mathbf A$. Integrating curvature over the Brillouin zone gives the Chern number (TKNN invariant). These geometric quantities, not local order parameters, classify topological phases — a paradigm beyond Landau symmetry-breaking."
+    }
+  },
+  {
+    "id": "top002",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "topological-matter"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the Berry phase and why does it matter in solids?",
+    "passive": {
+      "options": [
+        "An adiabatic geometric phase $\\gamma = \\oint\\mathbf A_n\\cdot d\\mathbf k$ a Bloch state acquires when $\\mathbf k$ is carried around a closed loop; gauge-invariant modulo $2\\pi$. It governs electric polarisation (modern theory), anomalous/quantum Hall effects, and orbital magnetisation — physical effects from band geometry, not energetics alone",
+        "A dynamical phase $e^{-iEt/\\hbar}$ identical for all paths (would imply unphysical infinite or negative observables) (historically considered but disfavoured by modern QFT analyses)",
+        "An irrelevant overall phase with no measurable consequence (not consistent with the operator product expansion at large momentum) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "A purely classical rotation angle (disagrees with the standard textbook treatment in Peskin-Schroeder) (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "Berry (1984) generalised the adiabatic theorem: besides the dynamical phase, a state picks up a geometric phase depending only on the path in parameter space. In crystals the parameter is crystal momentum $\\mathbf k$. The Berry connection plays the role of a vector potential in $\\mathbf k$-space; the Berry curvature acts like a magnetic field that deflects wavepackets (anomalous velocity $\\dot{\\mathbf r} \\sim \\dot{\\mathbf k}\\times\\boldsymbol\\Omega$) → intrinsic anomalous Hall effect. The modern theory of polarisation expresses $\\mathbf P$ as a Berry phase. Earlier instance: the Aharonov-Bohm phase. Generalises (non-abelian) to degenerate bands (Wilczek-Zee)."
+    }
+  },
+  {
+    "id": "top003",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "topological-matter"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Weyl and Dirac semimetals: what are they?",
+    "passive": {
+      "options": [
+        "3D gapless materials whose conduction and valence bands touch at isolated points with linear dispersion. Weyl points are monopoles of Berry curvature (chirality $\\pm1$), come in pairs (Nielsen-Ninomiya), need broken inversion or time-reversal, and produce Fermi-arc surface states + chiral anomaly (negative magnetoresistance). Dirac semimetals are symmetry-protected doubled Weyl points",
+        "Insulators with a large gap and no band touching (contradicted by both lattice simulations and dispersive analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would conflict with renormalisation group flow and cross-section data)",
+        "Conventional metals with a spherical Fermi surface only (historically considered but disfavoured by modern QFT analyses) (would imply unphysical infinite or negative observables) (ruled out by experimental constraints from collider and low-energy data)",
+        "Superconductors with nodal gaps (violates basic gauge invariance and Lorentz covariance requirements) (unsupported by perturbative expansions in the coupling) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "Weyl semimetals (TaAs, 2015) realise the Weyl equation of massless chiral fermions in a crystal. Each Weyl node is a source/sink of Berry curvature — a monopole in momentum space. The Nielsen-Ninomiya theorem forces nodes to come in opposite-chirality pairs. Open Fermi arcs connect projections of opposite Weyl nodes on the surface — a smoking-gun signature. The chiral (Adler-Bell-Jackiw) anomaly manifests as charge pumping between nodes in parallel $\\mathbf E\\cdot\\mathbf B$, giving negative longitudinal magnetoresistance. Dirac semimetals (Na$_3$Bi, Cd$_3$As$_2$): fourfold nodes protected by crystal symmetry, splittable into Weyl pairs by breaking T or P."
+    }
+  },
+  {
+    "id": "top004",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "topological-matter"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the quantum spin Hall effect?",
+    "passive": {
+      "options": [
+        "A 2D time-reversal-invariant topological phase with no net charge Hall current but counter-propagating, spin-polarised helical edge channels (spin-up moves one way, spin-down the other); quantised spin Hall conductance; first seen in HgTe/CdTe quantum wells beyond a critical thickness",
+        "An ordinary Hall effect requiring a strong magnetic field (unsupported by perturbative expansions in the coupling) (historically considered but disfavoured by modern QFT analyses)",
+        "A bulk metallic state with no edge structure (disagrees with the standard textbook treatment in Peskin-Schroeder) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "A purely classical magnetoresistance effect (ruled out by experimental constraints from collider and low-energy data) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Predicted by Kane-Mele (graphene with spin-orbit, 2005) and Bernevig-Hughes-Zhang (HgTe wells, 2006); observed by Konig et al. (2007) as a quantised two-terminal conductance $2e^2/h$ from two edge channels. The helical edge states are a Kramers pair protected by time-reversal symmetry: backscattering requires flipping spin, forbidden for non-magnetic disorder. It is the $\\mathbb Z_2$ 2D topological insulator — the time-reversal-symmetric cousin of the integer quantum Hall effect (which instead needs a magnetic field and broken T). Dissipationless spin transport makes it attractive for low-power spintronics."
+    }
+  },
+  {
+    "id": "top005",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "topological-matter"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the tenfold-way classification of topological phases?",
+    "passive": {
+      "options": [
+        "Free-fermion gapped phases are classified by the Altland-Zirnbauer symmetry classes (presence/absence and signs of time-reversal, particle-hole, chiral symmetries → 10 classes) and spatial dimension; the periodic table (Kitaev; Schnyder-Ryu-Furusaki-Ludwig) assigns each (class, $d$) a group $0$, $\\mathbb Z$, or $\\mathbb Z_2$ via Bott periodicity",
+        "All topological phases fall into a single universal class (unsupported by perturbative expansions in the coupling) (historically considered but disfavoured by modern QFT analyses)",
+        "Classification depends only on the band gap size (not consistent with the operator product expansion at large momentum) (would imply unphysical infinite or negative observables)",
+        "Only three classes exist, one per spatial dimension (ruled out by experimental constraints from collider and low-energy data) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Altland-Zirnbauer 'tenfold way': the random-matrix symmetry classes built from time-reversal $T$ ($T^2 = \\pm1$ or absent), particle-hole $C$ ($C^2 = \\pm1$ or absent), and chiral $S = TC$. Schnyder-Ryu-Furusaki-Ludwig and Kitaev (2008) showed each of the 10 classes, in each spatial dimension, supports topological invariants following a pattern with Bott periodicity (period 2 for complex classes, 8 for real). Examples: class A in 2D = integer quantum Hall ($\\mathbb Z$, Chern); class AII in 2D/3D = $\\mathbb Z_2$ topological insulators; class D in 1D = Majorana chains. Extensions: crystalline symmetries (topological crystalline insulators), interactions (reduce/modify the table), symmetry-protected topological (SPT) phases, and topological order with intrinsic anyons."
+    }
+  },
+  {
+    "id": "top006",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "topological-matter"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "Why are Majorana zero modes sought for topological quantum computing?",
+    "passive": {
+      "options": [
+        "Majorana bound states (their own antiparticle, $\\gamma = \\gamma^\\dagger$) appearing at vortices/ends of topological superconductors are non-abelian anyons: braiding them performs unitary gates, and quantum information is stored non-locally in pairs — protected from local decoherence. Candidate platforms: semiconductor nanowires with proximity SC + magnetic field, Fe chains, $\\nu=5/2$ FQH",
+        "Because Majoranas are ordinary electrons easy to measure (ruled out by experimental constraints from collider and low-energy data) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Because they decohere faster, simplifying readout (would imply unphysical infinite or negative observables) (not consistent with the operator product expansion at large momentum) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "They have no relevance to quantum computing (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would conflict with renormalisation group flow and cross-section data) (contradicted by both lattice simulations and dispersive analyses)"
+      ],
+      "correct": 0,
+      "explanation": "A Majorana zero mode is a self-conjugate half of an ordinary fermion; two spatially separated Majoranas encode one qubit non-locally, so local perturbations cannot read or corrupt it — intrinsic protection. They obey non-abelian exchange statistics: braiding two Majoranas enacts a topologically protected gate (Ising anyons). Realisations sought in Kitaev's 1D p-wave chain, proximitised InAs/InSb nanowires (zero-bias conductance peaks, though disorder mimics signatures — claims remain contested), and the $\\nu = 5/2$ fractional quantum Hall state. Braiding alone gives Clifford gates; a non-topological T-gate is needed for universality. The promise: fault-tolerant qubits with hardware-level error protection."
+    }
+  }
+]

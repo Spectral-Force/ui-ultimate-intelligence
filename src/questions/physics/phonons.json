@@ -1,0 +1,168 @@
+[
+  {
+    "id": "phn001",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "phonons"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "What are phonons and how do acoustic and optical branches differ?",
+    "passive": {
+      "options": [
+        "Phonons are quantised lattice vibrations (bosons), energy $\\hbar\\omega(\\mathbf k)$. Acoustic branches: $\\omega \\to 0$ as $k \\to 0$ (atoms move in phase, sound waves), $\\omega \\approx v_s k$. Optical branches (need $\\ge 2$ atoms/cell): finite $\\omega$ at $k=0$ (atoms move out of phase), can couple to light if ions are charged",
+        "Phonons are electrons bound to the lattice (ruled out by experimental constraints from collider and low-energy data) (not consistent with the operator product expansion at large momentum)",
+        "All phonon branches have the same constant frequency (would conflict with renormalisation group flow and cross-section data) (unsupported by perturbative expansions in the coupling)",
+        "Optical phonons have zero frequency at the zone centre (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Diagonalising the harmonic lattice (springs between atoms) gives normal modes; their quanta are phonons. For a basis of $p$ atoms in $d$ dimensions there are $dp$ branches: $d$ acoustic (in-phase, $\\omega\\to 0$) and $d(p-1)$ optical (out-of-phase, finite zone-centre gap). Acoustic phonons carry sound and most heat; optical phonons (IR/Raman active in polar/covalent crystals) govern infrared absorption and electron-phonon coupling. Dispersion $\\omega(\\mathbf k)$ is measured by inelastic neutron or X-ray scattering. Phonons mediate conventional superconductivity (BCS) and limit electrical conductivity at high $T$."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each lattice-dynamics concept with its content:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Debye model",
+          "definition": "Linear dispersion up to a cutoff; gives $C_V \\propto T^3$ at low $T$, Dulong-Petit $3Nk_B$ at high $T$"
+        },
+        {
+          "id": "p2",
+          "term": "Einstein model",
+          "definition": "All optical phonons at one frequency $\\omega_E$; captures activated freeze-out of vibrational heat capacity"
+        },
+        {
+          "id": "p3",
+          "term": "Umklapp scattering",
+          "definition": "Phonon-phonon process with $\\mathbf k_1+\\mathbf k_2 = \\mathbf k_3 + \\mathbf G$; degrades heat current, sets thermal resistance"
+        },
+        {
+          "id": "p4",
+          "term": "Gruneisen parameter",
+          "definition": "$\\gamma = -d\\ln\\omega/d\\ln V$; links anharmonicity to thermal expansion"
+        }
+      ],
+      "explanation": "Phonons explain the heat capacity of solids: classical Dulong-Petit ($3Nk_B$) fails at low $T$ where modes freeze out. Einstein (1907) introduced quantised vibrations; Debye (1912) added the linear acoustic spectrum giving the famous $T^3$ law. Anharmonic terms (beyond the harmonic approximation) give thermal expansion, phonon-phonon scattering, and finite thermal conductivity."
+    }
+  },
+  {
+    "id": "phn002",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "phonons"
+    ],
+    "level": "U",
+    "modes": [
+      "passive"
+    ],
+    "question": "Hooke's law underlies the harmonic theory of solids. State it and its role here.",
+    "passive": {
+      "options": [
+        "Restoring force is proportional to displacement, $F = -kx$ (stress $\\propto$ strain, $\\sigma = E\\varepsilon$). Treating interatomic bonds as springs gives the harmonic lattice whose normal modes are phonons; the elastic moduli (Young's $E$, bulk $K$, shear $G$) are the macroscopic limit of these spring constants",
+        "Force is proportional to the square of displacement (contradicted by both lattice simulations and dispersive analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Hooke's law states energy is independent of strain (violates basic gauge invariance and Lorentz covariance requirements) (would conflict with renormalisation group flow and cross-section data)",
+        "It applies only to gases, not solids (not consistent with the operator product expansion at large momentum) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "Hooke (1678, 'ut tensio, sic vis'): within the elastic regime, deformation is linear in applied force. Microscopically, expanding the interatomic potential to second order about equilibrium gives a harmonic (spring) restoring force — the foundation of the harmonic crystal and phonon theory. The proportionality constants become the elastic stiffness tensor $C_{ijkl}$ (stress = stiffness $\\times$ strain). Sound speed $v_s = \\sqrt{C/\\rho}$ sets the acoustic phonon slope. Beyond the elastic limit: plasticity, anharmonicity (thermal expansion, phonon scattering), and ultimately fracture. Hooke's law is the linear-response paradigm echoed throughout physics."
+    }
+  },
+  {
+    "id": "phn003",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "phonons"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "The Debye model predicts the low-temperature heat capacity of insulators. What is the result?",
+    "passive": {
+      "options": [
+        "$C_V \\propto (T/\\Theta_D)^3$ at $T \\ll \\Theta_D$ (Debye temperature), crossing over to the classical Dulong-Petit value $3Nk_B$ at $T \\gg \\Theta_D$. The $T^3$ law comes from counting thermally-excited long-wavelength acoustic phonons in 3D",
+        "$C_V \\propto T$ at all temperatures (contradicted by both lattice simulations and dispersive analyses) (ruled out by experimental constraints from collider and low-energy data)",
+        "$C_V$ is constant at $3Nk_B$ even near absolute zero (unsupported by perturbative expansions in the coupling) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "$C_V \\propto e^{-\\Theta_D/T}$ for all temperatures (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "Debye approximates the phonon spectrum as linear ($\\omega = v_s k$) up to a cutoff frequency $\\omega_D$ chosen to give the correct total number of modes ($3N$). At low $T$ only modes with $\\hbar\\omega \\lesssim k_BT$ are excited; the density of states $g(\\omega) \\propto \\omega^2$ in 3D yields $C_V \\propto T^3$. The Debye temperature $\\Theta_D = \\hbar\\omega_D/k_B$ sets the scale (diamond $\\sim 2200$ K, lead $\\sim 105$ K). In metals there is an additional electronic $C \\propto \\gamma T$, so $C/T = \\gamma + \\beta T^2$ — a standard plot to extract both contributions. The $T^3$ law is one of the cleanest confirmations of phonon quantisation."
+    }
+  },
+  {
+    "id": "phn004",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "phonons"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Why does the lattice thermal conductivity of crystalline insulators peak at intermediate temperature?",
+    "passive": {
+      "options": [
+        "$\\kappa = \\frac13 C v_s \\ell$: at low $T$, $\\ell$ is limited by boundary/defect scattering (constant) while $C \\propto T^3$ rises; at high $T$, umklapp phonon-phonon scattering makes $\\ell \\propto 1/T$ while $C$ saturates — so $\\kappa$ falls. The competition gives a peak at intermediate $T$",
+        "Thermal conductivity increases monotonically with temperature (unsupported by perturbative expansions in the coupling) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Phonons never scatter, so $\\kappa$ is infinite (would imply unphysical infinite or negative observables) (would conflict with renormalisation group flow and cross-section data)",
+        "The peak is due to electronic conduction only (not consistent with the operator product expansion at large momentum) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "Kinetic theory: $\\kappa = \\frac13 C v_s \\ell$ with $C$ the phonon heat capacity, $v_s$ sound speed, $\\ell$ mean free path. Low $T$: few umklapp processes (need large-$\\mathbf k$ phonons that are frozen out), so $\\ell$ saturates at sample size/defect spacing; $\\kappa$ follows $C \\propto T^3$. High $T$: umklapp scattering (which requires a reciprocal-lattice vector $\\mathbf G$ and so degrades momentum) gives $\\ell \\propto 1/T$, and $C$ is constant, so $\\kappa \\propto 1/T$. The crossover produces a characteristic peak (e.g. very high in diamond, isotopically pure Si). Normal (momentum-conserving) processes alone cannot give thermal resistance — umklapp is essential, a key Peierls insight."
+    }
+  },
+  {
+    "id": "phn005",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "phonons"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Why does a one-dimensional or two-dimensional crystal lack true long-range positional order?",
+    "passive": {
+      "options": [
+        "Thermal phonon fluctuations of atomic displacements diverge: in 1D the mean-square displacement $\\langle u^2\\rangle$ diverges with system size, in 2D logarithmically — destroying long-range translational order (a Mermin-Wagner-type result). 2D systems can still have quasi-long-range (algebraic) order and melt via the KTHNY (defect-unbinding) scenario",
+        "Low-dimensional crystals have stronger order than 3D (ruled out by experimental constraints from collider and low-energy data) (not consistent with the operator product expansion at large momentum)",
+        "Phonons are absent in low dimensions (would imply unphysical infinite or negative observables) (unsupported by perturbative expansions in the coupling) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Order is destroyed only at zero temperature (historically considered but disfavoured by modern QFT analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "Integrating the displacement fluctuations over acoustic modes, $\\langle u^2\\rangle \\propto \\int d^d k\\,k_BT/(\\rho v_s^2 k^2)$, diverges for $d \\le 2$ (IR divergence) — the structural analogue of Mermin-Wagner for broken translational symmetry. Strictly, true crystalline long-range order is impossible in 1D and 2D at $T>0$. Real quasi-2D systems (graphene, membranes) survive via finite size, substrate pinning, and anharmonic stiffening (ripples). 2D melting proceeds through the KTHNY theory: dislocation unbinding (hexatic phase with quasi-long-range orientational order) then disclination unbinding to the liquid — a two-stage continuous melting distinct from 3D first-order melting."
+    }
+  },
+  {
+    "id": "phn006",
+    "path": [
+      "physics",
+      "condensed-matter",
+      "phonons"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the electron-phonon coupling and what observable effects does it produce?",
+    "passive": {
+      "options": [
+        "Interaction between electrons and lattice vibrations (deformation potential / Frohlich coupling); causes temperature-dependent resistivity ($\\rho \\propto T$ at high $T$, $T^5$ Bloch-Gruneisen at low $T$), mass renormalisation (kinks in ARPES bands), polaron formation, the Peierls instability, and conventional BCS superconductivity",
+        "Electrons and phonons never interact (would conflict with renormalisation group flow and cross-section data) (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)",
+        "It only affects optical properties and nothing else (disagrees with the standard textbook treatment in Peskin-Schroeder) (historically considered but disfavoured by modern QFT analyses)",
+        "It makes all metals perfect conductors (would imply unphysical infinite or negative observables) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "Electrons scatter off lattice distortions (phonons). Consequences: (i) Resistivity — phonon population grows with $T$, giving the metallic $\\rho \\propto T$ regime and the $T^5$ Bloch-Gruneisen law at low $T$; (ii) Quasiparticle renormalisation — electrons dress into heavier quasiparticles, visible as 'kinks' in ARPES dispersion near phonon energies; (iii) Polarons — an electron self-trapped by its lattice distortion (strong coupling); (iv) Peierls instability — in 1D, coupling opens a gap and dimerises the chain (charge-density wave); (v) Superconductivity — the attractive phonon-mediated interaction binds Cooper pairs (Eliashberg theory generalises BCS with the coupling function $\\alpha^2 F(\\omega)$). The dimensionless coupling $\\lambda$ sets $T_c$ in conventional superconductors."
+    }
+  }
+]

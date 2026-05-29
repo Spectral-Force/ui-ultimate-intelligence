@@ -94,6 +94,20 @@ export const CATEGORIES = [
           { id: 'phase-transitions', label: 'Phase Transitions' },
         ],
       },
+      {
+        id: 'condensed-matter',
+        label: 'Condensed Matter Physics',
+        children: [
+          { id: 'band-theory',         label: 'Band Theory & Semiconductors' },
+          { id: 'superconductivity',   label: 'Superconductivity' },
+          { id: 'magnetism',           label: 'Magnetism & Magnetic Order' },
+          { id: 'topological-matter',  label: 'Topological Matter' },
+          { id: 'strongly-correlated', label: 'Strongly Correlated Systems' },
+          { id: 'quantum-hall',        label: 'Quantum Hall Effects' },
+          { id: 'phonons',             label: 'Phonons & Lattice Dynamics' },
+          { id: 'soft-matter',         label: 'Soft & Disordered Matter' },
+        ],
+      },
       { id: 'optics', label: 'Optics' },
       { id: 'key-quantities', label: 'Key Quantities & Constants' },
       {
