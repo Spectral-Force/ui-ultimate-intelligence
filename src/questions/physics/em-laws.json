@@ -1,0 +1,168 @@
+[
+  {
+    "id": "eml001",
+    "path": [
+      "physics",
+      "laws-and-rules",
+      "em-laws"
+    ],
+    "level": "U",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "State Ohm's law and its microscopic basis.",
+    "passive": {
+      "options": [
+        "$V = IR$ (macroscopic) or $\\mathbf J = \\sigma\\mathbf E$ (microscopic): current density is proportional to electric field, with conductivity $\\sigma$; it is an empirical linear-response relation valid for ohmic materials, arising from drift of carriers limited by scattering (Drude model)",
+        "$V = I/R$, current inversely proportional to voltage (not consistent with the operator product expansion at large momentum) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Current is proportional to the square of voltage (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (ruled out by experimental constraints from collider and low-energy data)",
+        "Ohm's law holds for all materials under all conditions (violates basic gauge invariance and Lorentz covariance requirements) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Ohm's law (1827) states that the current through a conductor is proportional to the voltage across it, $V=IR$, with resistance $R$ the proportionality constant. The local form $\\mathbf J=\\sigma\\mathbf E$ (conductivity $\\sigma=1/\\rho$) is more fundamental. Microscopically (Drude model), carriers accelerate in the field but are randomised by collisions every mean free time $\\tau$, reaching a drift velocity proportional to $\\mathbf E$, giving $\\sigma = ne^2\\tau/m$. Ohm's law is a linear-response (constitutive) relation, not a fundamental law: it holds for 'ohmic' materials over a range but fails for diodes, plasmas, superconductors (zero resistance), and at high fields. Resistance dissipates power $P=IV=I^2R$ (Joule heating). It is the electrical analogue of Hooke's law and viscous drag — linear response with a phenomenological coefficient."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each electromagnetism law with its statement:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Coulomb's law",
+          "definition": "$F = kq_1q_2/r^2$; inverse-square electrostatic force between charges"
+        },
+        {
+          "id": "p2",
+          "term": "Faraday's law",
+          "definition": "Changing magnetic flux induces EMF: $\\mathcal E = -d\\Phi_B/dt$"
+        },
+        {
+          "id": "p3",
+          "term": "Lenz's law",
+          "definition": "Induced current opposes the change producing it (the minus sign; energy conservation)"
+        },
+        {
+          "id": "p4",
+          "term": "Ampere's law",
+          "definition": "Magnetic field circulates around current: $\\oint\\mathbf B\\cdot d\\mathbf l = \\mu_0 I_{\\rm enc}$ (+ Maxwell term)"
+        }
+      ],
+      "explanation": "These named laws are unified in Maxwell's equations: Gauss's law (from Coulomb), Gauss for magnetism (no monopoles), Faraday's law of induction (with Lenz's sign), and the Ampere-Maxwell law (Ampere plus the displacement current). Together they predict electromagnetic waves travelling at $c=1/\\sqrt{\\mu_0\\epsilon_0}$."
+    }
+  },
+  {
+    "id": "eml002",
+    "path": [
+      "physics",
+      "laws-and-rules",
+      "em-laws"
+    ],
+    "level": "U",
+    "modes": [
+      "passive"
+    ],
+    "question": "State Coulomb's law.",
+    "passive": {
+      "options": [
+        "The electrostatic force between two point charges is $F = k q_1 q_2/r^2$ (with $k = 1/4\\pi\\epsilon_0$), directed along the line joining them — repulsive for like charges, attractive for unlike; inverse-square like gravity",
+        "$F = k q_1 q_2 r^2$, growing with distance (ruled out by experimental constraints from collider and low-energy data)",
+        "Force depends only on one charge (violates basic gauge invariance and Lorentz covariance requirements) (historically considered but disfavoured by modern QFT analyses)",
+        "Electrostatic force is always attractive (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "Coulomb's law (1785) gives the force between static point charges: proportional to the product of the charges and inversely proportional to the square of their separation, $F=kq_1q_2/r^2$ with Coulomb constant $k=1/4\\pi\\epsilon_0\\approx8.99\\times10^9$ N m$^2$/C$^2$. Like charges repel, unlike attract. Its inverse-square form mirrors Newtonian gravity (both from flux through a sphere) and is the basis of Gauss's law $\\oint\\mathbf E\\cdot d\\mathbf A=Q_{\\rm enc}/\\epsilon_0$, the first Maxwell equation. The corresponding field is $\\mathbf E=kq\\hat r/r^2$ and potential $V=kq/r$. Coulomb's law underlies atomic structure, chemical bonding, and all of electrostatics; in QED it emerges from photon exchange, and the photon's masslessness is what makes the law exactly inverse-square (tested to extraordinary precision, constraining any photon mass)."
+    }
+  },
+  {
+    "id": "eml003",
+    "path": [
+      "physics",
+      "laws-and-rules",
+      "em-laws"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "State Faraday's law of induction and Lenz's law.",
+    "passive": {
+      "options": [
+        "Faraday: a changing magnetic flux induces an EMF, $\\mathcal E = -d\\Phi_B/dt$; Lenz's law is the minus sign — the induced current flows so as to oppose the change in flux that created it, ensuring energy conservation",
+        "EMF is proportional to the magnetic flux itself, not its rate of change (would imply unphysical infinite or negative observables)",
+        "Induced currents reinforce the change that produced them (ruled out by experimental constraints from collider and low-energy data)",
+        "Induction requires a constant magnetic field (contradicted by both lattice simulations and dispersive analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Faraday's law (1831) is the principle behind electric generators, transformers, and inductors: any change in the magnetic flux $\\Phi_B=\\int\\mathbf B\\cdot d\\mathbf A$ through a circuit induces an electromotive force $\\mathcal E=-d\\Phi_B/dt$. The flux can change by varying $B$, the area, or the orientation (hence rotating coils generate AC). The minus sign encodes Lenz's law: the induced current creates a magnetic field opposing the original change — a consequence of energy conservation (otherwise induced currents would amplify the change, giving free energy). In differential form, Faraday's law $\\nabla\\times\\mathbf E = -\\partial\\mathbf B/\\partial t$ is one of Maxwell's equations, showing that time-varying magnetic fields create circulating electric fields. Together with the Ampere-Maxwell law (changing $\\mathbf E$ creates $\\mathbf B$), it produces self-sustaining electromagnetic waves. Eddy currents, magnetic braking, induction cooktops, and wireless charging all exploit Faraday-Lenz induction."
+    }
+  },
+  {
+    "id": "eml004",
+    "path": [
+      "physics",
+      "laws-and-rules",
+      "em-laws"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "State the Biot-Savart law and Ampere's law.",
+    "passive": {
+      "options": [
+        "Biot-Savart: a current element produces a magnetic field $d\\mathbf B = (\\mu_0/4\\pi) I\\,d\\mathbf l\\times\\hat r/r^2$. Ampere's law: $\\oint\\mathbf B\\cdot d\\mathbf l = \\mu_0 I_{\\rm enc}$ (with Maxwell's displacement-current correction for time-varying fields)",
+        "Currents produce no magnetic field (unsupported by perturbative expansions in the coupling) (not consistent with the operator product expansion at large momentum)",
+        "Magnetic field is parallel to the current element (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (historically considered but disfavoured by modern QFT analyses)",
+        "Ampere's law involves enclosed charge, not current (would conflict with renormalisation group flow and cross-section data) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "These are the magnetostatic counterparts of Coulomb/Gauss. The Biot-Savart law gives the magnetic field of a steady current by summing contributions $d\\mathbf B=(\\mu_0/4\\pi)\\,I\\,d\\mathbf l\\times\\hat r/r^2$ from each current element — note the cross product (field circles the current) and inverse-square distance. Ampere's circuital law, the integral shortcut for symmetric situations, states that the line integral of $\\mathbf B$ around a closed loop equals $\\mu_0$ times the enclosed current: $\\oint\\mathbf B\\cdot d\\mathbf l=\\mu_0 I_{\\rm enc}$. Maxwell crucially added the displacement-current term $\\mu_0\\epsilon_0\\,d\\Phi_E/dt$ to make it consistent with charge conservation for time-varying fields, completing the symmetry with Faraday's law and predicting electromagnetic waves. The constant $\\mu_0=4\\pi\\times10^{-7}$ (formerly exact) sets the strength of magnetism; together with $\\epsilon_0$ it gives the speed of light $c=1/\\sqrt{\\mu_0\\epsilon_0}$."
+    }
+  },
+  {
+    "id": "eml005",
+    "path": [
+      "physics",
+      "laws-and-rules",
+      "em-laws"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the Lorentz force law?",
+    "passive": {
+      "options": [
+        "The force on a charge $q$ moving with velocity $\\mathbf v$ in fields is $\\mathbf F = q(\\mathbf E + \\mathbf v\\times\\mathbf B)$; the magnetic part is perpendicular to velocity (does no work) and causes circular/helical motion, while the electric part accelerates along $\\mathbf E$",
+        "$\\mathbf F = q\\mathbf E$ only, with no magnetic term (unsupported by perturbative expansions in the coupling) (historically considered but disfavoured by modern QFT analyses)",
+        "The magnetic force is parallel to velocity (contradicted by both lattice simulations and dispersive analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Force is independent of velocity (not consistent with the operator product expansion at large momentum) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "The Lorentz force law specifies how electromagnetic fields act on charges — the complement to Maxwell's equations (which say how charges create fields). Its two parts have distinct characters: the electric force $q\\mathbf E$ acts along the field and does work, changing kinetic energy; the magnetic force $q\\mathbf v\\times\\mathbf B$ is always perpendicular to the velocity, so it does no work and only bends the trajectory, producing circular motion (cyclotron radius $r=mv/qB$, frequency $\\omega_c=qB/m$) or helices. Together they govern the motion of charges in accelerators, mass spectrometers, CRTs, magnetrons, plasmas (guiding-centre drifts), and the magnetosphere. In relativistic and field-theoretic form the force is written via the field tensor, $f^\\mu=qF^{\\mu\\nu}u_\\nu$, manifestly Lorentz-covariant. The law plus Maxwell's equations constitute the complete classical theory of electromagnetism."
+    }
+  },
+  {
+    "id": "eml006",
+    "path": [
+      "physics",
+      "laws-and-rules",
+      "em-laws"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "How do Maxwell's equations unify the named EM laws and predict light?",
+    "passive": {
+      "options": [
+        "Gauss's law (Coulomb), Gauss for magnetism (no monopoles), Faraday's law, and the Ampere-Maxwell law together imply wave equations for $\\mathbf E$ and $\\mathbf B$ propagating at $c = 1/\\sqrt{\\mu_0\\epsilon_0}$ — identifying light as an electromagnetic wave and unifying electricity, magnetism, and optics",
+        "They describe only static fields and predict nothing about light (contradicted by both lattice simulations and dispersive analyses) (would conflict with renormalisation group flow and cross-section data)",
+        "They require a separate law for light (disagrees with the standard textbook treatment in Peskin-Schroeder) (not consistent with the operator product expansion at large momentum)",
+        "They show electricity and magnetism are unrelated (violates basic gauge invariance and Lorentz covariance requirements) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Maxwell (1865) assembled the experimental laws into four equations and added the displacement current, achieving the second great unification in physics. Gauss's law ($\\nabla\\cdot\\mathbf E=\\rho/\\epsilon_0$) generalises Coulomb; Gauss's law for magnetism ($\\nabla\\cdot\\mathbf B=0$) says there are no magnetic monopoles; Faraday's law ($\\nabla\\times\\mathbf E=-\\partial_t\\mathbf B$) gives induction; the Ampere-Maxwell law ($\\nabla\\times\\mathbf B=\\mu_0\\mathbf J+\\mu_0\\epsilon_0\\partial_t\\mathbf E$) ties magnetism to currents and changing electric fields. In vacuum, taking the curl of the two curl equations yields wave equations $\\nabla^2\\mathbf E=\\mu_0\\epsilon_0\\,\\partial_t^2\\mathbf E$ with speed $c=1/\\sqrt{\\mu_0\\epsilon_0}$ — numerically the speed of light, revealing light as an electromagnetic wave and merging optics with electromagnetism. The frame-independence of $c$ then forced special relativity. Maxwell's equations are the prototype gauge field theory (U(1)) and remain exact (as the classical limit of QED)."
+    }
+  }
+]

@@ -1,0 +1,168 @@
+[
+  {
+    "id": "pwv001",
+    "path": [
+      "physics",
+      "plasma-fluids",
+      "plasma-waves"
+    ],
+    "level": "P",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "Why do plasmas support such a rich variety of waves?",
+    "passive": {
+      "options": [
+        "Plasmas combine inertia, pressure, electromagnetic fields, and (when magnetised) anisotropy, giving many restoring forces and characteristic frequencies; this yields Langmuir, ion-acoustic, Alfven, magnetosonic, and electromagnetic modes whose dispersion depends on angle to $\\mathbf B$, species, and temperature",
+        "Plasmas support only sound waves (not consistent with the operator product expansion at large momentum) (would imply unphysical infinite or negative observables)",
+        "Plasmas support no waves at all (contradicted by both lattice simulations and dispersive analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "All plasma waves have the same frequency (violates basic gauge invariance and Lorentz covariance requirements) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "A plasma is a medium with multiple species (electrons, ions), several restoring mechanisms (thermal pressure, electrostatic space charge, magnetic tension and pressure), and built-in frequencies (plasma frequency, cyclotron frequencies). Magnetisation adds anisotropy, so wave properties depend on the propagation angle relative to $\\mathbf B$. The result is an unusually rich 'zoo' of normal modes: electrostatic (Langmuir/electron plasma waves, ion-acoustic waves, Bernstein modes), and electromagnetic (Alfven, fast/slow magnetosonic, whistler, ordinary/extraordinary, R/L modes). Their dispersion relations encode density, temperature, and field, making waves both diagnostics (interferometry, reflectometry) and tools (radiofrequency heating and current drive in fusion). Wave-particle resonances connect this spectrum to Landau/cyclotron damping and instabilities."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each plasma wave with its character:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Langmuir wave",
+          "definition": "High-frequency electron oscillation near $\\omega_p$; electrostatic; Bohm-Gross dispersion; Landau-damped"
+        },
+        {
+          "id": "p2",
+          "term": "Ion-acoustic wave",
+          "definition": "Low-frequency sound-like mode; electrons provide pressure, ions inertia; $c_s=\\sqrt{k_BT_e/m_i}$"
+        },
+        {
+          "id": "p3",
+          "term": "Alfven wave",
+          "definition": "Transverse magnetic-tension wave along $\\mathbf B$; speed $v_A=B/\\sqrt{\\mu_0\\rho}$"
+        },
+        {
+          "id": "p4",
+          "term": "Whistler wave",
+          "definition": "Right-hand circularly-polarised EM mode below electron cyclotron freq; dispersive lightning signal"
+        }
+      ],
+      "explanation": "The same plasma supports electrostatic high-frequency (Langmuir), electrostatic low-frequency (ion-acoustic), and electromagnetic (Alfven, magnetosonic, whistler) modes simultaneously. Identifying which mode is excited, and how it damps or grows, is central to interpreting space-plasma observations and to heating/controlling fusion and laboratory plasmas."
+    }
+  },
+  {
+    "id": "pwv002",
+    "path": [
+      "physics",
+      "plasma-fluids",
+      "plasma-waves"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What distinguishes Langmuir waves from ion-acoustic waves?",
+    "passive": {
+      "options": [
+        "Langmuir (electron plasma) waves are high-frequency electrostatic oscillations near $\\omega_p$ where electron inertia and pressure matter and ions are static; ion-acoustic waves are low-frequency sound-like modes where ions provide inertia and electrons provide a pressure-like restoring force ($c_s=\\sqrt{k_BT_e/m_i}$)",
+        "They are the same wave at different names (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Both require a magnetic field to exist (ruled out by experimental constraints from collider and low-energy data) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Langmuir waves are low-frequency and ion-acoustic high-frequency (historically considered but disfavoured by modern QFT analyses) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "These are the two fundamental electrostatic modes of an unmagnetised plasma, separated by the huge electron-ion mass ratio. Langmuir waves oscillate near the electron plasma frequency $\\omega_p$ with warm-plasma (Bohm-Gross) dispersion $\\omega^2=\\omega_p^2+3k^2 v_{th,e}^2$; ions are too heavy to respond and act as a fixed neutralising background. They are Landau-damped unless $k\\lambda_D\\ll1$. Ion-acoustic waves are the plasma analogue of sound: ions carry the inertia while the much faster electrons act like a near-isothermal fluid providing pressure, giving phase speed $c_s=\\sqrt{k_BT_e/m_i}$ (note it depends on the electron temperature). They propagate weakly damped when $T_e\\gg T_i$ (else heavily ion-Landau-damped). Both are routinely observed in space and laboratory plasmas and are the launching point for nonlinear phenomena (solitons, wave turbulence, parametric instabilities)."
+    }
+  },
+  {
+    "id": "pwv003",
+    "path": [
+      "physics",
+      "plasma-fluids",
+      "plasma-waves"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is a two-stream instability?",
+    "passive": {
+      "options": [
+        "When two counter-streaming (or beam-plasma) populations interpenetrate, free energy in their relative drift drives electrostatic waves to grow exponentially; it is a classic kinetic/fluid instability that converts streaming kinetic energy into wave turbulence and heating",
+        "An instability that damps all waves (violates basic gauge invariance and Lorentz covariance requirements) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "A stable equilibrium with no growth (would conflict with renormalisation group flow and cross-section data) (would imply unphysical infinite or negative observables)",
+        "A purely magnetic instability needing no streaming (ruled out by experimental constraints from collider and low-energy data) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "If two electron streams (or an electron beam through a background plasma) move relative to each other, the equilibrium distribution is non-Maxwellian with free energy in the relative drift. Perturbations at wavelengths where the streams resonate with plasma oscillations grow exponentially — the two-stream (or bump-on-tail / beam-plasma) instability. In kinetic terms it is inverse Landau damping driven by the positive slope of the distribution. The instability saturates by trapping particles and flattening the distribution (quasilinear plateau formation), generating Langmuir turbulence and heating. It is a prototype for understanding how directed kinetic energy thermalises in collisionless plasmas, and is important in particle beams, the solar wind and type-III solar radio bursts, fusion devices, and laser-plasma interactions. It also exemplifies how non-Maxwellian distributions are reservoirs of free energy for a wide family of plasma instabilities."
+    }
+  },
+  {
+    "id": "pwv004",
+    "path": [
+      "physics",
+      "plasma-fluids",
+      "plasma-waves"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "How do magnetised plasmas reflect or transmit electromagnetic waves (ionosphere example)?",
+    "passive": {
+      "options": [
+        "EM waves below the plasma frequency are reflected; above it they transmit. In the magnetised ionosphere the response splits into ordinary/extraordinary (and R/L circularly-polarised) modes with cutoffs and resonances, enabling HF radio reflection, Faraday rotation, and whistler propagation along field lines",
+        "Plasmas are transparent to all EM frequencies (violates basic gauge invariance and Lorentz covariance requirements) (would imply unphysical infinite or negative observables)",
+        "Magnetic fields have no effect on wave propagation (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (historically considered but disfavoured by modern QFT analyses)",
+        "All waves are absorbed regardless of frequency (ruled out by experimental constraints from collider and low-energy data) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "An unmagnetised plasma has refractive index $n^2=1-\\omega_p^2/\\omega^2$: waves with $\\omega<\\omega_p$ are evanescent and reflected, those with $\\omega>\\omega_p$ propagate — why the ionosphere reflects HF (short-wave) radio for long-distance communication but passes higher frequencies (satellite links, FM). Adding a magnetic field makes the plasma birefringent and anisotropic: the dispersion splits into ordinary and extraordinary modes (and, along $\\mathbf B$, right- and left-hand circularly polarised R and L modes) each with its own cutoffs (where $n=0$, reflection) and resonances (where $n\\to\\infty$, absorption, e.g. cyclotron resonances). Consequences include Faraday rotation of polarisation (a diagnostic of magnetic field and density along the line of sight, used in pulsar and ionospheric studies), whistler-mode propagation of lightning-generated waves ducted along geomagnetic field lines, and the design of radiofrequency heating schemes (ECRH, ICRH) that deposit power at cyclotron resonances in fusion plasmas."
+    }
+  },
+  {
+    "id": "pwv005",
+    "path": [
+      "physics",
+      "plasma-fluids",
+      "plasma-waves"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What are some key plasma instabilities limiting magnetic confinement?",
+    "passive": {
+      "options": [
+        "Macroscopic MHD instabilities (kink, sausage, ballooning, tearing/neoclassical tearing modes, ELMs at the edge, and disruptions) plus micro-instabilities (ITG, TEM drift waves) that drive turbulent transport; controlling them is central to tokamak/stellarator performance",
+        "Plasmas in magnetic fields are unconditionally stable (would conflict with renormalisation group flow and cross-section data) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Only sound waves limit confinement (would imply unphysical infinite or negative observables) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Instabilities improve confinement in all cases (historically considered but disfavoured by modern QFT analyses) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "Confined fusion plasmas store large free energy (pressure and current gradients) and are prone to many instabilities across scales. Macroscopic (MHD) instabilities threaten the whole discharge: current-driven kink and sausage modes, pressure-driven ballooning/interchange modes, resistive tearing and neoclassical tearing modes that form magnetic islands degrading confinement, edge-localised modes (ELMs) that expel energy bursts onto the wall, and disruptions — sudden global losses of confinement that can damage the device (a major concern for ITER). Microscopic drift-wave instabilities (ion- and electron-temperature-gradient modes, trapped-electron modes) saturate into the turbulence that sets the energy confinement time. Operating limits (the Greenwald density limit, the Troyon beta limit, the safety-factor/kink limit) quantify stability boundaries. A huge fraction of fusion research — feedback coils, current/pressure profile control, divertor design, RF stabilisation, and machine-learning disruption prediction — is devoted to taming these instabilities to achieve steady, high-performance confinement."
+    }
+  },
+  {
+    "id": "pwv006",
+    "path": [
+      "physics",
+      "plasma-fluids",
+      "plasma-waves"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is laser wakefield acceleration?",
+    "passive": {
+      "options": [
+        "An intense laser pulse drives a plasma wave (wake) whose enormous longitudinal electric fields (~100 GV/m, thousands of times those in RF cavities) accelerate trapped electrons to GeV energies in centimetres — a compact, plasma-based alternative to conventional accelerators",
+        "Acceleration of electrons using only static magnets (disagrees with the standard textbook treatment in Peskin-Schroeder) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "A method that requires kilometre-long RF cavities (historically considered but disfavoured by modern QFT analyses) (would imply unphysical infinite or negative observables)",
+        "A purely optical effect with no particle acceleration (contradicted by both lattice simulations and dispersive analyses) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Tajima and Dawson (1979) proposed using plasma waves as accelerating structures. An ultra-intense, ultra-short laser pulse (or a charged-particle driver) propagating through a plasma expels electrons via its ponderomotive force, leaving a trailing density wake — a relativistic Langmuir wave (the 'bubble' regime at high intensity). Because a plasma is already broken down, it can sustain accelerating gradients of order the cold wave-breaking field $E\\sim m_e c\\omega_p/e\\sim100$ GV/m, roughly 1000$\\times$ the ~tens of MV/m limit of metallic RF cavities (set by breakdown). Electrons can be injected and trapped in the wake and 'surf' to high energy: experiments have reached multi-GeV beams in centimetre-scale plasmas, and staging/guiding (capillary channels) extends this. Laser/plasma wakefield acceleration promises dramatically more compact accelerators for light sources, medical and industrial applications, and potentially future high-energy colliders, though beam quality (energy spread, emittance, repetition rate) remains the key challenge."
+    }
+  }
+]

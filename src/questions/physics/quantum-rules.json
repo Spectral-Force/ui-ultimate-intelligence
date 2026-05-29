@@ -1,0 +1,168 @@
+[
+  {
+    "id": "qrl001",
+    "path": [
+      "physics",
+      "laws-and-rules",
+      "quantum-rules"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "State Born's rule.",
+    "passive": {
+      "options": [
+        "The probability of a measurement outcome is the squared modulus of the wavefunction's amplitude: $P = |\\langle\\phi|\\psi\\rangle|^2$ (or $|\\psi(x)|^2$ as a probability density); it is the fundamental link between the quantum state and observable probabilities",
+        "Probability equals the wavefunction itself, $P = \\psi$ (would imply unphysical infinite or negative observables) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Probability is the amplitude, not its square (historically considered but disfavoured by modern QFT analyses) (ruled out by experimental constraints from collider and low-energy data)",
+        "Outcomes are fully deterministic with no probabilities (disagrees with the standard textbook treatment in Peskin-Schroeder) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Born's rule (Max Born, 1926, Nobel 1954) is the measurement postulate of quantum mechanics: the wavefunction $\\psi$ is a probability amplitude, and the probability (density) of an outcome is its squared modulus. For a state $|\\psi\\rangle$ and measurement eigenstate $|\\phi\\rangle$, $P=|\\langle\\phi|\\psi\\rangle|^2$; for position, $|\\psi(x)|^2\\,dx$ is the probability of finding the particle in $dx$. This is what makes quantum mechanics probabilistic and connects the abstract complex amplitude to experiment. The squaring is essential — it produces interference (amplitudes add before squaring, so cross terms appear, as in the double-slit experiment). Normalisation $\\int|\\psi|^2=1$ ensures total probability one. Born's rule, together with unitary Schrodinger evolution between measurements, defines standard quantum theory; deriving or justifying it (from decision theory, envariance, or many-worlds branch counting) remains a topic in the foundations of physics."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each quantum rule/principle with its statement:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Born's rule",
+          "definition": "Outcome probability = $|\\text{amplitude}|^2$; links wavefunction to measurement"
+        },
+        {
+          "id": "p2",
+          "term": "Heisenberg uncertainty",
+          "definition": "$\\Delta x\\,\\Delta p \\ge \\hbar/2$; conjugate observables cannot both be sharp"
+        },
+        {
+          "id": "p3",
+          "term": "Pauli exclusion principle",
+          "definition": "No two identical fermions share the same quantum state; antisymmetric wavefunction"
+        },
+        {
+          "id": "p4",
+          "term": "Correspondence principle",
+          "definition": "Quantum predictions reduce to classical ones in the appropriate (large quantum number) limit"
+        }
+      ],
+      "explanation": "These rules define quantum behaviour. Born's rule gives probabilities; the uncertainty principle limits simultaneous knowledge of conjugate variables (from non-commuting operators); the Pauli principle governs identical-fermion statistics (atomic shells, white-dwarf/neutron-star support); and the correspondence principle ensures consistency with classical physics in the appropriate limit."
+    }
+  },
+  {
+    "id": "qrl002",
+    "path": [
+      "physics",
+      "laws-and-rules",
+      "quantum-rules"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "State the Heisenberg uncertainty principle.",
+    "passive": {
+      "options": [
+        "Conjugate observables cannot simultaneously have arbitrarily precise values: $\\Delta x\\,\\Delta p \\ge \\hbar/2$ (and $\\Delta E\\,\\Delta t \\gtrsim \\hbar/2$); it follows from the non-commutation of operators, $[\\hat x,\\hat p] = i\\hbar$, and the wave nature of quantum states",
+        "Position and momentum can both be measured exactly at once (unsupported by perturbative expansions in the coupling) (would imply unphysical infinite or negative observables)",
+        "$\\Delta x\\,\\Delta p \\le \\hbar/2$, an upper bound (not consistent with the operator product expansion at large momentum) (would conflict with renormalisation group flow and cross-section data)",
+        "Uncertainty arises only from measurement clumsiness (violates basic gauge invariance and Lorentz covariance requirements) (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "The uncertainty principle (Heisenberg, 1927) states that certain pairs of observables — conjugate variables like position and momentum — have a fundamental lower bound on the product of their measurement spreads: $\\Delta x\\,\\Delta p\\ge\\hbar/2$. It is not a statement about clumsy instruments but an intrinsic feature: it follows rigorously (Robertson-Schrodinger) from the non-commutation of the operators, $[\\hat x,\\hat p]=i\\hbar$, and reflects that a state localised in position is necessarily spread in momentum (Fourier-conjugate widths). Consequences pervade physics: zero-point energy (a confined particle cannot have zero momentum, so the harmonic oscillator's ground state is $\\tfrac12\\hbar\\omega$), the stability and size of atoms (electrons cannot collapse onto the nucleus), natural linewidths via the energy-time relation, and tunnelling. It also bounds quantum measurement and is central to quantum metrology (squeezed states evade it in one variable at the other's expense). The principle marks a clean break from classical determinism."
+    }
+  },
+  {
+    "id": "qrl003",
+    "path": [
+      "physics",
+      "laws-and-rules",
+      "quantum-rules"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "State the Pauli exclusion principle and its consequences.",
+    "passive": {
+      "options": [
+        "No two identical fermions (half-integer spin) can occupy the same quantum state; equivalently their total wavefunction is antisymmetric under exchange. It explains the periodic table (electron shells), chemical bonding, and degeneracy pressure supporting white dwarfs and neutron stars",
+        "All particles must occupy the same state (contradicted by both lattice simulations and dispersive analyses) (historically considered but disfavoured by modern QFT analyses)",
+        "It applies to bosons, which cannot share states (unsupported by perturbative expansions in the coupling) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "It has no effect on atomic structure (disagrees with the standard textbook treatment in Peskin-Schroeder) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "The Pauli exclusion principle (1925, Nobel 1945) states that two identical fermions cannot share all the same quantum numbers; more fundamentally, the many-fermion wavefunction must be antisymmetric (change sign) under particle exchange — the spin-statistics connection ties this antisymmetry to half-integer spin. Its consequences are enormous: electrons fill atomic orbitals one per state, building up shells and giving the structure of the periodic table and all of chemistry (without it, all electrons would collapse into the 1s level and chemistry would not exist); it underlies the rigidity and volume of matter; and it provides degeneracy pressure — the quantum pressure of a filled Fermi sea — that supports white dwarfs (electron degeneracy, up to the Chandrasekhar mass) and neutron stars (neutron degeneracy) against gravitational collapse. Bosons (integer spin) obey the opposite, symmetric statistics and can pile into one state (Bose-Einstein condensation, lasers). Pauli's principle is thus a cornerstone of atomic, condensed-matter, and astrophysical physics."
+    }
+  },
+  {
+    "id": "qrl004",
+    "path": [
+      "physics",
+      "laws-and-rules",
+      "quantum-rules"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the Schrodinger equation?",
+    "passive": {
+      "options": [
+        "The fundamental equation of non-relativistic quantum dynamics: $i\\hbar\\,\\partial_t|\\psi\\rangle = \\hat H|\\psi\\rangle$, governing the unitary (deterministic, probability-conserving) evolution of the wavefunction; its time-independent form $\\hat H\\psi = E\\psi$ gives stationary states and energy levels",
+        "A classical equation for particle trajectories (violates basic gauge invariance and Lorentz covariance requirements) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "An equation stating energy is not conserved (would imply unphysical infinite or negative observables) (contradicted by both lattice simulations and dispersive analyses)",
+        "A relativistic equation for photons only (would conflict with renormalisation group flow and cross-section data) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "The Schrodinger equation (1926) is to quantum mechanics what Newton's second law is to classical mechanics: it dictates how the quantum state evolves. The time-dependent form $i\\hbar\\,\\partial_t|\\psi\\rangle=\\hat H|\\psi\\rangle$ (with $\\hat H$ the Hamiltonian operator) generates smooth, deterministic, unitary evolution that conserves total probability — the randomness of quantum mechanics enters only at measurement (Born's rule), not in this evolution. Separating variables for time-independent $\\hat H$ yields the eigenvalue problem $\\hat H\\psi=E\\psi$, whose solutions are stationary states with definite energies — explaining quantised atomic energy levels (the hydrogen spectrum), molecular orbitals, tunnelling, and band structure in solids. It is non-relativistic (superseded by the Dirac/Klein-Gordon equations and quantum field theory at high energy) but is the workhorse of atomic, molecular, condensed-matter, and chemical physics. Its solutions, combined with the Born rule and Pauli principle, account for essentially all of low-energy matter."
+    }
+  },
+  {
+    "id": "qrl005",
+    "path": [
+      "physics",
+      "laws-and-rules",
+      "quantum-rules"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is Fermi's golden rule?",
+    "passive": {
+      "options": [
+        "The transition rate from an initial state to a continuum of final states under a weak perturbation: $\\Gamma = (2\\pi/\\hbar)|\\langle f|\\hat H'|i\\rangle|^2\\rho(E_f)$, proportional to the squared matrix element and the density of final states — the workhorse for decay rates, scattering, and absorption/emission",
+        "A rule giving the colour of gold (ruled out by experimental constraints from collider and low-energy data) (unsupported by perturbative expansions in the coupling)",
+        "A rule that transition rates are always zero (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would imply unphysical infinite or negative observables)",
+        "A purely classical formula for orbits (violates basic gauge invariance and Lorentz covariance requirements) (historically considered but disfavoured by modern QFT analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Fermi's golden rule (derived by Dirac, named by Fermi) gives the rate of transitions induced by a weak, constant (or harmonic) perturbation from a discrete initial state into a dense set of final states: $\\Gamma_{i\\to f}=(2\\pi/\\hbar)\\,|\\langle f|\\hat H'|i\\rangle|^2\\,\\rho(E_f)$, where $\\rho(E_f)$ is the density of final states at the conserved energy. It is first-order time-dependent perturbation theory in the long-time limit (where the transition probability grows linearly in time, giving a constant rate). The rule is ubiquitous: it gives spontaneous and stimulated emission/absorption rates of atoms (and hence selection rules and lifetimes), nuclear beta-decay and gamma-decay rates, scattering cross-sections, electron-phonon and other relaxation rates in solids, and reaction rates in many-body systems. The two ingredients — the squared coupling matrix element (selection rules, allowed vs forbidden transitions) and the density of available final states (phase space) — recur throughout quantum and statistical physics, making the golden rule one of the most practically important results in quantum mechanics."
+    }
+  },
+  {
+    "id": "qrl006",
+    "path": [
+      "physics",
+      "laws-and-rules",
+      "quantum-rules"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What does the spin-statistics theorem state?",
+    "passive": {
+      "options": [
+        "Particles with integer spin are bosons (symmetric wavefunctions, Bose-Einstein statistics) and those with half-integer spin are fermions (antisymmetric wavefunctions, Fermi-Dirac statistics, Pauli exclusion); this connection is a theorem of relativistic quantum field theory (requiring causality, positive energy)",
+        "Spin and statistics are unrelated (disagrees with the standard textbook treatment in Peskin-Schroeder) (not consistent with the operator product expansion at large momentum)",
+        "All particles are bosons regardless of spin (would imply unphysical infinite or negative observables) (historically considered but disfavoured by modern QFT analyses)",
+        "Half-integer-spin particles are bosons (contradicted by both lattice simulations and dispersive analyses) (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "The spin-statistics theorem establishes the deep and otherwise mysterious link between a particle's intrinsic spin and the symmetry of its multiparticle wavefunction (hence its quantum statistics). Integer-spin particles (photons, gluons, $W/Z$, Higgs, mesons, $^4$He atoms) are bosons: their states are symmetric under exchange, they obey Bose-Einstein statistics, and any number can share a state (enabling lasers, superfluidity, Bose-Einstein condensation). Half-integer-spin particles (electrons, quarks, protons, neutrons, neutrinos, $^3$He atoms) are fermions: antisymmetric exchange, Fermi-Dirac statistics, and the Pauli exclusion principle. Crucially, this is not an assumption but a theorem provable within relativistic quantum field theory from a few axioms — Lorentz invariance, microcausality (commutators of spacelike-separated fields vanish), and positivity of energy (no negative-energy states/instabilities). Pauli's 1940 proof showed that quantising integer-spin fields with anticommutators or half-integer-spin fields with commutators leads to contradictions (negative energies or violation of causality). The theorem thus ties the structure of matter (the periodic table, the stability of bulk matter, degeneracy pressure) to the foundational consistency of relativistic quantum theory."
+    }
+  }
+]

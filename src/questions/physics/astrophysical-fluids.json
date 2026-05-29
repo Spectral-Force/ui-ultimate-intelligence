@@ -1,0 +1,168 @@
+[
+  {
+    "id": "afl001",
+    "path": [
+      "physics",
+      "plasma-fluids",
+      "astrophysical-fluids"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "What is hydrostatic equilibrium in a star?",
+    "passive": {
+      "options": [
+        "A balance between inward gravity and outward pressure gradient: $dP/dr = -G m(r)\\rho/r^2$; this equilibrium sets stellar structure, and its loss (e.g. when fusion ceases) leads to collapse or expansion",
+        "A balance between magnetism and rotation only (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "The condition that a star has no pressure (would conflict with renormalisation group flow and cross-section data)",
+        "A state where gravity is absent (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "Stars are self-gravitating fluid balls that, over most of their lives, sit in hydrostatic equilibrium: at each radius the outward pressure-gradient force exactly supports the weight of overlying material, $dP/dr=-G m(r)\\rho(r)/r^2$. Together with mass conservation, an energy-transport equation, and an energy-generation (nuclear) equation, this forms the stellar-structure equations whose solution gives the run of pressure, temperature, and density. Pressure sources vary: ideal-gas and radiation pressure in normal stars, electron-degeneracy pressure in white dwarfs, neutron-degeneracy plus strong-force pressure in neutron stars. The virial theorem links gravitational and internal energy. When the supporting pressure fails — e.g. an iron core can release no more fusion energy — equilibrium is lost and the core collapses (core-collapse supernova). Hydrostatic equilibrium is the organising principle of stellar astrophysics."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each astrophysical-fluid concept with its meaning:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Hydrostatic equilibrium",
+          "definition": "Pressure gradient balances gravity; sets stellar structure"
+        },
+        {
+          "id": "p2",
+          "term": "Jeans instability",
+          "definition": "Self-gravity overcomes pressure when mass exceeds the Jeans mass; triggers cloud collapse/star formation"
+        },
+        {
+          "id": "p3",
+          "term": "Accretion disk",
+          "definition": "Rotating gas spiralling onto a compact object; angular momentum transported by MHD turbulence (MRI)"
+        },
+        {
+          "id": "p4",
+          "term": "Shock wave",
+          "definition": "Supersonic disturbance with Rankine-Hugoniot jumps; supernova blast waves, bow shocks"
+        }
+      ],
+      "explanation": "Astrophysical fluid dynamics applies gas dynamics, MHD, gravity, and radiation to cosmic systems. Key processes: gravitational (Jeans) instability driving collapse and structure formation, accretion converting gravitational energy to radiation, and shocks heating gas and accelerating cosmic rays. Most cosmic matter is plasma, so MHD usually applies."
+    }
+  },
+  {
+    "id": "afl002",
+    "path": [
+      "physics",
+      "plasma-fluids",
+      "astrophysical-fluids"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the Jeans instability and its role in star formation?",
+    "passive": {
+      "options": [
+        "A gas cloud collapses under self-gravity when its mass exceeds the Jeans mass (or its size exceeds the Jeans length), where gravitational attraction overwhelms pressure support; this gravitational instability initiates the fragmentation and collapse that form stars",
+        "An instability that prevents all collapse (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (not consistent with the operator product expansion at large momentum)",
+        "A process that only disperses gas clouds (ruled out by experimental constraints from collider and low-energy data) (contradicted by both lattice simulations and dispersive analyses)",
+        "Relevant only inside solid planets (would imply unphysical infinite or negative observables) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Jeans (1902) analysed perturbations of a self-gravitating gas: pressure (sound waves, restoring) competes with gravity (destabilising). Below a critical wavelength, pressure stabilises; above the Jeans length $\\lambda_J\\sim c_s/\\sqrt{G\\rho}$ (equivalently above the Jeans mass $M_J\\sim c_s^3/\\sqrt{G^3\\rho}$), gravity wins and the region collapses. This is the gravitational instability that seeds structure: giant molecular clouds exceeding $M_J$ collapse and fragment hierarchically into protostellar cores, forming stars (with magnetic fields, turbulence, and rotation modifying the simple criterion). The same physics, in an expanding universe (the Jeans analysis adapted by the linear growth of density perturbations), governs the growth of cosmic structure from the tiny CMB fluctuations into galaxies and clusters. Opacity-limited fragmentation sets a minimum stellar mass. The Jeans criterion is the foundational instability of gravitational astrophysics."
+    }
+  },
+  {
+    "id": "afl003",
+    "path": [
+      "physics",
+      "plasma-fluids",
+      "astrophysical-fluids"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "How do accretion disks power some of the most luminous objects in the universe?",
+    "passive": {
+      "options": [
+        "Gas with angular momentum spirals inward through a disk, and MHD turbulence (driven by the MRI) transports angular momentum outward, letting matter fall deeper in the gravitational well; the released gravitational energy heats the disk and radiates — powering quasars/AGN, X-ray binaries, and protostars",
+        "Disks radiate by nuclear fusion only (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (unsupported by perturbative expansions in the coupling)",
+        "Accretion releases no energy (violates basic gauge invariance and Lorentz covariance requirements) (contradicted by both lattice simulations and dispersive analyses)",
+        "Matter falls straight in without losing angular momentum (ruled out by experimental constraints from collider and low-energy data) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "Accretion is among the most efficient energy-release mechanisms known: matter falling onto a compact object converts gravitational potential energy to radiation, with efficiency up to ~6% (Schwarzschild black hole) or ~42% (maximal Kerr) of $mc^2$ — far exceeding nuclear fusion's ~0.7%. The obstacle is angular momentum: infalling gas forms a rotationally-supported disk and can only accrete if angular momentum is removed outward. Molecular viscosity is hopelessly small; the magnetorotational instability generates the MHD turbulence that provides the needed effective ('$\\alpha$') viscosity (Shakura-Sunyaev disk model). The dissipated energy heats the disk, which radiates a characteristic multi-temperature spectrum. This powers active galactic nuclei and quasars (supermassive black holes), X-ray binaries (stellar BHs/neutron stars), cataclysmic variables (white dwarfs), and the formation of stars and planets in protoplanetary disks. Relativistic jets and outflows often accompany accretion, making disks central to high-energy astrophysics."
+    }
+  },
+  {
+    "id": "afl004",
+    "path": [
+      "physics",
+      "plasma-fluids",
+      "astrophysical-fluids"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What are the Rankine-Hugoniot conditions for shocks?",
+    "passive": {
+      "options": [
+        "Jump conditions across a shock from conservation of mass, momentum, and energy flux; for a strong shock in a $\\gamma=5/3$ gas the density compresses by up to 4$\\times$ and most kinetic energy converts to heat — relevant to supernova remnants, stellar bow shocks, and accretion shocks",
+        "Conditions stating nothing changes across a shock (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would imply unphysical infinite or negative observables)",
+        "Rules that apply only to subsonic flow (would conflict with renormalisation group flow and cross-section data) (ruled out by experimental constraints from collider and low-energy data)",
+        "Conditions that conserve nothing (unsupported by perturbative expansions in the coupling) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "A shock is a thin, supersonic transition where flow properties jump nearly discontinuously. The Rankine-Hugoniot relations express conservation of mass, momentum, and energy fluxes across the front, linking upstream and downstream density, velocity, pressure, and temperature. For a strong shock in an ideal monatomic gas ($\\gamma=5/3$), the compression ratio saturates at 4 and the downstream gas is heated enormously (post-shock temperature $\\propto$ shock-speed squared). Shocks are ubiquitous in astrophysics: supernova blast waves sweeping the interstellar medium (and accelerating cosmic rays via diffusive shock/Fermi acceleration), bow shocks where stellar/planetary winds meet ambient gas, accretion shocks onto protostars and neutron-star surfaces, and the Sun's termination shock. In collisionless astrophysical plasmas the 'thickness' is set by plasma kinetic scales rather than collisions, and shocks become efficient particle accelerators — a key topic linking fluid dynamics, plasma physics, and high-energy astrophysics."
+    }
+  },
+  {
+    "id": "afl005",
+    "path": [
+      "physics",
+      "plasma-fluids",
+      "astrophysical-fluids"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Why is most astrophysical fluid dynamics actually magnetohydrodynamics?",
+    "passive": {
+      "options": [
+        "Cosmic gas is largely ionised plasma threaded by magnetic fields, and the high magnetic Reynolds numbers mean fields are dynamically important and frozen-in; MHD effects (magnetic pressure/tension, Alfven waves, reconnection, MRI, dynamos) shape the interstellar medium, star formation, jets, and accretion",
+        "Astrophysical gas is always neutral and unmagnetised (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)",
+        "Magnetic fields are negligible everywhere in space (violates basic gauge invariance and Lorentz covariance requirements) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Only Newtonian gravity matters, never magnetism (would conflict with renormalisation group flow and cross-section data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "Although often invisible, magnetic fields pervade the cosmos (interstellar medium ~$\\mu$G, much stronger near compact objects) and the gas is mostly ionised, so it conducts well. The astrophysical magnetic Reynolds number is enormous, so fields are frozen into the flow (Alfven's theorem) and dynamically coupled to it rather than passive. Consequences are everywhere: magnetic pressure and tension support and structure the interstellar medium and regulate star formation (magnetic braking removes angular momentum, ambipolar diffusion controls collapse); the MRI enables accretion; magnetic fields collimate and launch relativistic jets from black holes and protostars (Blandford-Znajek/Blandford-Payne mechanisms); reconnection powers flares and particle acceleration; and dynamos generate and sustain galactic and stellar fields. Cosmic-ray transport, pulsar magnetospheres, and the solar wind are intrinsically magnetic. Hence purely hydrodynamic models are often inadequate, and (relativistic, radiation-) MHD is the working framework of modern astrophysical fluid dynamics, increasingly via large-scale numerical simulation."
+    }
+  },
+  {
+    "id": "afl006",
+    "path": [
+      "physics",
+      "plasma-fluids",
+      "astrophysical-fluids"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "How are relativistic jets from black holes thought to be launched?",
+    "passive": {
+      "options": [
+        "Magnetic fields anchored in a spinning black hole's ergosphere (Blandford-Znajek) or in the accretion disk (Blandford-Payne) extract rotational/gravitational energy and magnetically accelerate and collimate plasma into relativistic jets; the field acts as a conduit converting spin/accretion power into directed outflow",
+        "Jets are launched by radiation pressure alone with no magnetic fields (disagrees with the standard textbook treatment in Peskin-Schroeder) (historically considered but disfavoured by modern QFT analyses)",
+        "Jets come from nuclear fusion in the disk (would conflict with renormalisation group flow and cross-section data) (ruled out by experimental constraints from collider and low-energy data)",
+        "Black holes cannot produce jets (violates basic gauge invariance and Lorentz covariance requirements) (unsupported by perturbative expansions in the coupling) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "Relativistic jets — collimated, near-light-speed plasma outflows spanning kiloparsecs from active galactic nuclei (and scaled-down in microquasars and gamma-ray bursts) — are among the most energetic phenomena in the universe, and magnetic fields are central to launching them. The Blandford-Znajek mechanism (1977) extracts the rotational energy of a spinning (Kerr) black hole: magnetic field lines threading the horizon/ergosphere are twisted by frame dragging, driving a Poynting-flux-dominated outflow (electromagnetically tapping the hole's spin, the astrophysical analogue of a Penrose process). The Blandford-Payne mechanism instead flings disk plasma outward along inclined field lines anchored in the rotating accretion disk (a magneto-centrifugal 'bead-on-a-wire' wind). In both, large-scale ordered poloidal magnetic fields convert rotational/gravitational energy into a magnetically collimated, accelerated jet. General-relativistic MHD simulations now reproduce jet launching, and the Event Horizon Telescope's polarised images of M87* reveal ordered fields at the jet base consistent with this picture — a triumph of relativistic astrophysical fluid dynamics."
+    }
+  }
+]

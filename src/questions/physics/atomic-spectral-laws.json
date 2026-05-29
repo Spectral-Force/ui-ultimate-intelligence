@@ -1,0 +1,168 @@
+[
+  {
+    "id": "asl001",
+    "path": [
+      "physics",
+      "laws-and-rules",
+      "atomic-spectral-laws"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "State the Rydberg formula for hydrogen spectral lines.",
+    "passive": {
+      "options": [
+        "$1/\\lambda = R_H(1/n_1^2 - 1/n_2^2)$ with Rydberg constant $R_H \\approx 1.097\\times10^7$ m$^{-1}$ and integers $n_2 > n_1$; it gives the wavelengths of hydrogen's Lyman ($n_1=1$), Balmer ($n_1=2$), Paschen ($n_1=3$) series",
+        "$\\lambda = R_H(n_1 + n_2)$, linear in quantum numbers (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Spectral lines are continuous, not discrete (historically considered but disfavoured by modern QFT analyses) (would conflict with renormalisation group flow and cross-section data)",
+        "Wavelength depends only on a single quantum number (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "The Rydberg formula (Rydberg, generalising Balmer) accurately predicts hydrogen's discrete emission/absorption wavelengths: $1/\\lambda=R_H(1/n_1^2-1/n_2^2)$, where electrons transition between energy levels labelled by principal quantum numbers. Each lower level $n_1$ defines a series — Lyman (UV, $n_1=1$), Balmer (visible, $n_1=2$, the famous red H-alpha line), Paschen, Brackett (infrared). Bohr's 1913 model explained it by quantised orbits with energies $E_n=-13.6\\,\\mathrm{eV}/n^2$; the photon energy of a transition is the level difference, giving the formula with $R_H=m_e e^4/8\\epsilon_0^2 h^3 c$. The Schrodinger equation reproduces these levels exactly for the Coulomb potential, and fine structure, the Lamb shift, and hyperfine structure are small corrections measured to extraordinary precision (making hydrogen a test of QED). The Rydberg constant is among the most precisely known constants, and Rydberg states (large $n$) are central to atomic physics and quantum technology."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each atomic/spectral law or rule with its content:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Rydberg formula",
+          "definition": "$1/\\lambda = R_H(1/n_1^2 - 1/n_2^2)$; hydrogen spectral-line wavelengths"
+        },
+        {
+          "id": "p2",
+          "term": "Hund's rules",
+          "definition": "Maximise total spin $S$, then $L$, then set $J$; ground-state atomic term symbol"
+        },
+        {
+          "id": "p3",
+          "term": "Moseley's law",
+          "definition": "Characteristic X-ray frequency $\\sqrt{f}\\propto(Z-\\sigma)$; orders elements by atomic number"
+        },
+        {
+          "id": "p4",
+          "term": "Selection rules",
+          "definition": "Allowed electric-dipole transitions: $\\Delta l=\\pm1$, $\\Delta m=0,\\pm1$, $\\Delta s=0$"
+        }
+      ],
+      "explanation": "These rules organise atomic spectra and structure. The Rydberg formula and selection rules predict which lines appear and where; Hund's rules give ground-state configurations and hence magnetic moments; Moseley's law established atomic number $Z$ (nuclear charge) as the true ordering principle of the periodic table."
+    }
+  },
+  {
+    "id": "asl002",
+    "path": [
+      "physics",
+      "laws-and-rules",
+      "atomic-spectral-laws"
+    ],
+    "level": "U",
+    "modes": [
+      "passive"
+    ],
+    "question": "What does the photoelectric effect and Einstein's equation establish?",
+    "passive": {
+      "options": [
+        "Light delivers energy in quanta $E = h\\nu$; ejected-electron kinetic energy is $K_{\\max} = h\\nu - \\phi$ (work function $\\phi$), so emission depends on frequency (not intensity) above a threshold — direct evidence for the photon and the quantisation of light",
+        "Electron energy depends only on light intensity, not frequency (historically considered but disfavoured by modern QFT analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Light energy is purely continuous (contradicted by both lattice simulations and dispersive analyses) (ruled out by experimental constraints from collider and low-energy data)",
+        "No electrons are ever emitted by light (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (violates basic gauge invariance and Lorentz covariance requirements)"
+      ],
+      "correct": 0,
+      "explanation": "The photoelectric effect — light ejecting electrons from a metal — defied classical wave theory: emission occurred only above a threshold frequency regardless of intensity, the electron energy depended on frequency not brightness, and there was no time delay. Einstein (1905, Nobel 1921) explained it by quantising light into photons of energy $E=h\\nu$: a single photon gives its energy to one electron, which escapes if $h\\nu$ exceeds the material's work function $\\phi$, emerging with maximum kinetic energy $K_{\\max}=h\\nu-\\phi$. Increasing intensity adds more photons (more electrons) but not more energy per electron. This was decisive evidence for the particle nature of light (the photon) and for energy quantisation, complementing Planck's blackbody hypothesis and launching quantum theory. Millikan's careful experiments confirmed the linear $K_{\\max}$-vs-$\\nu$ relation and measured $h$. The effect underlies photomultipliers, photodiodes, solar cells, and photoelectron spectroscopy (XPS/UPS), and embodies wave-particle duality."
+    }
+  },
+  {
+    "id": "asl003",
+    "path": [
+      "physics",
+      "laws-and-rules",
+      "atomic-spectral-laws"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "State Moseley's law and its historical importance.",
+    "passive": {
+      "options": [
+        "The frequency of a characteristic X-ray line scales as $\\sqrt{f} \\propto (Z - \\sigma)$ (nuclear charge minus a screening constant); it showed that atomic number $Z$ (nuclear charge), not atomic weight, orders the periodic table, and revealed gaps for undiscovered elements",
+        "X-ray frequency is independent of element (unsupported by perturbative expansions in the coupling) (contradicted by both lattice simulations and dispersive analyses)",
+        "$f \\propto Z^2$ with no screening and no role for the periodic table (would conflict with renormalisation group flow and cross-section data)",
+        "It ordered elements by mass, not charge (not consistent with the operator product expansion at large momentum) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Moseley (1913) measured the characteristic X-ray emission lines (e.g. $K_\\alpha$, from an electron filling a vacancy in the innermost shell) across many elements and found a strikingly simple relation: the square root of the X-ray frequency increases linearly with a quantity he identified as the atomic number, $\\sqrt{f}\\propto(Z-\\sigma)$ (the screening constant $\\sigma\\approx1$ for $K_\\alpha$, since one remaining 1s electron partly shields the nuclear charge). This made sense of the Bohr model applied to inner electrons feeling nearly the full nuclear charge $Z$. Its importance was profound: it proved that the fundamental ordering principle of the periodic table is the nuclear charge $Z$ (number of protons), not atomic weight (which had caused ordering anomalies like Ar/K and Co/Ni). Moseley's law let chemists assign unambiguous atomic numbers, count exactly how many elements should exist up to uranium, and predict the precise gaps for then-undiscovered elements (e.g. technetium, promethium, rhenium). It transformed the periodic table from an empirical arrangement into one grounded in atomic structure. Moseley's death at Gallipoli (1915) cut short a likely Nobel career."
+    }
+  },
+  {
+    "id": "asl004",
+    "path": [
+      "physics",
+      "laws-and-rules",
+      "atomic-spectral-laws"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What are electric-dipole selection rules for atomic transitions?",
+    "passive": {
+      "options": [
+        "Allowed electric-dipole transitions require $\\Delta l = \\pm1$, $\\Delta m_l = 0,\\pm1$, $\\Delta s = 0$, and $\\Delta j = 0,\\pm1$ (not $0\\to0$), reflecting photon angular momentum and parity conservation; transitions violating them are 'forbidden' (much weaker, higher-multipole)",
+        "Any transition between any two levels is equally allowed (would imply unphysical infinite or negative observables) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Selection rules forbid all transitions (not consistent with the operator product expansion at large momentum) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Only $\\Delta l = 0$ transitions are allowed (violates basic gauge invariance and Lorentz covariance requirements) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Selection rules specify which atomic transitions can occur via the dominant electric-dipole (E1) interaction, derived from the matrix element $\\langle f|\\mathbf r|i\\rangle$ and the conservation of angular momentum and parity when a photon (spin 1, odd parity) is emitted/absorbed. For one-electron transitions: the orbital angular momentum must change by one unit ($\\Delta l=\\pm1$, a parity requirement), the magnetic quantum number by $\\Delta m_l=0,\\pm1$ (photon polarisation), spin is unchanged ($\\Delta s=0$ for E1), and the total angular momentum obeys $\\Delta j=0,\\pm1$ excluding $j=0\\to j=0$. Transitions violating these are 'forbidden' for E1 but may proceed weakly through higher multipoles (magnetic dipole M1, electric quadrupole E2) or spin-orbit mixing — giving metastable states with long lifetimes (important for lasers, atomic clocks, and astrophysical 'nebular' forbidden lines like the [O III] lines visible only in low-density space). Selection rules explain why spectra show specific lines, set transition strengths and lifetimes (via Fermi's golden rule), and are essential to spectroscopy, laser physics, and atomic-clock design."
+    }
+  },
+  {
+    "id": "asl005",
+    "path": [
+      "physics",
+      "laws-and-rules",
+      "atomic-spectral-laws"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "State the Franck-Hertz / Bohr correspondence on quantised energy levels.",
+    "passive": {
+      "options": [
+        "Atoms absorb/emit energy only in discrete amounts equal to differences between quantised energy levels, $\\Delta E = h\\nu$; the Franck-Hertz experiment showed electrons lose energy to atoms only in fixed quanta, directly confirming discrete atomic energy levels",
+        "Atoms absorb energy continuously in any amount (would conflict with renormalisation group flow and cross-section data) (historically considered but disfavoured by modern QFT analyses)",
+        "Energy levels form a continuum with no quantisation (would imply unphysical infinite or negative observables) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Atoms cannot exchange energy with electrons (not consistent with the operator product expansion at large momentum) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "Bohr's frequency condition states that an atom changes energy only by jumping between discrete stationary states, emitting or absorbing a photon whose energy equals the level difference, $\\Delta E=h\\nu$ — the basis of line spectra. The Franck-Hertz experiment (1914, Nobel 1925) gave direct, non-spectroscopic confirmation: electrons accelerated through mercury vapour passed freely until their kinetic energy reached a specific threshold (~4.9 eV), at which point they suddenly lost exactly that energy in inelastic collisions exciting the atom, producing periodic dips in the measured current. The fixed energy loss (and accompanying UV emission at the corresponding wavelength) showed that atoms accept energy only in discrete quanta, demonstrating quantised internal energy levels independently of optical spectra. This experiment, alongside the photoelectric effect and atomic spectra, cemented energy quantisation as a real, measurable feature of atoms and supported the emerging quantum theory. The principle underlies all spectroscopy, lasers (population inversion between discrete levels), and quantum-level energy exchange."
+    }
+  },
+  {
+    "id": "asl006",
+    "path": [
+      "physics",
+      "laws-and-rules",
+      "atomic-spectral-laws"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the Aufbau principle and the structure of the periodic table?",
+    "passive": {
+      "options": [
+        "Electrons fill atomic orbitals from lowest energy upward (Aufbau), obeying the Pauli exclusion principle and Hund's rules, with the Madelung ($n+l$) ordering; this builds the electron configurations that give the periodic table its periods and groups, and hence chemical periodicity",
+        "Electrons fill the highest-energy orbitals first (disagrees with the standard textbook treatment in Peskin-Schroeder) (would imply unphysical infinite or negative observables)",
+        "All electrons occupy the same orbital (contradicted by both lattice simulations and dispersive analyses) (would conflict with renormalisation group flow and cross-section data)",
+        "Orbital filling has no relation to chemistry (historically considered but disfavoured by modern QFT analyses) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "The Aufbau ('building-up') principle prescribes how multi-electron atoms are assembled: electrons occupy the lowest-available-energy orbitals first, subject to the Pauli exclusion principle (at most two electrons, of opposite spin, per orbital) and Hund's rules (within a subshell, maximise unpaired spins before pairing). The energy ordering follows the empirical Madelung (or Klechkowski) rule — fill in order of increasing $n+l$, and for equal $n+l$ by increasing $n$ — which explains why 4s fills before 3d, producing the transition metals. The resulting ground-state electron configurations directly generate the periodic table's architecture: rows (periods) correspond to filling successive principal shells, and columns (groups) share valence configurations and hence similar chemistry; the s-, p-, d-, and f-blocks reflect which subshell is being filled. Periodic trends — atomic radius, ionisation energy, electronegativity, valence — all stem from these configurations and effective nuclear charge. Exceptions (Cr, Cu, and several heavy elements) arise from the small energy gaps and the stability of half-/fully-filled subshells. The Aufbau scheme, rooted in the Schrodinger equation plus Pauli's principle, is the quantum-mechanical explanation of Mendeleev's periodic law and the foundation of chemistry."
+    }
+  }
+]

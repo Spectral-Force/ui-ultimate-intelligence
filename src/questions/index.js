@@ -129,6 +129,28 @@ import aiReinforcementLearning from './ai/reinforcement-learning.json'
 import aiGenerativeModels    from './ai/generative-models.json'
 import aiAlignmentSafety     from './ai/alignment-safety.json'
 import aiEvaluationBenchmarks from './ai/evaluation-benchmarks.json'
+import mechanicsLaws        from './physics/mechanics-laws.json'
+import emLaws               from './physics/em-laws.json'
+import thermoGasLaws        from './physics/thermo-gas-laws.json'
+import opticsWaveLaws       from './physics/optics-wave-laws.json'
+import quantumRules         from './physics/quantum-rules.json'
+import atomicSpectralLaws   from './physics/atomic-spectral-laws.json'
+import fluidFundamentals    from './physics/fluid-fundamentals.json'
+import turbulence           from './physics/turbulence.json'
+import magnetohydrodynamics from './physics/magnetohydrodynamics.json'
+import plasmaKinetics       from './physics/plasma-kinetics.json'
+import plasmaWaves          from './physics/plasma-waves.json'
+import fusionConfinement    from './physics/fusion-confinement.json'
+import astrophysicalFluids  from './physics/astrophysical-fluids.json'
+import nonlinearDynamics    from './physics/nonlinear-dynamics.json'
+import nuclearStructure     from './physics/nuclear-structure.json'
+import nuclearModels        from './physics/nuclear-models.json'
+import radioactiveDecay     from './physics/radioactive-decay.json'
+import nuclearReactions     from './physics/nuclear-reactions.json'
+import fissionFusion        from './physics/fission-fusion.json'
+import nucleosynthesis      from './physics/nucleosynthesis.json'
+import neutronStarsMatter   from './physics/neutron-stars-matter.json'
+import exoticNuclei         from './physics/exotic-nuclei.json'
 import manifolds            from './mathematics/manifolds.json'
 import tensorsForms         from './mathematics/tensors-forms.json'
 import riemannianGeometry   from './mathematics/riemannian-geometry.json'
@@ -294,6 +316,28 @@ export const allQuestions = [
   ...characteristicClasses,
   ...algebraicTopology,
   ...geometricFlows,
+  ...nuclearStructure,
+  ...nuclearModels,
+  ...radioactiveDecay,
+  ...nuclearReactions,
+  ...fissionFusion,
+  ...nucleosynthesis,
+  ...neutronStarsMatter,
+  ...exoticNuclei,
+  ...fluidFundamentals,
+  ...turbulence,
+  ...magnetohydrodynamics,
+  ...plasmaKinetics,
+  ...plasmaWaves,
+  ...fusionConfinement,
+  ...astrophysicalFluids,
+  ...nonlinearDynamics,
+  ...mechanicsLaws,
+  ...emLaws,
+  ...thermoGasLaws,
+  ...opticsWaveLaws,
+  ...quantumRules,
+  ...atomicSpectralLaws,
 ]
 
 /**

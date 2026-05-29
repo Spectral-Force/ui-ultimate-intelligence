@@ -1,0 +1,168 @@
+[
+  {
+    "id": "trb001",
+    "path": [
+      "physics",
+      "plasma-fluids",
+      "turbulence"
+    ],
+    "level": "P",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "What is the Kolmogorov 1941 picture of turbulence?",
+    "passive": {
+      "options": [
+        "Energy injected at large scales cascades through an inertial range to small scales where viscosity dissipates it; dimensional analysis gives the energy spectrum $E(k)\\propto \\epsilon^{2/3}k^{-5/3}$ and the dissipation scale $\\eta=(\\nu^3/\\epsilon)^{1/4}$, assuming local isotropy and a constant energy flux $\\epsilon$",
+        "Turbulence has a single length scale only (unsupported by perturbative expansions in the coupling) (would imply unphysical infinite or negative observables) (contradicted by both lattice simulations and dispersive analyses)",
+        "Energy flows from small scales to large scales in 3D (would conflict with renormalisation group flow and cross-section data) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Viscosity acts at the largest scales (ruled out by experimental constraints from collider and low-energy data) (historically considered but disfavoured by modern QFT analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Kolmogorov's 1941 (K41) theory is the cornerstone of turbulence. Richardson's cascade: large eddies break into smaller ones, transferring energy at a constant rate $\\epsilon$ (energy per mass per time) down to the Kolmogorov microscale $\\eta$ where viscosity dissipates it. In the inertial range (between forcing and dissipation), the only relevant parameters are $\\epsilon$ and wavenumber $k$, so dimensional analysis forces the famous $-5/3$ spectrum $E(k)=C\\epsilon^{2/3}k^{-5/3}$ (Kolmogorov constant $C\\approx1.5$), confirmed in countless experiments. Structure functions scale as $\\langle\\delta u^3\\rangle = -\\tfrac45\\epsilon r$ (the exact 4/5 law). Real turbulence shows intermittency corrections (rare intense events) to K41's self-similarity, an active research area. Turbulence remains 'the most important unsolved problem of classical physics' (Feynman)."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each turbulence concept with its meaning:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Energy cascade",
+          "definition": "Transfer of energy from large eddies to small (Richardson); constant flux $\\epsilon$ in inertial range"
+        },
+        {
+          "id": "p2",
+          "term": "$-5/3$ spectrum",
+          "definition": "$E(k)\\propto\\epsilon^{2/3}k^{-5/3}$ inertial-range energy spectrum (Kolmogorov)"
+        },
+        {
+          "id": "p3",
+          "term": "Dissipation scale $\\eta$",
+          "definition": "$\\eta=(\\nu^3/\\epsilon)^{1/4}$; smallest eddy size where viscosity converts motion to heat"
+        },
+        {
+          "id": "p4",
+          "term": "Intermittency",
+          "definition": "Rare, intense small-scale events causing deviations from K41 self-similar scaling"
+        }
+      ],
+      "explanation": "Turbulence spans a huge range of scales (separation $\\sim Re^{3/4}$), which is why direct numerical simulation is so costly and why engineering relies on turbulence models (RANS, LES). The K41 framework gives the scaling backbone; intermittency and anisotropy are the refinements that keep turbulence an open problem."
+    }
+  },
+  {
+    "id": "trb002",
+    "path": [
+      "physics",
+      "plasma-fluids",
+      "turbulence"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does the transition from laminar to turbulent flow occur?",
+    "passive": {
+      "options": [
+        "As the Reynolds number rises past a critical value, small disturbances are no longer damped by viscosity but grow (linear instability and/or transient/subcritical growth), leading through increasingly complex states to fully chaotic turbulence; e.g. pipe flow transitions around $Re\\sim2000$",
+        "Flow becomes turbulent at all Reynolds numbers equally (ruled out by experimental constraints from collider and low-energy data) (contradicted by both lattice simulations and dispersive analyses)",
+        "Turbulence appears only at very low Reynolds number (would conflict with renormalisation group flow and cross-section data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Transition is purely a change in fluid colour (not consistent with the operator product expansion at large momentum) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Laminar flow is smooth and orderly; turbulence is chaotic and mixing. The transition is governed by the Reynolds number: at low $Re$, viscosity damps perturbations; above a critical $Re$ disturbances grow. The route varies by flow. Some flows undergo classical linear instability (e.g. Tollmien-Schlichting waves in boundary layers, Rayleigh-Benard convection, Kelvin-Helmholtz at shear interfaces). Others, like pipe (Hagen-Poiseuille) flow, are linearly stable at all $Re$ yet become turbulent via subcritical transition: finite-amplitude disturbances and strong non-normal transient growth trigger turbulent puffs and slugs (around $Re\\approx2000$). The general transition problem — predicting when and how a given flow becomes turbulent — blends hydrodynamic stability theory, bifurcation/chaos, and the statistical mechanics of spatiotemporal patterns, and remains incompletely understood."
+    }
+  },
+  {
+    "id": "trb003",
+    "path": [
+      "physics",
+      "plasma-fluids",
+      "turbulence"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Why is 2D turbulence fundamentally different from 3D?",
+    "passive": {
+      "options": [
+        "In 2D, vortex stretching is absent and enstrophy (mean-square vorticity) is also conserved (inviscidly); this yields a dual cascade — energy flows to large scales (inverse cascade, $k^{-5/3}$) while enstrophy cascades to small scales ($k^{-3}$) — opposite to the 3D forward energy cascade",
+        "2D and 3D turbulence are identical (contradicted by both lattice simulations and dispersive analyses) (would conflict with renormalisation group flow and cross-section data)",
+        "2D turbulence has no conserved quantities (disagrees with the standard textbook treatment in Peskin-Schroeder) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "In 2D, energy always cascades to small scales (historically considered but disfavoured by modern QFT analyses) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "The crucial difference is vortex stretching: in 3D the term $(\\boldsymbol\\omega\\cdot\\nabla)\\mathbf u$ amplifies vorticity and drives the forward energy cascade to small scales. In 2D this term vanishes (vorticity is a scalar advected by the flow), so an additional inviscid invariant — enstrophy $\\int\\omega^2$ — is conserved alongside energy. Kraichnan, Leith, and Batchelor showed this forces a dual cascade: energy moves to large scales (the inverse energy cascade, spectrum $k^{-5/3}$), spontaneously forming large coherent vortices, while enstrophy cascades to small scales (spectrum $k^{-3}$). This explains why large-scale, long-lived structures (Jupiter's Great Red Spot, ocean/atmosphere jets, which are quasi-2D due to rotation/stratification) emerge in geophysical flows. 2D turbulence is thus a distinct paradigm with relevance to planetary fluid dynamics and plasma physics."
+    }
+  },
+  {
+    "id": "trb004",
+    "path": [
+      "physics",
+      "plasma-fluids",
+      "turbulence"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the closure problem in turbulence modelling?",
+    "passive": {
+      "options": [
+        "Averaging the nonlinear Navier-Stokes equations produces Reynolds-stress terms involving higher-order moments; equations for those involve still higher moments, so the hierarchy never closes — practical models (RANS, LES) supply closure approximations (eddy viscosity, subgrid models)",
+        "There are more equations than unknowns (ruled out by experimental constraints from collider and low-energy data) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "The equations are exactly solvable once averaged (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would conflict with renormalisation group flow and cross-section data)",
+        "Closure means the flow stops (unsupported by perturbative expansions in the coupling) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Reynolds-averaging Navier-Stokes (splitting fields into mean + fluctuation) gives equations for the mean flow that contain the Reynolds stress $\\overline{u_i'u_j'}$ — a new unknown from the nonlinear advection term. Writing an evolution equation for the Reynolds stress introduces triple correlations, and so on indefinitely: the moment hierarchy is unclosed (more unknowns than equations at every order). Since exact solution is impossible, engineering relies on closure models: RANS (Reynolds-Averaged Navier-Stokes) parametrises the Reynolds stress via an eddy viscosity (e.g. $k$-$\\epsilon$, $k$-$\\omega$ models); Large-Eddy Simulation (LES) resolves large scales and models only the subgrid stresses (e.g. Smagorinsky); Direct Numerical Simulation (DNS) resolves everything but costs $\\sim Re^3$ and is limited to modest $Re$. The closure problem is the central practical obstacle in computational fluid dynamics and a deep reflection of turbulence's unsolved nature."
+    }
+  },
+  {
+    "id": "trb005",
+    "path": [
+      "physics",
+      "plasma-fluids",
+      "turbulence"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is intermittency and how does it modify Kolmogorov scaling?",
+    "passive": {
+      "options": [
+        "Turbulent dissipation is not space-filling but concentrated in sparse intense structures, so velocity-increment statistics become increasingly non-Gaussian at small scales; structure-function exponents $\\zeta_p$ deviate (downward, anomalous) from the K41 linear prediction $p/3$, requiring multifractal/refined-similarity models",
+        "Intermittency makes turbulence exactly Gaussian (unsupported by perturbative expansions in the coupling) (would conflict with renormalisation group flow and cross-section data)",
+        "It confirms K41 scaling is exact (ruled out by experimental constraints from collider and low-energy data) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "It refers to the fluid intermittently disappearing (would imply unphysical infinite or negative observables) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "K41 assumes the energy flux $\\epsilon$ is uniform, predicting structure functions $\\langle(\\delta u)^p\\rangle\\propto r^{p/3}$ (linear exponents $\\zeta_p=p/3$). Reality: small-scale activity is intermittent — dissipation clusters in thin, intense filaments/sheets occupying a shrinking fraction of space at smaller scales. Consequently the probability distributions of velocity increments develop heavy (stretched-exponential) tails and grow more non-Gaussian toward small scales, and the measured exponents $\\zeta_p$ bend below $p/3$ for high $p$ (anomalous scaling). Kolmogorov's 1962 refined similarity hypothesis and multifractal models (Parisi-Frisch, She-Leveque) describe this by allowing a spectrum of local scaling exponents. Intermittency is the deepest open issue in the statistical theory of turbulence — a genuine breakdown of simple self-similarity — with implications for combustion, cloud microphysics, and the predictability of turbulent transport."
+    }
+  },
+  {
+    "id": "trb006",
+    "path": [
+      "physics",
+      "plasma-fluids",
+      "turbulence"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "How is turbulence simulated computationally and what limits it?",
+    "passive": {
+      "options": [
+        "DNS resolves all scales from forcing to $\\eta$ but needs $\\sim Re^{9/4}$ grid points (cost $\\sim Re^3$), feasible only at modest $Re$; LES resolves large eddies and models the subgrid scales; RANS models all turbulence statistically and is cheapest — accuracy vs cost trade-offs driven by the scale separation $L/\\eta\\sim Re^{3/4}$",
+        "Turbulence simulation has no cost limitation (violates basic gauge invariance and Lorentz covariance requirements) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "All industrial flows are routinely solved by DNS (not consistent with the operator product expansion at large momentum) (would imply unphysical infinite or negative observables)",
+        "Computers cannot simulate fluids at all (historically considered but disfavoured by modern QFT analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "The defining computational challenge is the enormous range of scales: the ratio of the largest eddy $L$ to the Kolmogorov scale $\\eta$ grows as $Re^{3/4}$, so a 3D Direct Numerical Simulation (resolving everything) needs $\\sim Re^{9/4}$ grid points and time-step refinement, giving total cost $\\sim Re^3$ — restricting DNS to moderate Reynolds numbers and canonical flows for fundamental study. Engineering at high $Re$ (aircraft, $Re\\sim10^7$) is impossible by DNS, so practitioners use Large-Eddy Simulation (resolve energy-containing eddies, model only the universal small scales via subgrid-stress models like Smagorinsky or dynamic models) or the cheaper Reynolds-Averaged Navier-Stokes (model all turbulence with closures such as $k$-$\\epsilon$/$k$-$\\omega$), and hybrids (DES). The accuracy-cost hierarchy DNS > LES > RANS reflects how much turbulence is resolved versus modelled. Machine-learning closures and exascale computing are pushing these frontiers, but the scale-separation curse keeps full-fidelity turbulence simulation perpetually expensive."
+    }
+  }
+]

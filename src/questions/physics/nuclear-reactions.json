@@ -1,0 +1,168 @@
+[
+  {
+    "id": "nrx001",
+    "path": [
+      "physics",
+      "nuclear-physics",
+      "nuclear-reactions"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "What is the Q-value of a nuclear reaction?",
+    "passive": {
+      "options": [
+        "$Q = (m_{\\rm initial} - m_{\\rm final})c^2$: the energy released ($Q>0$, exothermic) or required ($Q<0$, endothermic), equal to the difference in rest-mass energies of reactants and products; for $Q<0$ a threshold kinetic energy is needed",
+        "$Q$ is the total kinetic energy of the beam only (violates basic gauge invariance and Lorentz covariance requirements) (would conflict with renormalisation group flow and cross-section data)",
+        "$Q$ is always positive for every reaction (contradicted by both lattice simulations and dispersive analyses) (unsupported by perturbative expansions in the coupling)",
+        "$Q$ equals the binding energy of the heaviest product (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "The Q-value follows from mass-energy conservation: any decrease in total rest mass appears as kinetic energy of the products (exothermic, $Q>0$); any increase must be supplied as kinetic energy (endothermic, $Q<0$). For an endothermic reaction the lab threshold energy exceeds $|Q|$ because momentum must be conserved (some energy stays as centre-of-mass motion): $E_{\\rm th} = |Q|(1 + m_{\\rm proj}/m_{\\rm target})$. Q-values are computed from tabulated atomic masses. They determine whether stars can burn a given fuel, the energetics of fission/fusion, and the kinematics measured in reaction experiments."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each reaction concept with its meaning:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Cross-section $\\sigma$",
+          "definition": "Effective target area for a reaction (barns); sets reaction probability/rate"
+        },
+        {
+          "id": "p2",
+          "term": "Compound nucleus",
+          "definition": "Bohr's intermediate excited state that 'forgets' formation; decays statistically"
+        },
+        {
+          "id": "p3",
+          "term": "Resonance",
+          "definition": "Cross-section peak when beam energy matches a compound-nucleus level (Breit-Wigner)"
+        },
+        {
+          "id": "p4",
+          "term": "Coulomb barrier",
+          "definition": "Electrostatic repulsion charged reactants must overcome/tunnel to fuse"
+        }
+      ],
+      "explanation": "Reaction rates depend on cross-sections, which vary with energy and can spike at resonances. Bohr's compound-nucleus mechanism (capture, thermalisation, statistical decay) dominates at low energy; direct reactions (stripping, pickup, knockout) dominate at higher energy and probe single-particle structure. The Coulomb barrier suppresses charged-particle reactions at low energy, making the astrophysical S-factor (barrier-removed cross-section) the natural quantity in stellar nucleosynthesis."
+    }
+  },
+  {
+    "id": "nrx002",
+    "path": [
+      "physics",
+      "nuclear-physics",
+      "nuclear-reactions"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is a cross-section and what is a barn?",
+    "passive": {
+      "options": [
+        "A cross-section $\\sigma$ is the effective area presented by a nucleus for a given reaction, so reaction rate = flux $\\times$ $\\sigma$ $\\times$ number of targets; the barn = $10^{-28}$ m$^2$ ($100$ fm$^2$), comparable to a nuclear geometric area",
+        "A cross-section is the literal physical radius of the nucleus (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)",
+        "A barn is a unit of energy (historically considered but disfavoured by modern QFT analyses) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Cross-sections are dimensionless probabilities (disagrees with the standard textbook treatment in Peskin-Schroeder) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "The cross-section quantifies reaction probability as an effective area: for a beam of flux $\\Phi$ (particles/area/time) on $N$ target nuclei, the rate is $R = \\Phi\\,\\sigma\\,N$. It can be far larger (resonances, slow-neutron capture, $1/v$ law) or smaller (Coulomb-suppressed, weak processes) than the geometric size. The whimsically-named barn ($10^{-24}$ cm$^2$) is the natural scale ('big as a barn' to nuclear physicists). Differential cross-sections $d\\sigma/d\\Omega$ give angular distributions probing reaction mechanisms and structure. Cross-section data (e.g. ENDF libraries) are essential for reactor design, nuclear astrophysics, medical isotope production, and radiation shielding."
+    }
+  },
+  {
+    "id": "nrx003",
+    "path": [
+      "physics",
+      "nuclear-physics",
+      "nuclear-reactions"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the compound-nucleus mechanism?",
+    "passive": {
+      "options": [
+        "Bohr's two-step picture: projectile + target fuse into a long-lived, equilibrated excited 'compound nucleus' that loses memory of how it formed, then decays into various channels with probabilities independent of the entrance channel (independence hypothesis), often showing resonances",
+        "The projectile passes straight through without interacting (ruled out by experimental constraints from collider and low-energy data) (contradicted by both lattice simulations and dispersive analyses)",
+        "Only a single nucleon is exchanged instantly (violates basic gauge invariance and Lorentz covariance requirements) (historically considered but disfavoured by modern QFT analyses)",
+        "It applies only to electromagnetic reactions (would conflict with renormalisation group flow and cross-section data) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "Niels Bohr (1936) proposed that at low-to-moderate energies the incoming particle shares its energy among all nucleons, forming a thermalised compound nucleus that lives long (~$10^{-16}$ s) compared to the transit time. By the independence hypothesis, the decay branching ratios depend only on the compound state's energy, spin, and parity — not on its formation. This yields the Breit-Wigner resonance formula and the statistical (Hauser-Feshbach) theory of cross-sections. It contrasts with direct reactions (fast, peripheral, one-step) that occur on a transit timescale and retain entrance-channel memory. Both mechanisms coexist; their interplay is mapped through excitation functions and angular distributions."
+    }
+  },
+  {
+    "id": "nrx004",
+    "path": [
+      "physics",
+      "nuclear-physics",
+      "nuclear-reactions"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the astrophysical S-factor and why use it?",
+    "passive": {
+      "options": [
+        "$S(E) = \\sigma(E)\\,E\\,e^{2\\pi\\eta}$ removes the steep Coulomb-tunnelling (Gamow) and $1/E$ dependences from the cross-section, leaving a slowly-varying function that is far easier to extrapolate down to the low (keV) stellar energies inaccessible in the lab",
+        "It is the entropy of a star (contradicted by both lattice simulations and dispersive analyses) (would imply unphysical infinite or negative observables)",
+        "It measures a star's surface area (disagrees with the standard textbook treatment in Peskin-Schroeder) (would conflict with renormalisation group flow and cross-section data)",
+        "It is identical to the raw cross-section (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "Charged-particle fusion cross-sections plummet exponentially at low energy due to Coulomb-barrier tunnelling ($\\sigma \\propto e^{-2\\pi\\eta}/E$, with Sommerfeld parameter $\\eta$). Stellar burning happens at energies (the Gamow window, ~keV-tens of keV) far below where cross-sections are measurable. Defining $S(E) = \\sigma E e^{2\\pi\\eta}$ factors out the trivial barrier and kinematic behaviour, leaving the genuinely nuclear part nearly constant and safely extrapolable to stellar energies (where resonances and electron screening still need care). The S-factor is the standard currency of nuclear astrophysics; underground accelerators (LUNA) measure it ever closer to the Gamow window for key reactions like $^{3}$He($\\alpha,\\gamma$) and the CNO cycle."
+    }
+  },
+  {
+    "id": "nrx005",
+    "path": [
+      "physics",
+      "nuclear-physics",
+      "nuclear-reactions"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "How do direct reactions probe nuclear structure?",
+    "passive": {
+      "options": [
+        "Fast, peripheral one-step processes (stripping like (d,p), pickup like (p,d), knockout, charge-exchange) transfer or remove a nucleon; their angular distributions encode the transferred angular momentum $l$ and spectroscopic factors, mapping single-particle orbitals and occupancies",
+        "They form a long-lived compound nucleus (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (contradicted by both lattice simulations and dispersive analyses)",
+        "They reveal nothing about structure (would imply unphysical infinite or negative observables) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "They occur only at zero beam energy (ruled out by experimental constraints from collider and low-energy data) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Direct reactions happen in a single quick step at the nuclear surface, so the reaction amplitude (via DWBA, distorted-wave Born approximation) directly reflects the wavefunction of the involved orbital. The diffraction-like angular distribution peaks at an angle set by the transferred orbital angular momentum $l$, identifying the spin-parity of populated states; the magnitude gives the spectroscopic factor (occupation probability), testing the shell model. Examples: $(d,p)$ stripping adds a neutron to a specific orbital; $(p,d)$ pickup removes one; $(p,n)$/$(^3$He,t) charge exchange maps Gamow-Teller strength (relevant to beta decay and neutrino physics); knockout reactions on rare isotopes probe exotic structure. Direct reactions are the spectroscopic workhorse of nuclear-structure physics, increasingly with radioactive beams in inverse kinematics."
+    }
+  },
+  {
+    "id": "nrx006",
+    "path": [
+      "physics",
+      "nuclear-physics",
+      "nuclear-reactions"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "How are superheavy elements synthesised and what is the 'island of stability'?",
+    "passive": {
+      "options": [
+        "Heavy-ion fusion-evaporation (hot or cold fusion, e.g. $^{48}$Ca on actinide targets) forms superheavy nuclei (Z up to 118); shell effects predict an 'island of stability' near $Z\\approx114$-$126$, $N\\approx184$ with relatively long half-lives, despite huge Coulomb repulsion",
+        "Superheavy elements are mined naturally on Earth (violates basic gauge invariance and Lorentz covariance requirements) (would imply unphysical infinite or negative observables)",
+        "They are made by simple neutron capture in reactors only (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (unsupported by perturbative expansions in the coupling)",
+        "No shell effects survive in superheavy nuclei (contradicted by both lattice simulations and dispersive analyses) (historically considered but disfavoured by modern QFT analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Beyond uranium, increasing Coulomb repulsion makes nuclei fission-unstable; the liquid-drop barrier vanishes around $Z\\sim104$. Yet quantum shell corrections can resurrect a fission barrier, predicting an island of stability around the next doubly-magic region ($Z\\approx114$ or 120-126, $N=184$). Synthesis uses fusion-evaporation: accelerate heavy ions (famously $^{48}$Ca, doubly magic and neutron-rich) onto actinide targets (Pu, Am, Cm, Cf), forming a compound nucleus that survives by evaporating a few neutrons. This produced elements up to oganesson (Z=118). The synthesised isotopes are still neutron-deficient relative to the predicted island's centre, so they live milliseconds-seconds; reaching the island's longer-lived heart awaits more neutron-rich beams (a goal for next-generation rare-isotope facilities). Confirming the island would be a triumph of the shell model in the most extreme nuclei."
+    }
+  }
+]

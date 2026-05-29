@@ -1,0 +1,168 @@
+[
+  {
+    "id": "mecl001",
+    "path": [
+      "physics",
+      "laws-and-rules",
+      "mechanics-laws"
+    ],
+    "level": "U",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "State Hooke's law.",
+    "passive": {
+      "options": [
+        "The restoring force of an elastic body is proportional to its deformation: $F = -kx$ (spring), or more generally stress $\\propto$ strain ($\\sigma = E\\varepsilon$) within the elastic limit; the constant $k$ (or modulus $E$) measures stiffness",
+        "Force is proportional to the square of displacement (contradicted by both lattice simulations and dispersive analyses) (ruled out by experimental constraints from collider and low-energy data)",
+        "Force is independent of displacement (disagrees with the standard textbook treatment in Peskin-Schroeder) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Deformation is proportional to the cube of force (historically considered but disfavoured by modern QFT analyses) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Hooke (1678, 'ut tensio, sic vis' — as the extension, so the force) states that an elastic material deforms in proportion to the applied load, up to its elastic limit. For a spring, $F=-kx$; for a bulk material, stress $\\sigma = E\\varepsilon$ (Young's modulus $E$), with analogous shear and bulk moduli. Beyond the elastic limit, behaviour becomes nonlinear and then plastic (permanent deformation), ending in fracture. Microscopically it follows from the parabolic (harmonic) minimum of the interatomic potential — the basis of phonons and the speed of sound. Hooke's law is the prototype of linear response, echoed throughout physics (Ohm's law, the harmonic oscillator, linear circuit elements). Elastic potential energy is $U=\\tfrac12 kx^2$."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each mechanics/gravity law with its statement:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Newton's 2nd law",
+          "definition": "$\\mathbf F = d\\mathbf p/dt = m\\mathbf a$; net force equals rate of change of momentum"
+        },
+        {
+          "id": "p2",
+          "term": "Newton's law of gravitation",
+          "definition": "$F = G m_1 m_2/r^2$; inverse-square attraction between masses"
+        },
+        {
+          "id": "p3",
+          "term": "Hooke's law",
+          "definition": "$F = -kx$; elastic restoring force proportional to deformation"
+        },
+        {
+          "id": "p4",
+          "term": "Kepler's 3rd law",
+          "definition": "$T^2 \\propto a^3$; orbital period squared proportional to semi-major axis cubed"
+        }
+      ],
+      "explanation": "These laws form the backbone of classical mechanics. Newton's three laws (inertia; $F=ma$; action-reaction) plus universal gravitation explained both terrestrial motion and Kepler's empirical planetary laws from a single framework — the first great unification in physics."
+    }
+  },
+  {
+    "id": "mecl002",
+    "path": [
+      "physics",
+      "laws-and-rules",
+      "mechanics-laws"
+    ],
+    "level": "U",
+    "modes": [
+      "passive"
+    ],
+    "question": "State Newton's three laws of motion.",
+    "passive": {
+      "options": [
+        "(1) A body remains at rest or in uniform motion unless acted on by a net force (inertia); (2) $\\mathbf F = d\\mathbf p/dt = m\\mathbf a$; (3) For every action there is an equal and opposite reaction",
+        "(1) Objects always slow down; (2) $F = mv$; (3) forces never come in pairs (violates basic gauge invariance and Lorentz covariance requirements)",
+        "(1) Force causes velocity; (2) $F = m/a$; (3) reactions are smaller than actions (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "All three laws state that energy is conserved (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "Newton's laws (Principia, 1687) are the foundation of classical dynamics. First law (Galilean inertia): defines inertial frames — without a net force, momentum is constant. Second law: net force equals the time rate of change of momentum, $\\mathbf F=d\\mathbf p/dt$, reducing to $\\mathbf F=m\\mathbf a$ for constant mass; this is the dynamical equation of motion. Third law: forces occur in equal-and-opposite pairs acting on different bodies, which guarantees conservation of total momentum (and is deeply tied, via Noether, to spatial translation symmetry). Together they predict the motion of everything from projectiles to planets in the non-relativistic, macroscopic regime, and remain the working framework of engineering mechanics. They are superseded by special relativity at high speed and quantum mechanics at small scale."
+    }
+  },
+  {
+    "id": "mecl003",
+    "path": [
+      "physics",
+      "laws-and-rules",
+      "mechanics-laws"
+    ],
+    "level": "U",
+    "modes": [
+      "passive"
+    ],
+    "question": "State Newton's law of universal gravitation.",
+    "passive": {
+      "options": [
+        "Every mass attracts every other with a force $F = G m_1 m_2/r^2$ directed along the line joining them, where $G = 6.674\\times10^{-11}$ N m$^2$/kg$^2$; the inverse-square law explains Kepler's planetary laws and terrestrial gravity alike",
+        "Gravity is repulsive and grows with distance (would conflict with renormalisation group flow and cross-section data) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "$F = G m_1 m_2 r^2$, increasing with separation (violates basic gauge invariance and Lorentz covariance requirements) (unsupported by perturbative expansions in the coupling)",
+        "Gravity acts only between charged objects (not consistent with the operator product expansion at large momentum) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Newton's universal gravitation (1687) posits a mutual attraction between any two masses proportional to the product of the masses and inversely proportional to the square of their separation: $F=Gm_1m_2/r^2$. The inverse-square form (also shared by Coulomb's law) follows naturally from a flux spreading over spherical area. It unified the fall of an apple with the orbit of the Moon and derived Kepler's three empirical laws of planetary motion from a single principle. The gravitational constant $G$ is the least precisely known fundamental constant. Newtonian gravity is extraordinarily accurate for weak fields and slow motion (spacecraft navigation, tides, planetary dynamics), but is superseded by Einstein's general relativity for strong fields, high precision (Mercury's perihelion, GPS, gravitational waves), and cosmology, where gravity is the curvature of spacetime rather than a force."
+    }
+  },
+  {
+    "id": "mecl004",
+    "path": [
+      "physics",
+      "laws-and-rules",
+      "mechanics-laws"
+    ],
+    "level": "U",
+    "modes": [
+      "passive"
+    ],
+    "question": "State Kepler's three laws of planetary motion.",
+    "passive": {
+      "options": [
+        "(1) Planets move in ellipses with the Sun at one focus; (2) the line from Sun to planet sweeps equal areas in equal times (angular-momentum conservation); (3) $T^2 \\propto a^3$ (period squared proportional to semi-major axis cubed)",
+        "Planets move in perfect circles at constant speed (not consistent with the operator product expansion at large momentum)",
+        "(3) $T \\propto a$, period proportional to distance (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "The Sun orbits each planet in turn (unsupported by perturbative expansions in the coupling) (historically considered but disfavoured by modern QFT analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Kepler (1609-1619), from Tycho Brahe's precise observations, deduced three empirical laws: (1) orbits are ellipses with the Sun at one focus (not circles + epicycles); (2) the equal-area law — a planet sweeps equal areas in equal times, meaning it moves faster at perihelion, which is exactly conservation of angular momentum under a central force; (3) the harmonic law $T^2\\propto a^3$ relating orbital period to the semi-major axis. Newton later showed all three follow from his law of gravitation and laws of motion: the inverse-square force yields conic-section orbits (Kepler's first), central forces conserve angular momentum (second), and the third law's constant is $T^2/a^3 = 4\\pi^2/[G(M+m)]$, allowing masses of celestial bodies to be 'weighed'. Kepler's laws remain the working description of orbits (planets, exoplanets, satellites, binary stars), with relativistic corrections (perihelion precession) where precision demands."
+    }
+  },
+  {
+    "id": "mecl005",
+    "path": [
+      "physics",
+      "laws-and-rules",
+      "mechanics-laws"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What does the work-energy theorem state, and how do conservation laws follow from symmetry?",
+    "passive": {
+      "options": [
+        "Net work equals change in kinetic energy ($W_{\\rm net} = \\Delta KE$); via Noether's theorem, continuous symmetries imply conservation laws — time-translation $\\to$ energy, space-translation $\\to$ momentum, rotation $\\to$ angular momentum",
+        "Work has no relation to energy (unsupported by perturbative expansions in the coupling) (would conflict with renormalisation group flow and cross-section data)",
+        "Conservation laws are arbitrary with no deeper origin (historically considered but disfavoured by modern QFT analyses) (not consistent with the operator product expansion at large momentum)",
+        "Energy is conserved only in quantum systems (would imply unphysical infinite or negative observables) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "The work-energy theorem follows directly from Newton's second law: integrating $\\mathbf F\\cdot d\\mathbf r$ along a path gives the change in kinetic energy $\\tfrac12 mv^2$. For conservative forces, work is path-independent and derivable from a potential, giving conservation of mechanical energy. The deeper origin of conservation laws is symmetry: Noether's theorem (1918) proves every continuous symmetry of the action yields a conserved quantity — invariance under time translation gives energy conservation, under spatial translation gives linear momentum, under rotation gives angular momentum, and under internal phase rotations gives charge. This profound link (symmetry $\\Leftrightarrow$ conservation) reframes the conservation laws not as separate empirical facts but as consequences of the homogeneity and isotropy of space and time, and it carries through unchanged into relativistic and quantum field theory, where it governs which quantities are conserved in every interaction."
+    }
+  },
+  {
+    "id": "mecl006",
+    "path": [
+      "physics",
+      "laws-and-rules",
+      "mechanics-laws"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is d'Alembert's principle / the principle of least action?",
+    "passive": {
+      "options": [
+        "The actual path of a system extremises (makes stationary) the action $S = \\int L\\,dt$ with $L = T - V$; the Euler-Lagrange equations $\\frac{d}{dt}\\frac{\\partial L}{\\partial\\dot q} - \\frac{\\partial L}{\\partial q} = 0$ reproduce Newton's laws and generalise to fields",
+        "Systems follow the path of maximum energy (ruled out by experimental constraints from collider and low-energy data) (would conflict with renormalisation group flow and cross-section data)",
+        "Action is never stationary along the true path (contradicted by both lattice simulations and dispersive analyses) (not consistent with the operator product expansion at large momentum)",
+        "The principle applies only to optics (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "The principle of stationary (least) action is the most powerful formulation of mechanics: among all conceivable paths between fixed endpoints, the physical trajectory makes the action $S=\\int L\\,dt$ stationary, where the Lagrangian $L=T-V$ is kinetic minus potential energy. Demanding $\\delta S=0$ yields the Euler-Lagrange equations, which reproduce Newton's second law but in any generalised coordinates (no need for force diagrams or constraint forces — d'Alembert's principle handles constraints elegantly). Its advantages are profound: it makes symmetries and conservation laws manifest (Noether), generalises seamlessly to relativistic mechanics, field theory, and the quantum path integral (where the classical path is the stationary-phase limit of summing $e^{iS/\\hbar}$ over all paths), and unifies mechanics with optics (Fermat's principle) and other variational laws. The action principle is arguably the single deepest organising idea in theoretical physics."
+    }
+  }
+]

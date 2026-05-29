@@ -1,0 +1,168 @@
+[
+  {
+    "id": "nld001",
+    "path": [
+      "physics",
+      "plasma-fluids",
+      "nonlinear-dynamics"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "What is deterministic chaos?",
+    "passive": {
+      "options": [
+        "Aperiodic, bounded behaviour in a deterministic nonlinear system showing sensitive dependence on initial conditions (positive Lyapunov exponent): nearby trajectories diverge exponentially, making long-term prediction impossible despite exact governing equations",
+        "Pure randomness with no underlying equations (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would imply unphysical infinite or negative observables)",
+        "Perfectly periodic, predictable motion (contradicted by both lattice simulations and dispersive analyses) (ruled out by experimental constraints from collider and low-energy data)",
+        "Behaviour that requires an external random force (disagrees with the standard textbook treatment in Peskin-Schroeder) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "Chaos is the surprising fact that simple deterministic nonlinear systems can behave unpredictably. The hallmark is sensitive dependence on initial conditions: infinitesimally close states separate exponentially, $\\delta(t)\\sim\\delta_0 e^{\\lambda t}$ with a positive Lyapunov exponent $\\lambda$ — the 'butterfly effect' Lorenz found in a toy convection model (1963). The motion is bounded and deterministic yet aperiodic, often settling onto a fractal strange attractor in phase space. Because measurement precision is always finite and errors grow exponentially, long-term prediction is fundamentally limited (e.g. weather has a ~2-week horizon). Chaos requires nonlinearity and at least three continuous dimensions (or a noninvertible map). It is ubiquitous: fluid turbulence, planetary dynamics, lasers, chemical reactions, cardiac rhythms, and population biology. Chaos theory reframed determinism: predictable laws need not imply predictable behaviour."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each nonlinear-dynamics concept with its meaning:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Lyapunov exponent",
+          "definition": "Exponential rate of divergence of nearby trajectories; positive $\\Rightarrow$ chaos"
+        },
+        {
+          "id": "p2",
+          "term": "Strange attractor",
+          "definition": "Fractal set in phase space onto which chaotic trajectories settle; e.g. Lorenz attractor"
+        },
+        {
+          "id": "p3",
+          "term": "Bifurcation",
+          "definition": "Qualitative change in dynamics as a parameter varies; e.g. period-doubling cascade to chaos"
+        },
+        {
+          "id": "p4",
+          "term": "Feigenbaum constant",
+          "definition": "Universal ratio $\\delta\\approx4.669$ governing period-doubling routes to chaos across systems"
+        }
+      ],
+      "explanation": "These tools quantify and classify nonlinear behaviour. Bifurcation diagrams reveal routes to chaos (period-doubling, intermittency, quasiperiodicity); Lyapunov exponents diagnose chaos; fractal dimensions characterise strange attractors. Feigenbaum's universal constants show that disparate systems approach chaos in the same quantitative way — a renormalisation-group-like universality."
+    }
+  },
+  {
+    "id": "nld002",
+    "path": [
+      "physics",
+      "plasma-fluids",
+      "nonlinear-dynamics"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the period-doubling route to chaos and Feigenbaum universality?",
+    "passive": {
+      "options": [
+        "As a control parameter increases, a system's stable cycle doubles its period repeatedly (period 2, 4, 8, ...) at ever-closer parameter intervals, accumulating at a finite value beyond which chaos sets in; the interval ratios converge to the universal Feigenbaum constant $\\delta\\approx4.669$, independent of the specific system",
+        "Periods halve until motion stops (would imply unphysical infinite or negative observables) (disagrees with the standard textbook treatment in Peskin-Schroeder) (not consistent with the operator product expansion at large momentum)",
+        "Chaos appears suddenly with no precursor structure (violates basic gauge invariance and Lorentz covariance requirements) (ruled out by experimental constraints from collider and low-energy data)",
+        "The route is different for every system with no universality (historically considered but disfavoured by modern QFT analyses) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "A common path from order to chaos: increasing a parameter destabilises a periodic orbit, which bifurcates into one of twice the period, then again, and again — a period-doubling cascade (period $1\\to2\\to4\\to8\\to\\dots$). The parameter windows between successive doublings shrink geometrically, accumulating at a finite threshold where the period becomes infinite and chaos begins. Feigenbaum (1978) discovered that the ratio of successive intervals converges to a universal constant $\\delta = 4.6692\\dots$ (and a second constant $\\alpha=2.5029\\dots$ for the scaling of branch widths), the same for all systems with a smooth quadratic map maximum — from the logistic map to dripping faucets, electronic circuits, lasers, and convection experiments. This universality is explained by a renormalisation-group analysis of the map's self-similar structure, paralleling critical phenomena. It was a landmark showing that the transition to chaos has quantitative, predictable, system-independent features."
+    }
+  },
+  {
+    "id": "nld003",
+    "path": [
+      "physics",
+      "plasma-fluids",
+      "nonlinear-dynamics"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is a soliton?",
+    "passive": {
+      "options": [
+        "A solitary travelling wave that keeps its shape because nonlinearity (steepening) exactly balances dispersion (spreading); solitons in integrable equations (KdV, nonlinear Schrodinger, sine-Gordon) pass through each other unchanged — relevant to shallow-water waves, optical fibres, and plasma waves",
+        "A wave that always spreads out and disappears (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (ruled out by experimental constraints from collider and low-energy data)",
+        "A purely linear wave packet (contradicted by both lattice simulations and dispersive analyses) (would conflict with renormalisation group flow and cross-section data)",
+        "A standing wave that cannot move (historically considered but disfavoured by modern QFT analyses) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "Normally a wave packet either disperses (different wavelengths travel at different speeds, spreading it out) or, if nonlinear, steepens and breaks. A soliton is the special balance where nonlinear steepening exactly cancels dispersive spreading, yielding a localised wave that propagates without changing shape. First observed by Russell (1834) as a persistent canal wave, explained by the Korteweg-de Vries (KdV) equation. In integrable systems (KdV, nonlinear Schrodinger, sine-Gordon, Toda lattice) solitons are remarkably robust: they emerge from generic initial data and collide elastically, passing through one another with only a phase shift — almost particle-like, hence the '-on' suffix. The inverse scattering transform solves these equations exactly. Solitons matter technologically (optical-fibre soliton communications, where nonlinearity balances chromatic dispersion), in plasmas (ion-acoustic solitons), Bose-Einstein condensates, and as models for elementary particles and topological defects (kinks, the sine-Gordon/Thirring duality)."
+    }
+  },
+  {
+    "id": "nld004",
+    "path": [
+      "physics",
+      "plasma-fluids",
+      "nonlinear-dynamics"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What are strange attractors and fractals in dissipative chaotic systems?",
+    "passive": {
+      "options": [
+        "Dissipative chaotic systems contract phase-space volume yet trajectories never repeat, settling onto a strange attractor — a set with fractal (non-integer) dimension and self-similar structure on which dynamics are chaotic; the Lorenz attractor is the iconic example",
+        "Attractors are always simple fixed points or limit cycles (would imply unphysical infinite or negative observables) (unsupported by perturbative expansions in the coupling)",
+        "Strange attractors have integer dimension and are smooth (historically considered but disfavoured by modern QFT analyses) (contradicted by both lattice simulations and dispersive analyses)",
+        "Dissipation prevents any attractor from forming (would conflict with renormalisation group flow and cross-section data) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "In a dissipative system, phase-space volumes shrink over time, so trajectories are drawn onto an attractor of lower dimension than the full phase space. For regular dynamics this is a fixed point (dimension 0) or limit cycle (dimension 1). Chaotic dissipative systems instead converge onto a strange attractor: a bounded set on which motion is aperiodic and exponentially sensitive (positive Lyapunov exponent), yet which has intricate fractal geometry — a non-integer (fractal) dimension and self-similar fine structure produced by endless stretching and folding of phase space. The Lorenz attractor (from a 3-variable convection model) is the famous butterfly-shaped example. Fractals (Mandelbrot) — objects with detail at all scales and fractional dimension — appear throughout nature (coastlines, clouds, turbulence, diffusion-limited aggregation). The link between chaos, fractal attractors, and the loss of long-term predictability is a defining insight of nonlinear dynamics, with measures like the correlation dimension and Lyapunov spectrum quantifying it."
+    }
+  },
+  {
+    "id": "nld005",
+    "path": [
+      "physics",
+      "plasma-fluids",
+      "nonlinear-dynamics"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What are pattern formation and self-organisation in driven systems?",
+    "passive": {
+      "options": [
+        "Spontaneous emergence of spatial/temporal order in nonequilibrium systems driven beyond a threshold, via instabilities of a uniform state: e.g. Rayleigh-Benard convection rolls, Turing reaction-diffusion patterns, and chemical oscillations; amplitude equations capture universal behaviour near onset",
+        "Order that requires equilibrium and no driving (would imply unphysical infinite or negative observables) (unsupported by perturbative expansions in the coupling)",
+        "Random disorder with no structure ever forming (disagrees with the standard textbook treatment in Peskin-Schroeder) (would conflict with renormalisation group flow and cross-section data)",
+        "A purely quantum effect with no classical analogue (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "Driven far from equilibrium, uniform states can become unstable and spontaneously develop structured patterns — order arising from a homogeneous background without any templating, the essence of self-organisation. Classic examples: Rayleigh-Benard convection (a fluid heated from below organises into regular rolls/hexagons above a critical temperature gradient); Turing patterns (Turing 1952, where the interplay of fast-diffusing inhibitor and slow-diffusing activator in reaction-diffusion systems makes a uniform chemical state unstable to periodic spots/stripes — a proposed mechanism for animal coat markings and morphogenesis); Belousov-Zhabotinsky chemical oscillations and spiral waves; and patterns in granular media, lasers, and convecting plasmas/stars. Near the instability threshold, universal 'amplitude equations' (Ginzburg-Landau, Swift-Hohenberg) describe the slow modulation of the emerging pattern independent of microscopic details, paralleling critical phenomena. Pattern formation links nonlinear dynamics, nonequilibrium thermodynamics, and biology, showing how complexity and structure can emerge from simple local interactions plus an energy/matter throughput."
+    }
+  },
+  {
+    "id": "nld006",
+    "path": [
+      "physics",
+      "plasma-fluids",
+      "nonlinear-dynamics"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the KAM theorem and its significance for Hamiltonian chaos?",
+    "passive": {
+      "options": [
+        "Kolmogorov-Arnold-Moser: under small perturbation of an integrable Hamiltonian system, most invariant tori (quasiperiodic orbits) survive, deformed but intact, provided their frequencies are sufficiently irrational; resonant tori break up into chaotic layers, explaining the coexistence of order and chaos in phase space",
+        "All orbits become chaotic under any perturbation (disagrees with the standard textbook treatment in Peskin-Schroeder) (ruled out by experimental constraints from collider and low-energy data)",
+        "No orbits ever change under perturbation (violates basic gauge invariance and Lorentz covariance requirements) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "It applies only to dissipative systems (would conflict with renormalisation group flow and cross-section data) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "Integrable Hamiltonian systems have phase space foliated by invariant tori carrying quasiperiodic motion. A central question (Poincare) was whether this structure survives perturbation — bearing on solar-system stability. The KAM theorem (Kolmogorov 1954, Arnold and Moser 1960s) shows that for a small enough perturbation, most tori persist (slightly deformed) — specifically those whose frequency ratios are 'sufficiently irrational' (Diophantine), avoiding low-order resonances. Near resonant (rational-frequency) tori, however, the structure breaks down into thin stochastic (chaotic) layers, and as the perturbation grows these layers widen and merge (Chirikov resonance overlap), producing large-scale chaos. The result is the generic mixed phase space of Hamiltonian systems: islands of regular motion (surviving KAM tori) embedded in a chaotic sea. KAM theory underlies the long-term (meta)stability of the solar system, particle confinement in accelerators and magnetic fusion devices (where field-line/orbit chaos limits confinement), and the foundations of statistical mechanics (when does a system explore phase space ergodically?). It is a deep statement about the persistence of order amid the onset of chaos."
+    }
+  }
+]

@@ -1,0 +1,168 @@
+[
+  {
+    "id": "rad001",
+    "path": [
+      "physics",
+      "nuclear-physics",
+      "radioactive-decay"
+    ],
+    "level": "U",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "State the radioactive decay law and the meaning of half-life.",
+    "passive": {
+      "options": [
+        "$N(t) = N_0 e^{-\\lambda t}$: the number of undecayed nuclei falls exponentially with decay constant $\\lambda$; the half-life $t_{1/2} = \\ln 2/\\lambda$ is the time for half to decay, and the mean lifetime is $\\tau = 1/\\lambda$. Activity $A = \\lambda N$",
+        "$N(t) = N_0(1 - \\lambda t)$, a linear decrease (disagrees with the standard textbook treatment in Peskin-Schroeder) (contradicted by both lattice simulations and dispersive analyses)",
+        "Decay is deterministic with a fixed lifetime per nucleus (ruled out by experimental constraints from collider and low-energy data)",
+        "$N(t) = N_0 e^{+\\lambda t}$, growing over time (violates basic gauge invariance and Lorentz covariance requirements) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Radioactive decay is a stochastic, memoryless (Poisson) process: each nucleus has a constant probability $\\lambda\\,dt$ of decaying per unit time, independent of age. Integrating $dN/dt = -\\lambda N$ gives the exponential law. Key relations: $t_{1/2} = \\ln2/\\lambda \\approx 0.693\\,\\tau$; activity (decays per second) $A = \\lambda N$, measured in becquerels. Half-lives span an enormous range ($10^{-22}$ s to $>10^{19}$ yr). The law underlies radiometric dating (carbon-14, uranium-lead), medical isotopes, and the constancy of $\\lambda$ (essentially unaffected by temperature/pressure/chemistry) is a hallmark of nuclear vs chemical processes."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each decay mode with its emission and effect:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Alpha decay",
+          "definition": "Emits $^4$He nucleus; $Z\\to Z-2$, $A\\to A-4$; tunnelling through Coulomb barrier (heavy nuclei)"
+        },
+        {
+          "id": "p2",
+          "term": "Beta-minus decay",
+          "definition": "$n\\to p + e^- + \\bar\\nu_e$; $Z\\to Z+1$; neutron-rich nuclei; weak interaction"
+        },
+        {
+          "id": "p3",
+          "term": "Beta-plus / EC",
+          "definition": "$p\\to n + e^+ + \\nu_e$ or electron capture; $Z\\to Z-1$; proton-rich nuclei"
+        },
+        {
+          "id": "p4",
+          "term": "Gamma decay",
+          "definition": "Emits a photon; de-excitation of a nucleus; $Z, A$ unchanged"
+        }
+      ],
+      "explanation": "Decay modes move a nucleus toward the valley of stability. Alpha decay sheds mass and charge from heavy nuclei via quantum tunnelling. Beta decays convert neutrons and protons via the weak force, adjusting the N/Z ratio. Electron capture competes with beta-plus when the energy window is small. Gamma emission (and internal conversion) carries off excitation energy. Rarer modes include proton/neutron emission, spontaneous fission, and cluster decay."
+    }
+  },
+  {
+    "id": "rad002",
+    "path": [
+      "physics",
+      "nuclear-physics",
+      "radioactive-decay"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Why does alpha decay's half-life depend so steeply on energy (Geiger-Nuttall law)?",
+    "passive": {
+      "options": [
+        "Alpha particles escape by quantum tunnelling through the Coulomb barrier; the tunnelling probability is exponentially sensitive to energy, giving $\\log_{10} t_{1/2} \\approx a/\\sqrt{E_\\alpha} + b$ — the Geiger-Nuttall law, spanning ~24 orders of magnitude in half-life over a small energy range",
+        "Alpha decay is classical; energy has little effect (unsupported by perturbative expansions in the coupling) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Half-life increases linearly with alpha energy (not consistent with the operator product expansion at large momentum) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "The Coulomb barrier plays no role (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "Gamow (1928) gave one of the first triumphs of quantum mechanics: the pre-formed alpha cluster is trapped behind the Coulomb barrier and tunnels out. The Gamow factor $P \\sim \\exp(-2\\pi Z_\\alpha Z_d e^2/\\hbar v) \\sim \\exp(-\\text{const}/\\sqrt{E_\\alpha})$ makes the decay rate exponentially sensitive to the alpha energy and the daughter charge. Hence the empirical Geiger-Nuttall relation: a modest increase in $E_\\alpha$ slashes the half-life enormously (e.g. from $10^{10}$ yr for $^{238}$U to microseconds for some heavy nuclei). This exponential WKB tunnelling picture is the prototype for all barrier-penetration phenomena (fusion, fission, field emission, scanning tunnelling microscopy)."
+    }
+  },
+  {
+    "id": "rad003",
+    "path": [
+      "physics",
+      "nuclear-physics",
+      "radioactive-decay"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What did beta decay reveal that led Pauli to postulate the neutrino?",
+    "passive": {
+      "options": [
+        "Beta electrons emerge with a continuous energy spectrum (not a single line), seemingly violating energy/momentum/angular-momentum conservation; Pauli (1930) postulated an unseen light neutral particle (the neutrino) carrying away the missing energy and spin",
+        "Beta electrons are always monoenergetic, confirming a two-body decay (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Beta decay conserves nothing and needs no neutrino (violates basic gauge invariance and Lorentz covariance requirements) (ruled out by experimental constraints from collider and low-energy data)",
+        "The neutrino was seen directly before being postulated (contradicted by both lattice simulations and dispersive analyses) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "A two-body decay would give the electron a fixed energy; instead beta spectra are continuous up to an endpoint, which threatened energy conservation (Bohr even contemplated abandoning it). Pauli's 'desperate remedy' (1930): an additional, nearly massless, neutral, weakly-interacting particle (later named neutrino by Fermi) shares the released energy, restoring conservation and fixing the spin statistics ($n\\to p+e^-+\\bar\\nu_e$ balances spin-1/2). Fermi's 1934 theory of beta decay formalised the weak interaction. The (anti)neutrino was finally detected by Reines and Cowan (1956, Nobel 1995). The beta endpoint energy now constrains the neutrino mass directly (KATRIN: $m_\\nu < 0.8$ eV)."
+    }
+  },
+  {
+    "id": "rad004",
+    "path": [
+      "physics",
+      "nuclear-physics",
+      "radioactive-decay"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does radiometric dating use decay laws?",
+    "passive": {
+      "options": [
+        "Measure parent/daughter isotope ratios and invert the decay law to get elapsed time: $^{14}$C ($t_{1/2}=5730$ yr) dates organic material up to ~50 kyr; U-Pb ($t_{1/2}\\sim 10^9$ yr) dates rocks and meteorites (Earth age 4.54 Gyr); K-Ar, Rb-Sr for geology",
+        "It measures the colour change of samples over time (disagrees with the standard textbook treatment in Peskin-Schroeder) (contradicted by both lattice simulations and dispersive analyses)",
+        "It assumes decay constants vary wildly with environment (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "It works only for stable isotopes (violates basic gauge invariance and Lorentz covariance requirements) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "Because $\\lambda$ is constant, the parent-to-daughter ratio is a clock: $t = (1/\\lambda)\\ln(1 + D/P)$ for a closed system (with corrections for initial daughter). Radiocarbon dating uses cosmogenic $^{14}$C, replenished in living organisms and decaying after death (calibrated against tree rings, varves). Uranium-lead (two independent chains, $^{238}$U and $^{235}$U) is the gold standard for deep time, giving the 4.54-Gyr age of the solar system from meteorites. Potassium-argon, rubidium-strontium, and samarium-neodymium extend the toolkit. Isochron methods remove assumptions about initial daughter abundance. The reliability rests on the environmental independence of nuclear decay rates."
+    }
+  },
+  {
+    "id": "rad005",
+    "path": [
+      "physics",
+      "nuclear-physics",
+      "radioactive-decay"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is secular equilibrium in a decay chain?",
+    "passive": {
+      "options": [
+        "When a long-lived parent feeds short-lived daughters, after several daughter half-lives each daughter's activity equals the parent's ($\\lambda_1 N_1 = \\lambda_2 N_2 = \\dots$); the whole chain decays at the parent's slow rate, with daughter abundances inversely proportional to their decay constants",
+        "All members of a chain have equal numbers of atoms (disagrees with the standard textbook treatment in Peskin-Schroeder) (would conflict with renormalisation group flow and cross-section data)",
+        "Equilibrium means no decays occur (contradicted by both lattice simulations and dispersive analyses) (unsupported by perturbative expansions in the coupling)",
+        "The shortest-lived isotope controls the chain's rate (ruled out by experimental constraints from collider and low-energy data) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "In a chain $1\\to2\\to3\\to\\dots$ where the parent half-life vastly exceeds the daughters', the daughters build up until production equals decay. Then activities equalise: $A_1 = A_2 = \\dots$, i.e. $\\lambda_i N_i$ is constant along the chain, so $N_i \\propto 1/\\lambda_i \\propto t_{1/2,i}$. The decay of the whole series is gated by the long-lived parent (e.g. $^{238}$U, $t_{1/2}=4.5$ Gyr, governs its entire chain down to stable $^{206}$Pb). Secular equilibrium underlies $^{222}$Rn buildup from uranium-bearing rock, the radium-uranium relationship used in dating, and radionuclide generators in nuclear medicine (e.g. $^{99}$Mo/$^{99m}$Tc). Transient equilibrium occurs when the parent is only moderately longer-lived than the daughter."
+    }
+  },
+  {
+    "id": "rad006",
+    "path": [
+      "physics",
+      "nuclear-physics",
+      "radioactive-decay"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is neutrinoless double beta decay and why is it sought?",
+    "passive": {
+      "options": [
+        "A hypothetical process $(A,Z)\\to(A,Z+2) + 2e^-$ with no neutrinos, allowed only if the neutrino is its own antiparticle (Majorana); observing it would prove lepton-number violation and Majorana nature, and its rate would constrain the absolute neutrino mass scale",
+        "Ordinary double beta decay with two neutrinos, already common (unsupported by perturbative expansions in the coupling) (not consistent with the operator product expansion at large momentum)",
+        "A decay that emits two extra neutrinos (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would imply unphysical infinite or negative observables)",
+        "A purely electromagnetic transition (ruled out by experimental constraints from collider and low-energy data) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "Two-neutrino double beta decay ($2\\nu\\beta\\beta$, emitting $2e^- + 2\\bar\\nu_e$) is a rare but observed second-order weak process. The neutrinoless mode ($0\\nu\\beta\\beta$) would emit only the two electrons, violating lepton number by two units — forbidden unless neutrinos are Majorana fermions (identical to their antiparticles). Its signature is a sharp peak at the decay Q-value in the summed electron energy. The half-life $\\propto |m_{\\beta\\beta}|^{-2}$ probes the effective Majorana mass; current limits push $t_{1/2} > 10^{26}$ yr (GERDA/$^{76}$Ge, KamLAND-Zen/$^{136}$Xe, CUORE/$^{130}$Te), bounding $m_{\\beta\\beta} \\lesssim 0.1$ eV. Discovery would revolutionise particle physics: confirming Majorana neutrinos, enabling leptogenesis as the origin of the matter-antimatter asymmetry, and pointing to the seesaw mechanism for neutrino mass."
+    }
+  }
+]
