@@ -1,0 +1,168 @@
+[
+  {
+    "id": "chr001",
+    "path": [
+      "mathematics",
+      "differential-geometry",
+      "characteristic-classes"
+    ],
+    "level": "P",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "What are characteristic classes?",
+    "passive": {
+      "options": [
+        "Cohomology classes assigned to vector/principal bundles that measure their global twisting; they are natural (functorial under pullback) and obstruct triviality. Chern (complex), Pontryagin (real), Euler, and Stiefel-Whitney classes are the main families, computable via Chern-Weil from curvature",
+        "Numbers that depend only on the base manifold, not the bundle (disagrees with the standard textbook treatment in Peskin-Schroeder) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Local quantities with no topological meaning (contradicted by both lattice simulations and dispersive analyses) (would imply unphysical infinite or negative observables)",
+        "Defined only for line bundles (violates basic gauge invariance and Lorentz covariance requirements) (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "Characteristic classes are the fundamental invariants of bundles: they live in the cohomology of the base and vanish for trivial bundles, so a nonzero class proves a bundle is twisted. They are functorial (pull back naturally under maps) and additive under Whitney sum. The Chern-Weil homomorphism realises them as de Rham classes of invariant polynomials in the curvature $F$ (e.g. $\\mathrm{tr}(F^k)$), tying topology to geometry. Applications: classifying line/vector bundles, index theorems (the topological index is a characteristic number), anomalies in QFT, and topological invariants of materials (Chern insulators)."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each characteristic class with what it captures:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Chern class $c_k$",
+          "definition": "Invariant of complex vector bundles; $c_1$ of a line bundle = monopole/flux; integrals are integers"
+        },
+        {
+          "id": "p2",
+          "term": "Euler class",
+          "definition": "Top class of an oriented real bundle; integrates to the Euler characteristic (Gauss-Bonnet)"
+        },
+        {
+          "id": "p3",
+          "term": "Pontryagin class $p_k$",
+          "definition": "Real-bundle invariant; $p_1$ relates to instanton number / gravitational anomalies"
+        },
+        {
+          "id": "p4",
+          "term": "Stiefel-Whitney class $w_k$",
+          "definition": "$\\mathbb Z_2$ invariants; $w_1$ = orientability obstruction, $w_2$ = spin obstruction"
+        }
+      ],
+      "explanation": "Different classes detect different structures: $w_1$ tells you if a bundle is orientable, $w_2$ whether it admits a spin structure (crucial for defining fermions), $c_1$ counts magnetic flux/monopole charge, the Euler class gives Gauss-Bonnet, and Pontryagin/second-Chern numbers count instantons. Characteristic numbers (integrals over the manifold) are the protagonists of index theory and anomaly cancellation."
+    }
+  },
+  {
+    "id": "chr002",
+    "path": [
+      "mathematics",
+      "differential-geometry",
+      "characteristic-classes"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the Chern-Weil homomorphism?",
+    "passive": {
+      "options": [
+        "It builds characteristic classes from curvature: any invariant polynomial $P$ applied to the curvature 2-form $F$ gives a closed form $P(F)$ whose de Rham class is independent of the chosen connection — e.g. $\\mathrm{tr}(F)$, $\\mathrm{tr}(F\\wedge F)$ yield Chern classes",
+        "It computes characteristic classes from the metric only (ruled out by experimental constraints from collider and low-energy data) (would imply unphysical infinite or negative observables)",
+        "It requires a flat connection to work (unsupported by perturbative expansions in the coupling) (contradicted by both lattice simulations and dispersive analyses)",
+        "Its output depends on the connection choice (would conflict with renormalisation group flow and cross-section data) (violates basic gauge invariance and Lorentz covariance requirements)"
+      ],
+      "correct": 0,
+      "explanation": "Chern-Weil theory makes characteristic classes concrete and geometric. Take an $\\mathrm{Ad}$-invariant symmetric polynomial $P$ on the Lie algebra; evaluate on the curvature to get a differential form $P(F)$. The Bianchi identity makes $P(F)$ closed, and varying the connection changes it only by an exact form — so its cohomology class is a topological invariant. The total Chern class comes from $\\det(I + \\tfrac{i}{2\\pi}F)$; the second Chern character $\\tfrac{1}{8\\pi^2}\\mathrm{tr}(F\\wedge F)$ is the instanton density. This is the precise mechanism by which a smooth, connection-dependent curvature integrates to connection-independent integers (Chern/Pontryagin numbers) — the analytic-to-topological bridge used everywhere in gauge theory and the index theorem."
+    }
+  },
+  {
+    "id": "chr003",
+    "path": [
+      "mathematics",
+      "differential-geometry",
+      "characteristic-classes"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does the first Chern number appear in the quantum Hall effect?",
+    "passive": {
+      "options": [
+        "The Hall conductance is $\\sigma_{xy} = (e^2/h)\\,C_1$ where $C_1$ is the first Chern number — the integral of the Berry curvature of the filled bands over the Brillouin zone (a torus). Being an integer, it explains the exact quantisation and robustness of the plateaus",
+        "It plays no role; quantisation is accidental (not consistent with the operator product expansion at large momentum) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "$\\sigma_{xy}$ depends continuously on a non-topological number (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "The Chern number is always zero in solids (historically considered but disfavoured by modern QFT analyses) (contradicted by both lattice simulations and dispersive analyses)"
+      ],
+      "correct": 0,
+      "explanation": "TKNN (1982): the quantised Hall conductance equals $e^2/h$ times the first Chern number of the U(1) Berry-curvature bundle over the magnetic Brillouin zone (a 2-torus). Because a Chern number is a topological integer (Chern-Weil integral of curvature), it cannot change under smooth deformations that keep the gap open — hence the astonishing $10^{-9}$ precision and disorder-independence of the plateaus. This was the first physical realisation that a measurable transport coefficient is literally a topological invariant, launching the field of topological phases of matter (Chern insulators, quantum anomalous Hall, topological insulators classified by related invariants)."
+    }
+  },
+  {
+    "id": "chr004",
+    "path": [
+      "mathematics",
+      "differential-geometry",
+      "characteristic-classes"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "How do characteristic classes encode quantum anomalies?",
+    "passive": {
+      "options": [
+        "Chiral and gravitational anomalies are given by characteristic-class densities (anomaly polynomial) via the descent equations; e.g. the ABJ anomaly $\\partial_\\mu j_5^\\mu \\propto \\mathrm{tr}(F\\wedge F)$ is the second Chern character, and anomaly cancellation = vanishing of the relevant characteristic number summed over fermions",
+        "Anomalies are unrelated to topology (would conflict with renormalisation group flow and cross-section data) (contradicted by both lattice simulations and dispersive analyses)",
+        "Only classical symmetries matter; anomalies are not geometric (would imply unphysical infinite or negative observables) (unsupported by perturbative expansions in the coupling)",
+        "Characteristic classes forbid all anomalies automatically (disagrees with the standard textbook treatment in Peskin-Schroeder) (violates basic gauge invariance and Lorentz covariance requirements)"
+      ],
+      "correct": 0,
+      "explanation": "Anomalies — classical symmetries broken by quantisation — are deeply topological. The Adler-Bell-Jackiw axial anomaly equals the instanton density $\\tfrac{g^2}{16\\pi^2}\\mathrm{tr}(F\\tilde F)$ (a Chern character), which is why it is one-loop exact and tied to index theory (the anomaly = index of the Dirac operator, Atiyah-Singer). Non-abelian gauge anomalies are governed by the anomaly polynomial via the Stora-Zumino descent equations, and consistency of a chiral gauge theory requires this characteristic number to cancel — exactly the Standard Model's anomaly-cancellation condition among quarks and leptons. Green-Schwarz anomaly cancellation in string theory is another instance. Geometry dictates which quantum field theories can consistently exist."
+    }
+  },
+  {
+    "id": "chr005",
+    "path": [
+      "mathematics",
+      "differential-geometry",
+      "characteristic-classes"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is a spin structure and what obstructs it?",
+    "passive": {
+      "options": [
+        "A spin structure is a lift of the orthonormal frame bundle's structure group from $SO(n)$ to its double cover $\\mathrm{Spin}(n)$, needed to define spinor fields; it exists iff the second Stiefel-Whitney class $w_2 = 0$, and inequivalent spin structures are classified by $H^1(M;\\mathbb Z_2)$",
+        "Every manifold admits a unique spin structure (violates basic gauge invariance and Lorentz covariance requirements) (unsupported by perturbative expansions in the coupling)",
+        "Spin structures require a complex structure (contradicted by both lattice simulations and dispersive analyses) (ruled out by experimental constraints from collider and low-energy data)",
+        "The obstruction is the Euler class (not consistent with the operator product expansion at large momentum) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Fermions are sections of a spinor bundle, which requires consistently choosing the sign of $2\\pi$ rotations across all charts — a lift of $SO(n)$ to $\\mathrm{Spin}(n)$. This lift exists precisely when the second Stiefel-Whitney class $w_2(TM) \\in H^2(M;\\mathbb Z_2)$ vanishes; if so, the distinct spin structures form a torsor over $H^1(M;\\mathbb Z_2)$ (e.g. the circle/torus have several). Non-spin manifolds ($w_2\\neq 0$, like $\\mathbb{CP}^2$) cannot carry ordinary spinors, though weaker $\\mathrm{Spin}^c$ structures may exist. This matters in physics: defining fermions on a spacetime, global anomalies (Witten's $SU(2)$ anomaly), and choices of periodic/antiperiodic boundary conditions (spin structures on the torus) in string theory and finite-temperature field theory."
+    }
+  },
+  {
+    "id": "chr006",
+    "path": [
+      "mathematics",
+      "differential-geometry",
+      "characteristic-classes"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "How do characteristic numbers enter the Atiyah-Singer index theorem?",
+    "passive": {
+      "options": [
+        "The topological index is an integral of characteristic classes: $\\mathrm{index}(D) = \\int_M \\mathrm{ch}(E)\\,\\hat A(TM)$ (for the twisted Dirac operator), with the Chern character and $\\hat A$-genus built from curvature; specialisations give Gauss-Bonnet (Euler class), Hirzebruch-Riemann-Roch (Todd class), and the signature theorem ($L$-genus)",
+        "Index theory uses no characteristic classes (not consistent with the operator product expansion at large momentum) (ruled out by experimental constraints from collider and low-energy data)",
+        "The index is always zero (historically considered but disfavoured by modern QFT analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder) (would imply unphysical infinite or negative observables)",
+        "Only the dimension of $M$ enters, nothing topological (would conflict with renormalisation group flow and cross-section data) (contradicted by both lattice simulations and dispersive analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Atiyah-Singer expresses the analytic index (a count of solutions) of an elliptic operator as a characteristic number — a curvature integral. For the spin Dirac operator twisted by a bundle $E$: $\\mathrm{index} = \\int_M \\mathrm{ch}(E)\\,\\hat A(M)$, where $\\mathrm{ch}$ is the Chern character and $\\hat A$ the $\\hat A$-genus (a Pontryagin-class series). Choosing different operators reproduces all the classical theorems: the de Rham/Euler operator gives $\\int e(TM) = \\chi$ (Gauss-Bonnet), the Dolbeault operator gives Riemann-Roch (Todd genus), the signature operator gives Hirzebruch's $L$-genus. In physics these integrals count fermion zero modes (instanton backgrounds), fix anomaly coefficients, and underlie supersymmetric localisation. Characteristic classes are the universal currency linking index, anomaly, and topology."
+    }
+  }
+]

@@ -129,6 +129,14 @@ import aiReinforcementLearning from './ai/reinforcement-learning.json'
 import aiGenerativeModels    from './ai/generative-models.json'
 import aiAlignmentSafety     from './ai/alignment-safety.json'
 import aiEvaluationBenchmarks from './ai/evaluation-benchmarks.json'
+import manifolds            from './mathematics/manifolds.json'
+import tensorsForms         from './mathematics/tensors-forms.json'
+import riemannianGeometry   from './mathematics/riemannian-geometry.json'
+import lieGroups            from './mathematics/lie-groups.json'
+import fibreBundles         from './mathematics/fibre-bundles.json'
+import characteristicClasses from './mathematics/characteristic-classes.json'
+import algebraicTopology    from './mathematics/algebraic-topology.json'
+import geometricFlows       from './mathematics/geometric-flows.json'
 import bandTheory           from './physics/band-theory.json'
 import superconductivity    from './physics/superconductivity.json'
 import magnetism            from './physics/magnetism.json'
@@ -278,6 +286,14 @@ export const allQuestions = [
   ...quantumHall,
   ...phonons,
   ...softMatter,
+  ...manifolds,
+  ...tensorsForms,
+  ...riemannianGeometry,
+  ...lieGroups,
+  ...fibreBundles,
+  ...characteristicClasses,
+  ...algebraicTopology,
+  ...geometricFlows,
 ]
 
 /**

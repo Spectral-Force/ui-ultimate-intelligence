@@ -1,0 +1,168 @@
+[
+  {
+    "id": "lie001",
+    "path": [
+      "mathematics",
+      "differential-geometry",
+      "lie-groups"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "What is a Lie group and its associated Lie algebra?",
+    "passive": {
+      "options": [
+        "A Lie group is a group that is also a smooth manifold with smooth multiplication/inversion; its Lie algebra is the tangent space at the identity equipped with the bracket $[X,Y]$, capturing infinitesimal symmetries. The exponential map $\\exp: \\mathfrak g \\to G$ recovers group elements from algebra elements",
+        "A Lie group is any finite group with no smooth structure (disagrees with the standard textbook treatment in Peskin-Schroeder) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "The Lie algebra is the whole group manifold (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would conflict with renormalisation group flow and cross-section data)",
+        "Lie groups are necessarily abelian (not consistent with the operator product expansion at large momentum) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "Lie groups unify continuous symmetry and geometry: examples include rotation groups $SO(n)$, unitary groups $U(n), SU(n)$, the Lorentz/Poincare groups, and $GL(n)$. The Lie algebra $\\mathfrak g = T_eG$ is a vector space with a bilinear antisymmetric bracket satisfying the Jacobi identity; it linearises the group near the identity. The exponential map (matrix exponential for matrix groups) maps a neighbourhood of $0$ in $\\mathfrak g$ to a neighbourhood of $e$ in $G$. Left-invariant vector fields identify $\\mathfrak g$ with the algebra of symmetries. This structure is the mathematical home of conservation laws (Noether) and gauge theory."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each Lie group with its description:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "$SO(3)$",
+          "definition": "Rotations of 3D space; 3-dimensional; double-covered by $SU(2)$; algebra = angular momentum"
+        },
+        {
+          "id": "p2",
+          "term": "$SU(2)$",
+          "definition": "$2\\times2$ unitary, det 1; simply connected; spin-1/2 representation; covers $SO(3)$"
+        },
+        {
+          "id": "p3",
+          "term": "$SU(3)$",
+          "definition": "8-dimensional; colour gauge group of QCD; Gell-Mann matrices as generators"
+        },
+        {
+          "id": "p4",
+          "term": "$U(1)$",
+          "definition": "Phases $e^{i\\theta}$; circle group; gauge group of electromagnetism; abelian"
+        }
+      ],
+      "explanation": "These compact groups are the gauge groups of the Standard Model: $SU(3)\\times SU(2)\\times U(1)$. Representation theory of Lie algebras (weights, roots, Casimir invariants) classifies particle multiplets. The covering relationship $SU(2)\\to SO(3)$ (kernel $\\mathbb Z_2$) explains why spin-1/2 wavefunctions change sign under a $2\\pi$ rotation."
+    }
+  },
+  {
+    "id": "lie002",
+    "path": [
+      "mathematics",
+      "differential-geometry",
+      "lie-groups"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Why is $SU(2)$ the double cover of $SO(3)$ and what is the physical consequence?",
+    "passive": {
+      "options": [
+        "There is a 2-to-1 homomorphism $SU(2)\\to SO(3)$ (both $\\pm U$ map to the same rotation); $SU(2) \\cong S^3$ is simply connected while $SO(3)\\cong\\mathbb{RP}^3$ has $\\pi_1 = \\mathbb Z_2$. Consequence: spin-1/2 states acquire a $-1$ under a $2\\pi$ rotation, returning to themselves only after $4\\pi$",
+        "They are isomorphic with no covering (unsupported by perturbative expansions in the coupling) (not consistent with the operator product expansion at large momentum)",
+        "$SO(3)$ double-covers $SU(2)$ instead (violates basic gauge invariance and Lorentz covariance requirements) (historically considered but disfavoured by modern QFT analyses)",
+        "There is no relationship between them (contradicted by both lattice simulations and dispersive analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "$SU(2)$ and $SO(3)$ share the same Lie algebra $\\mathfrak{su}(2)\\cong\\mathfrak{so}(3)$ (angular-momentum commutation relations) but differ globally. The map sending $U\\in SU(2)$ to the rotation it induces on the Pauli matrices is 2-to-1 with kernel $\\{\\pm I\\}$. Topologically $SU(2)$ is the 3-sphere (simply connected, the universal cover); $SO(3)$ is real projective 3-space with fundamental group $\\mathbb Z_2$. The non-contractible $2\\pi$ rotation loop in $SO(3)$ is why a spinor picks up a sign under $2\\pi$ — verified by neutron interferometry. This is also why half-integer spin representations are genuine reps of $SU(2)$ but only projective reps of $SO(3)$."
+    }
+  },
+  {
+    "id": "lie003",
+    "path": [
+      "mathematics",
+      "differential-geometry",
+      "lie-groups"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What are roots and weights in Lie algebra representation theory?",
+    "passive": {
+      "options": [
+        "Weights are eigenvalues of the maximal commuting (Cartan) subalgebra on a representation; roots are the nonzero weights of the adjoint representation. The root system (with its Weyl group symmetry) classifies simple Lie algebras (Cartan-Killing: $A_n, B_n, C_n, D_n$ and exceptionals $G_2,F_4,E_6,E_7,E_8$)",
+        "Roots and weights are the same thing as group elements (would imply unphysical infinite or negative observables) (not consistent with the operator product expansion at large momentum)",
+        "They apply only to abelian groups (would conflict with renormalisation group flow and cross-section data) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Weights are always integers equal to the dimension (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "Pick a Cartan subalgebra $\\mathfrak h$ (maximal abelian, simultaneously diagonalisable). On any representation, states are labelled by weights (their $\\mathfrak h$-eigenvalues) — e.g. isospin and hypercharge label hadrons. The adjoint representation's nonzero weights are the roots; raising/lowering operators ($E_\\alpha$) shift weights by roots. Root systems are highly constrained (angles of 90, 120, 135, 150 degrees), yielding the Cartan-Killing classification of simple Lie algebras via Dynkin diagrams. The Weyl group (reflections in roots) is the symmetry of the weight lattice. This machinery powers the classification of particle multiplets, grand unified theories (e.g. $SU(5)$, $SO(10)$, $E_6$), and the representation theory used throughout physics."
+    }
+  },
+  {
+    "id": "lie004",
+    "path": [
+      "mathematics",
+      "differential-geometry",
+      "lie-groups"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is a Casimir operator and why is it useful?",
+    "passive": {
+      "options": [
+        "An element of the universal enveloping algebra commuting with all generators (e.g. $\\mathbf J^2$ for $\\mathfrak{su}(2)$); by Schur's lemma it acts as a scalar on each irreducible representation, labelling irreps (like total spin $j(j+1)$) and giving conserved quantum numbers",
+        "An operator that commutes with nothing (violates basic gauge invariance and Lorentz covariance requirements) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "A non-invariant operator that distinguishes states within an irrep (would imply unphysical infinite or negative observables) (not consistent with the operator product expansion at large momentum)",
+        "Only defined for non-compact groups (would conflict with renormalisation group flow and cross-section data) (historically considered but disfavoured by modern QFT analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Casimir invariants are polynomials in the generators that commute with the entire algebra. The quadratic Casimir $C_2 = \\sum_a T^a T^a$ exists for every semisimple Lie algebra; higher Casimirs exist for higher-rank groups (the number of independent Casimirs equals the rank). By Schur's lemma they are constant on each irreducible representation, so their eigenvalues label irreps: for $\\mathfrak{su}(2)$, $\\mathbf J^2 = j(j+1)$; for the Poincare group, the two Casimirs are mass-squared $P^2$ and spin (Pauli-Lubanski $W^2$), classifying elementary particles (Wigner). Casimirs give conserved quantities, appear in beta functions and anomaly coefficients, and underlie the Harish-Chandra isomorphism in harmonic analysis."
+    }
+  },
+  {
+    "id": "lie005",
+    "path": [
+      "mathematics",
+      "differential-geometry",
+      "lie-groups"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does Noether's theorem connect Lie group symmetries to conservation laws?",
+    "passive": {
+      "options": [
+        "Every continuous (Lie group) symmetry of an action yields a conserved current/charge: time-translation $\\to$ energy, space-translation $\\to$ momentum, rotation $\\to$ angular momentum, internal $U(1)$ $\\to$ electric charge. The conserved quantity is the generator of the symmetry",
+        "Only discrete symmetries give conservation laws (not consistent with the operator product expansion at large momentum) (contradicted by both lattice simulations and dispersive analyses)",
+        "Symmetries and conservation laws are unrelated (would conflict with renormalisation group flow and cross-section data) (unsupported by perturbative expansions in the coupling)",
+        "Noether's theorem applies only to gravity (violates basic gauge invariance and Lorentz covariance requirements) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Noether (1918): for a Lagrangian invariant under a one-parameter group of transformations, there is a divergence-free current $\\partial_\\mu j^\\mu = 0$ and hence a conserved charge $Q = \\int j^0 d^3x$. The infinitesimal symmetry is exactly an element of the Lie algebra, and the conserved charge generates that symmetry via Poisson brackets / commutators. Spacetime symmetries (Poincare group) give energy-momentum and angular momentum; internal gauge symmetries give charges (electric, colour, etc.). This is the deep reason Lie groups pervade physics: the structure of conservation laws is the structure of the symmetry group. Spontaneous breaking of a continuous symmetry instead yields Goldstone bosons (one per broken generator)."
+    }
+  },
+  {
+    "id": "lie006",
+    "path": [
+      "mathematics",
+      "differential-geometry",
+      "lie-groups"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is a maximal torus and the Weyl group, and why do they matter?",
+    "passive": {
+      "options": [
+        "A maximal torus is a maximal connected abelian subgroup (product of circles); every element of a compact connected Lie group is conjugate into it. The Weyl group $W = N(T)/T$ acts on the torus/weight lattice by reflections, and characters/representations are determined by $W$-invariant data (Weyl character formula)",
+        "A maximal torus is the whole group (not consistent with the operator product expansion at large momentum) (contradicted by both lattice simulations and dispersive analyses)",
+        "The Weyl group is always trivial (historically considered but disfavoured by modern QFT analyses) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Tori are irrelevant to representation theory (would imply unphysical infinite or negative observables) (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "For a compact connected Lie group $G$, all maximal tori are conjugate, and the conjugates of one torus cover $G$ — reducing many questions to the torus plus the finite Weyl group symmetry. The rank of $G$ is $\\dim T$. The Weyl group (generated by reflections in the roots) governs the combinatorics of weights: the Weyl character formula expresses irreducible characters as an alternating sum over $W$, the Weyl dimension formula gives irrep dimensions, and Weyl integration reduces integrals over $G$ to the torus. This circle of ideas (Cartan, Weyl) is the foundation of compact-group representation theory, lattice gauge theory's group integration, and the structure theory used in classifying gauge symmetry breaking."
+    }
+  }
+]

@@ -1,0 +1,168 @@
+[
+  {
+    "id": "flw001",
+    "path": [
+      "mathematics",
+      "differential-geometry",
+      "geometric-flows"
+    ],
+    "level": "P",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "What is Ricci flow?",
+    "passive": {
+      "options": [
+        "A geometric evolution equation $\\partial_t g_{ij} = -2 R_{ij}$ that deforms a Riemannian metric in the direction of its Ricci curvature — a nonlinear heat equation that tends to smooth out and homogenise geometry, shrinking positively-curved regions and expanding negatively-curved ones",
+        "An equation that keeps the metric fixed forever (disagrees with the standard textbook treatment in Peskin-Schroeder) (ruled out by experimental constraints from collider and low-energy data)",
+        "A flow of the metric toward maximal curvature (violates basic gauge invariance and Lorentz covariance requirements) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "A purely algebraic recursion unrelated to curvature (unsupported by perturbative expansions in the coupling) (historically considered but disfavoured by modern QFT analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Introduced by Richard Hamilton (1982), Ricci flow evolves the metric by its Ricci tensor, behaving like a heat equation that diffuses curvature. Round spheres shrink homothetically to a point; the normalised flow fixes volume and drives metrics toward constant-curvature (canonical) forms. Singularities (neckpinches) can form, requiring surgery. Ricci flow was the engine of Perelman's proof of the Poincare and geometrisation conjectures, and of the differentiable sphere theorem (Brendle-Schoen). It is the prototype extrinsic-curvature-driven 'geometric flow', conceptually parallel to renormalisation-group flow in physics (the metric as coupling, curvature as beta function)."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each geometric flow with its evolution rule / use:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Ricci flow",
+          "definition": "$\\partial_t g = -2\\,\\mathrm{Ric}$; smooths metrics; key to Poincare/geometrisation"
+        },
+        {
+          "id": "p2",
+          "term": "Mean curvature flow",
+          "definition": "Surface moves with velocity = mean curvature; models soap films, interface motion"
+        },
+        {
+          "id": "p3",
+          "term": "Curve-shortening flow",
+          "definition": "1D mean curvature flow; convex curves shrink to round points (Gage-Hamilton-Grayson)"
+        },
+        {
+          "id": "p4",
+          "term": "Yamabe flow",
+          "definition": "Conformal flow toward constant scalar curvature; addresses the Yamabe problem"
+        }
+      ],
+      "explanation": "Geometric flows evolve a geometric object by a curvature-driven PDE, typically parabolic (heat-like), to simplify or canonicalise it. They power major theorems (Poincare conjecture, sphere theorems, Penrose inequality) and model physical interface dynamics (grain boundaries, crystal growth, image processing). The recurring theme: dissipative evolution toward an optimal/canonical geometry, with singularity analysis as the central difficulty."
+    }
+  },
+  {
+    "id": "flw002",
+    "path": [
+      "mathematics",
+      "differential-geometry",
+      "geometric-flows"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is mean curvature flow and what is a basic example?",
+    "passive": {
+      "options": [
+        "A hypersurface evolves with normal velocity equal to its mean curvature $H$, $\\partial_t X = -H\\,\\mathbf n$; it is the gradient flow of area (steepest area decrease). A round sphere shrinks self-similarly and collapses to a point in finite time",
+        "Surfaces grow without bound under the flow (contradicted by both lattice simulations and dispersive analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "It keeps area constant (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would imply unphysical infinite or negative observables)",
+        "It moves points tangentially only (not consistent with the operator product expansion at large momentum) (violates basic gauge invariance and Lorentz covariance requirements)"
+      ],
+      "correct": 0,
+      "explanation": "Mean curvature flow (MCF) is the $L^2$-gradient flow of the area functional: each point moves inward proportional to local mean curvature, so highly curved bumps flatten fastest. A round $n$-sphere of radius $r(t)$ satisfies $\\dot r = -n/r$, shrinking to a point in finite time. Convex surfaces stay convex and become asymptotically round (Huisken). Singularities (e.g. neckpinch, where a dumbbell pinches off) require careful analysis (Type I/II, self-shrinkers). MCF models physical interface motion (soap films minimise area, grain-boundary coarsening, dendritic growth) and is used in image processing (edge-preserving smoothing). It is the codimension-1 cousin of Ricci flow."
+    }
+  },
+  {
+    "id": "flw003",
+    "path": [
+      "mathematics",
+      "differential-geometry",
+      "geometric-flows"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What does the curve-shortening flow do to a closed plane curve?",
+    "passive": {
+      "options": [
+        "It moves each point with velocity equal to the curvature toward the centre of curvature; the Gage-Hamilton-Grayson theorem says any embedded closed curve becomes convex and then shrinks to a round point in finite time, never self-intersecting",
+        "The curve grows longer over time (ruled out by experimental constraints from collider and low-energy data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Curves develop self-intersections generically (not consistent with the operator product expansion at large momentum) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Only circles evolve; other curves are fixed (violates basic gauge invariance and Lorentz covariance requirements) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Curve-shortening flow is MCF in the plane: $\\partial_t\\gamma = \\kappa\\mathbf n$. It decreases length as fast as possible (gradient flow of arc length). Grayson's theorem (building on Gage-Hamilton): every simple closed curve, however wiggly, first becomes convex, then rounds out and contracts to a single point in finite time, remaining embedded throughout. This clean result is a model case for the whole theory of geometric flows — global existence up to a single shrinking-point singularity, with the rescaled limit a round circle (self-shrinker). It illustrates how a parabolic geometric PDE regularises an object into canonical form, the same philosophy behind Ricci flow's use on 3-manifolds."
+    }
+  },
+  {
+    "id": "flw004",
+    "path": [
+      "mathematics",
+      "differential-geometry",
+      "geometric-flows"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Why are singularities and surgery central to Ricci flow?",
+    "passive": {
+      "options": [
+        "Ricci flow can develop singularities in finite time (curvature blows up, e.g. neckpinches); Perelman analysed their structure (canonical neighbourhoods modelled on shrinking cylinders) and performed surgery — cutting out necks and capping off — to continue the flow, ultimately decomposing the manifold per geometrisation",
+        "Ricci flow never develops singularities (violates basic gauge invariance and Lorentz covariance requirements) (would conflict with renormalisation group flow and cross-section data)",
+        "Surgery means adding random handles (would imply unphysical infinite or negative observables) (unsupported by perturbative expansions in the coupling) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Singularities make the conjecture false (ruled out by experimental constraints from collider and low-energy data) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "Generic Ricci flow on 3-manifolds forms singularities where curvature diverges (a thin neck pinching to a point). Perelman's breakthrough was a precise classification of high-curvature regions ('canonical neighbourhoods' looking like $\\epsilon$-necks or caps, modelled on the shrinking round cylinder $S^2\\times\\mathbb R$), controlled by his monotone $\\mathcal W$-entropy and no-local-collapsing theorem. Ricci flow with surgery excises these necks, caps the boundaries, and restarts the flow, with careful estimates ensuring only finitely many surgeries occur on any time interval. The surviving pieces converge to the eight Thurston model geometries — proving geometrisation, and hence the Poincare conjecture. Singularity analysis is thus not a nuisance but the heart of the method."
+    }
+  },
+  {
+    "id": "flw005",
+    "path": [
+      "mathematics",
+      "differential-geometry",
+      "geometric-flows"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "How is Ricci flow analogous to renormalisation-group flow in physics?",
+    "passive": {
+      "options": [
+        "In a 2D nonlinear sigma model, the target-space metric is the coupling and its RG beta function is (to leading order) the Ricci tensor: $\\mu\\,\\partial_\\mu g_{ij} = -\\beta_{ij} = -R_{ij}+\\dots$. So integrating out short distances flows the metric by Ricci flow — geometry's evolution mirrors scale evolution of couplings",
+        "There is no relation between the two (ruled out by experimental constraints from collider and low-energy data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "RG flow increases curvature without bound always (would conflict with renormalisation group flow and cross-section data) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "The beta function is independent of the metric (unsupported by perturbative expansions in the coupling) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "For a 2D sigma model with target a Riemannian manifold $(M,g)$, the metric components are infinitely many coupling constants; their one-loop renormalisation-group beta function is the Ricci tensor, $\\beta_{ij} = \\alpha' R_{ij} + O(\\alpha'^2)$ (Friedan). Demanding conformal invariance (vanishing beta function) forces $R_{ij}=0$ — Ricci-flat (Einstein) target spaces, the origin of the vacuum Einstein equations in string theory and of Calabi-Yau compactifications. Up to reparametrisation, RG flow of the target metric is Ricci flow. This deep analogy lets physical intuition (irreversibility, fixed points, c-theorem / Perelman's entropy monotonicity) and mathematical rigour cross-fertilise, and frames Perelman's monotone functionals as entropy-like quantities."
+    }
+  },
+  {
+    "id": "flw006",
+    "path": [
+      "mathematics",
+      "differential-geometry",
+      "geometric-flows"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "What role did geometric flows play in proving the differentiable sphere theorem?",
+    "passive": {
+      "options": [
+        "Brendle-Schoen (2009) used Ricci flow to show a closed manifold with pointwise 1/4-pinched sectional curvature is diffeomorphic (not merely homeomorphic) to a spherical space form; the flow smooths the pinched metric to constant curvature, upgrading the classical topological sphere theorem to the smooth category",
+        "Geometric flows played no part; it was purely algebraic (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "It proved only homeomorphism, never diffeomorphism (unsupported by perturbative expansions in the coupling) (contradicted by both lattice simulations and dispersive analyses)",
+        "The theorem concerns flat tori (disagrees with the standard textbook treatment in Peskin-Schroeder) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "The classical (topological) sphere theorem (Berger, Klingenberg, 1960s) showed a simply-connected manifold with strictly 1/4-pinched curvature is homeomorphic to a sphere — but left open whether it was diffeomorphic (exotic spheres exist in some dimensions). Brendle and Schoen (2009) closed this using Ricci flow: they proved that pointwise 1/4-pinched curvature is preserved by the flow (via clever curvature-cone invariance and the maximum principle), and that the flow converges to a constant-curvature metric, yielding a diffeomorphism to a round space form. This exemplifies the power of geometric flows to extract smooth (differentiable) topological conclusions from curvature hypotheses — going beyond what classical comparison geometry could achieve, and showcasing Ricci flow as a tool well beyond the Poincare conjecture."
+    }
+  }
+]

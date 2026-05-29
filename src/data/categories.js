@@ -289,6 +289,20 @@ export const CATEGORIES = [
       { id: 'group-theory',      label: 'Group Theory' },
       { id: 'complex-analysis',  label: 'Complex Analysis' },
       { id: 'probability',       label: 'Probability & Statistics' },
+      {
+        id: 'differential-geometry',
+        label: 'Differential Geometry & Topology',
+        children: [
+          { id: 'manifolds',            label: 'Manifolds & Smooth Maps' },
+          { id: 'tensors-forms',        label: 'Tensors & Differential Forms' },
+          { id: 'riemannian-geometry',  label: 'Riemannian Geometry' },
+          { id: 'lie-groups',           label: 'Lie Groups & Algebras' },
+          { id: 'fibre-bundles',        label: 'Fibre Bundles & Connections' },
+          { id: 'characteristic-classes', label: 'Characteristic Classes' },
+          { id: 'algebraic-topology',   label: 'Algebraic Topology' },
+          { id: 'geometric-flows',      label: 'Geometric Flows' },
+        ],
+      },
     ],
   },
   {

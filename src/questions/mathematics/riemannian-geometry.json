@@ -1,0 +1,168 @@
+[
+  {
+    "id": "rmn001",
+    "path": [
+      "mathematics",
+      "differential-geometry",
+      "riemannian-geometry"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "What is a Riemannian metric and what does it let you do?",
+    "passive": {
+      "options": [
+        "A smoothly-varying positive-definite inner product $g_p$ on each tangent space; it defines lengths of curves, angles, volumes, the Levi-Civita connection, geodesics, and curvature — turning a smooth manifold into a metric-measure geometric object",
+        "A metric is just a distance function with no tensor structure (violates basic gauge invariance and Lorentz covariance requirements)",
+        "It is an antisymmetric 2-form (that is a symplectic form) (would conflict with renormalisation group flow and cross-section data)",
+        "A Riemannian metric must be flat everywhere (disagrees with the standard textbook treatment in Peskin-Schroeder) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "A Riemannian metric $g = g_{ij}dx^i dx^j$ assigns an inner product to each tangent space, varying smoothly and symmetric positive-definite. Arc length: $L(\\gamma) = \\int\\sqrt{g(\\dot\\gamma,\\dot\\gamma)}\\,dt$; the Riemannian distance is the infimum over paths. The metric uniquely determines the Levi-Civita connection (torsion-free, metric-compatible), whence geodesics and curvature. Volume form $\\sqrt{\\det g}\\,d^nx$. A Lorentzian metric (signature $-+++$) instead underlies general relativity. Riemannian geometry is the study of these intrinsic geometric structures and how curvature controls global shape."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each curvature/connection object with its meaning:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Levi-Civita connection",
+          "definition": "Unique torsion-free, metric-compatible connection; Christoffel symbols $\\Gamma^k_{ij}$ from $g$"
+        },
+        {
+          "id": "p2",
+          "term": "Riemann curvature tensor",
+          "definition": "$R^l_{ijk}$; measures path-dependence of parallel transport; vanishes iff locally flat"
+        },
+        {
+          "id": "p3",
+          "term": "Ricci tensor / scalar",
+          "definition": "Contractions of Riemann; control volume growth; source side of Einstein's equations"
+        },
+        {
+          "id": "p4",
+          "term": "Sectional curvature",
+          "definition": "Gauss curvature of 2-planes in $T_pM$; positive (sphere), zero (flat), negative (hyperbolic)"
+        }
+      ],
+      "explanation": "Curvature is the local obstruction to flatness. Parallel-transporting a vector around a small loop rotates it by an amount set by the Riemann tensor. Constant-curvature model spaces — sphere ($K>0$), Euclidean ($K=0$), hyperbolic ($K<0$) — anchor comparison geometry, where curvature bounds control distances, volumes, and topology."
+    }
+  },
+  {
+    "id": "rmn002",
+    "path": [
+      "mathematics",
+      "differential-geometry",
+      "riemannian-geometry"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is parallel transport and how does it reveal curvature?",
+    "passive": {
+      "options": [
+        "Transporting a vector along a curve keeping it 'as constant as possible' ($\\nabla_{\\dot\\gamma}V = 0$); around a closed loop the vector returns rotated by an amount determined by the Riemann curvature enclosed — holonomy. Flat space gives zero rotation, path-independence",
+        "Parallel transport always returns a vector unchanged (ruled out by experimental constraints from collider and low-energy data) (would conflict with renormalisation group flow and cross-section data)",
+        "It depends only on endpoints, never the path (contradicted by both lattice simulations and dispersive analyses) (unsupported by perturbative expansions in the coupling)",
+        "Curvature has no effect on transported vectors (violates basic gauge invariance and Lorentz covariance requirements) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "A connection $\\nabla$ specifies how to differentiate vector fields and hence how to parallel-transport: solve $\\dot V^k + \\Gamma^k_{ij}\\dot\\gamma^i V^j = 0$ along $\\gamma$. On a curved manifold transport is path-dependent; the net rotation around an infinitesimal loop is $R(X,Y)V$ — this is the operational definition of the Riemann tensor. The set of holonomy rotations forms the holonomy group (Berger's classification constrains which groups arise — e.g. special holonomy $G_2$, $\\text{SU}(n)$ Calabi-Yau, $\\text{Sp}(n)$). Classic illustration: transporting a vector around a spherical triangle returns it rotated by the enclosed solid angle (= area $\\times K$), the Gauss-Bonnet seed."
+    }
+  },
+  {
+    "id": "rmn003",
+    "path": [
+      "mathematics",
+      "differential-geometry",
+      "riemannian-geometry"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is a geodesic, and in what sense does it generalise a straight line?",
+    "passive": {
+      "options": [
+        "A curve with zero covariant acceleration $\\nabla_{\\dot\\gamma}\\dot\\gamma = 0$: locally length-minimising and 'as straight as possible'; in coordinates $\\ddot x^k + \\Gamma^k_{ij}\\dot x^i\\dot x^j = 0$. Free particles in GR follow geodesics of spacetime",
+        "A geodesic is any curve at all (would conflict with renormalisation group flow and cross-section data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Geodesics always globally minimise length (not consistent with the operator product expansion at large momentum) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "A geodesic must be a closed loop (contradicted by both lattice simulations and dispersive analyses) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "Geodesics are the manifold's straight lines: their tangent is parallel-transported along themselves (zero geodesic curvature). They extremise arc length (locally minimise, though not always globally — e.g. great circles on a sphere overshoot past the antipode). The geodesic equation is a second-order ODE, so a geodesic is determined by a point and an initial velocity (the exponential map $\\exp_p$). Conjugate points (where nearby geodesics refocus) signal the breakdown of minimisation and are controlled by curvature (Jacobi equation). In physics, the geodesic principle is how gravity becomes geometry: matter falls along spacetime geodesics."
+    }
+  },
+  {
+    "id": "rmn004",
+    "path": [
+      "mathematics",
+      "differential-geometry",
+      "riemannian-geometry"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "State the Gauss-Bonnet theorem and its significance.",
+    "passive": {
+      "options": [
+        "For a compact oriented surface, $\\int_M K\\,dA = 2\\pi\\chi(M)$: the total Gaussian curvature equals $2\\pi$ times the Euler characteristic — a local geometric quantity integrates to a topological invariant, independent of how the surface is bent",
+        "Total curvature is always zero (violates basic gauge invariance and Lorentz covariance requirements) (not consistent with the operator product expansion at large momentum)",
+        "It relates curvature to the surface area only (would imply unphysical infinite or negative observables) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "It holds only for flat tori (ruled out by experimental constraints from collider and low-energy data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "Gauss-Bonnet is the archetype of a local-to-global theorem: pointwise curvature $K$ integrates to $2\\pi\\chi$, where $\\chi = 2-2g$ for a genus-$g$ surface. So a sphere ($\\chi=2$) must have total curvature $4\\pi$ no matter how you deform it; a torus ($\\chi=0$) has total curvature zero. The boundary version adds geodesic curvature and exterior angle terms (explaining the spherical-triangle angle excess). It is the 2D case of the Chern-Gauss-Bonnet theorem (Euler class in all even dimensions) and the Atiyah-Singer index theorem. It cleanly shows geometry constrains topology and vice versa."
+    }
+  },
+  {
+    "id": "rmn005",
+    "path": [
+      "mathematics",
+      "differential-geometry",
+      "riemannian-geometry"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "How do curvature bounds control the global structure of a manifold?",
+    "passive": {
+      "options": [
+        "Comparison theorems: e.g. Bonnet-Myers (positive Ricci lower bound $\\Rightarrow$ compact, finite fundamental group, bounded diameter); Cartan-Hadamard (non-positive curvature, complete, simply connected $\\Rightarrow$ diffeomorphic to $\\mathbb R^n$ via exp); Toponogov/Rauch compare triangles and geodesic spreading to model spaces",
+        "Curvature bounds say nothing about global topology (contradicted by both lattice simulations and dispersive analyses) (historically considered but disfavoured by modern QFT analyses)",
+        "Positive curvature forces a manifold to be non-compact (ruled out by experimental constraints from collider and low-energy data) (unsupported by perturbative expansions in the coupling)",
+        "All curvature bounds give the same conclusion (disagrees with the standard textbook treatment in Peskin-Schroeder) (violates basic gauge invariance and Lorentz covariance requirements)"
+      ],
+      "correct": 0,
+      "explanation": "A central theme: pinching curvature constrains size, topology, and shape. Bonnet-Myers: if $\\mathrm{Ric} \\ge (n-1)k > 0$ then diameter $\\le \\pi/\\sqrt k$, so $M$ is compact with finite $\\pi_1$ (rules out, e.g., a positively-Ricci-curved infinite cylinder). Cartan-Hadamard: complete simply-connected with $K\\le 0$ is diffeomorphic to $\\mathbb R^n$ (no conjugate points; exp is a covering) — hyperbolic-type rigidity. Rauch/Toponogov comparison underlie the sphere theorem (1/4-pinched $\\Rightarrow$ homeomorphic to a sphere), Cheeger-Gromov compactness, and the proof of the differentiable sphere theorem via Ricci flow. Curvature is the master control on Riemannian geometry's global behaviour."
+    }
+  },
+  {
+    "id": "rmn006",
+    "path": [
+      "mathematics",
+      "differential-geometry",
+      "riemannian-geometry"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the Atiyah-Singer index theorem, in spirit?",
+    "passive": {
+      "options": [
+        "For an elliptic differential operator $D$ on a compact manifold, the analytic index (dim ker $-$ dim coker) equals a topological index computed from characteristic classes (curvature integrals); it unifies Gauss-Bonnet, Riemann-Roch, and Hirzebruch signature theorems",
+        "It states that all operators have zero index (not consistent with the operator product expansion at large momentum) (ruled out by experimental constraints from collider and low-energy data)",
+        "It is a purely algebraic statement with no geometry (unsupported by perturbative expansions in the coupling) (would imply unphysical infinite or negative observables)",
+        "It applies only to first-order ODEs (contradicted by both lattice simulations and dispersive analyses) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Atiyah-Singer (1963) is one of the great unifying theorems of 20th-century mathematics. The analytic index of an elliptic operator (a solution-counting quantity, e.g. zero modes of the Dirac operator) is invariant under deformation and equals an integral of characteristic classes over the manifold (the topological index). Special cases: Chern-Gauss-Bonnet (Euler operator $\\to \\chi$), Hirzebruch-Riemann-Roch (Dolbeault operator on complex manifolds), the signature theorem, and the spin Dirac index ($\\hat A$-genus). It is indispensable in theoretical physics: anomalies in gauge/gravitational theories are index densities (Adler-Bell-Jackiw), instanton zero modes, and the counting of fermionic ground states all follow from it. Geometry, analysis, and topology meet."
+    }
+  }
+]
