@@ -1,0 +1,168 @@
+[
+  {
+    "id": "cmbt001",
+    "path": [
+      "mathematics",
+      "discrete-computational",
+      "combinatorics"
+    ],
+    "level": "U",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "What is the difference between permutations and combinations?",
+    "passive": {
+      "options": [
+        "Permutations count ordered arrangements: $P(n,k)=n!/(n-k)!$; combinations count unordered selections: $C(n,k)=\\binom{n}{k}=n!/(k!(n-k)!)$ — order matters for permutations but not for combinations",
+        "They are identical and give the same count (contradicted by both lattice simulations and dispersive analyses)",
+        "Combinations always exceed permutations (ruled out by experimental constraints from collider and low-energy data)",
+        "Permutations ignore order; combinations require it (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Counting is the heart of combinatorics, and the permutation/combination distinction is foundational. A permutation counts ordered arrangements of k items chosen from n: $P(n,k) = n!/(n-k)! = n(n-1)\\cdots(n-k+1)$ — e.g. ways to award gold/silver/bronze among 8 runners. A combination counts unordered selections (subsets) of k from n: $C(n,k) = \\binom{n}{k} = n!/(k!(n-k)!)$ — e.g. ways to choose a 5-card poker hand from 52, where order is irrelevant. The relationship is $P(n,k) = k! \\cdot C(n,k)$ (each unordered set can be ordered in k! ways). The binomial coefficients $\\binom{n}{k}$ are ubiquitous: they appear in the binomial theorem $(x+y)^n = \\sum \\binom{n}{k} x^k y^{n-k}$, in Pascal's triangle (with the recurrence $\\binom{n}{k}=\\binom{n-1}{k-1}+\\binom{n-1}{k}$), and throughout probability (binomial distribution). These basic counting principles, together with the addition and multiplication rules and the pigeonhole principle, are the building blocks of enumerative combinatorics, probability, and the analysis of algorithms."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each combinatorial principle/object with its meaning:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Pigeonhole principle",
+          "definition": "If n+1 items go in n boxes, some box has ≥2; simple but powerful existence tool"
+        },
+        {
+          "id": "p2",
+          "term": "Inclusion-exclusion",
+          "definition": "Count a union by adding sizes, subtracting pairwise overlaps, adding triple overlaps..."
+        },
+        {
+          "id": "p3",
+          "term": "Binomial coefficient",
+          "definition": "$\\binom{n}{k}$; number of k-subsets; coefficients in $(x+y)^n$; Pascal's triangle"
+        },
+        {
+          "id": "p4",
+          "term": "Generating function",
+          "definition": "Encode a sequence as coefficients of a power series to solve counting/recurrence problems"
+        }
+      ],
+      "explanation": "Combinatorics provides tools to count, arrange, and find structure in discrete sets: basic counting rules, the pigeonhole principle (existence by counting), inclusion-exclusion (counting unions), recurrences and generating functions (algebraic counting), and bijective proofs. These underpin probability, algorithm analysis, coding theory, and discrete optimisation."
+    }
+  },
+  {
+    "id": "cmbt002",
+    "path": [
+      "mathematics",
+      "discrete-computational",
+      "combinatorics"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "State the pigeonhole principle and give its power.",
+    "passive": {
+      "options": [
+        "If more than n items are placed into n containers, at least one container holds two or more; despite its triviality it proves surprising existence results (e.g. two people in a large city with the same number of hairs; approximation theorems) without constructing the objects",
+        "Every container must hold exactly one item (would conflict with renormalisation group flow and cross-section data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "It applies only to literal pigeons (violates basic gauge invariance and Lorentz covariance requirements) (unsupported by perturbative expansions in the coupling)",
+        "It guarantees all containers are empty (ruled out by experimental constraints from collider and low-energy data) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "The pigeonhole principle (Dirichlet's box principle) states the seemingly obvious: if n+1 (or more) objects are distributed among n boxes, then at least one box contains at least two objects. Its generalisation: if N objects go into n boxes, some box has at least ⌈N/n⌉. Despite its triviality, it is a remarkably powerful non-constructive existence tool — it proves something must exist without showing which. Classic applications: in any group of 13 people, two share a birth month; in any city of millions, two people have exactly the same number of hairs on their heads; among any n+1 integers chosen from {1,...,2n}, two are coprime (or one divides another, depending on the setup). Deeper uses include the Dirichlet approximation theorem (every irrational has infinitely many good rational approximations), Ramsey theory (showing that complete disorder is impossible — any large enough structure contains ordered substructures, e.g. among 6 people at a party, 3 are mutual acquaintances or 3 are mutual strangers), the Erdos-Szekeres theorem on monotone subsequences, and many results in number theory and computer science (hashing collisions, lossless compression limits). The pigeonhole principle exemplifies how a simple counting observation can yield non-obvious, even surprising, mathematical truths."
+    }
+  },
+  {
+    "id": "cmbt003",
+    "path": [
+      "mathematics",
+      "discrete-computational",
+      "combinatorics"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What are the key concepts of graph theory?",
+    "passive": {
+      "options": [
+        "Graphs are vertices joined by edges; key ideas include degree, paths and cycles, connectivity, trees, planarity, colouring, and special structures (Eulerian/Hamiltonian paths, bipartite graphs) — modelling networks from the internet to molecules to social ties",
+        "Graphs are only bar charts and pie charts (unsupported by perturbative expansions in the coupling) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Graph theory studies continuous curves only (historically considered but disfavoured by modern QFT analyses) (not consistent with the operator product expansion at large momentum)",
+        "Graphs cannot model real-world networks (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Graph theory studies graphs: sets of vertices (nodes) connected by edges (links), modelling pairwise relationships. Founded by Euler's 1736 solution of the Königsberg bridges problem (showing no walk crosses each of seven bridges exactly once — the origin of Eulerian paths, which exist iff at most two vertices have odd degree). Core concepts: vertex degree (number of incident edges; the handshake lemma says degrees sum to twice the edge count); paths, walks, and cycles; connectivity (is the graph in one piece?, vertex/edge cuts); trees (connected acyclic graphs, with n−1 edges, foundational in computer science); planarity (can it be drawn without edge crossings? — Euler's formula V−E+F=2, Kuratowski's characterisation); and graph colouring (the four-colour theorem: any planar map is 4-colourable, famously the first major computer-assisted proof, 1976). Special structures include bipartite graphs (two-colourable, modelling matchings — the basis of assignment problems and Hall's marriage theorem), Hamiltonian cycles (visiting every vertex once, related to the NP-hard travelling salesman problem), and directed/weighted graphs. Algorithms on graphs (shortest paths via Dijkstra, spanning trees, network flow, traversal) are central to computer science. Graphs model the internet and social networks, molecules and reaction networks, transportation and scheduling, circuit design, and much more, making graph theory one of the most applicable areas of discrete mathematics."
+    }
+  },
+  {
+    "id": "cmbt004",
+    "path": [
+      "mathematics",
+      "discrete-computational",
+      "combinatorics"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What are generating functions and how do they solve counting problems?",
+    "passive": {
+      "options": [
+        "A generating function encodes a sequence (a_n) as the coefficients of a formal power series $\\sum a_n x^n$; algebraic manipulations (products, compositions, differentiation) on the function correspond to combinatorial operations, turning recurrences and counting into algebra (e.g. solving Fibonacci, partitions)",
+        "They are functions that generate random numbers (ruled out by experimental constraints from collider and low-energy data) (would conflict with renormalisation group flow and cross-section data)",
+        "They can only represent finite sequences (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (contradicted by both lattice simulations and dispersive analyses)",
+        "They have no use in combinatorics (violates basic gauge invariance and Lorentz covariance requirements) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "Generating functions are one of the most powerful unifying tools in combinatorics, encapsulated by Wilf's quip 'a generating function is a clothesline on which we hang a sequence of numbers for display.' The ordinary generating function of a sequence (a_0, a_1, a_2, ...) is the formal power series A(x) = Σ a_n x^n; the exponential generating function uses Σ a_n x^n/n! (better for labelled structures). The key idea: combinatorial operations on objects translate into algebraic operations on their generating functions. Disjoint union → addition; pairing/Cartesian product → multiplication (the product of two GFs convolves the sequences, exactly matching how you count combined structures); sequences/repetition → geometric series 1/(1−x); choosing → composition. This lets one solve problems systematically. Examples: linear recurrences like Fibonacci yield a rational generating function x/(1−x−x^2), from which a closed form (Binet's formula) and asymptotics follow; the partition function (ways to write n as a sum of positive integers) has the elegant Euler product generating function Π 1/(1−x^k); counting binary trees gives the Catalan numbers via a quadratic functional equation. Generating functions also extract asymptotics (singularity analysis), prove identities, and connect to probability (probability generating functions, moment generating functions). They convert hard enumerative and recurrence problems into tractable algebra and analysis, making them indispensable in combinatorics, analysis of algorithms, and probability."
+    }
+  },
+  {
+    "id": "cmbt005",
+    "path": [
+      "mathematics",
+      "discrete-computational",
+      "combinatorics"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is Ramsey theory?",
+    "passive": {
+      "options": [
+        "The study of how large a structure must be to guarantee an ordered substructure — 'complete disorder is impossible'; e.g. any 2-colouring of the edges of a large enough complete graph contains a monochromatic clique (Ramsey's theorem), with the exact thresholds (Ramsey numbers) notoriously hard",
+        "A theory that order never appears in random structures (not consistent with the operator product expansion at large momentum) (unsupported by perturbative expansions in the coupling)",
+        "The study of how to avoid all patterns (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (historically considered but disfavoured by modern QFT analyses)",
+        "A method for sorting numbers (ruled out by experimental constraints from collider and low-energy data) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Ramsey theory, founded by Frank Ramsey (1930), studies the emergence of inevitable order in large structures — its guiding slogan is 'complete disorder is impossible.' The prototypical result, Ramsey's theorem, says that for any r and s there is a number R(r,s) such that any 2-colouring (say red/blue) of the edges of the complete graph on R(r,s) vertices must contain either a red clique of size r or a blue clique of size s. The friendship version: among any 6 people, there are always 3 mutual acquaintances or 3 mutual strangers (R(3,3)=6). The remarkable phenomenon is that no matter how cleverly you try to avoid a pattern, sufficiently large structures force it to appear. Determining the exact Ramsey numbers is famously hard — even R(5,5) is unknown (only bounded between 43 and 48), prompting Erdos's famous remark that if aliens demanded R(5,5) we should marshal all our resources to compute it, but for R(6,6) we should rather attack the aliens. Ramsey theory extends far beyond graphs: van der Waerden's theorem (any finite colouring of the integers contains arbitrarily long monochromatic arithmetic progressions), Schur's theorem, the Hales-Jewett theorem, and the celebrated Green-Tao theorem (the primes contain arbitrarily long arithmetic progressions) live in this tradition. It connects combinatorics, number theory, logic, and computer science, and exemplifies deep existence results where bounds vastly outstrip exact knowledge."
+    }
+  },
+  {
+    "id": "cmbt006",
+    "path": [
+      "mathematics",
+      "discrete-computational",
+      "combinatorics"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the probabilistic method?",
+    "passive": {
+      "options": [
+        "A non-constructive technique (championed by Erdos) proving an object with desired properties exists by showing a random object has positive probability of having them; e.g. proving good Ramsey-graph lower bounds or that graphs with high girth and high chromatic number exist, without explicit construction",
+        "A method requiring explicit construction of every object (contradicted by both lattice simulations and dispersive analyses) (not consistent with the operator product expansion at large momentum)",
+        "A way to compute exact probabilities only (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (unsupported by perturbative expansions in the coupling)",
+        "A technique that proves objects cannot exist (would conflict with renormalisation group flow and cross-section data) (historically considered but disfavoured by modern QFT analyses)"
+      ],
+      "correct": 0,
+      "explanation": "The probabilistic method, pioneered and championed by Paul Erdos, is a powerful and counterintuitive proof technique: to show that a combinatorial object with certain properties exists, one defines a probability distribution over a space of candidate objects and proves that a randomly-chosen object has the desired property with positive probability — hence at least one such object must exist. Crucially, it establishes existence without ever exhibiting a specific example (non-constructive). The basic version uses the simple fact that if the probability of 'good' is positive, a good object exists; refinements use expectation (an object at least as good as average exists), the second-moment method, the Lovász Local Lemma (showing avoidance of many 'bad' events when they are mostly independent), and concentration inequalities. Landmark applications: Erdos's lower bound on Ramsey numbers (a random 2-colouring of a complete graph avoids large monochromatic cliques, showing R(k,k) grows at least exponentially — far easier than any explicit construction); the existence of graphs with simultaneously high girth and high chromatic number (deeply non-obvious); tournament and coding-theory results; and bounds in additive combinatorics. The method revolutionised combinatorics and spread into theoretical computer science (randomised algorithms, derandomisation), number theory, and information theory. It exemplifies how probabilistic reasoning yields hard deterministic existence theorems, and embodies Erdos's profound influence on modern discrete mathematics."
+    }
+  }
+]

@@ -1,0 +1,168 @@
+[
+  {
+    "id": "nmr001",
+    "path": [
+      "mathematics",
+      "discrete-computational",
+      "numerical-methods"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "What is floating-point arithmetic and why does numerical error matter?",
+    "passive": {
+      "options": [
+        "Computers represent reals approximately in finite precision (IEEE 754: sign, exponent, mantissa), so results carry rounding error; errors can accumulate or be amplified (catastrophic cancellation, ill-conditioning), making stability and error analysis essential for trustworthy computation",
+        "Computers store all real numbers exactly (historically considered but disfavoured by modern QFT analyses) (ruled out by experimental constraints from collider and low-energy data)",
+        "Rounding error never affects results (would conflict with renormalisation group flow and cross-section data) (would imply unphysical infinite or negative observables)",
+        "Floating-point uses base-10 with infinite digits (not consistent with the operator product expansion at large momentum) (violates basic gauge invariance and Lorentz covariance requirements)"
+      ],
+      "correct": 0,
+      "explanation": "Computers cannot store most real numbers exactly; the IEEE 754 standard represents them in floating point — a sign, a binary exponent, and a finite mantissa (e.g. ~16 significant decimal digits for 64-bit 'double' precision) — so nearly every value and operation incurs rounding to the nearest representable number (machine epsilon ~10^{-16} for doubles). Individually tiny, these errors matter because they can accumulate over many operations or be drastically amplified. Catastrophic cancellation occurs when subtracting two nearly-equal numbers, annihilating significant digits and exposing the rounding noise (e.g. naively computing the variance, or the quadratic formula for nearly-equal roots). Ill-conditioned problems are intrinsically sensitive: a small input change (or rounding) yields a large output change, measured by a condition number — solving a linear system with a nearly-singular matrix is the classic example. Numerical analysis therefore distinguishes conditioning (sensitivity of the problem itself) from stability (whether an algorithm avoids unnecessarily amplifying errors), and designs algorithms (and error bounds) accordingly. Understanding floating point prevents real disasters (famously, accumulated rounding contributed to a Patriot missile failure, and naive formulas can give nonsense), and is foundational for scientific computing, simulation, machine learning, and any computation on continuous quantities."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each numerical method with its purpose:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Newton's method",
+          "definition": "Root-finding: x_{n+1}=x_n − f(x_n)/f'(x_n); quadratic convergence near a simple root"
+        },
+        {
+          "id": "p2",
+          "term": "Gaussian elimination",
+          "definition": "Solve linear systems Ax=b by row reduction (LU factorisation); O(n^3)"
+        },
+        {
+          "id": "p3",
+          "term": "Runge-Kutta (RK4)",
+          "definition": "Step-by-step numerical solution of ODEs; 4th-order accuracy per step"
+        },
+        {
+          "id": "p4",
+          "term": "Condition number",
+          "definition": "Measures problem sensitivity to input/rounding error; large = ill-conditioned"
+        }
+      ],
+      "explanation": "Numerical methods approximate solutions to problems with no closed form: root-finding (Newton, bisection), linear systems (LU, QR, iterative solvers), interpolation and quadrature (numerical integration), and ODE/PDE solvers (Euler, Runge-Kutta, finite differences/elements). The central concerns are accuracy (truncation error, order of convergence), stability, and computational cost."
+    }
+  },
+  {
+    "id": "nmr002",
+    "path": [
+      "mathematics",
+      "discrete-computational",
+      "numerical-methods"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does Newton's method find roots, and what is its convergence?",
+    "passive": {
+      "options": [
+        "Iterate $x_{n+1}=x_n - f(x_n)/f'(x_n)$ — follow the tangent line to its x-intercept; near a simple root it converges quadratically (the number of correct digits roughly doubles each step), but it can fail or diverge from poor starting points or at f'=0",
+        "It converges linearly at best, always (unsupported by perturbative expansions in the coupling) (historically considered but disfavoured by modern QFT analyses)",
+        "It requires no derivative information (would conflict with renormalisation group flow and cross-section data) (contradicted by both lattice simulations and dispersive analyses)",
+        "It always converges from any starting point (ruled out by experimental constraints from collider and low-energy data) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Newton's method (Newton-Raphson) is the workhorse for solving f(x)=0. Geometrically, from a current guess x_n it draws the tangent line to the curve and takes its x-intercept as the next guess: $x_{n+1} = x_n - f(x_n)/f'(x_n)$. When it works, it is spectacularly fast: near a simple root (where f'≠0) it converges quadratically, meaning the error roughly squares each step (the number of correct significant digits approximately doubles per iteration) — a handful of iterations can reach machine precision. This efficiency makes it ubiquitous in scientific computing, optimisation (where it is applied to f'=0 to find extrema, using the Hessian in higher dimensions), and machine learning. However, it has important caveats: it requires the derivative f' (or an approximation — the secant method avoids it with slightly slower 'superlinear' convergence); it can diverge or cycle from a poor initial guess; it stalls or behaves badly near points where f'≈0; convergence degrades to linear at multiple roots; and in the complex plane its basins of attraction form intricate fractals (Newton fractals). Robust implementations safeguard it (e.g. combining with bisection, damping/line search, or trust regions). Newton's method epitomises the trade-off in numerical methods between rapid local convergence and global reliability, and its multidimensional and optimisation generalisations are central to modern computation."
+    }
+  },
+  {
+    "id": "nmr003",
+    "path": [
+      "mathematics",
+      "discrete-computational",
+      "numerical-methods"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "How are differential equations solved numerically?",
+    "passive": {
+      "options": [
+        "By discretising: ODEs via time-stepping (Euler's method, higher-order Runge-Kutta, multistep methods) trading step size for accuracy/stability; PDEs via finite-difference, finite-element, or spectral methods on a grid/mesh — with stability conditions (e.g. CFL) constraining the steps",
+        "All differential equations have simple closed-form solutions (ruled out by experimental constraints from collider and low-energy data) (contradicted by both lattice simulations and dispersive analyses)",
+        "Numerical solutions require no discretisation (historically considered but disfavoured by modern QFT analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Step size has no effect on accuracy or stability (unsupported by perturbative expansions in the coupling) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "Most differential equations arising in science and engineering have no closed-form solution, so they are solved numerically by discretisation — replacing continuous derivatives with finite approximations and advancing the solution on a grid. For ordinary differential equations (initial-value problems), explicit time-stepping schemes advance from one time level to the next: the simplest, Euler's method, uses the current slope (first-order accurate, often inaccurate/unstable); higher-order Runge-Kutta methods (notably the classic RK4) sample the slope at several intermediate points per step for much better accuracy; multistep methods (Adams, BDF) reuse past values for efficiency. Stiff equations (with widely-separated timescales) demand implicit methods (e.g. backward Euler, implicit Runge-Kutta) for stability, at the cost of solving equations each step. Accuracy is governed by the local truncation error and the method's order; adaptive step-size control balances accuracy against cost. For partial differential equations, space (and time) is discretised by finite-difference methods (derivatives → difference quotients on a grid), finite-element methods (expand the solution in basis functions over a mesh, dominant in engineering/structural problems with complex geometry), or spectral methods (global basis functions, high accuracy for smooth problems). Crucially, stability constrains the discretisation: for explicit schemes on time-dependent PDEs the Courant-Friedrichs-Lewy (CFL) condition limits the time step relative to the spatial step and wave speed, or the scheme blows up. The interplay of accuracy (truncation error, convergence as the mesh refines), stability, and computational cost — formalised by the Lax equivalence theorem (consistency + stability ⇔ convergence) — is the core of numerical analysis for differential equations, underpinning weather prediction, fluid and structural simulation, electromagnetics, and computational physics broadly."
+    }
+  },
+  {
+    "id": "nmr004",
+    "path": [
+      "mathematics",
+      "discrete-computational",
+      "numerical-methods"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the condition number and why does it matter for linear systems?",
+    "passive": {
+      "options": [
+        "The condition number κ(A)=‖A‖‖A^{-1}‖ measures how much relative error in the data can be amplified in the solution of Ax=b; a large κ (ill-conditioned, near-singular matrix) means even tiny rounding/input errors can ruin accuracy, regardless of the algorithm",
+        "It measures how fast a computer runs (violates basic gauge invariance and Lorentz covariance requirements) (contradicted by both lattice simulations and dispersive analyses)",
+        "A large condition number guarantees high accuracy (not consistent with the operator product expansion at large momentum) (unsupported by perturbative expansions in the coupling)",
+        "Conditioning depends only on the algorithm, not the problem (would imply unphysical infinite or negative observables) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "The condition number quantifies the intrinsic sensitivity of a problem to perturbations in its data — a property of the problem itself, independent of the algorithm used. For solving a linear system Ax = b, the (matrix) condition number is κ(A) = ‖A‖·‖A^{−1}‖ (often using the 2-norm, where it equals the ratio of largest to smallest singular value). It bounds error amplification: a relative perturbation of size ε in A or b can produce a relative change of up to roughly κ(A)·ε in the solution x. If κ is modest (close to 1, 'well-conditioned'), the problem is robust; if κ is huge (the matrix is nearly singular — rows/columns nearly linearly dependent, 'ill-conditioned'), then even unavoidable rounding error (~10^{−16} in double precision) can be amplified to destroy many digits of accuracy — and no algorithm, however clever, can fully recover information that the problem itself does not robustly contain. A practical rule of thumb: you lose about log10(κ) significant digits. The classic ill-conditioned example is the Hilbert matrix, whose condition number explodes with size. This is why numerical analysts carefully distinguish conditioning (sensitivity of the problem) from stability (whether an algorithm introduces extra error beyond what conditioning forces): the best one can hope for is a backward-stable algorithm whose error is comparable to κ times machine precision. Condition numbers appear throughout numerical computing (eigenvalue problems, root-finding, optimisation, neural-network training), guiding the choice of formulations (e.g. preconditioning to reduce κ, or using QR/SVD instead of normal equations in least squares) and warning when computed results should not be trusted."
+    }
+  },
+  {
+    "id": "nmr005",
+    "path": [
+      "mathematics",
+      "discrete-computational",
+      "numerical-methods"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the Monte Carlo method?",
+    "passive": {
+      "options": [
+        "Using random sampling to estimate quantities — e.g. integrals as averages over random points, with error shrinking like 1/√N independent of dimension; ideal for high-dimensional integration, simulation of stochastic systems, and Bayesian inference (MCMC)",
+        "A deterministic method with no randomness (would conflict with renormalisation group flow and cross-section data) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "A method whose error grows with more samples (not consistent with the operator product expansion at large momentum) (would imply unphysical infinite or negative observables)",
+        "Useful only in one dimension (violates basic gauge invariance and Lorentz covariance requirements) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "Monte Carlo methods use random sampling to solve problems that are deterministic in principle but intractable analytically or by grid-based methods. The basic idea for integration: to estimate ∫ f, draw N random points from an appropriate distribution and average the function values — the law of large numbers guarantees convergence to the true value, and the central limit theorem gives an error that shrinks like 1/√N (with the constant set by the variance). The decisive advantage is dimension independence: while classical quadrature (grid) methods suffer the 'curse of dimensionality' (cost growing exponentially with dimension d, like N^d points), Monte Carlo's 1/√N error rate is independent of d, making it the method of choice for high-dimensional integrals (statistical physics, finance/option pricing, computer graphics rendering, particle-physics event simulation). Variance-reduction techniques (importance sampling, stratification, control variates, quasi-Monte Carlo with low-discrepancy sequences) improve efficiency. Beyond integration, Monte Carlo simulates stochastic systems directly (random walks, queueing, epidemics, molecular dynamics), and Markov Chain Monte Carlo (MCMC — Metropolis-Hastings, Gibbs sampling) draws samples from complicated high-dimensional probability distributions, which is the computational engine of Bayesian statistics and much of modern machine learning and statistical physics. Developed at Los Alamos (Ulam, von Neumann, Metropolis) for neutron-transport calculations, Monte Carlo is now ubiquitous wherever randomness, high dimension, or intractable integrals appear — a beautiful example of harnessing probability to solve hard computational problems."
+    }
+  },
+  {
+    "id": "nmr006",
+    "path": [
+      "mathematics",
+      "discrete-computational",
+      "numerical-methods"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the finite element method and where is it used?",
+    "passive": {
+      "options": [
+        "A method for solving PDEs by subdividing a domain into small 'elements', approximating the solution by simple (e.g. piecewise-polynomial) basis functions on each, and assembling a large sparse linear system via a variational/weak formulation; dominant in engineering (structures, heat, fluids, electromagnetics)",
+        "A method that requires the domain to be a single simple shape (not consistent with the operator product expansion at large momentum) (historically considered but disfavoured by modern QFT analyses)",
+        "An exact analytical technique with no approximation (unsupported by perturbative expansions in the coupling) (contradicted by both lattice simulations and dispersive analyses)",
+        "A method only for one-dimensional problems (disagrees with the standard textbook treatment in Peskin-Schroeder) (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "The finite element method (FEM) is the dominant numerical technique for solving partial differential equations over complex geometries, especially in engineering. Its core idea: partition the (possibly irregular) domain into a mesh of small, simple subregions called elements (triangles/tetrahedra or quadrilaterals/hexahedra), and approximate the unknown field by simple basis ('shape') functions — typically low-degree piecewise polynomials — defined on each element, continuous across element boundaries. Rather than enforcing the PDE pointwise (as finite differences do), FEM uses a variational or weak formulation: multiply the PDE by test functions and integrate (often arising from an energy-minimisation principle, e.g. minimising elastic potential energy or a residual), which naturally handles complicated boundary conditions and material interfaces and lowers the differentiability required of the solution. Assembling the contributions of all elements yields a large but sparse system of (linear or nonlinear) algebraic equations for the nodal values, solved by efficient sparse solvers. FEM's strengths are its flexibility with arbitrary geometry, its rigorous mathematical foundation (Galerkin methods, convergence and error estimates from approximation theory, adaptive mesh refinement guided by error indicators), and its handling of heterogeneous, anisotropic materials. It is the workhorse of computational engineering: structural and stress analysis (bridges, aircraft, car crash simulation), heat transfer, fluid dynamics (often in combination with finite-volume methods), electromagnetics, acoustics, and multiphysics coupling, embodied in commercial and open-source software (ANSYS, Abaqus, COMSOL, FEniCS). Together with finite-difference and spectral methods, FEM makes the simulation of real-world continuum problems possible, bridging the gap between mathematical models and engineering design."
+    }
+  }
+]

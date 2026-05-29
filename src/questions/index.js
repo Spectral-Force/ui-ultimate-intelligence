@@ -129,6 +129,14 @@ import aiReinforcementLearning from './ai/reinforcement-learning.json'
 import aiGenerativeModels    from './ai/generative-models.json'
 import aiAlignmentSafety     from './ai/alignment-safety.json'
 import aiEvaluationBenchmarks from './ai/evaluation-benchmarks.json'
+import realAnalysis         from './mathematics/real-analysis.json'
+import measureTheory         from './mathematics/measure-theory.json'
+import logicSetTheory        from './mathematics/logic-set-theory.json'
+import numberTheory          from './mathematics/number-theory.json'
+import combinatorics         from './mathematics/combinatorics.json'
+import pointSetTopology      from './mathematics/point-set-topology.json'
+import numericalMethods      from './mathematics/numerical-methods.json'
+import optimisation          from './mathematics/optimisation.json'
 import cellBiology          from './biology/cell-biology.json'
 import molecularBiology      from './biology/molecular-biology.json'
 import genetics              from './biology/genetics.json'
@@ -354,6 +362,14 @@ export const allQuestions = [
   ...biochemistry,
   ...physiology,
   ...ecology,
+  ...realAnalysis,
+  ...measureTheory,
+  ...logicSetTheory,
+  ...numberTheory,
+  ...combinatorics,
+  ...pointSetTopology,
+  ...numericalMethods,
+  ...optimisation,
 ]
 
 /**

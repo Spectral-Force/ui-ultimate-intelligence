@@ -330,6 +330,26 @@ export const CATEGORIES = [
       { id: 'complex-analysis',  label: 'Complex Analysis' },
       { id: 'probability',       label: 'Probability & Statistics' },
       {
+        id: 'analysis-foundations',
+        label: 'Analysis & Foundations',
+        children: [
+          { id: 'real-analysis',     label: 'Real Analysis' },
+          { id: 'measure-theory',    label: 'Measure & Integration' },
+          { id: 'logic-set-theory',  label: 'Logic & Set Theory' },
+          { id: 'number-theory',     label: 'Number Theory' },
+        ],
+      },
+      {
+        id: 'discrete-computational',
+        label: 'Discrete & Computational',
+        children: [
+          { id: 'combinatorics',     label: 'Combinatorics & Graphs' },
+          { id: 'point-set-topology', label: 'Point-Set Topology' },
+          { id: 'numerical-methods', label: 'Numerical Methods' },
+          { id: 'optimisation',      label: 'Optimisation' },
+        ],
+      },
+      {
         id: 'differential-geometry',
         label: 'Differential Geometry & Topology',
         children: [

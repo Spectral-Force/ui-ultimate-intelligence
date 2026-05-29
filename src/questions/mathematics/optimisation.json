@@ -1,0 +1,173 @@
+[
+  {
+    "id": "optm001",
+    "path": [
+      "mathematics",
+      "discrete-computational",
+      "optimisation"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "What is convex optimisation and why is convexity so valuable?",
+    "passive": {
+      "options": [
+        "Minimising a convex function over a convex set; any local minimum is the global minimum, so efficient algorithms reliably find the optimum — making convex problems (linear, quadratic, semidefinite programs) tractable, unlike general non-convex problems with many local minima",
+        "Convexity makes problems harder with many local minima (not consistent with the operator product expansion at large momentum) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Convex problems have no minimum (contradicted by both lattice simulations and dispersive analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Convexity is irrelevant to optimisation (unsupported by perturbative expansions in the coupling) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Optimisation seeks to minimise (or maximise) an objective function, possibly subject to constraints. The single most important dividing line is convexity. A set is convex if it contains the line segment between any two of its points; a function is convex if its graph lies below any chord (equivalently, its Hessian is positive semidefinite). In a convex optimisation problem (convex objective over a convex feasible set), any local minimum is automatically a global minimum, and the problem has no spurious local optima or saddle traps. This property is transformative: convex problems can be solved efficiently and reliably to global optimality by well-understood algorithms (interior-point methods, gradient/subgradient methods) with guaranteed convergence and rich duality theory. The major tractable classes — linear programming (LP), quadratic programming (QP), second-order cone and semidefinite programming (SDP) — are all convex and underpin operations research, control, signal processing, finance, and machine learning. By contrast, general non-convex optimisation (typical of deep-learning loss landscapes, combinatorial problems, and many engineering designs) may have exponentially many local minima and is NP-hard in general, so one settles for local optima or heuristics. The art of much applied optimisation is to recognise or reformulate problems as convex (convexification, relaxation), because 'the great watershed in optimisation is not between linearity and nonlinearity, but convexity and non-convexity' (Rockafellar). Convexity provides the theoretical guarantees and algorithmic efficiency that make large-scale optimisation practical."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each optimisation concept with its meaning:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Gradient descent",
+          "definition": "Iteratively step opposite the gradient to reduce the objective; workhorse of ML training"
+        },
+        {
+          "id": "p2",
+          "term": "Lagrange multipliers",
+          "definition": "Handle equality constraints by adding λ·(constraint); stationarity of the Lagrangian"
+        },
+        {
+          "id": "p3",
+          "term": "KKT conditions",
+          "definition": "Karush-Kuhn-Tucker: necessary optimality conditions with inequality constraints"
+        },
+        {
+          "id": "p4",
+          "term": "Linear programming",
+          "definition": "Minimise a linear objective under linear constraints; solved by simplex or interior-point"
+        },
+        {
+          "id": "p5",
+          "term": "Duality",
+          "definition": "Every problem has a dual; weak duality bounds, strong duality holds for convex problems"
+        }
+      ],
+      "explanation": "Optimisation tools span unconstrained methods (gradient descent, Newton's method), constrained methods (Lagrange multipliers for equalities, KKT conditions for inequalities), and special structured problems (LP, QP, SDP). Duality provides bounds and insight, and gradient-based methods power modern machine learning at scale."
+    }
+  },
+  {
+    "id": "optm002",
+    "path": [
+      "mathematics",
+      "discrete-computational",
+      "optimisation"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does gradient descent work and what are its variants?",
+    "passive": {
+      "options": [
+        "Iteratively move in the direction of steepest decrease: $x_{n+1}=x_n - \\eta\\nabla f(x_n)$ with learning rate η; variants include stochastic gradient descent (mini-batch estimates for large data), momentum, and adaptive methods (Adam) — the engine of training neural networks",
+        "It moves in the direction of the gradient (steepest increase) (would conflict with renormalisation group flow and cross-section data) (not consistent with the operator product expansion at large momentum)",
+        "It requires the exact global minimum to start (ruled out by experimental constraints from collider and low-energy data) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "It cannot be used for machine learning (historically considered but disfavoured by modern QFT analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "Gradient descent is the foundational first-order optimisation algorithm: to minimise a differentiable function f, repeatedly step in the direction of steepest descent — the negative gradient — by $x_{n+1} = x_n - \\eta \\nabla f(x_n)$, where the step size η (the 'learning rate') controls how far to move. Intuitively, the gradient points uphill, so its negation points toward decrease; with a suitable η, the iterates descend toward a minimum (the global one for convex f, a local one or good region otherwise). The learning rate is critical: too large causes overshooting/divergence, too small causes painfully slow progress; line search or adaptive schedules help. For the massive datasets and models of modern machine learning, computing the full gradient each step is too expensive, so stochastic gradient descent (SGD) estimates the gradient from a small random 'mini-batch' of data — far cheaper per step, and the injected noise can even help escape sharp minima and saddle points. Numerous enhancements accelerate and stabilise training: momentum (accumulate a velocity to smooth oscillations and speed travel along consistent directions), Nesterov acceleration, and adaptive-learning-rate methods (AdaGrad, RMSProp, and especially Adam, which adapts per-parameter step sizes using running estimates of gradient moments) that have become the default for deep learning. Second-order methods (Newton, quasi-Newton like L-BFGS) use curvature for faster convergence but at higher per-step cost, limiting their use in very high dimensions. Gradient descent and its stochastic variants, combined with automatic differentiation (backpropagation), are the computational engine behind essentially all modern neural-network training and much of large-scale optimisation."
+    }
+  },
+  {
+    "id": "optm003",
+    "path": [
+      "mathematics",
+      "discrete-computational",
+      "optimisation"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "What are Lagrange multipliers used for?",
+    "passive": {
+      "options": [
+        "To find extrema of a function subject to equality constraints: at an optimum the objective's gradient is a linear combination of the constraint gradients, $\\nabla f = \\sum \\lambda_i \\nabla g_i$; introduce multipliers λ and solve the stationarity of the Lagrangian $L = f - \\sum\\lambda_i g_i$",
+        "To solve only unconstrained problems (would imply unphysical infinite or negative observables) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "To make problems harder by adding variables uselessly (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)",
+        "They apply only to linear functions (disagrees with the standard textbook treatment in Peskin-Schroeder) (historically considered but disfavoured by modern QFT analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Lagrange multipliers are the classical technique for constrained optimisation with equality constraints — finding the extrema of an objective f(x) subject to g_i(x) = 0. The geometric insight: at a constrained optimum, you cannot improve f by moving along the constraint surface, which means the gradient of f must be perpendicular to that surface — i.e. ∇f lies in the span of the constraint gradients: ∇f = Σ λ_i ∇g_i, where the scalars λ_i are the Lagrange multipliers. Equivalently, one forms the Lagrangian L(x, λ) = f(x) − Σ λ_i g_i(x) and seeks its stationary points (setting all partial derivatives, with respect to x and λ, to zero) — the λ-derivatives recover the constraints, and the x-derivatives give the gradient condition. This converts a constrained problem in n variables with m constraints into an unconstrained stationarity problem in n + m variables. The multipliers themselves carry meaning: λ_i is the 'shadow price' — the sensitivity of the optimal objective value to relaxing constraint i (its rate of change per unit constraint loosening), a fact central to economics and sensitivity analysis. The method generalises to inequality constraints through the Karush-Kuhn-Tucker (KKT) conditions (adding complementary slackness and sign conditions), which are the cornerstone of constrained nonlinear optimisation and of duality theory. Lagrange multipliers appear throughout physics (constrained mechanics, the principle of least action with constraints), economics (utility maximisation subject to budgets), machine learning (support vector machines, constrained training), and engineering design — wherever one optimises under restrictions."
+    }
+  },
+  {
+    "id": "optm004",
+    "path": [
+      "mathematics",
+      "discrete-computational",
+      "optimisation"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is linear programming and the role of duality?",
+    "passive": {
+      "options": [
+        "Optimising a linear objective subject to linear (in)equality constraints; the optimum lies at a vertex of the feasible polytope, found by the simplex or interior-point methods; every LP has a dual LP whose optimum equals the primal's (strong duality), giving bounds, sensitivity, and economic interpretation",
+        "Optimising nonlinear objectives only (disagrees with the standard textbook treatment in Peskin-Schroeder) (contradicted by both lattice simulations and dispersive analyses)",
+        "A method with no notion of constraints (would conflict with renormalisation group flow and cross-section data) (not consistent with the operator product expansion at large momentum)",
+        "Duality is irrelevant and never used (ruled out by experimental constraints from collider and low-energy data) (historically considered but disfavoured by modern QFT analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Linear programming (LP) is the optimisation of a linear objective function subject to a system of linear equality and inequality constraints — one of the most useful and well-understood models in applied mathematics, central to operations research, logistics, scheduling, resource allocation, transportation, and economics. The feasible region (defined by the linear constraints) is a convex polytope, and because both objective and constraints are linear, the optimum (if finite) is always attained at a vertex (corner) of this polytope. The simplex method (Dantzig, 1947) cleverly walks from vertex to improving vertex along edges and is extremely effective in practice (though exponential in the worst case); interior-point methods (Karmarkar, 1984) traverse the interior and run in provably polynomial time, dominating for very large problems. A profound feature is LP duality: every LP (the 'primal') has an associated dual LP, with the roles of constraints and variables interchanged. Weak duality says any feasible dual value bounds the primal optimum; strong duality (which holds for LP whenever an optimum exists) says the primal and dual optima are exactly equal. Duality provides certificates of optimality, sensitivity/shadow-price information (the dual variables are the marginal values of resources — directly interpretable in economics, e.g. the value of an extra unit of a constraint), and is the theoretical bridge to algorithms and to integer programming (via relaxations). LP is also the gateway to broader convex optimisation (quadratic, conic, semidefinite programming), and underlies countless real-world decision and planning systems — from airline crew scheduling and supply chains to portfolio optimisation and network flows."
+    }
+  },
+  {
+    "id": "optm005",
+    "path": [
+      "mathematics",
+      "discrete-computational",
+      "optimisation"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Why is non-convex optimisation hard, and how is it tackled?",
+    "passive": {
+      "options": [
+        "Non-convex objectives have many local minima, saddle points, and possibly no efficient guarantee of finding the global optimum (NP-hard in general); approaches include good initialisation, convex relaxation, stochastic methods (SGD), metaheuristics (simulated annealing, genetic algorithms), and accepting good local optima",
+        "Non-convex problems are always easy to solve exactly (contradicted by both lattice simulations and dispersive analyses) (not consistent with the operator product expansion at large momentum)",
+        "They have a unique global minimum guaranteed (historically considered but disfavoured by modern QFT analyses) (unsupported by perturbative expansions in the coupling)",
+        "There are no methods to address them (disagrees with the standard textbook treatment in Peskin-Schroeder) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Non-convex optimisation — minimising objectives that lack convexity — is fundamentally harder than the convex case and is the rule rather than the exception in real applications (neural-network training, combinatorial problems, engineering design, protein folding, many inverse problems). The core difficulties: the objective landscape can have exponentially many local minima (where gradient-based methods get stuck), numerous saddle points (which slow first-order methods), flat plateaus, and no general efficient certificate that a found solution is the global optimum — indeed global non-convex optimisation is NP-hard in general, so no algorithm is expected to solve all instances efficiently. Practical strategies therefore aim for good-enough solutions rather than guaranteed global optima: careful initialisation and multiple random restarts; convex relaxation (replace the hard problem with a tractable convex surrogate or bound, e.g. SDP relaxations, L1 relaxation of sparsity); stochastic and momentum-based methods (SGD with noise can escape shallow minima and saddle points — a key reason deep learning works despite non-convexity); continuation/homotopy methods (solve an easy problem and deform toward the hard one); and metaheuristics for black-box or combinatorial problems (simulated annealing, genetic/evolutionary algorithms, particle swarm, Bayesian optimisation). Problem structure is exploited where possible — for instance, many non-convex problems in machine learning turn out to have benign landscapes (no bad local minima, or saddle points that are easy to escape) under certain conditions, an active research area explaining the empirical success of deep learning. The pragmatic acceptance of high-quality local optima, combined with structure-aware methods and relaxations, is what makes large-scale non-convex optimisation tractable in practice even without global guarantees."
+    }
+  },
+  {
+    "id": "optm006",
+    "path": [
+      "mathematics",
+      "discrete-computational",
+      "optimisation"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is dynamic programming and the principle of optimality?",
+    "passive": {
+      "options": [
+        "Solving complex problems by breaking them into overlapping subproblems and combining their optimal solutions; Bellman's principle of optimality states an optimal policy's remaining decisions are optimal from any reached state — enabling efficient recursive solution (shortest paths, sequence alignment, control)",
+        "A technique requiring re-solving every subproblem from scratch repeatedly (disagrees with the standard textbook treatment in Peskin-Schroeder) (ruled out by experimental constraints from collider and low-energy data)",
+        "A method only for continuous, smooth problems (would conflict with renormalisation group flow and cross-section data) (unsupported by perturbative expansions in the coupling)",
+        "Unrelated to optimisation (contradicted by both lattice simulations and dispersive analyses) (would imply unphysical infinite or negative observables) (historically considered but disfavoured by modern QFT analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Dynamic programming (DP), developed by Richard Bellman (1950s), is a powerful method for solving optimisation (and counting) problems that decompose into overlapping subproblems with optimal substructure. Its foundation is the principle of optimality: an optimal solution (policy) has the property that, whatever the initial state and first decision, the remaining decisions must constitute an optimal solution from the resulting state. This means the optimal value of a problem can be expressed recursively in terms of the optimal values of smaller subproblems — the Bellman equation. The algorithmic key is that these subproblems overlap (the same subproblem recurs many times), so instead of naive recursion (which re-solves them exponentially often), DP computes each subproblem once and stores its result (memoisation, top-down, or tabulation, bottom-up), trading memory for a dramatic reduction in time. Classic examples span discrete and continuous domains: shortest paths in graphs (Bellman-Ford, Floyd-Warshall), sequence alignment and edit distance (bioinformatics, spell-checking), the knapsack and matrix-chain-multiplication problems, optimal binary search trees, and the Viterbi algorithm for hidden Markov models. In continuous control and decision-making over time, DP yields the Hamilton-Jacobi-Bellman equation and is the theoretical backbone of optimal control and of reinforcement learning (value iteration, Q-learning are DP-inspired methods for solving Markov decision processes). DP's combination of recursive structure and reuse of subproblem solutions makes otherwise intractable (exponential) problems solvable in polynomial time, and it is a cornerstone technique across computer science, operations research, economics, and AI."
+    }
+  }
+]

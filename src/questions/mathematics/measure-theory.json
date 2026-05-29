@@ -1,0 +1,168 @@
+[
+  {
+    "id": "mea001",
+    "path": [
+      "mathematics",
+      "analysis-foundations",
+      "measure-theory"
+    ],
+    "level": "P",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "Why is the Lebesgue integral preferred over the Riemann integral?",
+    "passive": {
+      "options": [
+        "Lebesgue partitions the range (not the domain), integrating more functions, behaving well under limits (dominated/monotone convergence theorems), making L^p spaces complete, and handling abstract measure spaces — overcoming the Riemann integral's poor interaction with limits",
+        "It is exactly the same as the Riemann integral (ruled out by experimental constraints from collider and low-energy data) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "It integrates fewer functions than Riemann (contradicted by both lattice simulations and dispersive analyses) (not consistent with the operator product expansion at large momentum)",
+        "It cannot handle limits of functions (would imply unphysical infinite or negative observables) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "The Riemann integral partitions the domain into intervals and sums f times width; it works well for continuous functions but interacts badly with limits (pointwise limits of Riemann-integrable functions need not be integrable, and limit/integral cannot generally be swapped) and gives incomplete function spaces. Lebesgue's insight (1902) was to partition the range instead: group together all points where f takes nearby values, then measure the size of those sets using a measure (Lebesgue measure generalises length/area/volume). This integrates a far larger class of functions (all bounded measurable functions, and the Dirichlet function, etc.), and — crucially — comes with powerful convergence theorems: the monotone convergence theorem and dominated convergence theorem let one interchange limits and integrals under mild hypotheses, which the Riemann theory cannot. As a result the L^p spaces of Lebesgue-integrable functions are complete (Banach spaces; L^2 is a Hilbert space), the proper setting for Fourier analysis, probability, and PDE. Lebesgue's framework also extends to abstract measure spaces, unifying integration with probability theory (a probability is just a measure of total mass 1). It is the foundation of modern analysis, probability, and much of applied mathematics."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each measure-theory concept with its meaning:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Sigma-algebra",
+          "definition": "Collection of 'measurable' sets closed under complement and countable union; domain of a measure"
+        },
+        {
+          "id": "p2",
+          "term": "Measure",
+          "definition": "Countably-additive non-negative set function assigning 'size'; e.g. Lebesgue measure (length/area/volume)"
+        },
+        {
+          "id": "p3",
+          "term": "Almost everywhere",
+          "definition": "A property holding except on a set of measure zero (negligible)"
+        },
+        {
+          "id": "p4",
+          "term": "Dominated convergence",
+          "definition": "If f_n → f and |f_n| ≤ integrable g, then limit and integral can be swapped"
+        }
+      ],
+      "explanation": "Measure theory formalises 'size' (length, area, probability) via sigma-algebras and countably-additive measures, then builds integration on top. Sets of measure zero are negligible, so statements hold 'almost everywhere'. The convergence theorems (monotone, dominated, Fatou) are the technical payoff, central to analysis and probability."
+    }
+  },
+  {
+    "id": "mea002",
+    "path": [
+      "mathematics",
+      "analysis-foundations",
+      "measure-theory"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is a measure-zero set and why does it matter?",
+    "passive": {
+      "options": [
+        "A set coverable by intervals of arbitrarily small total length (e.g. any countable set, like the rationals; also the uncountable Cantor set); properties holding except on a measure-zero set hold 'almost everywhere', and such sets are invisible to integration",
+        "A set with negative size (contradicted by both lattice simulations and dispersive analyses) (historically considered but disfavoured by modern QFT analyses)",
+        "Only the empty set has measure zero (would conflict with renormalisation group flow and cross-section data) (would imply unphysical infinite or negative observables)",
+        "Measure-zero sets dominate every integral (ruled out by experimental constraints from collider and low-energy data) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "A subset of R has Lebesgue measure zero if, for any ε > 0, it can be covered by a countable collection of intervals whose total length is less than ε — it is 'negligibly small' in the sense of length. Examples: any finite or countable set (so the rationals Q, despite being dense, have measure zero), and remarkably some uncountable sets too (the Cantor set is uncountable yet has measure zero). Measure-zero sets are invisible to integration: changing a function on a measure-zero set does not alter its Lebesgue integral, and a function equal to another 'almost everywhere' (i.e. except on a measure-zero set) is treated as the same in L^p spaces. This concept lets analysis ignore pathological exceptions: e.g. a bounded function is Riemann-integrable iff its set of discontinuities has measure zero (Lebesgue's criterion); the fundamental theorem of calculus and differentiation theorems hold almost everywhere. In probability (a measure space of total mass 1), measure-zero events are those that 'almost surely' do not occur, and 'almost sure' convergence is convergence except on a probability-zero set. The notion of 'almost everywhere' is one of the most useful and characteristic ideas of measure theory, allowing clean theorems despite unavoidable exceptional sets."
+    }
+  },
+  {
+    "id": "mea003",
+    "path": [
+      "mathematics",
+      "analysis-foundations",
+      "measure-theory"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "How does measure theory provide the foundation of probability?",
+    "passive": {
+      "options": [
+        "Kolmogorov's axioms (1933) model probability as a measure of total mass 1 on a sigma-algebra of events; random variables are measurable functions, expectation is a Lebesgue integral, and convergence theorems and conditional expectation all follow — unifying probability with analysis",
+        "Probability has no rigorous mathematical foundation (disagrees with the standard textbook treatment in Peskin-Schroeder) (historically considered but disfavoured by modern QFT analyses)",
+        "Probabilities can exceed 1 in this framework (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would imply unphysical infinite or negative observables)",
+        "Random variables are not functions (violates basic gauge invariance and Lorentz covariance requirements) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "Kolmogorov (1933) gave probability its rigorous measure-theoretic foundation, ending centuries of paradoxes and ambiguity. A probability space is a triple (Ω, F, P): a sample space Ω of outcomes, a sigma-algebra F of events (measurable subsets), and a probability measure P that is countably additive with P(Ω)=1. This is simply a measure space normalised to total mass one, so all of measure theory applies directly. Random variables are measurable functions X: Ω → R (so events like {X ≤ a} are in F); their distribution is the pushforward measure on R. Expectation E[X] = ∫ X dP is a Lebesgue integral, inheriting linearity and the powerful convergence theorems (monotone, dominated, Fatou) that justify swapping limits and expectations. Independence, conditional expectation (via the Radon-Nikodym theorem), and product measures (for sequences of trials) all gain precise definitions. This framework rigorously supports the limit theorems (law of large numbers, central limit theorem), martingale theory, stochastic processes (Brownian motion as a measure on path space), and modern probability and statistics. The measure-theoretic foundation unifies probability with analysis, letting deep analytical tools flow into probability and vice versa — indispensable for everything from statistical physics to mathematical finance to machine learning theory."
+    }
+  },
+  {
+    "id": "mea004",
+    "path": [
+      "mathematics",
+      "analysis-foundations",
+      "measure-theory"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "What is the Banach-Tarski paradox and what does it reveal?",
+    "passive": {
+      "options": [
+        "Using the axiom of choice, a solid ball can be decomposed into finitely many pieces and reassembled (by rigid motions) into two balls identical to the original; the pieces are non-measurable, showing not every set can be assigned a consistent volume",
+        "It shows you can physically duplicate matter (violates basic gauge invariance and Lorentz covariance requirements) (would conflict with renormalisation group flow and cross-section data)",
+        "It proves all sets are measurable (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (historically considered but disfavoured by modern QFT analyses)",
+        "It is a contradiction that breaks mathematics (contradicted by both lattice simulations and dispersive analyses) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "The Banach-Tarski paradox (1924) is a startling theorem: assuming the axiom of choice, a solid 3-dimensional ball can be partitioned into finitely many disjoint pieces which, moved only by rigid motions (rotations and translations, no stretching), reassemble into two solid balls each congruent to the original. It seems to violate conservation of volume — but the resolution is that the pieces are non-measurable sets, so they have no well-defined volume to conserve. The paradox is not a contradiction; it reveals a deep truth about measure theory: there is no way to assign a finitely-additive, rotation-invariant 'volume' to all subsets of R^3 (the construction exploits the non-abelian structure of the rotation group and a choice-based decomposition). It dramatically motivates why measure theory restricts attention to a sigma-algebra of measurable sets rather than all subsets — non-measurable sets (like Vitali sets) exist precisely because of the axiom of choice, and the Lebesgue measure is defined only on measurable sets. The paradox is impossible in 1 or 2 dimensions (where the relevant isometry groups are amenable) and has no physical realisation (matter is not infinitely divisible, and the pieces are unconstructible). It is a profound illustration of how the axiom of choice yields objects beyond intuition, and why rigorous measure theory is essential."
+    }
+  },
+  {
+    "id": "mea005",
+    "path": [
+      "mathematics",
+      "analysis-foundations",
+      "measure-theory"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "What do the monotone and dominated convergence theorems provide?",
+    "passive": {
+      "options": [
+        "Conditions under which the limit of integrals equals the integral of the limit: MCT for increasing non-negative sequences, DCT when |f_n| ≤ an integrable dominating function; they make Lebesgue integration robust under limits where Riemann fails",
+        "They state integrals never converge (historically considered but disfavoured by modern QFT analyses) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "They forbid interchanging limits and integrals (contradicted by both lattice simulations and dispersive analyses) (would conflict with renormalisation group flow and cross-section data)",
+        "They apply only to constant functions (ruled out by experimental constraints from collider and low-energy data) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "These convergence theorems are the technical heart of Lebesgue integration and the main reason it supersedes the Riemann integral. The Monotone Convergence Theorem (MCT): if $0 \\le f_1 \\le f_2 \\le \\dots$ is an increasing sequence of non-negative measurable functions converging pointwise to f, then $\\int f_n \\to \\int f$ (limits and integrals commute, even allowing +∞). The Dominated Convergence Theorem (DCT): if $f_n \\to f$ pointwise (almost everywhere) and there is a single integrable function g with $|f_n| \\le g$ for all n, then f is integrable and $\\int f_n \\to \\int f$ (and $\\int|f_n - f| \\to 0$). Fatou's lemma provides a one-sided inequality underpinning both. Their power is that they require only mild, easily-checked hypotheses (monotonicity, or a dominating bound) — not the uniform convergence the Riemann theory demands — so they apply in the messy situations that arise constantly in analysis, probability, and PDE. They justify differentiating under the integral sign, computing limits of expectations, establishing completeness of L^p spaces, and proving Fubini's theorem. Whenever one needs to swap a limit (or sum, or expectation) with an integral, MCT or DCT is typically the rigorous justification. Their absence in Riemann theory (where limits of integrable functions can fail to be integrable, and interchange can fail) is exactly what makes the Lebesgue integral the right tool for modern analysis."
+    }
+  },
+  {
+    "id": "mea006",
+    "path": [
+      "mathematics",
+      "analysis-foundations",
+      "measure-theory"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "What are L^p spaces and why are they central to analysis?",
+    "passive": {
+      "options": [
+        "Spaces of measurable functions with finite $\\int|f|^p$ (norm $\\|f\\|_p = (\\int|f|^p)^{1/p}$); they are complete (Banach), with L^2 a Hilbert space; their completeness and duality structure make them the natural arena for Fourier analysis, PDE, and functional analysis",
+        "Spaces containing only polynomials (would imply unphysical infinite or negative observables) (ruled out by experimental constraints from collider and low-energy data)",
+        "Finite-dimensional vector spaces (contradicted by both lattice simulations and dispersive analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Spaces where no norm can be defined (disagrees with the standard textbook treatment in Peskin-Schroeder) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "For 1 ≤ p < ∞, the Lebesgue space L^p(X, μ) consists of (equivalence classes of, identifying functions equal almost everywhere) measurable functions f for which $\\int_X |f|^p\\,d\\mu < \\infty$, normed by $\\|f\\|_p = (\\int|f|^p\\,d\\mu)^{1/p}$; L^∞ uses the essential supremum. The defining triumph is completeness (the Riesz-Fischer theorem): every Cauchy sequence in L^p converges within L^p, making it a Banach space — a property that fails for Riemann-integrable functions and is exactly why the Lebesgue integral is needed. The case p=2 is special: L^2 carries an inner product $\\langle f,g\\rangle = \\int f\\bar g$, making it a Hilbert space with orthogonality, projections, and orthonormal bases — the natural home of Fourier series/transforms (Parseval/Plancherel), quantum mechanics (wavefunctions live in L^2), and least-squares. Key inequalities structure these spaces: Hölder ($\\|fg\\|_1 \\le \\|f\\|_p\\|g\\|_q$ with 1/p+1/q=1) and Minkowski (the triangle inequality for the norm); duality identifies the dual of L^p with L^q. L^p spaces are the foundational objects of functional analysis, providing the framework for studying differential and integral operators, Sobolev spaces (with derivatives, central to PDE theory), approximation, signal processing, probability (L^2 random variables), and optimisation. They exemplify how measure-theoretic integration yields well-behaved infinite-dimensional spaces on which modern analysis is built."
+    }
+  }
+]
