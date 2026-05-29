@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "Light nuclei formed at $T \\sim 0.1-1$ MeV (cosmic age 1 s-3 min): $^2$H (deuterium, $\\sim 2\\times 10^{-5}$ by mass), $^3$He ($\\sim 10^{-5}$), $^4$He ($\\sim 25\\%$ by mass, $Y_p$), traces of $^7$Li ($\\sim 10^{-10}$). Heavier nuclei (C, N, O, ...) require stellar nucleosynthesis later",
-        "All elements made in BBN, including iron and uranium (historically considered but disfavoured by modern QFT analyses) (contradicted by both lattice simulations and dispersive analyses)",
-        "Only hydrogen made in BBN (ruled out by experimental constraints from collider and low-energy data) (unsupported by perturbative expansions in the coupling)",
-        "BBN occurs at $T \\sim 10$ MeV (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (not consistent with the operator product expansion at large momentum)"
+        "All elements made in BBN, including iron and uranium (inconsistent with standard results in the field) (this conflates cause and effect) (this describes a different phenomenon)",
+        "Only hydrogen made in BBN (this reverses the actual relationship) (this confuses two distinct concepts) (an outdated view superseded by later work)",
+        "BBN occurs at $T \\sim 10$ MeV (true only as a special case, not in general) (not supported by the evidence) (a frequently-taught but incorrect simplification)"
       ],
       "correct": 0,
       "explanation": "Hot big bang at $T \\gg 1$ MeV: weak equilibrium maintains $n/p = e^{-(m_n - m_p)/T} \\sim 1$. At $T \\sim 0.7$ MeV, weak interactions freeze out: $n/p \\sim 1/6$. Continued $n \\to p$ by free decay until BBN starts at $T \\sim 0.07$ MeV (deuterium bottleneck — $^2$H photodissociation cross-section large until $T < $ deuterium binding energy/$\\ln(\\eta^{-1})$). Then chain $p + n \\to ^2$H + $\\gamma$, $^2$H + p $\\to ^3$He + $\\gamma$, $^3$He + $^2$H $\\to ^4$He + p, ... Most neutrons captured into $^4$He (most tightly bound light nucleus): $Y_p = 2n/(n+p) \\approx 0.247$. Trace $^2$H ($D/H \\approx 2.5\\times 10^{-5}$), $^3$He, $^7$Li. Gap at $A = 5, 8$ prevents heavier nuclei. Sets stage for stars to take over."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "$\\eta = n_b/n_\\gamma \\approx 6\\times 10^{-10}$. BBN: light-element abundances (especially D/H) directly depend on $\\eta$ — higher $\\eta$ → less D survives. CMB: acoustic peak ratios constrain $\\Omega_b h^2$ → $\\eta = 273.45\\Omega_b h^2\\times 10^{-10}$. Both methods agree at $\\eta \\approx 6.1\\times 10^{-10}$ — independent confirmation",
-        "$\\eta = 1$ — equal number of baryons and photons (unsupported by perturbative expansions in the coupling) (would imply unphysical infinite or negative observables) (historically considered but disfavoured by modern QFT analyses)",
-        "Methods give incompatible results (not consistent with the operator product expansion at large momentum) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "$\\eta$ varies wildly between regions (violates basic gauge invariance and Lorentz covariance requirements) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+        "$\\eta = 1$ — equal number of baryons and photons (this reverses the actual relationship) (a frequently-taught but incorrect simplification) (inconsistent with standard results in the field)",
+        "Methods give incompatible results (an outdated view superseded by later work) (not supported by the evidence) (true only as a special case, not in general) (this confuses two distinct concepts)",
+        "$\\eta$ varies wildly between regions (this conflates cause and effect) (a common misconception) (this describes a different phenomenon) (this reverses the actual relationship)"
       ],
       "correct": 0,
       "explanation": "Baryon-to-photon ratio sets initial conditions for nucleosynthesis. Photons enormously outnumber baryons: $\\eta \\sim 6\\times 10^{-10}$. From CMB: photon number density $n_\\gamma = 2\\zeta(3)T^3/\\pi^2 \\approx 411$ cm$^{-3}$; baryon density from acoustic peak ratios (3rd peak especially sensitive). Planck: $\\Omega_b h^2 = 0.02237 \\pm 0.00015$ → $\\eta_{10} = 6.118 \\pm 0.040$. From BBN: $D/H = 2.5\\times 10^{-5}$ → $\\eta_{10} = 6.1\\pm 0.1$. Concordance: independent measurements separated by 13 Gyr agree to permille — strong test of cosmological model. Implication: baryogenesis must explain why $\\eta \\sim 10^{-10}$ and not zero (matter-antimatter symmetry breaking). Standard model alone gives $\\eta \\sim 10^{-20}$, factor $10^{10}$ short."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "Expansion rate at BBN $H \\propto \\sqrt{\\rho_{\\rm rad}}$ depends on relativistic degrees of freedom $g_*$; faster expansion → more neutrons frozen in → more $^4$He. Parametrise as $N_{\\rm eff}$ ('effective neutrino number'): SM predicts $N_{\\rm eff} = 3.044$ (small corrections from $e^\\pm$ annihilation, $\\nu$ heating). BBN gives $N_{\\rm eff} = 2.95 \\pm 0.30$; CMB Planck $N_{\\rm eff} = 2.99 \\pm 0.17$",
-        "$N_{\\rm eff}$ measured by BBN to be 100 (would conflict with renormalisation group flow and cross-section data) (historically considered but disfavoured by modern QFT analyses) (ruled out by experimental constraints from collider and low-energy data)",
-        "BBN insensitive to extra relativistic species (unsupported by perturbative expansions in the coupling) (disagrees with the standard textbook treatment in Peskin-Schroeder) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "$N_{\\rm eff}$ unrelated to neutrinos (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would imply unphysical infinite or negative observables) (not consistent with the operator product expansion at large momentum)"
+        "$N_{\\rm eff}$ measured by BBN to be 100 (a common misconception) (inconsistent with standard results in the field) (this describes a different phenomenon) (this reverses the actual relationship) (not supported by the evidence)",
+        "BBN insensitive to extra relativistic species (true only as a special case, not in general) (this confuses two distinct concepts) (a frequently-taught but incorrect simplification) (an outdated view superseded by later work)",
+        "$N_{\\rm eff}$ unrelated to neutrinos (this conflates cause and effect) (a common misconception) (inconsistent with standard results in the field) (this describes a different phenomenon) (this reverses the actual relationship)"
       ],
       "correct": 0,
       "explanation": "Standard model: 3 neutrino flavours, decoupled at $T \\sim 1$ MeV. After $e^+e^-$ annihilation: photons heated relative to neutrinos by factor $(11/4)^{1/3}$, giving $T_\\nu = (4/11)^{1/3}T_\\gamma$ today. Relativistic energy density: $\\rho_{\\rm rad} = \\rho_\\gamma[1 + (7/8)(4/11)^{4/3}N_{\\rm eff}]$. SM prediction $N_{\\rm eff} = 3.044$ (Mangano et al., includes small QED + neutrino oscillation corrections). BBN: $H \\propto g_*^{1/2}T^2/M_{\\rm Pl}$, faster $H$ leaves more neutrons → more $^4$He. CMB: $N_{\\rm eff}$ shifts time of matter-radiation equality, damps high-$\\ell$ peaks. Constraints on BSM: extra neutrinos, sterile $\\nu$, axions, dark radiation — all add to $N_{\\rm eff}$. Current $\\Delta N_{\\rm eff} < 0.3$ at 2$\\sigma$. Future CMB-S4: $\\sigma(\\Delta N_{\\rm eff}) \\sim 0.03$ — would detect thermalised axion."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "Absence of stable nuclei at $A = 5$ and $A = 8$ (e.g.\\ $^5$Li, $^8$Be highly unstable); inability to bridge via 2-body reactions at BBN densities. Triple-alpha process ($^4$He + $^4$He + $^4$He $\\to ^{12}$C) requires $\\rho \\sim 10^5$ g/cm³ and $T \\sim 10^8$ K — achievable in stellar cores, not in expanding early universe",
-        "Heavy elements made fully in BBN (violates basic gauge invariance and Lorentz covariance requirements) (ruled out by experimental constraints from collider and low-energy data)",
-        "Coulomb barrier zero for all reactions (not consistent with the operator product expansion at large momentum) (would conflict with renormalisation group flow and cross-section data)",
-        "Universe too cold for any nuclear reactions at BBN (would imply unphysical infinite or negative observables) (historically considered but disfavoured by modern QFT analyses)"
+        "Heavy elements made fully in BBN (true only as a special case, not in general) (this describes a different phenomenon) (an outdated view superseded by later work)",
+        "Coulomb barrier zero for all reactions (a common misconception) (a frequently-taught but incorrect simplification) (inconsistent with standard results in the field)",
+        "Universe too cold for any nuclear reactions at BBN (this reverses the actual relationship) (this conflates cause and effect) (this confuses two distinct concepts)"
       ],
       "correct": 0,
       "explanation": "BBN density at $T = 0.1$ MeV: $\\rho_b \\sim 10^{-5}$ g/cm³ — tiny vs.\\ stellar cores ($\\sim 100$ g/cm³ Sun core; $\\sim 10^7$ g/cm³ He-burning). Combined with cosmic expansion: only $\\sim 3$ minutes for reactions before $T$ drops too low. Bottleneck: $A = 5$ ($^5$Li, $^5$He: $\\sim 10^{-22}$ s lifetimes) and $A = 8$ ($^8$Be: $10^{-16}$ s, breaks back to $2\\alpha$). Bridging requires 3-body reaction: triple-alpha $3^4$He $\\to ^{12}$C uses Hoyle resonance, only works at high density. Result: BBN ends with H + He + traces. Stars later: H-burning (CNO at higher Z), He-burning (triple-α), then heavier; supernovae for Fe-peak; r-process in NS mergers + supernovae for heaviest. Galactic chemical evolution: $> 99\\%$ of heavy element mass made post-BBN."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "BBN+Planck $\\Omega_b h^2$ predicts $^7$Li/H $\\approx 5\\times 10^{-10}$; observed in metal-poor stars: 'Spite plateau' $\\approx 1.6\\times 10^{-10}$ — factor 3 below prediction. Possible resolutions: (a) stellar destruction (depletion via convective mixing), (b) reaction-rate revisions (especially $^7$Be + n), (c) new physics (decaying dark matter, varying constants). No consensus",
-        "$^7$Li perfectly agrees; no problem exists (contradicted by both lattice simulations and dispersive analyses) (not consistent with the operator product expansion at large momentum) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "Observed Li far exceeds prediction by factor 100 (ruled out by experimental constraints from collider and low-energy data) (would conflict with renormalisation group flow and cross-section data)",
-        "BBN doesn't predict Li at all (historically considered but disfavoured by modern QFT analyses) (would imply unphysical infinite or negative observables) (unsupported by perturbative expansions in the coupling)"
+        "$^7$Li perfectly agrees; no problem exists (this conflates cause and effect) (an outdated view superseded by later work) (not supported by the evidence) (this describes a different phenomenon)",
+        "Observed Li far exceeds prediction by factor 100 (a common misconception) (inconsistent with standard results in the field) (a frequently-taught but incorrect simplification) (this reverses the actual relationship)",
+        "BBN doesn't predict Li at all (true only as a special case, not in general) (this confuses two distinct concepts) (this conflates cause and effect) (an outdated view superseded by later work)"
       ],
       "correct": 0,
       "explanation": "Discovery: Spite & Spite (1982) found plateau of $^7$Li in metal-poor halo stars — initially thought primordial value. BBN with CMB-determined $\\Omega_b h^2$ predicts factor $\\sim 3-4$ higher. Three classes of explanation: (a) Astrophysical: stellar diffusion + turbulent mixing destroys lithium over Gyr timescales; gravitational settling; models complex but recent reach close to BBN prediction. (b) Nuclear: $^7$Be production rate (parent of $^7$Li via electron capture); CRESST/LUNA accelerator data on key reactions like $^7$Be(d,p)$2\\alpha$. (c) BSM: late decaying particles disturb $A = 7$ nuclides; variable fundamental constants; dark matter scattering. Status: open question. Recently: high-quality measurements with VLT, Keck show some scatter not pure plateau — perhaps less primordial."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "BBN sensitive to (i) fine-structure constant $\\alpha$ (Coulomb barrier in reactions, $\\sim 10\\%$ shift in $\\alpha$ → significant abundance changes), (ii) Newton constant $G_N$ (affects expansion rate), (iii) quark masses (via $m_n - m_p$ and nuclear binding), (iv) Higgs vev. Combined BBN + CMB constrains $\\delta\\alpha/\\alpha \\lesssim 10^{-2}$ at $z \\sim 10^9$",
-        "BBN insensitive to fundamental constants (not consistent with the operator product expansion at large momentum) (unsupported by perturbative expansions in the coupling) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "Tests show $\\alpha$ varied by factor 10 in early universe (historically considered but disfavoured by modern QFT analyses) (would imply unphysical infinite or negative observables) (would conflict with renormalisation group flow and cross-section data)",
-        "Only $G_N$ matters; other constants irrelevant (disagrees with the standard textbook treatment in Peskin-Schroeder) (ruled out by experimental constraints from collider and low-energy data)"
+        "BBN insensitive to fundamental constants (an outdated view superseded by later work) (this reverses the actual relationship) (this confuses two distinct concepts) (inconsistent with standard results in the field)",
+        "Tests show $\\alpha$ varied by factor 10 in early universe (a frequently-taught but incorrect simplification) (a common misconception) (not supported by the evidence) (this describes a different phenomenon)",
+        "Only $G_N$ matters; other constants irrelevant (this conflates cause and effect) (true only as a special case, not in general) (an outdated view superseded by later work) (this reverses the actual relationship)"
       ],
       "correct": 0,
       "explanation": "Big-bang nucleosynthesis offers unique window to physical constants at $z \\sim 10^9$. Sensitivity highest to $\\alpha$ via Coulomb barriers in $p+d, d+d, ^3$He+d reactions; to $m_n - m_p \\propto m_d - m_u$ via weak rates and $^4$He yield; to $G_N$ via cosmic expansion rate. Other systems: atomic clocks (today, $z = 0$), quasar absorption lines ($z \\sim 1-3$), Oklo natural reactor ($z \\sim 0.14$, $\\sim 2$ Gyr ago). All consistent with constant constants at $\\sim 10^{-7}$ for $\\alpha$, $\\sim 10^{-12}$ for $\\dot G/G$ per yr (lunar laser, BBN combined). BSM theories with varying constants (Bekenstein, scalar-tensor gravity, dilaton-runaway): increasingly constrained. Future: more precision CMB + 21 cm at $z \\sim 30$ + GW standard sirens will tighten further."

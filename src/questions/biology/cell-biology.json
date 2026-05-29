@@ -14,9 +14,9 @@
     "passive": {
       "options": [
         "All living organisms are composed of one or more cells, the cell is the basic structural and functional unit of life, and all cells arise from pre-existing cells (Schleiden, Schwann, Virchow)",
-        "Cells arise spontaneously from non-living matter (violates basic gauge invariance and Lorentz covariance requirements)",
-        "Only animals are made of cells; plants are not (contradicted by both lattice simulations and dispersive analyses)",
-        "Cells are the smallest unit but cannot reproduce (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+        "Cells arise spontaneously from non-living matter (true only as a special case, not in general) (this conflates cause and effect)",
+        "Only animals are made of cells; plants are not (not supported by the evidence) (inconsistent with standard results in the field)",
+        "Cells are the smallest unit but cannot reproduce (this confuses two distinct concepts) (this reverses the actual relationship)"
       ],
       "correct": 0,
       "explanation": "Cell theory, developed in the 19th century by Schleiden (plants), Schwann (animals), and Virchow ('omnis cellula e cellula' — every cell from a cell), is one of biology's unifying foundations. It rejects spontaneous generation and establishes the cell as the fundamental unit of structure, function, and heredity. Modern additions: cells contain hereditary information (DNA) passed to daughter cells, energy flow occurs within cells, and all cells share a basic chemistry. The two great cell types are prokaryotes (bacteria, archaea — no nucleus) and eukaryotes (membrane-bound nucleus and organelles)."
@@ -63,9 +63,9 @@
     "passive": {
       "options": [
         "Prokaryotes (bacteria, archaea) lack a membrane-bound nucleus and organelles, with DNA free in the cytoplasm; eukaryotes (protists, fungi, plants, animals) have a nucleus and membrane-bound organelles, and are typically larger and more complex",
-        "Prokaryotes are larger and have a nucleus; eukaryotes do not (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "Only eukaryotes have DNA (unsupported by perturbative expansions in the coupling) (would imply unphysical infinite or negative observables)",
-        "There is no structural difference between them (would conflict with renormalisation group flow and cross-section data) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+        "Prokaryotes are larger and have a nucleus; eukaryotes do not (this confuses two distinct concepts) (this reverses the actual relationship)",
+        "Only eukaryotes have DNA (a frequently-taught but incorrect simplification) (a common misconception) (not supported by the evidence)",
+        "There is no structural difference between them (inconsistent with standard results in the field) (this conflates cause and effect)"
       ],
       "correct": 0,
       "explanation": "The prokaryote/eukaryote divide is the deepest distinction in cell biology. Prokaryotes (~1-10 μm) have a single circular chromosome in a nucleoid region, no membrane-bound organelles, ribosomes (70S), and often a cell wall; they include bacteria and archaea (the latter genetically and biochemically distinct, sharing some features with eukaryotes). Eukaryotes (~10-100 μm) compartmentalise functions in organelles, package DNA with histones into linear chromosomes inside a nucleus, and have 80S ribosomes and a cytoskeleton. The endosymbiotic theory holds that mitochondria and chloroplasts originated as free-living bacteria engulfed by an ancestral host cell — supported by their double membranes, own genomes, and bacterial-type ribosomes. This transition enabled the rise of complex multicellular life."
@@ -85,9 +85,9 @@
     "passive": {
       "options": [
         "A phospholipid bilayer with embedded proteins; small nonpolar molecules diffuse freely, while ions and polar molecules cross via channels, carriers, and pumps — passive transport down gradients (diffusion, osmosis, facilitated) or active transport using ATP against gradients",
-        "The membrane is a solid impermeable wall (would imply unphysical infinite or negative observables) (not consistent with the operator product expansion at large momentum)",
-        "All molecules cross freely with no selectivity (disagrees with the standard textbook treatment in Peskin-Schroeder) (would conflict with renormalisation group flow and cross-section data)",
-        "Transport never requires energy (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (contradicted by both lattice simulations and dispersive analyses)"
+        "The membrane is a solid impermeable wall (a frequently-taught but incorrect simplification) (an outdated view superseded by later work) (not supported by the evidence)",
+        "All molecules cross freely with no selectivity (a common misconception) (this confuses two distinct concepts) (this conflates cause and effect)",
+        "Transport never requires energy (true only as a special case, not in general) (this reverses the actual relationship) (inconsistent with standard results in the field)"
       ],
       "correct": 0,
       "explanation": "The Singer-Nicolson fluid mosaic model describes the plasma membrane as a two-dimensional fluid of amphipathic phospholipids (hydrophilic heads out, hydrophobic tails in) with embedded and peripheral proteins that drift laterally. Selective permeability is central to life: the hydrophobic core blocks ions and large polar solutes, so transport is mediated. Passive transport (no energy) includes simple diffusion (O2, CO2), osmosis (water through aquaporins), and facilitated diffusion (channels/carriers down a gradient). Active transport (ATP-driven) moves solutes against gradients — e.g. the Na+/K+-ATPase pumps 3 Na+ out and 2 K+ in per ATP, establishing the electrochemical gradients that power nerve impulses, secondary active transport, and cell volume control. Bulk transport uses endocytosis/exocytosis. The resulting membrane potential and gradients are exploited throughout physiology."
@@ -107,9 +107,9 @@
     "passive": {
       "options": [
         "Interphase (G1 growth, S DNA replication, G2 preparation) then M phase: mitosis (prophase, metaphase, anaphase, telophase) segregates duplicated chromosomes, followed by cytokinesis; checkpoints ensure fidelity before proceeding",
-        "Cells divide instantly with no preparation (would conflict with renormalisation group flow and cross-section data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "DNA is replicated during mitosis itself (violates basic gauge invariance and Lorentz covariance requirements) (ruled out by experimental constraints from collider and low-energy data)",
-        "There are no controls on cell division (historically considered but disfavoured by modern QFT analyses) (contradicted by both lattice simulations and dispersive analyses)"
+        "Cells divide instantly with no preparation (a common misconception) (this confuses two distinct concepts) (true only as a special case, not in general)",
+        "DNA is replicated during mitosis itself (this describes a different phenomenon) (inconsistent with standard results in the field)",
+        "There are no controls on cell division (this conflates cause and effect) (an outdated view superseded by later work)"
       ],
       "correct": 0,
       "explanation": "The eukaryotic cell cycle alternates interphase and division. In interphase the cell grows (G1), replicates its DNA (S phase, producing sister chromatids), and prepares for division (G2). Mitosis then partitions the genome equally: prophase (chromosomes condense, spindle forms), metaphase (chromosomes align at the metaphase plate), anaphase (sister chromatids pulled to opposite poles), telophase (nuclear envelopes re-form), and cytokinesis divides the cytoplasm. Progression is policed by checkpoints (G1/S restriction point, G2/M, spindle-assembly checkpoint) governed by cyclins and cyclin-dependent kinases (Nobel 2001) that ensure DNA is intact and correctly replicated/attached before proceeding. Loss of this control — mutations in checkpoint genes, tumour suppressors (p53, Rb), or oncogenes — underlies cancer. Meiosis, by contrast, halves the chromosome number for sexual reproduction."
@@ -129,9 +129,9 @@
     "passive": {
       "options": [
         "A dynamic network of microfilaments (actin, motility/shape), intermediate filaments (mechanical strength), and microtubules (tracks for motor proteins, spindle, cilia/flagella); motor proteins (myosin, kinesin, dynein) generate force and transport cargo along these tracks",
-        "A static rigid scaffold that never changes (would imply unphysical infinite or negative observables) (ruled out by experimental constraints from collider and low-energy data)",
-        "Only present in muscle cells (contradicted by both lattice simulations and dispersive analyses) (would conflict with renormalisation group flow and cross-section data)",
-        "It plays no role in cell division or transport (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (historically considered but disfavoured by modern QFT analyses)"
+        "A static rigid scaffold that never changes (a frequently-taught but incorrect simplification) (this describes a different phenomenon) (this conflates cause and effect)",
+        "Only present in muscle cells (a common misconception) (this confuses two distinct concepts) (inconsistent with standard results in the field)",
+        "It plays no role in cell division or transport (true only as a special case, not in general) (an outdated view superseded by later work) (this reverses the actual relationship)"
       ],
       "correct": 0,
       "explanation": "The cytoskeleton is a dynamic, self-organising protein framework. Actin microfilaments (~7 nm) drive cell shape, crawling (lamellipodia/filopodia), cytokinesis (the contractile ring), and muscle contraction (with myosin). Intermediate filaments (~10 nm, e.g. keratins, lamins) bear mechanical stress and anchor organelles. Microtubules (~25 nm, αβ-tubulin) are polar tracks that organise the cell interior, form the mitotic/meiotic spindle, and build cilia and flagella (the 9+2 axoneme). Motor proteins convert ATP into directed motion: myosins walk on actin, while kinesins (mostly toward the plus end/periphery) and dyneins (toward the minus end/centre) haul vesicles and organelles along microtubules and power ciliary beating. Dynamic instability (rapid microtubule growth/shrinkage) lets the network remodel quickly — essential for chromosome capture in mitosis and for cell migration in development, immunity, and cancer metastasis. Many drugs (taxol, colchicine, vinca alkaloids) target microtubule dynamics."
@@ -151,9 +151,9 @@
     "passive": {
       "options": [
         "A regulated, energy-dependent 'cell suicide' (via caspase cascades, intrinsic mitochondrial or extrinsic death-receptor pathways) that removes unwanted, damaged, or dangerous cells cleanly without inflammation — essential for development, tissue homeostasis, and tumour suppression",
-        "Accidental, messy cell death that always causes inflammation (violates basic gauge invariance and Lorentz covariance requirements) (contradicted by both lattice simulations and dispersive analyses)",
-        "A process that only occurs in disease and is never beneficial (ruled out by experimental constraints from collider and low-energy data) (historically considered but disfavoured by modern QFT analyses)",
-        "Uncontrolled cell proliferation (would imply unphysical infinite or negative observables) (unsupported by perturbative expansions in the coupling)"
+        "Accidental, messy cell death that always causes inflammation (true only as a special case, not in general) (this conflates cause and effect) (this describes a different phenomenon)",
+        "A process that only occurs in disease and is never beneficial (inconsistent with standard results in the field) (a frequently-taught but incorrect simplification)",
+        "Uncontrolled cell proliferation (this reverses the actual relationship) (this confuses two distinct concepts) (not supported by the evidence)"
       ],
       "correct": 0,
       "explanation": "Apoptosis is programmed cell death: a tightly controlled, ATP-dependent dismantling of the cell that contrasts with necrosis (uncontrolled lysis causing inflammation). Hallmarks include cell shrinkage, chromatin condensation, DNA fragmentation, membrane blebbing, and packaging into apoptotic bodies engulfed by phagocytes — all without spilling contents. It is executed by caspases (cysteine proteases): the intrinsic pathway releases cytochrome c from mitochondria (regulated by the Bcl-2 family) to activate the apoptosome; the extrinsic pathway is triggered by death-receptor ligands (Fas, TNF). Apoptosis is indispensable: it sculpts tissues in development (e.g. removing webbing between digits, pruning neurons), maintains cell-number homeostasis, eliminates self-reactive immune cells, and destroys cells with irreparable DNA damage (p53-mediated) — a key tumour-suppressor mechanism. Too little apoptosis contributes to cancer and autoimmunity; too much contributes to neurodegeneration and ischaemic injury. The discovery of its genetic control (in C. elegans) earned the 2002 Nobel Prize."

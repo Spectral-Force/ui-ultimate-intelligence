@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "H, He, and a little Li from Big Bang nucleosynthesis; elements up to iron from stellar fusion (and supernovae); roughly half the elements beyond iron from the slow (s) neutron-capture process in AGB stars, the rest from the rapid (r) process in explosive sites like neutron-star mergers",
-        "All elements were made in the Big Bang (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "All elements heavier than helium are made only in the Sun (would conflict with renormalisation group flow and cross-section data) (unsupported by perturbative expansions in the coupling)",
-        "Heavy elements form by fusion beyond iron in ordinary stars (not consistent with the operator product expansion at large momentum) (historically considered but disfavoured by modern QFT analyses)"
+        "All elements were made in the Big Bang (this confuses two distinct concepts) (not supported by the evidence) (a common misconception) (this reverses the actual relationship)",
+        "All elements heavier than helium are made only in the Sun (an outdated view superseded by later work) (inconsistent with standard results in the field)",
+        "Heavy elements form by fusion beyond iron in ordinary stars (a frequently-taught but incorrect simplification) (true only as a special case, not in general)"
       ],
       "correct": 0,
       "explanation": "The cosmic origin of elements is multi-source. Big Bang nucleosynthesis (first minutes) made $^1$H, $^4$He (~25% by mass), and traces of D, $^3$He, $^7$Li. Stellar fusion built C, N, O up to the iron peak (where binding energy peaks, so fusion stops yielding energy). Elements heavier than iron cannot form by charged-particle fusion; they are made by neutron capture: the s-process (slow, between beta decays) in asymptotic-giant-branch stars makes ~half, while the r-process (rapid, neutron-rich) makes the rest in explosive, neutron-dense environments. The 1957 B$^2$FH paper (Burbidge, Burbidge, Fowler, Hoyle) laid out this framework, famously summarised as 'we are made of star stuff'."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "Helium burning: $3\\,^4$He $\\to\\,^{12}$C, proceeding via the unstable $^8$Be intermediate and a resonant excited state of carbon (the Hoyle state at 7.65 MeV) predicted by Hoyle on anthropic grounds and later confirmed — without it carbon (and life) would be scarce",
-        "Three protons fusing into helium (would conflict with renormalisation group flow and cross-section data) (contradicted by both lattice simulations and dispersive analyses)",
-        "A process that destroys carbon in stars (disagrees with the standard textbook treatment in Peskin-Schroeder) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "Fusion of carbon into three alphas releasing energy (unsupported by perturbative expansions in the coupling) (not consistent with the operator product expansion at large momentum)"
+        "Three protons fusing into helium (a common misconception) (this conflates cause and effect) (not supported by the evidence) (true only as a special case, not in general)",
+        "A process that destroys carbon in stars (this reverses the actual relationship) (an outdated view superseded by later work) (inconsistent with standard results in the field)",
+        "Fusion of carbon into three alphas releasing energy (this describes a different phenomenon) (this confuses two distinct concepts) (a frequently-taught but incorrect simplification)"
       ],
       "correct": 0,
       "explanation": "Bridging the mass gaps at A=5 and A=8 (no stable nuclei) requires an unusual route: two alphas form $^8$Be (unstable, lifetime ~$10^{-16}$ s), and before it decays a third alpha is captured. This would be far too slow except that there is a resonance — the Hoyle state, a $0^+$ excited level of $^{12}$C at 7.65 MeV — almost exactly matching the energy of $^8$Be + $^4$He. Hoyle predicted this level must exist because carbon is abundant (a celebrated anthropic/predictive argument); it was confirmed experimentally. Triple-alpha ignites at ~$10^8$ K in red giants and is the gateway to all heavier elements. Its extreme temperature sensitivity ($\\propto T^{40}$) makes helium burning sharply thresholded."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "In the first ~3 minutes, the universe synthesised light nuclei; predicted abundances (~25% $^4$He by mass, plus D, $^3$He, $^7$Li) depend on the baryon-to-photon ratio, providing a stringent, independent measure of the cosmic baryon density that agrees with the CMB",
-        "It predicts the abundance of iron and uranium (ruled out by experimental constraints from collider and low-energy data) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "It depends on the dark-energy density only (contradicted by both lattice simulations and dispersive analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "It makes no testable predictions (not consistent with the operator product expansion at large momentum) (would conflict with renormalisation group flow and cross-section data)"
+        "It predicts the abundance of iron and uranium (this describes a different phenomenon) (true only as a special case, not in general) (this conflates cause and effect)",
+        "It depends on the dark-energy density only (not supported by the evidence) (an outdated view superseded by later work) (a common misconception)",
+        "It makes no testable predictions (this reverses the actual relationship) (inconsistent with standard results in the field) (this confuses two distinct concepts)"
       ],
       "correct": 0,
       "explanation": "Big Bang nucleosynthesis (BBN) is one of cosmology's pillars. As the universe cooled through ~$10^9$ K, protons and neutrons (frozen at a ratio set by the n-p mass difference and weak rates) assembled into D, then $^4$He (capturing essentially all neutrons, giving the robust ~25% helium mass fraction), with small amounts of $^3$He, D, and $^7$Li. The yields depend mainly on one parameter, the baryon-to-photon ratio $\\eta$ (equivalently $\\Omega_b h^2$). The deuterium abundance is an especially sensitive 'baryometer'. Strikingly, the $\\eta$ inferred from BBN agrees with the completely independent value from the CMB acoustic peaks — a triumph for the hot Big Bang. The persistent 'lithium problem' (observed $^7$Li below prediction) is an active puzzle. BBN also limits the number of light neutrino species and exotic physics."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "Slow neutron capture (neutron flux low enough that beta decay usually precedes the next capture), so the path follows the valley of stability; occurs mainly in thermally-pulsing AGB stars with neutrons from $^{13}$C($\\alpha,n$) and $^{22}$Ne($\\alpha,n$); produces Sr, Ba, Pb and terminates near $^{209}$Bi",
-        "Rapid neutron capture making uranium (ruled out by experimental constraints from collider and low-energy data) (unsupported by perturbative expansions in the coupling)",
-        "Proton capture in novae (would conflict with renormalisation group flow and cross-section data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "Photodisintegration of iron (contradicted by both lattice simulations and dispersive analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+        "Rapid neutron capture making uranium (this describes a different phenomenon) (this reverses the actual relationship) (a common misconception) (this confuses two distinct concepts)",
+        "Proton capture in novae (this conflates cause and effect) (not supported by the evidence) (inconsistent with standard results in the field) (true only as a special case, not in general)",
+        "Photodisintegration of iron (a frequently-taught but incorrect simplification) (an outdated view superseded by later work) (this describes a different phenomenon)"
       ],
       "correct": 0,
       "explanation": "In the s-process ('slow'), neutron captures are rare enough that any unstable nucleus produced typically beta-decays before capturing another neutron, so the reaction path stays close to the line of stability, stepping along it. Bottlenecks at nuclei with small capture cross-sections (magic neutron numbers) build up abundance peaks at Sr/Y/Zr (N=50), Ba/La (N=82), and Pb (N=126). The main astrophysical site is thermally-pulsing asymptotic-giant-branch (AGB) stars, where neutron sources $^{13}$C($\\alpha,n$)$^{16}$O and $^{22}$Ne($\\alpha,n$)$^{25}$Mg supply a modest neutron flux; a 'weak' s-process in massive stars makes lighter species. The chain ends near bismuth/polonium where alpha decay cycles material back. Branchings at unstable isotopes act as thermometers/densitometers of the stellar interior. Roughly half of the heavy-element abundances come from the s-process."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "GW170817: the gravitational-wave detection of a binary neutron-star merger plus its electromagnetic 'kilonova', whose reddening light curve matched radioactive decay of freshly-synthesised heavy r-process elements (lanthanides), directly linking such mergers to gold/platinum production",
-        "A laboratory experiment making uranium (contradicted by both lattice simulations and dispersive analyses) (ruled out by experimental constraints from collider and low-energy data)",
-        "The discovery of the Higgs boson (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (unsupported by perturbative expansions in the coupling)",
-        "Observations of the Sun's spectrum (disagrees with the standard textbook treatment in Peskin-Schroeder) (historically considered but disfavoured by modern QFT analyses)"
+        "A laboratory experiment making uranium (this conflates cause and effect) (this describes a different phenomenon) (this confuses two distinct concepts)",
+        "The discovery of the Higgs boson (this reverses the actual relationship) (not supported by the evidence) (inconsistent with standard results in the field)",
+        "Observations of the Sun's spectrum (a frequently-taught but incorrect simplification) (an outdated view superseded by later work) (a common misconception)"
       ],
       "correct": 0,
       "explanation": "The r-process ('rapid') needs an extreme neutron flux so that captures vastly outpace beta decay, driving nuclei far to the neutron-rich side before they decay back to stability, building the heaviest elements (including the actinides like uranium and thorium and the rare-earth/precious metals). Candidate sites long debated between core-collapse supernovae and neutron-star mergers. GW170817 (17 August 2017) settled it for mergers: the gravitational-wave signal of two coalescing neutron stars was accompanied by a kilonova (AT2017gfo) whose thermal emission, reddening over days, and spectral features matched the radioactive heating of newly-made lanthanide-rich r-process ejecta — and the inferred ejected mass implied mergers are a major source of the universe's heavy elements. A spectroscopic identification of strontium followed. This multi-messenger event was a landmark for both gravitational-wave astronomy and nuclear astrophysics."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "Masses, beta-decay rates, neutron-capture cross-sections, and fission yields of thousands of extremely neutron-rich nuclei far from stability — most never measured in the lab — so models rely on theoretical extrapolations whose uncertainties propagate into predicted abundance patterns",
-        "Only the mass of the proton is needed (contradicted by both lattice simulations and dispersive analyses) (would imply unphysical infinite or negative observables)",
-        "All required nuclei have been measured precisely (ruled out by experimental constraints from collider and low-energy data) (would conflict with renormalisation group flow and cross-section data)",
-        "No nuclear data are needed, only hydrodynamics (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (not consistent with the operator product expansion at large momentum)"
+        "Only the mass of the proton is needed (this conflates cause and effect) (a frequently-taught but incorrect simplification) (this describes a different phenomenon)",
+        "All required nuclei have been measured precisely (a common misconception) (this confuses two distinct concepts) (an outdated view superseded by later work)",
+        "No nuclear data are needed, only hydrodynamics (true only as a special case, not in general) (inconsistent with standard results in the field) (this reverses the actual relationship)"
       ],
       "correct": 0,
       "explanation": "The r-process path threads through very neutron-rich, short-lived nuclei near the neutron drip line, the vast majority of which lie beyond current experimental reach. Models therefore require theoretical nuclear data over huge swaths of the chart: nuclear masses (which set neutron separation energies and the path), beta-decay half-lives (which control the flow toward stability and the timescale), neutron-capture and photodissociation rates (which shape waiting points at the N=50, 82, 126 closed shells producing the abundance peaks), and fission barriers/yields (which recycle the heaviest nuclei and may set the actinide abundances). Because these are extrapolations of nuclear models into unexplored territory, their uncertainties dominate r-process abundance predictions. This drives rare-isotope facilities (FRIB, RIBF, the future at GSI/FAIR) to measure ever more neutron-rich nuclei, anchoring the models. Combined with astrophysical site uncertainties (merger ejecta dynamics, neutrino effects), r-process nucleosynthesis remains a frontier coupling nuclear structure to cosmic chemical evolution."

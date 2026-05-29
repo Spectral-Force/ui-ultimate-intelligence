@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "Curie law (non-interacting moments): $\\chi = C/T$ with Curie constant $C = n\\mu_0\\mu_{\\rm eff}^2/3k_B$. Curie-Weiss law (interacting): $\\chi = C/(T - \\theta)$, where $\\theta > 0$ signals ferromagnetic tendency ($T_C$), $\\theta < 0$ antiferromagnetic; diverges as $T \\to T_C$ at the ordering transition",
-        "$\\chi = CT$, increasing without bound at high temperature (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (ruled out by experimental constraints from collider and low-energy data)",
-        "Susceptibility is temperature-independent for all paramagnets (would conflict with renormalisation group flow and cross-section data) (not consistent with the operator product expansion at large momentum)",
-        "$\\chi = C/T^2$ for all magnetic materials (violates basic gauge invariance and Lorentz covariance requirements) (contradicted by both lattice simulations and dispersive analyses)"
+        "$\\chi = CT$, increasing without bound at high temperature (this confuses two distinct concepts) (this describes a different phenomenon) (a common misconception)",
+        "Susceptibility is temperature-independent for all paramagnets (an outdated view superseded by later work) (true only as a special case, not in general)",
+        "$\\chi = C/T^2$ for all magnetic materials (this conflates cause and effect) (this reverses the actual relationship) (not supported by the evidence) (inconsistent with standard results in the field)"
       ],
       "correct": 0,
       "explanation": "Curie law: independent paramagnetic moments aligned by field, randomised by thermal energy → $\\chi \\propto 1/T$. Curie-Weiss generalises by adding a mean (Weiss) molecular field representing exchange: $\\chi = C/(T-\\theta)$. The Weiss temperature $\\theta$ approximates the ordering temperature ($T_C$ for ferromagnets). Fitting $1/\\chi$ vs $T$ gives a straight line whose slope yields the effective moment $\\mu_{\\rm eff} = g\\sqrt{J(J+1)}\\mu_B$ and intercept $\\theta$ — a standard experimental characterisation of magnetic materials."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "Exchange is electrostatic: Pauli exclusion correlates spin and spatial wavefunctions, so Coulomb energy depends on relative spin orientation, giving $H = -2J\\,\\mathbf S_i\\cdot\\mathbf S_j$ with $J \\sim$ eV-scale. Dipole-dipole energy between moments is only $\\sim 10^{-4}$ eV ($\\sim 1$ K) — far too weak to explain ordering at hundreds of kelvin",
-        "Magnetic dipole forces are strong enough on their own (violates basic gauge invariance and Lorentz covariance requirements) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "Order comes from gravitational coupling of spins (would imply unphysical infinite or negative observables) (would conflict with renormalisation group flow and cross-section data)",
-        "Exchange is a relativistic effect smaller than dipole coupling (ruled out by experimental constraints from collider and low-energy data) (not consistent with the operator product expansion at large momentum)"
+        "Magnetic dipole forces are strong enough on their own (true only as a special case, not in general) (this confuses two distinct concepts) (a frequently-taught but incorrect simplification)",
+        "Order comes from gravitational coupling of spins (a common misconception) (this describes a different phenomenon) (an outdated view superseded by later work) (this reverses the actual relationship)",
+        "Exchange is a relativistic effect smaller than dipole coupling (this conflates cause and effect) (not supported by the evidence) (inconsistent with standard results in the field)"
       ],
       "correct": 0,
       "explanation": "Heisenberg exchange: the antisymmetry of the many-electron wavefunction ties spin configuration to spatial overlap, so the Coulomb repulsion energy differs for parallel vs antiparallel spins. The effective Heisenberg Hamiltonian $H = -\\sum_{ij}J_{ij}\\mathbf S_i\\cdot\\mathbf S_j$ encodes this. $J > 0$ favours ferromagnetism, $J < 0$ antiferromagnetism. Mechanisms: direct exchange, superexchange (via intermediate anion, Goodenough-Kanamori rules), double exchange (mixed valence, e.g. manganites), RKKY (conduction-electron mediated, oscillatory). Dipolar interaction matters only for domain structure and shape anisotropy, not the ordering temperature."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "(1) Maximise total spin $S$ (Pauli + exchange lowers Coulomb energy); (2) for that $S$, maximise total orbital $L$; (3) then $J = |L-S|$ if shell less than half-filled, $J = L+S$ if more than half-filled (spin-orbit). Gives term symbol $^{2S+1}L_J$",
-        "Minimise $S$ first, then minimise $L$ (unsupported by perturbative expansions in the coupling) (contradicted by both lattice simulations and dispersive analyses)",
-        "Fill orbitals to maximise pairing immediately (not consistent with the operator product expansion at large momentum) (historically considered but disfavoured by modern QFT analyses)",
-        "Total $J$ is always $L+S$ regardless of filling (would conflict with renormalisation group flow and cross-section data) (ruled out by experimental constraints from collider and low-energy data)"
+        "Minimise $S$ first, then minimise $L$ (this reverses the actual relationship) (this conflates cause and effect) (an outdated view superseded by later work)",
+        "Fill orbitals to maximise pairing immediately (inconsistent with standard results in the field) (a common misconception) (this describes a different phenomenon)",
+        "Total $J$ is always $L+S$ regardless of filling (not supported by the evidence) (a frequently-taught but incorrect simplification)"
       ],
       "correct": 0,
       "explanation": "Hund's rules give the lowest-energy multiplet of a partially filled shell. Rule 1 (max $S$): parallel spins occupy distinct orbitals, reducing electron-electron repulsion (exchange energy). Rule 2 (max $L$): electrons orbiting the same way avoid each other. Rule 3 (spin-orbit): determines $J$ — the spin-orbit coupling $\\lambda\\mathbf L\\cdot\\mathbf S$ changes sign at half-filling. Example: Fe$^{3+}$ (d$^5$, half-filled) → $S = 5/2$, $L = 0$, $^6S_{5/2}$. These rules underpin the effective moments $\\mu_{\\rm eff} = g_J\\sqrt{J(J+1)}\\mu_B$ measured via Curie-Weiss fits, especially for rare-earth (4f) ions."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "Regions of uniform magnetisation separated by domain walls; they form to reduce magnetostatic (stray-field) energy, at the cost of exchange + anisotropy energy stored in walls. Applying a field grows favourably-oriented domains (wall motion) and rotates moments → hysteresis loop (coercivity $H_c$, remanence $M_r$, saturation $M_s$)",
-        "Domains are crystallographic defects unrelated to magnetism (disagrees with the standard textbook treatment in Peskin-Schroeder) (historically considered but disfavoured by modern QFT analyses)",
-        "A ferromagnet is always a single uniformly magnetised domain (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (contradicted by both lattice simulations and dispersive analyses)",
-        "Domains form only above the Curie temperature (unsupported by perturbative expansions in the coupling) (not consistent with the operator product expansion at large momentum)"
+        "Domains are crystallographic defects unrelated to magnetism (not supported by the evidence) (inconsistent with standard results in the field) (this confuses two distinct concepts)",
+        "A ferromagnet is always a single uniformly magnetised domain (this conflates cause and effect) (this reverses the actual relationship) (an outdated view superseded by later work)",
+        "Domains form only above the Curie temperature (true only as a special case, not in general) (a frequently-taught but incorrect simplification) (this describes a different phenomenon)"
       ],
       "correct": 0,
       "explanation": "A uniformly magnetised sample carries large stray-field energy; breaking into oppositely-oriented domains reduces it (flux closure). Domain walls (Bloch or Neel type) have finite width set by competition between exchange (wants slow rotation) and magnetocrystalline anisotropy (wants moments along easy axes). Magnetisation reversal proceeds by wall motion and rotation, producing hysteresis. Hard magnets (large $H_c$, e.g. NdFeB, SmCo) for permanent magnets; soft magnets (small $H_c$, e.g. Fe-Si, permalloy) for transformer cores. Domain engineering underlies magnetic recording and spintronic memory."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "Mermin-Wagner: a continuous symmetry cannot be spontaneously broken at finite $T$ in dimensions $d \\le 2$ with short-range interactions, because long-wavelength Goldstone modes (spin waves) have divergent fluctuations. So the isotropic 2D Heisenberg model has no finite-$T$ ferromagnetic order; anisotropy or long-range coupling is needed",
-        "It forbids any magnetism in three dimensions (violates basic gauge invariance and Lorentz covariance requirements) (not consistent with the operator product expansion at large momentum)",
-        "It guarantees ferromagnetism in all dimensions (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (unsupported by perturbative expansions in the coupling)",
-        "It applies only to quantum gravity (ruled out by experimental constraints from collider and low-energy data) (contradicted by both lattice simulations and dispersive analyses)"
+        "It forbids any magnetism in three dimensions (true only as a special case, not in general) (an outdated view superseded by later work) (this confuses two distinct concepts)",
+        "It guarantees ferromagnetism in all dimensions (this reverses the actual relationship) (this describes a different phenomenon) (this conflates cause and effect) (not supported by the evidence)",
+        "It applies only to quantum gravity (a common misconception) (inconsistent with standard results in the field) (a frequently-taught but incorrect simplification) (true only as a special case, not in general)"
       ],
       "correct": 0,
       "explanation": "Mermin-Wagner-Hohenberg (1966): in $d \\le 2$, thermal excitation of gapless Goldstone modes (magnons for broken spin-rotation symmetry) produces logarithmically/linearly divergent fluctuations that destroy long-range order at any $T > 0$. Loopholes that allow 2D magnetism: magnetic anisotropy (gaps the magnons — basis of 2D van der Waals magnets like CrI$_3$), the Ising model (discrete symmetry, not continuous — Onsager's 2D solution has order), the 2D XY model (Kosterlitz-Thouless transition to quasi-long-range order via vortex unbinding, Nobel 2016). Spin waves: quantised as magnons with dispersion $\\omega \\propto k^2$ (ferromagnet) or $\\omega \\propto k$ (antiferromagnet)."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "When lattice geometry (triangular, kagome, pyrochlore) prevents simultaneous satisfaction of all antiferromagnetic bonds, the ground state is massively degenerate; a quantum spin liquid evades ordering even at $T = 0$, hosting long-range entanglement, fractionalised excitations (spinons) and emergent gauge fields — no symmetry breaking, no local order parameter",
-        "Frustration always produces a simple ferromagnet (ruled out by experimental constraints from collider and low-energy data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "Spin liquids are ordinary paramagnets with no correlations (unsupported by perturbative expansions in the coupling) (would conflict with renormalisation group flow and cross-section data)",
-        "Frustration only occurs in one-dimensional chains (contradicted by both lattice simulations and dispersive analyses) (historically considered but disfavoured by modern QFT analyses) (not consistent with the operator product expansion at large momentum)"
+        "Frustration always produces a simple ferromagnet (this describes a different phenomenon) (this confuses two distinct concepts) (this reverses the actual relationship) (a common misconception)",
+        "Spin liquids are ordinary paramagnets with no correlations (this conflates cause and effect) (inconsistent with standard results in the field) (an outdated view superseded by later work)",
+        "Frustration only occurs in one-dimensional chains (true only as a special case, not in general) (a frequently-taught but incorrect simplification) (not supported by the evidence) (this describes a different phenomenon)"
       ],
       "correct": 0,
       "explanation": "On a triangular plaquette, three mutually antiferromagnetic Ising spins cannot all be antiparallel — frustration. This degeneracy can be relieved by order-by-disorder, or survive as a spin liquid: a highly entangled state with no broken symmetry. Candidate quantum spin liquids: herbertsmithite (kagome), organic triangular-lattice salts, Kitaev materials ($\\alpha$-RuCl$_3$). Hallmarks: fractionalised spinon excitations, emergent $\\mathbb Z_2$ or U(1) gauge structure, topological order, possible Majorana fermions (Kitaev honeycomb is exactly solvable). Spin ice (pyrochlores like Dy$_2$Ti$_2$O$_7$) hosts emergent magnetic monopoles. Of deep interest for topological quantum computation."

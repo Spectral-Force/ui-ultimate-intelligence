@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "Use uniformly accelerated frame: photon climbs height $h$ against acceleration $g$; arrives with Doppler shift $\\Delta\\nu/\\nu = -gh/c^2$; by EP this equals the redshift in gravitational potential difference $\\Delta\\Phi = gh$: $\\Delta\\nu/\\nu = -\\Delta\\Phi/c^2$; verified by Pound-Rebka (1960) using Mössbauer effect with $\\gamma$ from $^{57}$Fe over 22.5 m",
-        "Photon loses energy via friction with the gravitational field (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (historically considered but disfavoured by modern QFT analyses)",
-        "Redshift only in cosmological expansion, not local gravity (not consistent with the operator product expansion at large momentum) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "Gravitational blueshift always; no redshift possible (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)"
+        "Photon loses energy via friction with the gravitational field (this confuses two distinct concepts) (inconsistent with standard results in the field) (an outdated view superseded by later work)",
+        "Redshift only in cosmological expansion, not local gravity (true only as a special case, not in general) (this reverses the actual relationship) (this describes a different phenomenon)",
+        "Gravitational blueshift always; no redshift possible (not supported by the evidence) (a frequently-taught but incorrect simplification) (this conflates cause and effect) (a common misconception)"
       ],
       "correct": 0,
       "explanation": "Equivalence principle argument (Einstein 1907): photon emitted from floor, received at ceiling of accelerating elevator (acceleration $g$). During flight time $h/c$, observer at top has acquired velocity $gh/c$; sees Doppler shift $\\Delta\\nu/\\nu = -v/c = -gh/c^2$. By EP, same shift in uniform gravity. Generalises to: $\\nu_2/\\nu_1 = \\sqrt{g_{tt}(x_1)/g_{tt}(x_2)}$ in static spacetime. Test: Pound-Rebka (1960): $\\nu$ from $^{57}$Fe nuclear transition; over 22.5 m drop, fractional shift $\\Delta\\nu/\\nu = 2.5\\times 10^{-15}$, measured to 1\\% via Mössbauer effect. Modern: atomic clocks at different heights $\\sim 10$ cm differ measurably; Cs/Sr clocks have $\\sim 10^{-19}$ stability — chronometric geodesy."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "Locally, gravity is indistinguishable from acceleration (EP) — but only in infinitesimal regions. Over finite separation, neighbouring geodesics deviate via geodesic deviation: $D^2\\xi^\\mu/D\\tau^2 = -R^\\mu_{\\nu\\rho\\sigma}u^\\nu u^\\rho\\xi^\\sigma$. Riemann curvature is the physical, non-removable signature of gravity (as opposed to pseudoforce)",
-        "Tidal forces are absent in GR (contradicted by both lattice simulations and dispersive analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "EP fails over any finite region; gravity can't be reformulated (would conflict with renormalisation group flow and cross-section data) (historically considered but disfavoured by modern QFT analyses)",
-        "Tidal forces depend only on Ricci, not Riemann (unsupported by perturbative expansions in the coupling) (would imply unphysical infinite or negative observables) (ruled out by experimental constraints from collider and low-energy data)"
+        "Tidal forces are absent in GR (this conflates cause and effect) (this confuses two distinct concepts) (not supported by the evidence) (a common misconception) (inconsistent with standard results in the field)",
+        "EP fails over any finite region; gravity can't be reformulated (this reverses the actual relationship) (a frequently-taught but incorrect simplification) (this describes a different phenomenon)",
+        "Tidal forces depend only on Ricci, not Riemann (true only as a special case, not in general) (an outdated view superseded by later work) (this conflates cause and effect) (this confuses two distinct concepts)"
       ],
       "correct": 0,
       "explanation": "EP holds in tangent space (one event); over finite region curvature shows up. Geodesic deviation equation: two nearby freely-falling worldlines separate or converge at rate set by Riemann tensor. In Newtonian limit: $\\ddot\\xi^i = -\\partial^i\\partial^j\\Phi\\,\\xi_j$ — tidal tensor $\\partial^i\\partial^j\\Phi$, traceless in vacuum ($\\nabla^2\\Phi = 0$). Real-world manifestation: tides on Earth from Moon (and Sun) gravity gradient. Spaghettification near BH: tidal force $\\sim GM/r^3$ — supermassive BHs gentle at horizon, stellar-mass BHs lethal. Detecting curvature locally: requires comparing two nearby geodesics — sets up sensitive tests."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "SR (orbital velocity 3.9 km/s): clocks slow by $v^2/2c^2 \\approx 7\\,\\mu$s/day. GR (altitude 20,200 km, weaker potential): clocks run faster by $\\Delta\\Phi/c^2 \\approx 45\\,\\mu$s/day. Net: satellite clocks gain $\\sim 38\\,\\mu$s/day, corresponding to $\\sim 11$ km positional error if uncorrected; satellite clocks pre-set with offset before launch",
-        "Only Newtonian corrections needed; relativity irrelevant (contradicted by both lattice simulations and dispersive analyses) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "Effects cancel exactly; no correction required (would imply unphysical infinite or negative observables) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "Only SR; GR is millimetre-level and ignored (ruled out by experimental constraints from collider and low-energy data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+        "Only Newtonian corrections needed; relativity irrelevant (this conflates cause and effect) (true only as a special case, not in general) (a frequently-taught but incorrect simplification)",
+        "Effects cancel exactly; no correction required (not supported by the evidence) (this describes a different phenomenon) (this confuses two distinct concepts) (inconsistent with standard results in the field)",
+        "Only SR; GR is millimetre-level and ignored (an outdated view superseded by later work) (this reverses the actual relationship) (a common misconception) (this conflates cause and effect)"
       ],
       "correct": 0,
       "explanation": "GPS satellites: 24+ in 20,200 km orbits, $T \\approx 12$ h. Velocity $v \\approx 3.87$ km/s, $v^2/c^2 \\approx 1.7\\times 10^{-10}$. Special-relativistic time dilation: $-(v^2/2c^2)t \\approx -7\\,\\mu$s/day (clocks slow). Gravitational potential difference between satellite altitude and Earth's surface: $\\Delta\\Phi/c^2 \\approx +5.3\\times 10^{-10}$ → clocks run faster by $+45\\,\\mu$s/day. Net: $+38\\,\\mu$s/day. With $c \\approx 30$ cm/ns: positional error per day = $38\\,\\mu$s $\\times 3\\times 10^8$ m/s $\\approx 11$ km. GPS satellite atomic clocks (Cs/Rb) pre-set with frequency offset of $-4.46\\times 10^{-10}$ before launch. GPS therefore an unintended-but-real precision test of relativity."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "Light bends by $\\delta = 4GM/(c^2 b)$ for impact parameter $b$ — half from time dilation (gravitational redshift effect on phase velocity), half from spatial curvature; for grazing Sun: $\\delta = 1.75''$ confirmed by Eddington (1919). Newtonian particle calculation gives only half this value",
-        "Newtonian gravity gives correct deflection; no GR needed (not consistent with the operator product expansion at large momentum) (ruled out by experimental constraints from collider and low-energy data)",
-        "$\\delta = GM/(c^2 b)$ — Newton value (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (contradicted by both lattice simulations and dispersive analyses)",
-        "Light is not deflected by gravity (would conflict with renormalisation group flow and cross-section data) (historically considered but disfavoured by modern QFT analyses)"
+        "Newtonian gravity gives correct deflection; no GR needed (an outdated view superseded by later work) (this describes a different phenomenon) (this confuses two distinct concepts)",
+        "$\\delta = GM/(c^2 b)$ — Newton value (this conflates cause and effect) (a common misconception) (inconsistent with standard results in the field) (true only as a special case, not in general)",
+        "Light is not deflected by gravity (not supported by the evidence) (this reverses the actual relationship) (a frequently-taught but incorrect simplification)"
       ],
       "correct": 0,
       "explanation": "Two contributions in GR. (1) From EP/time dilation: gravitational potential $\\Phi$ slows light by effective refractive index $n = 1 - 2\\Phi/c^2$ (since $c$ measured locally is invariant, but clock rate varies). Fermat's principle: light bends toward higher $n$ → toward larger potential well. Half the deflection. (2) Spatial curvature in PPN: $g_{ij} = (1 - 2\\Phi/c^2)\\delta_{ij}$ contributes another half. Total: $\\delta_{\\rm GR} = 4GM/(c^2 b)$, twice Newtonian value. Grazing Sun: $b \\approx R_\\odot$, $\\delta = 1.75''$. Eddington's 1919 solar eclipse expedition: confirmed Einstein within $\\sim$ 30% (some controversy about analysis). Modern: VLBI radio measurements of quasars near Sun's path: confirmed to ~$10^{-4}$ in PPN $\\gamma$ parameter, GR predicts $\\gamma = 1$."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "Light propagating in gravitational field experiences additional time delay $\\Delta t = (4GM/c^3)\\ln(4r_1 r_2/b^2)$ relative to flat-space; for radar reflection from Mercury at superior conjunction: $\\sim 240\\,\\mu$s. Measured by Shapiro (1964+) — fourth classical test of GR; pulsar timing in double pulsars provides percent-level test today",
-        "No time delay; light always takes straight-line path (ruled out by experimental constraints from collider and low-energy data) (would conflict with renormalisation group flow and cross-section data)",
-        "Shapiro delay is just gravitational redshift (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (not consistent with the operator product expansion at large momentum)",
-        "Effect is purely Newtonian (contradicted by both lattice simulations and dispersive analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder) (would imply unphysical infinite or negative observables)"
+        "No time delay; light always takes straight-line path (this describes a different phenomenon) (a common misconception) (this confuses two distinct concepts) (an outdated view superseded by later work)",
+        "Shapiro delay is just gravitational redshift (this conflates cause and effect) (not supported by the evidence) (a frequently-taught but incorrect simplification) (true only as a special case, not in general)",
+        "Effect is purely Newtonian (this reverses the actual relationship) (inconsistent with standard results in the field) (this describes a different phenomenon) (a common misconception)"
       ],
       "correct": 0,
       "explanation": "Shapiro time delay: gravitational potential slows light. Time for radar pulse Earth → planet → Earth, with pulse passing near Sun: $T = T_{\\rm flat} + \\Delta t_{\\rm Shapiro}$. Schwarzschild radial null geodesic: $dt/dr = 1/(1 - r_s/r) \\sim 1 + r_s/r$ gives extra $\\int (r_s/r) dr$ along the path. For Earth-Mercury at superior conjunction: $\\Delta t \\approx 240\\,\\mu$s. Shapiro (1964): measured radar reflection from Mercury and Venus, $\\sim 5\\%$ confirmation of GR. Cassini probe (2002): $\\gamma_{\\rm PPN} - 1 = (2.1 \\pm 2.3)\\times 10^{-5}$ — strongest PPN constraint to date. Pulsar timing in double pulsar PSR J0737-3039: light from one pulsar passes near companion neutron star, Shapiro delay extracts $M_{\\rm companion}$, contributes to 7 independent post-Keplerian parameters — precision tests."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "Parametrised post-Newtonian (PPN) expansion in $v/c$: 10 parameters characterising deviations from GR. Key: $\\gamma$ (space curvature per unit mass, GR predicts 1; Cassini: $|\\gamma - 1| < 2.3\\times 10^{-5}$); $\\beta$ (nonlinearity in superposition, GR = 1; lunar laser: $|\\beta - 1| < 1.1\\times 10^{-4}$); $\\alpha_1, \\alpha_2, \\alpha_3$ (preferred-frame effects)",
-        "Only Newton's constant matters; no other parameters (disagrees with the standard textbook treatment in Peskin-Schroeder) (ruled out by experimental constraints from collider and low-energy data)",
-        "PPN has 100+ parameters, none measured (not consistent with the operator product expansion at large momentum) (historically considered but disfavoured by modern QFT analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "All PPN parameters are independent of choice of gauge (unsupported by perturbative expansions in the coupling) (would imply unphysical infinite or negative observables) (violates basic gauge invariance and Lorentz covariance requirements)"
+        "Only Newton's constant matters; no other parameters (not supported by the evidence) (this describes a different phenomenon) (an outdated view superseded by later work) (inconsistent with standard results in the field)",
+        "PPN has 100+ parameters, none measured (this confuses two distinct concepts) (this reverses the actual relationship) (a frequently-taught but incorrect simplification) (true only as a special case, not in general)",
+        "All PPN parameters are independent of choice of gauge (a common misconception) (this conflates cause and effect) (not supported by the evidence) (this describes a different phenomenon)"
       ],
       "correct": 0,
       "explanation": "PPN formalism (Nordtvedt, Will 1970s): general framework for testing metric theories of gravity in weak-field, slow-motion limit. Lagrangian-density schematic: $g_{00} = -(1 - 2U + 2\\beta U^2 + \\ldots)$, $g_{ij} = (1 + 2\\gamma U)\\delta_{ij}$. GR: $\\gamma = \\beta = 1$, all others zero. Other metric theories: Brans-Dicke has $\\gamma = (1+\\omega)/(2+\\omega) < 1$ — ruled out for small $\\omega$. Tests: (i) Cassini Shapiro: $\\gamma = 1 + (2.1\\pm 2.3)\\times 10^{-5}$; (ii) Lunar laser ranging: $|\\eta_N| = |4\\beta - \\gamma - 3| < 4.5\\times 10^{-4}$; (iii) Mercury perihelion: $\\beta$; (iv) binary pulsars: strong-field regime, PSR J0737-3039A/B tests 7 parameters at sub-percent. GR passes all tests to high precision in solar system + binary pulsars."

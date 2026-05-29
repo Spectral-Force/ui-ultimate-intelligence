@@ -137,6 +137,7 @@ import chemOrganic           from './chemistry/organic-chemistry.json'
 import chemInorganic         from './chemistry/inorganic-chemistry.json'
 import chemElectro           from './chemistry/electrochemistry.json'
 import chemSpectroscopy      from './chemistry/chem-spectroscopy.json'
+import numericProblems       from './numeric-problems.json'
 import csAlgorithms         from './cs/algorithms.json'
 import csDataStructures      from './cs/data-structures.json'
 import csTheoryOfComputation from './cs/theory-of-computation.json'
@@ -404,6 +405,7 @@ export const allQuestions = [
   ...chemInorganic,
   ...chemElectro,
   ...chemSpectroscopy,
+  ...numericProblems,
 ]
 
 /**

@@ -1,0 +1,363 @@
+[
+  {
+    "id": "numphys001",
+    "path": ["physics", "laws-and-rules", "mechanics-laws"],
+    "level": "U",
+    "modes": ["active"],
+    "question": "A spring obeys Hooke's law with spring constant $k = 200$ N/m. What force (in newtons) is needed to stretch it by 0.15 m?",
+    "active": {
+      "type": "numeric",
+      "answer": 30,
+      "tolerance": 0.02,
+      "unit": "N",
+      "displayAnswer": "30",
+      "explanation": "Hooke's law: $F = kx = 200 \\times 0.15 = 30$ N. The restoring force is proportional to the extension within the elastic limit."
+    }
+  },
+  {
+    "id": "numphys002",
+    "path": ["physics", "laws-and-rules", "mechanics-laws"],
+    "level": "M",
+    "modes": ["active"],
+    "question": "Elastic potential energy stored in a spring is $U = \\tfrac12 kx^2$. For $k = 200$ N/m stretched 0.15 m, how much energy (in joules) is stored?",
+    "active": {
+      "type": "numeric",
+      "answer": 2.25,
+      "tolerance": 0.03,
+      "unit": "J",
+      "displayAnswer": "2.25",
+      "explanation": "$U = \\tfrac12 k x^2 = 0.5 \\times 200 \\times 0.15^2 = 0.5 \\times 200 \\times 0.0225 = 2.25$ J."
+    }
+  },
+  {
+    "id": "numphys003",
+    "path": ["physics", "laws-and-rules", "mechanics-laws"],
+    "level": "M",
+    "modes": ["active"],
+    "question": "By Kepler's third law $T^2 \\propto a^3$ (with $T$ in years, $a$ in AU). A body orbits the Sun at $a = 4$ AU. What is its orbital period in years?",
+    "active": {
+      "type": "numeric",
+      "answer": 8,
+      "tolerance": 0.02,
+      "unit": "yr",
+      "displayAnswer": "8",
+      "explanation": "$T = a^{3/2} = 4^{1.5} = 8$ years. Kepler's third law in solar units: $T^2 = a^3$, so $T = \\sqrt{4^3} = \\sqrt{64} = 8$."
+    }
+  },
+  {
+    "id": "numphys004",
+    "path": ["physics", "laws-and-rules", "mechanics-laws"],
+    "level": "M",
+    "modes": ["active"],
+    "question": "Newton's law of gravitation: two 1000 kg masses are 2.0 m apart. What is the gravitational force between them, in newtons? ($G = 6.674\\times10^{-11}$)",
+    "active": {
+      "type": "numeric",
+      "answer": 1.6685e-5,
+      "tolerance": 0.03,
+      "unit": "N",
+      "displayAnswer": "1.67×10⁻⁵",
+      "explanation": "$F = G m_1 m_2 / r^2 = 6.674\\times10^{-11} \\times (1000 \\times 1000) / 2^2 = 6.674\\times10^{-11} \\times 10^6 / 4 \\approx 1.67\\times10^{-5}$ N — tiny, illustrating how weak gravity is between everyday masses."
+    }
+  },
+  {
+    "id": "numphys005",
+    "path": ["physics", "laws-and-rules", "thermo-gas-laws"],
+    "level": "M",
+    "modes": ["active"],
+    "question": "Using the ideal gas law $PV = nRT$, find the pressure (in pascals) of 1.0 mol of gas in 0.0224 m³ at 273 K. ($R = 8.314$)",
+    "active": {
+      "type": "numeric",
+      "answer": 101300,
+      "tolerance": 0.02,
+      "unit": "Pa",
+      "displayAnswer": "1.013×10⁵",
+      "explanation": "$P = nRT/V = (1.0 \\times 8.314 \\times 273)/0.0224 \\approx 1.013\\times10^5$ Pa — standard atmospheric pressure, as expected at STP."
+    }
+  },
+  {
+    "id": "numphys006",
+    "path": ["physics", "laws-and-rules", "thermo-gas-laws"],
+    "level": "M",
+    "modes": ["active"],
+    "question": "The Stefan-Boltzmann law gives radiated power per area $j = \\sigma T^4$. For a blackbody at $T = 1000$ K, what is $j$ in W/m²? ($\\sigma = 5.67\\times10^{-8}$)",
+    "active": {
+      "type": "numeric",
+      "answer": 56700,
+      "tolerance": 0.02,
+      "unit": "W/m²",
+      "displayAnswer": "5.67×10⁴",
+      "explanation": "$j = \\sigma T^4 = 5.67\\times10^{-8} \\times (10^3)^4 = 5.67\\times10^{-8} \\times 10^{12} = 5.67\\times10^4$ W/m². The fourth-power dependence makes radiated power extremely temperature-sensitive."
+    }
+  },
+  {
+    "id": "numphys007",
+    "path": ["physics", "laws-and-rules", "thermo-gas-laws"],
+    "level": "M",
+    "modes": ["active"],
+    "question": "Wien's displacement law: $\\lambda_{\\max} T = 2.898\\times10^{-3}$ m·K. At what wavelength (in nm) does the Sun's surface ($T = 5800$ K) peak?",
+    "active": {
+      "type": "numeric",
+      "answer": 500,
+      "tolerance": 0.04,
+      "unit": "nm",
+      "displayAnswer": "≈500",
+      "explanation": "$\\lambda_{\\max} = 2.898\\times10^{-3}/5800 \\approx 5.0\\times10^{-7}$ m = 500 nm — green-yellow, near the peak of human visual sensitivity."
+    }
+  },
+  {
+    "id": "numphys008",
+    "path": ["physics", "nuclear-physics", "radioactive-decay"],
+    "level": "U",
+    "modes": ["active"],
+    "question": "A radioactive isotope has a half-life of 5730 years. What fraction of the original sample remains after 17190 years? (Give as a decimal.)",
+    "active": {
+      "type": "numeric",
+      "answer": 0.125,
+      "tolerance": 0.02,
+      "absTolerance": 0.005,
+      "displayAnswer": "0.125",
+      "explanation": "17190 / 5730 = 3 half-lives, so the fraction remaining is $(1/2)^3 = 1/8 = 0.125$."
+    }
+  },
+  {
+    "id": "numphys009",
+    "path": ["physics", "nuclear-physics", "radioactive-decay"],
+    "level": "M",
+    "modes": ["active"],
+    "question": "The decay constant relates to half-life by $\\lambda = \\ln 2 / t_{1/2}$. For $t_{1/2} = 10$ s, what is $\\lambda$ (in s⁻¹)?",
+    "active": {
+      "type": "numeric",
+      "answer": 0.0693,
+      "tolerance": 0.03,
+      "unit": "s⁻¹",
+      "displayAnswer": "0.0693",
+      "explanation": "$\\lambda = \\ln 2 / t_{1/2} = 0.693/10 = 0.0693$ s⁻¹. The activity decays as $N = N_0 e^{-\\lambda t}$."
+    }
+  },
+  {
+    "id": "numphys010",
+    "path": ["physics", "relativity", "relativistic-kinematics"],
+    "level": "M",
+    "modes": ["active"],
+    "question": "Compute the Lorentz factor $\\gamma = 1/\\sqrt{1 - v^2/c^2}$ for a particle moving at $v = 0.6c$.",
+    "active": {
+      "type": "numeric",
+      "answer": 1.25,
+      "tolerance": 0.02,
+      "displayAnswer": "1.25",
+      "explanation": "$\\gamma = 1/\\sqrt{1 - 0.36} = 1/\\sqrt{0.64} = 1/0.8 = 1.25$. A clock moving at $0.6c$ runs slow by this factor."
+    }
+  },
+  {
+    "id": "numphys011",
+    "path": ["physics", "relativity", "relativistic-kinematics"],
+    "level": "M",
+    "modes": ["active"],
+    "question": "A muon's proper lifetime is 2.2 μs. Moving at $\\gamma = 1.25$, what is its dilated lifetime in the lab frame, in μs?",
+    "active": {
+      "type": "numeric",
+      "answer": 2.75,
+      "tolerance": 0.03,
+      "unit": "μs",
+      "displayAnswer": "2.75",
+      "explanation": "Time dilation: $\\Delta t = \\gamma \\Delta\\tau = 1.25 \\times 2.2 = 2.75$ μs. This is why fast atmospheric muons reach the ground."
+    }
+  },
+  {
+    "id": "numphys012",
+    "path": ["physics", "relativity", "schwarzschild-kerr"],
+    "level": "P",
+    "modes": ["active"],
+    "question": "The Schwarzschild radius is $r_s = 2GM/c^2$. Compute it (in km) for a one-solar-mass object, $M = 2.0\\times10^{30}$ kg. ($G = 6.674\\times10^{-11}$, $c = 3\\times10^8$)",
+    "active": {
+      "type": "numeric",
+      "answer": 2.97,
+      "tolerance": 0.05,
+      "unit": "km",
+      "displayAnswer": "≈3",
+      "explanation": "$r_s = 2GM/c^2 = 2 \\times 6.674\\times10^{-11} \\times 2\\times10^{30} / (3\\times10^8)^2 \\approx 2.97\\times10^3$ m ≈ 3 km. A solar-mass black hole is only a few km across."
+    }
+  },
+  {
+    "id": "numphys013",
+    "path": ["physics", "cosmology", "frw-cosmology"],
+    "level": "M",
+    "modes": ["active"],
+    "question": "Hubble's law: $v = H_0 d$. With $H_0 = 70$ km/s/Mpc, what recession velocity (in km/s) does a galaxy at $d = 100$ Mpc have?",
+    "active": {
+      "type": "numeric",
+      "answer": 7000,
+      "tolerance": 0.02,
+      "unit": "km/s",
+      "displayAnswer": "7000",
+      "explanation": "$v = H_0 d = 70 \\times 100 = 7000$ km/s. The linear velocity-distance relation is the signature of uniform cosmic expansion."
+    }
+  },
+  {
+    "id": "numphys014",
+    "path": ["physics", "laws-and-rules", "atomic-spectral-laws"],
+    "level": "M",
+    "modes": ["active"],
+    "question": "Using the Rydberg formula $1/\\lambda = R_H(1/n_1^2 - 1/n_2^2)$ with $R_H = 1.097\\times10^7$ m⁻¹, find the wavelength (in nm) of the Balmer-alpha line ($n_1 = 2$, $n_2 = 3$).",
+    "active": {
+      "type": "numeric",
+      "answer": 656,
+      "tolerance": 0.02,
+      "unit": "nm",
+      "displayAnswer": "656",
+      "explanation": "$1/\\lambda = 1.097\\times10^7 (1/4 - 1/9) = 1.097\\times10^7 \\times 0.1389 = 1.524\\times10^6$ m⁻¹, so $\\lambda \\approx 656$ nm — the red H-alpha line."
+    }
+  },
+  {
+    "id": "numphys015",
+    "path": ["physics", "laws-and-rules", "optics-wave-laws"],
+    "level": "U",
+    "modes": ["active"],
+    "question": "Snell's law: $n_1\\sin\\theta_1 = n_2\\sin\\theta_2$. Light passes from air ($n_1 = 1.0$) at $\\theta_1 = 30°$ into glass ($n_2 = 1.5$). Find the refraction angle $\\theta_2$ in degrees.",
+    "active": {
+      "type": "numeric",
+      "answer": 19.47,
+      "tolerance": 0.03,
+      "unit": "°",
+      "displayAnswer": "≈19.5",
+      "explanation": "$\\sin\\theta_2 = (n_1/n_2)\\sin\\theta_1 = (1/1.5)\\times0.5 = 0.333$, so $\\theta_2 = \\arcsin(0.333) \\approx 19.5°$ — the ray bends toward the normal entering the denser medium."
+    }
+  },
+  {
+    "id": "numphys016",
+    "path": ["physics", "laws-and-rules", "optics-wave-laws"],
+    "level": "M",
+    "modes": ["active"],
+    "question": "Bragg's law: $n\\lambda = 2d\\sin\\theta$. For first-order ($n=1$) diffraction at $\\theta = 30°$ from planes spaced $d = 2.0\\times10^{-10}$ m, what wavelength (in nm) is diffracted?",
+    "active": {
+      "type": "numeric",
+      "answer": 0.2,
+      "tolerance": 0.03,
+      "unit": "nm",
+      "displayAnswer": "0.2",
+      "explanation": "$\\lambda = 2d\\sin\\theta / n = 2 \\times 2.0\\times10^{-10} \\times 0.5 = 2.0\\times10^{-10}$ m = 0.2 nm — a typical X-ray wavelength, matching interatomic spacings."
+    }
+  },
+  {
+    "id": "numphys017",
+    "path": ["physics", "laws-and-rules", "quantum-rules"],
+    "level": "M",
+    "modes": ["active"],
+    "question": "A photon has frequency $f = 5.0\\times10^{14}$ Hz. Using $E = hf$ with $h = 6.626\\times10^{-34}$ J·s, what is its energy in joules?",
+    "active": {
+      "type": "numeric",
+      "answer": 3.313e-19,
+      "tolerance": 0.03,
+      "unit": "J",
+      "displayAnswer": "3.31×10⁻¹⁹",
+      "explanation": "$E = hf = 6.626\\times10^{-34} \\times 5.0\\times10^{14} = 3.31\\times10^{-19}$ J (≈ 2.07 eV) — a visible photon."
+    }
+  },
+  {
+    "id": "numphys018",
+    "path": ["physics", "laws-and-rules", "quantum-rules"],
+    "level": "P",
+    "modes": ["active"],
+    "question": "The de Broglie wavelength is $\\lambda = h/p$. For an electron ($m = 9.11\\times10^{-31}$ kg) moving at $v = 1.0\\times10^{6}$ m/s, find $\\lambda$ in nm. ($h = 6.626\\times10^{-34}$)",
+    "active": {
+      "type": "numeric",
+      "answer": 0.727,
+      "tolerance": 0.04,
+      "unit": "nm",
+      "displayAnswer": "≈0.73",
+      "explanation": "$\\lambda = h/(mv) = 6.626\\times10^{-34}/(9.11\\times10^{-31} \\times 10^6) \\approx 7.27\\times10^{-10}$ m = 0.73 nm — comparable to atomic spacings, why electrons diffract."
+    }
+  },
+  {
+    "id": "numchem001",
+    "path": ["chemistry", "atomic-structure"],
+    "level": "U",
+    "modes": ["active"],
+    "question": "A solution has hydrogen-ion concentration $[H^+] = 1.0\\times10^{-3}$ mol/L. What is its pH? (pH $= -\\log_{10}[H^+]$)",
+    "active": {
+      "type": "numeric",
+      "answer": 3,
+      "tolerance": 0.02,
+      "absTolerance": 0.05,
+      "displayAnswer": "3",
+      "explanation": "pH $= -\\log_{10}(10^{-3}) = 3$. Each unit of pH is a tenfold change in acidity."
+    }
+  },
+  {
+    "id": "numchem002",
+    "path": ["chemistry", "thermochemistry"],
+    "level": "M",
+    "modes": ["active"],
+    "question": "Gibbs free energy: $\\Delta G = \\Delta H - T\\Delta S$. For $\\Delta H = -100$ kJ, $T = 300$ K, $\\Delta S = -0.20$ kJ/K, compute $\\Delta G$ in kJ.",
+    "active": {
+      "type": "numeric",
+      "answer": -40,
+      "tolerance": 0.03,
+      "absTolerance": 1,
+      "unit": "kJ",
+      "displayAnswer": "−40",
+      "explanation": "$\\Delta G = -100 - (300)(-0.20) = -100 + 60 = -40$ kJ. Negative ΔG means the reaction is spontaneous at this temperature."
+    }
+  },
+  {
+    "id": "numchem003",
+    "path": ["chemistry", "chemical-kinetics"],
+    "level": "M",
+    "modes": ["active"],
+    "question": "For a first-order reaction, half-life $t_{1/2} = \\ln 2 / k$. If the rate constant $k = 0.010$ s⁻¹, what is the half-life in seconds?",
+    "active": {
+      "type": "numeric",
+      "answer": 69.3,
+      "tolerance": 0.03,
+      "unit": "s",
+      "displayAnswer": "69.3",
+      "explanation": "$t_{1/2} = 0.693/0.010 = 69.3$ s. For first-order kinetics the half-life is independent of starting concentration."
+    }
+  },
+  {
+    "id": "numchem004",
+    "path": ["chemistry", "electrochemistry"],
+    "level": "P",
+    "modes": ["active"],
+    "question": "The Nernst equation at 25°C: $E = E° - (0.0592/n)\\log Q$. For $E° = 1.10$ V, $n = 2$, and $Q = 100$, compute $E$ in volts.",
+    "active": {
+      "type": "numeric",
+      "answer": 1.0408,
+      "tolerance": 0.02,
+      "absTolerance": 0.01,
+      "unit": "V",
+      "displayAnswer": "1.041",
+      "explanation": "$E = 1.10 - (0.0592/2)\\log(100) = 1.10 - 0.0296 \\times 2 = 1.10 - 0.0592 = 1.041$ V. Raising $Q$ (more product) lowers the cell potential."
+    }
+  },
+  {
+    "id": "nummath001",
+    "path": ["mathematics", "discrete-computational", "combinatorics"],
+    "level": "U",
+    "modes": ["active"],
+    "question": "How many ways are there to choose 2 items from 5 (unordered)? Compute the binomial coefficient $\\binom{5}{2}$.",
+    "active": {
+      "type": "numeric",
+      "answer": 10,
+      "tolerance": 0.001,
+      "absTolerance": 0.5,
+      "displayAnswer": "10",
+      "explanation": "$\\binom{5}{2} = \\frac{5!}{2!\\,3!} = \\frac{120}{2 \\times 6} = 10$. Combinations count unordered selections."
+    }
+  },
+  {
+    "id": "numcs001",
+    "path": ["computer-science", "algorithms"],
+    "level": "U",
+    "modes": ["active"],
+    "question": "Binary search on a sorted array of 1024 elements performs at most how many comparisons? (Compute $\\log_2 1024$.)",
+    "active": {
+      "type": "numeric",
+      "answer": 10,
+      "tolerance": 0.001,
+      "absTolerance": 0.5,
+      "displayAnswer": "10",
+      "explanation": "$\\log_2 1024 = 10$, since $2^{10} = 1024$. Each comparison halves the search space, giving O(log n) time."
+    }
+  }
+]

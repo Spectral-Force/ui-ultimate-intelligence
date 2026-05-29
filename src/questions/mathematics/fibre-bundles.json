@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "A fibre bundle is a space $E$ that locally looks like a product $\\text{base}\\times\\text{fibre}$ with a projection $\\pi: E \\to B$; a principal $G$-bundle has fibre a Lie group $G$ acting freely on $E$. Gauge fields are connections on principal bundles, matter fields are sections of associated vector bundles",
-        "A fibre bundle is always globally a product space (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)",
-        "A principal bundle has no group action (disagrees with the standard textbook treatment in Peskin-Schroeder) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "Bundles are unrelated to gauge theory (would imply unphysical infinite or negative observables) (would conflict with renormalisation group flow and cross-section data)"
+        "A fibre bundle is always globally a product space (this reverses the actual relationship) (this describes a different phenomenon) (not supported by the evidence)",
+        "A principal bundle has no group action (true only as a special case, not in general) (a frequently-taught but incorrect simplification) (a common misconception)",
+        "Bundles are unrelated to gauge theory (inconsistent with standard results in the field) (this confuses two distinct concepts) (this conflates cause and effect)"
       ],
       "correct": 0,
       "explanation": "Bundles formalise 'fields with internal structure'. Local triviality $\\pi^{-1}(U)\\cong U\\times F$ is glued by transition functions valued in the structure group; nontrivial gluing gives global twisting (e.g. the Mobius band vs cylinder). A principal $G$-bundle $P$ has the group itself as fibre; associated bundles $P\\times_G V$ (for a representation $V$) hold matter fields. In gauge theory: $B$ = spacetime, $G$ = gauge group, a connection = gauge potential $A$, its curvature = field strength $F$. The global topology of the bundle (characteristic classes) produces physical effects like monopole charge and instanton number that no local field description sees."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "A connection prescribes horizontal subspaces (a way to parallel-transport along the base), encoded by a $\\mathfrak g$-valued 1-form $A$; its curvature is $F = dA + A\\wedge A$ (equivalently $F = dA + \\tfrac12[A,A]$), the obstruction to horizontal subspaces being integrable, transforming covariantly $F \\to g F g^{-1}$",
-        "A connection is just a number; curvature is its square (unsupported by perturbative expansions in the coupling) (would conflict with renormalisation group flow and cross-section data)",
-        "Curvature is $dA$ only, even for non-abelian groups (ruled out by experimental constraints from collider and low-energy data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "Connections exist only on trivial bundles (not consistent with the operator product expansion at large momentum) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+        "A connection is just a number; curvature is its square (this reverses the actual relationship) (a common misconception) (this describes a different phenomenon)",
+        "Curvature is $dA$ only, even for non-abelian groups (this confuses two distinct concepts) (an outdated view superseded by later work) (not supported by the evidence)",
+        "Connections exist only on trivial bundles (true only as a special case, not in general) (a frequently-taught but incorrect simplification) (inconsistent with standard results in the field)"
       ],
       "correct": 0,
       "explanation": "A connection splits each tangent space of the total bundle into vertical (along the fibre) and horizontal parts, defining covariant differentiation $D = d + A$. The curvature 2-form $F = dA + A\\wedge A$ measures the failure of horizontal lifts to close up — i.e. the holonomy around an infinitesimal loop. For abelian $U(1)$ the nonlinear term drops and $F = dA$ (electromagnetism); for non-abelian $G$ the $A\\wedge A$ term gives gluon/W self-interactions. The Bianchi identity $DF = 0$ holds automatically. Under gauge transformations $A\\to gAg^{-1} + g\\,dg^{-1}$, $F$ transforms covariantly. This is precisely Yang-Mills geometry."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "Even where the magnetic field $\\mathbf B = 0$, a charged particle's wavefunction picks up a phase $\\exp(iq\\oint A\\cdot dl/\\hbar)$ around a solenoid — holonomy of the $U(1)$ connection. The potential $A$ is physical (its integral), and the effect detects nontrivial bundle/cohomology even with vanishing local field",
-        "The effect requires nonzero magnetic field along the path (contradicted by both lattice simulations and dispersive analyses) (ruled out by experimental constraints from collider and low-energy data)",
-        "It shows the vector potential is unphysical (not consistent with the operator product expansion at large momentum) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "It has no connection to fibre bundles (would imply unphysical infinite or negative observables) (violates basic gauge invariance and Lorentz covariance requirements)"
+        "The effect requires nonzero magnetic field along the path (this conflates cause and effect) (this describes a different phenomenon) (an outdated view superseded by later work)",
+        "It shows the vector potential is unphysical (this confuses two distinct concepts) (a frequently-taught but incorrect simplification) (true only as a special case, not in general)",
+        "It has no connection to fibre bundles (inconsistent with standard results in the field) (a common misconception) (not supported by the evidence) (this reverses the actual relationship)"
       ],
       "correct": 0,
       "explanation": "Aharonov-Bohm (1959): electrons passing on either side of a confined magnetic flux show an interference shift $\\Delta\\phi = q\\Phi/\\hbar$, despite $\\mathbf B = 0$ along their paths. Geometrically the phase is the holonomy of the electromagnetic $U(1)$ connection around the flux — a Berry/Wilson-loop phase. It demonstrates that the gauge potential carries physical, gauge-invariant information through its loop integral, and that the configuration space (plane minus a line) has nontrivial topology ($\\pi_1 = \\mathbb Z$). The flux is quantised in units of $h/q$ for the phase to be single-valued on a closed surface — the seed of Dirac's monopole quantisation and flux quantisation in superconductors ($h/2e$)."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "A magnetic monopole corresponds to a nontrivial $U(1)$ bundle over $S^2$ (first Chern number $\\neq 0$); requiring the wavefunction to be single-valued (consistency of the two hemispheres' gauge patches) forces $eg = 2\\pi n\\hbar$ — Dirac quantisation, so a single monopole would explain electric charge quantisation",
-        "Monopoles require no quantisation condition (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "The bundle over $S^2$ is always trivial (would imply unphysical infinite or negative observables) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "Dirac quantisation forbids monopoles entirely (would conflict with renormalisation group flow and cross-section data) (unsupported by perturbative expansions in the coupling)"
+        "Monopoles require no quantisation condition (this confuses two distinct concepts) (true only as a special case, not in general) (a frequently-taught but incorrect simplification)",
+        "The bundle over $S^2$ is always trivial (not supported by the evidence) (a common misconception) (this reverses the actual relationship) (inconsistent with standard results in the field)",
+        "Dirac quantisation forbids monopoles entirely (an outdated view superseded by later work) (this conflates cause and effect) (this describes a different phenomenon)"
       ],
       "correct": 0,
       "explanation": "A monopole's field cannot come from a globally smooth vector potential (a single $A$ would have a Dirac string). Instead, cover the surrounding $S^2$ with two patches (north/south), each with its own $A$, related by a $U(1)$ gauge transformation on the overlap. Consistency of the electron's phase ($e^{ie\\chi/\\hbar}$ single-valued) on the equator forces the Dirac quantisation $eg = 2\\pi n\\hbar$ ($n\\in\\mathbb Z$). Geometrically, $n$ is the first Chern number of the $U(1)$ bundle over $S^2$ — the monopole is a topological object. Dirac's insight: the mere existence of one monopole would quantise all electric charge. Magnetic monopoles also arise as smooth solitons ('t Hooft-Polyakov) in non-abelian GUTs."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "A finite-action, (anti-)self-dual ($F = \\pm\\star F$) solution of Euclidean Yang-Mills; classified by the integer second Chern number (topological charge) $Q = (1/8\\pi^2)\\int \\mathrm{tr}(F\\wedge F)\\in\\mathbb Z$ counting the bundle's twisting — mediates tunnelling between gauge vacua and the QCD theta-vacuum",
-        "An instanton is a static classical particle with no topology (would imply unphysical infinite or negative observables) (historically considered but disfavoured by modern QFT analyses)",
-        "Instanton number is always zero (violates basic gauge invariance and Lorentz covariance requirements) (contradicted by both lattice simulations and dispersive analyses)",
-        "Instantons exist only in abelian theories (unsupported by perturbative expansions in the coupling) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+        "An instanton is a static classical particle with no topology (a frequently-taught but incorrect simplification) (inconsistent with standard results in the field)",
+        "Instanton number is always zero (true only as a special case, not in general) (this conflates cause and effect) (this reverses the actual relationship) (this confuses two distinct concepts)",
+        "Instantons exist only in abelian theories (a common misconception) (not supported by the evidence) (this describes a different phenomenon) (an outdated view superseded by later work)"
       ],
       "correct": 0,
       "explanation": "Instantons (Belavin-Polyakov-Schwartz-Tyupkin 1975) are localised-in-Euclidean-time solutions of the Yang-Mills equations that minimise action within a topological sector. Self-duality $F = \\star F$ makes them solve the second-order equations automatically (Bogomolny bound saturated). The instanton number $Q = (1/8\\pi^2)\\int\\mathrm{tr}(F\\wedge F)$ is the second Chern number, an integer measuring how the gauge bundle wraps $S^4$ ($\\pi_3(G) = \\mathbb Z$ for simple $G$). Physically instantons mediate tunnelling between topologically distinct vacua, generating the QCD $\\theta$-term and the $U(1)_A$ anomaly ($\\eta'$ mass), and they underlie the strong-CP problem. Mathematically, instanton moduli spaces gave Donaldson's revolutionary 4-manifold invariants."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "Adiabatically varying parameters carries a quantum state around a loop in parameter space; the geometric phase is the holonomy of a natural $U(1)$ (Berry) connection on the line bundle of states, with Berry curvature as field strength. Degeneracies act as monopoles (Chern numbers count them)",
-        "The Berry phase is a dynamical phase with no geometric content (would imply unphysical infinite or negative observables) (contradicted by both lattice simulations and dispersive analyses)",
-        "It is unrelated to connections or curvature (violates basic gauge invariance and Lorentz covariance requirements) (unsupported by perturbative expansions in the coupling)",
-        "It exists only in classical mechanics (ruled out by experimental constraints from collider and low-energy data) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+        "The Berry phase is a dynamical phase with no geometric content (a frequently-taught but incorrect simplification) (this conflates cause and effect)",
+        "It is unrelated to connections or curvature (true only as a special case, not in general) (this reverses the actual relationship) (this describes a different phenomenon)",
+        "It exists only in classical mechanics (not supported by the evidence) (this confuses two distinct concepts) (a common misconception) (inconsistent with standard results in the field)"
       ],
       "correct": 0,
       "explanation": "Berry (1984), recast geometrically by Simon: the adiabatic theorem leaves a residual geometric phase equal to the holonomy of the Berry connection $A_n = i\\langle n|\\nabla_R|n\\rangle$ on the bundle of eigenstates over parameter space. The Berry curvature $F = dA$ integrates to a Chern number over closed parameter surfaces; points of level degeneracy are monopole sources of Berry curvature (the classic spin-in-a-field gives a monopole at $\\mathbf B = 0$). This unifies the Aharonov-Bohm effect, the quantum Hall conductance (Chern number = TKNN integer), molecular Born-Oppenheimer phases, and topological band theory — all instances of bundle holonomy. The non-abelian generalisation (Wilczek-Zee) governs degenerate adiabatic transport and non-abelian anyons."

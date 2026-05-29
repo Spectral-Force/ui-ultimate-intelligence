@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "At an interface between media, $n_1\\sin\\theta_1 = n_2\\sin\\theta_2$, where $n$ is the refractive index and angles are measured from the normal; light bends toward the normal entering a denser medium, and total internal reflection occurs beyond the critical angle",
-        "$n_1\\cos\\theta_1 = n_2\\cos\\theta_2$ (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would imply unphysical infinite or negative observables)",
-        "$\\sin\\theta_1/\\sin\\theta_2 = n_1 n_2$ (ruled out by experimental constraints from collider and low-energy data) (contradicted by both lattice simulations and dispersive analyses)",
-        "Light travels in straight lines through all interfaces unchanged (would conflict with renormalisation group flow and cross-section data)"
+        "$n_1\\cos\\theta_1 = n_2\\cos\\theta_2$ (this confuses two distinct concepts) (a frequently-taught but incorrect simplification) (this describes a different phenomenon)",
+        "$\\sin\\theta_1/\\sin\\theta_2 = n_1 n_2$ (this conflates cause and effect) (a common misconception) (this reverses the actual relationship)",
+        "Light travels in straight lines through all interfaces unchanged (true only as a special case, not in general) (inconsistent with standard results in the field)"
       ],
       "correct": 0,
       "explanation": "Snell's law (Snellius, 1621) governs refraction: $n_1\\sin\\theta_1=n_2\\sin\\theta_2$, with refractive index $n=c/v$ (ratio of light speed in vacuum to that in the medium). Light entering a denser medium ($n_2>n_1$) slows and bends toward the normal. It follows from Fermat's principle of least time and from the continuity of the wavefront (matching the tangential wavevector) at the boundary. Consequences: lenses and prisms (dispersion, since $n$ varies with wavelength, splits white light); total internal reflection when light tries to leave a denser medium beyond the critical angle $\\theta_c=\\arcsin(n_2/n_1)$ — the basis of optical fibres, prisms in binoculars, and the sparkle of diamonds; and apparent bending of submerged objects. Snell's law is foundational to all of geometric optics and lens design."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "$n\\lambda = 2d\\sin\\theta$: X-rays (or neutrons/electrons) scattered from successive crystal planes spaced $d$ interfere constructively at angles satisfying this condition, enabling determination of crystal and molecular structure (X-ray crystallography)",
-        "$n\\lambda = d\\cos\\theta$, with no factor of 2 (not consistent with the operator product expansion at large momentum) (ruled out by experimental constraints from collider and low-energy data)",
-        "Diffraction occurs at all angles equally (violates basic gauge invariance and Lorentz covariance requirements) (would imply unphysical infinite or negative observables)",
-        "Bragg's law applies only to visible light (historically considered but disfavoured by modern QFT analyses) (unsupported by perturbative expansions in the coupling)"
+        "$n\\lambda = d\\cos\\theta$, with no factor of 2 (an outdated view superseded by later work) (this describes a different phenomenon)",
+        "Diffraction occurs at all angles equally (true only as a special case, not in general) (a frequently-taught but incorrect simplification)",
+        "Bragg's law applies only to visible light (inconsistent with standard results in the field) (this reverses the actual relationship)"
       ],
       "correct": 0,
       "explanation": "Bragg's law (W.L. and W.H. Bragg, 1913, Nobel 1915) is the condition for constructive interference of waves reflected from parallel lattice planes: the path difference between reflections from adjacent planes ($2d\\sin\\theta$) must equal an integer number of wavelengths, $n\\lambda=2d\\sin\\theta$. Because X-ray wavelengths (~0.1 nm) match interatomic spacings, X-ray diffraction reveals crystal structure from the pattern of Bragg peaks — the foundation of X-ray crystallography, which has determined the structures of minerals, metals, DNA (Franklin, Watson-Crick), proteins, and countless materials. The same principle works with neutrons (sensitive to light atoms and magnetism) and electrons. In reciprocal space, Bragg's law is equivalent to the Laue condition ($\\Delta\\mathbf k=\\mathbf G$, a reciprocal-lattice vector) and the Ewald-sphere construction. It is indispensable across solid-state physics, chemistry, mineralogy, and structural biology, and underlies techniques from powder diffraction to protein crystallography."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "Huygens: every point on a wavefront acts as a source of secondary spherical wavelets, and the new wavefront is their envelope — explaining propagation, reflection, refraction, and diffraction. Fermat: light travels the path of stationary (usually least) optical path length / time",
-        "Light travels the path of maximum time (ruled out by experimental constraints from collider and low-energy data) (contradicted by both lattice simulations and dispersive analyses)",
-        "Wavefronts cannot be reconstructed from wavelets (not consistent with the operator product expansion at large momentum) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "These principles contradict each other (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (unsupported by perturbative expansions in the coupling)"
+        "Light travels the path of maximum time (this describes a different phenomenon) (this conflates cause and effect) (an outdated view superseded by later work)",
+        "Wavefronts cannot be reconstructed from wavelets (true only as a special case, not in general) (this confuses two distinct concepts) (this reverses the actual relationship)",
+        "These principles contradict each other (a common misconception) (inconsistent with standard results in the field) (a frequently-taught but incorrect simplification)"
       ],
       "correct": 0,
       "explanation": "Two complementary foundational principles of wave/geometric optics. Huygens' principle (1678) constructs wave propagation geometrically: treat each point of a wavefront as a secondary point source emitting spherical wavelets; the envelope of these wavelets a moment later is the new wavefront. It naturally explains reflection, refraction (slower wavelets in a denser medium bend the front — giving Snell's law), and diffraction around obstacles (Huygens-Fresnel, adding interference of the wavelets). Fermat's principle (1662) is variational: light follows the path for which the optical path length $\\int n\\,ds$ (hence travel time) is stationary — a least-time principle that derives the laws of reflection (equal angles) and refraction (Snell's law) and is the optical analogue of the principle of least action in mechanics. Together they bridge the ray and wave pictures and anticipate the path-integral viewpoint, where light 'explores all paths' and the stationary one dominates by constructive interference."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "Relative motion between source and observer shifts the observed frequency: approaching raises it (blueshift), receding lowers it (redshift); for sound $f' = f(v\\pm v_o)/(v\\mp v_s)$, and for light the relativistic Doppler formula applies, underpinning radar, astronomy, and medical ultrasound",
-        "Frequency is unchanged by relative motion (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (ruled out by experimental constraints from collider and low-energy data)",
-        "Only the wave amplitude changes, not frequency (disagrees with the standard textbook treatment in Peskin-Schroeder) (historically considered but disfavoured by modern QFT analyses)",
-        "The effect occurs only for light, never sound (would imply unphysical infinite or negative observables) (contradicted by both lattice simulations and dispersive analyses)"
+        "Frequency is unchanged by relative motion (this confuses two distinct concepts) (this describes a different phenomenon) (not supported by the evidence)",
+        "Only the wave amplitude changes, not frequency (inconsistent with standard results in the field) (a frequently-taught but incorrect simplification)",
+        "The effect occurs only for light, never sound (this conflates cause and effect) (an outdated view superseded by later work) (a common misconception)"
       ],
       "correct": 0,
       "explanation": "The Doppler effect (Doppler, 1842) is the change in observed wave frequency due to relative motion between source and observer. For sound (and other waves in a medium) the shift depends separately on source and observer velocities relative to the medium: $f'=f(v\\pm v_o)/(v\\mp v_s)$, raising pitch on approach and lowering it on recession (the classic passing-siren effect). For light there is no medium, and the relativistic Doppler formula $f'=f\\sqrt{(1+\\beta)/(1-\\beta)}$ (radial) plus a transverse time-dilation shift applies, depending only on relative velocity. Applications are vast: astronomical redshifts revealing cosmic expansion (Hubble's law) and exoplanet detection (radial-velocity wobble); Doppler radar for weather and speed enforcement; Doppler ultrasound for blood flow; and laser Doppler/cooling techniques. A related effect, the Doppler broadening of spectral lines, encodes the thermal velocity distribution (temperature) of emitting atoms."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "Light intensity decreases exponentially with path length through an absorbing medium: $I = I_0 e^{-\\alpha \\ell}$ (or $A = \\varepsilon c \\ell$ in terms of absorbance), with absorption coefficient proportional to concentration — the basis of spectrophotometry and chemical concentration measurement",
-        "Intensity decreases linearly with distance (contradicted by both lattice simulations and dispersive analyses) (ruled out by experimental constraints from collider and low-energy data)",
-        "Absorption is independent of concentration (would conflict with renormalisation group flow and cross-section data) (would imply unphysical infinite or negative observables)",
-        "Light intensity grows with path length (unsupported by perturbative expansions in the coupling) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+        "Intensity decreases linearly with distance (this conflates cause and effect) (this describes a different phenomenon) (a common misconception) (a frequently-taught but incorrect simplification)",
+        "Absorption is independent of concentration (this reverses the actual relationship) (not supported by the evidence) (an outdated view superseded by later work)",
+        "Light intensity grows with path length (true only as a special case, not in general) (inconsistent with standard results in the field) (this confuses two distinct concepts)"
       ],
       "correct": 0,
       "explanation": "The Beer-Lambert law describes attenuation of light passing through an absorbing medium: each thin layer absorbs a fixed fraction, so intensity falls exponentially with path length, $I=I_0 e^{-\\alpha\\ell}$. Expressed logarithmically, the absorbance $A=\\log_{10}(I_0/I)=\\varepsilon c\\ell$ is proportional to the molar absorptivity $\\varepsilon$, the concentration $c$, and the path length $\\ell$ (Beer's contribution: linear in concentration). This linear relation between absorbance and concentration makes it the workhorse of analytical chemistry and biochemistry: UV-Vis spectrophotometry quantifies solute concentrations, colorimetric assays measure reaction products, and the law underlies pulse oximetry, atmospheric remote sensing, and optical attenuation in fibres. Deviations occur at high concentration (molecular interactions, refractive-index changes) or with non-monochromatic light and scattering. It is the optical analogue of exponential attenuation seen in radiation shielding and is fundamental to spectroscopy and quantitative optical measurement."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "Diffraction limits the resolution of any imaging system: two point sources are just resolvable when the central maximum of one's Airy/diffraction pattern falls on the first minimum of the other, giving angular resolution $\\theta \\approx 1.22\\lambda/D$ (circular aperture diameter $D$)",
-        "Resolution is unlimited for any lens (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "Resolution improves with longer wavelength (would conflict with renormalisation group flow and cross-section data) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "The criterion applies only to sound waves (would imply unphysical infinite or negative observables) (unsupported by perturbative expansions in the coupling)"
+        "Resolution is unlimited for any lens (this confuses two distinct concepts) (true only as a special case, not in general) (a common misconception)",
+        "Resolution improves with longer wavelength (not supported by the evidence) (a frequently-taught but incorrect simplification) (this reverses the actual relationship)",
+        "The criterion applies only to sound waves (inconsistent with standard results in the field) (this describes a different phenomenon) (this conflates cause and effect)"
       ],
       "correct": 0,
       "explanation": "Because light is a wave, even a perfect lens cannot focus it to a point: a circular aperture produces an Airy diffraction pattern, setting a fundamental resolution limit. The Rayleigh criterion states that two equal point sources are 'just resolved' when the peak of one Airy disk coincides with the first dark ring of the other, giving minimum resolvable angular separation $\\theta\\approx1.22\\lambda/D$ (aperture diameter $D$), or spatial resolution $\\sim\\lambda/(2\\,\\mathrm{NA})$ (Abbe limit, numerical aperture NA) for a microscope. Consequences: telescopes need large apertures (or interferometry, like the Event Horizon Telescope) for fine angular resolution; microscopes use short-wavelength light, oil immersion, or electrons to see smaller features; the diffraction limit motivated electron and X-ray microscopy. Modern 'super-resolution' techniques (STED, PALM/STORM, structured illumination; Nobel 2014) cleverly circumvent the far-field diffraction limit using fluorescence photophysics, and near-field/scanning probes beat it by avoiding far-field propagation altogether. The diffraction limit is a universal wave phenomenon, applying equally to sound, radio, and matter waves."

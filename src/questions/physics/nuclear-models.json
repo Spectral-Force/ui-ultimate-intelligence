@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "Nucleons fill quantised energy levels in an average central potential (Woods-Saxon + strong spin-orbit term); the spin-orbit coupling reorders levels to reproduce the magic numbers 2, 8, 20, 28, 50, 82, 126 and predicts ground-state spins/parities of many nuclei",
-        "Nucleons are treated as a structureless classical fluid only (ruled out by experimental constraints from collider and low-energy data)",
-        "It ignores the Pauli principle (disagrees with the standard textbook treatment in Peskin-Schroeder) (contradicted by both lattice simulations and dispersive analyses)",
-        "Nucleons orbit a heavy central core like planets around the Sun (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+        "Nucleons are treated as a structureless classical fluid only (this describes a different phenomenon) (not supported by the evidence)",
+        "It ignores the Pauli principle (this conflates cause and effect) (this confuses two distinct concepts) (this reverses the actual relationship)",
+        "Nucleons orbit a heavy central core like planets around the Sun (an outdated view superseded by later work) (inconsistent with standard results in the field)"
       ],
       "correct": 0,
       "explanation": "Goeppert-Mayer and Jensen (Nobel 1963) explained the magic numbers by adding a strong attractive spin-orbit interaction $\\propto \\mathbf l\\cdot\\mathbf s$ to the mean-field potential. This splits levels of given $l$ into $j = l\\pm 1/2$, pushing high-$j$ orbitals down across major gaps and reproducing the observed shell closures (which a harmonic-oscillator or square-well potential alone could not). The model predicts ground-state spin-parity (from the last unpaired nucleon), magnetic moments (Schmidt lines), and low-lying excitations. It complements the collective (liquid-drop) view: shell model for single-particle structure near closed shells, collective model for deformed/rotational nuclei."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "Nuclei away from closed shells deform (often prolate); collective rotations give rotational bands with $E_J \\propto J(J+1)$, and surface vibrations give phonon excitations; large electric quadrupole moments signal static deformation",
-        "All nuclei are perfectly spherical with no collective motion (historically considered but disfavoured by modern QFT analyses)",
-        "Deformation increases binding without limit (ruled out by experimental constraints from collider and low-energy data)",
-        "Collective motion violates angular momentum conservation (contradicted by both lattice simulations and dispersive analyses)"
+        "All nuclei are perfectly spherical with no collective motion (inconsistent with standard results in the field) (this describes a different phenomenon)",
+        "Deformation increases binding without limit (this conflates cause and effect) (an outdated view superseded by later work)",
+        "Collective motion violates angular momentum conservation (a frequently-taught but incorrect simplification) (not supported by the evidence)"
       ],
       "correct": 0,
       "explanation": "Between magic numbers, many valence nucleons drive a static quadrupole deformation (Bohr-Mottelson collective model, Nobel 1975). A deformed nucleus can rotate collectively, producing rotational bands with energies $E_J = (\\hbar^2/2\\mathcal I)J(J+1)$ (the $J(J+1)$ signature, with moment of inertia $\\mathcal I$ smaller than rigid-body, reflecting superfluid pairing). Vibrational nuclei show equally-spaced phonon multiplets. Large intrinsic quadrupole moments and strong E2 transitions ($B(E2)$) are experimental fingerprints. Phenomena: superdeformed bands, backbending (pair breaking at high spin), shape coexistence. The interacting boson model and Nilsson model give microscopic-to-collective bridges."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "Treating protons and neutrons as independent degenerate Fermi gases in a box gives a Fermi energy $\\sim 38$ MeV and Fermi momentum $\\sim 250$ MeV/c; it explains the asymmetry (symmetry-energy) term and the rough level density, with nucleons filling states up to $E_F$",
-        "Nucleons are a classical ideal gas at room temperature (violates basic gauge invariance and Lorentz covariance requirements) (would conflict with renormalisation group flow and cross-section data)",
-        "All nucleons occupy the lowest single state (disagrees with the standard textbook treatment in Peskin-Schroeder) (contradicted by both lattice simulations and dispersive analyses)",
-        "The model predicts nuclei are unbound (historically considered but disfavoured by modern QFT analyses) (ruled out by experimental constraints from collider and low-energy data)"
+        "Nucleons are a classical ideal gas at room temperature (true only as a special case, not in general) (a common misconception) (not supported by the evidence)",
+        "All nucleons occupy the lowest single state (this conflates cause and effect) (inconsistent with standard results in the field) (this describes a different phenomenon)",
+        "The model predicts nuclei are unbound (a frequently-taught but incorrect simplification) (this confuses two distinct concepts) (an outdated view superseded by later work)"
       ],
       "correct": 0,
       "explanation": "Because nucleons are spin-1/2 fermions obeying the Pauli principle, at the relevant densities they form a highly degenerate gas filling momentum states up to the Fermi momentum $k_F \\approx 1.3$ fm$^{-1}$ ($p_F \\sim 250$ MeV/c, $E_F \\sim 38$ MeV). This 'Fermi motion' is directly observed in quasi-elastic electron scattering. The model neatly explains the asymmetry term of the mass formula: unequal $N$ and $Z$ force the larger species into higher momentum states, costing energy $\\propto (N-Z)^2/A$. It also gives nuclear-matter level densities and incompressibility estimates. It is the nuclear analogue of the electron gas in metals, and its relativistic, dense extension describes neutron-star matter."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "A short-range attractive correlation that binds like nucleons into $J=0$ pairs (BCS-like condensation); it produces the even-even/odd staggering in binding energies, an energy gap, reduced moments of inertia (nuclear superfluidity), and underlies the pairing term of the mass formula",
-        "A repulsive effect that destabilises nuclei (would conflict with renormalisation group flow and cross-section data) (ruled out by experimental constraints from collider and low-energy data)",
-        "An electromagnetic effect between protons only (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (contradicted by both lattice simulations and dispersive analyses)",
-        "It has no observable consequences (historically considered but disfavoured by modern QFT analyses) (unsupported by perturbative expansions in the coupling)"
+        "A repulsive effect that destabilises nuclei (a common misconception) (this describes a different phenomenon) (this confuses two distinct concepts)",
+        "An electromagnetic effect between protons only (this conflates cause and effect) (inconsistent with standard results in the field) (this reverses the actual relationship)",
+        "It has no observable consequences (an outdated view superseded by later work) (not supported by the evidence) (a frequently-taught but incorrect simplification)"
       ],
       "correct": 0,
       "explanation": "Nucleons near the Fermi surface form correlated $J^\\pi = 0^+$ pairs, exactly analogous to Cooper pairs in superconductors (BCS theory was applied to nuclei by Bohr, Mottelson, Pines). Consequences: even-even nuclei are more bound than neighbouring odd nuclei (the pairing term $\\delta$ in the mass formula and odd-even mass staggering); a pairing gap $\\Delta \\sim 1$ MeV appears in the excitation spectrum; the nuclear moment of inertia is well below the rigid-body value (superfluid behaviour), explaining rotational-band energies and the 'backbending' when rotation breaks a pair. Pairing is essential for fission dynamics, beta-decay rates, and the structure of neutron-star crusts."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "Solve the nuclear many-body problem directly from realistic two- and three-nucleon forces (derived from chiral effective field theory rooted in QCD symmetries) using controlled methods (no-core shell model, coupled cluster, Monte Carlo, in-medium SRG), predicting nuclei with quantified uncertainties",
-        "Fit every nucleus with free parameters and no underlying force (ruled out by experimental constraints from collider and low-energy data) (historically considered but disfavoured by modern QFT analyses)",
-        "Ignore three-nucleon forces entirely (disagrees with the standard textbook treatment in Peskin-Schroeder) (would imply unphysical infinite or negative observables)",
-        "Use only the classical liquid-drop model (violates basic gauge invariance and Lorentz covariance requirements) (not consistent with the operator product expansion at large momentum)"
+        "Fit every nucleus with free parameters and no underlying force (this describes a different phenomenon) (inconsistent with standard results in the field)",
+        "Ignore three-nucleon forces entirely (not supported by the evidence) (a frequently-taught but incorrect simplification) (true only as a special case, not in general)",
+        "Use only the classical liquid-drop model (an outdated view superseded by later work) (a common misconception) (this reverses the actual relationship) (this confuses two distinct concepts)"
       ],
       "correct": 0,
       "explanation": "Ab-initio nuclear theory aims to compute nuclear properties from first principles: start with nucleon-nucleon and three-nucleon interactions constructed via chiral effective field theory (a systematic expansion respecting QCD's chiral symmetry, with pion exchanges and contact terms fit to few-body data), then solve the Schrodinger equation with rigorous many-body methods. Techniques include the no-core shell model, quantum Monte Carlo (Green's function / auxiliary field), coupled-cluster theory, the in-medium similarity renormalisation group, and lattice EFT. Three-nucleon forces prove essential (e.g. for the oxygen drip line and saturation). The goal: predictive nuclear structure and reactions with theoretical error bars, connecting QCD to nuclei, and extrapolating reliably to the exotic isotopes and dense matter relevant for astrophysics."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "Collective high-energy excitations (~10-30 MeV) where many nucleons oscillate coherently — e.g. the Giant Dipole Resonance (protons vs neutrons sloshing out of phase), and monopole ('breathing', probing incompressibility) and quadrupole modes; they exhaust large fractions of energy-weighted sum rules",
-        "Single-particle excitations at very low energy (disagrees with the standard textbook treatment in Peskin-Schroeder) (not consistent with the operator product expansion at large momentum)",
-        "Rotational bands of deformed nuclei (would conflict with renormalisation group flow and cross-section data) (unsupported by perturbative expansions in the coupling)",
-        "Electronic transitions in the atom (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (ruled out by experimental constraints from collider and low-energy data)"
+        "Single-particle excitations at very low energy (not supported by the evidence) (an outdated view superseded by later work) (a common misconception) (this reverses the actual relationship)",
+        "Rotational bands of deformed nuclei (this confuses two distinct concepts) (this describes a different phenomenon) (this conflates cause and effect) (true only as a special case, not in general)",
+        "Electronic transitions in the atom (inconsistent with standard results in the field) (a frequently-taught but incorrect simplification) (not supported by the evidence)"
       ],
       "correct": 0,
       "explanation": "Giant resonances are the nucleus's collective 'normal modes'. The Isovector Giant Dipole Resonance (GDR, ~$78 A^{-1/3}$ MeV) is a coherent oscillation of all protons against all neutrons, dominating the photoabsorption cross-section and nearly saturating the Thomas-Reiche-Kuhn dipole sum rule. The Isoscalar Giant Monopole Resonance (the 'breathing mode') compresses and expands the whole nucleus, directly probing the nuclear incompressibility $K \\approx 230$ MeV — a key input to the equation of state of dense matter and neutron stars. Giant quadrupole and higher-multipole, plus spin-isospin (Gamow-Teller) resonances, round out the spectrum. They are studied via photoabsorption, inelastic scattering, and charge-exchange reactions, and test the collective response and symmetry energy of nuclear matter."

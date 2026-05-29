@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "Flavour eigenstates ($\\nu_e, \\nu_\\mu, \\nu_\\tau$) produced/detected in weak interactions are superpositions of mass eigenstates ($\\nu_1, \\nu_2, \\nu_3$): $|\\nu_\\alpha\\rangle = \\sum_i U_{\\alpha i}|\\nu_i\\rangle$ via PMNS matrix; mass eigenstates propagate with different phases $e^{-iE_it}$; oscillation probability $P(\\nu_\\alpha \\to \\nu_\\beta) \\propto \\sin^2(\\Delta m_{ij}^2 L/4E)$ — requires $\\Delta m^2 \\neq 0$",
-        "Neutrinos oscillate even when massless via QCD effects (unsupported by perturbative expansions in the coupling) (disagrees with the standard textbook treatment in Peskin-Schroeder) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "Oscillations come from interactions with matter only (historically considered but disfavoured by modern QFT analyses) (violates basic gauge invariance and Lorentz covariance requirements) (would conflict with renormalisation group flow and cross-section data)",
-        "$P(\\nu_e \\to \\nu_\\mu) = 1/3$ democratically, independent of energy (would imply unphysical infinite or negative observables) (ruled out by experimental constraints from collider and low-energy data) (contradicted by both lattice simulations and dispersive analyses)"
+        "Neutrinos oscillate even when massless via QCD effects (this reverses the actual relationship) (not supported by the evidence) (this confuses two distinct concepts) (inconsistent with standard results in the field)",
+        "Oscillations come from interactions with matter only (true only as a special case, not in general) (a common misconception) (a frequently-taught but incorrect simplification) (this describes a different phenomenon)",
+        "$P(\\nu_e \\to \\nu_\\mu) = 1/3$ democratically, independent of energy (this conflates cause and effect) (an outdated view superseded by later work) (this reverses the actual relationship) (not supported by the evidence)"
       ],
       "correct": 0,
       "explanation": "Two-flavour picture: $|\\nu_e\\rangle = \\cos\\theta|\\nu_1\\rangle + \\sin\\theta|\\nu_2\\rangle$, $|\\nu_\\mu\\rangle = -\\sin\\theta|\\nu_1\\rangle + \\cos\\theta|\\nu_2\\rangle$. Time evolution: phases $e^{-iE_1 t}, e^{-iE_2 t}$ with $E_i = \\sqrt{p^2 + m_i^2} \\approx p + m_i^2/2p$. Probability: $P(\\nu_e \\to \\nu_\\mu, t) = \\sin^2(2\\theta)\\sin^2(\\Delta m^2 L/4E)$ with $L = ct$, $\\Delta m^2 = m_2^2 - m_1^2$. Oscillation impossible if $\\Delta m^2 = 0$. Discoveries: solar (Davis, Kamiokande, SNO); atmospheric (Super-K 1998); reactor (KamLAND); accelerator (K2K, MINOS, T2K, NOvA). Nobel 2015 (Kajita + McDonald)."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "Coherent forward scattering of $\\nu_e$ on electrons via $W$ exchange adds energy $V_{CC} = \\sqrt 2 G_F n_e$ (charged-current potential); modifies effective Hamiltonian, leading to resonance when $V_{CC} \\approx \\Delta m^2\\cos 2\\theta/(2E)$; produces nearly complete $\\nu_e \\to \\nu_\\mu/\\nu_\\tau$ conversion adiabatically as $\\nu$ traverses solar density gradient — solves solar neutrino problem",
-        "Matter only attenuates neutrino flux, no oscillation modification (historically considered but disfavoured by modern QFT analyses) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "Matter induces oscillations even with $\\Delta m^2 = 0$ (contradicted by both lattice simulations and dispersive analyses) (would conflict with renormalisation group flow and cross-section data) (unsupported by perturbative expansions in the coupling)",
-        "MSW = vacuum oscillation in disguise; no real matter effect (would imply unphysical infinite or negative observables) (not consistent with the operator product expansion at large momentum) (ruled out by experimental constraints from collider and low-energy data)"
+        "Matter only attenuates neutrino flux, no oscillation modification (inconsistent with standard results in the field) (true only as a special case, not in general) (this conflates cause and effect) (a common misconception)",
+        "Matter induces oscillations even with $\\Delta m^2 = 0$ (this reverses the actual relationship) (a frequently-taught but incorrect simplification) (an outdated view superseded by later work) (this describes a different phenomenon)",
+        "MSW = vacuum oscillation in disguise; no real matter effect (this confuses two distinct concepts) (not supported by the evidence) (inconsistent with standard results in the field) (true only as a special case, not in general)"
       ],
       "correct": 0,
       "explanation": "Mikheyev-Smirnov-Wolfenstein (1985): in matter, $\\nu_e$ acquires extra potential $V_{CC} = \\sqrt 2 G_F n_e$ from coherent $W$ exchange with electrons (other flavours: only $Z$, which is flavour-universal and cancels in oscillation). Effective Hamiltonian eigenvalues mix angle $\\theta_M$ at electron density $n_e$. Resonance: $V_{CC} = (\\Delta m^2/2E)\\cos 2\\theta$ — maximal mixing in matter even if vacuum mixing small. In Sun: produced as $\\nu_e$ in core (high density), exits as predominantly $\\nu_2$ mass eigenstate after MSW conversion. SNO (2001): measured all 3 flavours, confirmed total flux matches solar model — $\\sim 1/3$ as $\\nu_e$, $\\sim 2/3$ as $\\nu_\\mu + \\nu_\\tau$. Solved solar neutrino problem (40 years standing)."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "Dirac: $\\nu \\neq \\bar\\nu$, lepton number conserved, mass from Yukawa $y_\\nu \\bar L\\tilde\\Phi\\nu_R$ (need RH neutrino, tiny Yukawa); Majorana: $\\nu = \\bar\\nu$, lepton number violated by 2 units, mass from $\\bar\\nu_L^c \\nu_L$ allowed only if $\\nu_L = \\nu_L^c$. Test: neutrinoless double beta decay $0\\nu\\beta\\beta$ — observed iff Majorana",
-        "Dirac and Majorana are mathematically equivalent (contradicted by both lattice simulations and dispersive analyses) (not consistent with the operator product expansion at large momentum)",
-        "Majorana mass forbidden by Lorentz invariance (ruled out by experimental constraints from collider and low-energy data) (unsupported by perturbative expansions in the coupling)",
-        "Test: number of neutrino species at Z pole determines it (disagrees with the standard textbook treatment in Peskin-Schroeder) (violates basic gauge invariance and Lorentz covariance requirements)"
+        "Dirac and Majorana are mathematically equivalent (this conflates cause and effect) (an outdated view superseded by later work) (this describes a different phenomenon) (this reverses the actual relationship)",
+        "Majorana mass forbidden by Lorentz invariance (not supported by the evidence) (true only as a special case, not in general) (inconsistent with standard results in the field)",
+        "Test: number of neutrino species at Z pole determines it (a common misconception) (this confuses two distinct concepts) (a frequently-taught but incorrect simplification)"
       ],
       "correct": 0,
       "explanation": "For charged fermions: Dirac mass $m\\bar\\psi\\psi$ unique because $\\psi$ has charge → $\\psi \\neq \\psi^c$. For neutral neutrinos: Majorana mass $(m_M/2)\\bar\\nu_L^c\\nu_L + \\text{h.c.}$ allowed if no conserved charge. Implications: Majorana violates lepton number $L$ by 2 (sign of BSM); see-saw naturally gives Majorana light neutrinos. Tests: (i) $0\\nu\\beta\\beta$: $(A, Z) \\to (A, Z+2) + 2e^-$ (no neutrinos in final state), rate $\\propto |m_{\\beta\\beta}|^2 = |\\sum_i U_{ei}^2 m_i|^2$ — searched by GERDA, KamLAND-Zen, EXO, CUORE; current bounds $|m_{\\beta\\beta}| < 0.1$ eV; (ii) cosmology: $\\sum m_\\nu < 0.12$ eV from Planck + LSS; (iii) tritium $\\beta$-decay endpoint (KATRIN): $m_{\\nu_e} < 0.8$ eV. Majorana phases in PMNS matrix not observable in oscillations — would only affect $0\\nu\\beta\\beta$."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "Add heavy right-handed Majorana neutrinos $N_R$ with mass $M_R \\gg v$ and Dirac coupling $y_\\nu v$; integrating out $N_R$ gives effective Majorana mass for light $\\nu$: $m_\\nu \\approx (y_\\nu v)^2/M_R$. Natural smallness: with $y_\\nu \\sim 1$, $M_R \\sim 10^{14}$ GeV → $m_\\nu \\sim 0.05$ eV; ties neutrino mass to GUT-scale physics",
-        "See-saw means neutrinos exchange masses; light becomes heavy and vice versa (historically considered but disfavoured by modern QFT analyses) (contradicted by both lattice simulations and dispersive analyses)",
-        "Requires explicit fine-tuning of $y_\\nu \\sim 10^{-12}$ (ruled out by experimental constraints from collider and low-energy data) (unsupported by perturbative expansions in the coupling)",
-        "Mechanism doesn't work; predicts $m_\\nu \\sim$ GeV (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would imply unphysical infinite or negative observables)"
+        "See-saw means neutrinos exchange masses; light becomes heavy and vice versa (inconsistent with standard results in the field) (this conflates cause and effect) (this describes a different phenomenon)",
+        "Requires explicit fine-tuning of $y_\\nu \\sim 10^{-12}$ (this reverses the actual relationship) (this confuses two distinct concepts) (a frequently-taught but incorrect simplification)",
+        "Mechanism doesn't work; predicts $m_\\nu \\sim$ GeV (true only as a special case, not in general) (an outdated view superseded by later work) (not supported by the evidence)"
       ],
       "correct": 0,
       "explanation": "Type-I see-saw (Minkowski 1977, Gell-Mann-Ramond-Slansky, Yanagida, Mohapatra-Senjanović 1979–80). Mass matrix in $(\\nu_L, N_R)$ basis: $\\begin{pmatrix} 0 & m_D \\\\ m_D & M_R\\end{pmatrix}$ with $m_D = y_\\nu v$. Diagonalise: heavy eigenstate mass $\\approx M_R$, light eigenstate $\\approx -m_D^2/M_R$. With $m_D \\sim 100$ GeV (Yukawa $\\sim 1$), need $M_R \\sim 10^{14}-10^{15}$ GeV → $m_\\nu \\sim 0.01-0.1$ eV. Lower-scale see-saws: $y_\\nu$ small, $M_R \\sim$ TeV (probed at LHC). Variants: type-II (Higgs triplet), type-III (fermion triplet). Bonus: leptogenesis — CP-violating decays of $N_R$ in early universe can generate baryon asymmetry via sphaleron conversion."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "Dirac phase in PMNS matrix; analogous to CKM phase but in leptons. Measured via difference $P(\\nu_\\mu \\to \\nu_e)$ vs $P(\\bar\\nu_\\mu \\to \\bar\\nu_e)$ in long-baseline beams (T2K Japan, NOvA US); current hints favour $\\delta \\sim -\\pi/2$ (near maximal CP violation) but not yet 5$\\sigma$; future DUNE and Hyper-K will resolve",
-        "Leptonic CP violation forbidden by lepton number (would conflict with renormalisation group flow and cross-section data) (historically considered but disfavoured by modern QFT analyses)",
-        "$\\delta_{CP} = 0$ measured to high precision already (unsupported by perturbative expansions in the coupling) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "Same as $\\theta_W$, just renamed (would imply unphysical infinite or negative observables) (ruled out by experimental constraints from collider and low-energy data)"
+        "Leptonic CP violation forbidden by lepton number (a common misconception) (inconsistent with standard results in the field) (this reverses the actual relationship)",
+        "$\\delta_{CP} = 0$ measured to high precision already (this confuses two distinct concepts) (a frequently-taught but incorrect simplification) (this describes a different phenomenon)",
+        "Same as $\\theta_W$, just renamed (this conflates cause and effect) (true only as a special case, not in general) (an outdated view superseded by later work) (not supported by the evidence)"
       ],
       "correct": 0,
       "explanation": "PMNS standard parametrisation has Dirac phase $\\delta$ multiplying $\\sin\\theta_{13}$ terms. CP asymmetry $A_{CP} = (P(\\nu_\\mu \\to \\nu_e) - P(\\bar\\nu_\\mu \\to \\bar\\nu_e))/(P + \\bar P) \\propto \\sin\\delta\\sin 2\\theta_{13}\\cdot$ kinematic factors. Sensitivity requires $\\theta_{13}\\neq 0$ (Daya Bay 2012 made this possible). Current global fits (T2K + NOvA + reactors + atmospheric): preference for $\\delta \\sim -\\pi/2$, hint of maximal CP violation in lepton sector; tension between T2K and NOvA at $\\sim 2\\sigma$. Future: DUNE (Fermilab→SURF, 1300 km, 1.2 MW beam from 2030+), Hyper-K (J-PARC→Kamioka, 295 km, 260 ktonne) — both target 5$\\sigma$ discovery of CP violation. Implications: if $\\delta \\neq 0$, leptogenesis viable, may explain BAU."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "Hypothetical $\\nu_s$: SM singlets, mix with active $\\nu$ via small angle; motivations include see-saw RH neutrinos, anomalies in LSND/MiniBooNE ($\\Delta m^2 \\sim 1$ eV²), reactor antineutrino flux deficit, gallium anomaly. Status: tensions with cosmology ($\\sum m_\\nu$, $N_{\\rm eff}$); MicroBooNE 2022 disfavours simple sterile interpretation; keV-scale sterile is dark matter candidate",
-        "Sterile neutrinos are conclusively observed and have mass $\\sim 1$ keV (would conflict with renormalisation group flow and cross-section data) (contradicted by both lattice simulations and dispersive analyses)",
-        "Forbidden by gauge invariance; cannot exist (would imply unphysical infinite or negative observables) (historically considered but disfavoured by modern QFT analyses) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "Identical to right-handed neutrinos in see-saw; no independent motivation (not consistent with the operator product expansion at large momentum) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+        "Sterile neutrinos are conclusively observed and have mass $\\sim 1$ keV (a common misconception) (this conflates cause and effect) (a frequently-taught but incorrect simplification) (inconsistent with standard results in the field)",
+        "Forbidden by gauge invariance; cannot exist (true only as a special case, not in general) (an outdated view superseded by later work) (this confuses two distinct concepts) (not supported by the evidence)",
+        "Identical to right-handed neutrinos in see-saw; no independent motivation (this reverses the actual relationship) (this describes a different phenomenon) (a common misconception) (this conflates cause and effect)"
       ],
       "correct": 0,
       "explanation": "Sterile $\\nu_s$ = $SU(2)\\times U(1)$ singlet, no SM gauge interactions; would mix with $\\nu_e, \\nu_\\mu, \\nu_\\tau$ if mass-mixing terms present. Three regimes: (1) eV scale — LSND (1995), MiniBooNE: excess $\\bar\\nu_\\mu \\to \\bar\\nu_e$ appearance suggested $\\Delta m^2 \\sim 1$ eV²; but MicroBooNE 2022 sees no excess in $\\nu_e$ channel — tension. Reactor anomaly: integrated reactor $\\bar\\nu_e$ flux $\\sim 6\\%$ below prediction; could be flux modelling or sterile. Tightening with PROSPECT, STEREO. (2) keV scale: warm dark matter candidate, signatures in galactic structure + X-ray lines (mysterious 3.5 keV line — controversial). (3) GUT scale: see-saw RH neutrinos. Direct sterile searches via fixed-target, beam-dump experiments."

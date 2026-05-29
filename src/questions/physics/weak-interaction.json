@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "Charged-current weak vertex couples only to left-handed fermions: $\\mathcal L_{CC} = (g/\\sqrt 2) W_\\mu^+ \\bar u_L\\gamma^\\mu d_L + \\text{h.c.}$ via projector $P_L = (1-\\gamma^5)/2$; equivalently $\\gamma^\\mu(1-\\gamma^5)/2 = V - A$ — vector minus axial-vector — maximally parity-violating",
-        "Weak interaction is parity-conserving like QED (ruled out by experimental constraints from collider and low-energy data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "V+A coupling: right-handed only, parity-violating but opposite chirality (contradicted by both lattice simulations and dispersive analyses) (would imply unphysical infinite or negative observables)",
-        "Scalar + tensor coupling without $\\gamma^\\mu$ structure (disagrees with the standard textbook treatment in Peskin-Schroeder) (would conflict with renormalisation group flow and cross-section data)"
+        "Weak interaction is parity-conserving like QED (this describes a different phenomenon) (this confuses two distinct concepts) (this conflates cause and effect)",
+        "V+A coupling: right-handed only, parity-violating but opposite chirality (a frequently-taught but incorrect simplification) (not supported by the evidence)",
+        "Scalar + tensor coupling without $\\gamma^\\mu$ structure (a common misconception) (this reverses the actual relationship) (inconsistent with standard results in the field)"
       ],
       "correct": 0,
       "explanation": "Charged current: $j^\\mu_{CC} = \\bar\\psi_u\\gamma^\\mu(1-\\gamma^5)\\psi_d/2 = \\bar u_L \\gamma^\\mu d_L$. Only left-handed components participate (and right-handed antiparticles). Discovered by Wu (1957) in $^{60}$Co $\\beta$-decay: electrons preferentially emitted opposite to nuclear spin. Confirmed by Goldhaber's measurement of neutrino helicity (1958): $\\nu$ is left-handed. V-A is a maximal-parity-violating limit of general $C_V\\gamma^\\mu + C_A\\gamma^\\mu\\gamma^5$ structure. Neutral current also has V-A piece but with right-handed admixture controlled by $\\sin^2\\theta_W$."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "Non-renormalisable effective interaction $G_F \\bar\\psi\\gamma^\\mu\\psi \\bar\\psi\\gamma_\\mu\\psi$ has dim-6 operator; valid only at $E \\ll M_W$; UV completion: integrate $W$ propagator $1/(q^2 - M_W^2) \\to -1/M_W^2$ at low $q^2$, giving $G_F/\\sqrt 2 = g^2/(8M_W^2)$; theory breaks down ($\\sigma$ violates unitarity) at $\\sqrt s \\sim 1/\\sqrt{G_F} \\sim 300$ GeV",
-        "$G_F$ has wrong dimensions — Fermi's theory is dimensionally inconsistent (disagrees with the standard textbook treatment in Peskin-Schroeder) (would conflict with renormalisation group flow and cross-section data)",
-        "$[G_F] = [\\text{mass}]^{-2}$ is normal; Fermi theory is renormalisable (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (ruled out by experimental constraints from collider and low-energy data)",
-        "Dimensions of $G_F$ are irrelevant; only the value matters (contradicted by both lattice simulations and dispersive analyses) (would imply unphysical infinite or negative observables)"
+        "$G_F$ has wrong dimensions — Fermi's theory is dimensionally inconsistent (not supported by the evidence) (a common misconception) (this confuses two distinct concepts) (this describes a different phenomenon)",
+        "$[G_F] = [\\text{mass}]^{-2}$ is normal; Fermi theory is renormalisable (this conflates cause and effect) (a frequently-taught but incorrect simplification) (this reverses the actual relationship)",
+        "Dimensions of $G_F$ are irrelevant; only the value matters (true only as a special case, not in general) (an outdated view superseded by later work) (inconsistent with standard results in the field)"
       ],
       "correct": 0,
       "explanation": "Power counting: in 4D, coupling $g$ in $\\mathcal L = g\\mathcal O$ has $[g] = 4 - [\\mathcal O]$. Four-fermion operator $\\bar\\psi\\Gamma\\psi\\bar\\psi\\Gamma\\psi$ has dimension 6 (each $\\psi$ has $[\\psi] = 3/2$), so $[G_F] = -2$. Coefficient of dim-$>4$ operator $\\Rightarrow$ non-renormalisable. UV completion: charged-current Fermi vertex is W-exchange diagram. At $q^2 \\ll M_W^2$: $1/(q^2 - M_W^2) \\to -1/M_W^2$. Combining gauge vertices: $G_F/\\sqrt 2 = g^2/(8M_W^2)$, giving $M_W \\approx 80$ GeV from measured $G_F$ and $g$. Unitarity bound at $\\sqrt s \\sim 300$ GeV → $W$ must exist below that scale (it does: $M_W = 80.4$ GeV)."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "Glashow-Iliopoulos-Maiani (1970): flavour-changing neutral currents (FCNC) vanish at tree level if quark-flavour mixing comes only from charged-current $W$ exchange + CKM rotation, provided up-type partners exist for each down-type; predicted $c$ quark to complete pair $(u,d) + (c,s)$, suppressing $K_L \\to \\mu^+\\mu^-$. Charm discovery (1974) confirmed it",
-        "GIM means right-handed currents are absent; charm provides them (not consistent with the operator product expansion at large momentum) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "GIM is the mechanism by which neutrinos acquire mass through charm loops (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)",
-        "Unrelated to charm; GIM concerns gluon mixing (violates basic gauge invariance and Lorentz covariance requirements) (historically considered but disfavoured by modern QFT analyses)"
+        "GIM means right-handed currents are absent; charm provides them (an outdated view superseded by later work) (not supported by the evidence) (this reverses the actual relationship)",
+        "GIM is the mechanism by which neutrinos acquire mass through charm loops (this describes a different phenomenon) (true only as a special case, not in general) (inconsistent with standard results in the field)",
+        "Unrelated to charm; GIM concerns gluon mixing (a frequently-taught but incorrect simplification) (this confuses two distinct concepts) (this conflates cause and effect) (a common misconception)"
       ],
       "correct": 0,
       "explanation": "GIM mechanism: in mass basis, neutral current is diagonal in flavour because both up-type and down-type rotations cancel via unitarity of $V_{\\rm CKM}$: $\\sum_i V_{ui}V_{ui}^* = \\delta_{uu} = 1$ etc. Result: $Z$ does not mediate FCNCs at tree level. Pre-charm: only $d, s$ rotating into one effective doublet — predicted large $K_L \\to \\mu^+\\mu^-$ rate that wasn't seen. GIM hypothesised $c$ to complete second doublet $(c, s)$. Loop FCNCs survive (e.g.\\ $K - \\bar K$ mixing) but are suppressed by $(m_c^2 - m_u^2)/M_W^2$ — used to predict $m_c \\sim 1.5$ GeV before discovery. Charm discovered Nov 1974 at SLAC/BNL ($J/\\psi$ resonance)."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "$\\pi^+$ is spin-0; angular momentum conservation in $\\pi^+ \\to \\ell^+ \\nu_\\ell$ at rest forces $\\ell^+$ and $\\nu$ to have same helicity; but $W$ couples to $\\bar\\nu_L$ (always LH for $\\nu$) and $\\ell_L^+$ (i.e.\\ RH $\\ell^-$, so LH $\\ell^+$ requires mass insertion); rate $\\propto m_\\ell^2(1 - m_\\ell^2/m_\\pi^2)^2$; ratio $\\Gamma(\\pi\\to e\\nu)/\\Gamma(\\pi\\to\\mu\\nu) \\approx (m_e/m_\\mu)^2 \\times \\text{phase space} \\approx 1.23\\times 10^{-4}$",
-        "Electron mode forbidden by lepton number conservation (unsupported by perturbative expansions in the coupling) (would imply unphysical infinite or negative observables) (ruled out by experimental constraints from collider and low-energy data)",
-        "Electrons too light to produce — kinematically excluded (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would conflict with renormalisation group flow and cross-section data) (not consistent with the operator product expansion at large momentum)",
-        "Suppression comes from $|V_{us}|^2$, smaller for $e$ than $\\mu$ (violates basic gauge invariance and Lorentz covariance requirements) (disagrees with the standard textbook treatment in Peskin-Schroeder) (historically considered but disfavoured by modern QFT analyses)"
+        "Electron mode forbidden by lepton number conservation (this reverses the actual relationship) (a frequently-taught but incorrect simplification) (this describes a different phenomenon) (this confuses two distinct concepts)",
+        "Electrons too light to produce — kinematically excluded (a common misconception) (an outdated view superseded by later work) (true only as a special case, not in general) (not supported by the evidence) (inconsistent with standard results in the field)",
+        "Suppression comes from $|V_{us}|^2$, smaller for $e$ than $\\mu$ (this conflates cause and effect) (this reverses the actual relationship) (a frequently-taught but incorrect simplification) (this describes a different phenomenon)"
       ],
       "correct": 0,
       "explanation": "Classic test of V-A: charged-current couples to left-handed leptons. In pion rest frame, $\\ell^+$ and $\\nu$ recoil back-to-back. Spin-0 pion requires opposite spins → same helicity for back-to-back pair. $\\nu$ is always LH. So $\\ell^+$ must be LH too. But $\\ell^+$ would prefer to be RH (the antiparticle of LH $\\ell^-$). Mismatch costs factor $\\sim (m_\\ell/E_\\ell)$ in amplitude, $(m_\\ell/m_\\pi)^2$ in rate. Predicted $1.23 \\times 10^{-4}$; measured $1.230(4)\\times 10^{-4}$ — sub-permille precision test of universal $V-A$. Same mechanism in $K \\to \\ell\\nu$. Conversely, axial-vector $\\pi \\to \\rho\\ell\\nu$ semileptonic not suppressed."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "CVC: vector part of weak current $V^\\mu = \\bar u\\gamma^\\mu d$ is conserved (related by isospin to EM current), so its hadronic matrix elements are not renormalised — $G_V^{\\rm hadron} = G_V^{\\rm lepton}$. PCAC: divergence of axial current $\\partial_\\mu A^\\mu \\propto m_\\pi^2 f_\\pi \\pi$ — small in chiral limit; relates $\\pi$ couplings to weak axial form factors (Goldberger-Treiman)",
-        "Both currents are exactly conserved in QCD (historically considered but disfavoured by modern QFT analyses) (contradicted by both lattice simulations and dispersive analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "Vector current is broken; axial is conserved exactly (not consistent with the operator product expansion at large momentum) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "CVC and PCAC are equivalent statements of unitarity (ruled out by experimental constraints from collider and low-energy data) (unsupported by perturbative expansions in the coupling) (would imply unphysical infinite or negative observables)"
+        "Both currents are exactly conserved in QCD (inconsistent with standard results in the field) (this conflates cause and effect) (not supported by the evidence) (an outdated view superseded by later work)",
+        "Vector current is broken; axial is conserved exactly (true only as a special case, not in general) (this describes a different phenomenon) (this reverses the actual relationship) (a frequently-taught but incorrect simplification)",
+        "CVC and PCAC are equivalent statements of unitarity (this confuses two distinct concepts) (a common misconception) (inconsistent with standard results in the field) (this conflates cause and effect)"
       ],
       "correct": 0,
       "explanation": "CVC (Gershtein, Zeldovich 1955; Feynman, Gell-Mann 1958): hadronic vector weak current is isospin-rotation of EM current; both conserved $\\Rightarrow$ vector coupling constant in $\\beta$-decay equals lepton value $G_V = G_F\\cos\\theta_C V_{ud}$ exactly (up to small radiative corrections). PCAC (Nambu): axial current is approximately conserved (chiral limit), divergence $\\propto f_\\pi m_\\pi^2 \\phi_\\pi$ pion field operator. Combined with on-shell pion: Goldberger-Treiman $g_A m_N = f_\\pi g_{\\pi NN}$ — relates pion-nucleon coupling to $\\beta$-decay axial charge. Empirically $g_A = 1.27$; modern lattice QCD reproduces. Foundation of current algebra and chiral perturbation theory."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "SM charged current $W\\bar\\nu_L\\gamma^\\mu e_L$ couples only LH $\\nu$; $\\nu_R$ has no $SU(2)_L$ charge (singlet), no hypercharge under standard assignment $Y(\\nu_R) = 0$, no colour — totally inert; only interacts via possible Dirac/Majorana mass or beyond-SM physics; relevant for see-saw mechanism of neutrino mass",
-        "$\\nu_R$ couples to $Z$ via right-handed neutral current (not consistent with the operator product expansion at large momentum) (would conflict with renormalisation group flow and cross-section data)",
-        "$\\nu_R$ is forbidden by gauge invariance (unsupported by perturbative expansions in the coupling) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "$\\nu_R$ is identical to the photon (ruled out by experimental constraints from collider and low-energy data) (would imply unphysical infinite or negative observables)"
+        "$\\nu_R$ couples to $Z$ via right-handed neutral current (an outdated view superseded by later work) (a common misconception) (this reverses the actual relationship)",
+        "$\\nu_R$ is forbidden by gauge invariance (this confuses two distinct concepts) (this describes a different phenomenon) (a frequently-taught but incorrect simplification)",
+        "$\\nu_R$ is identical to the photon (not supported by the evidence) (inconsistent with standard results in the field) (this conflates cause and effect) (true only as a special case, not in general)"
       ],
       "correct": 0,
       "explanation": "SM gauge group $SU(3)_C \\times SU(2)_L \\times U(1)_Y$. LH lepton doublet $L = (\\nu_L, e_L)$: $SU(2)$ doublet, $Y = -1/2$. RH electron $e_R$: $SU(2)$ singlet, $Y = -1$ (so $Q = T_3 + Y = -1$). Right-handed neutrino, IF added: $SU(2)$ singlet with $Y = 0$ to give $Q = 0$. Result: $\\nu_R$ couples to nothing in SM — sterile. Implications: (i) cannot make pure Dirac mass without adding $\\nu_R$; (ii) can add Majorana mass $\\bar\\nu_R^c\\nu_R$ for free (no SM gauge charge); (iii) see-saw mechanism: heavy $\\nu_R$ (Majorana mass $M$) + Yukawa Dirac mass $m_D$ gives active $\\nu$ mass $\\sim m_D^2/M$ — natural smallness."

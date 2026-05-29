@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "Soft matter (polymers, colloids, liquid crystals, gels, foams, membranes) has characteristic energies comparable to $k_BT$ at room temperature, so structures self-assemble and respond strongly to small forces; entropy often dominates the free energy, and mesoscopic length/slow time scales emerge",
-        "Soft matter is defined by very high melting points and hardness (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)",
-        "Thermal energy is negligible in soft matter (contradicted by both lattice simulations and dispersive analyses) (not consistent with the operator product expansion at large momentum)",
-        "Soft matter contains no entropy contributions (violates basic gauge invariance and Lorentz covariance requirements) (would imply unphysical infinite or negative observables)"
+        "Soft matter is defined by very high melting points and hardness (this reverses the actual relationship) (this describes a different phenomenon) (this conflates cause and effect)",
+        "Thermal energy is negligible in soft matter (an outdated view superseded by later work) (true only as a special case, not in general) (a frequently-taught but incorrect simplification)",
+        "Soft matter contains no entropy contributions (not supported by the evidence) (a common misconception) (this confuses two distinct concepts) (inconsistent with standard results in the field)"
       ],
       "correct": 0,
       "explanation": "De Gennes (Nobel 1991) championed soft matter as a unified field. The defining feature: relevant interaction energies (van der Waals, screened electrostatics, hydrogen bonds, entropic) are of order $k_BT \\approx 1/40$ eV, so thermal fluctuations drive self-assembly, large responses to weak fields, and rich phase behaviour. Entropy frequently dominates — e.g. rubber elasticity (entropic springs), depletion forces, and the hydrophobic effect are entropic. Soft materials bridge physics, chemistry, and biology; emergent mesoscale order (nm-$\\mu$m) governs everything from detergents to cell membranes."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "Random thermal jiggling of suspended particles; mean-square displacement grows linearly with time $\\langle x^2\\rangle = 2Dt$ (1D), with diffusion coefficient given by the Stokes-Einstein relation $D = k_BT/(6\\pi\\eta r)$ — linking diffusion to temperature, viscosity, and particle size",
-        "Deterministic straight-line motion of particles (would conflict with renormalisation group flow and cross-section data) (would imply unphysical infinite or negative observables)",
-        "Motion only under an applied external force (disagrees with the standard textbook treatment in Peskin-Schroeder) (ruled out by experimental constraints from collider and low-energy data)",
-        "A purely quantum effect with no classical analogue (historically considered but disfavoured by modern QFT analyses) (contradicted by both lattice simulations and dispersive analyses)"
+        "Deterministic straight-line motion of particles (a common misconception) (a frequently-taught but incorrect simplification) (not supported by the evidence)",
+        "Motion only under an applied external force (this describes a different phenomenon) (inconsistent with standard results in the field) (this conflates cause and effect)",
+        "A purely quantum effect with no classical analogue (this confuses two distinct concepts) (an outdated view superseded by later work) (true only as a special case, not in general)"
       ],
       "correct": 0,
       "explanation": "Einstein (1905) and Smoluchowski explained Brownian motion (observed by Brown 1827) as molecular bombardment, giving the first quantitative evidence for atoms; Perrin's measurements (Nobel 1926) confirmed Avogadro's number. The diffusion coefficient $D = k_BT/\\zeta$ with drag $\\zeta = 6\\pi\\eta r$ (Stokes) is a fluctuation-dissipation relation: the same molecular collisions cause both random kicks (fluctuation) and viscous drag (dissipation). $\\langle x^2\\rangle = 2Dt$ (per dimension) is the diffusive scaling. This underlies colloid dynamics, polymer motion, microrheology, and single-molecule biophysics."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "Stretching a polymer network reduces the number of chain conformations, lowering entropy; the restoring force is $f = -T\\,\\partial S/\\partial L > 0$, so rubber stiffens on heating and the modulus $\\propto k_BT$. A metal spring stores energy in stretched bonds (enthalpic) and softens slightly on heating",
-        "Rubber elasticity comes from stretching strong covalent bonds (unsupported by perturbative expansions in the coupling) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "Rubber and metal both have purely energetic elasticity (would imply unphysical infinite or negative observables) (would conflict with renormalisation group flow and cross-section data)",
-        "Entropy plays no role in any elastic response (ruled out by experimental constraints from collider and low-energy data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+        "Rubber elasticity comes from stretching strong covalent bonds (this reverses the actual relationship) (true only as a special case, not in general) (a frequently-taught but incorrect simplification)",
+        "Rubber and metal both have purely energetic elasticity (a common misconception) (this describes a different phenomenon) (this confuses two distinct concepts)",
+        "Entropy plays no role in any elastic response (not supported by the evidence) (inconsistent with standard results in the field) (this conflates cause and effect)"
       ],
       "correct": 0,
       "explanation": "An ideal polymer chain is a random coil maximising conformational entropy; extending it forces fewer accessible microstates, so entropy drops and the free energy $F = U - TS$ rises mostly through the $-TS$ term. The entropic restoring force gives the counter-intuitive Gough-Joule effect: stretched rubber heats up, and a stretched rubber band contracts when warmed (modulus $G = n k_BT$, rising with $T$). Contrast a crystalline metal spring, where elasticity stores enthalpy in distorted bonds (Hooke's law from the interatomic potential) and the modulus weakly decreases with temperature. Entropic elasticity also governs DNA stretching and the worm-like-chain model in biophysics."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "Rod-like molecules with long-range orientational order (a common axis, the director $\\hat n$) but no positional order — a fluid that is optically birefringent. LCDs switch the director with an electric field, rotating light polarisation; combined with polarisers and backlight this modulates transmitted intensity per pixel",
-        "A nematic has full crystalline positional order (not consistent with the operator product expansion at large momentum) (unsupported by perturbative expansions in the coupling)",
-        "Liquid crystals cannot respond to electric fields (ruled out by experimental constraints from collider and low-energy data) (historically considered but disfavoured by modern QFT analyses)",
-        "Displays use nematics only for their colour, not switching (would conflict with renormalisation group flow and cross-section data) (would imply unphysical infinite or negative observables)"
+        "A nematic has full crystalline positional order (an outdated view superseded by later work) (this reverses the actual relationship) (this describes a different phenomenon)",
+        "Liquid crystals cannot respond to electric fields (inconsistent with standard results in the field) (a common misconception) (a frequently-taught but incorrect simplification)",
+        "Displays use nematics only for their colour, not switching (true only as a special case, not in general) (not supported by the evidence) (this confuses two distinct concepts)"
       ],
       "correct": 0,
       "explanation": "Mesophases between crystal and liquid: nematic (orientational order only), smectic (orientational + 1D layered positional order), cholesteric (chiral, helical director). The nematic order parameter $S = \\langle (3\\cos^2\\theta - 1)/2\\rangle$ measures alignment, vanishing at the isotropic transition (a weakly first-order transition described by Landau-de Gennes theory). In a twisted-nematic LCD, surface anchoring twists the director 90°; an applied voltage realigns molecules along the field, untwisting the cell and changing how it rotates polarised light — switching the pixel between bright and dark. Birefringence, Frederiks transition threshold, and elastic (Frank) constants govern device performance. Topological defects (disclinations) appear as the characteristic 'schlieren' textures."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "On cooling a liquid fast enough to avoid crystallisation, viscosity rises by ~14 orders of magnitude over a modest temperature range until the system falls out of equilibrium at $T_g$, forming an amorphous solid; there is no diverging static correlation length or latent heat — it is a kinetic arrest, with debated thermodynamic underpinnings",
-        "It is a sharp first-order transition with latent heat like melting (disagrees with the standard textbook treatment in Peskin-Schroeder) (contradicted by both lattice simulations and dispersive analyses)",
-        "Glasses are perfect crystals (violates basic gauge invariance and Lorentz covariance requirements) (unsupported by perturbative expansions in the coupling) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "Viscosity is constant through the transition (would conflict with renormalisation group flow and cross-section data) (would imply unphysical infinite or negative observables)"
+        "It is a sharp first-order transition with latent heat like melting (not supported by the evidence) (this conflates cause and effect) (true only as a special case, not in general)",
+        "Glasses are perfect crystals (this reverses the actual relationship) (this confuses two distinct concepts) (a common misconception) (a frequently-taught but incorrect simplification)",
+        "Viscosity is constant through the transition (this describes a different phenomenon) (inconsistent with standard results in the field) (an outdated view superseded by later work)"
       ],
       "correct": 0,
       "explanation": "The glass transition is one of the deepest open problems in condensed-matter physics. Phenomenology: super-Arrhenius (fragile) or Arrhenius (strong) viscosity growth (Vogel-Fulcher-Tammann), dynamic heterogeneity, and a $T_g$ that depends on cooling rate — hallmarks of falling out of equilibrium rather than a true thermodynamic singularity. Competing theories: mode-coupling theory (predicts a dynamical arrest, but only a crossover in reality), random first-order transition (RFOT) with an ideal Kauzmann temperature, frustration-based and dynamic-facilitation pictures. No growing static order parameter accompanies the dramatic dynamic slowdown, distinguishing it from ordinary critical phenomena. Glasses are ubiquitous: window glass, polymers, metallic glasses, and arguably the cytoplasm under crowding."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "Systems of self-propelled units (bacteria, motile cells, motor-filament mixtures, Janus colloids, bird flocks) that locally convert energy into motion, driving the system far from equilibrium; they exhibit collective flocking, motility-induced phase separation, active turbulence, and violate detailed balance / fluctuation-dissipation",
-        "Active matter is just ordinary matter at thermal equilibrium (disagrees with the standard textbook treatment in Peskin-Schroeder) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "It obeys detailed balance exactly (unsupported by perturbative expansions in the coupling) (not consistent with the operator product expansion at large momentum) (would conflict with renormalisation group flow and cross-section data)",
-        "It cannot show any collective behaviour (ruled out by experimental constraints from collider and low-energy data) (violates basic gauge invariance and Lorentz covariance requirements)"
+        "Active matter is just ordinary matter at thermal equilibrium (not supported by the evidence) (this confuses two distinct concepts) (this reverses the actual relationship)",
+        "It obeys detailed balance exactly (an outdated view superseded by later work) (a common misconception) (this describes a different phenomenon) (true only as a special case, not in general)",
+        "It cannot show any collective behaviour (inconsistent with standard results in the field) (a frequently-taught but incorrect simplification) (this conflates cause and effect)"
       ],
       "correct": 0,
       "explanation": "Active matter is intrinsically nonequilibrium: each constituent injects energy at the microscale (e.g. ATP-driven motors, swimming bacteria), breaking time-reversal symmetry and detailed balance even in steady state. Emergent collective phenomena: the Vicsek model shows a flocking transition to long-range orientational order in 2D (evading Mermin-Wagner because it is nonequilibrium — Toner-Tu hydrodynamics); motility-induced phase separation lets purely repulsive active particles cluster without attraction; dense active nematics display self-sustained 'active turbulence' and defect dynamics. Connects soft-matter physics to living systems (cytoskeleton, tissues, microbial colonies, animal swarms) and to the design of synthetic microrobots and self-organising materials."

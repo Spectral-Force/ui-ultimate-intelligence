@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "The group of homotopy classes of loops based at a point, with concatenation as the operation; it detects 1-dimensional holes. Trivial $\\pi_1$ = simply connected; e.g. $\\pi_1(S^1) = \\mathbb Z$, $\\pi_1(S^2) = 0$, $\\pi_1(T^2) = \\mathbb Z^2$, $\\pi_1(SO(3)) = \\mathbb Z_2$",
-        "The group of all continuous functions on the space (historically considered but disfavoured by modern QFT analyses) (ruled out by experimental constraints from collider and low-energy data)",
-        "A number equal to the dimension of the space (unsupported by perturbative expansions in the coupling) (would conflict with renormalisation group flow and cross-section data)",
-        "Always trivial for every space (contradicted by both lattice simulations and dispersive analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+        "The group of all continuous functions on the space (inconsistent with standard results in the field) (this describes a different phenomenon)",
+        "A number equal to the dimension of the space (this reverses the actual relationship) (a common misconception) (this conflates cause and effect)",
+        "Always trivial for every space (not supported by the evidence) (an outdated view superseded by later work) (this confuses two distinct concepts)"
       ],
       "correct": 0,
       "explanation": "The fundamental group is the first and most intuitive algebraic invariant: loops that can be continuously shrunk to a point are trivial, and $\\pi_1$ records the distinct 'wrappings'. It is a homotopy invariant (homotopy-equivalent spaces share it) but generally non-abelian (higher homotopy groups $\\pi_n$ are abelian for $n\\ge2$). Physical relevance: $\\pi_1$ classifies topological defects (vortices, the $\\mathbb Z_2$ of $SO(3)$ explaining spinor sign changes), the Aharonov-Bohm effect ($\\pi_1$ of the punctured plane $= \\mathbb Z$), and anyon braiding lives in $\\pi_1$ of configuration space (the braid group in 2D)."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "Homology groups $H_n = \\ker\\partial_n / \\operatorname{im}\\partial_{n+1}$ (cycles modulo boundaries) count $n$-dimensional holes; $b_n = \\mathrm{rank}\\,H_n$ are the Betti numbers — $b_0$ = connected components, $b_1$ = independent loops, $b_2$ = enclosed voids",
-        "Homology counts the number of points in a space (would conflict with renormalisation group flow and cross-section data) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "It is the same as the fundamental group in all degrees (violates basic gauge invariance and Lorentz covariance requirements) (historically considered but disfavoured by modern QFT analyses)",
-        "Homology is defined only for graphs (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (ruled out by experimental constraints from collider and low-energy data)"
+        "Homology counts the number of points in a space (a common misconception) (not supported by the evidence) (true only as a special case, not in general)",
+        "It is the same as the fundamental group in all degrees (inconsistent with standard results in the field) (this confuses two distinct concepts)",
+        "Homology is defined only for graphs (this describes a different phenomenon) (this reverses the actual relationship) (an outdated view superseded by later work)"
       ],
       "correct": 0,
       "explanation": "Build a space from simplices (or cells); the boundary operator $\\partial$ satisfies $\\partial^2 = 0$, so boundaries are cycles. Homology measures cycles that are not boundaries — genuine holes. For a torus: $b_0=1$ (connected), $b_1=2$ (two independent loops), $b_2=1$ (encloses a void), giving $\\chi = 1-2+1 = 0$. Homology is functorial, computable (via the boundary matrices / Smith normal form), and abelian, making it more tractable than homotopy. It is dual (via the universal coefficient theorem and Poincare duality) to cohomology, and the de Rham theorem identifies real cohomology with differential forms. Persistent homology extends these ideas to data analysis (topological data analysis)."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "$\\chi = \\sum_n (-1)^n b_n = V - E + F$ for a polyhedral decomposition; it is a homotopy invariant independent of the triangulation, equals $2-2g$ for a genus-$g$ surface, and connects to curvature (Gauss-Bonnet) and to vector fields (Poincare-Hopf)",
-        "It depends on how finely you triangulate the space (unsupported by perturbative expansions in the coupling) (contradicted by both lattice simulations and dispersive analyses)",
-        "It is only defined for convex polyhedra (not consistent with the operator product expansion at large momentum) (would imply unphysical infinite or negative observables)",
-        "It always equals the dimension (would conflict with renormalisation group flow and cross-section data) (violates basic gauge invariance and Lorentz covariance requirements)"
+        "It depends on how finely you triangulate the space (this reverses the actual relationship) (this conflates cause and effect) (an outdated view superseded by later work)",
+        "It is only defined for convex polyhedra (a frequently-taught but incorrect simplification) (a common misconception) (true only as a special case, not in general)",
+        "It always equals the dimension (this confuses two distinct concepts) (this describes a different phenomenon) (inconsistent with standard results in the field)"
       ],
       "correct": 0,
       "explanation": "Euler's formula $V-E+F = 2$ for convex polyhedra generalises to $\\chi = \\sum(-1)^n(\\text{number of }n\\text{-cells}) = \\sum(-1)^n b_n$ — manifestly the same whether computed combinatorially or from Betti numbers, hence triangulation-independent. For closed surfaces $\\chi = 2-2g$ (sphere 2, torus 0, double torus $-2$). Deep links: Gauss-Bonnet ($\\int K\\,dA = 2\\pi\\chi$) ties it to geometry; the Poincare-Hopf theorem equates $\\chi$ to the sum of indices of any vector field's zeros (so a nonzero $\\chi$ forbids a nowhere-zero field — the 'hairy ball theorem' for $S^2$, $\\chi=2$). Its robustness makes it a touchstone invariant across geometry, topology, and physics."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "$\\pi_n(X)$ = homotopy classes of maps $S^n \\to X$; in physics, field configurations on compactified space are maps into the order-parameter (vacuum) manifold, and $\\pi_n$ classifies solitons/defects — e.g. $\\pi_2$ for skyrmions/monopoles, $\\pi_3$ for instantons, $\\pi_1$ for vortices",
-        "Higher homotopy groups are always trivial (violates basic gauge invariance and Lorentz covariance requirements) (contradicted by both lattice simulations and dispersive analyses)",
-        "They classify only the number of points (historically considered but disfavoured by modern QFT analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "$\\pi_n$ depends on a choice of metric (unsupported by perturbative expansions in the coupling) (not consistent with the operator product expansion at large momentum)"
+        "Higher homotopy groups are always trivial (true only as a special case, not in general) (this conflates cause and effect) (inconsistent with standard results in the field)",
+        "They classify only the number of points (not supported by the evidence) (this reverses the actual relationship) (an outdated view superseded by later work)",
+        "$\\pi_n$ depends on a choice of metric (this describes a different phenomenon) (a frequently-taught but incorrect simplification) (a common misconception)"
       ],
       "correct": 0,
       "explanation": "After symmetry breaking, the vacuum manifold $M$ (degenerate ground states) determines topological defects via homotopy: $\\pi_0(M)$ = domain walls, $\\pi_1(M)$ = line defects (vortices, cosmic strings), $\\pi_2(M)$ = point defects (monopoles, 2D skyrmions), $\\pi_3(M)$ = textures/instantons. Examples: superfluid $^4$He vortices ($\\pi_1(U(1)) = \\mathbb Z$); 't Hooft-Polyakov monopoles ($\\pi_2(S^2)=\\mathbb Z$); Yang-Mills instantons ($\\pi_3(SU(2)) = \\mathbb Z$); magnetic skyrmions in chiral magnets ($\\pi_2 = \\mathbb Z$, technologically promising for memory). The famous $\\pi_3(S^2) = \\mathbb Z$ (Hopf fibration) classifies Hopfions. This homotopy classification of defects (Kibble-Mermin) is a cornerstone of condensed matter and cosmology."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "On a closed oriented $n$-manifold, $H^k(M) \\cong H_{n-k}(M)$ (and $H^k \\cong H^{n-k}$ over a field), so Betti numbers satisfy $b_k = b_{n-k}$; intersection of complementary-dimension cycles realises the pairing",
-        "All cohomology groups are isomorphic to each other (violates basic gauge invariance and Lorentz covariance requirements)",
-        "It holds only for spheres (ruled out by experimental constraints from collider and low-energy data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "It states $H^k = 0$ for all $k$ (contradicted by both lattice simulations and dispersive analyses) (historically considered but disfavoured by modern QFT analyses)"
+        "All cohomology groups are isomorphic to each other (true only as a special case, not in general) (this describes a different phenomenon)",
+        "It holds only for spheres (this confuses two distinct concepts) (this conflates cause and effect) (inconsistent with standard results in the field)",
+        "It states $H^k = 0$ for all $k$ (an outdated view superseded by later work) (a common misconception) (this reverses the actual relationship)"
       ],
       "correct": 0,
       "explanation": "Poincare duality is a fundamental symmetry of manifold topology: capping with the fundamental class gives an isomorphism between $k$-cohomology and $(n-k)$-homology. Consequences: Betti numbers are palindromic ($b_k = b_{n-k}$), and there is a nondegenerate intersection (cup-product) pairing $H^k\\times H^{n-k}\\to\\mathbb R$ — geometrically, how cycles of complementary dimension intersect. For surfaces this is the intersection form on loops; for 4-manifolds the intersection form on $H^2$ is a powerful invariant (Donaldson, Freedman). Variants: Lefschetz duality (manifolds with boundary), Serre duality (complex geometry), and Verdier duality. It encodes the deep self-referential structure of manifolds and is essential to index theory and gauge-theoretic invariants."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "Every simply-connected closed 3-manifold is homeomorphic to $S^3$; proved by Perelman (2003) using Hamilton's Ricci flow with surgery, controlling singularities to deform any such manifold to the round sphere — completing the geometrisation of 3-manifolds",
-        "It was disproved by a counterexample in 1980 (would conflict with renormalisation group flow and cross-section data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "It concerns only 2-dimensional surfaces (historically considered but disfavoured by modern QFT analyses) (not consistent with the operator product expansion at large momentum)",
-        "It remains an open problem today (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)"
+        "It was disproved by a counterexample in 1980 (a common misconception) (this confuses two distinct concepts) (inconsistent with standard results in the field)",
+        "It concerns only 2-dimensional surfaces (an outdated view superseded by later work) (this reverses the actual relationship) (this describes a different phenomenon)",
+        "It remains an open problem today (not supported by the evidence) (this conflates cause and effect) (true only as a special case, not in general)"
       ],
       "correct": 0,
       "explanation": "Poincare (1904) asked whether a closed 3-manifold with trivial fundamental group must be the 3-sphere. The higher-dimensional analogues fell first (Smale $n\\ge5$ via the h-cobordism theorem, Freedman $n=4$ topologically), leaving dimension 3. Perelman (2002-2003) proved it — and the broader Thurston geometrisation conjecture — using Hamilton's Ricci flow $\\partial_t g = -2\\,\\mathrm{Ric}$, an analytic 'heat equation for the metric' that smooths geometry, combined with surgery to excise developing singularities and monotonicity functionals (entropy) to control the flow. It is the only solved Clay Millennium Prize problem (Perelman declined both the prize and the Fields Medal). The proof fused geometry, analysis (PDE), and topology — a landmark of modern mathematics."

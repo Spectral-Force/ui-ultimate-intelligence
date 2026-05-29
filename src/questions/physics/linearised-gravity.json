@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "Expand $g_{\\mu\\nu} = \\eta_{\\mu\\nu} + h_{\\mu\\nu}$, $|h| \\ll 1$. Define trace-reversed $\\bar h_{\\mu\\nu} = h_{\\mu\\nu} - (1/2)\\eta_{\\mu\\nu}h$ with $h = \\eta^{\\mu\\nu}h_{\\mu\\nu}$. In Lorenz/de Donder gauge $\\partial^\\mu\\bar h_{\\mu\\nu} = 0$: linearised EFE becomes $\\Box\\bar h_{\\mu\\nu} = -(16\\pi G/c^4) T_{\\mu\\nu}$ — wave equation with source",
-        "$h_{\\mu\\nu}$ trivially zero in vacuum; no equation (would conflict with renormalisation group flow and cross-section data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "Linearised EFE same as Newton: $\\nabla^2\\Phi = 4\\pi G\\rho$ (unsupported by perturbative expansions in the coupling) (would imply unphysical infinite or negative observables)",
-        "Must use full nonlinear $G_{\\mu\\nu}$; no perturbative expansion possible (historically considered but disfavoured by modern QFT analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+        "$h_{\\mu\\nu}$ trivially zero in vacuum; no equation (a common misconception) (this confuses two distinct concepts) (this reverses the actual relationship) (a frequently-taught but incorrect simplification)",
+        "Linearised EFE same as Newton: $\\nabla^2\\Phi = 4\\pi G\\rho$ (inconsistent with standard results in the field) (not supported by the evidence) (this conflates cause and effect)",
+        "Must use full nonlinear $G_{\\mu\\nu}$; no perturbative expansion possible (an outdated view superseded by later work) (this describes a different phenomenon) (true only as a special case, not in general)"
       ],
       "correct": 0,
       "explanation": "Linearised Riemann: $R_{\\mu\\nu\\rho\\sigma}^{(1)} = (1/2)(\\partial_\\nu\\partial_\\rho h_{\\mu\\sigma} - \\partial_\\mu\\partial_\\rho h_{\\nu\\sigma} - \\partial_\\nu\\partial_\\sigma h_{\\mu\\rho} + \\partial_\\mu\\partial_\\sigma h_{\\nu\\rho})$. Ricci: $R_{\\mu\\nu}^{(1)} = (1/2)(\\partial_\\mu\\partial^\\alpha h_{\\alpha\\nu} + \\partial_\\nu\\partial^\\alpha h_{\\alpha\\mu} - \\Box h_{\\mu\\nu} - \\partial_\\mu\\partial_\\nu h)$. With Lorenz gauge: $R_{\\mu\\nu}^{(1)} = -\\frac{1}{2}\\Box h_{\\mu\\nu}$, and Einstein tensor $G_{\\mu\\nu}^{(1)} = -\\frac{1}{2}\\Box\\bar h_{\\mu\\nu}$. Yields $\\Box\\bar h_{\\mu\\nu} = -(16\\pi G/c^4)T_{\\mu\\nu}$ — relativistic Poisson equation; gravitational waves in vacuum, retarded potentials for sources."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "GW emission is quadrupole (no monopole/dipole due to mass/momentum conservation), with rate $\\propto G/c^5$ vs EM dipole $\\propto e^2/c^3$. Numerically: $c^5/G \\sim 3.6\\times 10^{52}$ W (luminosity scale of GW); even most powerful binary merger $\\sim 10^{50}$ W transient, total energy $\\sim 3\\,M_\\odot c^2$",
-        "Same emission rate as EM dipole — equal strength (contradicted by both lattice simulations and dispersive analyses) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "Suppression from CMB absorption only (historically considered but disfavoured by modern QFT analyses) (not consistent with the operator product expansion at large momentum)",
-        "GWs not radiated; gravity is static (disagrees with the standard textbook treatment in Peskin-Schroeder) (would conflict with renormalisation group flow and cross-section data)"
+        "Same emission rate as EM dipole — equal strength (this conflates cause and effect) (true only as a special case, not in general) (inconsistent with standard results in the field)",
+        "Suppression from CMB absorption only (an outdated view superseded by later work) (not supported by the evidence) (a common misconception) (a frequently-taught but incorrect simplification)",
+        "GWs not radiated; gravity is static (this confuses two distinct concepts) (this describes a different phenomenon) (this reverses the actual relationship) (this conflates cause and effect)"
       ],
       "correct": 0,
       "explanation": "EM dipole radiation: $P_{EM} = (2/3)e^2 a^2/c^3$ where $a$ is acceleration. GW quadrupole: $P_{GW} = (G/5c^5)\\langle\\dddot Q_{ij}\\dddot Q^{ij}\\rangle$ — third time derivative, $1/c^5$ scaling. For binary $m_1 = m_2 = M$ at separation $R$ in circular orbit: $P_{GW} = (32/5)(G^4 M^5)/(c^5 R^5)$. With $\\omega^2 = GM/R^3$ Kepler: $P_{GW} = (32/5)(G/c^5)(M^4 R^4\\omega^6)$. Compare 'characteristic luminosity' $c^5/G$: any GW source bounded by this Planck-like scale. BNS merger emits ~$10^{-2}c^5/G$ at peak — remarkable; equivalent to converting $\\sim 5\\%$ rest mass to GWs in milliseconds."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "PSR B1913+16 (1974 discovery, Nobel 1993): 7.75 h orbit of two neutron stars; orbital decay measured via pulsar timing → 7.5 mm/yr decrease in orbital separation; matches GR quadrupole prediction to better than 0.2\\% over 50+ years. First indirect confirmation of GW emission",
-        "Direct GW detection from PSR B1913+16 (would conflict with renormalisation group flow and cross-section data) (ruled out by experimental constraints from collider and low-energy data)",
-        "No measurable orbital change; GR has not been tested in this system (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "Orbital decay is due to gas friction in interstellar medium (not consistent with the operator product expansion at large momentum) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+        "Direct GW detection from PSR B1913+16 (a common misconception) (this describes a different phenomenon) (this confuses two distinct concepts)",
+        "No measurable orbital change; GR has not been tested in this system (an outdated view superseded by later work) (not supported by the evidence)",
+        "Orbital decay is due to gas friction in interstellar medium (true only as a special case, not in general) (this conflates cause and effect)"
       ],
       "correct": 0,
       "explanation": "Hulse-Taylor: $m_1 = 1.44\\,M_\\odot$ (pulsar), $m_2 = 1.39\\,M_\\odot$ (companion, also NS), orbital period $P_b = 7.75$ h, eccentricity $e = 0.617$. Pulsar period 59 ms — millisecond-class timing precision. GR predicts $\\dot P_b = -2.4025\\times 10^{-12}$ s/s from quadrupole GW emission. Observed (after correction for galactic acceleration): $\\dot P_b^{\\rm obs}/\\dot P_b^{\\rm GR} = 0.997 \\pm 0.002$ — match $\\sim 0.2\\%$. Effectively the most precise test of GR; Nobel 1993 (Hulse + Taylor). Double pulsar PSR J0737-3039A/B (2003): both NSs detectable as pulsars, even more constraining tests of 7 post-Keplerian parameters."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "Energy of GR field cannot be localised: any tensorial energy density would vanish in local inertial frame (where Christoffels = 0), conflicting with EP. Landau-Lifshitz / Bondi pseudo-tensors give meaningful values when averaged over many wavelengths; transform as tensor under linear Lorentz, but coordinate-dependent under general diffs",
-        "It IS a true tensor; standard textbook result (would conflict with renormalisation group flow and cross-section data) (not consistent with the operator product expansion at large momentum)",
-        "Energy of gravity is identically zero everywhere (disagrees with the standard textbook treatment in Peskin-Schroeder) (would imply unphysical infinite or negative observables)",
-        "Energy localises only at infinity (ADM mass) (ruled out by experimental constraints from collider and low-energy data) (historically considered but disfavoured by modern QFT analyses)"
+        "It IS a true tensor; standard textbook result (a common misconception) (an outdated view superseded by later work) (not supported by the evidence) (a frequently-taught but incorrect simplification)",
+        "Energy of gravity is identically zero everywhere (this describes a different phenomenon) (inconsistent with standard results in the field) (this reverses the actual relationship)",
+        "Energy localises only at infinity (ADM mass) (this conflates cause and effect) (this confuses two distinct concepts) (true only as a special case, not in general) (a common misconception)"
       ],
       "correct": 0,
       "explanation": "Conserved quantity for GR: total mass-energy via ADM (asymptotically flat) or Bondi (at null infinity) — globally defined. Local: no covariant $T_{\\mu\\nu}^{\\rm grav}$ because EP allows you to make all Christoffels vanish at a point. Various pseudo-tensors: Einstein, Landau-Lifshitz, Bondi-Sachs, Møller — each works in restricted gauge/asymptotic conditions. Effective stress-energy of GW (averaged over wavelength): $\\langle T_{\\mu\\nu}^{GW}\\rangle = (c^4/32\\pi G)\\langle\\partial_\\mu h^{TT}_{\\alpha\\beta}\\partial_\\nu h^{TT\\,\\alpha\\beta}\\rangle$ — gauge-invariant after averaging, gives sensible answer for GW luminosity. Bondi mass loss formula: $dM/du = -(c^4/16\\pi G)\\int|\\dot h_{TT}|^2 d\\Omega$ at null infinity."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "Treat $h_{\\mu\\nu}$ as massless spin-2 field; expand action in derivatives of metric; leading term = Einstein-Hilbert (2 derivatives); higher-derivative corrections $R^2, R_{\\mu\\nu}R^{\\mu\\nu}, R_{\\mu\\nu\\rho\\sigma}^2/M_{\\rm Pl}^2$. Non-renormalisable: $G \\sim 1/M_{\\rm Pl}^2$, loops generate higher-derivative counter-terms; EFT predictive below $M_{\\rm Pl}$. Donoghue: $1/r^2$ quantum corrections to Newton",
-        "GR is exactly renormalisable to all orders (contradicted by both lattice simulations and dispersive analyses) (historically considered but disfavoured by modern QFT analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "Quantum gravity cannot be treated by EFT (unsupported by perturbative expansions in the coupling) (would conflict with renormalisation group flow and cross-section data) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "Only string theory provides EFT framework (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (not consistent with the operator product expansion at large momentum) (ruled out by experimental constraints from collider and low-energy data)"
+        "GR is exactly renormalisable to all orders (this conflates cause and effect) (inconsistent with standard results in the field) (not supported by the evidence) (this reverses the actual relationship) (a common misconception)",
+        "Quantum gravity cannot be treated by EFT (true only as a special case, not in general) (this confuses two distinct concepts) (an outdated view superseded by later work) (this describes a different phenomenon)",
+        "Only string theory provides EFT framework (a frequently-taught but incorrect simplification) (this conflates cause and effect) (inconsistent with standard results in the field) (not supported by the evidence)"
       ],
       "correct": 0,
       "explanation": "Linearised GR is a free massless spin-2 theory. Interactions: expand $g = \\eta + h/M_{\\rm Pl}$, get infinite series of vertices in $h^n$. Each vertex carries $\\sim 1/M_{\\rm Pl}^{n-2}$ — non-renormalisable. 't Hooft-Veltman (1974): 1-loop GR + matter is finite by accident (graviton self-interactions only generate $R^2$ counterterms vanishing on shell). 2-loop: pure GR has $1/\\epsilon$ divergence in $R_{\\mu\\nu\\rho\\sigma}^3$ — needs counterterm not in original Lagrangian. EFT viewpoint (Donoghue 1990s): treat GR as valid below $M_{\\rm Pl}$; compute leading quantum corrections to Newton (Bjerrum-Bohr et al.): $V(r) = -GMm/r[1 + (3GM/c^2 r) + (41/(10\\pi))(G\\hbar/c^3 r^2) + \\ldots]$. Last term is QFT correction. Beyond EFT: string theory, asymptotic safety, loop QG."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "vDVZ discontinuity (van Dam-Veltman-Zakharov 1970): in limit $m_g \\to 0$, Fierz-Pauli theory predicts $\\gamma_{\\rm PPN} = 1/2$, not GR's 1 → light-deflection off by factor 3/4. Reason: extra polarisations of massive graviton don't decouple. Vainshtein mechanism can restore GR-like behaviour at short scales (non-linear), but Boulware-Deser ghost typically appears. dRGT (de Rham-Gabadadze-Tolley 2010) constructs ghost-free massive gravity, but cosmologically problematic",
-        "Massive graviton works fine with no issues (unsupported by perturbative expansions in the coupling) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "Mass forbidden by gauge invariance (would conflict with renormalisation group flow and cross-section data) (contradicted by both lattice simulations and dispersive analyses) (would imply unphysical infinite or negative observables) (historically considered but disfavoured by modern QFT analyses)",
-        "Massive graviton automatically explains dark energy (disagrees with the standard textbook treatment in Peskin-Schroeder) (ruled out by experimental constraints from collider and low-energy data) (not consistent with the operator product expansion at large momentum)"
+        "Massive graviton works fine with no issues (this reverses the actual relationship) (this confuses two distinct concepts) (true only as a special case, not in general) (a common misconception) (this conflates cause and effect) (a frequently-taught but incorrect simplification)",
+        "Mass forbidden by gauge invariance (inconsistent with standard results in the field) (not supported by the evidence) (this describes a different phenomenon) (an outdated view superseded by later work) (this reverses the actual relationship)",
+        "Massive graviton automatically explains dark energy (this confuses two distinct concepts) (true only as a special case, not in general) (a common misconception) (this conflates cause and effect) (a frequently-taught but incorrect simplification)"
       ],
       "correct": 0,
       "explanation": "Massive graviton has 5 polarisations (helicity $\\pm 2, \\pm 1, 0$) vs.\\ 2 for massless — extra helicity-0 mode survives the $m_g \\to 0$ limit. At linear level produces vDVZ discontinuity. Vainshtein (1972) showed non-linear effects can screen the extra mode within Vainshtein radius $r_V = (r_s/m_g^2)^{1/5}$, recovering GR; but generic massive-gravity theories suffer from Boulware-Deser ghost (6th propagating d.o.f.\\ with wrong-sign kinetic term). dRGT (2010) tunes interactions to remove ghost. Cosmological solutions: open FRW, problems with self-acceleration. Constraints on $m_g$: GW170817 propagation speed: $m_g c^2 < 10^{-22}$ eV; Solar system: $\\lesssim 10^{-29}$ eV; LIGO multi-event dispersion: $\\lesssim 10^{-23}$ eV. Compton wavelength of graviton $> 10^{16}$ km."

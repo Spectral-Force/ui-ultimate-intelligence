@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "Two transverse-traceless polarisations $h_+$ (plus) and $h_\\times$ (cross): for a wave in $z$-direction, $h_+$ stretches $x$ while compressing $y$ (and vice versa); $h_\\times$ does the same at $45°$. Helicity $\\pm 2$ (spin-2 graviton); propagate at $c$; couple to mass-energy via $T_{\\mu\\nu}$",
-        "Three polarisations like EM with a longitudinal component (historically considered but disfavoured by modern QFT analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "Six polarisations as predicted by Brans-Dicke (not consistent with the operator product expansion at large momentum) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "Scalar wave only; no polarisation structure (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (contradicted by both lattice simulations and dispersive analyses)"
+        "Three polarisations like EM with a longitudinal component (inconsistent with standard results in the field) (not supported by the evidence) (an outdated view superseded by later work)",
+        "Six polarisations as predicted by Brans-Dicke (true only as a special case, not in general) (this confuses two distinct concepts) (this conflates cause and effect)",
+        "Scalar wave only; no polarisation structure (a frequently-taught but incorrect simplification) (this reverses the actual relationship) (a common misconception)"
       ],
       "correct": 0,
       "explanation": "Linearise around flat: $g_{\\mu\\nu} = \\eta_{\\mu\\nu} + h_{\\mu\\nu}$, $|h| \\ll 1$. Choose Lorenz gauge: $\\partial^\\mu \\bar h_{\\mu\\nu} = 0$ (with $\\bar h_{\\mu\\nu} = h_{\\mu\\nu} - \\frac{1}{2}\\eta_{\\mu\\nu}h$). Vacuum: $\\Box\\bar h_{\\mu\\nu} = 0$ — wave equation. Residual gauge: transverse-traceless (TT) gauge picks out 2 physical d.o.f. For plane wave $\\propto e^{ikx}$ propagating in $z$: $h^{TT}_{\\mu\\nu} = h_+ e^+_{\\mu\\nu} + h_\\times e^\\times_{\\mu\\nu}$ with $e^+ = \\hat x\\hat x - \\hat y\\hat y$, $e^\\times = \\hat x\\hat y + \\hat y\\hat x$. Polarisation pattern: ring of test particles deforms into ellipse + perpendicular ellipse for $+$, rotated by $45°$ for $\\times$. Spin-2 (vs.\\ photon spin-1): two helicity states, $\\pm 2$."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "$P_{GW} = -(G/5c^5)\\langle\\dddot Q_{ij}\\dddot Q^{ij}\\rangle$ where $Q_{ij}$ is the traceless mass quadrupole. No monopole (mass conservation), no dipole (momentum conservation); GW is spin-2 → lowest is quadrupole. For binary: $P = (32/5)(G/c^5)\\mu^2 a^4\\omega^6 \\sim$ orbital energy/orbital period",
-        "Leading is monopole — from total mass oscillation (disagrees with the standard textbook treatment in Peskin-Schroeder) (ruled out by experimental constraints from collider and low-energy data)",
-        "Leading is electric dipole — same as EM radiation (historically considered but disfavoured by modern QFT analyses) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "GW emission forbidden in GR (unsupported by perturbative expansions in the coupling) (not consistent with the operator product expansion at large momentum)"
+        "Leading is monopole — from total mass oscillation (not supported by the evidence) (this describes a different phenomenon) (inconsistent with standard results in the field)",
+        "Leading is electric dipole — same as EM radiation (true only as a special case, not in general) (this reverses the actual relationship) (an outdated view superseded by later work)",
+        "GW emission forbidden in GR (a frequently-taught but incorrect simplification) (this confuses two distinct concepts) (this conflates cause and effect)"
       ],
       "correct": 0,
       "explanation": "GW from time-varying mass distribution. Multipole expansion: monopole = total mass (conserved); dipole = total momentum (conserved); quadrupole first non-trivial. Factor $1/c^5$ vs.\\ EM dipole $1/c^3$: GW intrinsically much weaker for given source. Inspiraling binary in circular orbit: $\\omega_{GW} = 2\\omega_{\\rm orb}$ (quadrupole symmetry); chirp $df/dt = (96/5)\\pi^{8/3}(GM_c/c^3)^{5/3}f^{11/3}$ where $M_c = (m_1 m_2)^{3/5}/(m_1+m_2)^{1/5}$ is chirp mass — directly measurable from waveform. Coalescence energy: $\\sim 5\\%$ of rest mass radiated as GWs (compare $\\sim 0.7\\%$ from H fusion). GW150914: 3$M_\\odot$ converted to GWs in $\\sim 0.1$ s, peak luminosity $\\sim 3\\times 10^{49}$ W — briefly outshining entire observable universe."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "Michelson interferometer with 4-km arms, Fabry-Perot cavities (effective $\\sim 100$ bounces, 400 km path), strain sensitivity $h \\sim 10^{-23}/\\sqrt{\\rm Hz}$ at 100 Hz; detects $\\Delta L \\sim 10^{-19}$ m — smaller than proton diameter; quantum-shot-noise limit at high $f$, seismic at low $f$, suspension thermal in middle",
-        "Direct measurement of metric component $g_{xy}$ with strain gauges (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (contradicted by both lattice simulations and dispersive analyses)",
-        "Pulsar timing measurement — not interferometer (historically considered but disfavoured by modern QFT analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "Sensitivity $h \\sim 10^{-3}$, detects daily events (would imply unphysical infinite or negative observables) (not consistent with the operator product expansion at large momentum)"
+        "Direct measurement of metric component $g_{xy}$ with strain gauges (this confuses two distinct concepts) (this conflates cause and effect) (inconsistent with standard results in the field)",
+        "Pulsar timing measurement — not interferometer (not supported by the evidence) (a frequently-taught but incorrect simplification) (an outdated view superseded by later work)",
+        "Sensitivity $h \\sim 10^{-3}$, detects daily events (this reverses the actual relationship) (a common misconception) (true only as a special case, not in general) (this describes a different phenomenon)"
       ],
       "correct": 0,
       "explanation": "LIGO Livingston, Hanford (4 km arms); Virgo (3 km); KAGRA (3 km, underground, cryogenic). Strain $h = \\Delta L/L$. Target sensitivity $h \\sim 10^{-23}/\\sqrt{\\rm Hz}$ at 100 Hz. Noise sources: (i) low $f$: seismic, suspension thermal (below 20 Hz cutoff); (ii) middle: mirror thermal noise (Brownian + thermoelastic); (iii) high $f$: photon shot noise (Poisson statistics of returning photons), reduced by high laser power (200 kW circulating) and squeezed light injection (sub-shot-noise). Fabry-Perot arm cavities: effective storage time enhances strain response. Power-recycling, signal-recycling cavities further improve. Future: A+ (2024), 3rd-gen Cosmic Explorer (40 km), Einstein Telescope (10 km triangular, underground)."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "Binary black hole merger: 36 + 29 $M_\\odot$ → 62 $M_\\odot$ + 3$M_\\odot c^2$ GW energy; $\\sim 410$ Mpc away (z $\\approx 0.09$); waveform tracked through inspiral, merger, ringdown — all consistent with GR Kerr prediction; first direct evidence of binary BHs and stellar-mass BHs above $\\sim 25 M_\\odot$",
-        "Detection of single supernova; no BH involved (unsupported by perturbative expansions in the coupling) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "Cosmological GW background; no specific source (ruled out by experimental constraints from collider and low-energy data) (contradicted by both lattice simulations and dispersive analyses)",
-        "Pulsar binary timing residuals (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would conflict with renormalisation group flow and cross-section data)"
+        "Detection of single supernova; no BH involved (this reverses the actual relationship) (not supported by the evidence) (this describes a different phenomenon)",
+        "Cosmological GW background; no specific source (this conflates cause and effect) (this confuses two distinct concepts) (a common misconception) (inconsistent with standard results in the field)",
+        "Pulsar binary timing residuals (an outdated view superseded by later work) (true only as a special case, not in general) (a frequently-taught but incorrect simplification)"
       ],
       "correct": 0,
       "explanation": "GW150914 (14 September 2015, 09:50 UTC): coincident signal at Hanford + Livingston, separated by 7 ms (consistent with $c$ propagation, sky localisation to ~600 deg²). Frequency swept from 35 → 250 Hz over 0.2 s — characteristic chirp. Template-matching to numerical-relativity waveforms identified BBH merger. Parameters: $m_1 = 36^{+5}_{-4}\\,M_\\odot$, $m_2 = 29^{+4}_{-4}\\,M_\\odot$ (heavier than expected from stellar evolution), final mass $62$, spin $a = 0.67$, distance $410$ Mpc. SNR $\\sim 24$, statistical significance $> 5.1\\sigma$. Detected by both detectors independently; ringdown frequency $\\sim 250$ Hz consistent with Kerr quasi-normal modes. Opened new astrophysical channel: $> 100$ events by 2023 (O1-O3 runs)."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "Coincident GW (LIGO-Virgo) + short GRB (Fermi, 1.7 s later) + kilonova (UV/optical/IR/radio over weeks) from NGC 4993, 40 Mpc; confirmed BNS as GRB progenitors; r-process nucleosynthesis observed (heavy elements like gold, platinum produced); $|c_{GW} - c|/c < 10^{-15}$ — kills modified gravity with non-luminal GWs",
-        "GW170817 was a single-detector event with no EM counterpart (historically considered but disfavoured by modern QFT analyses) (ruled out by experimental constraints from collider and low-energy data)",
-        "Pure GW signal; no multi-messenger aspect (violates basic gauge invariance and Lorentz covariance requirements) (contradicted by both lattice simulations and dispersive analyses)",
-        "Black hole merger detected at radio wavelengths only (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would conflict with renormalisation group flow and cross-section data)"
+        "GW170817 was a single-detector event with no EM counterpart (inconsistent with standard results in the field) (this describes a different phenomenon) (true only as a special case, not in general)",
+        "Pure GW signal; no multi-messenger aspect (this conflates cause and effect) (this confuses two distinct concepts) (a common misconception) (a frequently-taught but incorrect simplification)",
+        "Black hole merger detected at radio wavelengths only (this reverses the actual relationship) (not supported by the evidence) (an outdated view superseded by later work)"
       ],
       "correct": 0,
       "explanation": "17 August 2017, the most well-localised astronomical event ever. GW: $m_1, m_2 = 1.36, 1.17$ $M_\\odot$ (typical NS masses), inspiral $\\sim 100$ s in LIGO band, no ringdown visible. EM follow-up by 70+ observatories: GRB 170817A (Fermi/INTEGRAL, 1.74 s after merger); kilonova AT 2017gfo (Swope etc., emerging $\\sim 11$ h after); afterglow in radio/X-ray. Implications: (i) BNS mergers produce short GRBs; (ii) r-process site for heavy elements — kilonova spectrum showed lanthanide emission; (iii) tests of GR: $c_{GW} = c$ to $10^{-15}$ — rules out scalar-tensor models predicting subluminal GW (Horndeski class); (iv) Hubble constant from 'standard siren' $H_0 = 70^{+12}_{-8}$ km/s/Mpc; (v) NS equation of state from tidal deformability $\\Lambda$."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "Stochastic GW background from inspiralling supermassive black-hole binaries (SMBHBs) across cosmic history; characteristic strain $h_c \\sim 10^{-15}$ at 1 yr$^{-1}$; signature: Hellings-Downs angular correlation in pulse arrival times across ms pulsars; NANOGrav 15yr (2023), EPTA, PPTA, CPTA all reported $3-4\\sigma$ evidence",
-        "Definitive signal from primordial cosmic strings (not consistent with the operator product expansion at large momentum) (unsupported by perturbative expansions in the coupling)",
-        "Signal of dark matter direct detection in pulsars (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would conflict with renormalisation group flow and cross-section data)",
-        "Instrumental artefact only; no GW background (historically considered but disfavoured by modern QFT analyses) (contradicted by both lattice simulations and dispersive analyses)"
+        "Definitive signal from primordial cosmic strings (an outdated view superseded by later work) (this reverses the actual relationship) (this confuses two distinct concepts)",
+        "Signal of dark matter direct detection in pulsars (a common misconception) (inconsistent with standard results in the field) (this conflates cause and effect) (this describes a different phenomenon)",
+        "Instrumental artefact only; no GW background (not supported by the evidence) (true only as a special case, not in general) (a frequently-taught but incorrect simplification)"
       ],
       "correct": 0,
       "explanation": "Pulsar timing array: monitor pulse arrival times of millisecond pulsars (intrinsically stable clocks). GW passing causes Earth-pulsar distance to oscillate → timing residuals. With multiple pulsars, look for spatial correlation pattern Hellings-Downs: $C(\\theta) = (3/2)x\\ln x - x/4 + 1/2$ with $x = (1-\\cos\\theta)/2$ — distinctive signature of stochastic GW (quadrupolar pattern). June 2023 announcement (NANOGrav 15-yr, plus EPTA, PPTA, CPTA): $3-4\\sigma$ evidence for HD correlation, amplitude consistent with SMBHB origin. Alternatives: cosmic strings, primordial GW from phase transitions, scalar-induced GW. Critical test: SMBHB predicts spectrum $\\propto f^{-2/3}$ from inspiraling sources; data prefers slightly different slope, hinting at non-trivial physics. Future: SKA pulsar timing → discovery of individual SMBHBs."

@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "$Q^2 = -q^2 > 0$ (virtuality of exchanged photon/$W/Z$); $\\nu = P\\cdot q/M_N$ (energy transfer in target rest frame); $x = Q^2/(2P\\cdot q) = Q^2/(2M_N\\nu) \\in [0,1]$ (Bjorken $x$, momentum fraction); $y = P\\cdot q/(P\\cdot k)$ (inelasticity)",
-        "Just $Q^2$ and the centre-of-mass energy $\\sqrt s$ (contradicted by both lattice simulations and dispersive analyses) (ruled out by experimental constraints from collider and low-energy data)",
-        "Bjorken $x$ is defined as $x = (P + q)^2/M_N^2$ (unsupported by perturbative expansions in the coupling) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "$y = Q^2/s$ and $x = M_N/\\sqrt s$ (disagrees with the standard textbook treatment in Peskin-Schroeder) (historically considered but disfavoured by modern QFT analyses)"
+        "Just $Q^2$ and the centre-of-mass energy $\\sqrt s$ (this conflates cause and effect) (this describes a different phenomenon)",
+        "Bjorken $x$ is defined as $x = (P + q)^2/M_N^2$ (this reverses the actual relationship) (this confuses two distinct concepts)",
+        "$y = Q^2/s$ and $x = M_N/\\sqrt s$ (not supported by the evidence) (inconsistent with standard results in the field) (an outdated view superseded by later work)"
       ],
       "correct": 0,
       "explanation": "DIS: lepton $k$ scatters off nucleon $P$ via exchange of virtual boson $q = k - k'$. Lab variables: $E, E'$ = lepton energies, $\\theta$ = scattering angle. Invariants: $Q^2 = 4EE'\\sin^2(\\theta/2)$, $\\nu = E - E'$, $W^2 = (P + q)^2 = M_N^2 + 2M_N\\nu - Q^2$ (invariant mass of hadronic system $X$). Bjorken $x = Q^2/(2M_N\\nu)$, $y = \\nu/E$. Deep inelastic regime: $Q^2 \\gg M_N^2$ and $W^2 \\gg M_N^2$ (well above resonances). Parton model interprets $x$ = momentum fraction of struck quark in infinite-momentum frame."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "At large $Q^2$ and fixed $x$, structure functions $F_i(x, Q^2) \\to F_i(x)$ — depend on $x$ alone, not on $Q^2$ separately. Interpretation (Feynman): DIS probes point-like, free constituents (partons) carrying fraction $x$ of nucleon momentum; absence of intrinsic length scale = absence of $Q^2$ dependence",
-        "$F_2 \\propto Q^2$ at fixed $x$; scales linearly with photon virtuality (unsupported by perturbative expansions in the coupling) (historically considered but disfavoured by modern QFT analyses)",
-        "$F_2(x, Q^2) = F_2(xQ^2)$ depends only on the product (violates basic gauge invariance and Lorentz covariance requirements) (would conflict with renormalisation group flow and cross-section data)",
-        "$F_2$ vanishes at large $Q^2$ — signal of confinement (would imply unphysical infinite or negative observables) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+        "$F_2 \\propto Q^2$ at fixed $x$; scales linearly with photon virtuality (this reverses the actual relationship) (inconsistent with standard results in the field)",
+        "$F_2(x, Q^2) = F_2(xQ^2)$ depends only on the product (true only as a special case, not in general) (a common misconception) (a frequently-taught but incorrect simplification)",
+        "$F_2$ vanishes at large $Q^2$ — signal of confinement (this confuses two distinct concepts) (this describes a different phenomenon) (this conflates cause and effect)"
       ],
       "correct": 0,
       "explanation": "Bjorken (1969) predicted scaling on general grounds (current algebra). SLAC-MIT (1968–): observed $F_2$ roughly independent of $Q^2$ at fixed $x$, contradicting naïve form-factor expectation $F_2 \\to 0$. Feynman parton model: photon at high $Q^2$ resolves nucleon into point-like constituents, scatters incoherently off one. Scaling implies parton is essentially free at the moment of scattering — later understood as asymptotic freedom. QCD corrections produce logarithmic scaling violations $F_2(x, Q^2)$, predicted by DGLAP and beautifully verified at HERA."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "$\\partial f_i(x, Q^2)/\\partial\\ln Q^2 = (\\alpha_s/2\\pi)\\sum_j \\int_x^1 (dz/z) P_{ij}(z) f_j(x/z, Q^2)$ — convolution with splitting functions $P_{qq}, P_{qg}, P_{gq}, P_{gg}$; at LO they encode probability for parton $j$ to emit and become parton $i$ with fraction $z$ of its momentum",
-        "Partons don't evolve; PDFs are universal constants (not consistent with the operator product expansion at large momentum) (historically considered but disfavoured by modern QFT analyses)",
-        "$\\partial f/\\partial Q^2 = \\alpha_s f$ — multiplicative evolution (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "PDFs evolve only through gluon emission; no quark splitting (would conflict with renormalisation group flow and cross-section data) (ruled out by experimental constraints from collider and low-energy data)"
+        "Partons don't evolve; PDFs are universal constants (an outdated view superseded by later work) (inconsistent with standard results in the field)",
+        "$\\partial f/\\partial Q^2 = \\alpha_s f$ — multiplicative evolution (this confuses two distinct concepts) (not supported by the evidence) (a common misconception)",
+        "PDFs evolve only through gluon emission; no quark splitting (this describes a different phenomenon) (this reverses the actual relationship) (this conflates cause and effect)"
       ],
       "correct": 0,
       "explanation": "DGLAP (Dokshitzer-Gribov-Lipatov-Altarelli-Parisi, 1972–77): integro-differential equations for $Q^2$-evolution of PDFs. Splitting functions at LO: $P_{qq}(z) = C_F[(1+z^2)/(1-z)]_+$, $P_{qg}(z) = T_R[z^2 + (1-z)^2]$, $P_{gq}(z) = C_F[1+(1-z)^2]/z$, $P_{gg}(z) = 2C_A\\{z/(1-z)_+ + (1-z)/z + z(1-z)\\} + \\beta_0\\delta(1-z)/2$. Physical content: at higher $Q^2$, photon resolves shorter distances, sees more sea quarks/gluons from splittings. Predicts: $F_2(x, Q^2)$ rises with $Q^2$ at small $x$ (gluon-driven), falls at large $x$ (momentum drains to lower $x$). NNLO splitting functions known."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "Momentum sum rule: $\\int_0^1 x\\sum_i f_i(x) dx = 1$ (all partons carry total nucleon momentum, ~50% in gluons); Gross-Llewellyn-Smith: $\\int_0^1 F_3^{\\nu N}(x) dx/x = 3$ (3 valence quarks); Bjorken: polarised structure function moment $\\int(g_1^p - g_1^n)dx = g_A/6$ at LO (isovector axial charge)",
-        "Adler sum rule alone, with value $\\int F_2 dx = 1$ (contradicted by both lattice simulations and dispersive analyses) (unsupported by perturbative expansions in the coupling)",
-        "Just the Callan-Gross relation $F_2 = 2xF_1$ (would conflict with renormalisation group flow and cross-section data) (not consistent with the operator product expansion at large momentum)",
-        "Momentum sum rule reads $\\int f_i(x) dx = 1$ for each parton individually (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (ruled out by experimental constraints from collider and low-energy data)"
+        "Adler sum rule alone, with value $\\int F_2 dx = 1$ (this conflates cause and effect) (this reverses the actual relationship) (a common misconception)",
+        "Just the Callan-Gross relation $F_2 = 2xF_1$ (an outdated view superseded by later work) (this confuses two distinct concepts) (this describes a different phenomenon)",
+        "Momentum sum rule reads $\\int f_i(x) dx = 1$ for each parton individually (a frequently-taught but incorrect simplification) (not supported by the evidence)"
       ],
       "correct": 0,
       "explanation": "Sum rules are robust, low-moment constraints. (1) Momentum: $\\sum_i \\int x f_i dx = 1$ from energy-momentum tensor matrix element. Measured: quarks carry ~50%, gluons ~50%. (2) Gross-Llewellyn-Smith: from $F_3 \\propto q - \\bar q$ measures net valence number = 3 (QCD correction: $\\sim 1 - \\alpha_s/\\pi$, measured 2.8 ± 0.05 — tests $\\alpha_s$). (3) Bjorken sum rule: $\\int_0^1[g_1^p(x) - g_1^n(x)]dx = (g_A/6)[1 - \\alpha_s/\\pi + \\ldots]$ where $g_A = 1.27$ is neutron beta-decay axial coupling — fundamental QCD test, basis for proton spin puzzle."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "EMC (1987) measured polarised structure function $g_1^p$; combined with Bjorken sum rule found quark spin contributes only $\\Delta\\Sigma \\approx 0.30$ to proton spin (naïve quark model predicted 1); remaining $\\sim 70\\%$ from gluon spin $\\Delta G$ and orbital angular momentum $L_q, L_g$",
-        "The proton has spin 1 instead of 1/2 at high energies (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (not consistent with the operator product expansion at large momentum)",
-        "Quark spin contributes 100% but the proton spin still appears to vanish in DIS (violates basic gauge invariance and Lorentz covariance requirements)",
-        "Spin-orbit coupling makes the proton magnetic moment infinite (ruled out by experimental constraints from collider and low-energy data) (would conflict with renormalisation group flow and cross-section data)"
+        "The proton has spin 1 instead of 1/2 at high energies (this confuses two distinct concepts) (an outdated view superseded by later work) (true only as a special case, not in general)",
+        "Quark spin contributes 100% but the proton spin still appears to vanish in DIS (this describes a different phenomenon) (a common misconception) (a frequently-taught but incorrect simplification)",
+        "Spin-orbit coupling makes the proton magnetic moment infinite (this reverses the actual relationship) (inconsistent with standard results in the field)"
       ],
       "correct": 0,
       "explanation": "Jaffe-Manohar decomposition: $\\frac{1}{2} = \\frac{1}{2}\\Delta\\Sigma + \\Delta G + L_q + L_g$. EMC found $\\Delta\\Sigma \\approx 0.30$ (current best: $\\approx 0.30 \\pm 0.05$ at $Q^2 = 10 \\text{ GeV}^2$). Naïve constituent quark model gives $\\Delta\\Sigma = 1$. Resolution involves: (i) $U(1)_A$ anomaly mixes $\\Delta\\Sigma$ with $\\Delta G$ at quantum level, (ii) gluon polarisation measured at RHIC: $\\Delta G \\approx 0.2$, (iii) orbital angular momentum important. Future Electron-Ion Collider (EIC, BNL) will map 3D spin structure (TMDs, GPDs). Lattice QCD now computes $L_q, L_g$ directly."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "BFKL (Balitsky-Fadin-Kuraev-Lipatov): resums $(\\alpha_s \\ln 1/x)^n$ logs; predicts gluon density $\\sim x^{-\\lambda}$ with $\\lambda \\sim 0.3$; at very small $x$ saturates when gluon overlap (non-linear effects) become important, characterised by saturation scale $Q_s^2(x) \\sim Q_0^2 (x_0/x)^\\lambda$; described by Colour Glass Condensate / BK-JIMWLK equations",
-        "BFKL is identical to DGLAP and gives no new effects (contradicted by both lattice simulations and dispersive analyses) (not consistent with the operator product expansion at large momentum)",
-        "Small-$x$ physics is purely perturbative; saturation doesn't exist (historically considered but disfavoured by modern QFT analyses) (would imply unphysical infinite or negative observables)",
-        "Saturation means cross sections grow without bound at small $x$ (violates basic gauge invariance and Lorentz covariance requirements) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+        "BFKL is identical to DGLAP and gives no new effects (this conflates cause and effect) (an outdated view superseded by later work) (inconsistent with standard results in the field) (a frequently-taught but incorrect simplification)",
+        "Small-$x$ physics is purely perturbative; saturation doesn't exist (true only as a special case, not in general) (not supported by the evidence) (this confuses two distinct concepts)",
+        "Saturation means cross sections grow without bound at small $x$ (this reverses the actual relationship) (this describes a different phenomenon) (a common misconception) (this conflates cause and effect)"
       ],
       "correct": 0,
       "explanation": "DGLAP resums $\\alpha_s \\ln Q^2$, valid at large $Q^2$ fixed $x$. BFKL resums $\\alpha_s \\ln 1/x$, valid at small $x$ fixed $Q^2$. BFKL Pomeron eigenvalue gives gluon density growing as $xg(x) \\sim x^{-\\lambda}$ with $\\lambda \\approx 4\\ln 2\\cdot\\alpha_s N_c/\\pi \\approx 0.5$ (LO, reduced at NLO). Unbounded growth violates Froissart bound — non-linear saturation effects must intervene. Saturation scale $Q_s(x)$: separates dilute ($Q > Q_s$) from saturated ($Q < Q_s$) regimes. Colour Glass Condensate (McLerran-Venugopalan) provides effective theory: high-density classical gluon field. Signatures: geometric scaling, suppression of forward hadrons in $pA$ collisions (LHC, EIC will probe directly)."

@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "$\\lim_{x\\to a} f(x) = L$ means: for every $\\varepsilon > 0$ there exists $\\delta > 0$ such that $0 < |x-a| < \\delta$ implies $|f(x)-L| < \\varepsilon$ — formalising 'f(x) can be made arbitrarily close to L by taking x close enough to a'",
-        "$f(a) = L$ exactly, with no notion of nearby points (historically considered but disfavoured by modern QFT analyses) (unsupported by perturbative expansions in the coupling)",
-        "The limit is whatever value makes $f$ continuous, by definition (ruled out by experimental constraints from collider and low-energy data)",
-        "Limits cannot be defined rigorously (violates basic gauge invariance and Lorentz covariance requirements) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+        "$f(a) = L$ exactly, with no notion of nearby points (inconsistent with standard results in the field) (this reverses the actual relationship)",
+        "The limit is whatever value makes $f$ continuous, by definition (this describes a different phenomenon) (true only as a special case, not in general)",
+        "Limits cannot be defined rigorously (not supported by the evidence) (this conflates cause and effect) (a common misconception)"
       ],
       "correct": 0,
       "explanation": "The epsilon-delta definition (Cauchy, Weierstrass) put calculus on rigorous footing, replacing vague 'infinitesimals' with precise quantifiers. It captures the intuition that $f(x)\\to L$ as $x\\to a$ by demanding that for any target tolerance $\\varepsilon$ around $L$, one can find a neighbourhood ($\\delta$) around $a$ within which $f$ stays inside that tolerance (excluding $x=a$ itself). Continuity at $a$ is then $\\lim_{x\\to a}f(x)=f(a)$. This framework underpins all of analysis: derivatives (limit of difference quotients), integrals (limit of Riemann sums), uniform continuity, and convergence of sequences and series. Its rigour resolved paradoxes and is the gateway from informal calculus to real analysis, where careful attention to quantifier order (e.g. pointwise vs uniform convergence) becomes essential."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "Completeness (every Cauchy sequence converges, equivalently every bounded set has a least upper bound) fills the 'gaps' the rationals have; it guarantees limits, suprema, and the convergence theorems exist — distinguishing R from Q and underpinning all of analysis",
-        "Completeness means the reals are a finite set (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would imply unphysical infinite or negative observables)",
-        "It is an unimportant technicality with no consequences (unsupported by perturbative expansions in the coupling) (contradicted by both lattice simulations and dispersive analyses)",
-        "The rationals are already complete, so it adds nothing (not consistent with the operator product expansion at large momentum) (violates basic gauge invariance and Lorentz covariance requirements)"
+        "Completeness means the reals are a finite set (this confuses two distinct concepts) (a frequently-taught but incorrect simplification)",
+        "It is an unimportant technicality with no consequences (this reverses the actual relationship) (this conflates cause and effect) (an outdated view superseded by later work)",
+        "The rationals are already complete, so it adds nothing (true only as a special case, not in general) (inconsistent with standard results in the field)"
       ],
       "correct": 0,
       "explanation": "The rationals Q have 'holes' — e.g. Cauchy sequences of rationals approximating sqrt(2) do not converge within Q, and the set {x : x^2 < 2} has no rational least upper bound. The real numbers are constructed (via Dedekind cuts or completion of Cauchy sequences) precisely to remove these gaps. Completeness, stated as the least-upper-bound (supremum) property — every nonempty set bounded above has a least upper bound in R — or equivalently that every Cauchy sequence converges, is the defining axiom separating R from Q. It is what makes the foundational theorems of analysis true: the existence of limits, suprema/infima, the Bolzano-Weierstrass theorem, the convergence of monotone bounded sequences, the intermediate and extreme value theorems, and the Riemann integral. Without completeness, calculus would fail (continuous functions could 'skip' values, bounded increasing sequences need not converge). Completeness is thus the bedrock guaranteeing that the limiting processes at the heart of analysis actually produce real numbers."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "Pointwise: $f_n(x)\\to f(x)$ for each fixed x (the rate can vary with x). Uniform: $\\sup_x|f_n(x)-f(x)|\\to 0$ (one rate works everywhere). Uniform convergence preserves continuity, allows interchange of limits and integrals; pointwise does not",
-        "They are identical notions (ruled out by experimental constraints from collider and low-energy data) (historically considered but disfavoured by modern QFT analyses)",
-        "Pointwise convergence is stronger than uniform (contradicted by both lattice simulations and dispersive analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "Neither preserves continuity (not consistent with the operator product expansion at large momentum) (violates basic gauge invariance and Lorentz covariance requirements)"
+        "They are identical notions (this describes a different phenomenon) (inconsistent with standard results in the field) (this conflates cause and effect)",
+        "Pointwise convergence is stronger than uniform (this confuses two distinct concepts) (an outdated view superseded by later work)",
+        "Neither preserves continuity (true only as a special case, not in general) (not supported by the evidence) (this reverses the actual relationship)"
       ],
       "correct": 0,
       "explanation": "These two modes of convergence of a function sequence differ in the order of quantifiers — a subtlety with major consequences. Pointwise convergence requires only that, for each individual x, the numbers $f_n(x)$ converge to $f(x)$; the 'speed' of convergence may differ wildly across x. Uniform convergence is stronger: a single N works for all x simultaneously, i.e. $\\sup_x|f_n(x)-f(x)|\\to0$. The distinction matters because uniform convergence preserves good behaviour while pointwise does not: a uniform limit of continuous functions is continuous (a pointwise limit need not be — e.g. $x^n$ on [0,1] converges pointwise to a discontinuous step function), and uniform convergence justifies swapping limits with integration and (with care) differentiation. Counterexamples where pointwise convergence fails to commute with integration (e.g. 'moving bump' functions) motivate the more powerful Lebesgue integration and its convergence theorems (dominated/monotone convergence). Mastering this distinction is a rite of passage in analysis and is essential to Fourier series, power series (which converge uniformly on compact subsets within the radius of convergence), and functional analysis."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "It links differentiation and integration as inverse processes: (Part 1) if $F(x)=\\int_a^x f$, then $F'=f$ for continuous f; (Part 2) $\\int_a^b f = F(b)-F(a)$ for any antiderivative F — turning area computation into antidifferentiation",
-        "Differentiation and integration are unrelated operations (would conflict with renormalisation group flow and cross-section data)",
-        "It states all functions are integrable (violates basic gauge invariance and Lorentz covariance requirements) (ruled out by experimental constraints from collider and low-energy data)",
-        "It applies only to polynomials (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (unsupported by perturbative expansions in the coupling)"
+        "Differentiation and integration are unrelated operations (a common misconception) (true only as a special case, not in general)",
+        "It states all functions are integrable (this describes a different phenomenon) (this confuses two distinct concepts) (this reverses the actual relationship)",
+        "It applies only to polynomials (this conflates cause and effect) (not supported by the evidence) (inconsistent with standard results in the field)"
       ],
       "correct": 0,
       "explanation": "The fundamental theorem of calculus (FTC) is the cornerstone result unifying the two central operations of calculus, which were developed somewhat separately (integration as area/accumulation since antiquity, differentiation as rates by Newton and Leibniz). Part 1 says that integration followed by differentiation recovers the original function: the accumulation function $F(x)=\\int_a^x f(t)\\,dt$ is differentiable with $F'(x)=f(x)$ wherever f is continuous — so every continuous function has an antiderivative. Part 2 (the evaluation theorem) says differentiation can be 'undone' by integration: if F is any antiderivative of f, then the definite integral $\\int_a^b f = F(b)-F(a)$. Together they show differentiation and integration are inverse processes, reducing the otherwise-hard problem of computing areas/accumulated quantities to the algebraic search for antiderivatives. The FTC's significance is immense: it powers virtually all explicit integral computation, links local rates to global accumulation throughout physics and engineering, and generalises spectacularly to higher dimensions (Stokes' theorem, $\\int_M d\\omega = \\int_{\\partial M}\\omega$, of which the FTC is the one-dimensional case)."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "A set is compact if every open cover has a finite subcover (in R^n: closed and bounded, by Heine-Borel); compactness lets infinite problems reduce to finite ones — guaranteeing continuous functions attain extrema, are uniformly continuous, and enabling many existence proofs",
-        "Compactness means a set is infinite and unbounded (contradicted by both lattice simulations and dispersive analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "It has no useful consequences (would imply unphysical infinite or negative observables) (not consistent with the operator product expansion at large momentum)",
-        "Only finite sets can be compact (would conflict with renormalisation group flow and cross-section data) (ruled out by experimental constraints from collider and low-energy data)"
+        "Compactness means a set is infinite and unbounded (this conflates cause and effect) (this confuses two distinct concepts) (a frequently-taught but incorrect simplification)",
+        "It has no useful consequences (an outdated view superseded by later work) (a common misconception) (this describes a different phenomenon)",
+        "Only finite sets can be compact (inconsistent with standard results in the field) (true only as a special case, not in general) (this reverses the actual relationship)"
       ],
       "correct": 0,
       "explanation": "Compactness is one of the most powerful and pervasive concepts in analysis and topology. The general (topological) definition: a set is compact if every open cover admits a finite subcover. In Euclidean space R^n this is equivalent (Heine-Borel theorem) to being closed and bounded, and also (Bolzano-Weierstrass / sequential compactness) to every sequence having a convergent subsequence with limit in the set. The power of compactness is that it converts 'infinite' situations into 'finite' ones, making it the engine of countless existence theorems. Key consequences: a continuous function on a compact set attains its maximum and minimum (extreme value theorem) and is uniformly continuous; compactness is preserved by continuous maps (so the continuous image of a compact set is compact); and it underlies the existence of solutions to differential equations, fixed-point theorems, the Arzela-Ascoli theorem (compactness in function spaces), and convergence arguments throughout analysis, PDE, optimisation, and geometry. Whenever a proof needs to extract a convergent subsequence or pass from local to global information, compactness is usually the tool. Its generalisations (compact operators, weak-* compactness) are central to functional analysis."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "A set with a distance function d satisfying non-negativity, symmetry, and the triangle inequality; it abstracts 'closeness' so notions of limit, continuity, convergence, completeness, and compactness extend far beyond R^n — to function spaces, sequence spaces, and beyond",
-        "A space with no notion of distance (would imply unphysical infinite or negative observables) (contradicted by both lattice simulations and dispersive analyses)",
-        "Only the real line, renamed (violates basic gauge invariance and Lorentz covariance requirements) (would conflict with renormalisation group flow and cross-section data)",
-        "A space where the triangle inequality fails (disagrees with the standard textbook treatment in Peskin-Schroeder) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+        "A space with no notion of distance (a frequently-taught but incorrect simplification) (this conflates cause and effect) (true only as a special case, not in general)",
+        "Only the real line, renamed (a common misconception) (not supported by the evidence) (this confuses two distinct concepts) (inconsistent with standard results in the field)",
+        "A space where the triangle inequality fails (this describes a different phenomenon) (an outdated view superseded by later work) (this reverses the actual relationship)"
       ],
       "correct": 0,
       "explanation": "A metric space is a set X equipped with a metric d: X×X → R that quantifies distance, satisfying: d(x,y) ≥ 0 with equality iff x=y (identity/positivity), d(x,y)=d(y,x) (symmetry), and d(x,z) ≤ d(x,y)+d(y,z) (the triangle inequality). This minimal structure is enough to define open/closed sets, convergent sequences, continuity, Cauchy sequences, completeness, and compactness — generalising real analysis to vastly more general settings. Examples beyond R^n include: function spaces with the sup metric (C[a,b]) or integral metrics (L^p spaces), sequence spaces (ell^p), discrete metrics, and metrics on graphs or manifolds. This abstraction is the bridge to functional analysis, where complete normed spaces (Banach spaces) and complete inner-product spaces (Hilbert spaces) provide the arena for studying differential and integral equations, Fourier analysis, and quantum mechanics. Key theorems generalise: the Banach fixed-point (contraction mapping) theorem in a complete metric space guarantees unique solutions and underlies existence/uniqueness for ODEs (Picard-Lindelof) and numerical iteration; completeness and compactness retain their power. Topological spaces generalise further still, dropping the metric and keeping only open sets. Metric spaces are thus the conceptual leap from concrete calculus on R to modern abstract analysis."

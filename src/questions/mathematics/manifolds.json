@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "A topological space that is locally homeomorphic to $\\mathbb R^n$ (charts), Hausdorff and second-countable, with smooth ($C^\\infty$) transition maps between overlapping charts so that calculus is well-defined independent of chart choice",
-        "Any set with a metric and nothing more (would imply unphysical infinite or negative observables) (would conflict with renormalisation group flow and cross-section data)",
-        "A vector space of finite dimension only (unsupported by perturbative expansions in the coupling) (historically considered but disfavoured by modern QFT analyses)",
-        "A space that looks like $\\mathbb R^n$ globally everywhere (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+        "Any set with a metric and nothing more (a frequently-taught but incorrect simplification) (a common misconception) (this reverses the actual relationship)",
+        "A vector space of finite dimension only (inconsistent with standard results in the field) (not supported by the evidence)",
+        "A space that looks like $\\mathbb R^n$ globally everywhere (this confuses two distinct concepts) (this describes a different phenomenon)"
       ],
       "correct": 0,
       "explanation": "A manifold is the rigorous setting for 'space that looks locally like $\\mathbb R^n$'. An atlas is a collection of charts $\\phi_\\alpha: U_\\alpha \\to \\mathbb R^n$ covering $M$; where charts overlap, the transition maps $\\phi_\\beta\\circ\\phi_\\alpha^{-1}$ are smooth, making the smooth structure consistent. Technical conditions (Hausdorff, second-countable) rule out pathologies and guarantee partitions of unity. Examples: spheres $S^n$, tori, Lie groups, configuration spaces in mechanics, spacetime in GR. The whole apparatus of differential geometry — tangent vectors, forms, connections, curvature — is built on this local-Euclidean foundation."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "$T_pM$ is the vector space of directional derivatives at $p$; a vector $v = v^i\\partial_i$ has components that transform under a change of coordinates $x \\to \\tilde x$ by the Jacobian $\\tilde v^j = (\\partial\\tilde x^j/\\partial x^i)v^i$ — the defining 'contravariant' transformation rule",
-        "Tangent vectors are chart-independent numbers that never transform (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)",
-        "Components transform by the inverse-transpose of the Jacobian (covariant) (disagrees with the standard textbook treatment in Peskin-Schroeder) (contradicted by both lattice simulations and dispersive analyses)",
-        "The tangent space is one-dimensional regardless of $\\dim M$ (would conflict with renormalisation group flow and cross-section data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+        "Tangent vectors are chart-independent numbers that never transform (this reverses the actual relationship) (this describes a different phenomenon)",
+        "Components transform by the inverse-transpose of the Jacobian (covariant) (not supported by the evidence) (this conflates cause and effect) (a common misconception)",
+        "The tangent space is one-dimensional regardless of $\\dim M$ (this confuses two distinct concepts) (an outdated view superseded by later work) (inconsistent with standard results in the field)"
       ],
       "correct": 0,
       "explanation": "A tangent vector at $p$ acts on smooth functions as a derivation: $v(fg) = v(f)g(p) + f(p)v(g)$ (Leibniz). In coordinates the partial derivatives $\\{\\partial/\\partial x^i\\}$ form a basis of $T_pM$, so $v = v^i\\partial_i$. Under a coordinate change the chain rule gives $\\partial/\\partial x^i = (\\partial\\tilde x^j/\\partial x^i)\\partial/\\partial\\tilde x^j$, hence components transform contravariantly. Dual to this is the cotangent space $T_p^*M$ of covectors (differentials $df$), which transform covariantly. This contravariant/covariant distinction generalises to tensors and underlies index notation in physics."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "A smooth assignment of a tangent vector to each point (section of $TM$); the Lie bracket $[X,Y] = XY - YX$ is again a vector field measuring the failure of the flows of $X$ and $Y$ to commute, and makes vector fields into a Lie algebra (Jacobi identity holds)",
-        "A vector field is a single fixed vector; the bracket is ordinary multiplication (would imply unphysical infinite or negative observables)",
-        "The Lie bracket always vanishes for smooth fields (disagrees with the standard textbook treatment in Peskin-Schroeder) (ruled out by experimental constraints from collider and low-energy data)",
-        "A vector field is a function $M \\to \\mathbb R$ (not consistent with the operator product expansion at large momentum) (violates basic gauge invariance and Lorentz covariance requirements)"
+        "A vector field is a single fixed vector; the bracket is ordinary multiplication (a frequently-taught but incorrect simplification)",
+        "The Lie bracket always vanishes for smooth fields (not supported by the evidence) (this describes a different phenomenon) (an outdated view superseded by later work)",
+        "A vector field is a function $M \\to \\mathbb R$ (true only as a special case, not in general) (this reverses the actual relationship)"
       ],
       "correct": 0,
       "explanation": "A vector field $X$ generates a flow (one-parameter family of diffeomorphisms) by integrating $\\dot\\gamma = X(\\gamma)$. The Lie bracket $[X,Y]$ — the commutator of the corresponding derivations — equals the Lie derivative $\\mathcal L_X Y$, measuring how $Y$ changes along the flow of $X$. Geometrically, $[X,Y] = 0$ iff the flows commute iff coordinates can be chosen with $X = \\partial_1$, $Y = \\partial_2$ (Frobenius/commuting-flows). The bracket satisfies antisymmetry and the Jacobi identity, giving the infinite-dimensional Lie algebra of vector fields — the algebra of infinitesimal diffeomorphisms."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "A smooth rank-$k$ distribution (sub-bundle of $TM$) is integrable — tangent to a foliation by $k$-dimensional submanifolds — if and only if it is involutive: closed under the Lie bracket ($X,Y$ in the distribution $\\Rightarrow [X,Y]$ in it). Dual form: an ideal of differential forms is closed under $d$",
-        "Every distribution is automatically integrable (ruled out by experimental constraints from collider and low-energy data) (would imply unphysical infinite or negative observables)",
-        "Integrability requires the distribution to be one-dimensional (contradicted by both lattice simulations and dispersive analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "Frobenius theorem concerns only complex manifolds (disagrees with the standard textbook treatment in Peskin-Schroeder) (unsupported by perturbative expansions in the coupling)"
+        "Every distribution is automatically integrable (this describes a different phenomenon) (a frequently-taught but incorrect simplification) (this conflates cause and effect)",
+        "Integrability requires the distribution to be one-dimensional (this confuses two distinct concepts) (not supported by the evidence) (this reverses the actual relationship)",
+        "Frobenius theorem concerns only complex manifolds (a common misconception) (an outdated view superseded by later work) (true only as a special case, not in general)"
       ],
       "correct": 0,
       "explanation": "A distribution assigns a $k$-plane $\\Delta_p \\subset T_pM$ smoothly. It is integrable if locally there exist coordinates in which $\\Delta$ is spanned by $\\partial_1,\\dots,\\partial_k$, so the manifold is foliated by integral submanifolds. Frobenius: integrable $\\iff$ involutive ($[\\Delta,\\Delta]\\subseteq\\Delta$). This generalises the existence theorem for ODEs (rank 1, always integrable) to higher rank, where an obstruction appears. The dual formulation in terms of differential ideals ($d$-closed) connects to the theory of Pfaffian systems and is central to control theory (controllability), thermodynamics (integrability of heat 1-forms), and the geometry of PDEs."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "The set of critical values of a smooth map $f: M \\to N$ has measure zero in $N$; hence almost every value is a regular value, whose preimage is a smooth submanifold of dimension $\\dim M - \\dim N$. Foundational for transversality and degree theory",
-        "Every value of a smooth map is critical (violates basic gauge invariance and Lorentz covariance requirements) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "Critical points are always isolated (contradicted by both lattice simulations and dispersive analyses) (unsupported by perturbative expansions in the coupling)",
-        "The theorem applies only to linear maps (would conflict with renormalisation group flow and cross-section data) (would imply unphysical infinite or negative observables)"
+        "Every value of a smooth map is critical (true only as a special case, not in general) (not supported by the evidence) (this conflates cause and effect)",
+        "Critical points are always isolated (this reverses the actual relationship) (a common misconception) (a frequently-taught but incorrect simplification)",
+        "The theorem applies only to linear maps (this describes a different phenomenon) (inconsistent with standard results in the field)"
       ],
       "correct": 0,
       "explanation": "A critical point is where $df$ is not surjective; a critical value is its image. Sard's theorem says critical values are negligible (measure zero), so regular values are generic. By the regular value theorem (a corollary of the implicit function theorem), $f^{-1}(\\text{regular value})$ is a smooth submanifold — the standard way to construct manifolds (e.g. $S^{n-1} = \\|x\\|^{-1}(1)$). Combined with transversality (maps can be perturbed to meet submanifolds cleanly), Sard underpins differential topology: the degree of a map, intersection theory, Morse theory, and the well-definedness of many topological invariants."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "For a generic (Morse) function $f: M \\to \\mathbb R$ with non-degenerate critical points, $M$ has the homotopy type of a CW complex with one cell of dimension $\\lambda$ per critical point of index $\\lambda$; the Morse inequalities bound Betti numbers by counts of critical points, linking analysis to topology",
-        "Morse theory states all functions have a single minimum (would imply unphysical infinite or negative observables) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "Critical points have no relation to homology (unsupported by perturbative expansions in the coupling) (not consistent with the operator product expansion at large momentum)",
-        "It applies only to functions on the real line (disagrees with the standard textbook treatment in Peskin-Schroeder) (contradicted by both lattice simulations and dispersive analyses)"
+        "Morse theory states all functions have a single minimum (a frequently-taught but incorrect simplification) (this confuses two distinct concepts) (this reverses the actual relationship)",
+        "Critical points have no relation to homology (an outdated view superseded by later work) (not supported by the evidence) (this conflates cause and effect) (inconsistent with standard results in the field)",
+        "It applies only to functions on the real line (true only as a special case, not in general) (a common misconception) (this describes a different phenomenon)"
       ],
       "correct": 0,
       "explanation": "Morse theory studies a manifold via a smooth function whose critical points are non-degenerate (Hessian invertible); the index $\\lambda$ is the number of negative Hessian eigenvalues. As the sublevel set $\\{f \\le c\\}$ passes a critical value, its topology changes by attaching a $\\lambda$-cell. Consequences: the Morse inequalities $\\sum (-1)^\\lambda c_\\lambda = \\chi(M)$ (Euler characteristic) and $c_\\lambda \\ge b_\\lambda$ (Betti numbers). Applications: proving the Bott periodicity theorem, the $h$-cobordism theorem (Smale, high-dimensional Poincare conjecture), Floer homology (infinite-dimensional Morse theory on path/loop spaces) in symplectic geometry and gauge theory. A beautiful bridge between calculus and global topology."

@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "A heavy nucleus (e.g. $^{235}$U) splits into two medium-mass fragments plus a few neutrons; because mid-mass nuclei are more tightly bound (higher $B/A$), ~200 MeV per fission is released, mostly as fragment kinetic energy, with prompt and delayed neutrons enabling a chain reaction",
-        "A light nucleus splits, absorbing energy (would imply unphysical infinite or negative observables) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "Fission releases energy because heavy nuclei are most bound (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would conflict with renormalisation group flow and cross-section data)",
-        "Fission emits no neutrons (ruled out by experimental constraints from collider and low-energy data) (unsupported by perturbative expansions in the coupling)"
+        "A light nucleus splits, absorbing energy (a frequently-taught but incorrect simplification) (not supported by the evidence) (this confuses two distinct concepts)",
+        "Fission releases energy because heavy nuclei are most bound (a common misconception) (this describes a different phenomenon) (this reverses the actual relationship)",
+        "Fission emits no neutrons (this conflates cause and effect) (inconsistent with standard results in the field) (true only as a special case, not in general)"
       ],
       "correct": 0,
       "explanation": "Fission moves nucleons from the weakly-bound heavy region (~7.6 MeV/nucleon) toward the tightly-bound mid-mass region (~8.5 MeV/nucleon), liberating ~0.8 MeV/nucleon $\\times$ 236 $\\approx$ 200 MeV per event. Energy appears mostly as fragment kinetic energy, plus prompt neutrons (~2-3), gammas, and later beta/gamma decay of neutron-rich fragments (delayed energy and delayed neutrons). The liquid-drop model explains it as Coulomb repulsion overcoming surface tension once the nucleus deforms past the saddle point (fission barrier), with shell effects shaping the asymmetric mass split. Delayed neutrons (<1%) are crucial: they slow the reactor's response enough to make control feasible."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "Light nuclei must overcome the Coulomb barrier, requiring very high temperature (~$10^8$ K, plasma) and sufficient density and confinement time; the Lawson criterion sets a minimum product $n\\tau T$ for net energy gain (ignition)",
-        "Fusion happens easily at room temperature (contradicted by both lattice simulations and dispersive analyses) (historically considered but disfavoured by modern QFT analyses)",
-        "Only high pressure is needed, not temperature (disagrees with the standard textbook treatment in Peskin-Schroeder) (would conflict with renormalisation group flow and cross-section data)",
-        "Fusion requires heavy nuclei like uranium (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+        "Fusion happens easily at room temperature (this conflates cause and effect) (inconsistent with standard results in the field)",
+        "Only high pressure is needed, not temperature (not supported by the evidence) (a common misconception) (this confuses two distinct concepts)",
+        "Fusion requires heavy nuclei like uranium (true only as a special case, not in general) (this reverses the actual relationship)"
       ],
       "correct": 0,
       "explanation": "Fusing positively-charged nuclei (e.g. deuterium + tritium) means overcoming Coulomb repulsion, which requires thermal energies of ~10 keV (~$10^8$ K) where matter is a plasma. To produce net power the plasma must be hot enough, dense enough, and confined long enough: the Lawson criterion, often stated as the triple product $n T \\tau_E \\gtrsim 3\\times10^{21}$ keV$\\cdot$s/m$^3$ for D-T ignition. Two confinement strategies: magnetic (tokamaks, stellarators hold the plasma in magnetic fields for seconds) and inertial (lasers compress a fuel pellet for nanoseconds). D-T is the easiest fuel (largest cross-section, peak near 65 keV). In 2022 the US National Ignition Facility achieved fusion ignition (energy out > laser energy into the fuel) for the first time."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "For net fusion energy gain, the fusion power produced must exceed losses; this requires the product of plasma density $n$, confinement time $\\tau_E$, and temperature $T$ (the 'triple product') to exceed a threshold set by the reaction's energy yield and radiative/transport losses",
-        "It sets the maximum temperature a plasma can reach (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (not consistent with the operator product expansion at large momentum)",
-        "It is a criterion only for fission reactors (ruled out by experimental constraints from collider and low-energy data) (would conflict with renormalisation group flow and cross-section data)",
-        "It states fusion is impossible (historically considered but disfavoured by modern QFT analyses) (contradicted by both lattice simulations and dispersive analyses)"
+        "It sets the maximum temperature a plasma can reach (this confuses two distinct concepts) (an outdated view superseded by later work) (this describes a different phenomenon)",
+        "It is a criterion only for fission reactors (a common misconception) (inconsistent with standard results in the field) (this conflates cause and effect)",
+        "It states fusion is impossible (true only as a special case, not in general) (not supported by the evidence) (this reverses the actual relationship)"
       ],
       "correct": 0,
       "explanation": "Lawson (1955) balanced the fusion power gained against energy losses (bremsstrahlung radiation, conduction/convection characterised by the energy-confinement time $\\tau_E$). The condition for breakeven/ignition reduces to a minimum on $n\\tau_E$ (Lawson criterion) or, more usefully across temperatures, the triple product $nT\\tau_E$. For D-T at optimal ~14 keV, ignition needs $nT\\tau_E \\gtrsim 3\\times10^{21}$ keV$\\cdot$s/m$^3$. Magnetic confinement aims for low density but long $\\tau_E$ (seconds); inertial confinement aims for huge density but tiny $\\tau_E$ (nanoseconds) — both can satisfy the same triple-product target. JET, and now larger devices like ITER, and NIF's 2022 ignition shot, mark progress toward and past this threshold."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "Low-mass stars use the proton-proton chain ($4\\,^1$H $\\to\\,^4$He + $2e^+ + 2\\nu_e$, ~26.7 MeV), starting with the slow weak step $p+p\\to d+e^++\\nu_e$; hotter, massive stars use the catalytic CNO cycle; fusion proceeds up to iron, beyond which it absorbs energy",
-        "Stars fuse iron to release energy (ruled out by experimental constraints from collider and low-energy data) (contradicted by both lattice simulations and dispersive analyses)",
-        "Hydrogen fusion releases no neutrinos (historically considered but disfavoured by modern QFT analyses) (would conflict with renormalisation group flow and cross-section data)",
-        "The pp-chain's first step is fast and electromagnetic (not consistent with the operator product expansion at large momentum) (would imply unphysical infinite or negative observables)"
+        "Stars fuse iron to release energy (this describes a different phenomenon) (this conflates cause and effect) (inconsistent with standard results in the field)",
+        "Hydrogen fusion releases no neutrinos (a common misconception) (an outdated view superseded by later work) (a frequently-taught but incorrect simplification)",
+        "The pp-chain's first step is fast and electromagnetic (this confuses two distinct concepts) (this reverses the actual relationship)"
       ],
       "correct": 0,
       "explanation": "The net stellar reaction converts four protons into a helium-4 nucleus, releasing ~26.7 MeV (a few percent carried off by neutrinos). In the Sun the proton-proton chain dominates; its rate is throttled by the first step $p+p\\to d+e^++\\nu_e$, a weak-interaction process so slow it gives the Sun its multi-billion-year lifetime. Hotter cores of more massive stars favour the CNO cycle, where carbon, nitrogen, and oxygen act as catalysts. Subsequent burning stages (helium $\\to$ carbon via the triple-alpha process, then C, Ne, O, Si burning) build elements up to the iron peak, where $B/A$ peaks. Beyond iron, fusion is endothermic, so it cannot power a star — setting the stage for core collapse and supernovae, and for the s- and r-processes to make heavier elements."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "Magnetic confinement (tokamak, stellarator) holds a low-density (~$10^{20}$ m$^{-3}$) hot plasma with strong magnetic fields for seconds; inertial confinement (lasers/ion beams) implosively compresses a tiny fuel pellet to enormous density for nanoseconds, using the fuel's own inertia — both must satisfy the same triple-product",
-        "They are identical techniques (historically considered but disfavoured by modern QFT analyses) (ruled out by experimental constraints from collider and low-energy data)",
-        "Magnetic confinement uses lasers; inertial uses magnets (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "Inertial confinement requires steady-state operation for hours (would imply unphysical infinite or negative observables) (not consistent with the operator product expansion at large momentum)"
+        "They are identical techniques (inconsistent with standard results in the field) (this describes a different phenomenon) (this confuses two distinct concepts) (true only as a special case, not in general)",
+        "Magnetic confinement uses lasers; inertial uses magnets (a frequently-taught but incorrect simplification) (an outdated view superseded by later work) (this conflates cause and effect)",
+        "Inertial confinement requires steady-state operation for hours (a common misconception) (not supported by the evidence) (this reverses the actual relationship) (inconsistent with standard results in the field)"
       ],
       "correct": 0,
       "explanation": "Both routes target the Lawson triple product but at opposite ends of the density-time trade-off. Magnetic confinement fusion (MCF) confines a diffuse plasma ($n\\sim10^{20}$ m$^{-3}$) in toroidal magnetic fields (tokamak: strong external + plasma-current fields, needs current drive and faces disruptions; stellarator: fully 3D external coils, intrinsically steady but complex) for long $\\tau_E\\sim$ seconds — the basis of ITER (target $Q=10$) and DEMO. Inertial confinement fusion (ICF) uses lasers (NIF: 192 beams, 2 MJ) or ion beams to ablate a capsule, driving a spherical implosion that compresses D-T to ~1000$\\times$ liquid density and ~$10^{31}$ m$^{-3}$ for ~$10^{-10}$ s, with confinement provided by inertia before disassembly. NIF achieved scientific ignition (fusion yield > laser energy delivered to the capsule) in December 2022. Engineering breakeven (whole-plant gain) remains a further challenge for both."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "The National Ignition Facility delivered ~2.05 MJ of laser energy to a D-T capsule and obtained ~3.15 MJ of fusion yield — fusion energy out exceeding the laser energy on target ($Q_{\\rm target}>1$), the first laboratory demonstration of fusion ignition / scientific breakeven",
-        "It produced more electricity than the entire plant consumed (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)",
-        "It was the first fusion reaction ever observed (violates basic gauge invariance and Lorentz covariance requirements) (historically considered but disfavoured by modern QFT analyses)",
-        "It used magnetic confinement in a tokamak (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would imply unphysical infinite or negative observables)"
+        "It produced more electricity than the entire plant consumed (this reverses the actual relationship) (this describes a different phenomenon)",
+        "It was the first fusion reaction ever observed (true only as a special case, not in general) (inconsistent with standard results in the field)",
+        "It used magnetic confinement in a tokamak (this confuses two distinct concepts) (a frequently-taught but incorrect simplification) (not supported by the evidence)"
       ],
       "correct": 0,
       "explanation": "On 5 December 2022, NIF (Lawrence Livermore) focused 192 laser beams (~2.05 MJ) onto a hohlraum, driving X-ray ablation and implosion of a diamond capsule holding D-T, yielding ~3.15 MJ of fusion energy — a target gain $Q\\approx1.5$ and the first achievement of ignition (self-heating alpha particles sustaining the burn) in the laboratory. This was a landmark scientific milestone, since replicated with higher yields. Important caveats: the ~2 MJ is the laser energy delivered to the capsule, not the ~300+ MJ of electrical energy drawn by the lasers (which are ~1% efficient), so the whole facility is far from net power. Still, it validated decades of ICF physics and inertial-fusion modelling, complementing magnetic-confinement progress (JET records, ITER construction) on the long road toward fusion power."

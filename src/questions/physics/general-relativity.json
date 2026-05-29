@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "$G_{\\mu\\nu} + \\Lambda g_{\\mu\\nu} = (8\\pi G/c^4)T_{\\mu\\nu}$ where $G_{\\mu\\nu} = R_{\\mu\\nu} - (1/2)Rg_{\\mu\\nu}$ is the Einstein tensor (encodes spacetime curvature), $g_{\\mu\\nu}$ the metric, $\\Lambda$ cosmological constant, $T_{\\mu\\nu}$ stress-energy tensor; 'matter tells spacetime how to curve, spacetime tells matter how to move'",
-        "$\\partial_\\mu \\partial^\\mu g_{\\nu\\rho} = T_{\\nu\\rho}$ — linear wave equation (would imply unphysical infinite or negative observables) (would conflict with renormalisation group flow and cross-section data)",
-        "$\\nabla^2\\phi = 4\\pi G\\rho$ — Newtonian Poisson equation, exact (unsupported by perturbative expansions in the coupling) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "$R = 0$ everywhere — flat spacetime is the only solution (disagrees with the standard textbook treatment in Peskin-Schroeder) (contradicted by both lattice simulations and dispersive analyses)"
+        "$\\partial_\\mu \\partial^\\mu g_{\\nu\\rho} = T_{\\nu\\rho}$ — linear wave equation (a frequently-taught but incorrect simplification) (a common misconception) (this reverses the actual relationship)",
+        "$\\nabla^2\\phi = 4\\pi G\\rho$ — Newtonian Poisson equation, exact (true only as a special case, not in general) (not supported by the evidence) (this conflates cause and effect)",
+        "$R = 0$ everywhere — flat spacetime is the only solution (this describes a different phenomenon) (inconsistent with standard results in the field) (this confuses two distinct concepts)"
       ],
       "correct": 0,
       "explanation": "EFE (Einstein 1915): 10 coupled nonlinear PDEs for $g_{\\mu\\nu}(x)$. Ricci tensor $R_{\\mu\\nu}$ contracted from Riemann $R^\\rho_{\\mu\\rho\\nu}$; scalar $R = g^{\\mu\\nu}R_{\\mu\\nu}$. Bianchi identity $\\nabla^\\mu G_{\\mu\\nu} = 0$ enforces local energy-momentum conservation $\\nabla^\\mu T_{\\mu\\nu} = 0$. Newtonian limit (weak field, slow motion): $g_{00} = -(1 + 2\\Phi/c^2)$, EFE reduces to $\\nabla^2\\Phi = 4\\pi G\\rho$. Derivable from Einstein-Hilbert action $S = (c^4/16\\pi G)\\int R\\sqrt{-g}\\,d^4x + S_{\\rm matter}$. Cosmological constant added by Einstein (1917) for static universe, abandoned, then reborn as dark energy."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "Weak (WEP / Galilean): inertial mass = gravitational mass; all test particles fall identically in gravity, independent of composition. Strong (SEP): all (non-gravitational) laws of physics in a freely-falling frame are identical to special-relativistic laws — locally, gravity is indistinguishable from acceleration. Tests: Eötvös, MICROSCOPE satellite ($\\eta < 10^{-15}$)",
-        "Only equivalence of force types in different reference frames (ruled out by experimental constraints from collider and low-energy data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "Gravity and electromagnetism are unified at high energy (would imply unphysical infinite or negative observables) (violates basic gauge invariance and Lorentz covariance requirements) (not consistent with the operator product expansion at large momentum)",
-        "WEP forbidden by quantum mechanics (historically considered but disfavoured by modern QFT analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder) (would conflict with renormalisation group flow and cross-section data)"
+        "Only equivalence of force types in different reference frames (this describes a different phenomenon) (this confuses two distinct concepts) (a frequently-taught but incorrect simplification)",
+        "Gravity and electromagnetism are unified at high energy (true only as a special case, not in general) (an outdated view superseded by later work) (inconsistent with standard results in the field)",
+        "WEP forbidden by quantum mechanics (not supported by the evidence) (a common misconception) (this conflates cause and effect) (this reverses the actual relationship) (this describes a different phenomenon)"
       ],
       "correct": 0,
       "explanation": "Galileo's leaning tower (apocryphal) and Newton's pendulum experiments established WEP empirically. Einstein elevated to founding principle of GR: 'happiest thought' (1907) — freely-falling observer feels no gravity. Mathematical statement: gravity is described by curved spacetime, not a force. Tests: Eötvös torsion-balance experiments (1880s, $\\eta < 10^{-9}$); modern: MICROSCOPE satellite (2017): differential acceleration of Ti and Pt $\\eta = (a_1 - a_2)/(a_1+a_2) < 1.3\\times 10^{-15}$. Lunar laser ranging tests SEP via Nordtvedt effect (Earth-Moon free-fall around Sun): $|\\eta| < 4\\times 10^{-4}$. Microscope II and STEP propose pushing to $10^{-17}-10^{-18}$."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "Extremise proper time $\\tau = \\int d\\tau$: leads to $d^2 x^\\mu/d\\tau^2 + \\Gamma^\\mu_{\\rho\\sigma}(dx^\\rho/d\\tau)(dx^\\sigma/d\\tau) = 0$; generalisation of Newton's 2nd law to curved spacetime; gravity manifests as Christoffel symbols, not a force. Massless particles use affine parameter not $\\tau$",
-        "$d^2x/dt^2 = -\\nabla\\Phi$ exactly, even relativistically (violates basic gauge invariance and Lorentz covariance requirements) (unsupported by perturbative expansions in the coupling)",
-        "Particles follow straight lines in Cartesian coordinates (historically considered but disfavoured by modern QFT analyses) (would imply unphysical infinite or negative observables)",
-        "$\\ddot x^\\mu = 0$ — Newton's 1st law unchanged (disagrees with the standard textbook treatment in Peskin-Schroeder) (not consistent with the operator product expansion at large momentum)"
+        "$d^2x/dt^2 = -\\nabla\\Phi$ exactly, even relativistically (true only as a special case, not in general) (this reverses the actual relationship) (inconsistent with standard results in the field)",
+        "Particles follow straight lines in Cartesian coordinates (a frequently-taught but incorrect simplification) (not supported by the evidence) (an outdated view superseded by later work)",
+        "$\\ddot x^\\mu = 0$ — Newton's 1st law unchanged (this describes a different phenomenon) (this confuses two distinct concepts) (this conflates cause and effect)"
       ],
       "correct": 0,
       "explanation": "From variational principle $\\delta\\int\\sqrt{-g_{\\mu\\nu}\\dot x^\\mu\\dot x^\\nu}\\,d\\tau = 0$ get geodesic equation. Newtonian limit: weak field $g_{00} \\approx -(1 + 2\\Phi/c^2)$, slow $v \\ll c$ → $\\Gamma^i_{00} \\approx \\partial_i\\Phi$, geodesic reduces to $\\ddot x^i = -\\partial_i\\Phi$. Tests of geodesic motion: precession of Mercury perihelion (43''/century — anomaly explained by GR 1915, Einstein's 'triumph'); deflection of starlight by Sun (Eddington 1919 eclipse: $1.75''$ — confirmed GR); Shapiro time delay (radar reflection from Mercury/Venus, 1964+); pulsar timing (Hulse-Taylor PSR B1913+16, Nobel 1993)."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "$S_{\\rm EH} = (c^4/16\\pi G)\\int R\\sqrt{-g}\\,d^4 x + S_{\\rm matter}[g, \\Phi]$; $\\delta S/\\delta g^{\\mu\\nu} = 0$ yields Einstein equations $G_{\\mu\\nu} = (8\\pi G/c^4)T_{\\mu\\nu}$ with $T_{\\mu\\nu} = -(2/\\sqrt{-g})\\delta S_{\\rm matter}/\\delta g^{\\mu\\nu}$. Adding Gibbons-Hawking boundary term for non-trivial boundaries",
-        "$S = \\int g_{\\mu\\nu}T^{\\mu\\nu}d^4x$ — direct contraction (would imply unphysical infinite or negative observables) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "GR cannot be derived from an action principle (violates basic gauge invariance and Lorentz covariance requirements) (unsupported by perturbative expansions in the coupling)",
-        "$S = \\int R^2 d^4x$ — quadratic in curvature (would conflict with renormalisation group flow and cross-section data) (contradicted by both lattice simulations and dispersive analyses)"
+        "$S = \\int g_{\\mu\\nu}T^{\\mu\\nu}d^4x$ — direct contraction (a frequently-taught but incorrect simplification) (this confuses two distinct concepts) (true only as a special case, not in general)",
+        "GR cannot be derived from an action principle (this reverses the actual relationship) (a common misconception) (this conflates cause and effect) (this describes a different phenomenon)",
+        "$S = \\int R^2 d^4x$ — quadratic in curvature (inconsistent with standard results in the field) (not supported by the evidence) (an outdated view superseded by later work)"
       ],
       "correct": 0,
       "explanation": "Einstein-Hilbert action: simplest diff-invariant scalar built from metric. Variation: $\\delta(R\\sqrt{-g}) = (R_{\\mu\\nu} - \\frac{1}{2}Rg_{\\mu\\nu})\\sqrt{-g}\\delta g^{\\mu\\nu} + \\text{total derivative}$. Total derivative removed by Gibbons-Hawking-York surface term $S_{\\rm GHY} = (1/8\\pi G)\\oint K\\sqrt h\\,d^3x$ where $K$ is extrinsic curvature of boundary. Cosmological constant: add $-2\\Lambda\\sqrt{-g}$. Higher curvature: $f(R), R^2, R_{\\mu\\nu}R^{\\mu\\nu}$ — give 4-derivative equations of motion, ghosts unless tuned (Gauss-Bonnet topological in 4D). Modified gravity: $f(R)$, Brans-Dicke, Horndeski — most constrained by GW170817 to $|c_T - c| < 10^{-15}$."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "Any spherically symmetric vacuum solution of Einstein equations is necessarily static and asymptotically flat, equal to Schwarzschild (up to coordinates): $ds^2 = -(1-r_s/r)c^2dt^2 + (1-r_s/r)^{-1}dr^2 + r^2 d\\Omega^2$, $r_s = 2GM/c^2$. Analogue of Newton's shell theorem; pulsating spherical stars emit no GWs",
-        "Spherical symmetry requires time-dependent solutions (not consistent with the operator product expansion at large momentum) (contradicted by both lattice simulations and dispersive analyses)",
-        "Birkhoff theorem applies only to flat space (violates basic gauge invariance and Lorentz covariance requirements) (ruled out by experimental constraints from collider and low-energy data)",
-        "Schwarzschild is one of many static spherical solutions (disagrees with the standard textbook treatment in Peskin-Schroeder) (historically considered but disfavoured by modern QFT analyses)"
+        "Spherical symmetry requires time-dependent solutions (an outdated view superseded by later work) (this conflates cause and effect) (true only as a special case, not in general)",
+        "Birkhoff theorem applies only to flat space (this describes a different phenomenon) (not supported by the evidence) (inconsistent with standard results in the field)",
+        "Schwarzschild is one of many static spherical solutions (this reverses the actual relationship) (a frequently-taught but incorrect simplification) (a common misconception)"
       ],
       "correct": 0,
       "explanation": "Birkhoff (1923) — analogous to Newtonian shell theorem but stronger because GR has dynamical metric: even time-dependent spherical sources have static external metric. Implication: oscillating spherical stars cannot radiate gravitational waves (lowest GW radiation is quadrupole, requires non-spherical motion). Schwarzschild metric: unique vacuum solution outside spherical mass. Event horizon at $r = r_s$ (coordinate singularity in Schwarzschild coords, smooth in Kruskal coords); curvature singularity at $r = 0$. Mass parameter $M$ is ADM mass (asymptotic value of $g_{00}$). Extensions: Reissner-Nordström (charge), Kerr (rotation), Kerr-Newman (both)."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "Active diffeomorphisms $x^\\mu \\to x'^\\mu(x)$ are local symmetries: physical observables are diff-invariant. Infinitesimally $\\delta g_{\\mu\\nu} = \\nabla_\\mu\\xi_\\nu + \\nabla_\\nu\\xi_\\mu$ (Lie derivative); 4 gauge parameters $\\xi^\\mu$ remove 4 of 10 metric components, leaving 6 physical d.o.f.; constraints further reduce to 2 graviton polarisations (helicity $\\pm 2$)",
-        "GR is not a gauge theory (contradicted by both lattice simulations and dispersive analyses) (would imply unphysical infinite or negative observables) (unsupported by perturbative expansions in the coupling)",
-        "Gauge symmetry is $U(1)$ as in EM (ruled out by experimental constraints from collider and low-energy data) (historically considered but disfavoured by modern QFT analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "Diffeomorphisms are global, not local (not consistent with the operator product expansion at large momentum) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (violates basic gauge invariance and Lorentz covariance requirements)"
+        "GR is not a gauge theory (this conflates cause and effect) (a frequently-taught but incorrect simplification) (this reverses the actual relationship) (this describes a different phenomenon)",
+        "Gauge symmetry is $U(1)$ as in EM (inconsistent with standard results in the field) (not supported by the evidence) (an outdated view superseded by later work) (this confuses two distinct concepts)",
+        "Diffeomorphisms are global, not local (true only as a special case, not in general) (a common misconception) (this conflates cause and effect) (a frequently-taught but incorrect simplification)"
       ],
       "correct": 0,
       "explanation": "Diff-invariance: physics independent of coordinate choice. Analogue of $U(1)$ gauge for EM, but local in 4 parameters. Counting in linearised gravity around flat space ($g_{\\mu\\nu} = \\eta_{\\mu\\nu} + h_{\\mu\\nu}$): $h_{\\mu\\nu}$ has 10 components. Diffeo gauge: $h_{\\mu\\nu} \\to h_{\\mu\\nu} + \\partial_\\mu\\xi_\\nu + \\partial_\\nu\\xi_\\mu$ removes 4 → 6. Constraints (analogue of $\\nabla\\cdot E$ in EM) remove 4 more → 2 physical polarisations (transverse-traceless $h_+^{\\rm TT}, h_\\times^{\\rm TT}$). Non-perturbative: ADM 3+1 decomposition gives constraint structure (Hamiltonian + diffeomorphism constraints). Foundation of canonical quantum gravity, loop quantum gravity, asymptotic safety."

@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "$s = (p_1 + p_2)^2$ (CM energy squared, $\\ge (m_1+m_2)^2$), $t = (p_1 - p_3)^2$ (momentum transfer, $\\le 0$ physical region), $u = (p_1 - p_4)^2$; identity $s + t + u = m_1^2 + m_2^2 + m_3^2 + m_4^2$; Lorentz-invariant",
-        "$s = p_1 \\cdot p_2$, $t = p_1 \\cdot p_3$, $u = p_1\\cdot p_4$ — just dot products (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "$s + t + u = 0$ in all cases (contradicted by both lattice simulations and dispersive analyses) (unsupported by perturbative expansions in the coupling)",
-        "Only $s$ is needed; $t, u$ redundant (would imply unphysical infinite or negative observables) (historically considered but disfavoured by modern QFT analyses)"
+        "$s = p_1 \\cdot p_2$, $t = p_1 \\cdot p_3$, $u = p_1\\cdot p_4$ — just dot products (this confuses two distinct concepts)",
+        "$s + t + u = 0$ in all cases (this conflates cause and effect) (this reverses the actual relationship) (a frequently-taught but incorrect simplification)",
+        "Only $s$ is needed; $t, u$ redundant (inconsistent with standard results in the field) (not supported by the evidence)"
       ],
       "correct": 0,
       "explanation": "For $2\\to 2$ scattering $1+2 \\to 3+4$: 4 final particles in 3D give 4 kinematic d.o.f. minus 4-momentum conservation = $4\\cdot 3 - 4 - 4 = 4$ → modulo rotations $= 2$ independent variables ($s, t$). $u$ determined by identity. Crossing: same amplitude analytically continues between $s$-channel ($s > 0$), $t$-channel ($t > 0$), $u$-channel ($u > 0$) regions. Useful tools: $t = -(s/2)(1 - \\cos\\theta)$ at $m_i = 0$, threshold $s = (m_3 + m_4)^2$. Optical theorem: $\\Im[\\mathcal M(\\theta=0)] = 2 p_{\\rm cm}\\sqrt s \\sigma_{\\rm tot}$."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "$\\lambda' - \\lambda = (h/m_e c)(1 - \\cos\\theta)$ where $\\theta$ is photon scattering angle. Derivation: conserve four-momentum $p_\\gamma + p_e = p'_\\gamma + p'_e$, on-shell conditions; solve for $\\lambda'$ at given $\\theta$. Compton wavelength $\\lambda_C = h/m_e c \\approx 2.43$ pm",
-        "$\\lambda' - \\lambda = h\\nu/m_e c^2$ — independent of angle (unsupported by perturbative expansions in the coupling) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "No wavelength shift in elastic scattering (ruled out by experimental constraints from collider and low-energy data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "$\\lambda' = \\lambda\\cdot\\theta/2\\pi$ — linear in angle (would conflict with renormalisation group flow and cross-section data) (violates basic gauge invariance and Lorentz covariance requirements)"
+        "$\\lambda' - \\lambda = h\\nu/m_e c^2$ — independent of angle (this reverses the actual relationship) (not supported by the evidence) (this describes a different phenomenon)",
+        "No wavelength shift in elastic scattering (this confuses two distinct concepts) (a common misconception) (true only as a special case, not in general)",
+        "$\\lambda' = \\lambda\\cdot\\theta/2\\pi$ — linear in angle (a frequently-taught but incorrect simplification) (an outdated view superseded by later work)"
       ],
       "correct": 0,
       "explanation": "Compton (1923): scatter X-ray off electron. Photon momentum $p_\\gamma = h/\\lambda$, energy $E_\\gamma = hc/\\lambda$. Four-momentum conservation: $p_\\gamma + (m_e c, \\mathbf 0) = p'_\\gamma + p'_e$. Take inner product $(p'_e)^2 = m_e^2 c^2$: $(p_\\gamma + p_e - p'_\\gamma)^2 = m_e^2 c^2$. Expand using $p_\\gamma^2 = (p'_\\gamma)^2 = 0$ (massless), $p_e^2 = m_e^2 c^2$: get $p_\\gamma \\cdot p'_\\gamma = m_e c(E_\\gamma/c - E'_\\gamma/c)$, simplify → $\\lambda' - \\lambda = \\lambda_C(1 - \\cos\\theta)$. Max shift at $\\theta = \\pi$ (backscatter): $\\Delta\\lambda = 2\\lambda_C$. Confirmed classical photon-particle picture; Nobel 1927. Inverse Compton: high-energy electron scatters low-$E$ photon — key for X-ray astronomy."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "Cosmic-ray protons scatter on CMB photons via $p + \\gamma_{\\rm CMB} \\to \\Delta^+(1232) \\to p\\pi^0$ or $n\\pi^+$; threshold $E_p \\approx 5\\times 10^{19}$ eV (using $T_{CMB}$, $\\Delta$ mass); rapidly degrades protons in $\\sim 100$ Mpc; predicted by Greisen, Zatsepin, Kuzmin (1966); observed cutoff in HiRes (2008), Auger (2010+)",
-        "Limit set by Lorentz invariance breakdown above $10^{19}$ eV (violates basic gauge invariance and Lorentz covariance requirements) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "Galactic confinement only; intergalactic CRs all pass (ruled out by experimental constraints from collider and low-energy data) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "Cutoff from atmospheric absorption only (contradicted by both lattice simulations and dispersive analyses) (would imply unphysical infinite or negative observables)"
+        "Limit set by Lorentz invariance breakdown above $10^{19}$ eV (true only as a special case, not in general) (this confuses two distinct concepts) (this describes a different phenomenon)",
+        "Galactic confinement only; intergalactic CRs all pass (not supported by the evidence) (this conflates cause and effect) (a frequently-taught but incorrect simplification)",
+        "Cutoff from atmospheric absorption only (this reverses the actual relationship) (a common misconception) (inconsistent with standard results in the field) (an outdated view superseded by later work)"
       ],
       "correct": 0,
       "explanation": "Threshold for $p + \\gamma_{CMB} \\to \\Delta^+ \\to N\\pi$: $s_{\\rm thr} = (m_p + m_\\pi)^2$ gives $E_p \\ge (m_\\pi/E_\\gamma)(m_p + m_\\pi/2) \\sim 5\\times 10^{19}$ eV for typical CMB photon $E_\\gamma \\sim k_BT_{CMB}/c$. Mean free path drops from $\\sim$ Gpc to $\\sim 100$ Mpc; degraded protons lose energy over kpc-Mpc distances. Predicts spectrum cutoff. Observation: HiRes confirmed cutoff at $5.5\\sigma$ (2008); Pierre Auger Observatory (Argentina, 3000 km²) and Telescope Array detail the spectrum/composition. Recent puzzle: extremely high-$E$ event $\\sim 2.4\\times 10^{20}$ eV (Telescope Array 'Amaterasu', 2023) — origin unclear. Also: photon-photon scattering on EBL produces UHE-gamma cutoff."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "$d\\Gamma = (1/2M)|\\mathcal M|^2 d\\Phi_n$ with Lorentz-invariant phase space $d\\Phi_n = (2\\pi)^4\\delta^4(P - \\sum p_i)\\prod_i d^3 p_i/((2\\pi)^3 2E_i)$. For 2-body in rest frame: $d\\Gamma = |\\mathcal M|^2 p^*/(8\\pi M^2) d\\cos\\theta$ where $p^*$ is CM 3-momentum",
-        "$d\\Gamma = |\\mathcal M|^2$ — no phase space factor (unsupported by perturbative expansions in the coupling) (not consistent with the operator product expansion at large momentum)",
-        "$d\\Gamma = M\\cdot|\\mathcal M|^2 dV$ — volume integration (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "Phase space integration is not Lorentz invariant (ruled out by experimental constraints from collider and low-energy data) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+        "$d\\Gamma = |\\mathcal M|^2$ — no phase space factor (this reverses the actual relationship) (an outdated view superseded by later work)",
+        "$d\\Gamma = M\\cdot|\\mathcal M|^2 dV$ — volume integration (this confuses two distinct concepts) (this describes a different phenomenon)",
+        "Phase space integration is not Lorentz invariant (not supported by the evidence) (a frequently-taught but incorrect simplification)"
       ],
       "correct": 0,
       "explanation": "Lorentz-invariant phase space (LIPS) measure: each particle contributes $d^3 p_i/((2\\pi)^3 2E_i) = d^4 p_i \\delta(p_i^2 - m_i^2)\\theta(p_i^0)/(2\\pi)^3$. Delta function enforces overall 4-momentum conservation. Two-body decay $M \\to 1 + 2$ in rest frame: CM 3-momentum $p^* = \\lambda^{1/2}(M^2, m_1^2, m_2^2)/(2M)$ where $\\lambda$ is Källén function $\\lambda(a,b,c) = a^2 + b^2 + c^2 - 2ab - 2bc - 2ca$. Three-body decay: Dalitz plot in $(m_{12}^2, m_{23}^2)$ — boundary from kinematics, density $\\propto |\\mathcal M|^2$. Recursive formula $d\\Phi_n = d\\Phi_2(\\to \\{\\text{multi-body system}\\}) \\cdot dm_{n-1}^2/2\\pi \\cdot d\\Phi_{n-1}$ — useful for Monte Carlo (e.g.\\ MadGraph, Pythia)."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "Rapidity $y = (1/2)\\ln[(E + p_z)/(E - p_z)]$ — Lorentz boost along $z$ adds linearly: $y \\to y - y_{\\rm boost}$. Pseudo-rapidity $\\eta = -\\ln\\tan(\\theta/2)$ — depends only on angle, equals $y$ for massless particles. Used at LHC because beam $z$-direction is conventional",
-        "Both identical for all kinematics (would conflict with renormalisation group flow and cross-section data) (historically considered but disfavoured by modern QFT analyses)",
-        "$y = p_z/E$ — linear ratio (not consistent with the operator product expansion at large momentum) (unsupported by perturbative expansions in the coupling)",
-        "$\\eta$ is the photon polar angle directly (disagrees with the standard textbook treatment in Peskin-Schroeder) (contradicted by both lattice simulations and dispersive analyses)"
+        "Both identical for all kinematics (a common misconception) (inconsistent with standard results in the field) (an outdated view superseded by later work)",
+        "$y = p_z/E$ — linear ratio (this reverses the actual relationship) (not supported by the evidence) (this conflates cause and effect) (this describes a different phenomenon)",
+        "$\\eta$ is the photon polar angle directly (true only as a special case, not in general) (this confuses two distinct concepts) (a frequently-taught but incorrect simplification)"
       ],
       "correct": 0,
       "explanation": "Rapidity convenient for collider physics: distribution flat for soft particles, differences invariant under boosts. Velocity addition: $y_1 + y_2$ for relative rapidity. Pseudo-rapidity easier to measure (angle from beam): $\\eta = -\\ln\\tan(\\theta/2)$. $\\eta = 0$: perpendicular to beam (central detector); $\\eta = \\pm\\infty$: along beam. LHC detector coverage: $|\\eta| < 2.5$ for tracking, $|\\eta| < 5$ for forward calorimetry. For $p_T \\gg m$: $y \\approx \\eta$. Hadron-collider variables: $p_T$ (Lorentz-invariant in $z$-boosts), $\\eta$, $\\phi$. Invariant mass of 2 objects: $m^2 = 2p_{T1}p_{T2}(\\cosh\\Delta\\eta - \\cos\\Delta\\phi)$ for massless. Missing transverse energy $E_T^{\\rm miss}$: measure of invisible particles (neutrinos, dark matter)."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "$t$-channel exchange of light particle (mass $m$): propagator $\\propto 1/(t - m^2)$; at high $s$, $t = -(s/2)(1-\\cos\\theta) \\to 0$ at $\\theta = 0$ (forward); amplitude $\\sim 1/(\\theta^2 + (m^2/s))$ for small $\\theta$ — strongly forward-peaked when $\\theta^2 \\gg m^2/s$, Coulomb-like $d\\sigma/d\\Omega \\sim 1/\\theta^4$ for massless mediator (Rutherford)",
-        "Isotropic angular distribution at high energy (not consistent with the operator product expansion at large momentum) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "Backward-peaked due to crossing symmetry (unsupported by perturbative expansions in the coupling) (would conflict with renormalisation group flow and cross-section data) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "Angular distribution only depends on spin of mediator (would imply unphysical infinite or negative observables) (historically considered but disfavoured by modern QFT analyses)"
+        "Isotropic angular distribution at high energy (an outdated view superseded by later work) (this confuses two distinct concepts) (this reverses the actual relationship) (a common misconception)",
+        "Backward-peaked due to crossing symmetry (not supported by the evidence) (a frequently-taught but incorrect simplification) (inconsistent with standard results in the field) (true only as a special case, not in general)",
+        "Angular distribution only depends on spin of mediator (this describes a different phenomenon) (this conflates cause and effect) (an outdated view superseded by later work) (this confuses two distinct concepts)"
       ],
       "correct": 0,
       "explanation": "Rutherford-like forward peak from $t$-channel propagator: $1/t$ for massless mediator (Coulomb, photon, graviton). $d\\sigma/d\\Omega \\propto 1/t^2 \\propto 1/\\sin^4(\\theta/2)$ — diverges at $\\theta \\to 0$, total cross section IR-divergent unless mediator screened (Debye in plasma, $W/Z$ mass in EW). Massive mediator ($m_W$, $m_Z$): no IR divergence, but still forward-peaked for $|t| \\lesssim m^2$. $s$-channel resonance: amplitude $\\sim 1/(s - m^2 + i\\Gamma m)$, peaked at $\\sqrt s = m$ — Breit-Wigner. $u$-channel: backward peaking. Helicity structure modulates angular dependence: photon-mediated $e^+e^- \\to \\mu^+\\mu^-$: $(1+\\cos^2\\theta)$; weak: $A_{FB}$ asymmetry — key precision EW observable."

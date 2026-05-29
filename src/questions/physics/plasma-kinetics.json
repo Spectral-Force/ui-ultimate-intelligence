@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "A charge in a plasma is screened by the rearrangement of mobile charges over the Debye length $\\lambda_D = \\sqrt{\\epsilon_0 k_B T/(n e^2)}$; beyond a few $\\lambda_D$ the potential is exponentially suppressed, making the plasma quasi-neutral on larger scales",
-        "Charges in a plasma are never screened (ruled out by experimental constraints from collider and low-energy data) (would imply unphysical infinite or negative observables)",
-        "The Debye length grows with density (contradicted by both lattice simulations and dispersive analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "Shielding requires a magnetic field (not consistent with the operator product expansion at large momentum) (violates basic gauge invariance and Lorentz covariance requirements)"
+        "Charges in a plasma are never screened (this describes a different phenomenon) (a frequently-taught but incorrect simplification)",
+        "The Debye length grows with density (this conflates cause and effect) (not supported by the evidence) (an outdated view superseded by later work)",
+        "Shielding requires a magnetic field (true only as a special case, not in general) (this confuses two distinct concepts) (a common misconception)"
       ],
       "correct": 0,
       "explanation": "A plasma is a quasi-neutral gas of charged particles exhibiting collective behaviour. Insert a test charge: electrons (and ions) redistribute to screen it, so the bare Coulomb potential is replaced by a Yukawa-like screened potential $\\phi\\propto e^{-r/\\lambda_D}/r$. The Debye length $\\lambda_D=\\sqrt{\\epsilon_0 k_BT/ne^2}$ sets the screening scale — shorter for denser/colder plasmas. Key criteria for 'plasma' behaviour: the system size $\\gg\\lambda_D$ (so it is quasi-neutral overall), and the number of particles in a Debye sphere $N_D = n\\lambda_D^3 \\gg 1$ (so screening is statistical and collective effects dominate over binary collisions). Debye shielding is the foundational concept distinguishing a plasma from a mere ionised gas and underlies sheath physics at plasma boundaries."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "$\\omega_p=\\sqrt{ne^2/\\epsilon_0 m_e}$, the natural frequency at which displaced electrons oscillate about the ions; electromagnetic waves below $\\omega_p$ cannot propagate (they are reflected), which is why the ionosphere reflects AM radio and metals are shiny/opaque",
-        "A frequency that depends only on temperature (disagrees with the standard textbook treatment in Peskin-Schroeder) (contradicted by both lattice simulations and dispersive analyses)",
-        "A frequency at which plasmas become transparent to all waves (not consistent with the operator product expansion at large momentum) (historically considered but disfavoured by modern QFT analyses)",
-        "The rotation rate of the plasma as a whole (would imply unphysical infinite or negative observables) (unsupported by perturbative expansions in the coupling)"
+        "A frequency that depends only on temperature (not supported by the evidence) (this conflates cause and effect) (an outdated view superseded by later work)",
+        "A frequency at which plasmas become transparent to all waves (inconsistent with standard results in the field) (a frequently-taught but incorrect simplification)",
+        "The rotation rate of the plasma as a whole (this reverses the actual relationship) (a common misconception) (true only as a special case, not in general)"
       ],
       "correct": 0,
       "explanation": "If electrons are displaced relative to the heavier ions, the resulting electric field pulls them back, and they overshoot — collective oscillation at the electron plasma frequency $\\omega_p=\\sqrt{ne^2/\\epsilon_0 m_e}$ (depending only on density, not temperature). This frequency sets a propagation cutoff: an EM wave with $\\omega<\\omega_p$ has imaginary wavenumber and is evanescent/reflected, while $\\omega>\\omega_p$ propagates. Consequences: the ionosphere (with $\\omega_p$ in the MHz range) reflects AM/short-wave radio enabling over-the-horizon communication but transmits higher-frequency signals (FM, satellite); metals reflect visible light because their electron density gives $\\omega_p$ in the UV (hence their shine), turning UV-transparent; and the cutoff is used as a density diagnostic (interferometry) in laboratory and space plasmas. Langmuir waves are the warm-plasma generalisation (Bohm-Gross dispersion)."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "The collisionless kinetic evolution of the particle distribution function $f(\\mathbf x,\\mathbf v,t)$ in phase space under self-consistent electromagnetic fields: $\\partial_t f + \\mathbf v\\cdot\\nabla_x f + (q/m)(\\mathbf E+\\mathbf v\\times\\mathbf B)\\cdot\\nabla_v f = 0$, coupled to Maxwell's equations",
-        "The motion of a single particle only (would imply unphysical infinite or negative observables) (unsupported by perturbative expansions in the coupling)",
-        "A purely fluid (no phase-space) description (disagrees with the standard textbook treatment in Peskin-Schroeder) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "Collisional relaxation to equilibrium (contradicted by both lattice simulations and dispersive analyses) (historically considered but disfavoured by modern QFT analyses)"
+        "The motion of a single particle only (a frequently-taught but incorrect simplification) (this reverses the actual relationship) (not supported by the evidence)",
+        "A purely fluid (no phase-space) description (this confuses two distinct concepts) (this conflates cause and effect) (inconsistent with standard results in the field)",
+        "Collisional relaxation to equilibrium (this describes a different phenomenon) (an outdated view superseded by later work) (true only as a special case, not in general)"
       ],
       "correct": 0,
       "explanation": "The Vlasov equation is the collisionless Boltzmann equation for plasmas: it advects the phase-space distribution $f(\\mathbf x,\\mathbf v,t)$ along particle trajectories in self-consistent mean fields, with the collision term neglected (valid when $N_D\\gg1$ so smooth fields dominate over discrete collisions). Coupled to Maxwell's equations (the Vlasov-Maxwell or, electrostatically, Vlasov-Poisson system) it captures the full kinetic physics: wave-particle resonances, Landau damping, kinetic instabilities, and phase-space structures (BGK modes, holes) that fluid (MHD) models miss. Adding a collision operator (Fokker-Planck/Landau) gives the kinetic equation for weakly-collisional plasmas. The Vlasov description is essential wherever the velocity distribution departs from Maxwellian — collisionless shocks, the solar wind, magnetic reconnection diffusion regions, and fusion-plasma microturbulence (gyrokinetics is its magnetised reduction)."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "Collisionless damping of plasma waves through resonant energy exchange with particles moving near the wave phase velocity; because slightly slower particles (more numerous on a Maxwellian) gain energy from the wave, the wave decays even with zero collisions — a purely kinetic, phase-mixing effect",
-        "Damping caused only by particle collisions (historically considered but disfavoured by modern QFT analyses) (would conflict with renormalisation group flow and cross-section data)",
-        "Growth of waves with no damping mechanism (unsupported by perturbative expansions in the coupling) (not consistent with the operator product expansion at large momentum)",
-        "An effect requiring a magnetic field (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (contradicted by both lattice simulations and dispersive analyses)"
+        "Damping caused only by particle collisions (inconsistent with standard results in the field) (a common misconception) (this reverses the actual relationship)",
+        "Growth of waves with no damping mechanism (an outdated view superseded by later work) (this confuses two distinct concepts) (this conflates cause and effect)",
+        "An effect requiring a magnetic field (a frequently-taught but incorrect simplification) (not supported by the evidence) (this describes a different phenomenon)"
       ],
       "correct": 0,
       "explanation": "Landau (1946) showed that a plasma wave can damp without any collisions through a subtle resonance: particles moving close to the wave's phase velocity exchange energy with it. On a Maxwellian distribution there are slightly more particles moving just slower than the wave (which gain energy from it) than just faster (which give energy to it), so the wave loses energy and damps — at a rate set by the slope of the distribution at the phase velocity, $\\gamma\\propto \\partial f/\\partial v|_{v=\\omega/k}$. It was astonishing because it predicts irreversible-looking damping in a time-reversible, dissipationless (collisionless) system; the resolution is reversible phase mixing in velocity space (later confirmed by plasma-wave echo experiments). Inverse Landau damping (a positive slope, e.g. a beam) drives instabilities. Landau damping is fundamental to plasma wave physics, fusion heating, space plasmas, and even has gravitational analogues in stellar dynamics."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "A magnetised particle gyrates rapidly while its guiding centre drifts: $\\mathbf E\\times\\mathbf B$ drift ($\\mathbf E\\times\\mathbf B/B^2$, charge-independent), plus grad-B and curvature drifts (charge-dependent, causing charge separation/currents); the magnetic moment $\\mu=mv_\\perp^2/2B$ is an adiabatic invariant",
-        "Particles move in perfectly straight lines in any field (contradicted by both lattice simulations and dispersive analyses) (would conflict with renormalisation group flow and cross-section data)",
-        "Drifts are always along the magnetic field (unsupported by perturbative expansions in the coupling) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "The magnetic moment is never conserved (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (ruled out by experimental constraints from collider and low-energy data)"
+        "Particles move in perfectly straight lines in any field (this conflates cause and effect) (a common misconception) (this reverses the actual relationship) (true only as a special case, not in general)",
+        "Drifts are always along the magnetic field (this confuses two distinct concepts) (this describes a different phenomenon) (not supported by the evidence) (inconsistent with standard results in the field)",
+        "The magnetic moment is never conserved (a frequently-taught but incorrect simplification) (an outdated view superseded by later work) (this conflates cause and effect)"
       ],
       "correct": 0,
       "explanation": "In a strong magnetic field a charged particle executes fast cyclotron gyration around a slowly-moving guiding centre. Superimposed drifts arise from additional forces/field gradients: the $\\mathbf E\\times\\mathbf B$ drift $\\mathbf v_E=\\mathbf E\\times\\mathbf B/B^2$ (same for all species, so no current); the grad-B drift and curvature drift (both depend on charge sign and energy, producing cross-field currents and charge separation); and gravitational/polarisation drifts. The magnetic moment $\\mu=mv_\\perp^2/2B$ is an adiabatic invariant when fields vary slowly, leading to magnetic mirroring (particles reflect from high-field regions, trapping plasma in magnetic bottles and Earth's Van Allen belts). Guiding-centre theory (and its formal version, gyrokinetics) reduces the fast gyration to drastically simplify magnetised-plasma dynamics — essential for designing fusion confinement and understanding space plasmas."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "A reduced kinetic theory that averages over the fast gyromotion, evolving the distribution of charged rings (guiding centres) in 5D phase space instead of 6D; it captures low-frequency, small-scale drift-wave microturbulence that governs cross-field transport in tokamaks while removing the stiff fast cyclotron timescale",
-        "A full 6D Vlasov solver with no approximations (would conflict with renormalisation group flow and cross-section data) (would imply unphysical infinite or negative observables)",
-        "A fluid model ignoring all kinetic effects (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "A theory only valid without magnetic fields (disagrees with the standard textbook treatment in Peskin-Schroeder) (not consistent with the operator product expansion at large momentum)"
+        "A full 6D Vlasov solver with no approximations (a common misconception) (a frequently-taught but incorrect simplification) (this confuses two distinct concepts) (true only as a special case, not in general)",
+        "A fluid model ignoring all kinetic effects (not supported by the evidence) (an outdated view superseded by later work) (this describes a different phenomenon) (this conflates cause and effect)",
+        "A theory only valid without magnetic fields (inconsistent with standard results in the field) (this reverses the actual relationship) (a common misconception) (a frequently-taught but incorrect simplification)"
       ],
       "correct": 0,
       "explanation": "Turbulent transport — not collisions — sets the energy confinement time (and hence reactor size) in magnetic-confinement fusion. The relevant microturbulence (ion/electron temperature-gradient modes, trapped-electron modes) has frequencies far below the ion cyclotron frequency and perpendicular scales near the gyroradius, so resolving the full 6D Vlasov-Maxwell system with its fast gyration is computationally prohibitive. Gyrokinetics systematically averages over the gyrophase (gyro-averaging), reducing the problem to the evolution of charged 'rings' in a 5D phase space (three position + parallel velocity + magnetic moment as a parameter) and ordering out the fast cyclotron motion while retaining finite-Larmor-radius effects, wave-particle resonances, and Landau damping. Gyrokinetic codes (GENE, GYRO, GS2, XGC) are the workhorses for predicting turbulent heat/particle transport, validating against experiments, and designing ITER. Gyrokinetics exemplifies multiscale reduction: trade exact generality for tractable physics on the scales that matter."

@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "Mesons = $q\\bar q$ colour singlets, integer spin (bosons); baryons = $qqq$ colour singlets, half-integer spin (fermions). Wave function antisymmetric in colour, so symmetric in (flavour $\\otimes$ spin $\\otimes$ space). Recently confirmed exotics: tetraquarks $qq\\bar q\\bar q$, pentaquarks $qqqq\\bar q$",
-        "Mesons = $q\\bar q\\bar q$, baryons = $qq\\bar q$ (disagrees with the standard textbook treatment in Peskin-Schroeder) (contradicted by both lattice simulations and dispersive analyses)",
-        "All hadrons are made of exactly 5 quarks (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (unsupported by perturbative expansions in the coupling)",
-        "Mesons are fermions, baryons are bosons (violates basic gauge invariance and Lorentz covariance requirements) (historically considered but disfavoured by modern QFT analyses)"
+        "Mesons = $q\\bar q\\bar q$, baryons = $qq\\bar q$ (not supported by the evidence) (this conflates cause and effect) (this confuses two distinct concepts) (this reverses the actual relationship)",
+        "All hadrons are made of exactly 5 quarks (true only as a special case, not in general) (inconsistent with standard results in the field) (an outdated view superseded by later work)",
+        "Mesons are fermions, baryons are bosons (a frequently-taught but incorrect simplification) (this describes a different phenomenon) (a common misconception)"
       ],
       "correct": 0,
       "explanation": "Constituent quark model (Gell-Mann, Zweig 1964): mesons $q\\bar q$, baryons $qqq$, all colour singlets $\\mathbf 3 \\otimes \\bar{\\mathbf 3} = \\mathbf 1 + \\mathbf 8$ and $\\mathbf 3\\otimes\\mathbf 3\\otimes\\mathbf 3 = \\mathbf 1 + 8 + 8 + \\mathbf{10}$. Flavour SU(3): pseudoscalar octet ($\\pi, K, \\eta$), vector octet ($\\rho, K^*, \\omega, \\phi$), baryon octet (N, $\\Lambda$, $\\Sigma$, $\\Xi$), decuplet ($\\Delta, \\Sigma^*, \\Xi^*, \\Omega^-$). Pauli antisymmetry across colour $\\otimes$ flavour $\\otimes$ spin requires symmetric flavour-spin combination (motivating colour SU(3) historically). Exotics confirmed since 2003: $X(3872), T_{cc}^+, P_c^+(4450), \\ldots$"
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "Higgs/current quark masses contribute $\\sim 1\\%$ ($m_u + m_u + m_d \\sim 9$ MeV vs proton 938 MeV); rest is QCD binding/kinetic energy of quarks and gluons, generated dynamically by confinement and chiral symmetry breaking; $m_p \\sim \\Lambda_{\\rm QCD} \\sim 200$ MeV via dimensional transmutation",
-        "Proton mass is sum of three constituent quark masses ~300 MeV each (contradicted by both lattice simulations and dispersive analyses) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "Higgs gives 100% of proton mass through Yukawa couplings (would conflict with renormalisation group flow and cross-section data) (ruled out by experimental constraints from collider and low-energy data)",
-        "Proton mass is just $m_p = 1/r_p$ where $r_p \\approx 0.84$ fm (historically considered but disfavoured by modern QFT analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+        "Proton mass is sum of three constituent quark masses ~300 MeV each (this conflates cause and effect) (true only as a special case, not in general) (a common misconception)",
+        "Higgs gives 100% of proton mass through Yukawa couplings (this describes a different phenomenon) (inconsistent with standard results in the field) (not supported by the evidence)",
+        "Proton mass is just $m_p = 1/r_p$ where $r_p \\approx 0.84$ fm (this reverses the actual relationship) (this confuses two distinct concepts) (an outdated view superseded by later work)"
       ],
       "correct": 0,
       "explanation": "Mass decomposition of the proton (Ji, lattice QCD): trace anomaly of stress-energy tensor $T^\\mu_\\mu = \\sum_q m_q\\bar qq + (\\beta(g)/2g)G^a_{\\mu\\nu}G^{a\\,\\mu\\nu}$. Matrix element gives proton mass. Breakdown (rough, $\\mu = 2$ GeV): quark mass term $\\sim 9\\%$ (Higgs contribution), gluon trace anomaly $\\sim 23\\%$, quark kinetic $\\sim 32\\%$, gluon kinetic $\\sim 37\\%$. Numbers vary by scheme. Key insight: even if quarks were exactly massless, proton would be nearly as heavy ($\\sim 870$ MeV from lattice in chiral limit). Mass comes from QCD's confinement scale via dimensional transmutation — running coupling generates intrinsic energy scale."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "Heavy quark spin-flavour symmetry $SU(2N_h)$: in the $m_Q \\to \\infty$ limit, the heavy quark spin and flavour decouple from the gluon dynamics; reduces $b$- and $c$-hadron form factors to a single Isgur-Wise function $\\xi(v\\cdot v')$",
-        "Heavy quarks exhibit conformal symmetry; no anomalous dimensions (contradicted by both lattice simulations and dispersive analyses)",
-        "Heavy quarks decouple completely from QCD; no symmetry survives (would imply unphysical infinite or negative observables)",
-        "Heavy-quark effective theory has $SO(3)$ rotational symmetry only (violates basic gauge invariance and Lorentz covariance requirements)"
+        "Heavy quarks exhibit conformal symmetry; no anomalous dimensions (this conflates cause and effect) (a frequently-taught but incorrect simplification)",
+        "Heavy quarks decouple completely from QCD; no symmetry survives (true only as a special case, not in general) (a common misconception)",
+        "Heavy-quark effective theory has $SO(3)$ rotational symmetry only (inconsistent with standard results in the field) (an outdated view superseded by later work)"
       ],
       "correct": 0,
       "explanation": "Field redefinition $Q(x) = e^{-im_Q v\\cdot x}[h_v(x) + H_v(x)]$ with velocity-projected components. Effective Lagrangian: $\\mathcal L_{\\rm HQET} = \\bar h_v iv\\cdot D h_v + (1/m_Q)[\\bar h_v(iD_\\perp)^2 h_v/2 + g\\bar h_v\\sigma_{\\mu\\nu}G^{\\mu\\nu}h_v/2] + O(1/m_Q^2)$. Leading piece has no spin or flavour structure $\\Rightarrow$ $SU(2N_h)$ spin-flavour symmetry. Predictions: $B \\to D, B \\to D^*$ form factors related by single function $\\xi(w)$ at LO, with $\\xi(1) = 1$ (Luke's theorem) — basis for $|V_{cb}|$ extraction. Power corrections $\\sim \\Lambda_{\\rm QCD}/m_b \\sim 10\\%$."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "Wick rotate to Euclidean time; discretise fields on lattice of spacing $a$; sample gauge configurations via Monte Carlo (importance sampling of $e^{-S_E}$); compute correlators of hadron operators; extrapolate to $a \\to 0$, $V \\to \\infty$, $m_\\pi \\to $ physical. Major triumph: hadron spectrum reproduced to few-% precision (BMW collaboration 2008)",
-        "Solve QCD analytically on the lattice; no Monte Carlo needed (unsupported by perturbative expansions in the coupling) (historically considered but disfavoured by modern QFT analyses)",
-        "Discretise time only; space stays continuous (would conflict with renormalisation group flow and cross-section data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "Lattice QCD works in Minkowski signature — Euclidean is unnecessary (contradicted by both lattice simulations and dispersive analyses) (ruled out by experimental constraints from collider and low-energy data)"
+        "Solve QCD analytically on the lattice; no Monte Carlo needed (this reverses the actual relationship) (inconsistent with standard results in the field) (a common misconception)",
+        "Discretise time only; space stays continuous (this confuses two distinct concepts) (this conflates cause and effect) (this describes a different phenomenon) (a frequently-taught but incorrect simplification)",
+        "Lattice QCD works in Minkowski signature — Euclidean is unnecessary (an outdated view superseded by later work) (true only as a special case, not in general) (not supported by the evidence)"
       ],
       "correct": 0,
       "explanation": "Lattice QCD (Wilson 1974): discretise on hypercubic lattice, gauge links $U_\\mu(x) = e^{iagA_\\mu}$ on edges, quarks on sites. Wilson action preserves exact gauge invariance. Euclidean path integral $Z = \\int DUDqD\\bar q e^{-S_E}$ becomes Boltzmann weight: importance sample with Hybrid Monte Carlo. Compute correlators $\\langle \\mathcal O(\\tau)\\mathcal O(0)\\rangle \\to A e^{-m\\tau}$ extracts hadron masses. Systematics: lattice spacing (continuum extrap), finite volume, chiral extrapolation. BMW 2008 (Dürr et al., Science): light hadron spectrum from first principles, all masses within few percent. Recent: $g-2$ hadronic vacuum polarisation, $f_K/f_\\pi$, $|V_{us}|$, $\\alpha_s$."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "Confirmed: $X(3872)$ (2003), $Z_c(3900)$ (charged charmonium-like, tetraquark candidate), $T_{cc}^+$ (2021, doubly-charmed tetraquark $cc\\bar u\\bar d$ at LHCb), pentaquarks $P_c(4380), P_c(4450)$ (LHCb 2015). Models: compact tetraquark, hadronic molecule, hadrocharmonium, hybrid. Glueballs predicted but unconfirmed",
-        "No exotic hadrons have been observed despite QCD allowing them (ruled out by experimental constraints from collider and low-energy data) (would imply unphysical infinite or negative observables)",
-        "Exotic hadrons forbidden by colour confinement (contradicted by both lattice simulations and dispersive analyses) (unsupported by perturbative expansions in the coupling)",
-        "All exotic states are unambiguously compact tetraquarks, no other interpretation (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (not consistent with the operator product expansion at large momentum)"
+        "No exotic hadrons have been observed despite QCD allowing them (this describes a different phenomenon) (a frequently-taught but incorrect simplification) (this conflates cause and effect)",
+        "Exotic hadrons forbidden by colour confinement (this reverses the actual relationship) (this confuses two distinct concepts) (an outdated view superseded by later work)",
+        "All exotic states are unambiguously compact tetraquarks, no other interpretation (inconsistent with standard results in the field) (not supported by the evidence)"
       ],
       "correct": 0,
       "explanation": "Exotics revolution starts 2003 with Belle's $X(3872)$ (mass remarkably close to $D^0\\bar D^{*0}$ threshold, $J^{PC} = 1^{++}$). Followed by $Y(4260)$ at BaBar (vector tetraquark candidate), $Z_c(3900), Z_b(10610)$ (BESIII, Belle — charged, so not pure $c\\bar c$ or $b\\bar b$), pentaquarks at LHCb in $\\Lambda_b \\to J/\\psi p K$, $T_{cc}^+$ at LHCb 2021 (first manifestly-exotic doubly-charged charm). Interpretation debate continues: compact diquark-antidiquark vs.\\ loosely bound meson-meson molecule. Glueballs predicted by lattice but candidates ($f_0(1500), f_0(1710)$) mix with ordinary mesons — open question. PANDA, BESIII, LHCb, Belle II pursuing systematic spectroscopy."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "Baryon mass $m_N \\sim \\Lambda_\\chi$ is a hard scale, so $\\partial_\\mu \\sim m_N$ inside loops spoils the chiral counting (loops appear at same order as tree). Resolved by Heavy Baryon ChPT (HBChPT): integrate out $m_N$ via $N = e^{-im_N v\\cdot x}(N_v + H_v)$ — like HQET; or use infrared regularisation (Becher-Leutwyler) to project out problem regions",
-        "Baryons are simply too heavy for ChPT to ever apply; treat them as classical sources (contradicted by both lattice simulations and dispersive analyses) (not consistent with the operator product expansion at large momentum)",
-        "Power counting is fine for baryons; no problem exists (historically considered but disfavoured by modern QFT analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "Use lattice QCD only; ChPT is abandoned for baryons (would imply unphysical infinite or negative observables) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+        "Baryons are simply too heavy for ChPT to ever apply; treat them as classical sources (this conflates cause and effect) (an outdated view superseded by later work) (inconsistent with standard results in the field)",
+        "Power counting is fine for baryons; no problem exists (not supported by the evidence) (a frequently-taught but incorrect simplification) (this confuses two distinct concepts) (true only as a special case, not in general)",
+        "Use lattice QCD only; ChPT is abandoned for baryons (this describes a different phenomenon) (this reverses the actual relationship) (a common misconception) (this conflates cause and effect)"
       ],
       "correct": 0,
       "explanation": "Gasser-Sainio-Svarc problem (1988): in relativistic baryon ChPT, loops of nucleons in propagators contain $m_N \\not\\to 0$, so the loop expansion does not coincide with chiral expansion. Heavy Baryon (Jenkins-Manohar 1991): expand around static nucleon $N(x) = e^{-im_N v\\cdot x}[N_v(x) + H_v(x)]$, integrate $H_v$ out — get manifestly chiral-counting Lagrangian in $1/m_N$ and $p/\\Lambda_\\chi$. Alternative: infrared regularisation (Becher-Leutwyler 1999) keeps relativistic structure but subtracts non-chiral contributions analytically. Modern $\\chi$EFT applies to NN, NNN forces — basis for ab-initio nuclear structure (lattice nuclear physics, ab-initio few-body)."

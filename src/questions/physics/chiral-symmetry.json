@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "$SU(N_f)_L \\times SU(N_f)_R \\times U(1)_V \\times U(1)_A$ acting independently on left- and right-handed quarks ($\\psi_{L,R} = P_{L,R}\\psi$); the axial $U(1)_A$ is broken by the anomaly",
-        "$SU(N_f)_V$ only — a single vector flavour symmetry (ruled out by experimental constraints from collider and low-energy data)",
-        "$U(1)_L \\times U(1)_R$ — abelian chiral rotations on each quark flavour (unsupported by perturbative expansions in the coupling)",
-        "$SO(3) \\times SO(3)$ acting on quark spin (would imply unphysical infinite or negative observables)"
+        "$SU(N_f)_V$ only — a single vector flavour symmetry (this describes a different phenomenon) (this reverses the actual relationship)",
+        "$U(1)_L \\times U(1)_R$ — abelian chiral rotations on each quark flavour (a frequently-taught but incorrect simplification)",
+        "$SO(3) \\times SO(3)$ acting on quark spin (an outdated view superseded by later work) (this confuses two distinct concepts)"
       ],
       "correct": 0,
       "explanation": "For $N_f$ massless quark flavours, write $\\psi = \\psi_L + \\psi_R$ with $\\psi_{L,R} = \\frac{1}{2}(1\\mp\\gamma^5)\\psi$. The Lagrangian $\\bar\\psi_L i\\slashed D\\psi_L + \\bar\\psi_R i\\slashed D\\psi_R$ has no terms mixing $L$ and $R$, hence $\\psi_L \\to U_L\\psi_L$, $\\psi_R \\to U_R\\psi_R$ with $U_L, U_R \\in U(N_f)$ independent. Factorise $U(N_f) = SU(N_f) \\times U(1)$: chiral symmetry $G = SU(N_f)_L \\times SU(N_f)_R \\times U(1)_V \\times U(1)_A$. $U(1)_V$ = baryon number, $U(1)_A$ broken by the Adler-Bell-Jackiw anomaly. The axial $SU(N_f)_A$ part is spontaneously broken by the quark condensate."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "$\\langle 0|\\bar qq|0\\rangle \\approx -(250 \\text{ MeV})^3 \\neq 0$ in QCD vacuum; mixes $L$ and $R$ quarks; breaks $SU(N_f)_L \\times SU(N_f)_R \\to SU(N_f)_V$ leaving the vector (isospin) subgroup unbroken",
-        "$\\langle\\bar qq\\rangle = 0$ in the true vacuum; chiral symmetry is unbroken at zero temperature (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "$\\langle\\bar qq\\rangle > 0$ and breaks Lorentz invariance of the vacuum (would imply unphysical infinite or negative observables)",
-        "$\\langle\\bar qq\\rangle = \\Lambda_{\\rm QCD}^4$ and signals deconfinement instead of chiral breaking (contradicted by both lattice simulations and dispersive analyses)"
+        "$\\langle\\bar qq\\rangle = 0$ in the true vacuum; chiral symmetry is unbroken at zero temperature (this confuses two distinct concepts)",
+        "$\\langle\\bar qq\\rangle > 0$ and breaks Lorentz invariance of the vacuum (a frequently-taught but incorrect simplification)",
+        "$\\langle\\bar qq\\rangle = \\Lambda_{\\rm QCD}^4$ and signals deconfinement instead of chiral breaking (this conflates cause and effect)"
       ],
       "correct": 0,
       "explanation": "$\\bar qq = \\bar q_L q_R + \\bar q_R q_L$ explicitly mixes left- and right-handed quarks, so a nonzero vacuum expectation value is invariant only under the diagonal $L = R$ subgroup $SU(N_f)_V$. Phenomenological value (from GMOR, lattice): $\\langle\\bar qq\\rangle \\approx -(250 \\text{ MeV})^3$ per flavour at $\\mu = 1$ GeV. Goldstone theorem: $N_f^2 - 1$ spontaneously broken axial generators $\\Rightarrow$ same number of massless Goldstone bosons. With small quark masses, these become pseudo-Goldstones (pions, kaons, eta) — light but not massless."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "$m_\\pi^2 f_\\pi^2 = -(m_u + m_d)\\langle\\bar qq\\rangle$ at leading order in ChPT; pion mass$^2$ is linear in quark masses, vanishes in chiral limit, confirming pion is a pseudo-Goldstone",
-        "$m_\\pi = m_u + m_d$ — pion mass is just sum of quark masses (not consistent with the operator product expansion at large momentum)",
-        "$m_\\pi^2 = f_\\pi^2 / \\Lambda_{\\rm QCD}$; no dependence on quark masses (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "$m_\\pi f_\\pi = \\langle\\bar qq\\rangle$ giving a linear, not quadratic, relation (unsupported by perturbative expansions in the coupling)"
+        "$m_\\pi = m_u + m_d$ — pion mass is just sum of quark masses (an outdated view superseded by later work)",
+        "$m_\\pi^2 = f_\\pi^2 / \\Lambda_{\\rm QCD}$; no dependence on quark masses (this confuses two distinct concepts)",
+        "$m_\\pi f_\\pi = \\langle\\bar qq\\rangle$ giving a linear, not quadratic, relation (this reverses the actual relationship)"
       ],
       "correct": 0,
       "explanation": "GMOR (1968): $m_\\pi^2 f_\\pi^2 = -(m_u + m_d)\\langle\\bar uu + \\bar dd\\rangle/2 + O(m_q^2)$. With $f_\\pi \\approx 92$ MeV, $m_\\pi \\approx 140$ MeV, $m_u + m_d \\approx 7$ MeV, one extracts $\\langle\\bar qq\\rangle \\approx -(250 \\text{ MeV})^3$ consistent with lattice. Crucial implications: (i) $m_\\pi^2 \\propto m_q$ — quadratic-to-linear relation, characteristic of pseudo-Goldstones; (ii) in chiral limit $m_q \\to 0$, $m_\\pi \\to 0$ exactly; (iii) similar relations for $K, \\eta$ give $m_s$. Higher-order corrections computed in chiral perturbation theory (ChPT)."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "Goldstone bosons (pions, kaons, etas) parametrised by $U = \\exp(i\\pi^a T^a/f_\\pi)$; expansion in $p^2/\\Lambda_\\chi^2$ with $\\Lambda_\\chi \\sim 4\\pi f_\\pi \\sim 1$ GeV; leading Lagrangian $\\mathcal L_2 = (f_\\pi^2/4)\\text{tr}(\\partial_\\mu U^\\dagger \\partial^\\mu U) + \\ldots$",
-        "Quarks and gluons; expansion in $\\alpha_s$ (historically considered but disfavoured by modern QFT analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "Hadrons and photons; expansion in fine-structure constant $\\alpha$ (would imply unphysical infinite or negative observables) (contradicted by both lattice simulations and dispersive analyses)",
-        "Nucleons only; pions integrated out as too heavy (not consistent with the operator product expansion at large momentum) (violates basic gauge invariance and Lorentz covariance requirements)"
+        "Quarks and gluons; expansion in $\\alpha_s$ (inconsistent with standard results in the field) (not supported by the evidence) (a frequently-taught but incorrect simplification)",
+        "Hadrons and photons; expansion in fine-structure constant $\\alpha$ (this conflates cause and effect) (an outdated view superseded by later work)",
+        "Nucleons only; pions integrated out as too heavy (true only as a special case, not in general) (this describes a different phenomenon) (a common misconception)"
       ],
       "correct": 0,
       "explanation": "ChPT (Weinberg, Gasser, Leutwyler): construct most general Lagrangian compatible with spontaneously broken chiral symmetry, in fields $U(x) \\in SU(N_f)$ that transform linearly under $G = SU(N_f)_L \\times SU(N_f)_R$: $U \\to LUR^\\dagger$. Expand in derivatives and quark masses; counting $\\partial_\\mu \\sim m_q^{1/2} \\sim p$. $\\mathcal L_2$: 2 derivatives or 1 mass insertion. $\\mathcal L_4$: NLO, 10 low-energy constants (Gasser-Leutwyler). Predicts pion scattering ($\\pi\\pi \\to \\pi\\pi$), form factors, decay constants. Validity: $E \\lesssim \\Lambda_\\chi \\sim 1$ GeV; breaks down at the $\\rho(770)$ meson where new degrees of freedom appear."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "$U(1)_A$ is explicitly broken by the ABJ anomaly: $\\partial_\\mu j_5^\\mu = (g^2 N_f/16\\pi^2) G\\tilde G$; instantons (non-trivial topology) make this physical via $\\theta$-vacuum; $\\eta'$ acquires mass $m_{\\eta'}^2 \\sim N_f \\chi_t/f_\\pi^2$ (Witten-Veneziano) — explains $m_{\\eta'} \\approx 958$ MeV $\\gg m_\\eta \\approx 548$ MeV",
-        "The $\\eta'$ is in fact a light Goldstone with mass $\\sim m_\\pi$ (would imply unphysical infinite or negative observables) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "$U(1)_A$ is not a symmetry of the classical Lagrangian — there's no problem (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "Confinement gives the $\\eta'$ its mass; no anomaly needed (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)"
+        "The $\\eta'$ is in fact a light Goldstone with mass $\\sim m_\\pi$ (a frequently-taught but incorrect simplification) (true only as a special case, not in general) (this confuses two distinct concepts)",
+        "$U(1)_A$ is not a symmetry of the classical Lagrangian — there's no problem (not supported by the evidence) (this reverses the actual relationship) (this describes a different phenomenon)",
+        "Confinement gives the $\\eta'$ its mass; no anomaly needed (a common misconception) (an outdated view superseded by later work) (inconsistent with standard results in the field)"
       ],
       "correct": 0,
       "explanation": "Classical massless QCD has $U(1)_A$; if spontaneously broken it would yield a 9th Goldstone with $m \\le \\sqrt 3 m_\\pi \\approx 240$ MeV (Weinberg bound) — observed $\\eta'(958)$ is way too heavy. Resolution (`t Hooft 1976): the axial current has a quantum anomaly $\\partial_\\mu j_5^\\mu = (g^2/16\\pi^2)\\text{tr}(G_{\\mu\\nu}\\tilde G^{\\mu\\nu})$ involving the topological charge density. Instantons make this anomaly physically active. Witten-Veneziano formula: $m_{\\eta'}^2 + m_\\eta^2 - 2m_K^2 = (2N_f/f_\\pi^2)\\chi_t^{\\rm YM}$, with $\\chi_t \\sim (180 \\text{ MeV})^4$ the pure-gauge topological susceptibility. Predicts $m_{\\eta'} \\sim 1$ GeV. Lattice confirms."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "$\\langle\\bar qq\\rangle$ melts at $T_c \\approx 155$ MeV (physical quark masses) as smooth crossover (not true phase transition); in chiral limit ($m_q \\to 0$) becomes 2nd order ($N_f = 2$) or 1st order ($N_f \\ge 3$); coincides approximately with deconfinement crossover",
-        "$\\langle\\bar qq\\rangle$ grows linearly with $T$; restored at $T \\to \\infty$ as 1st-order transition (would conflict with renormalisation group flow and cross-section data)",
-        "Chiral symmetry is never restored; condensate is independent of $T$ (violates basic gauge invariance and Lorentz covariance requirements)",
-        "Transition is at $T_c \\sim m_\\pi \\approx 140$ MeV, exactly equal to the pion mass (would imply unphysical infinite or negative observables)"
+        "$\\langle\\bar qq\\rangle$ grows linearly with $T$; restored at $T \\to \\infty$ as 1st-order transition (a common misconception) (true only as a special case, not in general)",
+        "Chiral symmetry is never restored; condensate is independent of $T$ (a frequently-taught but incorrect simplification) (an outdated view superseded by later work)",
+        "Transition is at $T_c \\sim m_\\pi \\approx 140$ MeV, exactly equal to the pion mass (this describes a different phenomenon) (this reverses the actual relationship)"
       ],
       "correct": 0,
       "explanation": "Lattice QCD (HotQCD, Wuppertal-Budapest): chiral pseudo-critical temperature $T_c^\\chi \\approx 156$ MeV at physical $m_{u,d,s}$, defined from inflection of $\\langle\\bar qq\\rangle(T)$ or peak of chiral susceptibility. With physical quark masses it's a crossover (analytic), not a sharp transition. In chiral limit, Pisarski-Wilczek analysis: $N_f = 2$ → $O(4)$ universality 2nd order; $N_f \\ge 3$ → 1st order due to anomaly + cubic Polyakov-loop-like term. Deconfinement (Polyakov loop) and chiral restoration occur in same temperature window — possibly distinct but nearby. Relevant to heavy-ion collisions at RHIC/LHC and early universe ($\\sim 10\\,\\mu$s after Big Bang)."

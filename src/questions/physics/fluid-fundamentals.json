@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "Conservation of momentum for a viscous fluid: $\\rho(\\partial_t\\mathbf u + \\mathbf u\\cdot\\nabla\\mathbf u) = -\\nabla p + \\mu\\nabla^2\\mathbf u + \\mathbf f$, together with mass continuity; they govern essentially all fluid flow, with the nonlinear convective term $\\mathbf u\\cdot\\nabla\\mathbf u$ responsible for turbulence",
-        "The motion of rigid bodies only (not consistent with the operator product expansion at large momentum) (would imply unphysical infinite or negative observables)",
-        "Heat conduction in solids (contradicted by both lattice simulations and dispersive analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "The quantum state of a single particle (historically considered but disfavoured by modern QFT analyses) (violates basic gauge invariance and Lorentz covariance requirements)"
+        "The motion of rigid bodies only (an outdated view superseded by later work) (a frequently-taught but incorrect simplification) (this conflates cause and effect)",
+        "Heat conduction in solids (this confuses two distinct concepts) (inconsistent with standard results in the field) (true only as a special case, not in general) (this describes a different phenomenon)",
+        "The quantum state of a single particle (this reverses the actual relationship) (a common misconception) (not supported by the evidence) (an outdated view superseded by later work)"
       ],
       "correct": 0,
       "explanation": "Navier-Stokes is Newton's second law for a fluid element: mass density times acceleration equals pressure-gradient force plus viscous diffusion plus body forces. Combined with the continuity equation $\\partial_t\\rho + \\nabla\\cdot(\\rho\\mathbf u)=0$ (and an energy equation/EoS for compressible flow), it closes the description of fluid motion. The nonlinear advective term $\\mathbf u\\cdot\\nabla\\mathbf u$ makes the equations notoriously hard — the source of turbulence and of the unsolved Clay Millennium problem on existence/smoothness of 3D solutions. Limits: inviscid flow gives the Euler equations; low Reynolds number gives Stokes (creeping) flow. Navier-Stokes underlies aerodynamics, weather, oceanography, blood flow, and engineering design."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "For steady, inviscid, incompressible flow along a streamline, $p + \\tfrac12\\rho u^2 + \\rho g h$ is constant — so where the fluid speeds up, its pressure drops; it underlies lift, venturi meters, atomisers, and the curveball",
-        "Pressure always increases with flow speed (violates basic gauge invariance and Lorentz covariance requirements) (contradicted by both lattice simulations and dispersive analyses)",
-        "It applies only to stationary fluids (would imply unphysical infinite or negative observables) (historically considered but disfavoured by modern QFT analyses)",
-        "It states that viscosity dominates all flows (would conflict with renormalisation group flow and cross-section data)"
+        "Pressure always increases with flow speed (true only as a special case, not in general) (this conflates cause and effect)",
+        "It applies only to stationary fluids (a frequently-taught but incorrect simplification) (inconsistent with standard results in the field)",
+        "It states that viscosity dominates all flows (a common misconception) (an outdated view superseded by later work)"
       ],
       "correct": 0,
       "explanation": "Bernoulli's equation is energy conservation per unit volume along a streamline: pressure work + kinetic energy + gravitational potential energy is conserved for an ideal (inviscid, incompressible, steady) flow. The key consequence is the inverse relation between speed and pressure: fast-moving fluid exerts lower static pressure. This explains the venturi effect (constriction speeds flow, lowers pressure), aspirators and carburettors, the lift on a wing (partly — full lift needs circulation/Kutta-Joukowski and Newton's third law), flow through pipes, and pitot-tube airspeed measurement. Caveats: it fails where viscosity, unsteadiness, or compressibility matter, and naive 'equal transit time' explanations of lift are incorrect; nonetheless it is one of the most useful relations in fluid mechanics."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "$Re = \\rho U L/\\mu = UL/\\nu$, the ratio of inertial to viscous forces; low $Re$ gives smooth laminar flow, high $Re$ gives turbulence, and flows with equal $Re$ and geometry are dynamically similar (the basis of wind-tunnel scaling)",
-        "The ratio of pressure to temperature in a gas (would conflict with renormalisation group flow and cross-section data)",
-        "A measure of a fluid's colour (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)",
-        "The speed of sound in a fluid (not consistent with the operator product expansion at large momentum) (would imply unphysical infinite or negative observables)"
+        "The ratio of pressure to temperature in a gas (a common misconception) (this reverses the actual relationship) (this describes a different phenomenon)",
+        "A measure of a fluid's colour (an outdated view superseded by later work) (a frequently-taught but incorrect simplification)",
+        "The speed of sound in a fluid (true only as a special case, not in general) (this confuses two distinct concepts) (not supported by the evidence)"
       ],
       "correct": 0,
       "explanation": "The Reynolds number compares inertial forces ($\\rho U^2/L$) to viscous forces ($\\mu U/L^2$), giving $Re = \\rho U L/\\mu$. It is the single most important dimensionless group in fluid mechanics. At low $Re$ (creeping flow, e.g. bacteria swimming, lubrication) viscosity dominates and flow is orderly and reversible; at high $Re$ inertia dominates and flow becomes turbulent (transition around $Re\\sim2000$ in pipes). Dynamic similarity — that flows with the same $Re$ and geometry behave identically — lets engineers test scale models in wind tunnels and water channels. Other key numbers: Mach (compressibility), Froude (gravity waves), Prandtl (momentum vs heat diffusion), Rayleigh (convection). The Reynolds number frames the entire laminar-to-turbulent landscape."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "Vorticity $\\boldsymbol\\omega = \\nabla\\times\\mathbf u$ measures local fluid rotation; Kelvin's theorem states that for an inviscid, barotropic fluid the circulation $\\Gamma=\\oint\\mathbf u\\cdot d\\mathbf l$ around a material loop is conserved — so vortex lines move with the fluid and cannot be created or destroyed",
-        "Vorticity is the fluid's pressure; it is always zero (disagrees with the standard textbook treatment in Peskin-Schroeder) (unsupported by perturbative expansions in the coupling)",
-        "Circulation always grows without bound (violates basic gauge invariance and Lorentz covariance requirements) (ruled out by experimental constraints from collider and low-energy data)",
-        "Vorticity applies only to solids (not consistent with the operator product expansion at large momentum) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+        "Vorticity is the fluid's pressure; it is always zero (not supported by the evidence) (this reverses the actual relationship) (true only as a special case, not in general)",
+        "Circulation always grows without bound (this describes a different phenomenon) (an outdated view superseded by later work) (this confuses two distinct concepts)",
+        "Vorticity applies only to solids (a frequently-taught but incorrect simplification) (a common misconception) (inconsistent with standard results in the field)"
       ],
       "correct": 0,
       "explanation": "Vorticity is twice the local angular velocity of fluid elements. Kelvin's circulation theorem (for ideal, barotropic flow with conservative forces) says the circulation around any closed material contour is constant in time; equivalently (Helmholtz) vortex lines are frozen into the fluid and move with it, conserving their strength. Consequences: irrotational flow stays irrotational (justifying potential-flow theory), vortex rings persist (smoke rings), and lift requires generating bound circulation around a wing (with a starting vortex shed to conserve total circulation). Viscosity breaks the theorem, diffusing and dissipating vorticity (boundary layers, vortex decay). Vorticity dynamics is central to turbulence (vortex stretching amplifies vorticity in 3D), aerodynamics, and geophysical flows (potential vorticity conservation in the atmosphere/ocean)."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "A thin region near a surface where viscosity matters and the flow speed rises from zero (no-slip) to the free-stream value; Prandtl showed that for high $Re$ one can treat the bulk as inviscid and confine viscous effects to this layer, resolving d'Alembert's paradox and enabling drag/separation prediction",
-        "A layer where the fluid is stationary everywhere (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (not consistent with the operator product expansion at large momentum)",
-        "A region with no velocity gradients (contradicted by both lattice simulations and dispersive analyses) (unsupported by perturbative expansions in the coupling)",
-        "A purely decorative concept with no use (would conflict with renormalisation group flow and cross-section data) (would imply unphysical infinite or negative observables)"
+        "A layer where the fluid is stationary everywhere (this confuses two distinct concepts) (an outdated view superseded by later work) (this conflates cause and effect)",
+        "A region with no velocity gradients (this reverses the actual relationship) (a common misconception) (a frequently-taught but incorrect simplification) (not supported by the evidence)",
+        "A purely decorative concept with no use (this describes a different phenomenon) (inconsistent with standard results in the field) (true only as a special case, not in general)"
       ],
       "correct": 0,
       "explanation": "Prandtl (1904) resolved the long-standing tension between ideal-flow theory (which predicted zero drag — d'Alembert's paradox) and reality. Even at high Reynolds number, the no-slip condition forces the velocity to vanish at a solid surface, creating a thin boundary layer where viscous stresses are significant despite small viscosity. Outside it, the flow is effectively inviscid. This matched-asymptotics insight made aerodynamics tractable: it explains skin-friction drag, momentum-thickness, and crucially boundary-layer separation (adverse pressure gradients cause the layer to detach, producing wakes, stall on wings, and pressure/form drag). The boundary-layer equations (a parabolic simplification of Navier-Stokes) are solvable and underpin modern aerodynamic design, turbomachinery, and heat-transfer engineering. It is one of the most consequential ideas in applied physics."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "Whether smooth, globally-defined solutions of the 3D incompressible Navier-Stokes equations always exist for smooth initial data (no finite-time blow-up), or whether singularities can form — one of the seven Clay Millennium Prize problems, still unsolved",
-        "Whether fluids exist at all (would conflict with renormalisation group flow and cross-section data) (unsupported by perturbative expansions in the coupling)",
-        "A solved problem with a known proof (disagrees with the standard textbook treatment in Peskin-Schroeder) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "A question about the speed of sound (violates basic gauge invariance and Lorentz covariance requirements) (historically considered but disfavoured by modern QFT analyses)"
+        "Whether fluids exist at all (a common misconception) (this reverses the actual relationship) (not supported by the evidence) (this confuses two distinct concepts)",
+        "A solved problem with a known proof (true only as a special case, not in general) (inconsistent with standard results in the field)",
+        "A question about the speed of sound (this describes a different phenomenon) (this conflates cause and effect) (an outdated view superseded by later work)"
       ],
       "correct": 0,
       "explanation": "Despite Navier-Stokes governing everyday fluids, it is not known whether its 3D incompressible solutions remain smooth for all time or can develop singularities (infinite velocity/vorticity) in finite time from smooth, finite-energy initial data. In 2D, global regularity is established; in 3D only local-in-time existence and global weak solutions (Leray, 1934) are known, with uniqueness/regularity of weak solutions open. The conditional Beale-Kato-Majda criterion ties blow-up to vorticity growth. The Clay Mathematics Institute lists proving global existence/smoothness (or finding a blow-up) as one of its million-dollar Millennium Problems. Resolution would deepen our understanding of turbulence and the limits of the continuum model. Recent work (e.g. Tao's averaged-equation blow-up, convex-integration non-uniqueness for Euler/forced NS) illuminates how delicate the question is."

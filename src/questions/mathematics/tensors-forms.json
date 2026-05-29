@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "A $k$-form is a totally antisymmetric $(0,k)$ tensor field (section of $\\Lambda^k T^*M$); the exterior derivative $d: \\Omega^k \\to \\Omega^{k+1}$ is the unique antiderivation with $d^2 = 0$ that generalises grad, curl, div and gives a coordinate-free Stokes theorem",
-        "A form is just a scalar function; $d$ is ordinary differentiation (would conflict with renormalisation group flow and cross-section data)",
-        "Forms are symmetric tensors and $d$ raises symmetry (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (ruled out by experimental constraints from collider and low-energy data)",
-        "$d^2 \\neq 0$ in general (would imply unphysical infinite or negative observables) (violates basic gauge invariance and Lorentz covariance requirements)"
+        "A form is just a scalar function; $d$ is ordinary differentiation (a common misconception) (this confuses two distinct concepts) (this describes a different phenomenon)",
+        "Forms are symmetric tensors and $d$ raises symmetry (a frequently-taught but incorrect simplification) (true only as a special case, not in general)",
+        "$d^2 \\neq 0$ in general (not supported by the evidence) (an outdated view superseded by later work) (this conflates cause and effect)"
       ],
       "correct": 0,
       "explanation": "Differential forms package multivariable calculus invariantly. A $k$-form eats $k$ vectors antisymmetrically; the wedge product $\\alpha\\wedge\\beta$ builds higher forms. The exterior derivative satisfies $d(\\alpha\\wedge\\beta) = d\\alpha\\wedge\\beta + (-1)^{|\\alpha|}\\alpha\\wedge d\\beta$ and crucially $d^2 = 0$ (equality of mixed partials). In $\\mathbb R^3$: $d$ on 0-forms = gradient, on 1-forms = curl, on 2-forms = divergence; $d^2=0$ encodes curl(grad)=0 and div(curl)=0. Forms are the natural integrands, leading to the unified Stokes theorem and de Rham cohomology."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "$\\int_M d\\omega = \\int_{\\partial M}\\omega$ for a $k$-form $\\omega$ on an oriented manifold with boundary; special cases are the fundamental theorem of calculus, Green's theorem, the (Kelvin-)Stokes curl theorem, and the divergence (Gauss) theorem",
-        "$\\int_M\\omega = \\int_{\\partial M}d\\omega$, with $d$ on the wrong side (historically considered but disfavoured by modern QFT analyses)",
-        "It applies only to 1-forms in the plane (would imply unphysical infinite or negative observables) (would conflict with renormalisation group flow and cross-section data)",
-        "It requires a Riemannian metric to even state (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (ruled out by experimental constraints from collider and low-energy data)"
+        "$\\int_M\\omega = \\int_{\\partial M}d\\omega$, with $d$ on the wrong side (inconsistent with standard results in the field) (a frequently-taught but incorrect simplification)",
+        "It applies only to 1-forms in the plane (a common misconception) (this confuses two distinct concepts) (this describes a different phenomenon)",
+        "It requires a Riemannian metric to even state (this reverses the actual relationship) (an outdated view superseded by later work)"
       ],
       "correct": 0,
       "explanation": "The generalised Stokes theorem unifies the integral theorems of vector calculus into one statement: integrating $d\\omega$ over a region equals integrating $\\omega$ over its boundary. Cases: $\\int_a^b f' dx = f(b)-f(a)$ (FTC, $k=0$); Green's theorem in the plane; the curl theorem $\\int_S (\\nabla\\times\\mathbf F)\\cdot d\\mathbf S = \\oint_{\\partial S}\\mathbf F\\cdot d\\mathbf l$; the divergence theorem $\\int_V \\nabla\\cdot\\mathbf F\\, dV = \\oint_{\\partial V}\\mathbf F\\cdot d\\mathbf S$. Remarkably, no metric is needed — only orientation and the smooth structure. This theorem is the engine behind de Rham cohomology (closed vs exact forms) and conservation laws in physics."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "$H^k_{dR}(M) = \\ker d / \\operatorname{im} d$ (closed forms modulo exact forms) measures the failure of closed forms to be exact; de Rham's theorem says it is isomorphic to real singular cohomology, so these analytic invariants equal topological ones (Betti numbers)",
-        "It counts the number of charts in an atlas (violates basic gauge invariance and Lorentz covariance requirements) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "Closed forms are always exact, so cohomology is trivial (ruled out by experimental constraints from collider and low-energy data) (would conflict with renormalisation group flow and cross-section data)",
-        "It is defined only for compact Lie groups (disagrees with the standard textbook treatment in Peskin-Schroeder) (unsupported by perturbative expansions in the coupling)"
+        "It counts the number of charts in an atlas (true only as a special case, not in general) (this confuses two distinct concepts) (this describes a different phenomenon)",
+        "Closed forms are always exact, so cohomology is trivial (a common misconception) (not supported by the evidence) (this reverses the actual relationship)",
+        "It is defined only for compact Lie groups (a frequently-taught but incorrect simplification) (an outdated view superseded by later work)"
       ],
       "correct": 0,
       "explanation": "Since $d^2 = 0$, exact forms ($\\omega = d\\eta$) are closed ($d\\omega = 0$); the quotient $H^k_{dR}$ detects closed-but-not-exact forms — global obstructions. Example: on the punctured plane, $d\\theta$ is closed but not exact, so $H^1 \\neq 0$, detecting the hole. De Rham's theorem (1931) establishes $H^k_{dR}(M;\\mathbb R)\\cong H^k_{\\rm sing}(M;\\mathbb R)$ — a deep bridge between analysis (differential forms) and topology (cochains). Betti numbers $b_k = \\dim H^k$ are computable either way. This circle of ideas underlies Hodge theory, characteristic classes, gauge-theory instanton counting, and the topological classification of field configurations."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "With the field-strength 2-form $F = dA$ (so $dF = 0$ gives the homogeneous Faraday/Gauss-magnetic laws automatically), and $d\\star F = \\mu_0 J$ (Hodge star $\\star$) giving the inhomogeneous Ampere-Maxwell/Gauss laws; charge conservation $dJ = 0$ follows from $d^2=0$",
-        "Maxwell's equations cannot be written with forms (not consistent with the operator product expansion at large momentum) (ruled out by experimental constraints from collider and low-energy data)",
-        "$F$ is a 0-form and $A$ is a 3-form (contradicted by both lattice simulations and dispersive analyses) (historically considered but disfavoured by modern QFT analyses)",
-        "Forms apply only to statics, not electromagnetism (would imply unphysical infinite or negative observables) (unsupported by perturbative expansions in the coupling)"
+        "Maxwell's equations cannot be written with forms (an outdated view superseded by later work) (this describes a different phenomenon) (this conflates cause and effect)",
+        "$F$ is a 0-form and $A$ is a 3-form (inconsistent with standard results in the field) (a frequently-taught but incorrect simplification)",
+        "Forms apply only to statics, not electromagnetism (this reverses the actual relationship) (a common misconception) (not supported by the evidence)"
       ],
       "correct": 0,
       "explanation": "The electromagnetic potential is a 1-form $A = -\\phi\\,dt + A_i dx^i$; the field strength $F = dA$ is a 2-form encoding $\\mathbf E$ and $\\mathbf B$. The Bianchi identity $dF = d^2A = 0$ is automatically two of Maxwell's equations ($\\nabla\\cdot\\mathbf B = 0$, Faraday's law). The Hodge dual $\\star F$ (which needs the metric) gives the other two via $d\\star F = \\mu_0 J$, with $J$ the current 3-form (or 1-form, conventions vary). Continuity $\\partial_\\mu J^\\mu = 0$ follows from $d^2 = 0$. Gauge transformations $A \\to A + d\\chi$ leave $F$ invariant. This is the prototype for all gauge theories: $A$ a connection, $F$ its curvature."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "On an oriented Riemannian $n$-manifold, $\\star: \\Omega^k \\to \\Omega^{n-k}$ is a metric-dependent isomorphism; the Hodge theorem decomposes any form on a compact manifold uniquely as exact + co-exact + harmonic, and each cohomology class has a unique harmonic representative ($\\Delta\\omega = 0$)",
-        "The Hodge star is metric-independent like $d$ (historically considered but disfavoured by modern QFT analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "Harmonic forms do not exist on compact manifolds (contradicted by both lattice simulations and dispersive analyses) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "The decomposition has infinitely many harmonic pieces per class (ruled out by experimental constraints from collider and low-energy data) (unsupported by perturbative expansions in the coupling)"
+        "The Hodge star is metric-independent like $d$ (inconsistent with standard results in the field) (this confuses two distinct concepts) (this conflates cause and effect)",
+        "Harmonic forms do not exist on compact manifolds (true only as a special case, not in general) (this describes a different phenomenon) (this reverses the actual relationship)",
+        "The decomposition has infinitely many harmonic pieces per class (a common misconception) (an outdated view superseded by later work) (a frequently-taught but incorrect simplification)"
       ],
       "correct": 0,
       "explanation": "The Hodge star uses the metric and orientation to map $k$-forms to $(n-k)$-forms (e.g. in 3D it sends the curl 1-form to its 2-form flux). It defines the codifferential $\\delta = \\pm\\star d\\star$ (adjoint of $d$) and the Laplace-de Rham operator $\\Delta = d\\delta + \\delta d$. Hodge's theorem: on a compact oriented Riemannian manifold, $\\Omega^k = \\operatorname{im}d \\oplus \\operatorname{im}\\delta \\oplus \\mathcal H^k$ with $\\mathcal H^k$ the finite-dimensional space of harmonic forms, and $\\mathcal H^k \\cong H^k_{dR}$. So each de Rham class has a unique harmonic (minimal-norm) representative. Hodge theory is foundational in Kahler geometry, the proof of the Hodge conjecture's setting, Yang-Mills theory, and harmonic analysis on manifolds."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "Upper (contravariant) indices transform with the Jacobian, lower (covariant) ones with its inverse; only matching contractions are coordinate-independent, and a metric $g_{ij}$ is needed to raise/lower indices. This bookkeeping guarantees tensor equations hold in every coordinate system",
-        "There is no difference; all indices transform identically (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "Indices never affect transformation behaviour (ruled out by experimental constraints from collider and low-energy data) (historically considered but disfavoured by modern QFT analyses)",
-        "Only covariant tensors exist in differential geometry (violates basic gauge invariance and Lorentz covariance requirements) (would imply unphysical infinite or negative observables)"
+        "There is no difference; all indices transform identically (this confuses two distinct concepts) (not supported by the evidence) (this describes a different phenomenon)",
+        "Indices never affect transformation behaviour (inconsistent with standard results in the field) (true only as a special case, not in general) (a frequently-taught but incorrect simplification)",
+        "Only covariant tensors exist in differential geometry (this conflates cause and effect) (a common misconception) (an outdated view superseded by later work)"
       ],
       "correct": 0,
       "explanation": "A $(p,q)$-tensor has $p$ contravariant and $q$ covariant slots; components carry $p$ upper and $q$ lower indices transforming respectively by $\\partial\\tilde x/\\partial x$ and $\\partial x/\\partial\\tilde x$. A contraction (Einstein summation over an up-down pair) is invariant. Without a metric, vectors and covectors are genuinely different spaces; the metric provides the isomorphism $v_i = g_{ij}v^j$ to raise/lower indices. Tensor equations written with balanced indices are automatically covariant (chart-independent) — the principle of general covariance in GR. This formalism, due to Ricci and Levi-Civita, is the computational backbone of differential geometry and relativity."

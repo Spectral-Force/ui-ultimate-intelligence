@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "$PV = nRT$ (or $PV = Nk_BT$), combining Boyle's law ($PV$ const at fixed $T$), Charles's law ($V\\propto T$ at fixed $P$), and Gay-Lussac's law ($P\\propto T$ at fixed $V$), plus Avogadro's principle (equal volumes, equal molecules)",
-        "$PV = nRT^2$, quadratic in temperature (would conflict with renormalisation group flow and cross-section data) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "$P/V = nRT$, pressure inversely proportional to volume (contradicted by both lattice simulations and dispersive analyses)",
-        "Gas pressure is independent of temperature (disagrees with the standard textbook treatment in Peskin-Schroeder) (ruled out by experimental constraints from collider and low-energy data)"
+        "$PV = nRT^2$, quadratic in temperature (a common misconception) (true only as a special case, not in general) (this conflates cause and effect)",
+        "$P/V = nRT$, pressure inversely proportional to volume (not supported by the evidence) (this describes a different phenomenon)",
+        "Gas pressure is independent of temperature (this confuses two distinct concepts) (this reverses the actual relationship)"
       ],
       "correct": 0,
       "explanation": "The ideal gas law $PV=nRT$ ($R=8.314$ J/mol/K) is the equation of state of a dilute gas, synthesising several historical empirical laws: Boyle's law (1662, $P\\propto1/V$ at constant $T$), Charles's law ($V\\propto T$ at constant $P$), Gay-Lussac's law ($P\\propto T$ at constant $V$), and Avogadro's law (equal volumes of gases at the same $T,P$ contain equal numbers of molecules). It emerges from kinetic theory assuming point particles with no interactions and elastic collisions, where pressure is the momentum flux of molecular impacts and temperature measures mean kinetic energy ($\\tfrac32 k_BT$ per particle). Real gases deviate at high pressure/low temperature (finite molecular size and attractions), captured by the van der Waals equation and virial expansion. The ideal gas law is foundational to thermodynamics, atmospheric science, and chemistry."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "First law: energy is conserved, $dU = \\delta Q - \\delta W$ (internal energy changes by heat added minus work done). Second law: the entropy of an isolated system never decreases; heat flows spontaneously from hot to cold and no cyclic engine can convert heat entirely into work",
-        "First law: entropy is constant. Second law: energy is created from nothing (ruled out by experimental constraints from collider and low-energy data)",
-        "Both laws state that temperature is conserved (disagrees with the standard textbook treatment in Peskin-Schroeder) (unsupported by perturbative expansions in the coupling)",
-        "First law allows perpetual motion; second forbids energy conservation (contradicted by both lattice simulations and dispersive analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+        "First law: entropy is constant. Second law: energy is created from nothing (this describes a different phenomenon) (not supported by the evidence)",
+        "Both laws state that temperature is conserved (this reverses the actual relationship) (this conflates cause and effect) (this confuses two distinct concepts)",
+        "First law allows perpetual motion; second forbids energy conservation (an outdated view superseded by later work) (a common misconception) (true only as a special case, not in general)"
       ],
       "correct": 0,
       "explanation": "The first law is energy conservation extended to include heat: the change in a system's internal energy equals heat added minus work done by it, $dU=\\delta Q-\\delta W$. It forbids perpetual-motion machines of the first kind (creating energy). The second law introduces irreversibility and the arrow of time: the total entropy of an isolated system cannot decrease ($\\Delta S\\ge0$), equivalently heat flows spontaneously hot$\\to$cold (Clausius) and no process can convert heat wholly into work in a cycle (Kelvin-Planck), capping engine efficiency at the Carnot value $1-T_c/T_h$. Boltzmann gave entropy a microscopic meaning, $S=k_B\\ln W$ (the logarithm of the number of microstates), so the second law reflects the overwhelming statistical likelihood of disorder. The third law adds that entropy approaches a constant (zero for a perfect crystal) as $T\\to0$, making absolute zero unattainable. Together these laws underpin all of thermodynamics, engines, refrigeration, and statistical mechanics."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "Stefan-Boltzmann: a blackbody radiates power per area $j = \\sigma T^4$ ($\\sigma = 5.67\\times10^{-8}$ W m$^{-2}$ K$^{-4}$). Wien's law: the peak emission wavelength scales as $\\lambda_{\\max} T = b$ (2.898 mm$\\cdot$K) — hotter bodies glow bluer",
-        "Power radiated is proportional to $T$, peak independent of $T$ (would imply unphysical infinite or negative observables) (would conflict with renormalisation group flow and cross-section data)",
-        "Stefan-Boltzmann gives $j \\propto T^2$ (contradicted by both lattice simulations and dispersive analyses) (historically considered but disfavoured by modern QFT analyses)",
-        "Wien's law states peak wavelength increases with temperature (ruled out by experimental constraints from collider and low-energy data)"
+        "Power radiated is proportional to $T$, peak independent of $T$ (a frequently-taught but incorrect simplification) (a common misconception)",
+        "Stefan-Boltzmann gives $j \\propto T^2$ (this conflates cause and effect) (inconsistent with standard results in the field)",
+        "Wien's law states peak wavelength increases with temperature (this describes a different phenomenon) (an outdated view superseded by later work)"
       ],
       "correct": 0,
       "explanation": "These describe thermal (blackbody) radiation. The Stefan-Boltzmann law states the total power radiated per unit surface area of a blackbody rises as the fourth power of absolute temperature, $j=\\sigma T^4$ (with emissivity $\\varepsilon$ for real bodies, $j=\\varepsilon\\sigma T^4$) — a steep dependence governing stellar luminosity ($L=4\\pi R^2\\sigma T^4$), planetary energy balance, and incandescent sources. Wien's displacement law gives the wavelength of peak emission: $\\lambda_{\\max}=b/T$, so hotter objects peak at shorter (bluer) wavelengths (the Sun at ~500 nm, room-temperature objects in the infrared, the CMB at ~1 mm for 2.7 K). Both are limits/consequences of Planck's radiation law (1900), whose derivation required quantising energy ($E=h\\nu$) and launched quantum theory — resolving the 'ultraviolet catastrophe' of classical Rayleigh-Jeans. Together they are the foundation of thermal radiation, astrophysics, and remote temperature sensing (pyrometry, thermal imaging)."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "In classical thermal equilibrium each quadratic degree of freedom carries average energy $\\tfrac12 k_BT$; so a monatomic gas has $\\tfrac32 k_BT$ per atom (translation) and a diatomic gas more (rotation, vibration) — explaining heat capacities, with quantum freeze-out at low $T$",
-        "All molecules have exactly the same energy (would conflict with renormalisation group flow and cross-section data) (unsupported by perturbative expansions in the coupling)",
-        "Energy is divided unequally and randomly (not consistent with the operator product expansion at large momentum) (would imply unphysical infinite or negative observables)",
-        "Each degree of freedom carries $k_BT^2$ (contradicted by both lattice simulations and dispersive analyses) (violates basic gauge invariance and Lorentz covariance requirements)"
+        "All molecules have exactly the same energy (a common misconception) (this reverses the actual relationship) (an outdated view superseded by later work)",
+        "Energy is divided unequally and randomly (a frequently-taught but incorrect simplification) (this conflates cause and effect) (true only as a special case, not in general)",
+        "Each degree of freedom carries $k_BT^2$ (this describes a different phenomenon) (not supported by the evidence) (inconsistent with standard results in the field)"
       ],
       "correct": 0,
       "explanation": "The equipartition theorem of classical statistical mechanics states that, in thermal equilibrium at temperature $T$, every independent quadratic term in the energy (each translational or rotational kinetic term, each harmonic potential term) contributes an average of $\\tfrac12 k_BT$. Thus a monatomic ideal gas has $\\tfrac32 k_BT$ per atom (three translations) giving molar heat capacity $C_V=\\tfrac32 R$; a diatomic gas adds two rotational degrees ($C_V=\\tfrac52 R$) and, at higher $T$, vibrational modes (each contributing $k_BT$ — kinetic plus potential), giving $\\tfrac72 R$. It explains the Dulong-Petit law for solids ($3R$ per mole, six quadratic terms). Crucially, equipartition fails at low temperature where quantum effects 'freeze out' degrees of freedom (rotations and especially vibrations require $k_BT\\gtrsim$ level spacing to be excited) — the heat capacity drops, as Einstein and Debye explained. This breakdown was an early clue to quantum mechanics, and the classical theorem's failure for blackbody radiation (the ultraviolet catastrophe) directly motivated Planck's quantum hypothesis."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "Fourier: heat flux is proportional to the negative temperature gradient, $\\mathbf q = -k\\nabla T$. Fick: particle flux is proportional to the negative concentration gradient, $\\mathbf J = -D\\nabla c$ — both linear transport (gradient-driven) laws giving diffusion equations $\\partial_t u = \\alpha\\nabla^2 u$",
-        "Heat flows up the temperature gradient (contradicted by both lattice simulations and dispersive analyses) (ruled out by experimental constraints from collider and low-energy data)",
-        "Flux is proportional to the gradient squared (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (not consistent with the operator product expansion at large momentum)",
-        "Diffusion requires no concentration gradient (would imply unphysical infinite or negative observables) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+        "Heat flows up the temperature gradient (this conflates cause and effect) (this describes a different phenomenon) (this confuses two distinct concepts) (an outdated view superseded by later work)",
+        "Flux is proportional to the gradient squared (a frequently-taught but incorrect simplification) (not supported by the evidence) (a common misconception) (inconsistent with standard results in the field)",
+        "Diffusion requires no concentration gradient (this reverses the actual relationship) (true only as a special case, not in general) (this conflates cause and effect)"
       ],
       "correct": 0,
       "explanation": "These are the canonical linear transport laws. Fourier's law (1822) states heat flows from hot to cold at a rate proportional to the temperature gradient, $\\mathbf q=-k\\nabla T$ (thermal conductivity $k$); combined with energy conservation it gives the heat (diffusion) equation $\\partial_t T=\\alpha\\nabla^2 T$ with diffusivity $\\alpha=k/\\rho c_p$. Fick's first law (1855) is the exact analogue for matter: diffusive particle flux is proportional to the concentration gradient, $\\mathbf J=-D\\nabla c$ (diffusion coefficient $D$), yielding Fick's second law $\\partial_t c=D\\nabla^2 c$. Both belong to the family of gradient-driven linear-response laws (alongside Ohm's law $\\mathbf J=\\sigma\\mathbf E$ for charge and Newton's viscosity law for momentum), all producing parabolic diffusion equations and all justified microscopically by random-walk/kinetic theory (the diffusion coefficient relates to mean free path and thermal speed, and to mobility via the Einstein relation $D=\\mu k_BT$). They govern heat sinks, doping of semiconductors, mixing, drug delivery, and countless transport phenomena."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "$(P + a n^2/V^2)(V - nb) = nRT$: the term $a$ accounts for intermolecular attraction (reducing pressure) and $b$ for finite molecular volume (excluded volume); it predicts liquid-gas coexistence and a critical point, capturing real-gas behaviour the ideal law misses",
-        "It adds a term proportional to temperature only (unsupported by perturbative expansions in the coupling) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "It makes gases behave more ideally at high pressure (ruled out by experimental constraints from collider and low-energy data) (would imply unphysical infinite or negative observables)",
-        "It removes all interactions from the ideal gas (historically considered but disfavoured by modern QFT analyses) (would conflict with renormalisation group flow and cross-section data)"
+        "It adds a term proportional to temperature only (this reverses the actual relationship) (not supported by the evidence) (this describes a different phenomenon)",
+        "It makes gases behave more ideally at high pressure (a frequently-taught but incorrect simplification) (inconsistent with standard results in the field)",
+        "It removes all interactions from the ideal gas (a common misconception) (true only as a special case, not in general) (an outdated view superseded by later work)"
       ],
       "correct": 0,
       "explanation": "The ideal gas law assumes point particles with no interactions, failing at high pressure and low temperature. Van der Waals (1873, Nobel 1910) introduced two corrections: an attractive term $a n^2/V^2$ added to the pressure (molecules pull on each other, so the wall pressure is lower than ideal) and a co-volume $b$ subtracted from the volume (molecules have finite size, excluding volume). The resulting equation $(P+an^2/V^2)(V-nb)=nRT$ qualitatively reproduces the liquid-gas phase transition: below a critical temperature its isotherms show a non-monotonic loop (corrected by the Maxwell equal-area construction) signalling coexistence, and it predicts a critical point ($T_c=8a/27Rb$, etc.) with universal ratios. It was the first equation of state to unify gas and liquid phases from molecular assumptions and introduced the principle of corresponding states (different gases coincide when scaled by their critical parameters). Though superseded quantitatively by more accurate equations and the virial expansion, it remains the conceptual cornerstone for understanding real gases and phase transitions."

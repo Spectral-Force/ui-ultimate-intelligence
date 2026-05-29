@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "The collapsed core of a massive star (~1.4 $M_\\odot$ in ~10 km), supported mainly by neutron degeneracy pressure plus the strong-force repulsion of dense nuclear matter; density reaches and exceeds nuclear saturation, making it a giant nucleus bound by gravity",
-        "A normal star supported by thermal gas pressure (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "An object supported by electron degeneracy (that is a white dwarf) (not consistent with the operator product expansion at large momentum)",
-        "A black hole with an event horizon (violates basic gauge invariance and Lorentz covariance requirements) (historically considered but disfavoured by modern QFT analyses)"
+        "A normal star supported by thermal gas pressure (this confuses two distinct concepts) (not supported by the evidence) (an outdated view superseded by later work)",
+        "An object supported by electron degeneracy (that is a white dwarf) (true only as a special case, not in general) (inconsistent with standard results in the field)",
+        "A black hole with an event horizon (a common misconception) (this describes a different phenomenon) (a frequently-taught but incorrect simplification)"
       ],
       "correct": 0,
       "explanation": "When a massive star's iron core exceeds the Chandrasekhar mass, electron degeneracy fails, electrons capture onto protons ($p+e^-\\to n+\\nu_e$), and the core collapses until halted near nuclear density — a neutron star, typically ~1.4 $M_\\odot$ in a ~12 km radius, with central densities a few times nuclear saturation ($2.7\\times10^{17}$ kg/m$^3$). Support comes from neutron degeneracy pressure augmented crucially by the repulsive part of the strong nuclear force (without it the maximum mass would be far too low). They are essentially gravitationally-bound giant nuclei. Observed as pulsars (rotating, magnetised), in X-ray binaries, and via gravitational waves from mergers. Their structure probes the equation of state of cold, dense, neutron-rich matter unreachable in the laboratory."
@@ -70,9 +70,9 @@
     "passive": {
       "options": [
         "~1.4 $M_\\odot$, the maximum mass a white dwarf can have supported by electron degeneracy pressure; above it, relativistic electrons cannot supply enough pressure and the star collapses (to a neutron star or, with accretion, a Type Ia supernova)",
-        "The maximum mass of any star, of any kind (not consistent with the operator product expansion at large momentum) (would conflict with renormalisation group flow and cross-section data)",
-        "The minimum mass for a star to ignite hydrogen (historically considered but disfavoured by modern QFT analyses) (contradicted by both lattice simulations and dispersive analyses)",
-        "A mass that depends only on temperature (ruled out by experimental constraints from collider and low-energy data) (unsupported by perturbative expansions in the coupling)"
+        "The maximum mass of any star, of any kind (an outdated view superseded by later work) (a common misconception) (inconsistent with standard results in the field)",
+        "The minimum mass for a star to ignite hydrogen (this conflates cause and effect) (this describes a different phenomenon) (this reverses the actual relationship)",
+        "A mass that depends only on temperature (this confuses two distinct concepts) (a frequently-taught but incorrect simplification)"
       ],
       "correct": 0,
       "explanation": "Chandrasekhar (1931, Nobel 1983) showed degenerate electrons become relativistic at high density, softening their pressure ($P\\propto n^{4/3}$ rather than $n^{5/3}$) so it can no longer scale with gravity. The result is a maximum supportable mass $M_{Ch}\\approx 1.4\\,M_\\odot$ (depending on composition, $\\propto (Z/A)^2$ via $\\mu_e$), built from fundamental constants ($\\sim (\\hbar c/G)^{3/2}/m_p^2$). White dwarfs above it cannot exist. A carbon-oxygen white dwarf accreting toward $M_{Ch}$ ignites a thermonuclear runaway — a Type Ia supernova (a standardisable candle that revealed cosmic acceleration). Cores exceeding $M_{Ch}$ in massive stars collapse past white-dwarf density to form neutron stars (or black holes). The analogous Tolman-Oppenheimer-Volkoff limit (~2-2.3 $M_\\odot$) caps neutron stars."
@@ -93,9 +93,9 @@
     "passive": {
       "options": [
         "The EoS (pressure vs density of cold, dense, neutron-rich matter) sets the mass-radius relation and maximum mass via the TOV equation, but the relevant densities (several times nuclear saturation) and extreme isospin lie beyond lab reach, so it must be extrapolated — with possible exotic phases (hyperons, quark matter)",
-        "The EoS is precisely known from terrestrial experiments (ruled out by experimental constraints from collider and low-energy data) (not consistent with the operator product expansion at large momentum)",
-        "It has no effect on neutron-star structure (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (unsupported by perturbative expansions in the coupling)",
-        "It depends only on temperature, not density (contradicted by both lattice simulations and dispersive analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+        "The EoS is precisely known from terrestrial experiments (this describes a different phenomenon) (an outdated view superseded by later work) (this confuses two distinct concepts)",
+        "It has no effect on neutron-star structure (this reverses the actual relationship) (this conflates cause and effect) (not supported by the evidence) (a frequently-taught but incorrect simplification)",
+        "It depends only on temperature, not density (inconsistent with standard results in the field) (a common misconception) (true only as a special case, not in general)"
       ],
       "correct": 0,
       "explanation": "Neutron-star interiors reach a few times nuclear saturation density at near-zero temperature and extreme neutron excess — conditions inaccessible to laboratory nuclear experiments (which probe symmetric matter near saturation). The pressure-density relation (EoS) determines, through the relativistic TOV equations, the entire mass-radius curve and the maximum mass. Stiffer EoS $\\Rightarrow$ larger radii and higher max mass. Open questions: does matter stay nucleonic, or do hyperons appear (the 'hyperon puzzle', which softens the EoS and threatens the observed ~2 $M_\\odot$ stars), or does a phase transition to deconfined quark matter occur in the core? Constraints now come from massive-pulsar mass measurements ($\\ge 2\\,M_\\odot$), NICER radius measurements, GW170817 tidal deformability, and heavy-ion data on the symmetry energy — together carving out the allowed EoS band and connecting QCD to the cosmos."
@@ -116,9 +116,9 @@
     "passive": {
       "options": [
         "Outer crust: ions in a degenerate electron sea (a Coulomb lattice); inner crust: neutron-rich nuclei plus dripped superfluid neutrons, ending in 'nuclear pasta'; outer core: superfluid neutrons + superconducting protons + electrons/muons; inner core: unknown matter (hyperons? quark matter?)",
-        "A uniform ball of identical neutrons throughout (not consistent with the operator product expansion at large momentum) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "A gaseous atmosphere all the way down (would imply unphysical infinite or negative observables) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "Solid iron from surface to centre (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (unsupported by perturbative expansions in the coupling)"
+        "A uniform ball of identical neutrons throughout (an outdated view superseded by later work) (true only as a special case, not in general) (a frequently-taught but incorrect simplification)",
+        "A gaseous atmosphere all the way down (not supported by the evidence) (this confuses two distinct concepts) (this reverses the actual relationship)",
+        "Solid iron from surface to centre (this describes a different phenomenon) (this conflates cause and effect) (a common misconception) (inconsistent with standard results in the field)"
       ],
       "correct": 0,
       "explanation": "Neutron stars are richly stratified. A thin atmosphere/ocean tops an outer crust of neutron-rich nuclei in a body-centred-cubic Coulomb lattice immersed in degenerate electrons. Below neutron drip (~$4\\times10^{11}$ g/cm$^3$), the inner crust holds neutron-rich clusters plus a free, superfluid neutron gas; near its base, competition between nuclear surface tension and Coulomb energy sculpts exotic 'nuclear pasta' (rods, slabs, bubbles). The outer core (around and above nuclear saturation) is a quantum liquid of superfluid neutrons, superconducting protons, electrons and muons — superfluidity explains pulsar glitches (sudden spin-ups from unpinning vortices) and rapid cooling (enhanced neutrino emission). The inner core's composition is genuinely unknown: it may remain nucleonic or transition to hyperonic or deconfined quark matter. This structure links nuclear physics, condensed matter, and QCD."
@@ -139,9 +139,9 @@
     "passive": {
       "options": [
         "The inspiral's tidal-deformability signature (how each star's gravity distorts its partner just before merger) ruled out the stiffest EoS and bounded NS radii to ~11-13 km; combined with the kilonova and massive-pulsar masses it tightened the dense-matter EoS and confirmed r-process element production",
-        "It measured the temperature of a neutron star directly (not consistent with the operator product expansion at large momentum) (ruled out by experimental constraints from collider and low-energy data)",
-        "It proved neutron stars do not exist (unsupported by perturbative expansions in the coupling) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "It gave no information about the equation of state (would conflict with renormalisation group flow and cross-section data) (violates basic gauge invariance and Lorentz covariance requirements)"
+        "It measured the temperature of a neutron star directly (an outdated view superseded by later work) (this describes a different phenomenon) (this reverses the actual relationship)",
+        "It proved neutron stars do not exist (not supported by the evidence) (a common misconception) (true only as a special case, not in general) (this confuses two distinct concepts)",
+        "It gave no information about the equation of state (inconsistent with standard results in the field) (this conflates cause and effect) (a frequently-taught but incorrect simplification)"
       ],
       "correct": 0,
       "explanation": "In the final orbits before merger, each neutron star is tidally deformed by its companion; this changes the gravitational-wave phase by an amount set by the tidal deformability $\\Lambda$, which depends sensitively on stellar compactness and hence the EoS. From GW170817, LIGO/Virgo measured $\\Lambda$ for ~1.4 $M_\\odot$ stars, disfavouring the stiffest (largest-radius) equations of state and implying radii ~11-13 km. The associated kilonova confirmed r-process nucleosynthesis and (with the GW) gave an independent Hubble-constant 'standard siren' measurement, while the near-simultaneous gamma-ray burst constrained the GW speed to $|c_{\\rm GW}-c|/c<10^{-15}$. Together with two-solar-mass pulsar measurements (which demand a sufficiently stiff EoS at high density) and NICER radii, GW170817 was pivotal in pinning down cold dense matter — a textbook case of multi-messenger astronomy informing nuclear physics."
@@ -162,9 +162,9 @@
     "passive": {
       "options": [
         "Possibly: at sufficiently high density nucleons may dissolve into deconfined quark matter (perhaps colour-superconducting), softening the EoS; 'hybrid stars' would have quark cores, and a strong first-order transition could leave signatures in mass-radius data or post-merger gravitational waves — currently unproven",
-        "Quark matter is definitively confirmed in all neutron stars (violates basic gauge invariance and Lorentz covariance requirements) (ruled out by experimental constraints from collider and low-energy data)",
-        "Quarks can never be deconfined under any conditions (would imply unphysical infinite or negative observables) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "Quark matter would make stars infinitely massive (unsupported by perturbative expansions in the coupling) (contradicted by both lattice simulations and dispersive analyses)"
+        "Quark matter is definitively confirmed in all neutron stars (true only as a special case, not in general) (this describes a different phenomenon) (a frequently-taught but incorrect simplification)",
+        "Quarks can never be deconfined under any conditions (this confuses two distinct concepts) (this reverses the actual relationship) (this conflates cause and effect)",
+        "Quark matter would make stars infinitely massive (inconsistent with standard results in the field) (not supported by the evidence) (a common misconception) (an outdated view superseded by later work)"
       ],
       "correct": 0,
       "explanation": "QCD predicts that at high enough baryon density (and low temperature) nuclear matter should transition to deconfined quark matter, plausibly in a colour-superconducting phase (e.g. colour-flavour-locked) where quarks pair across colour and flavour. Whether neutron-star cores reach this regime is unsettled because the relevant region of the QCD phase diagram (high density, low T) is not accessible to lattice QCD (the fermion sign problem) and only marginally to perturbative QCD. Such a transition would soften the EoS; a strong first-order transition could produce a distinctive 'twin star' branch or kinks in the mass-radius relation, and might imprint on the post-merger gravitational-wave spectrum (a possible future smoking gun). The 'strange matter hypothesis' even speculates that strange quark matter could be the true ground state, making some 'neutron stars' actually strange stars. Resolving the core composition is a central goal linking neutron-star observations, heavy-ion collisions (which probe high T, moderate density), and QCD theory."

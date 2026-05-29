@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "A toroidal magnetic field (from external coils) plus a poloidal field (from a large plasma current driven through the gas) twist into helical field lines on nested flux surfaces, confining the hot plasma; the combined field prevents the charged particles' cross-field drifts from rapidly losing them to the walls",
-        "It uses gravity to hold the plasma together (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)",
-        "It confines plasma with electrostatic fields only (contradicted by both lattice simulations and dispersive analyses) (not consistent with the operator product expansion at large momentum)",
-        "It relies on a solid container at fusion temperatures (historically considered but disfavoured by modern QFT analyses) (would imply unphysical infinite or negative observables)"
+        "It uses gravity to hold the plasma together (this reverses the actual relationship) (this describes a different phenomenon) (this conflates cause and effect)",
+        "It confines plasma with electrostatic fields only (an outdated view superseded by later work) (inconsistent with standard results in the field) (a frequently-taught but incorrect simplification)",
+        "It relies on a solid container at fusion temperatures (true only as a special case, not in general) (a common misconception) (not supported by the evidence) (this confuses two distinct concepts)"
       ],
       "correct": 0,
       "explanation": "No material can contain a 100-million-kelvin plasma, so magnetic confinement is used. In a tokamak (toroidal chamber with magnetic coils), strong toroidal-field coils produce the main field; a transformer (or other current drive) induces a toroidal plasma current that creates a poloidal field. The two combine into helical field lines wrapping nested toroidal flux surfaces. This twist is essential: a purely toroidal field would let grad-B and curvature drifts separate charges and drive the plasma out, but the rotational transform (field-line twist, measured by the safety factor $q$) short-circuits this drift, giving confinement. Tokamaks are the leading magnetic-confinement concept; ITER (under construction) aims for $Q=10$ (ten times more fusion power out than heating power in). Challenges include current drive for steady state, disruptions, and exhaust handling at the divertor."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "D + T $\\to\\,^4$He (3.5 MeV) + n (14.1 MeV) has the largest cross-section at the lowest temperature (peak near 65 keV) of accessible fusion reactions; the alpha stays to heat the plasma, the neutron carries energy out to breed tritium and generate heat",
-        "Because D and T are the heaviest available fuels (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (historically considered but disfavoured by modern QFT analyses)",
-        "Because it produces no neutrons (contradicted by both lattice simulations and dispersive analyses) (unsupported by perturbative expansions in the coupling)",
-        "Because it requires the highest ignition temperature (disagrees with the standard textbook treatment in Peskin-Schroeder) (violates basic gauge invariance and Lorentz covariance requirements)"
+        "Because D and T are the heaviest available fuels (this confuses two distinct concepts) (inconsistent with standard results in the field)",
+        "Because it produces no neutrons (this conflates cause and effect) (this reverses the actual relationship) (not supported by the evidence)",
+        "Because it requires the highest ignition temperature (true only as a special case, not in general) (a frequently-taught but incorrect simplification)"
       ],
       "correct": 0,
       "explanation": "Among candidate fusion reactions, deuterium-tritium has by far the highest reactivity at the lowest temperature, with a cross-section peaking near 65 keV (~$5\\times$ easier than D-D), making it the realistic first-generation fuel. It releases 17.6 MeV per reaction: the 3.5 MeV alpha particle is charged and remains magnetically confined to heat the plasma (enabling self-sustaining 'burning plasma'), while the 14.1 MeV neutron escapes to deposit energy in a surrounding blanket — which also breeds tritium via $^6$Li + n $\\to$ T + $^4$He (essential, since tritium is radioactive with a 12.3-yr half-life and not naturally abundant). Drawbacks: the energetic neutrons activate and damage structural materials and require shielding/remote handling. Advanced 'aneutronic' fuels (D-$^3$He, p-$^{11}$B) avoid most neutrons but demand far higher temperatures and have lower reactivity, so D-T is the route for ITER and near-term reactors."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "$Q$ = fusion power / external heating power; scientific breakeven is $Q=1$; ignition is $Q\\to\\infty$ (alpha self-heating sustains the burn without external heating); reactors need $Q\\gtrsim10$ (ITER's goal) for net electricity after plant inefficiencies",
-        "They all mean exactly the same thing (not consistent with the operator product expansion at large momentum) (ruled out by experimental constraints from collider and low-energy data)",
-        "Ignition means the plasma cools down (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (contradicted by both lattice simulations and dispersive analyses)",
-        "Breakeven requires Q below 1 (unsupported by perturbative expansions in the coupling) (would conflict with renormalisation group flow and cross-section data)"
+        "They all mean exactly the same thing (an outdated view superseded by later work) (this describes a different phenomenon) (this confuses two distinct concepts)",
+        "Ignition means the plasma cools down (this conflates cause and effect) (this reverses the actual relationship) (a common misconception)",
+        "Breakeven requires Q below 1 (not supported by the evidence) (inconsistent with standard results in the field) (a frequently-taught but incorrect simplification)"
       ],
       "correct": 0,
       "explanation": "The fusion energy gain factor $Q = P_{\\rm fusion}/P_{\\rm heating}$ benchmarks performance. Scientific breakeven is $Q=1$ (fusion power equals the external heating power injected into the plasma). Ignition is the limit $Q\\to\\infty$: the confined alpha particles deposit enough energy to sustain the plasma temperature with no external heating — a self-sustaining burn (achieved transiently at NIF in 2022 in the inertial sense). Because converting heat to electricity is ~30-40% efficient and the plant has recirculating power needs, a power-producing reactor requires engineering breakeven and practically $Q\\gtrsim10$ (ITER's target) up to $\\sim$30-50 for an economical plant (DEMO). Note distinctions: 'scientific' vs 'engineering' breakeven, and gain referenced to power into the plasma vs into the whole facility (NIF's headline gain was capsule-referenced, far above the wall-plug). These definitions are essential for honestly assessing fusion progress."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "A high-confinement regime, accessed above a heating-power threshold, in which a sheared-flow edge transport barrier (steep pedestal) suppresses turbulence and roughly doubles the energy confinement time versus the L-mode; it is the baseline scenario for ITER, but its pedestal drives periodic ELMs",
-        "A low-confinement mode that wastes energy (ruled out by experimental constraints from collider and low-energy data) (would conflict with renormalisation group flow and cross-section data)",
-        "A mode requiring no heating at all (historically considered but disfavoured by modern QFT analyses) (not consistent with the operator product expansion at large momentum)",
-        "An instability that destroys the plasma instantly (would imply unphysical infinite or negative observables) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+        "A low-confinement mode that wastes energy (this describes a different phenomenon) (a common misconception) (inconsistent with standard results in the field)",
+        "A mode requiring no heating at all (an outdated view superseded by later work) (a frequently-taught but incorrect simplification) (not supported by the evidence)",
+        "An instability that destroys the plasma instantly (this reverses the actual relationship) (this confuses two distinct concepts) (true only as a special case, not in general)"
       ],
       "correct": 0,
       "explanation": "Discovered on ASDEX (1982), the high-confinement mode (H-mode) appears spontaneously when auxiliary heating exceeds a threshold: a region of strong sheared $\\mathbf E\\times\\mathbf B$ flow forms at the plasma edge, tearing apart turbulent eddies and creating an edge transport barrier — a steep pressure 'pedestal' that lifts the whole temperature/density profile and roughly doubles the confinement time relative to the low-confinement L-mode. This jump is crucial: ITER's performance projections assume H-mode. The catch is the steep pedestal becomes unstable to edge-localised modes (ELMs) — quasi-periodic relaxations that expel bursts of energy and particles onto the divertor, tolerable in present machines but potentially damaging at ITER/reactor scale. Hence intense research on ELM control (resonant magnetic perturbations, pellet pacing) and naturally ELM-free regimes (QH-mode, I-mode, negative-triangularity). H-mode physics — turbulence suppression by sheared flow — is a centerpiece of confinement science."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "Milestones: JET D-T records, NIF ignition (2022), ITER (burning plasma, $Q=10$); challenges include steady-state operation, plasma-facing materials and neutron damage, tritium breeding/self-sufficiency, divertor heat exhaust, disruptions, and overall plant economics",
-        "Fusion power has been on the grid for decades (would imply unphysical infinite or negative observables) (not consistent with the operator product expansion at large momentum)",
-        "There are no remaining technical challenges (ruled out by experimental constraints from collider and low-energy data) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "The only challenge is finding deuterium (contradicted by both lattice simulations and dispersive analyses) (historically considered but disfavoured by modern QFT analyses)"
+        "Fusion power has been on the grid for decades (a frequently-taught but incorrect simplification) (an outdated view superseded by later work)",
+        "There are no remaining technical challenges (this describes a different phenomenon) (true only as a special case, not in general) (this conflates cause and effect)",
+        "The only challenge is finding deuterium (inconsistent with standard results in the field) (a common misconception) (this confuses two distinct concepts)"
       ],
       "correct": 0,
       "explanation": "Scientific progress is real but engineering hurdles remain. Milestones: tokamaks raised the triple product over decades; JET set magnetic-fusion energy records (59 MJ in 2021 D-T); NIF achieved inertial ignition (2022); ITER (international, under construction) aims to demonstrate a burning plasma with $Q=10$ and the technologies for a reactor. The hard challenges: achieving steady-state (non-inductive current drive or stellarator geometry); plasma-facing materials and structures that survive intense 14-MeV neutron fluence (activation, swelling, embrittlement) and enormous divertor heat loads (tens of MW/m$^2$); breeding enough tritium in lithium blankets to be fuel self-sufficient (tritium breeding ratio > 1); avoiding/mitigating disruptions; and ultimately economics and reliability for a power plant (DEMO and beyond). Private ventures pursue high-field (HTS-magnet) compact tokamaks and alternative concepts to accelerate timelines. Fusion's promise — abundant fuel, no carbon, no long-lived high-level waste, inherent safety — keeps it a major energy-research goal despite the remaining road."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "REBCO high-temperature superconductors sustain much higher magnetic fields than conventional Nb-based magnets; since fusion power density scales steeply with field (roughly $B^4$ at fixed shape), stronger fields enable far more compact, potentially cheaper, faster-to-build tokamaks (e.g. SPARC/ARC) at higher $Q$",
-        "They make magnets weaker and devices larger (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)",
-        "Superconductors are irrelevant to fusion (not consistent with the operator product expansion at large momentum) (would conflict with renormalisation group flow and cross-section data)",
-        "Higher field reduces fusion power density (would imply unphysical infinite or negative observables) (contradicted by both lattice simulations and dispersive analyses)"
+        "They make magnets weaker and devices larger (this reverses the actual relationship) (this describes a different phenomenon) (an outdated view superseded by later work)",
+        "Superconductors are irrelevant to fusion (a common misconception) (a frequently-taught but incorrect simplification) (this conflates cause and effect) (not supported by the evidence)",
+        "Higher field reduces fusion power density (true only as a special case, not in general) (this confuses two distinct concepts) (inconsistent with standard results in the field)"
       ],
       "correct": 0,
       "explanation": "Confinement and fusion performance improve sharply with magnetic field: at fixed plasma shape and beta, fusion power density scales roughly as $B^4$ and the achievable triple product/$Q$ rise steeply, so a higher field lets you shrink the machine dramatically (volume, and hence cost and build time, falls). Conventional low-temperature superconductors (NbTi, Nb$_3$Sn, used in ITER) are limited to ~12 T at the coil. New high-temperature superconductors — especially REBCO (rare-earth barium copper oxide) coated tapes — carry high current density at much higher fields (>20 T) and warmer, more forgiving temperatures, enabling compact high-field tokamaks. This underpins ventures like Commonwealth Fusion Systems' SPARC (targeting $Q>1$) and the ARC reactor concept, and MIT's 2021 demonstration of a 20-T REBCO toroidal-field coil. By trading machine size for magnet technology, HTS magnets are widely seen as a potential game-changer accelerating the timeline to demonstration fusion power, though materials, quench protection, and neutron tolerance of the magnets remain active engineering challenges."

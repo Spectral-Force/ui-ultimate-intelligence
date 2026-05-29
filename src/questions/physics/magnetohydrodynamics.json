@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "The treatment of an electrically conducting fluid (plasma, liquid metal) as a single fluid coupled to magnetic fields, combining Navier-Stokes with Maxwell's equations via the Lorentz force $\\mathbf J\\times\\mathbf B$ and an induction equation for $\\mathbf B$; valid on scales large compared to kinetic plasma scales",
-        "The study of neutral gases with no magnetic effects (violates basic gauge invariance and Lorentz covariance requirements) (historically considered but disfavoured by modern QFT analyses)",
-        "Pure electromagnetism with no fluid motion (unsupported by perturbative expansions in the coupling) (would imply unphysical infinite or negative observables) (ruled out by experimental constraints from collider and low-energy data)",
-        "Quantum mechanics of single electrons (not consistent with the operator product expansion at large momentum) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+        "The study of neutral gases with no magnetic effects (true only as a special case, not in general) (inconsistent with standard results in the field) (this reverses the actual relationship)",
+        "Pure electromagnetism with no fluid motion (a frequently-taught but incorrect simplification) (this describes a different phenomenon) (an outdated view superseded by later work)",
+        "Quantum mechanics of single electrons (not supported by the evidence) (a common misconception) (this confuses two distinct concepts) (this conflates cause and effect)"
       ],
       "correct": 0,
       "explanation": "MHD is the fluid description of magnetised, conducting media. It closes Navier-Stokes (with the Lorentz body force $\\mathbf J\\times\\mathbf B$) together with a simplified Maxwell set and Ohm's law $\\mathbf E + \\mathbf u\\times\\mathbf B = \\eta\\mathbf J$, yielding the induction equation $\\partial_t\\mathbf B = \\nabla\\times(\\mathbf u\\times\\mathbf B) + (\\eta/\\mu_0)\\nabla^2\\mathbf B$. It applies when the medium is quasi-neutral and varies slowly compared to kinetic scales (gyroradius, Debye length, collision/plasma frequencies). MHD governs the dynamics of the Sun and stars, accretion disks, the interstellar medium, planetary magnetospheres and dynamos, fusion plasmas, and liquid-metal engineering. Ideal MHD (infinite conductivity) and resistive MHD are the main variants; extensions add Hall and two-fluid effects."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "In a perfectly conducting fluid (ideal MHD), magnetic field lines are 'frozen' into the plasma and move with it: the magnetic flux through any material loop is conserved and field-line topology is preserved, so plasma and field move together",
-        "Magnetic fields are unaffected by fluid motion (unsupported by perturbative expansions in the coupling) (not consistent with the operator product expansion at large momentum)",
-        "Field lines always slip freely through the plasma (historically considered but disfavoured by modern QFT analyses) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "Flux through a loop grows without bound (would imply unphysical infinite or negative observables) (ruled out by experimental constraints from collider and low-energy data)"
+        "Magnetic fields are unaffected by fluid motion (this reverses the actual relationship) (an outdated view superseded by later work)",
+        "Field lines always slip freely through the plasma (inconsistent with standard results in the field) (true only as a special case, not in general)",
+        "Flux through a loop grows without bound (a frequently-taught but incorrect simplification) (this describes a different phenomenon)"
       ],
       "correct": 0,
       "explanation": "Alfven's theorem (the MHD analogue of Kelvin's circulation theorem) holds in the ideal limit of infinite conductivity (zero resistivity): the induction equation reduces to $\\partial_t\\mathbf B = \\nabla\\times(\\mathbf u\\times\\mathbf B)$, which guarantees the magnetic flux through any surface moving with the fluid is constant. Field lines are thus 'frozen' into and advected by the plasma, and their topology (linkages, knottedness) cannot change. Consequences: compressing a plasma amplifies its field (flux conservation), explaining stellar/planetary dynamos and magnetic field amplification in collapse; field lines can be stretched and tangled by flows, storing magnetic energy. The frozen-in condition breaks down in thin resistive layers, enabling magnetic reconnection — the mechanism that releases that stored energy in solar flares, coronal mass ejections, and magnetospheric substorms. The dimensionless magnetic Reynolds number $R_m$ measures how close a flow is to the ideal frozen-in regime."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "Transverse MHD waves in which field lines oscillate like plucked strings, restored by magnetic tension, propagating along $\\mathbf B$ at the Alfven speed $v_A = B/\\sqrt{\\mu_0\\rho}$; they carry energy and momentum in plasmas without compressing the fluid (incompressible, shear mode)",
-        "Sound waves in a neutral gas (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (unsupported by perturbative expansions in the coupling)",
-        "Electromagnetic waves in vacuum (would imply unphysical infinite or negative observables) (contradicted by both lattice simulations and dispersive analyses)",
-        "Waves that require no magnetic field (not consistent with the operator product expansion at large momentum) (would conflict with renormalisation group flow and cross-section data)"
+        "Sound waves in a neutral gas (this confuses two distinct concepts) (this reverses the actual relationship) (a frequently-taught but incorrect simplification)",
+        "Electromagnetic waves in vacuum (this conflates cause and effect) (an outdated view superseded by later work) (a common misconception) (inconsistent with standard results in the field)",
+        "Waves that require no magnetic field (this describes a different phenomenon) (true only as a special case, not in general) (not supported by the evidence)"
       ],
       "correct": 0,
       "explanation": "Alfven (Nobel 1970) predicted that magnetic tension provides a restoring force for transverse perturbations of field lines, giving a new wave mode. The shear Alfven wave is incompressible, travels along the field at $v_A = B/\\sqrt{\\mu_0\\rho}$, and behaves like waves on a string under tension. MHD also supports compressional fast and slow magnetosonic waves (combining magnetic and thermal pressure). Alfven waves are ubiquitous: they heat the solar corona and accelerate the solar wind, transport angular momentum in accretion disks and protostars, are launched in laboratory and fusion plasmas, and propagate in Earth's magnetosphere (field-line resonances). Their existence is a hallmark of magnetised fluids and a key diagnostic and energy-transport channel across plasma astrophysics and fusion."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "A process where oppositely-directed field lines break and reconnect in thin resistive (or kinetic) current sheets, changing magnetic topology and rapidly converting stored magnetic energy into plasma heating, bulk flows, and particle acceleration; powers solar flares, CMEs, and magnetospheric substorms",
-        "A process that conserves magnetic topology exactly (contradicted by both lattice simulations and dispersive analyses) (unsupported by perturbative expansions in the coupling)",
-        "A purely decorative effect with no energy release (would conflict with renormalisation group flow and cross-section data) (would imply unphysical infinite or negative observables)",
-        "Reconnection only occurs in solids (disagrees with the standard textbook treatment in Peskin-Schroeder) (not consistent with the operator product expansion at large momentum)"
+        "A process that conserves magnetic topology exactly (this conflates cause and effect) (this reverses the actual relationship) (a common misconception) (a frequently-taught but incorrect simplification)",
+        "A purely decorative effect with no energy release (not supported by the evidence) (an outdated view superseded by later work) (this confuses two distinct concepts)",
+        "Reconnection only occurs in solids (inconsistent with standard results in the field) (true only as a special case, not in general) (this describes a different phenomenon)"
       ],
       "correct": 0,
       "explanation": "Although ideal MHD freezes field topology, real plasmas have finite resistivity (or kinetic effects in collisionless regimes) that allow field lines to break and rejoin where oppositely-directed fields press together, forming a current sheet. Reconnection changes the connectivity of field lines and explosively releases the magnetic energy stored by the frozen-in stretching/tangling. It is the engine of: solar flares and coronal mass ejections (space weather), magnetospheric substorms and auroras (energy from the solar wind), sawtooth crashes and disruptions in tokamaks, and particle acceleration throughout astrophysics. The classic Sweet-Parker model gives reconnection rates far too slow to explain flares; fast reconnection requires the Petschek mechanism, plasmoid instabilities of the current sheet, or collisionless (Hall/kinetic) physics — understanding fast reconnection remains a central problem in plasma physics, studied by missions like NASA's MMS."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "The generation and maintenance of magnetic fields by the motion of a conducting fluid converting kinetic energy into magnetic energy against ohmic dissipation; turbulent/helical flows and differential rotation amplify and sustain fields, explaining planetary, stellar, and galactic magnetism",
-        "A device that destroys magnetic fields (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "Magnetic fields appearing without any fluid motion (ruled out by experimental constraints from collider and low-energy data) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "A purely electrostatic phenomenon (would conflict with renormalisation group flow and cross-section data) (contradicted by both lattice simulations and dispersive analyses)"
+        "A device that destroys magnetic fields (this confuses two distinct concepts) (true only as a special case, not in general) (this describes a different phenomenon)",
+        "Magnetic fields appearing without any fluid motion (not supported by the evidence) (a common misconception) (this conflates cause and effect) (inconsistent with standard results in the field)",
+        "A purely electrostatic phenomenon (a frequently-taught but incorrect simplification) (this reverses the actual relationship) (an outdated view superseded by later work)"
       ],
       "correct": 0,
       "explanation": "Cosmic magnetic fields would decay ohmically over time, yet planets, stars, and galaxies maintain them — the dynamo problem. A dynamo is a self-exciting process in which the flow of an electrically conducting fluid inductively regenerates magnetic field faster than resistivity erodes it, converting kinetic energy (from convection, differential rotation, or turbulence) into magnetic energy. The standard mean-field picture invokes the $\\alpha$-effect (helical turbulence twisting field lines, regenerating poloidal from toroidal field) and the $\\Omega$-effect (differential rotation shearing poloidal into toroidal field), giving an $\\alpha\\Omega$ dynamo with cyclic behaviour (e.g. the Sun's 22-year magnetic cycle and sunspot butterfly diagram). Earth's geodynamo operates in the convecting liquid-iron outer core (and undergoes reversals). Laboratory dynamos (Riga, Karlsruhe, VKS sodium experiments) have demonstrated self-excitation. Dynamo theory connects MHD turbulence, rotation, and the origin of magnetism from planetary to galactic scales."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "A weak magnetic field threading a differentially-rotating disk (angular velocity decreasing outward) destabilises the flow: magnetic tension couples fluid elements like a spring, transferring angular momentum outward and driving turbulence — providing the anomalous viscosity that lets accretion disks accrete",
-        "An instability that stops all disk accretion (would imply unphysical infinite or negative observables) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "A purely hydrodynamic instability needing no magnetic field (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)",
-        "An effect only relevant to solid bodies (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (not consistent with the operator product expansion at large momentum)"
+        "An instability that stops all disk accretion (a frequently-taught but incorrect simplification) (not supported by the evidence) (this reverses the actual relationship)",
+        "A purely hydrodynamic instability needing no magnetic field (this describes a different phenomenon) (this confuses two distinct concepts) (an outdated view superseded by later work)",
+        "An effect only relevant to solid bodies (this conflates cause and effect) (a common misconception) (inconsistent with standard results in the field) (true only as a special case, not in general)"
       ],
       "correct": 0,
       "explanation": "Accretion disks (around protostars, black holes, in cataclysmic variables) must transport angular momentum outward to let matter spiral inward, but molecular viscosity is far too small and Keplerian shear is hydrodynamically stable (Rayleigh criterion). Balbus and Hawley (1991) revived and clarified the magnetorotational instability (originally Velikhov/Chandrasekhar): a weak magnetic field links neighbouring orbits like a spring; the inner (faster) element is pulled back and the outer pushed forward, so angular momentum flows outward and the separation grows — a linear instability that saturates into vigorous MHD turbulence. This turbulence supplies the effective ('$\\alpha$') viscosity needed to explain observed accretion rates and disk luminosities. The MRI is now considered the dominant angular-momentum transport mechanism in sufficiently ionised disks, fundamental to star and planet formation, black-hole growth, and accretion-powered phenomena across astrophysics."

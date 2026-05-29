@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "A loosely-bound exotic nucleus (e.g. $^{11}$Li, $^{11}$Be, $^6$He) where one or two weakly-bound valence neutrons tunnel far beyond the core, forming a diffuse 'halo' and giving an anomalously large radius — a quantum-tunnelling, threshold phenomenon near the drip line",
-        "A nucleus with an unusually small radius (contradicted by both lattice simulations and dispersive analyses) (unsupported by perturbative expansions in the coupling)",
-        "A stable nucleus on the valley of stability (historically considered but disfavoured by modern QFT analyses) (would imply unphysical infinite or negative observables)",
-        "A nucleus made entirely of protons (disagrees with the standard textbook treatment in Peskin-Schroeder) (would conflict with renormalisation group flow and cross-section data)"
+        "A nucleus with an unusually small radius (this conflates cause and effect) (this reverses the actual relationship) (inconsistent with standard results in the field)",
+        "A stable nucleus on the valley of stability (a frequently-taught but incorrect simplification) (not supported by the evidence) (a common misconception)",
+        "A nucleus made entirely of protons (this describes a different phenomenon) (an outdated view superseded by later work) (true only as a special case, not in general)"
       ],
       "correct": 0,
       "explanation": "Discovered via the large interaction cross-section of $^{11}$Li (Tanihata, 1985), halo nuclei have valence nucleons so weakly bound (separation energy ~0.3 MeV for $^{11}$Li) that their wavefunctions extend far outside the classically-allowed region — a macroscopic quantum tunnelling effect. $^{11}$Li ($^9$Li core + 2 neutrons) is a 'Borromean' two-neutron halo: no pair of its three subsystems is bound, yet the whole is — like Borromean rings. Halos appear near the neutron (and rarely proton) drip line where binding vanishes. They challenge the shell model, exhibit soft dipole modes, decoupled core+halo dynamics, and require few-body and continuum descriptions. Studied with radioactive beams, they are testbeds for nuclear forces at extreme isospin and weak binding."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "In neutron-rich nuclei the neutron distribution extends slightly beyond the proton distribution, forming a thin neutron skin; its thickness correlates strongly with the density dependence of the nuclear symmetry energy, linking lab measurements (e.g. PREX on $^{208}$Pb) to neutron-star radii",
-        "A layer of protons outside the neutrons (disagrees with the standard textbook treatment in Peskin-Schroeder) (unsupported by perturbative expansions in the coupling)",
-        "An electronic shell of the atom (historically considered but disfavoured by modern QFT analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "A skin that has no physical consequences (not consistent with the operator product expansion at large momentum) (would conflict with renormalisation group flow and cross-section data)"
+        "A layer of protons outside the neutrons (not supported by the evidence) (this reverses the actual relationship) (inconsistent with standard results in the field)",
+        "An electronic shell of the atom (this confuses two distinct concepts) (an outdated view superseded by later work) (a common misconception) (true only as a special case, not in general)",
+        "A skin that has no physical consequences (this describes a different phenomenon) (this conflates cause and effect) (a frequently-taught but incorrect simplification)"
       ],
       "correct": 0,
       "explanation": "The neutron-skin thickness $\\Delta R_{np} = R_n - R_p$ measures how far the surplus neutrons push out relative to protons. It is governed by the symmetry energy and especially its slope parameter $L$ (the pressure of neutron matter): a stiffer symmetry energy pushes neutrons outward, thickening the skin. Because the same symmetry energy sets the pressure that supports neutron stars, a thicker skin implies larger neutron-star radii — a direct lab-to-cosmos link. The PREX/PREX-II experiments at Jefferson Lab measured the $^{208}$Pb skin cleanly via parity-violating electron scattering (which probes the neutron distribution through the weak charge), finding a relatively thick skin and a somewhat stiff symmetry energy, in mild tension with some astrophysical inferences. CREX ($^{48}$Ca) added complementary data. Pinning down the symmetry energy is a major goal connecting nuclear structure, heavy-ion collisions, and neutron-star physics."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "Traditional shell gaps can disappear and new ones appear in very neutron-rich nuclei: e.g. the N=20 magic number collapses (the 'island of inversion' around $^{32}$Mg, which is deformed), while N=16 and N=34 emerge as new magic numbers — driven by the tensor force and three-nucleon forces reshaping single-particle energies",
-        "Magic numbers are universal and never change (ruled out by experimental constraints from collider and low-energy data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "All nuclei lose magicity entirely far from stability (unsupported by perturbative expansions in the coupling) (contradicted by both lattice simulations and dispersive analyses)",
-        "Magic numbers only matter for stable nuclei (would conflict with renormalisation group flow and cross-section data) (violates basic gauge invariance and Lorentz covariance requirements)"
+        "Magic numbers are universal and never change (this describes a different phenomenon) (this confuses two distinct concepts) (this reverses the actual relationship) (this conflates cause and effect)",
+        "All nuclei lose magicity entirely far from stability (a common misconception) (true only as a special case, not in general) (an outdated view superseded by later work)",
+        "Magic numbers only matter for stable nuclei (not supported by the evidence) (a frequently-taught but incorrect simplification) (inconsistent with standard results in the field)"
       ],
       "correct": 0,
       "explanation": "The shell structure that fixes magic numbers is not immutable: single-particle energies depend on which orbitals are occupied, through the spin-isospin (tensor) part of the nuclear force and three-nucleon forces. As neutron number grows for fixed proton number, these monopole shifts can erase classic gaps and open new ones. The textbook case is the 'island of inversion' near $^{31,32}$Na/Mg, where the N=20 gap collapses and intruder (pf-shell) configurations make the ground states deformed rather than spherical. Conversely, new magic numbers N=16 (e.g. $^{24}$O, the heaviest bound oxygen — the 'oxygen anomaly' explained by three-nucleon forces) and N=34 (e.g. $^{54}$Ca) emerge. Mapping shell evolution across the chart is a central mission of rare-isotope facilities and a stringent test of ab-initio nuclear forces."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "Accelerator complexes (FRIB, RIKEN RIBF, GSI/FAIR, ISOLDE) that produce short-lived exotic nuclei by fragmentation or fission of high-energy beams (or ISOL methods) and study them in flight or after re-acceleration, mapping nuclear structure, reactions, and astrophysical processes far from stability",
-        "Telescopes for observing distant galaxies (ruled out by experimental constraints from collider and low-energy data) (would conflict with renormalisation group flow and cross-section data)",
-        "Reactors that only make stable isotopes (contradicted by both lattice simulations and dispersive analyses) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "Devices that study only the proton (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (historically considered but disfavoured by modern QFT analyses)"
+        "Telescopes for observing distant galaxies (this describes a different phenomenon) (a common misconception) (this conflates cause and effect) (true only as a special case, not in general)",
+        "Reactors that only make stable isotopes (this confuses two distinct concepts) (inconsistent with standard results in the field) (an outdated view superseded by later work)",
+        "Devices that study only the proton (a frequently-taught but incorrect simplification) (not supported by the evidence) (this reverses the actual relationship)"
       ],
       "correct": 0,
       "explanation": "Most of the ~7000 predicted bound nuclei are unstable and absent on Earth, so they must be made on demand. Rare-isotope facilities create them by smashing intense heavy-ion beams into targets (projectile fragmentation/in-flight fission, as at FRIB and RIBF) or by the ISOL (isotope separation on-line) technique (ISOLDE), then separate and either study the fast fragments or stop and re-accelerate them. They enable measurements of masses, half-lives, radii, moments, decay modes, and reaction cross-sections of nuclei near and at the drip lines — the inputs needed to test nuclear forces (ab-initio theory), discover new phenomena (halos, skins, shell evolution, new isotopes/elements), and provide the data that astrophysical models (r-process, X-ray bursts, supernovae) critically require. FRIB (Michigan State, 2022) is the current flagship, aiming to reach and define the neutron drip line for many elements."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "Isomers are long-lived excited nuclear states (hindered decay by large spin change or shape difference); $^{229}$Th has a uniquely low-lying isomer at only ~8.4 eV — accessible to lasers, enabling a proposed ultra-precise 'nuclear clock' and tests of fundamental-constant variation",
-        "Isomers are stable ground states (ruled out by experimental constraints from collider and low-energy data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "The thorium isomer lies at MeV energies, unreachable by lasers (would conflict with renormalisation group flow and cross-section data) (would imply unphysical infinite or negative observables)",
-        "Isomers decay instantly and cannot be used (disagrees with the standard textbook treatment in Peskin-Schroeder) (unsupported by perturbative expansions in the coupling)"
+        "Isomers are stable ground states (this describes a different phenomenon) (this confuses two distinct concepts) (a common misconception) (a frequently-taught but incorrect simplification)",
+        "The thorium isomer lies at MeV energies, unreachable by lasers (not supported by the evidence) (this reverses the actual relationship) (an outdated view superseded by later work)",
+        "Isomers decay instantly and cannot be used (this conflates cause and effect) (true only as a special case, not in general) (inconsistent with standard results in the field)"
       ],
       "correct": 0,
       "explanation": "Nuclear isomers are metastable excited states whose decay is strongly hindered — usually because emitting a photon would require a large change in angular momentum (high multipole) or a big shape change, dramatically slowing the transition (half-lives from nanoseconds to, for $^{180m}$Ta, longer than the age of the universe). The $^{229}$Th isomer is extraordinary: it sits at only ~8.4 eV above the ground state, the lowest known nuclear excitation, putting it in the vacuum-ultraviolet laser range. This opens the prospect of a nuclear optical clock, potentially more stable and far less sensitive to external fields than atomic clocks (the nucleus is tiny and well-shielded), and exquisitely sensitive to possible time-variation of fundamental constants (the fine-structure constant, strong coupling) because the transition energy results from a near-cancellation of huge Coulomb and strong contributions. Recent (2023-2024) laser excitation and frequency measurements of the $^{229}$Th transition mark major steps toward this nuclear clock — a frontier blending nuclear, atomic, and metrology physics."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "Nuclei in which one or more nucleons is replaced by a hyperon (a baryon containing a strange quark, e.g. $\\Lambda$); free of Pauli blocking from nucleons, the hyperon probes deep nuclear states and the hyperon-nucleon force, informing the dense-matter EoS and the neutron-star 'hyperon puzzle'",
-        "Nuclei made only of electrons (would conflict with renormalisation group flow and cross-section data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "Nuclei with extra photons bound inside (not consistent with the operator product expansion at large momentum) (violates basic gauge invariance and Lorentz covariance requirements)",
-        "Ordinary nuclei with no strange quarks (disagrees with the standard textbook treatment in Peskin-Schroeder) (historically considered but disfavoured by modern QFT analyses)"
+        "Nuclei made only of electrons (a common misconception) (this confuses two distinct concepts) (an outdated view superseded by later work) (true only as a special case, not in general)",
+        "Nuclei with extra photons bound inside (not supported by the evidence) (inconsistent with standard results in the field) (this conflates cause and effect)",
+        "Ordinary nuclei with no strange quarks (a frequently-taught but incorrect simplification) (this describes a different phenomenon) (this reverses the actual relationship)"
       ],
       "correct": 0,
       "explanation": "A hypernucleus contains at least one hyperon — a baryon with one or more strange quarks (most commonly the $\\Lambda$, $uds$). Because the $\\Lambda$ is distinguishable from nucleons, it is not Pauli-blocked and can occupy any single-particle orbital, acting as a clean probe of the nuclear interior and of the poorly-known hyperon-nucleon (and hyperon-hyperon) interactions. Hypernuclei are produced in strangeness-exchange or associated-production reactions ($K^-$, $\\pi^+$, electron beams) and studied via gamma spectroscopy and decay. They matter for dense matter: if hyperons appear in neutron-star cores (energetically favourable once the nucleon chemical potential is high enough), they soften the equation of state and would lower the maximum mass below the observed ~2 $M_\\odot$ — the 'hyperon puzzle'. Resolving it requires accurate hyperon interactions (now being computed in lattice QCD and constrained by hypernuclear data), making hypernuclear physics a key bridge between strangeness, QCD, and neutron-star astrophysics."

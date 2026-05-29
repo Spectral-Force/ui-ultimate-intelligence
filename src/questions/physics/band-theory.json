@@ -15,9 +15,9 @@
     "passive": {
       "options": [
         "Eigenstates in a periodic potential $V(\\mathbf r + \\mathbf R) = V(\\mathbf r)$ take the form $\\psi_{n\\mathbf k}(\\mathbf r) = e^{i\\mathbf k\\cdot\\mathbf r}u_{n\\mathbf k}(\\mathbf r)$ with $u_{n\\mathbf k}$ periodic on the lattice; crystal momentum $\\mathbf k$ lives in the first Brillouin zone; energy bands $E_n(\\mathbf k)$ index $n$",
-        "Electrons in a crystal are perfectly free with $E = \\hbar^2 k^2/2m$ and no bands (contradicted by both lattice simulations and dispersive analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "Wavefunctions decay exponentially in any periodic potential (Anderson localisation) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would imply unphysical infinite or negative observables)",
-        "Bloch's theorem forbids electron motion through a perfect crystal (ruled out by experimental constraints from collider and low-energy data) (violates basic gauge invariance and Lorentz covariance requirements)"
+        "Electrons in a crystal are perfectly free with $E = \\hbar^2 k^2/2m$ and no bands (this conflates cause and effect) (not supported by the evidence) (this confuses two distinct concepts)",
+        "Wavefunctions decay exponentially in any periodic potential (Anderson localisation) (a frequently-taught but incorrect simplification) (this describes a different phenomenon)",
+        "Bloch's theorem forbids electron motion through a perfect crystal (true only as a special case, not in general) (inconsistent with standard results in the field) (this reverses the actual relationship)"
       ],
       "correct": 0,
       "explanation": "Bloch (1929): translational symmetry of the lattice means the translation operator commutes with $H$, so eigenstates are simultaneous eigenstates of translation — phase factor $e^{i\\mathbf k\\cdot\\mathbf R}$. Consequences: electrons propagate without scattering in a perfect periodic crystal (resistance comes from defects/phonons, not the lattice itself); allowed energies form bands $E_n(\\mathbf k)$ separated by gaps; $\\mathbf k$ is conserved modulo a reciprocal lattice vector $\\mathbf G$. Band gaps arise from Bragg reflection of electron waves at zone boundaries."
@@ -65,9 +65,9 @@
     "passive": {
       "options": [
         "Intrinsic: pure, carriers from thermal excitation across the gap, $n = p = n_i \\propto T^{3/2}e^{-E_g/2k_BT}$. Extrinsic: doped with donors (n-type, e.g. P in Si) or acceptors (p-type, e.g. B in Si), adding shallow levels near band edges that ionise easily, giving majority carriers $\\gg n_i$",
-        "Intrinsic semiconductors conduct better than any metal at all temperatures (not consistent with the operator product expansion at large momentum) (would imply unphysical infinite or negative observables)",
-        "Doping always removes all charge carriers (unsupported by perturbative expansions in the coupling) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
-        "Extrinsic semiconductors have no band gap (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (ruled out by experimental constraints from collider and low-energy data)"
+        "Intrinsic semiconductors conduct better than any metal at all temperatures (an outdated view superseded by later work) (a frequently-taught but incorrect simplification)",
+        "Doping always removes all charge carriers (this reverses the actual relationship) (not supported by the evidence) (this confuses two distinct concepts)",
+        "Extrinsic semiconductors have no band gap (this describes a different phenomenon) (this conflates cause and effect) (a common misconception) (true only as a special case, not in general)"
       ],
       "correct": 0,
       "explanation": "Doping is the basis of all semiconductor devices. Donors (group V in group-IV Si) contribute an extra weakly-bound electron, level $\\sim 0.045$ eV below conduction band; acceptors (group III) create holes. Law of mass action: $np = n_i^2$ holds in equilibrium regardless of doping. The p-n junction (depletion region, built-in potential) underlies diodes, transistors, solar cells, LEDs. Carrier concentration tunable over many orders of magnitude — why silicon runs the modern world."
@@ -88,9 +88,9 @@
     "passive": {
       "options": [
         "$\\kappa/(\\sigma T) = L = \\pi^2 k_B^2/(3e^2) \\approx 2.44\\times 10^{-8}$ W$\\,\\Omega\\,$K$^{-2}$ (Lorenz number); same electrons carry charge and heat, so the ratio is a universal constant independent of material at low/high $T$",
-        "$\\kappa = \\sigma T^2$ with a material-dependent prefactor (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "Thermal and electrical conductivity are unrelated in metals (unsupported by perturbative expansions in the coupling)",
-        "$\\kappa/\\sigma = $ Boltzmann constant, independent of temperature and charge (would imply unphysical infinite or negative observables)"
+        "$\\kappa = \\sigma T^2$ with a material-dependent prefactor (this confuses two distinct concepts) (this reverses the actual relationship)",
+        "Thermal and electrical conductivity are unrelated in metals (a frequently-taught but incorrect simplification) (true only as a special case, not in general)",
+        "$\\kappa/\\sigma = $ Boltzmann constant, independent of temperature and charge (this describes a different phenomenon)"
       ],
       "correct": 0,
       "explanation": "Wiedemann-Franz (1853), explained by Drude/Sommerfeld: in a metal the conduction electrons transport both charge and heat, so $\\kappa_{\\rm el}/\\sigma T$ is fixed by fundamental constants. The Lorenz number $L = (\\pi^2/3)(k_B/e)^2$ from the Sommerfeld treatment. Holds well at high $T$ and very low $T$ where elastic scattering dominates; violated at intermediate $T$ where inelastic small-angle phonon scattering degrades heat current more than charge current. Strong violations in non-Fermi-liquids (e.g. some cuprates) are a probe of exotic transport."
@@ -111,9 +111,9 @@
     "passive": {
       "options": [
         "Honeycomb lattice (two-atom basis) gives bands that touch at the Dirac points $K, K'$ where $E(\\mathbf k) = \\pm\\hbar v_F|\\mathbf k - \\mathbf K|$ — a conical (Dirac) dispersion; low-energy excitations are massless Dirac fermions with $v_F \\approx 10^6$ m/s; no gap, but vanishing density of states at the Dirac point",
-        "Graphene has a large 5 eV band gap like diamond (ruled out by experimental constraints from collider and low-energy data) (would conflict with renormalisation group flow and cross-section data)",
-        "The dispersion is parabolic with very heavy effective mass (violates basic gauge invariance and Lorentz covariance requirements) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
-        "Graphene is a perfect insulator at all temperatures (unsupported by perturbative expansions in the coupling) (contradicted by both lattice simulations and dispersive analyses)"
+        "Graphene has a large 5 eV band gap like diamond (this describes a different phenomenon) (a common misconception) (true only as a special case, not in general)",
+        "The dispersion is parabolic with very heavy effective mass (this confuses two distinct concepts) (this reverses the actual relationship) (this conflates cause and effect)",
+        "Graphene is a perfect insulator at all temperatures (not supported by the evidence) (inconsistent with standard results in the field) (a frequently-taught but incorrect simplification)"
       ],
       "correct": 0,
       "explanation": "Tight-binding on the honeycomb lattice with nearest-neighbour hopping $t \\approx 2.8$ eV gives $E(\\mathbf k) = \\pm t|f(\\mathbf k)|$ which vanishes at the two inequivalent corners $K, K'$ of the hexagonal Brillouin zone. Expanding around these points yields a 2D Dirac equation. Consequences: half-integer quantum Hall effect, Klein tunnelling, Berry phase $\\pi$, ultra-high mobility. Opening a controllable gap (substrate, bilayer + field, nanoribbons) is key for graphene electronics. The Dirac-fermion concept generalises to topological insulators and Weyl semimetals."
@@ -134,9 +134,9 @@
     "passive": {
       "options": [
         "Tight-binding expands Bloch states in localised atomic-like orbitals; hopping integrals $t_{ij} = \\langle i|H|j\\rangle$ between sites set the bandwidth ($W \\sim 2zt$ for coordination $z$). Wannier functions are the localised orthonormal basis obtained by Fourier-transforming Bloch states over the BZ; they make the tight-binding picture exact and define the modern theory of polarisation/topology",
-        "Tight-binding assumes completely free electrons with no atomic structure (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would conflict with renormalisation group flow and cross-section data)",
-        "Wannier functions are always delocalised plane waves (ruled out by experimental constraints from collider and low-energy data) (not consistent with the operator product expansion at large momentum) (contradicted by both lattice simulations and dispersive analyses)",
-        "Tight-binding only works for insulators with no hopping (violates basic gauge invariance and Lorentz covariance requirements) (disagrees with the standard textbook treatment in Peskin-Schroeder) (historically considered but disfavoured by modern QFT analyses)"
+        "Tight-binding assumes completely free electrons with no atomic structure (this confuses two distinct concepts) (a common misconception) (this describes a different phenomenon) (an outdated view superseded by later work)",
+        "Wannier functions are always delocalised plane waves (this conflates cause and effect) (true only as a special case, not in general) (not supported by the evidence) (inconsistent with standard results in the field)",
+        "Tight-binding only works for insulators with no hopping (this reverses the actual relationship) (a frequently-taught but incorrect simplification) (this confuses two distinct concepts) (a common misconception)"
       ],
       "correct": 0,
       "explanation": "Tight-binding (LCAO): good when orbitals are well-localised and overlap is small (d/f electrons, molecular crystals). Bandwidth grows with hopping $t$ and coordination. Wannier functions $w_{n\\mathbf R}(\\mathbf r) = (V/(2\\pi)^3)\\int_{BZ}e^{-i\\mathbf k\\cdot\\mathbf R}\\psi_{n\\mathbf k}d^3k$ provide a real-space localised basis; their existence/exponential localisation is tied to band topology (obstruction = nonzero Chern number → no exponentially localised Wannier functions). Maximally-localised Wannier functions (Marzari-Vanderbilt) are a workhorse of modern electronic-structure codes and the modern theory of electric polarisation (Berry phase)."
@@ -157,9 +157,9 @@
     "passive": {
       "options": [
         "Hohenberg-Kohn theorems: ground-state energy is a unique functional of the electron density $n(\\mathbf r)$, minimised at the true density. Kohn-Sham maps the interacting problem onto non-interacting electrons in an effective potential $v_{\\rm eff}[n]$; exchange-correlation functional $E_{xc}[n]$ approximated (LDA, GGA, hybrids). Band gaps systematically underestimated by semi-local functionals",
-        "DFT solves the many-body Schrodinger equation exactly with no approximation (disagrees with the standard textbook treatment in Peskin-Schroeder) (contradicted by both lattice simulations and dispersive analyses)",
-        "DFT is a purely classical theory of densities (would imply unphysical infinite or negative observables) (historically considered but disfavoured by modern QFT analyses) (ruled out by experimental constraints from collider and low-energy data)",
-        "DFT only applies to single hydrogen atoms (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (violates basic gauge invariance and Lorentz covariance requirements) (not consistent with the operator product expansion at large momentum)"
+        "DFT solves the many-body Schrodinger equation exactly with no approximation (not supported by the evidence) (this conflates cause and effect) (a frequently-taught but incorrect simplification) (inconsistent with standard results in the field)",
+        "DFT is a purely classical theory of densities (this describes a different phenomenon) (this confuses two distinct concepts) (true only as a special case, not in general) (an outdated view superseded by later work)",
+        "DFT only applies to single hydrogen atoms (a common misconception) (this reverses the actual relationship) (not supported by the evidence) (this conflates cause and effect) (a frequently-taught but incorrect simplification)"
       ],
       "correct": 0,
       "explanation": "Hohenberg-Kohn (1964) + Kohn-Sham (1965), Nobel 1998 (Kohn). The exact $E_{xc}[n]$ is unknown; LDA uses the uniform electron gas, GGA adds density gradients, hybrids (e.g. HSE, B3LYP) mix in exact exchange. The 'band-gap problem': Kohn-Sham eigenvalues are not true quasiparticle energies, so semi-local DFT underestimates gaps by ~50%. Fixes: $GW$ approximation (many-body perturbation theory) for accurate quasiparticle bands, Bethe-Salpeter for optical spectra. DFT underpins materials discovery, catalysis, and high-throughput computational screening."
