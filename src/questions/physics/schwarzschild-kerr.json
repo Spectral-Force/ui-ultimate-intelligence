@@ -1,0 +1,168 @@
+[
+  {
+    "id": "bh001",
+    "path": [
+      "physics",
+      "relativity",
+      "schwarzschild-kerr"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "Schwarzschild metric: identify the horizon and singularity.",
+    "passive": {
+      "options": [
+        "Event horizon at Schwarzschild radius $r_s = 2GM/c^2$: coordinate singularity (smooth in Kruskal-Szekeres coords), one-way surface; no signal escapes outward. True curvature singularity at $r = 0$ (Kretschmann scalar $R_{\\mu\\nu\\rho\\sigma}R^{\\mu\\nu\\rho\\sigma} \\to \\infty$). For Sun: $r_s = 3$ km; for Earth: 9 mm",
+        "Singularity at $r_s$ — physical, where matter terminates (contradicted by both lattice simulations and dispersive analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Both $r = 0$ and $r = r_s$ are coordinate artefacts (ruled out by experimental constraints from collider and low-energy data) (would conflict with renormalisation group flow and cross-section data)",
+        "No horizon for Schwarzschild; it's an artefact of the choice of $t$ coordinate (would imply unphysical infinite or negative observables) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "$ds^2 = -(1-r_s/r)c^2 dt^2 + (1-r_s/r)^{-1}dr^2 + r^2 d\\Omega^2$. At $r = r_s$: $g_{tt} = 0, g_{rr} = \\infty$ — looks singular, but Kretschmann scalar $K = 48G^2M^2/c^4r^6$ stays finite there ($K \\to \\infty$ as $r \\to 0$). Switching to Kruskal-Szekeres or Eddington-Finkelstein coordinates removes the apparent singularity at $r_s$. Inside horizon: $r$ becomes timelike, $t$ becomes spacelike — falling toward $r = 0$ is inevitable as falling forward in time. Tidal forces at horizon: $\\sim GM/r_s^3 \\sim 1/M^2$ — small for supermassive, lethal for solar-mass."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each Schwarzschild-related quantity with its physical meaning:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "ISCO ($r = 6GM/c^2$)",
+          "definition": "Innermost stable circular orbit for massive particles around Schwarzschild BH; inner edge of accretion disc; binding energy 5.7% of rest mass"
+        },
+        {
+          "id": "p2",
+          "term": "Photon sphere ($r = 3GM/c^2$)",
+          "definition": "Unstable circular photon orbit; photons here orbit indefinitely; defines BH 'shadow' edge as seen by EHT"
+        },
+        {
+          "id": "p3",
+          "term": "Gravitational redshift",
+          "definition": "$\\nu_\\infty/\\nu_{\\rm emit} = \\sqrt{1-r_s/r}$; photons climbing out of potential well lose energy; diverges at horizon"
+        },
+        {
+          "id": "p4",
+          "term": "Surface gravity $\\kappa$",
+          "definition": "$\\kappa = c^4/(4GM)$ for Schwarzschild; defines Hawking temperature $T_H = \\hbar\\kappa/(2\\pi k_B c)$"
+        }
+      ],
+      "explanation": "Schwarzschild geodesics: effective potential $V_{\\rm eff}(r) = (1 - r_s/r)(1 + L^2/r^2c^2)$ for circular orbits. ISCO from $V'' = 0$. Photon sphere from massless analogue. Tests of Schwarzschild: gravitational lensing, Shapiro delay, perihelion precession; recent: Event Horizon Telescope imaging of M87* (2019) and Sgr A* (2022) shadows, matching Kerr prediction."
+    }
+  },
+  {
+    "id": "bh002",
+    "path": [
+      "physics",
+      "relativity",
+      "schwarzschild-kerr"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Kerr metric describes rotating black holes. What are its key features beyond Schwarzschild?",
+    "passive": {
+      "options": [
+        "Two parameters: mass $M$ and angular momentum $J = aMc$ with $a \\le GM/c^2$ (Kerr bound); two horizons (outer event + inner Cauchy); ergosphere outside event horizon where stationary observers must rotate (frame dragging); Penrose process: extract rotational energy via particles in ergosphere",
+        "Identical to Schwarzschild outside the horizon (unsupported by perturbative expansions in the coupling) (contradicted by both lattice simulations and dispersive analyses)",
+        "Has infinitely many horizons (historically considered but disfavoured by modern QFT analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Cannot exist; rotating BHs are unstable (would imply unphysical infinite or negative observables) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Kerr (1963): $ds^2 = -(1-r_s r/\\Sigma)c^2dt^2 - (2r_s r a\\sin^2\\theta/\\Sigma)cdt\\,d\\phi + (\\Sigma/\\Delta)dr^2 + \\Sigma d\\theta^2 + ((r^2+a^2)^2 - \\Delta a^2\\sin^2\\theta)\\sin^2\\theta/\\Sigma\\,d\\phi^2$ with $\\Sigma = r^2 + a^2\\cos^2\\theta$, $\\Delta = r^2 - r_s r + a^2$. Horizons: $\\Delta = 0$ → $r_\\pm = (r_s \\pm\\sqrt{r_s^2 - 4a^2})/2$. Extremal: $a = GM/c^2$, horizons merge, $T_H \\to 0$. Ergosphere: $r_E = (r_s + \\sqrt{r_s^2 - 4a^2\\cos^2\\theta})/2 > r_+$ at non-polar latitudes. Frame dragging: $\\omega = -g_{t\\phi}/g_{\\phi\\phi}$ — observed by Gravity Probe B (2011, $\\sim 30\\%$ measurement), pulsar timing of double pulsars."
+    }
+  },
+  {
+    "id": "bh003",
+    "path": [
+      "physics",
+      "relativity",
+      "schwarzschild-kerr"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "No-hair theorem: how does it restrict isolated stationary black holes in GR?",
+    "passive": {
+      "options": [
+        "Stationary BH solutions of Einstein-Maxwell (vacuum + EM) are uniquely characterised by 3 parameters: mass $M$, charge $Q$, angular momentum $J$ — collectively 'hair' is shaved off; no other multipole moments, no information about formation history. Result of works by Israel, Carter, Hawking, Robinson",
+        "BHs can have any number of long hairs depending on initial mass distribution (not consistent with the operator product expansion at large momentum) (ruled out by experimental constraints from collider and low-energy data)",
+        "Only mass; no charge or angular momentum allowed (would conflict with renormalisation group flow and cross-section data) (would imply unphysical infinite or negative observables)",
+        "Theorem fails for quantum BHs (disagrees with the standard textbook treatment in Peskin-Schroeder) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "No-hair conjecture (Wheeler), proved by sequence of theorems for various symmetries. Implications: astrophysical BHs (assumed neutral) fully described by $(M, J)$ = Kerr metric. All multipole moments $M_\\ell, S_\\ell$ given by $M_\\ell + iS_\\ell = M(ia)^\\ell$ — single parameter $a/M$ determines all. Tests: 'no-hair' theorem checked via (i) gravitational waves from BH mergers (LIGO measures ringdown quasi-normal modes, must match Kerr predictions), (ii) BH shadows (EHT M87*, Sgr A*), (iii) precision pulsar timing around Sgr A*. Hair-bearing BHs in modified gravity, BH + scalar field (e.g.\\ Horndeski) — looked for as BSM probes."
+    }
+  },
+  {
+    "id": "bh004",
+    "path": [
+      "physics",
+      "relativity",
+      "schwarzschild-kerr"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Hawking radiation: predict its temperature and the implications.",
+    "passive": {
+      "options": [
+        "$T_H = \\hbar c^3/(8\\pi G M k_B) \\approx 6\\times 10^{-8}(M_\\odot/M)$ K — astrophysical BHs are far colder than CMB, absorb more than radiate. Tiny primordial BHs $\\sim 10^{15}$ g would be evaporating today; semiclassical effect from QFT in curved spacetime; raises information paradox: pure $\\to$ thermal evolution?",
+        "$T_H = M c^2/k_B$ — increases linearly with mass (contradicted by both lattice simulations and dispersive analyses) (historically considered but disfavoured by modern QFT analyses)",
+        "Hawking radiation forbidden by general relativity (ruled out by experimental constraints from collider and low-energy data) (would conflict with renormalisation group flow and cross-section data)",
+        "Only charged BHs radiate (not consistent with the operator product expansion at large momentum) (would imply unphysical infinite or negative observables) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "Hawking (1974) computed particle creation in curved background. Bogoliubov transformations relating in/out vacua → outgoing thermal flux at $T_H = \\hbar\\kappa/(2\\pi k_B c)$ for Schwarzschild $\\kappa = c^4/(4GM)$. Power: $P = \\hbar c^6/(15360\\pi G^2 M^2)$ — tiny for solar-mass ($\\sim 10^{-29}$ W). Evaporation timescale: $t_{\\rm ev} \\sim M^3/M_{\\rm Pl}^4 \\sim (M/M_\\odot)^3 \\times 10^{67}$ yr. Primordial BHs $\\lesssim 10^{15}$ g formed in early universe would be evaporating now — searched for in gamma-ray bursts. Implications: BH entropy $S_{BH} = (1/4)A/\\ell_{Pl}^2$ (Bekenstein); information paradox (Page curve, soft hair, fuzzballs, holography); thermodynamics of BHs reveals connection between gravity, QFT, and information."
+    }
+  },
+  {
+    "id": "bh005",
+    "path": [
+      "physics",
+      "relativity",
+      "schwarzschild-kerr"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Penrose diagrams encode causal structure of spacetimes. Sketch them for Schwarzschild.",
+    "passive": {
+      "options": [
+        "Conformally compactified diagram: null geodesics at $\\pm 45°$. Eternal Schwarzschild: two asymptotic regions I and III (causally disconnected), connected by Einstein-Rosen bridge; black-hole interior II (future) and white-hole interior IV (past), each containing a singularity (jagged spacelike line). Astrophysical (collapse) Schwarzschild has only I + II + singularity",
+        "Single triangle representing all spacetime (would conflict with renormalisation group flow and cross-section data) (contradicted by both lattice simulations and dispersive analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Circular diagram with horizon at boundary (historically considered but disfavoured by modern QFT analyses) (not consistent with the operator product expansion at large momentum) (unsupported by perturbative expansions in the coupling)",
+        "Penrose diagram is identical to spacetime diagram (violates basic gauge invariance and Lorentz covariance requirements) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "Penrose-Carter conformal compactification: bring infinity into finite diagram via metric rescaling preserving causal structure. Eternal Schwarzschild (Kruskal extension): 'diamond' shape with 4 regions. White hole (region IV) and parallel universe (region III) not present in astrophysical BHs formed by collapse — replaced by infalling matter. Reissner-Nordström and Kerr: more complex, multiple horizons, Cauchy horizons (unstable to small perturbations — strong cosmic censorship). Penrose diagram of evaporating BH (Page): incorporates Hawking radiation, key tool for information paradox. Conformal infinities: $\\mathcal I^\\pm$ null, $i^\\pm$ timelike, $i^0$ spacelike."
+    }
+  },
+  {
+    "id": "bh006",
+    "path": [
+      "physics",
+      "relativity",
+      "schwarzschild-kerr"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "Black hole thermodynamics: state the four laws and the entropy-area relation.",
+    "passive": {
+      "options": [
+        "(0) Surface gravity $\\kappa$ constant on horizon; (1) $dM = (\\kappa/8\\pi G)dA + \\Omega dJ + \\Phi dQ$ analogous to $dE = TdS + \\mu_i dN_i$; (2) $dA \\ge 0$ in classical processes (Hawking area theorem); (3) $\\kappa \\to 0$ unachievable in finite steps. Bekenstein-Hawking entropy $S_{BH} = A/(4\\ell_{\\rm Pl}^2 k_B)$ — proportional to horizon area, not volume",
+        "BHs have no thermodynamic properties (ruled out by experimental constraints from collider and low-energy data) (not consistent with the operator product expansion at large momentum)",
+        "Entropy proportional to BH volume, not area (historically considered but disfavoured by modern QFT analyses) (contradicted by both lattice simulations and dispersive analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Only one law: $S = MR^2$ (violates basic gauge invariance and Lorentz covariance requirements) (unsupported by perturbative expansions in the coupling) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Bardeen-Carter-Hawking (1973) laws: formal analogy between BH mechanics and thermodynamics. Bekenstein (1973) conjectured entropy $S \\propto A$ to rescue 2nd law of thermodynamics from BHs eating entropy. Hawking (1974) computed Hawking temperature, fixed coefficient: $S_{BH} = k_B A/(4\\ell_{\\rm Pl}^2)$. Area theorem: classically $dA \\ge 0$; violated quantum-mechanically by Hawking radiation (BH shrinks, S decreases) but generalised 2nd law $S_{\\rm total} = S_{\\rm matter} + S_{BH} \\ge 0$ holds. Holographic principle (`t Hooft, Susskind 1990s): all physical info in volume bounded by area in Planck units — radical reformulation of gravity; AdS/CFT made precise (Maldacena 1997). Microscopic entropy counting: extremal BHs in string theory (Strominger-Vafa 1996) reproduce $S_{BH}$ from D-brane state counting."
+    }
+  }
+]

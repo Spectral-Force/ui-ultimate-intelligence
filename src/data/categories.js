@@ -176,6 +176,34 @@ export const CATEGORIES = [
         ],
       },
       {
+        id: 'relativity',
+        label: 'Relativity & Gravitation',
+        children: [
+          { id: 'special-relativity',      label: 'Special Relativity' },
+          { id: 'general-relativity',      label: 'General Relativity' },
+          { id: 'schwarzschild-kerr',      label: 'Black Holes (Schwarzschild & Kerr)' },
+          { id: 'gravitational-waves',     label: 'Gravitational Waves' },
+          { id: 'relativistic-kinematics', label: 'Relativistic Kinematics' },
+          { id: 'equivalence-principle',   label: 'Equivalence Principle' },
+          { id: 'linearised-gravity',      label: 'Linearised Gravity' },
+          { id: 'tests-of-gr',             label: 'Tests of General Relativity' },
+        ],
+      },
+      {
+        id: 'cosmology',
+        label: 'Cosmology & Particle Astrophysics',
+        children: [
+          { id: 'frw-cosmology',           label: 'FRW Cosmology & $\\Lambda$CDM' },
+          { id: 'inflation',               label: 'Inflation' },
+          { id: 'cmb-physics',             label: 'CMB Physics' },
+          { id: 'bbn',                     label: 'Big Bang Nucleosynthesis' },
+          { id: 'dark-matter-detection',   label: 'Dark Matter Detection' },
+          { id: 'baryogenesis',            label: 'Baryogenesis' },
+          { id: 'cosmic-rays',             label: 'Cosmic Rays & Multi-Messenger' },
+          { id: 'large-scale-structure',   label: 'Large-Scale Structure' },
+        ],
+      },
+      {
         id: 'theorems',
         label: 'Theorems & Principles',
         children: [
@@ -247,6 +275,20 @@ export const CATEGORIES = [
       { id: 'group-theory',      label: 'Group Theory' },
       { id: 'complex-analysis',  label: 'Complex Analysis' },
       { id: 'probability',       label: 'Probability & Statistics' },
+    ],
+  },
+  {
+    id: 'ai',
+    label: 'Artificial Intelligence',
+    children: [
+      { id: 'neural-networks',            label: 'Neural Networks & Backprop' },
+      { id: 'deep-learning-architectures', label: 'Deep Learning Architectures' },
+      { id: 'transformers',               label: 'Transformers & Attention' },
+      { id: 'training-optimisation',      label: 'Training & Optimisation' },
+      { id: 'reinforcement-learning',     label: 'Reinforcement Learning' },
+      { id: 'generative-models',          label: 'Generative Models' },
+      { id: 'alignment-safety',           label: 'Alignment & Safety' },
+      { id: 'evaluation-benchmarks',      label: 'Evaluation & Benchmarks' },
     ],
   },
 ]

@@ -1,0 +1,162 @@
+[
+  {
+    "id": "trn001",
+    "path": [
+      "ai",
+      "training-optimisation"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "Loss functions: which to use for classification, regression, generation?",
+    "passive": {
+      "options": [
+        "Classification: cross-entropy $\\mathcal L = -\\sum_c y_c\\log\\hat p_c$ (softmax + CE log-likelihood); equivalent to KL divergence to one-hot target. Regression: MSE $\\mathcal L = (y - \\hat y)^2$ or MAE for robustness; Huber loss combines. Generation: next-token cross-entropy on token sequence (autoregressive); contrastive losses for embeddings; diffusion: simple-loss prediction of noise",
+        "Same loss for all tasks: $L = (y-\\hat y)^2$ (would imply behaviour incompatible with finite-precision arithmetic) (inconsistent with standard ML benchmarks and theory) (not supported by published research or production deployments)",
+        "Classification uses MSE; regression uses cross-entropy (ruled out by reproducible benchmarks and ablations) (not consistent with established information-theoretic bounds)",
+        "Loss functions arbitrary; pick at random (contradicted by empirical scaling studies and theoretical analyses) (disagrees with standard deep-learning textbooks (Goodfellow, Bishop)) (sometimes proposed historically but disfavoured by modern research)"
+      ],
+      "correct": 0,
+      "explanation": "Match loss to task and output distribution. Classification: discrete categories → softmax output, cross-entropy loss = NLL = KL to target $\\delta_c$. For binary: $-y\\log p - (1-y)\\log(1-p)$. Multi-label: independent sigmoid+BCE per class. Regression: continuous, often Gaussian noise assumed → MSE. Robust to outliers: MAE ($L^1$), Huber (smooth transition). Generation: LM cross-entropy over tokens (sum of log-probabilities); GAN min-max; VAE ELBO (reconstruction + KL); diffusion: $L = \\mathbb E[\\|\\epsilon - \\hat\\epsilon\\|^2]$ predicting noise. Embedding: contrastive (InfoNCE), triplet loss. Reinforcement learning: policy gradient (REINFORCE), PPO clipped objective. Modern LLM: SFT cross-entropy + RLHF/DPO preference loss."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each training technique with what it prevents:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Gradient clipping",
+          "definition": "Caps $\\|\\nabla\\|$ at threshold; prevents exploding gradients; standard in RNN/LSTM training"
+        },
+        {
+          "id": "p2",
+          "term": "Learning rate warmup",
+          "definition": "Linear ramp from 0 to peak LR over first ~1000 steps; prevents early instability esp.\\ with Adam"
+        },
+        {
+          "id": "p3",
+          "term": "Mixed precision (FP16/BF16)",
+          "definition": "Forward+backward in lower precision, master weights FP32; ~2× speedup with proper loss scaling"
+        },
+        {
+          "id": "p4",
+          "term": "Gradient checkpointing",
+          "definition": "Recompute activations in backward pass; trades compute for memory; enables larger batch/longer sequences"
+        }
+      ],
+      "explanation": "Modern LLM training stack: (i) AdamW optimiser; (ii) linear warmup + cosine decay LR schedule; (iii) mixed precision (BF16 for stability); (iv) gradient clipping at $\\|\\nabla\\| \\le 1.0$; (v) gradient checkpointing or FSDP/DeepSpeed for memory; (vi) data parallel + tensor parallel + pipeline parallel for distributed training. Tools: PyTorch FSDP, DeepSpeed ZeRO, Megatron-LM."
+    }
+  },
+  {
+    "id": "trn002",
+    "path": [
+      "ai",
+      "training-optimisation"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Pretraining vs fine-tuning: explain the two-stage paradigm for LLMs.",
+    "passive": {
+      "options": [
+        "Pretraining: large-scale next-token prediction on diverse text corpus (trillions of tokens); learns broad world knowledge + language patterns. Fine-tuning: smaller targeted dataset (instruct, code, domain-specific); adapts to specific task without forgetting. Modern: instruct tuning + RLHF/DPO after pretraining. PEFT (LoRA, prefix tuning) updates only small subset of params",
+        "Train from scratch for each task (ruled out by reproducible benchmarks and ablations) (would imply behaviour incompatible with finite-precision arithmetic) (sometimes proposed historically but disfavoured by modern research)",
+        "Fine-tuning replaces all pretrained weights (not consistent with established information-theoretic bounds) (contradicted by empirical scaling studies and theoretical analyses) (not supported by published research or production deployments)",
+        "Pretraining unnecessary; fine-tuning sufficient (violates fundamental properties of the architecture) (disagrees with standard deep-learning textbooks (Goodfellow, Bishop)) (contradicted by widely-reproduced empirical studies)"
+      ],
+      "correct": 0,
+      "explanation": "Two-stage paradigm enabled by transfer learning effectiveness. Pretraining: unsupervised/self-supervised, learns representations from raw data. For LLMs: Common Crawl + books + code + Wikipedia + curated synthetic data, often 10T+ tokens, weeks of GPU/TPU time, $\\sim 10^{24}$-$10^{26}$ FLOPS. Fine-tuning stages: (i) SFT (supervised fine-tuning): instruction-output pairs, teach format and style; (ii) RLHF (Christiano 2017, OpenAI/Anthropic): preference data → reward model → PPO; (iii) DPO (Rafailov 2023): direct preference loss, no separate RM, simpler and competitive. PEFT for efficiency: LoRA (Hu 2021) — low-rank delta $\\Delta W = BA$ with $r \\ll d$, $\\sim 1\\%$ params updated, similar quality; prefix tuning, prompt tuning, IA3. Adapters/MoE for modular fine-tuning. Continued pretraining: middle ground for domain adaptation."
+    }
+  },
+  {
+    "id": "trn003",
+    "path": [
+      "ai",
+      "training-optimisation"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Distributed training: how to scale beyond single GPU?",
+    "passive": {
+      "options": [
+        "(1) Data parallel: replicate model, split batch across GPUs, all-reduce gradients (PyTorch DDP); (2) Tensor parallel: shard individual matrices across GPUs (Megatron-LM); (3) Pipeline parallel: split layers across GPUs, micro-batches; (4) ZeRO/FSDP: shard optimiser states/grads/params across data-parallel ranks. Modern LLM: 3D parallelism (data + tensor + pipeline)",
+        "Only single-GPU training possible (not supported by published research or production deployments) (not consistent with established information-theoretic bounds) (sometimes proposed historically but disfavoured by modern research)",
+        "Always use ring topology (inconsistent with standard ML benchmarks and theory) (contradicted by empirical scaling studies and theoretical analyses) (violates fundamental properties of the architecture)",
+        "Distributed training reduces accuracy (would imply behaviour incompatible with finite-precision arithmetic) (ruled out by reproducible benchmarks and ablations) (disagrees with standard deep-learning textbooks (Goodfellow, Bishop))"
+      ],
+      "correct": 0,
+      "explanation": "Data parallel (DP): each GPU has full model, processes different mini-batch slice, gradients all-reduced. Simple but memory limited by single-GPU capacity. Tensor parallel (TP): split weight matrices across GPUs, all-reduce/all-gather activations within layer. Memory scales but heavy communication. Used Megatron-LM. Pipeline parallel (PP): split layers across GPUs; forward through stage, hand to next stage; backward in reverse. Micro-batches keep stages busy. Bubble overhead at start/end. ZeRO (Rajbhandari 2020): shard optimizer states (ZeRO-1), grads (ZeRO-2), params (ZeRO-3) across DP ranks → essentially 3D memory partitioning. PyTorch FSDP = ZeRO-3 native. Modern training: combine all. Example GPT-3 175B: trained on 1024 V100/A100 with $\\sim 35\\%$ MFU. Llama 3 405B: on 16k H100. Communication-compute overlap, NVLink/InfiniBand topology key."
+    }
+  },
+  {
+    "id": "trn004",
+    "path": [
+      "ai",
+      "training-optimisation"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Quantisation: how to deploy large models in less memory?",
+    "passive": {
+      "options": [
+        "Reduce weight precision: FP16/BF16 (training default), FP8 (H100 inference), INT8 (8-bit), INT4 (4-bit). Post-training quantisation (PTQ): GPTQ, AWQ — calibration on small dataset, $\\sim$1% accuracy loss at INT4. Quantisation-aware training (QAT): better quality but expensive. Aggressive 4-bit reduces memory 4× from FP16, enables Llama-70B on consumer GPU (40 GB)",
+        "Cannot reduce precision below FP32 (contradicted by widely-reproduced empirical studies) (violates fundamental properties of the architecture) (not supported by published research or production deployments)",
+        "Quantisation always loses 50\\%+ accuracy (contradicted by empirical scaling studies and theoretical analyses) (would imply behaviour incompatible with finite-precision arithmetic) (not consistent with established information-theoretic bounds)",
+        "Only weights matter; activations always FP32 (inconsistent with standard ML benchmarks and theory) (sometimes proposed historically but disfavoured by modern research) (disagrees with standard deep-learning textbooks (Goodfellow, Bishop))"
+      ],
+      "correct": 0,
+      "explanation": "Memory for $N$-param model: FP32 = 4N, FP16 = 2N, INT8 = N, INT4 = N/2 bytes. 175B in FP16 = 350 GB (cluster needed); INT4 = 87 GB (single H100 or 4× A100). Methods: (1) Post-training quantisation — minimal compute, calibration to determine scales/zero-points. GPTQ (Frantar 2022): per-layer minimisation of squared error; AWQ (Lin 2023): activation-aware weight quantisation; BitsAndBytes: simple linear. Mixed precision: keep critical layers (LayerNorm, attention scaling) higher precision. (2) QAT: insert fake-quant nodes during training, model adapts to quantisation noise. Smaller models well below INT4 (2-3 bit) feasible. KV-cache quantisation for inference. Recent: 1-bit LLMs (BitNet, Microsoft 2024) — ternary weights, $\\sim$equal accuracy to FP16."
+    }
+  },
+  {
+    "id": "trn005",
+    "path": [
+      "ai",
+      "training-optimisation"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "RLHF (Reinforcement Learning from Human Feedback): the three-stage pipeline.",
+    "passive": {
+      "options": [
+        "(1) SFT: supervised fine-tune base model on instruction-completion pairs; (2) Reward modelling: train RM on preference data (human ranks pairs of completions); RM outputs scalar reward; (3) PPO: RL fine-tune SFT model maximising RM reward, KL penalty to SFT prevents drift. Pioneered for InstructGPT (2022), used in ChatGPT, Claude, Gemini",
+        "Single-stage process; no SFT or RM needed (disagrees with standard deep-learning textbooks (Goodfellow, Bishop)) (contradicted by widely-reproduced empirical studies)",
+        "Random reward signal; no learning (sometimes proposed historically but disfavoured by modern research) (not consistent with established information-theoretic bounds) (violates fundamental properties of the architecture)",
+        "RLHF replaced by gradient-free methods (ruled out by reproducible benchmarks and ablations) (inconsistent with standard ML benchmarks and theory)"
+      ],
+      "correct": 0,
+      "explanation": "InstructGPT (Ouyang et al.\\ 2022): adapt base LLM to instruction-following. Stage 1 (SFT): human-written demonstrations of instruction-completion pairs; standard fine-tuning. Stage 2 (RM): humans rank pairs of model completions; train RM via Bradley-Terry preference loss: $\\mathcal L_{RM} = -\\log\\sigma(r(x, y_{\\rm chosen}) - r(x, y_{\\rm rejected}))$. RM typically initialised from SFT with scalar-head. Stage 3 (RL): PPO maximises $\\mathbb E[r(x,y)]$ subject to KL($\\pi_\\theta \\| \\pi_{\\rm SFT}$) penalty to prevent over-optimisation/reward hacking. Recent alternatives: DPO (Rafailov 2023) — direct preference optimisation, no separate RM, closed-form RL solution gives loss $\\mathcal L_{\\rm DPO} = -\\log\\sigma(\\beta\\log[\\pi(\\hat y_w)/\\pi_{\\rm ref}(\\hat y_w)] - \\beta\\log[\\pi(\\hat y_l)/\\pi_{\\rm ref}(\\hat y_l)])$. KTO, IPO further variants. Constitutional AI (Anthropic): AI feedback supplements human."
+    }
+  },
+  {
+    "id": "trn006",
+    "path": [
+      "ai",
+      "training-optimisation"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "Data quality and curation for LLM pretraining: why does it matter so much?",
+    "passive": {
+      "options": [
+        "Pretraining data quality dramatically affects downstream capabilities at fixed compute. Filtering web crawl: dedup, quality classifiers, language ID, NSFW/PII removal. Curated mixes: books, code, math, scientific. Synthetic data generation. Phi models (Microsoft): show small models trained on 'textbook-quality' data match 10× larger models on benchmarks. Trade-off: scale vs.\\ curation",
+        "Quality irrelevant; just need more data (violates fundamental properties of the architecture) (would imply behaviour incompatible with finite-precision arithmetic) (inconsistent with standard ML benchmarks and theory)",
+        "Random web text is optimal (not supported by published research or production deployments) (sometimes proposed historically but disfavoured by modern research) (ruled out by reproducible benchmarks and ablations)",
+        "Pretraining data unmaintained, always low quality (contradicted by widely-reproduced empirical studies) (disagrees with standard deep-learning textbooks (Goodfellow, Bishop)) (contradicted by empirical scaling studies and theoretical analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Data is the most important and least-discussed lever in LLM training. Common Crawl raw $\\sim$petabyte but mostly low-quality; after dedup, filtering, $\\sim 10$T usable tokens. Processing: trafilatura/jusText for HTML→text; near-duplicate removal (MinHash); language filters (FastText); perplexity/classifier filtering (CCNet, Llama uses BERT-based quality model); deduplication massively boosts data efficiency. Special sources: GitHub for code (deduped, license filtered); ArXiv, books, Wikipedia. Synthetic data: distillation from teachers, self-instruct, mathematical generation. Phi-1, Phi-2, Phi-3 (Gunasekar 2023, 2024): 'Textbooks are all you need' — show that careful curation + synthetic 'instructive' data enables 1B-14B models to match 70B on benchmarks. Phi-3.5 mini ($\\sim$3.8B) competitive with Mixtral 8×7B in many tasks. Risks: data contamination of benchmarks; synthetic data echo chambers."
+    }
+  }
+]

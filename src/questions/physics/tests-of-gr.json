@@ -1,0 +1,168 @@
+[
+  {
+    "id": "tgr001",
+    "path": [
+      "physics",
+      "relativity",
+      "tests-of-gr"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "Mercury's perihelion precession: how much does GR contribute?",
+    "passive": {
+      "options": [
+        "Total observed precession ~5600''/century; planetary perturbations explain $\\sim 5557''$; residual 43''/century explained exactly by GR through metric correction $\\sim r_s/r$ at perihelion. First successful application of GR (Einstein 1915) before formal completion of theory",
+        "GR contributes only 1''/century — negligible (contradicted by both lattice simulations and dispersive analyses) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "All precession is Newtonian; GR plays no role (historically considered but disfavoured by modern QFT analyses) (not consistent with the operator product expansion at large momentum)",
+        "GR predicts precession opposite to observed direction (would conflict with renormalisation group flow and cross-section data) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "Mercury orbital data: $a = 0.387$ AU, $e = 0.206$, $P = 88$ d. Observed perihelion advance: 5600''/century. Newtonian: precession from oblate Sun, Jupiter/Venus etc.\\ accounts for 5557''/century. Residual 43''/century plagued astronomers for 70 years (Le Verrier postulated hypothetical planet Vulcan inside Mercury's orbit). Einstein computed exactly $\\delta\\phi = 6\\pi GM/(c^2 a(1-e^2))$ per orbit $= 42.98''/$century — match to 1\\% from theory. Now sub-percent. Other planets: smaller effects. Binary pulsars: huge precession ($\\sim 4°$/year for Hulse-Taylor, $16°$/year for double pulsar). Lab-scale: gravitomagnetic precession measured in atomic interferometry."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each classical test of GR with its essence:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Mercury perihelion",
+          "definition": "43''/century anomaly; first GR triumph (1915); confirmed metric correction at $r_s/r$"
+        },
+        {
+          "id": "p2",
+          "term": "Light deflection",
+          "definition": "1.75'' at solar limb; Eddington 1919; modern VLBI $\\gamma = 1$ to $10^{-5}$"
+        },
+        {
+          "id": "p3",
+          "term": "Gravitational redshift",
+          "definition": "$\\Delta\\nu/\\nu = -\\Delta\\Phi/c^2$; Pound-Rebka 1960, GP-A 1976; current ~$10^{-9}$"
+        },
+        {
+          "id": "p4",
+          "term": "Shapiro time delay",
+          "definition": "Extra light travel time near Sun; Cassini 2002: $\\gamma_{\\rm PPN}$ to $2\\times 10^{-5}$"
+        }
+      ],
+      "explanation": "Four classical tests of GR (Mercury perihelion + light bending + redshift + Shapiro delay) all confirmed; 5th 'modern' test = GW emission from binary pulsars (Hulse-Taylor, Nobel 1993). 6th = direct GW detection (LIGO 2015, Nobel 2017). 7th = BH imaging (EHT M87* 2019, Sgr A* 2022)."
+    }
+  },
+  {
+    "id": "tgr002",
+    "path": [
+      "physics",
+      "relativity",
+      "tests-of-gr"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Gravity Probe B: how did it test GR's frame-dragging prediction?",
+    "passive": {
+      "options": [
+        "Polar-orbit satellite (2004-2010) with 4 superconducting gyroscopes; measured (i) geodetic precession (6606 mas/yr predicted, observed 6602 ± 18) due to motion through curved space; (ii) frame-dragging (Lense-Thirring) 37 mas/yr predicted, observed 37 ± 7 — both confirm GR. Precision $\\sim 0.3\\%$ on geodetic, $\\sim 20\\%$ on frame-dragging",
+        "Direct measurement of speed of gravity in laboratory (violates basic gauge invariance and Lorentz covariance requirements) (contradicted by both lattice simulations and dispersive analyses)",
+        "Test of equivalence principle only (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "GP-B contradicted GR by 50\\% (historically considered but disfavoured by modern QFT analyses) (unsupported by perturbative expansions in the coupling) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Gravity Probe B (NASA, $\\sim$\\$760M, 47 years from concept to result): 4 cryogenic quartz-rotor gyros in Stanford-designed satellite. Two GR predictions: (1) geodetic effect from gyro moving through curved space, axis tilts toward orbital plane direction — analogous to Thomas precession but gravitational, $\\delta\\phi_{\\rm geo} = (3GM/2c^2 r)\\Omega_{\\rm orbit}$; (2) frame-dragging from Earth's rotation pulls inertial frames around, $\\delta\\phi_{LT} = GJ_\\oplus/c^2 r^3$ direction. Geodetic: observed $-6601.8 \\pm 18.3$ mas/yr vs.\\ predicted $-6606.1$ — agreement at $0.3\\%$. Frame-dragging: observed $-37.2 \\pm 7.2$ mas/yr vs.\\ $-39.2$ — agreement at $\\sim 19\\%$ (data-analysis challenges with electrostatic patch effects). Complementary: LARES satellites also test Lense-Thirring."
+    }
+  },
+  {
+    "id": "tgr003",
+    "path": [
+      "physics",
+      "relativity",
+      "tests-of-gr"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Event Horizon Telescope: what did it directly image and what does it test?",
+    "passive": {
+      "options": [
+        "Global VLBI array (8+ stations, $\\lambda = 1.3$ mm, baseline $\\sim$ Earth diameter) imaged 'shadow' of M87* (2019) and Sgr A* (2022) supermassive BHs; shadow diameter $\\approx 5.2\\,r_s$ (Schwarzschild) consistent with Kerr metric; tests no-hair theorem at horizon scales; rules out exotic horizon-less objects ('boson stars' etc.) for these objects",
+        "Image of a single solar-mass black hole at sub-parsec distance (unsupported by perturbative expansions in the coupling) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Detection of Hawking radiation from M87* (would imply unphysical infinite or negative observables) (disagrees with the standard textbook treatment in Peskin-Schroeder) (historically considered but disfavoured by modern QFT analyses)",
+        "Direct measurement of Hawking temperature (would conflict with renormalisation group flow and cross-section data) (contradicted by both lattice simulations and dispersive analyses)"
+      ],
+      "correct": 0,
+      "explanation": "EHT: world's largest virtual telescope via VLBI synthesis. Sgr A* (Milky Way centre, $4.3\\times 10^6\\,M_\\odot$, 8 kpc): angular size $\\sim 50\\,\\mu$as. M87* ($6.5\\times 10^9\\,M_\\odot$, 16 Mpc): $\\sim 40\\,\\mu$as. EHT achieves $\\sim 20\\,\\mu$as resolution. 'Shadow' = central dark region surrounded by photon ring; ring diameter $\\sim \\sqrt{27}\\,r_s$ for Schwarzschild ($5.2 r_s$) — relatively insensitive to spin. M87* (Apr 2019): asymmetric ring with brightness modulation from Doppler beaming. Sgr A* (May 2022): similar pattern but variable on minute timescales. Tests: shadow size/shape consistent with Kerr; constrains 'horizon-less' alternatives (gravastars, boson stars, fuzzballs) and modified gravity. Future: next-gen EHT to image dynamics, jet launching, polarisation maps."
+    }
+  },
+  {
+    "id": "tgr004",
+    "path": [
+      "physics",
+      "relativity",
+      "tests-of-gr"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Double pulsar PSR J0737-3039A/B: what makes it the best lab for GR?",
+    "passive": {
+      "options": [
+        "Two pulsars in 2.45-hour orbit, both visible; allows 7 post-Keplerian parameters: $\\dot\\omega, \\dot P_b, \\gamma, r$ (Shapiro range), $s$ (Shapiro shape), $\\Omega_{SO}$ (spin-orbit precession), mass ratio. All 7 consistent with GR within 0.05\\% — strongest collective test of GR in strong-field regime",
+        "Single pulsar; not a useful binary (not consistent with the operator product expansion at large momentum) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Only orbital period decay measurable; no other tests (unsupported by perturbative expansions in the coupling) (historically considered but disfavoured by modern QFT analyses)",
+        "Pulsars used here for navigation, not GR tests (contradicted by both lattice simulations and dispersive analyses) (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "PSR J0737-3039 (Burgay et al.\\ 2003): unique two-visible-pulsar system. A: 22.7 ms; B: 2.77 s. Orbit: 2.45 h, $e = 0.088$, almost edge-on (inclination $\\sim 88°$ — strong Shapiro signal). Mass-mass diagram: 7 post-Keplerian parameters all give curves in $(M_A, M_B)$ plane; for GR true, all curves must cross at single point — tested to $\\lesssim 0.05\\%$ (Kramer et al. 2021). Includes: $\\dot\\omega = 16.9°$/yr (perihelion precession), $\\dot P_b = -1.25\\times 10^{-12}$ (GW emission), $\\gamma = 0.385$ ms (Einstein time dilation), $r, s$ (Shapiro), $\\Omega_{SO}$ (geodetic precession of pulsar B spin), mass ratio. World's most precise strong-field GR test. Future: SKA pulsar timing should improve by orders of magnitude."
+    }
+  },
+  {
+    "id": "tgr005",
+    "path": [
+      "physics",
+      "relativity",
+      "tests-of-gr"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Constraints on modified gravity from GW170817: what did the multi-messenger observation rule out?",
+    "passive": {
+      "options": [
+        "Coincident GW + GRB with delay $\\le 1.7$ s over 40 Mpc constrains $|c_{GW} - c|/c \\lesssim 10^{-15}$; kills wide classes of modified gravity (Horndeski with non-luminal GWs, dark energy from scalar-tensor with $c_T \\neq c$, Hořava-Lifshitz, generic massive gravity); reduces viable dark-energy/modified-gravity space dramatically",
+        "Confirmed extra dimensions (violates basic gauge invariance and Lorentz covariance requirements) (would imply unphysical infinite or negative observables) (historically considered but disfavoured by modern QFT analyses)",
+        "Showed $c_{GW} = 0.5c$ — large modification (unsupported by perturbative expansions in the coupling) (contradicted by both lattice simulations and dispersive analyses)",
+        "Ruled out general relativity (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "GW170817 + GRB 170817A: GW signal arrives $\\sim 1.7$ s before $\\gamma$-ray burst over 40 Mpc propagation. Constraint $|c_T - c|/c < 7\\times 10^{-16}$ (taking conservative end of GRB delay being intrinsic). This excludes huge swathes of modified gravity. Horndeski theories: most general scalar-tensor with 2nd-order EoM; subclasses $G_4, G_5$ giving $c_T \\neq c$ — ruled out. Surviving Horndeski: 'cosmologically viable' subset much smaller. Massive gravity: graviton mass < $10^{-22}$ eV. Extra dimensions: KK gravitons could give different speed — strongly constrained. Lorentz-violating gravity (Hořava): cT vs cmatter speed constraints. Modified gravity with $c_T = c$ (e.g. $f(R)$, traditional Brans-Dicke) survives this test but still subject to other constraints."
+    }
+  },
+  {
+    "id": "tgr006",
+    "path": [
+      "physics",
+      "relativity",
+      "tests-of-gr"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "Tests of GR in the strong-field regime: what new windows have opened in the past decade?",
+    "passive": {
+      "options": [
+        "(1) LIGO/Virgo/KAGRA GW observations of BBH/BNS mergers: tests inspiral-merger-ringdown waveforms vs Kerr; QNM spectroscopy; (2) EHT BH shadow imaging: tests metric near horizon; (3) GRAVITY VLT interferometry of star S2 around Sgr A*: detected gravitational redshift, Schwarzschild precession; (4) precision pulsar timing in dense stellar regions; (5) X-ray spectroscopy of accretion discs",
+        "Only solar system tests have improved (would conflict with renormalisation group flow and cross-section data) (not consistent with the operator product expansion at large momentum) (contradicted by both lattice simulations and dispersive analyses)",
+        "All strong-field tests have failed; no GR confirmation (disagrees with the standard textbook treatment in Peskin-Schroeder) (unsupported by perturbative expansions in the coupling) (would imply unphysical infinite or negative observables)",
+        "Lab-scale precision improved but no astrophysical advances (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (historically considered but disfavoured by modern QFT analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Strong-field regime ($\\Phi/c^2 \\sim 0.1$ near BH, vs $10^{-9}$ in solar system) is where modifications to GR most likely show up. Recent advances: (1) GW150914 onward: inspiral-merger-ringdown templates from numerical relativity match observed waveforms to $\\lesssim 10\\%$ — pre-merger inspiral constrains PN expansion, ringdown tests Kerr QNMs (preliminary BH spectroscopy). (2) EHT M87* (2019), Sgr A* (2022): shadow size/shape consistent with Kerr to $\\sim 10\\%$. (3) GRAVITY collab (ESO VLT): star S2 around Sgr A* — pericentre passage 2018 detected gravitational redshift, 2020 Schwarzschild precession ($\\sim 12'$/orbit); rules out compact dark mass distributions. (4) PSR J0740+6620: most massive NS measured ($2.08 M_\\odot$, NICER + Shapiro) — constrains nuclear EoS in extreme conditions. (5) Reflection spectroscopy of accreting BHs: iron K$\\alpha$ line shape probes ISCO, spin."
+    }
+  }
+]

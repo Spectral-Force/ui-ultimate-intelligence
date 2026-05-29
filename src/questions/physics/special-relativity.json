@@ -1,0 +1,168 @@
+[
+  {
+    "id": "srl001",
+    "path": [
+      "physics",
+      "relativity",
+      "special-relativity"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "Einstein's two postulates of special relativity: state them precisely.",
+    "passive": {
+      "options": [
+        "(1) Principle of relativity: laws of physics identical in all inertial frames; (2) Constancy of speed of light: $c$ same in all inertial frames, independent of source/observer motion. Together imply Lorentz transformations replace Galilean transformations",
+        "Only constancy of light speed; relativity principle is Galilean (unsupported by perturbative expansions in the coupling) (contradicted by both lattice simulations and dispersive analyses)",
+        "Light moves at $c$ relative to the aether; observers measure different speeds (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Time dilation as a postulate; light speed derived (not consistent with the operator product expansion at large momentum) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "Einstein 1905: ditches aether, takes two postulates as axiomatic. From these alone: Lorentz transformations $t' = \\gamma(t - vx/c^2)$, $x' = \\gamma(x - vt)$ with $\\gamma = 1/\\sqrt{1 - v^2/c^2}$. Consequences: time dilation $\\Delta t' = \\gamma \\Delta t_0$, length contraction $L = L_0/\\gamma$, relativity of simultaneity, velocity addition $v_{\\rm rel} = (u + v)/(1 + uv/c^2)$, $E^2 = p^2c^2 + m^2c^4$. Tests: Michelson-Morley (null aether wind), Ives-Stilwell (transverse Doppler), muon decay in atmosphere, atomic-clock comparisons."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each SR effect with its formula/value:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Time dilation",
+          "definition": "$\\Delta t = \\gamma \\Delta\\tau$; moving clocks run slow; verified by muon lifetime, atomic clocks on aircraft (Hafele-Keating)"
+        },
+        {
+          "id": "p2",
+          "term": "Length contraction",
+          "definition": "$L = L_0/\\gamma$; rulers contract in direction of motion; no direct measurement of single ruler, only inferred"
+        },
+        {
+          "id": "p3",
+          "term": "Relativistic energy",
+          "definition": "$E = \\gamma mc^2$; rest energy $E_0 = mc^2$; basis of nuclear binding, mass-energy equivalence"
+        },
+        {
+          "id": "p4",
+          "term": "Invariant interval",
+          "definition": "$ds^2 = -c^2 dt^2 + dx^2 + dy^2 + dz^2$; same in all frames; defines spacetime geometry"
+        }
+      ],
+      "explanation": "Spacetime interval $ds^2$ is invariant under Lorentz transformations — Minkowski's key insight (1908). Timelike $ds^2 < 0$: cause-effect possible. Spacelike $ds^2 > 0$: spacelike separated, no causal contact. Lightlike $ds^2 = 0$: photons. Proper time $d\\tau^2 = -ds^2/c^2$ is the time measured by a clock following the worldline."
+    }
+  },
+  {
+    "id": "srl002",
+    "path": [
+      "physics",
+      "relativity",
+      "special-relativity"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Four-vectors transform under Lorentz transformations. Define the four-momentum.",
+    "passive": {
+      "options": [
+        "$p^\\mu = (E/c, \\mathbf p)$ with $p^\\mu p_\\mu = -m^2c^2$ (Minkowski signature $-,+,+,+$); norm-invariant; for massive particle $E = \\gamma mc^2$, $\\mathbf p = \\gamma m\\mathbf v$; for photon $E = pc$ with $m = 0$",
+        "$p^\\mu = (\\mathbf p, E)$ — just appending energy as fourth component (unsupported by perturbative expansions in the coupling)",
+        "$p^\\mu = m v^\\mu$ where $v^\\mu$ is ordinary 3-velocity (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Four-momentum is a tensor of rank 2, not a vector (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Four-momentum $p^\\mu = (E/c, \\mathbf p) = m\\gamma(c, \\mathbf v)$ where $u^\\mu = dx^\\mu/d\\tau = \\gamma(c, \\mathbf v)$ is the four-velocity. Norm: $p^\\mu p_\\mu = -E^2/c^2 + |\\mathbf p|^2 = -m^2c^2$ (Lorentz invariant). Conservation: in any reaction $\\sum p_{\\rm in}^\\mu = \\sum p_{\\rm out}^\\mu$ (four equations: energy + 3-momentum). Mandelstam variables for $2\\to 2$: $s = (p_1+p_2)^2$, $t = (p_1-p_3)^2$, $u = (p_1-p_4)^2$; sum $s+t+u = \\sum m_i^2$. Photon: $|p|^\\mu p_\\mu = 0$, lightlike."
+    }
+  },
+  {
+    "id": "srl003",
+    "path": [
+      "physics",
+      "relativity",
+      "special-relativity"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "The Lorentz group $SO(3,1)^+$ has 6 generators. What are they?",
+    "passive": {
+      "options": [
+        "3 rotations $J^i$ (generators of $SO(3)$ subgroup) + 3 boosts $K^i$; satisfy $[J^i, J^j] = i\\epsilon^{ijk}J^k$, $[J^i, K^j] = i\\epsilon^{ijk}K^k$, $[K^i, K^j] = -i\\epsilon^{ijk}J^k$; non-compact (boosts have unbounded parameter — rapidity)",
+        "Only 4 generators: 3 spatial + 1 time (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)",
+        "10 generators: same as Galileo group (historically considered but disfavoured by modern QFT analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Lorentz group is abelian; commuting generators only (would imply unphysical infinite or negative observables) (violates basic gauge invariance and Lorentz covariance requirements)"
+      ],
+      "correct": 0,
+      "explanation": "Lorentz algebra $\\mathfrak{so}(3,1)$: $[M^{\\mu\\nu}, M^{\\rho\\sigma}] = i(\\eta^{\\mu\\rho}M^{\\nu\\sigma} - \\ldots)$. Decompose $M^{ij} = \\epsilon^{ijk}J_k$ (rotations), $M^{0i} = K^i$ (boosts). Complexification: $J^\\pm = (J \\pm iK)/2$ — each satisfies $\\mathfrak{su}(2)$. Therefore $SO(3,1)^+_{\\mathbb C} \\cong SU(2)_L \\times SU(2)_R$. Irreducible reps labelled by $(j_L, j_R)$: $(1/2, 0)$ = left Weyl spinor, $(0, 1/2)$ = right Weyl spinor, $(1/2, 1/2)$ = 4-vector, $(1, 0) \\oplus (0, 1)$ = antisymmetric tensor (e.g.\\ $F^{\\mu\\nu}$). Foundation of relativistic field theory."
+    }
+  },
+  {
+    "id": "srl004",
+    "path": [
+      "physics",
+      "relativity",
+      "special-relativity"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Thomas precession arises from non-commutativity of Lorentz boosts. What is it?",
+    "passive": {
+      "options": [
+        "Two non-collinear boosts compose to a boost plus a rotation (Wigner rotation): a particle accelerating in a curved trajectory undergoes spin precession at angular velocity $\\boldsymbol\\omega_T = (\\gamma^2/(\\gamma+1))(\\mathbf a \\times \\mathbf v)/c^2$; accounts for factor-of-2 in spin-orbit coupling without ad-hoc gyromagnetic factor",
+        "Thomas precession is identical to Larmor precession in magnetic field (historically considered but disfavoured by modern QFT analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "Effect only in general relativity; absent in SR (violates basic gauge invariance and Lorentz covariance requirements) (contradicted by both lattice simulations and dispersive analyses)",
+        "Caused by non-conservation of angular momentum (would conflict with renormalisation group flow and cross-section data) (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "Thomas (1926) resolved the factor-of-2 discrepancy in hydrogen fine structure. Spin-orbit naïve estimate from electron in rest frame seeing magnetic field from orbiting nucleus gives $V_{SO}$ too large by 2. Thomas: rest frame is not inertial (electron accelerates); boosts at successive instants don't commute → net Wigner rotation of spin. Effective Lagrangian: $L_T = -\\boldsymbol\\omega_T\\cdot\\mathbf S$. For circular orbit: $\\omega_T = (\\gamma-1)\\omega_{\\rm orbit} \\to \\omega_{\\rm orbit}/2$ at non-relativistic limit — exactly cancels half the naive spin-orbit, giving correct factor. Also relevant in storage rings (muon $g-2$, where Thomas/Larmor combine into BMT equation)."
+    }
+  },
+  {
+    "id": "srl005",
+    "path": [
+      "physics",
+      "relativity",
+      "special-relativity"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Relativistic Doppler shift: derive transverse and longitudinal cases.",
+    "passive": {
+      "options": [
+        "Longitudinal (recession): $\\nu_{\\rm obs} = \\nu_0\\sqrt{(1-\\beta)/(1+\\beta)}$, redshift $z = \\Delta\\lambda/\\lambda$. Transverse (emitted perpendicular to motion): $\\nu_{\\rm obs} = \\nu_0/\\gamma$ — purely time-dilation effect, no classical analogue; verified by Ives-Stilwell (1938)",
+        "Doppler shift unchanged from classical: $\\nu = \\nu_0(1 \\pm v/c)$ (not consistent with the operator product expansion at large momentum) (contradicted by both lattice simulations and dispersive analyses)",
+        "Transverse Doppler is zero in SR (would conflict with renormalisation group flow and cross-section data) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "$\\nu_{\\rm obs} = \\nu_0\\gamma$ — blueshift for all directions (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Photon emitted with four-momentum $(\\omega_0/c, \\omega_0\\hat n/c)$ in source frame. In observer frame moving with velocity $-v\\hat x$ relative to source: $\\omega_{\\rm obs} = \\gamma\\omega_0(1 - \\beta\\cos\\theta_0)$ where $\\theta_0$ is emission angle. Special cases: $\\theta_0 = 0$ (head-on) → blueshift $\\omega = \\omega_0\\sqrt{(1+\\beta)/(1-\\beta)}$; $\\theta_0 = \\pi$ (recession) → redshift $\\omega = \\omega_0\\sqrt{(1-\\beta)/(1+\\beta)}$; $\\theta_{\\rm obs} = \\pi/2$ (transverse in observer frame) → $\\omega = \\omega_0/\\gamma$, pure time-dilation. Tests: Ives-Stilwell hydrogen canal rays, Mössbauer rotor experiments, atomic-clock comparisons in storage rings."
+    }
+  },
+  {
+    "id": "srl006",
+    "path": [
+      "physics",
+      "relativity",
+      "special-relativity"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "The little group classifies massive vs massless particle representations of the Poincaré group. What is it?",
+    "passive": {
+      "options": [
+        "Subgroup of Lorentz that leaves a chosen reference 4-momentum invariant. Massive ($p^\\mu = (m,\\mathbf 0)$): little group $SO(3)$ → spin $j$, $2j+1$ states. Massless ($p^\\mu = (E,0,0,E)$): little group $ISO(2)$ (Euclidean 2D) → two helicity states only; non-trivial reps of translations forbidden by absence of continuous spin in nature",
+        "Little group is trivial; all reps simply degenerate (historically considered but disfavoured by modern QFT analyses) (would imply unphysical infinite or negative observables)",
+        "Same group for massive and massless: $SO(3)$ (contradicted by both lattice simulations and dispersive analyses) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Little group is $SO(4)$ always (would conflict with renormalisation group flow and cross-section data) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "Wigner (1939) classification of Poincaré irreps. Pick rest momentum: $p^\\mu = (m, 0)$ for $m > 0$, stabiliser $SO(3)$ — spin $s$, integer or half-integer, $2s+1$ states. Massless $p^\\mu = (E, 0, 0, E)$: stabiliser is $ISO(2) = SO(2) \\ltimes T^2$; rotations $SO(2)$ around momentum (helicity) plus two translations $T^2$. Translations represented trivially (else 'continuous spin' particles, not observed) → helicity $\\lambda \\in \\mathbb Z/2$, just 2 states ($\\pm\\lambda$). Photon: $\\lambda = \\pm 1$. Graviton: $\\lambda = \\pm 2$. Neutrino (massless approximation): $\\lambda = -1/2$ ($\\bar\\nu$: $+1/2$). Foundation of QFT spin assignments."
+    }
+  }
+]

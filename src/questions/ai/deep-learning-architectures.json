@@ -1,0 +1,162 @@
+[
+  {
+    "id": "arch001",
+    "path": [
+      "ai",
+      "deep-learning-architectures"
+    ],
+    "level": "U",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "Convolutional Neural Networks (CNNs): what's the key idea and why effective for images?",
+    "passive": {
+      "options": [
+        "Convolutional layers apply learnable filters (kernels, $\\sim 3\\times 3$ or $5\\times 5$) across spatial dimensions; shared weights → translation equivariance, sparse local connectivity, drastically fewer parameters than dense. Stacked with pooling gives hierarchical features: edges → textures → parts → objects. Variants: ResNet (skip), DenseNet, EfficientNet, ConvNeXt",
+        "CNNs are densely connected without weight sharing (inconsistent with standard ML benchmarks and theory) (contradicted by empirical scaling studies and theoretical analyses)",
+        "CNNs only process 1D signals (would imply behaviour incompatible with finite-precision arithmetic) (ruled out by reproducible benchmarks and ablations) (not supported by published research or production deployments)",
+        "Each pixel gets independent weight; no sharing (contradicted by widely-reproduced empirical studies) (disagrees with standard deep-learning textbooks (Goodfellow, Bishop))"
+      ],
+      "correct": 0,
+      "explanation": "CNN invented for vision (LeNet, LeCun 1989). Convolution: $(I * K)(x,y) = \\sum_{i,j} I(x+i, y+j)K(i,j)$. Key properties: (i) Translation equivariance — same feature detected anywhere; (ii) Weight sharing — kernel $3\\times 3$ has 9 weights vs $H\\times W$ for dense; (iii) Locality — captures spatial inductive bias. AlexNet (2012): first deep CNN to win ImageNet, sparked deep learning revolution. ResNet (He 2015): skip connections enable 100+ layers; ResNet-50 standard. ViT (Vision Transformer, 2020): pure attention can match/exceed CNNs given enough data. ConvNeXt (2022): modernised CNN matches ViT performance. Apps: image classification, detection (YOLO, Faster R-CNN), segmentation (U-Net), generation (StyleGAN)."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each architecture with its strength:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "CNN",
+          "definition": "Translation-equivariant; strong inductive bias for images; ResNet, EfficientNet, ConvNeXt"
+        },
+        {
+          "id": "p2",
+          "term": "RNN/LSTM",
+          "definition": "Sequential processing; handles variable-length; long-term memory via LSTM/GRU gating"
+        },
+        {
+          "id": "p3",
+          "term": "Transformer",
+          "definition": "Attention-based; parallel training; quadratic complexity in sequence length; dominates NLP since 2017"
+        },
+        {
+          "id": "p4",
+          "term": "Graph Neural Network",
+          "definition": "Operates on graph-structured data; message passing between nodes; e.g.\\ molecules, social networks"
+        }
+      ],
+      "explanation": "Architectural inductive biases match data structure. CNN: grid/image (translation, locality). RNN: sequences (temporal). Transformer: sequences but global attention (replaced RNNs for language). GNN: graphs (permutation equivariance). MoE (Mixture of Experts): conditional computation. Each architecture maps best to certain data modalities; recent: large models multi-modal (text + image + audio)."
+    }
+  },
+  {
+    "id": "arch002",
+    "path": [
+      "ai",
+      "deep-learning-architectures"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "ResNet skip connections: why do they enable training of very deep networks?",
+    "passive": {
+      "options": [
+        "Residual block: $y = F(x) + x$ where $F$ is learnable transformation; identity provides gradient highway, avoiding vanishing gradients; easier to learn small perturbations near identity than start from scratch. Empirically: enables 100-1000+ layer networks (ResNet-152, ResNet-1001), substantial accuracy improvement over plain deep networks",
+        "Skip connections make networks shallower (contradicted by empirical scaling studies and theoretical analyses) (not supported by published research or production deployments) (ruled out by reproducible benchmarks and ablations)",
+        "ResNet has no skip connections (sometimes proposed historically but disfavoured by modern research) (inconsistent with standard ML benchmarks and theory) (violates fundamental properties of the architecture)",
+        "Identity mappings make training harder (not consistent with established information-theoretic bounds) (would imply behaviour incompatible with finite-precision arithmetic) (contradicted by widely-reproduced empirical studies)"
+      ],
+      "correct": 0,
+      "explanation": "ResNet (He et al.\\ 2015): key insight that deeper plain networks underperformed shallower ones in training (not just overfitting). Solution: residual mapping. Backprop through $y = F(x) + x$: $\\partial y/\\partial x = \\partial F/\\partial x + I$ — identity term ensures gradient always flows. Optimisation landscape: residual easier to optimise; near-identity initialisation makes deep nets learn small corrections. ResNet-50: 50 layers, $\\sim 25M$ parameters; widely used backbone. Highway networks (Srivastava 2015) similar idea with gating. Dense connections (DenseNet 2016): every layer connects to every later layer — even better gradient flow, parameter efficiency. Modern transformers: residual connections ubiquitous (pre-LayerNorm variant)."
+    }
+  },
+  {
+    "id": "arch003",
+    "path": [
+      "ai",
+      "deep-learning-architectures"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "LSTM (Long Short-Term Memory): gates and long-range dependency handling.",
+    "passive": {
+      "options": [
+        "LSTM cell has forget gate $f_t$, input gate $i_t$, output gate $o_t$ (all sigmoid), and candidate $\\tilde c_t$ (tanh). Cell state update: $c_t = f_t \\odot c_{t-1} + i_t \\odot \\tilde c_t$; hidden $h_t = o_t \\odot \\tanh c_t$. Forget gate enables selective memory; multiplicative interactions mitigate vanishing gradients across long sequences",
+        "LSTM has only one gate (inconsistent with standard ML benchmarks and theory) (ruled out by reproducible benchmarks and ablations) (not supported by published research or production deployments)",
+        "Identical to vanilla RNN; no gates (would imply behaviour incompatible with finite-precision arithmetic) (sometimes proposed historically but disfavoured by modern research) (not consistent with established information-theoretic bounds)",
+        "Cell state grows monotonically; no forgetting (contradicted by empirical scaling studies and theoretical analyses) (disagrees with standard deep-learning textbooks (Goodfellow, Bishop))"
+      ],
+      "correct": 0,
+      "explanation": "Vanilla RNN: $h_t = \\sigma(W h_{t-1} + Ux_t)$ — gradient through time $\\partial h_T/\\partial h_0 \\sim (\\sigma' W)^T$ vanishes/explodes for long $T$. LSTM (Hochreiter-Schmidhuber 1997): adds cell state $c_t$ with linear updates → gradient highway. Gates control flow: $f_t = \\sigma(W_f[h_{t-1}, x_t])$ what to forget; $i_t, \\tilde c_t$ what to add; $o_t$ what to output. Variant: GRU (Cho 2014) — combines forget and input gates, fewer parameters, similar performance. LSTM applications: language modelling, machine translation (seq2seq with attention), speech recognition. Pre-Transformer dominance: LSTM-based GNMT (Google Translate 2016), ByteNet, ConvS2S. Largely superseded by Transformers (2017+) for NLP."
+    }
+  },
+  {
+    "id": "arch004",
+    "path": [
+      "ai",
+      "deep-learning-architectures"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Batch normalisation vs Layer normalisation: when to use each?",
+    "passive": {
+      "options": [
+        "BatchNorm: normalises across batch dimension at each feature; effective for CNNs but problematic for small batches and sequence/RNN architectures. LayerNorm: normalises across feature dimension for each example; batch-independent, standard in Transformers and RNNs. Recent: RMSNorm (removes mean centring), GroupNorm",
+        "Both identical; no practical difference (inconsistent with standard ML benchmarks and theory) (contradicted by widely-reproduced empirical studies)",
+        "BatchNorm always better; LayerNorm obsolete (contradicted by empirical scaling studies and theoretical analyses) (sometimes proposed historically but disfavoured by modern research)",
+        "Normalisation forbidden in deep nets (disagrees with standard deep-learning textbooks (Goodfellow, Bishop)) (would imply behaviour incompatible with finite-precision arithmetic)"
+      ],
+      "correct": 0,
+      "explanation": "BatchNorm (Ioffe-Szegedy 2015): per-channel statistics computed across (batch, spatial) dims; $\\hat x = (x - \\mu_{\\rm batch})/\\sigma_{\\rm batch}$; then learnable scale/shift. Reduces internal covariate shift, enables higher learning rates. Issues: depends on batch size (poor with batch < 8); behaves differently train vs.\\ test (need running stats); not suitable for sequential/variable-length data. LayerNorm (Ba et al.\\ 2016): per-example, normalise across features; works with any batch size, batch=1 fine; default in Transformers (BERT, GPT). RMSNorm (Zhang-Sennrich 2019): removes mean subtraction, only RMS scaling — used in Llama, simplest and slightly faster. GroupNorm (Wu-He 2018): channels split into groups, normalise within group — fills BatchNorm gap for small-batch vision."
+    }
+  },
+  {
+    "id": "arch005",
+    "path": [
+      "ai",
+      "deep-learning-architectures"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Mixture of Experts: how does it scale model capacity efficiently?",
+    "passive": {
+      "options": [
+        "MoE layer has $N$ experts (sub-networks) + router; each token routed to top-$k$ experts ($k = 1, 2$ typical); only those experts compute. Sparse activation: total parameters $\\gg$ active parameters per token. Trade-off: more memory for higher quality at fixed FLOPS. Used in GShard, Switch Transformer, Mixtral 8x7B, GPT-4 (rumoured), Gemini",
+        "MoE requires all experts active for every token (violates fundamental properties of the architecture) (inconsistent with standard ML benchmarks and theory)",
+        "Routes randomly with no learning (not consistent with established information-theoretic bounds) (sometimes proposed historically but disfavoured by modern research) (disagrees with standard deep-learning textbooks (Goodfellow, Bishop))",
+        "Mixture of Experts is unrelated to neural networks (ruled out by reproducible benchmarks and ablations) (would imply behaviour incompatible with finite-precision arithmetic)"
+      ],
+      "correct": 0,
+      "explanation": "Sparsely-Gated MoE (Shazeer 2017): scale parameters without proportional compute. Standard Transformer layer: dense FFN, all params active. MoE replaces FFN with $N$ smaller FFNs (experts) + gate $G(x)$ producing scores $g_i$; route token to top-$k$ experts, output $\\sum_{i\\in\\text{top-}k} g_i E_i(x)$. Training: load balance via auxiliary loss (penalise unbalanced routing); avoid expert collapse. Examples: Switch Transformer (2021, $k=1$, 1.6T params); GShard; Mixtral 8x7B (Mistral 2023, 8 experts, $k=2$, 47B total / 13B active); rumoured GPT-4 uses MoE. Inference: only $\\sim 1/N$ of weights touched per token — fast vs dense equivalent. Challenges: routing overhead, communication in distributed training (all-to-all), expert utilisation. Active research."
+    }
+  },
+  {
+    "id": "arch006",
+    "path": [
+      "ai",
+      "deep-learning-architectures"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "State-space models (Mamba): an alternative to Transformer for long sequences.",
+    "passive": {
+      "options": [
+        "Discretised continuous SSM: $h_t = \\bar A h_{t-1} + \\bar B x_t$, $y_t = C h_t$; with input-dependent (selective) $\\bar A, \\bar B$ (Mamba, Gu-Dao 2023), gives sub-quadratic complexity in sequence length while maintaining quality. Parallelisable via scan operations; competitive with Transformers up to $\\sim 10$B params; longer context (millions of tokens) more feasible",
+        "SSMs are quadratic in sequence length like Transformers (inconsistent with standard ML benchmarks and theory) (disagrees with standard deep-learning textbooks (Goodfellow, Bishop))",
+        "Mamba refers to programming language only (would imply behaviour incompatible with finite-precision arithmetic) (ruled out by reproducible benchmarks and ablations) (sometimes proposed historically but disfavoured by modern research)",
+        "Identical to RNN; no innovation (not consistent with established information-theoretic bounds) (not supported by published research or production deployments) (contradicted by widely-reproduced empirical studies)"
+      ],
+      "correct": 0,
+      "explanation": "State-space model: continuous $\\dot h(t) = A h(t) + B x(t)$, $y(t) = C h(t)$. Discretised via zero-order hold: $\\bar A = e^{\\Delta A}$, $\\bar B = (\\Delta A)^{-1}(e^{\\Delta A} - I)\\Delta B$. S4 (Gu 2021): structured $A$ matrix (HiPPO) for memory; compute recurrently or via convolution. Mamba (2023): selective SSM — $A, B$ depend on input → handles in-context learning like attention; uses parallel scan for efficient training. Complexity: $O(L)$ vs Transformer's $O(L^2)$. Strong for long sequences (genomics, audio, long documents). Mamba-2, Jamba (Mamba + attention hybrid). Status: competitive at smaller scale, scaling behaviour less explored than transformers; emerging area of research."
+    }
+  }
+]

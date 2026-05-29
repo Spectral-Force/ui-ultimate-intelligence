@@ -1,0 +1,168 @@
+[
+  {
+    "id": "inf001",
+    "path": [
+      "physics",
+      "cosmology",
+      "inflation"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "Inflation solves three classic cosmological puzzles. Name them.",
+    "passive": {
+      "options": [
+        "(1) Horizon problem: CMB isotropy across causally disconnected regions; (2) Flatness problem: $\\Omega_k \\approx 0$ today requires extreme fine-tuning in big bang model; (3) Monopole problem: GUT relics like magnetic monopoles should be abundant but aren't. Inflation: brief epoch of exponential expansion solves all three",
+        "Inflation only addresses dark energy (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would conflict with renormalisation group flow and cross-section data)",
+        "There are no problems with standard big bang; inflation unnecessary (contradicted by both lattice simulations and dispersive analyses) (unsupported by perturbative expansions in the coupling)",
+        "Inflation creates the horizon problem; it doesn't solve it (historically considered but disfavoured by modern QFT analyses) (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "Pre-inflation issues: (1) Particle horizon at recombination subtends $\\sim 1°$ on CMB sky, yet CMB is uniform to $10^{-5}$ across whole sky — how did distant regions thermalise? (2) $|\\Omega_k - 1|$ grows like $a^2$ during radiation/matter era; current $|\\Omega_k| < 0.001$ requires extreme tuning at Planck epoch ($10^{-62}$). (3) GUT phase transitions produce $\\sim$ monopole per Hubble volume; none observed. Inflation: $a \\propto e^{Ht}$ for $\\gtrsim 60$ e-folds; (i) blows up causally connected pre-inflation region beyond observable universe; (ii) flattens curvature ($\\Omega_k \\to 0$); (iii) dilutes pre-existing relics. As bonus: provides scale-invariant primordial perturbation spectrum that seeds structure (Mukhanov-Chibisov 1981, Hawking, Starobinsky, Guth, Linde)."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each inflationary observable with its prediction/measurement:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Spectral index $n_s$",
+          "definition": "$\\approx 0.965$ measured; slight red tilt as expected from slow-roll; $n_s = 1$ scale-invariant excluded"
+        },
+        {
+          "id": "p2",
+          "term": "Tensor-to-scalar ratio $r$",
+          "definition": "$< 0.036$ (BICEP/Keck 2021); rules out simplest large-field models; pins single-field potential"
+        },
+        {
+          "id": "p3",
+          "term": "Non-Gaussianity $f_{NL}$",
+          "definition": "$|f_{NL}^{\\rm local}| < 5$ from Planck; consistent with single-field slow-roll (predicts $|f_{NL}| \\sim n_s - 1 \\sim 0.04$)"
+        },
+        {
+          "id": "p4",
+          "term": "Spatial curvature $\\Omega_k$",
+          "definition": "Consistent with zero to $10^{-3}$; inflation predicts $\\Omega_k \\to 0$ generically"
+        }
+      ],
+      "explanation": "Inflation predictions tested by Planck + ground-based CMB (ACT, SPT, BICEP/Keck). All consistent with simplest single-field slow-roll inflation: small red tilt $n_s < 1$, low $r$, Gaussian primordial perturbations, near-flat universe. Many specific models ruled out (e.g.\\ $V \\propto \\phi^4, \\phi^2$ with $r > 0.036$); Starobinsky $R^2$ model, $\\alpha$-attractors still viable."
+    }
+  },
+  {
+    "id": "inf002",
+    "path": [
+      "physics",
+      "cosmology",
+      "inflation"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Slow-roll inflation: what are the slow-roll parameters and conditions?",
+    "passive": {
+      "options": [
+        "$\\epsilon = (M_{\\rm Pl}^2/2)(V'/V)^2$ (first slow-roll), $\\eta = M_{\\rm Pl}^2 V''/V$ (second). Slow-roll requires $\\epsilon, |\\eta| \\ll 1$ → potential nearly flat in Planck units. Inflation ends when $\\epsilon = 1$ ('graceful exit'). E-folds $N = \\int H dt \\approx (1/M_{\\rm Pl}^2)\\int V/V' d\\phi$; need $N \\gtrsim 60$ for problems",
+        "Slow-roll requires huge potential gradient (unsupported by perturbative expansions in the coupling) (not consistent with the operator product expansion at large momentum)",
+        "$\\epsilon \\gg 1$ for slow-roll (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would imply unphysical infinite or negative observables) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Slow-roll inflation is identical to fast-roll (disagrees with the standard textbook treatment in Peskin-Schroeder) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Single-field inflation: scalar $\\phi$ with potential $V(\\phi)$, EOM $\\ddot\\phi + 3H\\dot\\phi + V'(\\phi) = 0$. Slow-roll: $\\ddot\\phi$ negligible vs Hubble friction, $\\dot\\phi \\approx -V'/(3H)$. Inflation occurs when potential energy dominates kinetic: $\\frac{1}{2}\\dot\\phi^2 \\ll V$, equivalent to $\\epsilon \\ll 1$. Persistence (slow-roll sustained over many Hubble times): $|\\eta| \\ll 1$. End: $\\epsilon$ grows to 1, kinetic energy comparable to V — universe stops accelerating. Predictions: $n_s - 1 = -6\\epsilon + 2\\eta$, $r = 16\\epsilon$. Combined $n_s, r$ data: rules out simple $V \\propto \\phi^4$, $\\phi^2$; favours $V$ approaching plateau (Starobinsky $V \\propto (1 - e^{-\\phi})^2$, hill-top, Higgs inflation with non-minimal coupling)."
+    }
+  },
+  {
+    "id": "inf003",
+    "path": [
+      "physics",
+      "cosmology",
+      "inflation"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Quantum fluctuations during inflation seed cosmic structure. How?",
+    "passive": {
+      "options": [
+        "Inflaton field has zero-point fluctuations $\\delta\\phi \\sim H/(2\\pi)$ per Hubble volume; stretched outside horizon during inflation, frozen ('classicalised'); produce curvature perturbations $\\zeta = -H\\delta\\phi/\\dot\\phi$; spectrum nearly scale-invariant $P_\\zeta(k) \\propto k^{n_s-1}$; re-enter horizon post-inflation, seed CMB temperature fluctuations and galaxy formation",
+        "Quantum fluctuations are erased by inflation (would imply unphysical infinite or negative observables) (violates basic gauge invariance and Lorentz covariance requirements) (contradicted by both lattice simulations and dispersive analyses)",
+        "Structure comes from cosmic strings only (would conflict with renormalisation group flow and cross-section data) (disagrees with the standard textbook treatment in Peskin-Schroeder) (historically considered but disfavoured by modern QFT analyses)",
+        "Density perturbations are classical, not quantum (not consistent with the operator product expansion at large momentum) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)"
+      ],
+      "correct": 0,
+      "explanation": "Quantum origin of structure: inflaton field $\\phi(x,t)$ has Bunch-Davies vacuum fluctuations. Mode $k$ exits Hubble horizon when $aH = k$; while super-horizon, modes essentially frozen. Curvature perturbation $\\zeta$ (gauge-invariant combination of inflaton and metric perturbations) is conserved on super-horizon scales. Power spectrum at horizon exit: $P_\\zeta(k) = (H/2\\pi)^2/(2M_{\\rm Pl}^2\\epsilon)$. Approximately scale-invariant: slow $H$ change during inflation gives nearly equal amplitudes for all $k$. Re-enter horizon post-inflation: become CMB temperature anisotropies (peak at $\\ell \\sim 200$, first acoustic peak) and seed density perturbations that grow to galaxies. Remarkable: $10^{-5}$ quantum fluctuations stretched to cosmic scales — directly observed in CMB. Conceptual: bridges quantum mechanics and large-scale astrophysics."
+    }
+  },
+  {
+    "id": "inf004",
+    "path": [
+      "physics",
+      "cosmology",
+      "inflation"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Reheating: how does inflation end and transfer energy to particles?",
+    "passive": {
+      "options": [
+        "After slow-roll ends ($\\epsilon = 1$), inflaton oscillates around potential minimum; couples to other fields (Yukawa, gauge); decays into particles via perturbative (Born-decay rate) and non-perturbative (parametric resonance / preheating) channels; reheats universe to temperature $T_{\\rm reh}$. Subsequent thermalisation gives radiation-dominated big-bang initial conditions",
+        "Inflation continues forever; no reheating (disagrees with the standard textbook treatment in Peskin-Schroeder) (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)",
+        "Reheating temperature is always $M_{\\rm Pl}$ (not consistent with the operator product expansion at large momentum) (violates basic gauge invariance and Lorentz covariance requirements) (historically considered but disfavoured by modern QFT analyses)",
+        "Universe immediately enters matter-dominated era without radiation (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (contradicted by both lattice simulations and dispersive analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Reheating bridges inflationary and standard big bang phases. Inflaton oscillation: $\\phi \\sim \\phi_*\\cos(m_\\phi t)$ at minimum, energy density $\\rho_\\phi \\propto a^{-3}$ — matter-like. Decay: (i) Perturbative (Born): $\\Gamma_\\phi \\to f\\bar f \\sim y_\\phi^2 m_\\phi$ — reheat temperature $T_{\\rm reh} \\sim \\sqrt{\\Gamma_\\phi M_{\\rm Pl}}$. (ii) Preheating: parametric/tachyonic resonance amplifies daughter field modes exponentially before thermalisation; very efficient. After thermalisation: $T_{\\rm reh}$ sets initial condition for big-bang nucleosynthesis (requires $T_{\\rm reh} > $ few MeV) and any heavier-particle abundance (DM, leptogenesis). Constraints: $T_{\\rm reh} < 10^9-10^{10}$ GeV (gravitino overproduction in SUSY); but lots of model freedom."
+    }
+  },
+  {
+    "id": "inf005",
+    "path": [
+      "physics",
+      "cosmology",
+      "inflation"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Primordial gravitational waves from inflation: signature and detection.",
+    "passive": {
+      "options": [
+        "Tensor modes of inflation = stochastic GW background; amplitude $\\propto V/M_{\\rm Pl}^4$; predict B-mode polarisation pattern in CMB at large angular scales. Tensor-to-scalar ratio $r$; current limit $r < 0.036$ (BICEP/Keck 2021, $\\ell \\sim 50-150$); future LiteBIRD, CMB-S4 target $\\sigma(r) \\sim 10^{-3}$, may detect if Starobinsky-class",
+        "Inflation doesn't predict GW (contradicted by both lattice simulations and dispersive analyses) (violates basic gauge invariance and Lorentz covariance requirements) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "B-mode polarisation is impossible in CMB (historically considered but disfavoured by modern QFT analyses) (not consistent with the operator product expansion at large momentum)",
+        "$r > 1$ measured by BICEP (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Two transverse-traceless polarisations of metric perturbations from inflation. Tensor power spectrum: $P_T(k) = (2H^2)/(\\pi^2 M_{\\rm Pl}^2)$ at horizon exit — depends only on $H$, hence directly on $V$ via Friedmann $H^2 = V/(3M_{\\rm Pl}^2)$. CMB signatures: (i) BB polarisation at $\\ell \\sim 100$ (recombination bump) and $\\ell \\sim 5$ (reionisation bump) from tensor modes — distinct from EE polarisation; (ii) BICEP, Keck, SPIDER, ACT, SPT, Planck all searching. BICEP2 (2014) reported $r \\sim 0.2$ — turned out to be galactic dust foreground (joint Planck-BICEP 2015). Current: $r < 0.036$ (95\\% CL). Future: LiteBIRD (JAXA 2032+), CMB-S4 (2030+, 500k detectors), pulsar timing for nHz primordial GW. Detection $\\Rightarrow$ inflation scale $V^{1/4} \\sim 10^{16}$ GeV (GUT scale)."
+    }
+  },
+  {
+    "id": "inf006",
+    "path": [
+      "physics",
+      "cosmology",
+      "inflation"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "Eternal inflation and the multiverse: theoretical landscape and observational status.",
+    "passive": {
+      "options": [
+        "In some inflation models, quantum fluctuations of inflaton dominate over classical roll → some regions inflate forever (eternal inflation); creates 'pocket universes' with potentially different physics. Connects to string-theory landscape ($\\sim 10^{500}$ vacua); anthropic explanation for $\\Lambda$, hierarchy possible. Testable via predictions of bubble collisions, CMB anomalies; no detection yet",
+        "Multiverse rigorously confirmed (would imply unphysical infinite or negative observables) (violates basic gauge invariance and Lorentz covariance requirements) (historically considered but disfavoured by modern QFT analyses)",
+        "Eternal inflation is mathematically inconsistent (would conflict with renormalisation group flow and cross-section data) (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)",
+        "Single-universe-only is proven by data (disagrees with the standard textbook treatment in Peskin-Schroeder) (contradicted by both lattice simulations and dispersive analyses) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "Eternal inflation (Vilenkin 1983, Linde 1986): in slow-roll, inflaton quantum kicks $\\delta\\phi \\sim H$ per Hubble time vs classical roll $\\dot\\phi/H \\sim V'/(3H^2)$; if quantum > classical, some Hubble volumes never exit inflation. Hawking-Moss/Coleman-de Luccia bubble nucleation in false-vacuum inflation. Combine with string-theory landscape: $\\sim 10^{500}$ metastable vacua with different EFT, particle content — populated by inflation. Anthropic: observers in vacua with life-permitting parameters → expectations for cosmological constant, masses, etc. Predictions: bubble-wall collisions, statistically inhomogeneous CMB, low-multipole CMB anomalies (cold spot, alignment) — claimed by some as hints. Status: theoretically rich, controversial, not yet observationally established. Critics (Steinhardt et al.\\): inflation 'unfalsifiable' in eternal form."
+    }
+  }
+]

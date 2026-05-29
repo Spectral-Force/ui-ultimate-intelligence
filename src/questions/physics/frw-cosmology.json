@@ -1,0 +1,168 @@
+[
+  {
+    "id": "frw001",
+    "path": [
+      "physics",
+      "cosmology",
+      "frw-cosmology"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "FRW metric: write it and state the cosmological principle behind it.",
+    "passive": {
+      "options": [
+        "$ds^2 = -c^2 dt^2 + a(t)^2[dr^2/(1-kr^2) + r^2 d\\Omega^2]$ with scale factor $a(t)$, spatial curvature $k \\in \\{-1, 0, +1\\}$. Cosmological principle: at large scales universe is homogeneous and isotropic → only single $a(t)$ and constant $k$",
+        "$ds^2 = a^2(\\eta) d\\eta^2$ — pure conformal, no spatial structure (unsupported by perturbative expansions in the coupling)",
+        "FRW metric is anisotropic; cosmological principle false (not consistent with the operator product expansion at large momentum)",
+        "Universe described by Minkowski metric at all scales (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Friedmann-Lemaître-Robertson-Walker metric: most general spatially homogeneous + isotropic 4D Lorentzian. Three spatial geometries: $k = +1$ closed (3-sphere), $k = 0$ flat (Euclidean), $k = -1$ open (hyperbolic). Cosmological principle empirically supported by CMB isotropy (uniform to $10^{-5}$ after subtracting dipole), large-scale structure beyond $\\sim 100$ Mpc. Comoving coordinates $r$: galaxies sit at fixed $r$ but proper distance $D = a(t)r$ grows; Hubble's law $\\dot D = (\\dot a/a)D = H(t)D$. Conformal time $\\eta = \\int dt/a$: useful for null geodesics and CMB. Cosmological redshift $1 + z = a(t_{\\rm obs})/a(t_{\\rm emit})$."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each FRW quantity with its physical meaning:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Scale factor $a(t)$",
+          "definition": "Dimensionless 'size' of universe; conventionally $a(t_0) = 1$ today; cosmic expansion encoded here"
+        },
+        {
+          "id": "p2",
+          "term": "Hubble parameter $H = \\dot a/a$",
+          "definition": "Expansion rate; current $H_0 \\approx 70$ km/s/Mpc; tension between CMB and direct distance ladder"
+        },
+        {
+          "id": "p3",
+          "term": "Redshift $z = 1/a - 1$",
+          "definition": "Photons stretched by expansion; CMB at $z = 1100$, recombination epoch"
+        },
+        {
+          "id": "p4",
+          "term": "Comoving distance",
+          "definition": "$D_C = c\\int dz/H(z)$; coordinate distance unchanged by expansion; basis for redshift surveys"
+        }
+      ],
+      "explanation": "Hubble tension: CMB-inferred $H_0 = 67.4$ km/s/Mpc (Planck 2018) vs.\\ Cepheid + SN Ia distance ladder $H_0 = 73.0$ km/s/Mpc (SH0ES 2022) — $\\sim 5\\sigma$ discrepancy. Possible solutions: new physics in early universe (early dark energy), late-time modifications, systematic errors. Critical for understanding cosmological model."
+    }
+  },
+  {
+    "id": "frw002",
+    "path": [
+      "physics",
+      "cosmology",
+      "frw-cosmology"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Friedmann equations: write them and identify each density component.",
+    "passive": {
+      "options": [
+        "(1) $H^2 = (8\\pi G/3)\\rho - kc^2/a^2 + \\Lambda c^2/3$; (2) $\\ddot a/a = -(4\\pi G/3)(\\rho + 3p/c^2) + \\Lambda c^2/3$. Components: matter $\\rho_m \\propto a^{-3}$ (pressureless dust), radiation $\\rho_r \\propto a^{-4}$, curvature $\\propto a^{-2}$, dark energy $\\rho_\\Lambda$ = const (cosmological constant)",
+        "Single equation $H = $ const; static universe (would conflict with renormalisation group flow and cross-section data) (would imply unphysical infinite or negative observables)",
+        "Friedmann equations apply only to flat universe (unsupported by perturbative expansions in the coupling) (not consistent with the operator product expansion at large momentum)",
+        "$H^2 = \\rho$ with no curvature or dark energy terms (contradicted by both lattice simulations and dispersive analyses) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "From Einstein equations with FRW ansatz + perfect fluid $T^\\mu_\\nu = \\text{diag}(-\\rho c^2, p, p, p)$. First Friedmann: time-time component; constraint equation. Second: trace; dynamical (deceleration parameter $q = -a\\ddot a/\\dot a^2$). Conservation: $\\dot\\rho + 3H(\\rho + p/c^2) = 0$. Equation of state $p = w\\rho c^2$: $w = 0$ matter, $w = 1/3$ radiation, $w = -1$ cosmological constant, $w < -1/3$ accelerates universe. Density parameters $\\Omega_i = \\rho_i/\\rho_{\\rm crit}$ with $\\rho_{\\rm crit} = 3H_0^2/(8\\pi G)$. Sum rule: $\\sum \\Omega_i + \\Omega_k = 1$. Current values (Planck): $\\Omega_m \\approx 0.31, \\Omega_\\Lambda \\approx 0.69, \\Omega_k \\approx 0$ (flat to $\\sim 10^{-3}$)."
+    }
+  },
+  {
+    "id": "frw003",
+    "path": [
+      "physics",
+      "cosmology",
+      "frw-cosmology"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "$\\Lambda$CDM: which 6 parameters fit current cosmological data?",
+    "passive": {
+      "options": [
+        "(1) Baryon density $\\Omega_b h^2$; (2) cold dark matter density $\\Omega_c h^2$; (3) acoustic angle $\\theta_*$ (or $H_0$); (4) optical depth to reionisation $\\tau$; (5) primordial scalar amplitude $A_s$; (6) scalar spectral index $n_s$. From these alone, all CMB + LSS observables predicted at percent level. Planck 2018 best-fit gives $\\chi^2/\\nu \\approx 1$",
+        "All 100+ parameters needed; cannot be reduced (ruled out by experimental constraints from collider and low-energy data) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Only $H_0$ matters; everything else cancels (unsupported by perturbative expansions in the coupling) (contradicted by both lattice simulations and dispersive analyses) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Only 3 parameters: $\\Omega_m, \\Omega_\\Lambda, H_0$ (historically considered but disfavoured by modern QFT analyses) (would imply unphysical infinite or negative observables) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "$\\Lambda$CDM = cosmological constant $\\Lambda$ + cold dark matter — 'concordance model' since 2000. Parameters from Planck 2018 + BAO: $\\Omega_b h^2 = 0.02237(15)$, $\\Omega_c h^2 = 0.1200(12)$, $\\theta_* = 0.0104110(31)$, $\\tau = 0.0544(70)$, $\\ln(10^{10}A_s) = 3.044(14)$, $n_s = 0.9649(42)$. Derived: $H_0 = 67.36(54)$ km/s/Mpc, $\\Omega_m = 0.3153(73)$, $\\sigma_8 = 0.8111(60)$, age 13.797(23) Gyr. Tensions: $H_0$ (5$\\sigma$ with local distance ladder), $\\sigma_8$ ($\\sim 2-3\\sigma$ with weak lensing), $A_{\\rm lens}$ ($\\sim 2\\sigma$ internal). Extensions adding more parameters ($N_{\\rm eff}, \\sum m_\\nu, w_0, w_a, \\Omega_k$): not currently preferred, but to be tested by DESI, Euclid, Roman, LSST, CMB-S4."
+    }
+  },
+  {
+    "id": "frw004",
+    "path": [
+      "physics",
+      "cosmology",
+      "frw-cosmology"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Solve Friedmann equations in matter, radiation, and de Sitter eras.",
+    "passive": {
+      "options": [
+        "Matter-dominated ($w = 0$): $a(t) \\propto t^{2/3}$, $H = 2/(3t)$. Radiation-dominated ($w = 1/3$): $a \\propto t^{1/2}$, $H = 1/(2t)$. de Sitter ($w = -1$): $a \\propto e^{Ht}$ with $H = $ const $= \\sqrt{\\Lambda/3}$. Transitions: radiation→matter at $z_{\\rm eq} \\approx 3400$; matter→$\\Lambda$ around $z \\sim 0.3$",
+        "$a(t) = $ const in all eras (disagrees with the standard textbook treatment in Peskin-Schroeder) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Same power law $a \\propto t$ for all components (ruled out by experimental constraints from collider and low-energy data) (not consistent with the operator product expansion at large momentum)",
+        "de Sitter has $a \\propto t^2$ (unsupported by perturbative expansions in the coupling) (would imply unphysical infinite or negative observables) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Single-fluid solutions from $H^2 \\propto \\rho \\propto a^{-3(1+w)}$. Matter: $a \\propto t^{2/3}$, age of matter-dominated universe $t = 2/(3H)$. Radiation: $a \\propto t^{1/2}$. de Sitter exponential. Combined: in $\\Lambda$CDM universe, $a(t) = (\\Omega_m/\\Omega_\\Lambda)^{1/3}\\sinh^{2/3}(t/t_\\Lambda)$ with $t_\\Lambda = (2/3H_0)\\sqrt{\\Omega_\\Lambda}^{-1}$. Matter-radiation equality at $a_{\\rm eq} = \\Omega_r/\\Omega_m \\sim 1/3400$, $z_{\\rm eq} \\approx 3400$. Recombination at $z \\sim 1100$. Matter-$\\Lambda$ equality at $a_{m\\Lambda} = (\\Omega_m/\\Omega_\\Lambda)^{1/3} \\approx 0.77$, $z \\approx 0.30$. Current universe in $\\Lambda$-dominated phase, accelerating since $z \\sim 0.6$."
+    }
+  },
+  {
+    "id": "frw005",
+    "path": [
+      "physics",
+      "cosmology",
+      "frw-cosmology"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Dark energy and the cosmological constant problem: what makes $\\Lambda$ so puzzling?",
+    "passive": {
+      "options": [
+        "Vacuum energy from QFT: $\\rho_{\\rm vac} = (1/2)\\int d^3k/(2\\pi)^3\\sqrt{k^2 + m^2}$ — UV divergent, naively $\\sim M_{\\rm Pl}^4 \\sim 10^{74}$ GeV$^4$; observed $\\rho_\\Lambda \\sim (10^{-3}$ eV$)^4 \\sim 10^{-47}$ GeV$^4$. Discrepancy 120 orders of magnitude — worst prediction in physics. Requires unprecedented fine-tuning or mechanism unknown",
+        "$\\Lambda$ predicted exactly by QFT; no puzzle (historically considered but disfavoured by modern QFT analyses) (ruled out by experimental constraints from collider and low-energy data)",
+        "$\\Lambda = 0$ guaranteed by SUSY; nothing to explain (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would conflict with renormalisation group flow and cross-section data)",
+        "$\\Lambda$ measured to be zero precisely (disagrees with the standard textbook treatment in Peskin-Schroeder) (would imply unphysical infinite or negative observables) (not consistent with the operator product expansion at large momentum)"
+      ],
+      "correct": 0,
+      "explanation": "Observed: $\\rho_\\Lambda = (8\\pi G)^{-1}\\Lambda c^2 \\approx 7\\times 10^{-27}$ kg/m³ $\\approx 6.6\\times 10^{-10}$ J/m³ — equivalent to $\\sim 5$ proton masses per m³. In QFT units: $\\rho_\\Lambda^{1/4} \\sim 2.3 \\times 10^{-3}$ eV. From QFT vacuum: $\\rho_{\\rm vac}^{1/4} \\sim$ UV cutoff $\\Lambda_{\\rm UV}$. Naturally $\\Lambda_{\\rm UV} \\sim M_{\\rm Pl}$: prediction $10^{120}$ times observed. Even at $\\Lambda_{\\rm UV} \\sim$ TeV (EW scale): $10^{60}$ off. Resolutions attempted: SUSY (boson/fermion cancellation, broken at $\\sim$ TeV $\\Rightarrow$ still $10^{60}$ off); anthropic landscape (Weinberg 1987: $\\Lambda$ varies in multiverse, observed values self-selected); modified gravity (Horndeski, etc., tightly constrained). $w_0 w_a$CDM tests deviation: $w(z) = w_0 + w_a z/(1+z)$. DESI 2024 hints $w$ varying — not yet conclusive."
+    }
+  },
+  {
+    "id": "frw006",
+    "path": [
+      "physics",
+      "cosmology",
+      "frw-cosmology"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "Cosmological horizons: distinguish particle, event, and Hubble horizons.",
+    "passive": {
+      "options": [
+        "Particle horizon $\\chi_p(t) = c\\int_0^t dt'/a(t')$: max comoving distance light has travelled since big bang; defines observable universe ($\\sim 46$ Gly comoving today). Event horizon $\\chi_e(t) = c\\int_t^\\infty dt'/a$: max distance signal sent now can ever reach; finite in $\\Lambda$-dom universe. Hubble horizon $c/H$: instantaneous boundary where recession velocity = $c$",
+        "All three identical (would conflict with renormalisation group flow and cross-section data) (ruled out by experimental constraints from collider and low-energy data) (contradicted by both lattice simulations and dispersive analyses)",
+        "No horizons exist in cosmology (violates basic gauge invariance and Lorentz covariance requirements) (historically considered but disfavoured by modern QFT analyses) (unsupported by perturbative expansions in the coupling)",
+        "Horizon = edge of universe (literal) (not consistent with the operator product expansion at large momentum) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Particle horizon: integral diverges in radiation-dom, gives finite result with inflation (sets observable universe $\\sim 46$ Gly today). Event horizon: exists only in accelerating universe; future galaxies beyond event horizon become unreachable; in pure $\\Lambda$ universe, $\\chi_e = c/H = $ Hubble radius. Hubble horizon: simplest, time-dependent; objects beyond have $v_{\\rm rec} > c$ but this is OK (no information transferred). Important for inflation: modes 'exit' Hubble horizon when $k = aH$, get frozen, 'reenter' after inflation ends. Horizon problem: pre-inflation, particle horizon too small to explain CMB isotropy. Inflation solves: brief exponential expansion makes today's observable universe come from causally connected region pre-inflation."
+    }
+  }
+]

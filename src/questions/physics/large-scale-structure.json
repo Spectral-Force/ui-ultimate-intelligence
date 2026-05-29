@@ -1,0 +1,168 @@
+[
+  {
+    "id": "lss001",
+    "path": [
+      "physics",
+      "cosmology",
+      "large-scale-structure"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "Linear growth of structure: how do density perturbations evolve in expanding universe?",
+    "passive": {
+      "options": [
+        "Density contrast $\\delta = \\delta\\rho/\\rho$ satisfies $\\ddot\\delta + 2H\\dot\\delta - 4\\pi G\\bar\\rho\\delta = 0$ (matter, sub-horizon). Solutions: growing mode $\\delta_+ \\propto D(a)$, decaying $\\delta_- \\propto H(a)$. Matter-dominated: $D \\propto a$, structure grows linearly; in $\\Lambda$-domination: $D$ saturates. Growth rate $f = d\\ln D/d\\ln a$ probes gravity",
+        "Density perturbations don't grow; remain constant (contradicted by both lattice simulations and dispersive analyses) (not consistent with the operator product expansion at large momentum)",
+        "Perturbations grow exponentially in all eras (unsupported by perturbative expansions in the coupling) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would conflict with renormalisation group flow and cross-section data)",
+        "Structure growth doesn't depend on Hubble rate (historically considered but disfavoured by modern QFT analyses) (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "Newtonian linear theory in expanding universe. Continuity + Euler + Poisson equations linearised: $\\ddot\\delta + 2H\\dot\\delta - 4\\pi G\\bar\\rho\\delta = 0$ for sub-horizon modes. The $2H\\dot\\delta$ Hubble friction term slows growth. Matter era: $H = 2/(3t)$, $\\rho \\propto t^{-2}$ → $\\delta \\propto t^{2/3} \\propto a$. Radiation era: more complex (Meszaros effect), sub-horizon modes only grow logarithmically. $\\Lambda$ era: $\\delta$ growth slows then saturates. Growth function $D(a)$ normalised to 1 today: $D(z) = 5\\Omega_m H_0^2/(2H(z))\\int_z^\\infty (1+z')/H^3(z')dz'$. Growth rate $f(z) = \\Omega_m(z)^{0.55}$ in GR; deviations probe modified gravity (RSD measurements at Euclid, DESI). Beyond linear: perturbation theory at next-to-leading order; N-body simulations for non-linear."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each LSS observable with its dominant physics:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Galaxy power spectrum $P(k)$",
+          "definition": "$P(k) \\propto k^{n_s}T^2(k)$ shape; turnover at horizon scale at matter-radiation equality; BAO peak at 100$h^{-1}$Mpc"
+        },
+        {
+          "id": "p2",
+          "term": "BAO (Baryon Acoustic Oscillations)",
+          "definition": "Standard ruler at sound horizon $r_d \\approx 147$ Mpc; measured at multiple redshifts (DESI, BOSS)"
+        },
+        {
+          "id": "p3",
+          "term": "Weak gravitational lensing",
+          "definition": "Cosmic shear of background galaxies by foreground LSS; probes $\\sigma_8\\sqrt{\\Omega_m}$ (KiDS, DES, HSC)"
+        },
+        {
+          "id": "p4",
+          "term": "Redshift-space distortions",
+          "definition": "Peculiar velocities elongate clusters along line-of-sight; Kaiser effect; $f\\sigma_8$ at multiple $z$"
+        }
+      ],
+      "explanation": "LSS probes complement CMB by measuring $z = 0-3$ universe in detail. Modern surveys: SDSS (legacy), BOSS, eBOSS, DESI (2021-26, 30M galaxies), Euclid (ESA 2023+), Roman (NASA 2027+), LSST (NSF, Rubin Observatory 2024+). Test for tension with CMB $\\Lambda$CDM ($H_0, \\sigma_8$), constrain dark energy, neutrino mass, modified gravity."
+    }
+  },
+  {
+    "id": "lss002",
+    "path": [
+      "physics",
+      "cosmology",
+      "large-scale-structure"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Baryon Acoustic Oscillations: physical origin and use as standard ruler.",
+    "passive": {
+      "options": [
+        "Pre-recombination, sound waves in baryon-photon plasma traveled at $c_s \\sim c/\\sqrt 3$; at decoupling, frozen — leaves preferred scale = sound horizon $r_d \\approx 147$ Mpc. Visible as bump in galaxy 2-point correlation $\\xi(r)$ at $r = r_d$, peak in $P(k)$ at $k \\sim 0.067 h$/Mpc. Used as standard ruler at different $z$ → $D_A(z), H(z)$, dark energy probe",
+        "BAO are detector artefacts (would conflict with renormalisation group flow and cross-section data) (unsupported by perturbative expansions in the coupling) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Sound horizon at recombination is $\\sim 1$ Mpc (contradicted by both lattice simulations and dispersive analyses) (ruled out by experimental constraints from collider and low-energy data)",
+        "BAO have no calibration; useless as ruler (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "Same physics as CMB acoustic peaks but seen in matter distribution. Sound horizon $r_d$ from $\\int_0^{t_d}c_s dt/a \\approx 147$ Mpc (calibrated from CMB or BBN). After decoupling, baryon overdensity shell at $r_d$ from each initial overdensity → bump in correlation function. Detected: 2005 SDSS (Eisenstein et al.) at $z \\sim 0.35$, 2dFGRS. Subsequent: BOSS at $z = 0.2-0.7$, eBOSS at $z = 0.7-2.5$ (Ly$\\alpha$ forest), DESI 2024 first-year results (largest BAO sample). Standard ruler: angular scale gives $D_A(z)/r_d$ transverse; radial gives $c/H(z r_d)$. Constrain $w(z)$ for dark energy. DESI 2024: hints for evolving $w$ ($w_0 = -0.95, w_a = -0.4$) — $2.6-3.9\\sigma$ deviation from $\\Lambda$CDM depending on combination."
+    }
+  },
+  {
+    "id": "lss003",
+    "path": [
+      "physics",
+      "cosmology",
+      "large-scale-structure"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Cosmic web: what's the topology and how is it characterised?",
+    "passive": {
+      "options": [
+        "Gravitational collapse from initial Gaussian fluctuations produces filamentary 'cosmic web': clusters (knots) connected by filaments, separated by sheets bordering voids. Anisotropic collapse predicted by Zel'dovich approximation. Topology described by Minkowski functionals, genus, BBKS peak statistics; visualised in SDSS/2dF, Bolshoi/Millennium simulations",
+        "Cosmic web is uniform like Swiss cheese with regular holes (unsupported by perturbative expansions in the coupling) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "Structure spherically symmetric on all scales (contradicted by both lattice simulations and dispersive analyses) (not consistent with the operator product expansion at large momentum)",
+        "No structure beyond galaxies (would conflict with renormalisation group flow and cross-section data) (ruled out by experimental constraints from collider and low-energy data) (disagrees with the standard textbook treatment in Peskin-Schroeder)"
+      ],
+      "correct": 0,
+      "explanation": "Zel'dovich (1970): initial density perturbations collapse along smallest eigenvalue of tidal tensor first → sheets ('pancakes'); then filaments; then knots. Hierarchical structure. Components: nodes (clusters, $\\sim$Mpc, mass $\\sim 10^{15} M_\\odot$); filaments (10-100 Mpc, $\\sim 10^{14} M_\\odot$); sheets/walls; voids ($\\sim 50$ Mpc, low density). Galaxy surveys (CfA, SDSS, 2dF) revealed it observationally; N-body simulations (Millennium 2005, Bolshoi 2011, IllustrisTNG, EAGLE, FLAMINGO) reproduce statistically. Characterisation: 2-point and 3-point correlation functions; Minkowski functionals (genus, area, volume, integrated mean curvature); persistent homology. Cross-correlation with CMB (ISW), weak lensing (cosmic shear maps the web), 21-cm hydrogen mapping."
+    }
+  },
+  {
+    "id": "lss004",
+    "path": [
+      "physics",
+      "cosmology",
+      "large-scale-structure"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "$\\sigma_8$ tension: between which experiments and why does it matter?",
+    "passive": {
+      "options": [
+        "$\\sigma_8$ = RMS density fluctuation in 8 $h^{-1}$Mpc spheres at $z = 0$. CMB Planck: $\\sigma_8 = 0.811(6)$ (inferred from extrapolation of $z = 1100$ to today via $\\Lambda$CDM). Direct LSS measurements (KiDS, DES, HSC weak lensing): $\\sigma_8\\sqrt{\\Omega_m/0.3} \\equiv S_8 \\approx 0.76-0.78$ — $2-3\\sigma$ lower than CMB. Hints at suppressed growth, possible BSM",
+        "$\\sigma_8$ measurements all agree perfectly (disagrees with the standard textbook treatment in Peskin-Schroeder) (ruled out by experimental constraints from collider and low-energy data)",
+        "$\\sigma_8 = 1$ measured, agreeing with all data (historically considered but disfavoured by modern QFT analyses) (would imply unphysical infinite or negative observables) (not consistent with the operator product expansion at large momentum)",
+        "$\\sigma_8$ irrelevant for cosmology (unsupported by perturbative expansions in the coupling) (contradicted by both lattice simulations and dispersive analyses) (violates basic gauge invariance and Lorentz covariance requirements)"
+      ],
+      "correct": 0,
+      "explanation": "$\\sigma_8$ is amplitude of clustering at 8 $h^{-1}$Mpc — characteristic galaxy-cluster scale. Two routes: (1) CMB Planck: at recombination measures $A_s$, extrapolates to today via $\\Lambda$CDM evolution → $\\sigma_8(z=0) = 0.811 \\pm 0.006$. (2) Direct: weak lensing of background galaxies by foreground LSS — measures $S_8 = \\sigma_8\\sqrt{\\Omega_m/0.3}$. KiDS-1000 (2021): $S_8 = 0.766^{+0.020}_{-0.014}$. DES Y3 (2022): $S_8 = 0.776 \\pm 0.017$. HSC Y3 (2023): $S_8 \\sim 0.77$. Combined $\\sim 0.76$ vs Planck $\\sim 0.83$ — $2.3\\sigma$ tension. Implications: suppressed growth at low $z$ — could mean extra neutrino mass ($\\sum m_\\nu > 0$), warm DM, dark-sector interactions, baryonic feedback in simulations. Future: more precise galaxy lensing + clustering analyses to confirm/resolve."
+    }
+  },
+  {
+    "id": "lss005",
+    "path": [
+      "physics",
+      "cosmology",
+      "large-scale-structure"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "21-cm cosmology: what does the hyperfine line probe in different cosmic eras?",
+    "passive": {
+      "options": [
+        "Hydrogen 21-cm hyperfine line (1.42 GHz rest frame, observed at MHz redshifted) probes neutral H. Era of dark ages ($z \\sim 30-200$): pure cosmology, sound horizon scales. Cosmic dawn ($z \\sim 15-30$): first stars, Wouthuysen-Field coupling. Epoch of reionisation ($z \\sim 6-10$): bubbles of ionised H carving holes. Detected via global signal (EDGES 2018, controversial), interferometry (HERA, SKA)",
+        "21 cm is dental hygiene application, not cosmology (disagrees with the standard textbook treatment in Peskin-Schroeder) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (not consistent with the operator product expansion at large momentum)",
+        "Line only useful for galactic structure (ruled out by experimental constraints from collider and low-energy data) (historically considered but disfavoured by modern QFT analyses) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "21 cm doesn't redshift; useless for early universe (would conflict with renormalisation group flow and cross-section data) (would imply unphysical infinite or negative observables) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "21-cm spin-flip transition: ground state hyperfine ($\\Delta E = 5.9\\,\\mu$eV). Atomic H emits/absorbs depending on spin temperature $T_S$ relative to CMB. Observable: brightness temperature $T_b = (T_S - T_{\\rm CMB})(1 - e^{-\\tau})$. Cosmic eras: (1) Dark ages ($z = 30-200$): $T_S \\to T_{\\rm gas}$ via collisions; CMB heats H, then expansion cools below; appears in absorption. (2) Cosmic dawn ($z \\sim 15-30$): UV from first stars couples $T_S$ to $T_{\\rm gas}$ (Wouthuysen-Field); X-ray heating begins. (3) EoR ($z \\sim 6-10$): ionising photons from galaxies create H II regions, 21 cm signal disappears from those bubbles. Detection: global signal (single antenna, e.g.\\ EDGES 2018 claimed absorption at $z = 17$ — controversial); interferometric mapping (HERA, LOFAR, MWA; future SKA). Tools for cosmology beyond CMB: directly probes structure at $z \\gg 6$, before stars."
+    }
+  },
+  {
+    "id": "lss006",
+    "path": [
+      "physics",
+      "cosmology",
+      "large-scale-structure"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "Probes of dark energy equation of state $w(z)$: what's the current status?",
+    "passive": {
+      "options": [
+        "Multiple methods: (1) SNe Ia luminosity distance vs $z$ (Pantheon+, Union3); (2) BAO standard ruler (DESI 2024, eBOSS); (3) CMB $D_A$ to $z=1100$ via Planck; (4) growth rate $f\\sigma_8$ from RSD; (5) weak lensing. Current: $w_0 = -0.95\\pm 0.05$, $w_a$ consistent with 0, but DESI 2024 hints $w_a < 0$ at $\\sim 3\\sigma$. Stage IV: Euclid, LSST, DESI complete, Roman should resolve",
+        "Dark energy not yet measured; pure speculation (unsupported by perturbative expansions in the coupling) (contradicted by both lattice simulations and dispersive analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD)",
+        "$w = 0$ measured directly; matter-like dark energy (violates basic gauge invariance and Lorentz covariance requirements) (historically considered but disfavoured by modern QFT analyses) (not consistent with the operator product expansion at large momentum)",
+        "$w = -2$ established (disagrees with the standard textbook treatment in Peskin-Schroeder) (would conflict with renormalisation group flow and cross-section data) (would imply unphysical infinite or negative observables)"
+      ],
+      "correct": 0,
+      "explanation": "Parametrise $w(a) = w_0 + w_a(1-a)$ (CPL). $\\Lambda$CDM: $w_0 = -1$, $w_a = 0$. Constraints (combined Pantheon+ SNe + DESI BAO + Planck CMB, 2024): $w_0 = -0.95 \\pm 0.04$, $w_a = -0.39 \\pm 0.34$ — modestly disfavours $\\Lambda$CDM ($\\sim 2.6-3.9\\sigma$ depending on dataset combination). If real: $w$ crosses $-1$ ('phantom crossing') in past — challenging for canonical scalar field, requires either negative-kinetic-energy fields or modified gravity. Future Stage IV experiments: Euclid (2023+, 1.5 billion galaxies for lensing + spectroscopy); Roman (2027+, supernovae + LSS); LSST (2024+, weak lensing + cluster counts); DESI continued; CMB-S4. Each separately reaches $\\sigma(w_0) < 0.02$, $\\sigma(w_a) < 0.1$. Combined cosmic-variance limited."
+    }
+  }
+]

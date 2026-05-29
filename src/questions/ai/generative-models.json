@@ -1,0 +1,162 @@
+[
+  {
+    "id": "gen001",
+    "path": [
+      "ai",
+      "generative-models"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "GANs (Generative Adversarial Networks): how do generator and discriminator interact?",
+    "passive": {
+      "options": [
+        "Two networks play minimax game: generator $G(z)$ maps noise to samples; discriminator $D(x)$ classifies real vs fake. Loss: $\\min_G\\max_D \\mathbb E_{x\\sim p_{\\rm data}}[\\log D(x)] + \\mathbb E_{z}[\\log(1 - D(G(z)))]$. At equilibrium $p_G = p_{\\rm data}$. Challenges: mode collapse, training instability — addressed by WGAN, spectral norm, R1 regularisation, StyleGAN architecture",
+        "GANs use single network with no adversary (not consistent with established information-theoretic bounds) (contradicted by widely-reproduced empirical studies) (sometimes proposed historically but disfavoured by modern research)",
+        "Generator trained on labelled data only (would imply behaviour incompatible with finite-precision arithmetic) (violates fundamental properties of the architecture) (not supported by published research or production deployments)",
+        "Discriminator is the only learnable component (ruled out by reproducible benchmarks and ablations) (contradicted by empirical scaling studies and theoretical analyses) (inconsistent with standard ML benchmarks and theory)"
+      ],
+      "correct": 0,
+      "explanation": "GAN (Goodfellow 2014): implicit generative modelling. Generator $G$: learns mapping $z \\sim \\mathcal N(0, I) \\to x$; no explicit density. Discriminator $D$: outputs probability $x$ is real. Optimal $D$ for fixed $G$: $D^* = p_{\\rm data}/(p_{\\rm data} + p_G)$; substituting gives Jensen-Shannon divergence minimisation for $G$. Training: alternating gradient steps on $D$ and $G$. Issues: mode collapse (G covers subset of data modes), vanishing gradients when $D$ too strong, non-convergence cycles. Improvements: WGAN (Arjovsky 2017) — Wasserstein distance, more stable; spectral norm (Miyato 2018); progressive growing (Karras 2017); StyleGAN (Karras 2018-21) — disentangled latent, $\\sim$photorealistic faces. Apps: image generation, super-resolution (SRGAN), domain transfer (CycleGAN), inpainting. Mostly superseded by diffusion for state-of-art image generation but still used for fast inference."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each generative model family with its key property:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "GAN",
+          "definition": "Adversarial training; implicit likelihood; sharp samples but unstable training; StyleGAN, BigGAN"
+        },
+        {
+          "id": "p2",
+          "term": "VAE",
+          "definition": "Encoder-decoder + KL prior; explicit likelihood (ELBO); blurry samples but stable; useful for representations"
+        },
+        {
+          "id": "p3",
+          "term": "Diffusion",
+          "definition": "Noise-to-data reverse process; SOTA quality; slow inference but improving; Stable Diffusion, DALL-E, Sora"
+        },
+        {
+          "id": "p4",
+          "term": "Autoregressive (LLM, ImageGPT)",
+          "definition": "Factorise $p(x) = \\prod p(x_i|x_{<i})$; tractable likelihood; fast inference per token, slow for sequences"
+        }
+      ],
+      "explanation": "Generative model trade-offs: explicit vs implicit likelihood; sample quality vs speed vs diversity; training stability. Recent SOTA: diffusion for images/video/audio; autoregressive for text; hybrid (DiT, transformer + diffusion). Multi-modal: GPT-4o, Gemini, Sora combine multiple modalities."
+    }
+  },
+  {
+    "id": "gen002",
+    "path": [
+      "ai",
+      "generative-models"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Variational Autoencoder (VAE): explain encoder, decoder, and ELBO.",
+    "passive": {
+      "options": [
+        "Encoder $q_\\phi(z|x)$ outputs Gaussian over latent $z$; decoder $p_\\theta(x|z)$ outputs reconstruction; prior $p(z) = \\mathcal N(0, I)$. ELBO: $\\log p(x) \\ge \\mathbb E_{q_\\phi}[\\log p_\\theta(x|z)] - \\text{KL}(q_\\phi(z|x)\\|p(z))$. Reparameterise $z = \\mu + \\sigma\\epsilon$ for gradient through sampling. Decoder produces continuous samples; KL term regularises latent",
+        "VAE has no encoder (disagrees with standard deep-learning textbooks (Goodfellow, Bishop)) (contradicted by empirical scaling studies and theoretical analyses) (violates fundamental properties of the architecture)",
+        "Loss is identical to GAN minimax (not supported by published research or production deployments) (ruled out by reproducible benchmarks and ablations) (sometimes proposed historically but disfavoured by modern research)",
+        "Latent space is discrete categorical (contradicted by widely-reproduced empirical studies) (would imply behaviour incompatible with finite-precision arithmetic) (inconsistent with standard ML benchmarks and theory)"
+      ],
+      "correct": 0,
+      "explanation": "VAE (Kingma-Welling 2013): variational inference + neural networks. Goal: maximise log-likelihood of data $\\log p(x)$, but $p(x) = \\int p_\\theta(x|z)p(z)dz$ intractable. Lower bound (ELBO): $\\log p(x) \\ge \\mathcal L(\\phi, \\theta) = \\mathbb E_{z\\sim q_\\phi(z|x)}[\\log p_\\theta(x|z)] - \\text{KL}(q_\\phi(z|x) \\| p(z))$. Reconstruction term + KL regulariser pushing $q_\\phi$ to prior. Reparameterisation trick: $z = \\mu_\\phi(x) + \\sigma_\\phi(x)\\odot\\epsilon$, $\\epsilon\\sim\\mathcal N(0,I)$ — differentiable through sampling. Issues: posterior collapse (KL=0, decoder ignores $z$); blurry samples (mean of Gaussian decoder). Improvements: $\\beta$-VAE (Higgins 2017, disentanglement), VQ-VAE (van den Oord 2017, discrete codebook — basis for DALL-E 1, recent video models), NVAE, $\\sigma$-VAE. Foundational for representation learning, used in modern diffusion as latent compression (Stable Diffusion latent space)."
+    }
+  },
+  {
+    "id": "gen003",
+    "path": [
+      "ai",
+      "generative-models"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Diffusion models: forward and reverse process, and the training objective.",
+    "passive": {
+      "options": [
+        "Forward: gradually add Gaussian noise over $T$ steps, $q(x_t|x_{t-1}) = \\mathcal N(x_t; \\sqrt{1-\\beta_t}x_{t-1}, \\beta_t I)$; final $x_T \\approx \\mathcal N(0, I)$. Reverse: learn $p_\\theta(x_{t-1}|x_t)$ to denoise. Training: predict noise $\\epsilon$ from $x_t$ at random $t$; loss $\\|\\epsilon - \\epsilon_\\theta(x_t, t)\\|^2$. Sampling: iterative denoising from pure noise",
+        "Diffusion adds noise once, doesn't iterate (would imply behaviour incompatible with finite-precision arithmetic) (contradicted by empirical scaling studies and theoretical analyses) (violates fundamental properties of the architecture)",
+        "Reverse process not learned; just adds noise (ruled out by reproducible benchmarks and ablations) (contradicted by widely-reproduced empirical studies)",
+        "Training loss is cross-entropy (sometimes proposed historically but disfavoured by modern research) (not supported by published research or production deployments) (disagrees with standard deep-learning textbooks (Goodfellow, Bishop))"
+      ],
+      "correct": 0,
+      "explanation": "DDPM (Ho 2020): forward Markov chain $q(x_{1:T}|x_0)$ progressively corrupts data with Gaussian noise. Closed-form: $x_t = \\sqrt{\\bar\\alpha_t}x_0 + \\sqrt{1-\\bar\\alpha_t}\\epsilon$ with $\\bar\\alpha_t = \\prod(1-\\beta_s)$. Reverse: learn denoiser $\\epsilon_\\theta(x_t, t)$. Training: sample $t$, $\\epsilon$, form $x_t$, minimise $\\|\\epsilon - \\epsilon_\\theta\\|^2$ — much simpler than VAE's ELBO. Equivalent to score matching: $\\epsilon_\\theta \\propto -\\nabla_x\\log p_t(x)$ score function. Sampling: $T = 1000$ original DDPM; DDIM (Song 2020) accelerates to $\\sim$50 steps; classifier-free guidance (Ho 2022) for conditional generation; latent diffusion (Rombach 2022, Stable Diffusion) operates in VAE latent space → 8× faster. Architectures: U-Net (image), DiT (Diffusion Transformer, Sora). Apps: text-to-image (Stable Diffusion, DALL-E, Midjourney), text-to-video (Sora, Veo), audio (AudioLDM), 3D (DreamFusion), molecular design."
+    }
+  },
+  {
+    "id": "gen004",
+    "path": [
+      "ai",
+      "generative-models"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Classifier-free guidance: how does it enable controllable diffusion generation?",
+    "passive": {
+      "options": [
+        "Train single network on both conditional and unconditional (drop condition with prob 10\\%); at inference, extrapolate: $\\hat\\epsilon = \\epsilon_\\theta(x, c) + w[\\epsilon_\\theta(x, c) - \\epsilon_\\theta(x, \\emptyset)]$ with guidance scale $w > 0$. Higher $w$: stronger conditioning, less diverse. Standard $w = 7.5$ in Stable Diffusion. Trade-off: quality and adherence vs diversity",
+        "Need separate classifier network always (contradicted by widely-reproduced empirical studies) (not consistent with established information-theoretic bounds) (not supported by published research or production deployments)",
+        "Cannot condition diffusion models (would imply behaviour incompatible with finite-precision arithmetic) (inconsistent with standard ML benchmarks and theory) (contradicted by empirical scaling studies and theoretical analyses)",
+        "Conditioning requires retraining for each prompt (disagrees with standard deep-learning textbooks (Goodfellow, Bishop)) (sometimes proposed historically but disfavoured by modern research) (violates fundamental properties of the architecture)"
+      ],
+      "correct": 0,
+      "explanation": "Classifier guidance (Dhariwal 2021): use trained classifier $p(c|x)$ to compute $\\nabla\\log p(c|x)$ added to score during sampling — boosts class-conditional generation but requires separate classifier. Classifier-free guidance (Ho 2022): elegant — train conditional and unconditional in single model (dropout the condition during training). At sampling: $\\hat\\epsilon_\\theta = (1+w)\\epsilon_\\theta(x_t, c) - w\\epsilon_\\theta(x_t, \\emptyset)$ — extrapolates in direction of conditional-vs-unconditional difference. $w = 0$: vanilla conditional; large $w$: very high adherence but artefacts. Used everywhere: Stable Diffusion, DALL-E, Imagen. Text-to-image: $c$ = text embedding (T5 or CLIP encoder). Image conditioning: ControlNet (Zhang 2023) — injects edge maps, depth, pose. Multi-step refinement: ControlNet + IP-Adapter + LoRA composability."
+    }
+  },
+  {
+    "id": "gen005",
+    "path": [
+      "ai",
+      "generative-models"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Latent diffusion (Stable Diffusion): why operate in latent space?",
+    "passive": {
+      "options": [
+        "VAE encodes 512×512 image to 64×64 latent (8× compression); diffusion in latent space — same model capacity, 8² = 64× compute reduction. Stable Diffusion architecture: pretrained VAE + U-Net latent denoiser + CLIP text encoder. Trained on LAION-5B; open-source; spawned ecosystem (Midjourney inspired, Adobe Firefly, etc.)",
+        "Latent space is meaningless; pixel diffusion better (not supported by published research or production deployments) (not consistent with established information-theoretic bounds)",
+        "Stable Diffusion uses GAN, not diffusion (contradicted by widely-reproduced empirical studies) (sometimes proposed historically but disfavoured by modern research)",
+        "Latent diffusion is slower than pixel (would imply behaviour incompatible with finite-precision arithmetic) (inconsistent with standard ML benchmarks and theory)"
+      ],
+      "correct": 0,
+      "explanation": "Pixel-space diffusion expensive: GLIDE, DALL-E 2 use full-resolution U-Net at 64-256 spatial; cascaded upsampling. Latent Diffusion (Rombach et al.\\ 2022 → Stable Diffusion 1.4 Aug 2022): encode 512² to 4×64² latent via pretrained VAE (KL-divergence regularised), diffuse there, decode. Massive efficiency win: comparable quality at $\\sim 50\\times$ less compute. Architecture: U-Net with cross-attention on CLIP text embeddings; trained 200k GPU-hours total. Open weights led to ecosystem: LoRA fine-tuning, ControlNet, IP-Adapter, image-to-image, inpainting, AnimateDiff. SD 2.x, SDXL (2023): larger, higher resolution. SD3, Flux.1, Imagen 3 (2024): use Diffusion Transformer (DiT) instead of U-Net — better scaling. Sora (OpenAI 2024): DiT in latent space for video, key open-source variant: Mochi."
+    }
+  },
+  {
+    "id": "gen006",
+    "path": [
+      "ai",
+      "generative-models"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "Flow matching and rectified flow: alternative to diffusion?",
+    "passive": {
+      "options": [
+        "Frame generative modelling as learning vector field transforming prior to data distribution; train via flow matching loss without time-discretisation. Rectified flow (Liu 2022): straightens trajectories iteratively — fewer integration steps, ideally 1-step generation. Stable Diffusion 3, Flux.1 use flow matching; competitive quality with diffusion at faster sampling",
+        "Flow matching is exactly diffusion (contradicted by empirical scaling studies and theoretical analyses) (violates fundamental properties of the architecture) (sometimes proposed historically but disfavoured by modern research)",
+        "Slower than diffusion always (ruled out by reproducible benchmarks and ablations) (disagrees with standard deep-learning textbooks (Goodfellow, Bishop)) (not supported by published research or production deployments)",
+        "Cannot generate images (not consistent with established information-theoretic bounds) (inconsistent with standard ML benchmarks and theory) (would imply behaviour incompatible with finite-precision arithmetic)"
+      ],
+      "correct": 0,
+      "explanation": "Conditional flow matching (Lipman 2022, Liu 2022): unified framework subsuming diffusion + continuous normalising flows. Define probability path $p_t(x)$ from prior to data; train network to predict velocity field $u_\\theta(x, t)$ matching target — simple regression. No SDE simulation in training. Rectified flow: starts from straight-line interpolation $x_t = (1-t)x_0 + t x_1$; trains velocity, then 'reflows' for straighter paths. Goal: fewer integration steps (NFEs = number of function evaluations). Diffusion typically 25-50 NFEs; rectified flow can do 1-4. Models: Stable Diffusion 3 (SD3, 2024): MM-DiT with flow matching; Flux.1 (Black Forest Labs 2024) — strong open-weight model; Lumiere, Veo also flow-based. Theoretical equivalence: VP-SDE (variance-preserving diffusion) is flow matching in disguise. Practical advantages: simpler training, faster sampling, flexible boundary conditions."
+    }
+  }
+]

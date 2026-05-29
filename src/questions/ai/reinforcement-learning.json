@@ -1,0 +1,162 @@
+[
+  {
+    "id": "rl001",
+    "path": [
+      "ai",
+      "reinforcement-learning"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "MDP framework: state the components and Bellman equation.",
+    "passive": {
+      "options": [
+        "Markov Decision Process: $(S, A, P, R, \\gamma)$ with states $S$, actions $A$, transition $P(s'|s,a)$, reward $R(s,a)$, discount $\\gamma \\in [0,1)$. Bellman optimality: $V^*(s) = \\max_a [R(s,a) + \\gamma\\sum_{s'}P(s'|s,a)V^*(s')]$. Policy $\\pi(a|s)$; value functions $V^\\pi, Q^\\pi$; goal: maximise expected discounted return",
+        "MDPs have only one state and one action (violates fundamental properties of the architecture) (not supported by published research or production deployments)",
+        "No reward needed; pure exploration (not consistent with established information-theoretic bounds) (sometimes proposed historically but disfavoured by modern research)",
+        "Bellman equation is for value functions only (would imply behaviour incompatible with finite-precision arithmetic) (ruled out by reproducible benchmarks and ablations)"
+      ],
+      "correct": 0,
+      "explanation": "Markov property: future depends only on current state, not history. Discounted return: $G_t = \\sum_{k=0}^\\infty \\gamma^k r_{t+k}$. Policy $\\pi$: $\\pi(a|s)$ probability of action $a$ in state $s$. Value functions: $V^\\pi(s) = \\mathbb E_\\pi[G_t | s_t = s]$, $Q^\\pi(s,a) = \\mathbb E_\\pi[G_t | s_t = s, a_t = a]$. Bellman expectation: $V^\\pi(s) = \\mathbb E_{a\\sim\\pi}[Q^\\pi(s,a)]$. Optimal value: $V^*(s) = \\max_\\pi V^\\pi(s)$. Bellman optimality (Bellman 1957): recursive equation, foundation of dynamic programming. Solution methods: value iteration, policy iteration (exact in tabular, finite-state). For large/continuous: function approximation (deep RL)."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each RL algorithm family with its approach:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Value-based (Q-learning, DQN)",
+          "definition": "Learn $Q(s,a)$; act greedily/$\\epsilon$-greedy; foundational, sample-efficient in discrete actions"
+        },
+        {
+          "id": "p2",
+          "term": "Policy gradient (REINFORCE, PPO)",
+          "definition": "Directly parametrise $\\pi_\\theta$; ascend $\\nabla_\\theta J$; works with continuous actions"
+        },
+        {
+          "id": "p3",
+          "term": "Actor-Critic (A2C, A3C, SAC)",
+          "definition": "Combines value (critic) + policy (actor); variance reduction; modern default for many tasks"
+        },
+        {
+          "id": "p4",
+          "term": "Model-based (MuZero, Dreamer)",
+          "definition": "Learn world model, plan in imagination; sample-efficient; complex but very strong on Atari/Go"
+        }
+      ],
+      "explanation": "RL algorithm taxonomy: model-free (Q-learning, policy gradient) vs model-based (learn $P, R$). On-policy (PPO) vs off-policy (DQN, SAC, replay buffer). Discrete (DQN, Rainbow) vs continuous actions (DDPG, TD3, SAC). Modern apps: game AI (AlphaGo, AlphaStar), robotics, LLM alignment (RLHF), recommendation systems, finance."
+    }
+  },
+  {
+    "id": "rl002",
+    "path": [
+      "ai",
+      "reinforcement-learning"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Q-learning: how does it work and why off-policy?",
+    "passive": {
+      "options": [
+        "Iterative update: $Q(s,a) \\leftarrow Q(s,a) + \\alpha[r + \\gamma\\max_{a'}Q(s',a') - Q(s,a)]$. Off-policy: target uses $\\max_{a'}$ — optimal action — regardless of actual action taken in collection; behaviour policy can be anything explorative (e.g.\\ $\\epsilon$-greedy). Provably converges in tabular setting; with function approx (DQN) requires tricks (replay, target net)",
+        "Q-learning is on-policy (not consistent with established information-theoretic bounds) (violates fundamental properties of the architecture) (contradicted by empirical scaling studies and theoretical analyses)",
+        "Updates use current policy's action, not max (disagrees with standard deep-learning textbooks (Goodfellow, Bishop)) (inconsistent with standard ML benchmarks and theory) (contradicted by widely-reproduced empirical studies)",
+        "Cannot learn optimal Q-function (ruled out by reproducible benchmarks and ablations) (would imply behaviour incompatible with finite-precision arithmetic) (sometimes proposed historically but disfavoured by modern research)"
+      ],
+      "correct": 0,
+      "explanation": "Q-learning (Watkins 1989): foundational off-policy TD learning. Update: TD error $\\delta_t = r_t + \\gamma\\max_{a'}Q(s_{t+1}, a') - Q(s_t, a_t)$. Off-policy: bootstrap target uses greedy (optimal w.r.t.\\ current $Q$) action regardless of what was actually taken — allows learning from arbitrary behaviour policy. Tabular convergence: under all-state-action visited infinitely often + learning rate decay. With NN function approximation: instabilities. DQN (Mnih et al.\\ 2015, Nature): (i) Experience replay — i.i.d.\\ training samples; (ii) Target network — fixed copy of $Q$ for bootstrap target, updated periodically. Achieved human-level Atari from raw pixels. Rainbow (2018): combines double Q, prioritised replay, dueling, noisy nets, distributional, multi-step. SAC, TD3 continuous extensions."
+    }
+  },
+  {
+    "id": "rl003",
+    "path": [
+      "ai",
+      "reinforcement-learning"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Policy gradient theorem: state the result and derive REINFORCE.",
+    "passive": {
+      "options": [
+        "$\\nabla_\\theta J(\\theta) = \\mathbb E_{\\tau\\sim\\pi_\\theta}[\\sum_t \\nabla_\\theta\\log\\pi_\\theta(a_t|s_t) Q^{\\pi_\\theta}(s_t,a_t)]$ — gradient through stochastic policy; REINFORCE replaces $Q$ with empirical return $G_t$; high variance. Variance reduction: subtract baseline (state value $V$); actor-critic uses learned critic",
+        "Cannot differentiate through sampling (violates fundamental properties of the architecture) (sometimes proposed historically but disfavoured by modern research)",
+        "Policy gradient requires Hessian (not supported by published research or production deployments) (inconsistent with standard ML benchmarks and theory) (contradicted by empirical scaling studies and theoretical analyses)",
+        "Theorem applies only to deterministic policies (would imply behaviour incompatible with finite-precision arithmetic) (disagrees with standard deep-learning textbooks (Goodfellow, Bishop))"
+      ],
+      "correct": 0,
+      "explanation": "Policy gradient theorem (Sutton 2000): elegant identity allowing optimisation of $J(\\theta) = \\mathbb E_{s_0,a_0,\\ldots\\sim\\pi_\\theta}[\\sum\\gamma^t r_t]$ without differentiating through environment. Use likelihood ratio (score function) estimator: $\\nabla\\mathbb E_{x\\sim p_\\theta}[f(x)] = \\mathbb E[f(x)\\nabla\\log p_\\theta(x)]$. Result: gradient is $\\mathbb E[\\nabla\\log\\pi_\\theta(a|s) Q^\\pi(s,a)]$. REINFORCE (Williams 1992): $\\hat\\nabla = \\sum_t G_t \\nabla\\log\\pi_\\theta(a_t|s_t)$ — unbiased but high variance. Variance reduction: subtract baseline $b(s)$, doesn't change expectation: $\\nabla\\log\\pi_\\theta\\cdot(G - b)$. Optimal baseline = $V^\\pi(s)$. Actor-critic methods: $A^\\pi(s,a) = Q - V$ advantage; learned critic; A2C/A3C, PPO most popular. PPO (Schulman 2017): clipped surrogate objective $\\min(r\\hat A, \\text{clip}(r,1-\\epsilon,1+\\epsilon)\\hat A)$ — stable, simple, default for RLHF."
+    }
+  },
+  {
+    "id": "rl004",
+    "path": [
+      "ai",
+      "reinforcement-learning"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Exploration vs exploitation: classical strategies and modern approaches.",
+    "passive": {
+      "options": [
+        "$\\epsilon$-greedy (random with prob $\\epsilon$); Boltzmann/softmax action selection; UCB (upper confidence bound): exploration bonus $\\sim\\sqrt{\\log t/n_a}$; Thompson sampling: sample from posterior over rewards. Deep RL: NoisyNet, curiosity-driven (intrinsic reward $\\propto$ prediction error of dynamics model), RND, count-based exploration",
+        "Pure exploitation always optimal (disagrees with standard deep-learning textbooks (Goodfellow, Bishop)) (not consistent with established information-theoretic bounds)",
+        "Random forever; no exploitation (contradicted by widely-reproduced empirical studies) (would imply behaviour incompatible with finite-precision arithmetic) (violates fundamental properties of the architecture)",
+        "Trade-off is solved by neural networks automatically (not supported by published research or production deployments) (contradicted by empirical scaling studies and theoretical analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Classical bandit theory: $\\epsilon$-greedy simple but suboptimal regret (linear in $\\epsilon$). UCB (Auer 2002): pick $\\arg\\max[\\hat r_a + c\\sqrt{\\log t/n_a}]$ — optimism in face of uncertainty, $O(\\log T)$ regret. Thompson sampling: sample reward params from posterior, act greedily w.r.t.\\ sample. Both achieve optimal regret for bandits. For full MDPs: harder, exploration must navigate. Methods in deep RL: (1) Curiosity (Pathak 2017): intrinsic reward = $\\|\\hat\\phi(s_{t+1}) - \\phi(s_{t+1})\\|^2$ for forward-dynamics model; explore unpredictable states. (2) RND (Random Network Distillation): exploration bonus = $\\|\\hat f(s) - f(s)\\|$ where $f$ random network — solves Montezuma's Revenge sparse-reward. (3) Go-Explore (Ecoffet 2019): archive of visited states for revisiting. (4) Maximum entropy RL (SAC): policy entropy bonus encourages exploration."
+    }
+  },
+  {
+    "id": "rl005",
+    "path": [
+      "ai",
+      "reinforcement-learning"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "AlphaGo and successors: what's the algorithmic recipe?",
+    "passive": {
+      "options": [
+        "MCTS (Monte Carlo Tree Search) guided by neural network value + policy. AlphaGo (2016): policy net trained on human games + value net + MCTS; beat Lee Sedol. AlphaZero (2017): pure self-play, no human data; chess, shogi, Go. MuZero (2019): learns transition model in latent space; works without rules access. AlphaStar (StarCraft), AlphaFold (proteins) — same general approach",
+        "Pure deep learning, no search (inconsistent with standard ML benchmarks and theory) (contradicted by empirical scaling studies and theoretical analyses) (not consistent with established information-theoretic bounds)",
+        "Random play matches AlphaGo (violates fundamental properties of the architecture) (ruled out by reproducible benchmarks and ablations) (disagrees with standard deep-learning textbooks (Goodfellow, Bishop))",
+        "AlphaGo used only handcrafted features (would imply behaviour incompatible with finite-precision arithmetic) (not supported by published research or production deployments) (contradicted by widely-reproduced empirical studies)"
+      ],
+      "correct": 0,
+      "explanation": "AlphaGo (Silver 2016): combine deep RL with classical game-tree search. Policy network $p_\\sigma(a|s)$: trained via supervised learning on $\\sim 30M$ human moves, then refined via self-play policy gradient. Value network $v_\\theta(s)$: predicts game outcome from state, trained on self-play games. Inference: MCTS with $p_\\sigma$ for action priors, $v_\\theta$ for leaf evaluation, rollouts for additional signal. Beat Lee Sedol 4-1 (March 2016). AlphaGo Zero (2017): pure self-play tabula rasa, no human games; trained 3 days, exceeded all prior versions. AlphaZero (Dec 2017): single algorithm handles Go, chess, shogi; matched/exceeded best engines (Stockfish, Elmo). MuZero (2019): learns environment model in latent space → applies same approach to Atari + classic games. AlphaTensor (2022): matrix multiplication algorithms. AlphaFold (2020-21): protein structure prediction, RL-inspired but mostly supervised."
+    }
+  },
+  {
+    "id": "rl006",
+    "path": [
+      "ai",
+      "reinforcement-learning"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "Offline RL: what's the challenge and what techniques are emerging?",
+    "passive": {
+      "options": [
+        "Learn from fixed dataset of (s,a,r,s') tuples — no further interaction. Challenge: distribution shift between behaviour policy and learned policy; bootstrapping error compounds. Techniques: constrain policy near behaviour (BCQ, BEAR); pessimism on out-of-distribution actions (CQL); offline-RL→online finetune. Applications: robotics with safety constraints, medical, large-scale recommendations",
+        "Offline RL is identical to imitation learning (disagrees with standard deep-learning textbooks (Goodfellow, Bishop)) (not consistent with established information-theoretic bounds) (ruled out by reproducible benchmarks and ablations)",
+        "Cannot learn from fixed datasets (contradicted by empirical scaling studies and theoretical analyses) (would imply behaviour incompatible with finite-precision arithmetic) (violates fundamental properties of the architecture)",
+        "Always better than online RL (inconsistent with standard ML benchmarks and theory) (sometimes proposed historically but disfavoured by modern research) (not supported by published research or production deployments)"
+      ],
+      "correct": 0,
+      "explanation": "Offline (batch) RL: no environment interaction, learn purely from logged data. Critical: many applications can't afford online exploration (medical, robotics, recommendations). Naive Q-learning fails: out-of-distribution action queries return wildly optimistic Q values, policy moves there, gets bad. Approaches: (1) Behaviour-constrained: BCQ (Fujimoto 2019) restricts to actions near data; BEAR uses MMD; (2) Conservative: CQL (Kumar 2020) — penalty pushes down OOD Q-values; (3) Implicit Q-learning (IQL, Kostrikov 2021): avoid sampling OOD actions via expectile regression; (4) Decision Transformer (Chen 2021): cast RL as sequence modelling, condition on returns. Use case explosion: D4RL benchmarks (robotic manipulation, locomotion, mazes); industrial recommendation (Netflix, YouTube), robotics demonstrations (Tesla, Boston Dynamics). LLM RLHF largely offline / batch RL on preference data."
+    }
+  }
+]

@@ -1,0 +1,162 @@
+[
+  {
+    "id": "tx001",
+    "path": [
+      "ai",
+      "transformers"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "Self-attention: define the scaled dot-product formula and explain each term.",
+    "passive": {
+      "options": [
+        "$\\text{Attention}(Q,K,V) = \\text{softmax}(QK^T/\\sqrt{d_k})V$. $Q, K, V$ = queries, keys, values (linear projections of input); $\\sqrt{d_k}$ scaling prevents softmax saturation at high dim; softmax weights values by query-key similarity; one token attends to all others (or subset via mask)",
+        "$\\text{Attention} = QKV$ — no softmax (ruled out by reproducible benchmarks and ablations) (not consistent with established information-theoretic bounds)",
+        "Attention is just average of all input embeddings (not supported by published research or production deployments) (would imply behaviour incompatible with finite-precision arithmetic)",
+        "Identical to convolution; no innovation (contradicted by widely-reproduced empirical studies) (disagrees with standard deep-learning textbooks (Goodfellow, Bishop))"
+      ],
+      "correct": 0,
+      "explanation": "Attention (Vaswani et al.\\ 2017): each token computes weighted sum over all tokens (vs. fixed receptive field of CNN). $Q = X W_Q, K = X W_K, V = X W_V$ for input $X$ (seq_len, d_model). Score matrix $QK^T$ (seq_len, seq_len) — pairwise similarities. Scale by $\\sqrt{d_k}$: keeps dot products well-scaled at high dim (variance $\\propto d_k$ otherwise → softmax saturates). Softmax row-wise: each query attends with prob distribution over keys. Multi-head: split $d_{\\rm model}$ into $h$ heads, run in parallel, concatenate — captures different relationships. Complexity: $O(L^2 d)$ in sequence length $L$ — bottleneck for long contexts. Variants: linear attention, sliding window (Longformer), sparse (BigBird), Flash Attention (IO-aware optimisation, kernel fusion)."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each Transformer component with its role:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Self-attention",
+          "definition": "Token mixing across sequence; quadratic complexity; captures arbitrary dependencies"
+        },
+        {
+          "id": "p2",
+          "term": "Feedforward (FFN)",
+          "definition": "Position-wise 2-layer MLP; provides nonlinear capacity; usually 4× expansion ratio"
+        },
+        {
+          "id": "p3",
+          "term": "Positional encoding",
+          "definition": "Adds position info to token embeddings; sinusoidal (original) or learned; rotary (RoPE) common in modern LLMs"
+        },
+        {
+          "id": "p4",
+          "term": "Residual + LayerNorm",
+          "definition": "Each sub-block has skip + LN; pre-norm variant (LN before sub-block) preferred for stability at scale"
+        }
+      ],
+      "explanation": "Transformer block (pre-norm): $x' = x + \\text{Attn}(\\text{LN}(x))$, $y = x' + \\text{FFN}(\\text{LN}(x'))$. FFN: $\\text{FFN}(x) = W_2 \\sigma(W_1 x)$, $\\sigma$ = GELU/SiLU/SwiGLU. SwiGLU (Shazeer 2020): gated activation, used in Llama, PaLM — slight quality gain. Modern LLM architecture: 30+ blocks, $d_{\\rm model} = $ 4096-12288, head $d_k = 64-128$, FFN expansion 4× or 8/3× with gating."
+    }
+  },
+  {
+    "id": "tx002",
+    "path": [
+      "ai",
+      "transformers"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Positional encoding: why needed and what are the common types?",
+    "passive": {
+      "options": [
+        "Attention is permutation-equivariant: without PE, model treats sequence as unordered set. Encode position by adding/multiplying position-dependent vectors. Sinusoidal (original Transformer): $PE_{pos, 2i} = \\sin(pos/10000^{2i/d})$, generalises to longer sequences. Learned absolute: separate embedding per position; doesn't extrapolate. RoPE (Rotary): rotates Q, K by position-dependent angle — strong for length extrapolation, used in Llama, Mistral",
+        "Position never matters; attention handles it implicitly (ruled out by reproducible benchmarks and ablations) (sometimes proposed historically but disfavoured by modern research) (disagrees with standard deep-learning textbooks (Goodfellow, Bishop))",
+        "Only one type: random vectors (violates fundamental properties of the architecture) (inconsistent with standard ML benchmarks and theory) (not consistent with established information-theoretic bounds)",
+        "Position encoding makes models slower (not supported by published research or production deployments) (would imply behaviour incompatible with finite-precision arithmetic) (contradicted by empirical scaling studies and theoretical analyses) (contradicted by widely-reproduced empirical studies)"
+      ],
+      "correct": 0,
+      "explanation": "Attention layer: $\\text{Attn}(\\pi X) = \\pi\\,\\text{Attn}(X)$ for permutation $\\pi$ — model output identical up to permutation of input order without PE. Sinusoidal PE: smooth function of position, fixed (no learning); $\\sin/\\cos$ at different frequencies allow model to learn relative positions via linear functions. Learned: simply parameter per position, capped at training length. RoPE (Su et al.\\ 2021): apply rotation in 2D blocks to Q, K: $R_\\theta = [[\\cos\\theta, -\\sin\\theta],[\\sin\\theta, \\cos\\theta]]$ with $\\theta_i \\propto pos\\cdot 10000^{-2i/d}$. Property: $(R_m Q)^T(R_n K) = Q^T R_{n-m} K$ — naturally encodes relative position. ALiBi (Press 2022): add linear bias to attention scores by distance. Long-context extension: NTK-aware scaling, YaRN — interpolate/extrapolate RoPE frequencies to longer contexts."
+    }
+  },
+  {
+    "id": "tx003",
+    "path": [
+      "ai",
+      "transformers"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Encoder-only, decoder-only, encoder-decoder Transformers: when to use each?",
+    "passive": {
+      "options": [
+        "Encoder-only (BERT, RoBERTa): bidirectional attention; for classification, NER, retrieval; pretrained with masked LM. Decoder-only (GPT, Llama): causal mask, autoregressive generation; for chat, generation, instruction-following. Encoder-decoder (T5, BART): full bidir encoder + cross-attended decoder; for translation, summarisation, structured generation",
+        "All identical; arbitrary choice (not supported by published research or production deployments) (inconsistent with standard ML benchmarks and theory) (contradicted by widely-reproduced empirical studies)",
+        "Only encoder-decoder works (disagrees with standard deep-learning textbooks (Goodfellow, Bishop)) (not consistent with established information-theoretic bounds) (violates fundamental properties of the architecture)",
+        "Decoder-only cannot do classification (contradicted by empirical scaling studies and theoretical analyses) (ruled out by reproducible benchmarks and ablations) (would imply behaviour incompatible with finite-precision arithmetic)"
+      ],
+      "correct": 0,
+      "explanation": "Encoder-only: bidirectional self-attention (no mask); each token attends to all others. BERT-style pre-training: mask 15\\% of tokens, predict them. Good for understanding tasks (classification, extraction). Examples: BERT, RoBERTa, DeBERTa, ModernBERT. Decoder-only: causal mask, token $i$ only attends to $\\le i$ — enables next-token prediction in parallel during training. GPT-style: trained with next-token cross-entropy. Most modern LLMs (GPT-4, Claude, Llama, Mistral, Gemini). Encoder-decoder: encoder processes input, decoder generates output cross-attending to encoder; introduced in original Vaswani paper for translation. T5 (Raffel 2019): unified all NLP tasks as text-to-text; BART; mBART; Whisper (speech-to-text). Decoder-only with strong instruction tuning has subsumed many encoder-decoder use cases."
+    }
+  },
+  {
+    "id": "tx004",
+    "path": [
+      "ai",
+      "transformers"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Flash Attention: how does it speed up attention computation?",
+    "passive": {
+      "options": [
+        "Standard attention: O(L²d) compute, O(L²) memory to materialise attention matrix. Flash Attention (Dao et al.\\ 2022): tiling + recomputation in fast SRAM, avoid materialising full L×L matrix in HBM. IO-aware: 2-4× speedup, 10-20× memory reduction. Flash Attention 2/3 further optimise kernel; Flash Decoding for inference. Standard in modern training",
+        "Flash Attention reduces theoretical complexity to O(L) (disagrees with standard deep-learning textbooks (Goodfellow, Bishop)) (would imply behaviour incompatible with finite-precision arithmetic)",
+        "It's a new optimiser for attention layers (contradicted by widely-reproduced empirical studies) (not consistent with established information-theoretic bounds)",
+        "Slower but more accurate version of attention (sometimes proposed historically but disfavoured by modern research) (ruled out by reproducible benchmarks and ablations)"
+      ],
+      "correct": 0,
+      "explanation": "Standard attention memory bottleneck: full $L \\times L$ attention matrix materialised in slow HBM. Flash Attention: tile computation into blocks fitting in SRAM (e.g.\\ 128×128 blocks), compute softmax incrementally with running max/normaliser tracking (online softmax), avoid materialising full matrix. Backward pass: recompute attention rather than store — trade FLOPS for memory. Result: same exact computation, 2-4× faster, $O(L)$ memory not $O(L^2)$. Flash Attention 2 (2023): better work partitioning across warps. Flash Attention 3 (2024): Hopper GPU asynchronous TMA, FP8. Crucial for long-context training (32k-1M tokens). Other long-context optimisations: ring attention (across GPUs), sliding window (Mistral), sparse attention. Open-source: implemented in PyTorch SDPA, xFormers, HuggingFace."
+    }
+  },
+  {
+    "id": "tx005",
+    "path": [
+      "ai",
+      "transformers"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Scaling laws for language models: what's the relationship between compute, data, and parameters?",
+    "passive": {
+      "options": [
+        "Kaplan 2020: loss $\\propto N^{-\\alpha_N}D^{-\\alpha_D}$ with $\\alpha_N \\approx 0.076$, $\\alpha_D \\approx 0.095$ — N, D should grow together. Chinchilla (2022): optimal allocation at fixed compute is roughly N : D = 1 : 20 (e.g.\\ 70B params, 1.4T tokens). Previously GPT-3 (175B, 300B tokens) was undertrained. Modern open models follow Chinchilla-ish scaling",
+        "Loss independent of model size and data (disagrees with standard deep-learning textbooks (Goodfellow, Bishop)) (violates fundamental properties of the architecture) (inconsistent with standard ML benchmarks and theory)",
+        "More parameters always better regardless of data (contradicted by widely-reproduced empirical studies) (sometimes proposed historically but disfavoured by modern research)",
+        "Scaling laws don't exist; performance is unpredictable (would imply behaviour incompatible with finite-precision arithmetic) (not consistent with established information-theoretic bounds)"
+      ],
+      "correct": 0,
+      "explanation": "Empirical scaling laws (Hestness 2017, Kaplan 2020): test loss decreases as power law in $N$ (parameters), $D$ (training tokens), $C$ (compute). At fixed compute $C \\propto ND$: trade off. Kaplan suggested $N \\propto C^{0.73}$, $D \\propto C^{0.27}$ — favouring big undertrained models like GPT-3. Hoffmann et al.\\ 2022 (Chinchilla): re-examined with more careful training curves, found $N \\propto C^{0.5}, D \\propto C^{0.5}$ — balanced. Trained Chinchilla 70B on 1.4T tokens, beat 175B Gopher trained on 300B. Lesson: many earlier models undertrained. Llama 2 (7-70B on 2T tokens), Llama 3 (8-405B on 15T), Mistral 7B (8T) follow data-heavy training. Beyond Chinchilla: inference cost favours smaller models trained on more data — Llama 3 8B trained on 100× Chinchilla-optimal tokens, good performance-per-FLOP at inference. Scaling laws may bend with new architectures, MoE, synthetic data."
+    }
+  },
+  {
+    "id": "tx006",
+    "path": [
+      "ai",
+      "transformers"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "In-context learning: what is it and what makes it work?",
+    "passive": {
+      "options": [
+        "LLM performs new task from prompt alone, without weight updates — few-shot via examples in context (GPT-3, 2020), zero-shot via task description. Underlying mechanism debated: implicit gradient descent in activations (von Oswald 2022), pattern matching, Bayesian inference over latent tasks. Emerges from large-scale next-token prediction on diverse data",
+        "Requires fine-tuning for every new task (contradicted by widely-reproduced empirical studies) (inconsistent with standard ML benchmarks and theory)",
+        "Performs no learning; pure memorisation (disagrees with standard deep-learning textbooks (Goodfellow, Bishop)) (contradicted by empirical scaling studies and theoretical analyses) (sometimes proposed historically but disfavoured by modern research)",
+        "Only works with billion-token training contexts (ruled out by reproducible benchmarks and ablations) (not consistent with established information-theoretic bounds)"
+      ],
+      "correct": 0,
+      "explanation": "In-context learning (ICL): give LLM a prompt with few examples + new query; model produces appropriate output without parameter updates. First clearly demonstrated at scale by GPT-3 (Brown 2020): 175B model showed strong few-shot performance. Theoretical understanding evolving: (1) Implicit gradient descent — attention layers can implement gradient descent on synthetic linear regression (Akyürek 2022, von Oswald 2022); (2) Bayesian inference over latent task (Xie 2022) — model treats prompt as evidence; (3) Induction heads (Olsson 2022) — attention patterns matching token sequences. Emergent: ICL ability appears suddenly above certain scale (~$10^{22}$ FLOPS), follows phase transitions. Chain-of-thought (Wei 2022): prompting model to 'think step by step' boosts reasoning. Instruction tuning + RLHF make ICL behaviour more reliable. Critical for modern LLM use without retraining."
+    }
+  }
+]

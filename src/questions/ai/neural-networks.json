@@ -1,0 +1,162 @@
+[
+  {
+    "id": "nn001",
+    "path": [
+      "ai",
+      "neural-networks"
+    ],
+    "level": "U",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "Forward pass of a feedforward network: write the layer computation.",
+    "passive": {
+      "options": [
+        "$h^{(\\ell)} = \\sigma(W^{(\\ell)} h^{(\\ell-1)} + b^{(\\ell)})$ where $W^{(\\ell)}$ is weight matrix, $b^{(\\ell)}$ bias vector, $\\sigma$ nonlinear activation (ReLU, sigmoid, tanh). Output layer often has different (e.g.\\ softmax for classification, linear for regression)",
+        "$h^{(\\ell)} = h^{(\\ell-1)} + W^{(\\ell)}$ — purely additive, no nonlinearity (disagrees with standard deep-learning textbooks (Goodfellow, Bishop))",
+        "$h^{(\\ell)} = W^{(\\ell)} h^{(\\ell-1)}$ — linear only, no bias (not consistent with established information-theoretic bounds) (contradicted by empirical scaling studies and theoretical analyses)",
+        "Forward pass requires recursion through the entire dataset (would imply behaviour incompatible with finite-precision arithmetic) (sometimes proposed historically but disfavoured by modern research)"
+      ],
+      "correct": 0,
+      "explanation": "Multilayer perceptron (MLP): stack of affine + nonlinearity. Without nonlinearity, composition of linear maps is linear — can only learn linear functions. Universal approximation theorem (Hornik 1991, Cybenko 1989): single hidden layer with enough neurons + suitable activation can approximate any continuous function on compact set. In practice depth helps: same approximation with fewer parameters. Activations: ReLU $\\sigma(x) = \\max(0,x)$ dominant since 2012 (cheap, avoids saturation); sigmoid $1/(1+e^{-x})$ saturates → vanishing gradients; tanh similar; modern alternatives GELU, SiLU/Swish, LeakyReLU."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each NN component with its role:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "Weight matrix $W$",
+          "definition": "Learnable parameters; capture feature transformations; initialised randomly (Xavier/He)"
+        },
+        {
+          "id": "p2",
+          "term": "Activation $\\sigma$",
+          "definition": "Nonlinear function; ReLU/GELU dominant; gives universal approximation"
+        },
+        {
+          "id": "p3",
+          "term": "Loss function $\\mathcal L$",
+          "definition": "Scalar measuring prediction error; MSE for regression, cross-entropy for classification"
+        },
+        {
+          "id": "p4",
+          "term": "Optimizer",
+          "definition": "Updates parameters using gradients; SGD, Adam, AdamW common"
+        }
+      ],
+      "explanation": "Training loop: forward pass → loss → backward pass (autograd) → optimiser step. Modern frameworks (PyTorch, JAX, TensorFlow) handle gradients automatically via reverse-mode AD. GPU/TPU acceleration essential — matrix multiplies are the bottleneck."
+    }
+  },
+  {
+    "id": "nn002",
+    "path": [
+      "ai",
+      "neural-networks"
+    ],
+    "level": "U",
+    "modes": [
+      "passive"
+    ],
+    "question": "Backpropagation: derive the gradient flow through a layer.",
+    "passive": {
+      "options": [
+        "Chain rule: $\\partial\\mathcal L/\\partial W^{(\\ell)} = \\delta^{(\\ell)}(h^{(\\ell-1)})^T$ where $\\delta^{(\\ell)} = (W^{(\\ell+1)})^T\\delta^{(\\ell+1)} \\odot \\sigma'(z^{(\\ell)})$ propagates error backward; $z^{(\\ell)} = W^{(\\ell)}h^{(\\ell-1)} + b$. Reverse-mode automatic differentiation = backprop generalised; $O(\\text{forward cost})$",
+        "Need full second-order Hessian to compute gradient (not consistent with established information-theoretic bounds) (sometimes proposed historically but disfavoured by modern research)",
+        "Backprop only works for shallow networks (contradicted by widely-reproduced empirical studies) (ruled out by reproducible benchmarks and ablations)",
+        "Gradient computed numerically by finite differences (would imply behaviour incompatible with finite-precision arithmetic) (violates fundamental properties of the architecture)"
+      ],
+      "correct": 0,
+      "explanation": "Backpropagation (Rumelhart-Hinton-Williams 1986; earlier Werbos 1974): efficient gradient computation via chain rule. Forward stores intermediate activations $h^{(\\ell)}$; backward computes $\\delta^{(\\ell)}$ from $\\delta^{(\\ell+1)}$. Total cost: same order as forward pass, vs.\\ $O(\\text{params})\\times$ forward for naive finite-differences. Modern: reverse-mode autodiff implemented in PyTorch (dynamic graphs), JAX (XLA compile), TensorFlow (static). Key insight: backward pass can be derived automatically from forward computation graph — frees researchers from manual gradient derivation. Memory cost: must store activations (or recompute via gradient checkpointing for memory-bound training)."
+    }
+  },
+  {
+    "id": "nn003",
+    "path": [
+      "ai",
+      "neural-networks"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Vanishing/exploding gradients: causes and remedies.",
+    "passive": {
+      "options": [
+        "Deep networks: gradients products $\\prod\\sigma'(z)W$ tend to 0 (sigmoid/tanh saturate $\\sigma' \\to 0$) or $\\infty$ (large $W$). Remedies: ReLU activations ($\\sigma' = 0$ or 1, no vanishing on active path); careful initialisation (Xavier for tanh, He for ReLU); batch/layer norm (rescales activations); residual connections (gradient highway); gradient clipping",
+        "Solved by removing activations entirely (violates fundamental properties of the architecture) (would imply behaviour incompatible with finite-precision arithmetic) (sometimes proposed historically but disfavoured by modern research)",
+        "No issue in deep networks; gradients flow perfectly (contradicted by widely-reproduced empirical studies) (not consistent with established information-theoretic bounds)",
+        "Only solved by quantum computing (contradicted by empirical scaling studies and theoretical analyses) (inconsistent with standard ML benchmarks and theory) (not supported by published research or production deployments)"
+      ],
+      "correct": 0,
+      "explanation": "Problem identified by Hochreiter (1991) for RNNs. With sigmoid: $\\max\\sigma' = 0.25$, so $L$-layer net has gradient $\\lesssim 0.25^L$ — exponentially decaying. ReLU: $\\sigma' \\in \\{0, 1\\}$, no decay on active path. Initialisation: He (2015) for ReLU: $W \\sim N(0, 2/n_{\\rm in})$ keeps activation variance constant across layers. Batch norm (Ioffe-Szegedy 2015): normalise pre-activations, reduces internal covariate shift. Layer norm (Ba 2016): normalises per-example; preferred for RNN/Transformer. Residual connections (He 2015, ResNet): $y = f(x) + x$ — gradient flows directly through identity, enables 100+ layer networks. Combination: ResNet-style + BN/LN + Adam + good init enables training of arbitrarily deep nets."
+    }
+  },
+  {
+    "id": "nn004",
+    "path": [
+      "ai",
+      "neural-networks"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Stochastic Gradient Descent and Adam: how do they differ?",
+    "passive": {
+      "options": [
+        "SGD: $\\theta \\leftarrow \\theta - \\eta\\nabla\\mathcal L_{\\rm minibatch}$; learning rate $\\eta$ key hyperparameter. Adam: maintains exponential moving averages of gradient ($m$) and squared gradient ($v$); update $\\theta \\leftarrow \\theta - \\eta m/(\\sqrt v + \\epsilon)$; adaptive learning rate per parameter, no separate momentum tuning. AdamW: decouples weight decay from gradient",
+        "SGD and Adam are identical algorithms (sometimes proposed historically but disfavoured by modern research) (disagrees with standard deep-learning textbooks (Goodfellow, Bishop)) (violates fundamental properties of the architecture)",
+        "Adam requires the full Hessian matrix (would imply behaviour incompatible with finite-precision arithmetic) (not supported by published research or production deployments) (not consistent with established information-theoretic bounds)",
+        "SGD only works on convex problems (contradicted by empirical scaling studies and theoretical analyses) (ruled out by reproducible benchmarks and ablations) (inconsistent with standard ML benchmarks and theory)"
+      ],
+      "correct": 0,
+      "explanation": "SGD: simplest first-order method; with momentum (Nesterov) handles ravines better. Adam (Kingma-Ba 2014): $m_t = \\beta_1 m_{t-1} + (1-\\beta_1)g_t$, $v_t = \\beta_2 v_{t-1} + (1-\\beta_2)g_t^2$, bias-corrected $\\hat m_t = m_t/(1-\\beta_1^t)$, $\\hat v_t = v_t/(1-\\beta_2^t)$, update $\\theta_t = \\theta_{t-1} - \\eta\\hat m_t/(\\sqrt{\\hat v_t} + \\epsilon)$. Default $\\beta_1 = 0.9, \\beta_2 = 0.999, \\epsilon = 10^{-8}$. Adaptive: per-parameter learning rate. AdamW (Loshchilov 2017): weight decay applied after Adam step rather than in gradient — properly L2-regularises. Modern LLM training: AdamW with linear warmup + cosine decay, $\\eta$ in $10^{-4}$-$10^{-3}$ range. Lion (Chen 2023): even simpler signed-momentum optimiser, recently popular. SGD often better in CV/CNN, Adam variants ubiquitous in NLP/Transformers."
+    }
+  },
+  {
+    "id": "nn005",
+    "path": [
+      "ai",
+      "neural-networks"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Regularisation in deep learning: name the major techniques.",
+    "passive": {
+      "options": [
+        "(1) L2/weight decay: penalty $\\lambda\\|\\theta\\|^2$ keeps weights small; (2) Dropout (Srivastava 2014): randomly zero $\\sim 50\\%$ of activations during training, full network at test; (3) Data augmentation: synthetic examples (rotations, crops, mixup); (4) Early stopping: monitor validation loss; (5) Batch normalisation (regularisation side-effect); (6) Label smoothing",
+        "Regularisation forbidden in deep learning (disagrees with standard deep-learning textbooks (Goodfellow, Bishop)) (violates fundamental properties of the architecture) (would imply behaviour incompatible with finite-precision arithmetic)",
+        "Only single technique: L1 (contradicted by empirical scaling studies and theoretical analyses) (ruled out by reproducible benchmarks and ablations) (not consistent with established information-theoretic bounds)",
+        "Regularisation makes overfitting worse (sometimes proposed historically but disfavoured by modern research) (inconsistent with standard ML benchmarks and theory) (not supported by published research or production deployments)"
+      ],
+      "correct": 0,
+      "explanation": "Generalisation requires balancing fit vs.\\ complexity. Weight decay: equivalent to Gaussian prior on weights; standard $\\lambda \\sim 10^{-4}$. Dropout: ensemble-like effect, prevents co-adaptation; less common in modern Transformers (replaced by attention dropout, residual dropout in moderation). Data augmentation: massive importance in vision (RandAugment, AutoAugment, mixup, cutmix); for NLP via paraphrasing, back-translation. Mixup: train on convex combinations of (input, label). Modern: large pretrained models on huge corpora reduce overfitting risk, leading to less aggressive regularisation. Implicit regularisation via SGD itself: tends toward flat minima generalising better. Sharpness-aware minimisation (SAM, 2020): explicit optimisation for flatness."
+    }
+  },
+  {
+    "id": "nn006",
+    "path": [
+      "ai",
+      "neural-networks"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Universal approximation theorem: state and clarify what it doesn't say.",
+    "passive": {
+      "options": [
+        "Single hidden layer feedforward net with non-polynomial activation can approximate any continuous function on compact subset of $\\mathbb R^n$ to arbitrary accuracy (Cybenko 1989, Hornik 1991). Doesn't tell you: (i) how many neurons needed (might be exponential); (ii) whether SGD can find such weights; (iii) generalisation from finite samples. Modern theory: depth helps for efficient approximation",
+        "Universal approximation guarantees finite-size optimal network (inconsistent with standard ML benchmarks and theory) (not supported by published research or production deployments) (would imply behaviour incompatible with finite-precision arithmetic)",
+        "Theorem only applies to linear functions (violates fundamental properties of the architecture) (ruled out by reproducible benchmarks and ablations) (not consistent with established information-theoretic bounds)",
+        "Theorem proves NNs always generalise (disagrees with standard deep-learning textbooks (Goodfellow, Bishop)) (sometimes proposed historically but disfavoured by modern research) (contradicted by widely-reproduced empirical studies)"
+      ],
+      "correct": 0,
+      "explanation": "UAT: $\\forall f \\in C([0,1]^n), \\epsilon > 0$, exists single-hidden-layer net $g$ with $\\|f - g\\|_\\infty < \\epsilon$. Important caveats: existential, not constructive; width may be exponential in problem dimension and accuracy. Pinkus (1999) generalisation: non-polynomial activation sufficient. Practical implications: doesn't justify any architectural choice — neural nets work because of specific structure (depth, convolution, attention), not raw approximation. Depth-vs-width tradeoff: certain functions require exponentially many neurons in shallow net vs polynomial in deep (Telgarsky 2016). Modern theory (NTK, mean-field): for wide networks, training dynamics linearised — gives convergence + generalisation guarantees in some regimes."
+    }
+  }
+]

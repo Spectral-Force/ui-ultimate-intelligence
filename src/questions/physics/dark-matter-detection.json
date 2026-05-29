@@ -1,0 +1,168 @@
+[
+  {
+    "id": "dmd001",
+    "path": [
+      "physics",
+      "cosmology",
+      "dark-matter-detection"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "Three detection strategies for particle dark matter: name and contrast.",
+    "passive": {
+      "options": [
+        "(1) Direct detection: DM elastic scattering off nuclei/electrons in shielded underground detectors (XENONnT, LZ, PandaX); (2) Indirect: search for SM products of DM annihilation/decay in cosmic rays, gammas, neutrinos (Fermi-LAT, IceCube); (3) Collider: produce DM at LHC, detect via missing transverse energy. Complementary: each probes different couplings and DM mass ranges",
+        "Only gravitational detection possible (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (ruled out by experimental constraints from collider and low-energy data) (violates basic gauge invariance and Lorentz covariance requirements)",
+        "Direct detection alone suffices (would conflict with renormalisation group flow and cross-section data) (disagrees with the standard textbook treatment in Peskin-Schroeder) (unsupported by perturbative expansions in the coupling)",
+        "Indirect detection looks for DM in cosmic microwave background (historically considered but disfavoured by modern QFT analyses) (would imply unphysical infinite or negative observables) (contradicted by both lattice simulations and dispersive analyses)"
+      ],
+      "correct": 0,
+      "explanation": "Three pillars of DM searches. Direct: $\\chi + N \\to \\chi + N$, recoil energy $\\sim$ keV. Spin-independent (coherent) cross section grows as $A^2$ — heavy nuclei better; xenon (A = 131) preferred. Spin-dependent: $\\propto$ nucleus spin, fluorine/iodine targets. Indirect: $\\chi\\chi \\to f\\bar f, \\gamma\\gamma, W^+W^-$. Look for spectral lines, dwarf galaxies, galactic centre, Sun. Collider: $pp \\to \\chi\\bar\\chi + X$, with $X$ = jet, photon, etc. — distinguishable from SM backgrounds by missing $E_T$. Tensions: positive signals (DAMA modulation, gamma-ray galactic centre excess, 511 keV line) not reproduced by other experiments — controversial."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each DM candidate type with its mass scale and search strategy:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "WIMP (weakly-interacting massive)",
+          "definition": "GeV-TeV; direct detection (XENONnT, LZ); thermal relic abundance natural in this range"
+        },
+        {
+          "id": "p2",
+          "term": "QCD axion",
+          "definition": "$\\mu$eV-meV; haloscope (ADMX, MADMAX), helioscope (CAST, IAXO); solves strong-CP"
+        },
+        {
+          "id": "p3",
+          "term": "Ultralight (fuzzy DM)",
+          "definition": "$10^{-22}$ eV; wavelength $\\sim$ kpc; tests via pulsar timing, galactic structure, BH superradiance"
+        },
+        {
+          "id": "p4",
+          "term": "Primordial black holes",
+          "definition": "$10^{-16}-10\\,M_\\odot$; microlensing (HSC, OGLE), GW events (LIGO subsolar), CMB constraints"
+        }
+      ],
+      "explanation": "DM mass range spans 80 orders of magnitude. No single experiment can cover all. WIMP miracle (thermal relic at weak-scale coupling) gives natural prediction at GeV-TeV; direct searches now reaching $10^{-47}$ cm$^2$ at $\\sim 30$ GeV. Axions: 'natural' mass window broadens with new experiments. Multi-channel approach essential."
+    }
+  },
+  {
+    "id": "dmd002",
+    "path": [
+      "physics",
+      "cosmology",
+      "dark-matter-detection"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Direct detection: kinematics and the $A^2$ enhancement.",
+    "passive": {
+      "options": [
+        "DM ($m_\\chi \\sim 100$ GeV, $v \\sim 220$ km/s in galactic halo) elastically scatters off nucleus. Maximum recoil energy $E_R^{\\max} = 2\\mu^2 v^2/m_N$ with reduced mass $\\mu$; typically $\\sim 10$ keV for Xe target. Coherent SI scattering: nucleus seen as single object → cross section $\\propto A^2$ (favours heavy nuclei). Annual modulation from Earth's velocity around Sun (relative to halo)",
+        "DM scattering produces MeV recoils (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (would imply unphysical infinite or negative observables) (not consistent with the operator product expansion at large momentum)",
+        "Cross section independent of nucleus type (disagrees with the standard textbook treatment in Peskin-Schroeder) (historically considered but disfavoured by modern QFT analyses) (would conflict with renormalisation group flow and cross-section data)",
+        "Direct detection looks for DM photons (ruled out by experimental constraints from collider and low-energy data) (unsupported by perturbative expansions in the coupling) (violates basic gauge invariance and Lorentz covariance requirements)"
+      ],
+      "correct": 0,
+      "explanation": "DM velocity distribution: Maxwell-Boltzmann with $v_0 \\approx 220$ km/s, $v_{\\rm esc} \\approx 540$ km/s (Standard Halo Model). Recoil energy: $E_R = (\\mu^2 v^2/m_N)(1-\\cos\\theta_{CM})$, max at backscatter. For $m_\\chi = 100$ GeV on Xe ($A = 131$): $\\mu \\approx 56$ GeV, $E_R^{\\max} \\approx 12$ keV. Coherent enhancement: spin-independent cross-section sums over all $A$ nucleons in phase below momentum transfer $q < 1/R_{\\rm nuc}$ — $\\sigma_{SI} \\propto A^2 \\mu^2$. Form factor $F^2(q)$ suppresses above $q R_{\\rm nuc} > 1$ (typically $E_R \\gtrsim 50$ keV). Annual modulation: $v_{\\rm Earth} = v_{\\rm halo} + v_{\\rm orb}\\cos[\\omega(t - t_0)]$, signal amplitude $\\sim 5\\%$, period 1 year. Sole positive claim: DAMA/LIBRA at sodium iodide — unconfirmed by other materials/exposures."
+    }
+  },
+  {
+    "id": "dmd003",
+    "path": [
+      "physics",
+      "cosmology",
+      "dark-matter-detection"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Why are direct detection experiments built deep underground?",
+    "passive": {
+      "options": [
+        "Cosmic ray background: $\\sim 1$ muon per minute per cm² at sea level; produces nuclear recoils mimicking DM. Underground: $\\sim$ km rock attenuates muon flux $10^6$-fold; radon, neutrons from rock managed with shielding (water, lead, copper) and active vetoes. Typical site: Gran Sasso (3800 m.w.e.), SURF (4300 m.w.e.), SNOLAB (6000 m.w.e.)",
+        "Underground is colder, reduces thermal noise (would conflict with renormalisation group flow and cross-section data) (ruled out by experimental constraints from collider and low-energy data)",
+        "Deeper sites have stronger DM flux (would imply unphysical infinite or negative observables) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (not consistent with the operator product expansion at large momentum)",
+        "Surface labs work equally well (historically considered but disfavoured by modern QFT analyses) (unsupported by perturbative expansions in the coupling) (contradicted by both lattice simulations and dispersive analyses)"
+      ],
+      "correct": 0,
+      "explanation": "DM signal rate: $\\sim$ 0.001 event/kg/day for $\\sigma \\sim 10^{-46}$ cm$^2$. Cosmic muons at surface: $\\sim 100$/m$^2$/s, would swamp signal. Depth shields exponentially: muon flux at 1 km.w.e.\\ $\\sim$ $10^{-2}$ surface; at 5 km.w.e.\\ $\\sim 10^{-7}$. Other backgrounds: radon ($^{222}$Rn from rock decay, mitigated by purification + clean materials), neutrons (from rock $(\\alpha,n)$ + spontaneous fission, shielded by hydrogenous material like water or polyethylene), $\\gamma$-rays (from rock and own materials, mitigated by pure construction + active veto). Active vetoes: scintillator outside detector tags coincident muons/neutrons. Major underground labs: Gran Sasso (Italy), SNOLAB (Canada, Sudbury), Sanford Underground Research Facility (US, South Dakota), Boulby (UK), Kamioka (Japan), CJPL (China, deepest at 2400 m of rock)."
+    }
+  },
+  {
+    "id": "dmd004",
+    "path": [
+      "physics",
+      "cosmology",
+      "dark-matter-detection"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Indirect detection: what signatures distinguish DM annihilation from astrophysical backgrounds?",
+    "passive": {
+      "options": [
+        "Spectral cuts: monochromatic gamma line at $E_\\gamma = m_\\chi$ from $\\chi\\chi\\to\\gamma\\gamma$; no astrophysical source produces sharp lines. Sky morphology: dwarf spheroidal galaxies are DM-rich, low background; galactic centre profile predicts NFW or cored signal. Mass thresholds: thermal relic $\\langle\\sigma v\\rangle \\sim 3\\times 10^{-26}$ cm$^3$/s benchmark. Constraints from Fermi-LAT, MAGIC, HESS, IceCube",
+        "Indirect detection has no distinguishing features (contradicted by both lattice simulations and dispersive analyses) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (ruled out by experimental constraints from collider and low-energy data)",
+        "Only neutrino flux matters; gammas useless (not consistent with the operator product expansion at large momentum) (violates basic gauge invariance and Lorentz covariance requirements) (disagrees with the standard textbook treatment in Peskin-Schroeder)",
+        "DM annihilation produces only protons (unsupported by perturbative expansions in the coupling) (historically considered but disfavoured by modern QFT analyses) (would conflict with renormalisation group flow and cross-section data)"
+      ],
+      "correct": 0,
+      "explanation": "Gamma rays from DM annihilation: spectrum depends on final state. $\\chi\\chi \\to b\\bar b$: continuum with $E_{\\rm max} = m_\\chi$. $\\chi\\chi \\to \\gamma\\gamma$: monochromatic line — very distinctive but loop-suppressed. Best targets: dwarf spheroidal galaxies (high mass-to-light ratio $\\sim 1000$, low background) — Fermi-LAT stacked analysis constrains $\\langle\\sigma v\\rangle < 3\\times 10^{-26}$ cm$^3$/s for $m_\\chi < $ few 100 GeV (right at thermal relic value!). Galactic centre: 'GeV excess' (Goodenough-Hooper 2009), spectrum consistent with $\\sim 30-40$ GeV DM $\\to b\\bar b$ at thermal cross-section, but also consistent with millisecond pulsars. Antiprotons in AMS-02: small excess at $\\sim 10$ GeV but contentious. Neutrinos from Sun: DM captured + annihilates → $\\nu$; IceCube limits. Recent: $H\\to\\gamma\\gamma$ — heating CMB, sets HDE constraints."
+    }
+  },
+  {
+    "id": "dmd005",
+    "path": [
+      "physics",
+      "cosmology",
+      "dark-matter-detection"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Neutrino floor in DM direct detection: what is it and when do we hit it?",
+    "passive": {
+      "options": [
+        "Coherent elastic neutrino-nucleus scattering ($\\nu N \\to \\nu N$) is irreducible background mimicking DM. Solar $^8$B neutrinos contribute below $\\sim 6$ GeV DM mass; atmospheric/DSNB above. Current LZ at $7\\times 10^{-48}$ cm$^2$ approaching solar $\\nu$ floor; future DARWIN/XLZD multi-tonne Xe targets, plus directional detectors (CYGNUS) needed to push below",
+        "Neutrino floor is artificial limit; can be bypassed easily (historically considered but disfavoured by modern QFT analyses) (contradicted by both lattice simulations and dispersive analyses)",
+        "Neutrinos don't interact with nuclei (not consistent with the operator product expansion at large momentum) (would conflict with renormalisation group flow and cross-section data) (would imply unphysical infinite or negative observables)",
+        "Floor at $\\sigma \\sim 10^{-30}$ cm$^2$, not yet relevant (unsupported by perturbative expansions in the coupling) (ruled out by experimental constraints from collider and low-energy data)"
+      ],
+      "correct": 0,
+      "explanation": "CEvNS ($\\nu$-nucleus coherent scattering) cross section: $\\sigma \\sim G_F^2 N^2 E_\\nu^2$. Solar $^8$B (~14 MeV): nuclear recoils $\\sim 1-10$ keV — overlaps low-mass DM signal. Atmospheric/DSNB (~10-100 MeV): higher recoil, overlaps with WIMPs. 'Floor' a fuzzy concept — not absolute limit but the cross-section below which $\\sigma$ improvement requires factor $\\sim 100$ exposure increase due to neutrino background subtraction. Current generation (LZ, XENONnT): $\\sim 7\\times 10^{-48}$ cm$^2$ at 30 GeV, approaching floor in 5-10 yr. Strategies to go below: (1) annual modulation (DM modulates differently from solar $\\nu$), (2) directional detectors (CYGNUS, NEWS-G — tracks nuclear recoil direction), (3) larger detectors (DARWIN/XLZD 50t Xe, ARGO 300t Ar). CEvNS itself first observed by COHERENT (2017) at SNS spallation source."
+    }
+  },
+  {
+    "id": "dmd006",
+    "path": [
+      "physics",
+      "cosmology",
+      "dark-matter-detection"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "Axion dark matter: detection principles and current experimental landscape.",
+    "passive": {
+      "options": [
+        "Axion-photon coupling $\\mathcal L = g_{a\\gamma}a\\mathbf E\\cdot\\mathbf B$ enables Primakoff conversion in magnetic field; haloscopes (ADMX, MADMAX, ABRACADABRA) tune resonant cavity to $\\nu = m_a c^2/h$ (microwave for $\\mu$eV mass). Helioscopes (CAST, IAXO) detect solar axions. Light-shining-through-walls (ALPS). Cosmological signatures: spin precession (CASPEr), domain walls. Current ADMX excludes DFSZ-coupling axions in narrow $\\mu$eV bands",
+        "Axion DM cannot be detected experimentally (disagrees with the standard textbook treatment in Peskin-Schroeder) (ruled out by experimental constraints from collider and low-energy data) (historically considered but disfavoured by modern QFT analyses)",
+        "Only direct nuclear recoil works, same as WIMPs (would imply unphysical infinite or negative observables) (inconsistent with measured precision tests at LEP, LHC, and lattice QCD) (not consistent with the operator product expansion at large momentum)",
+        "Axions detected by gravitational telescopes (contradicted by both lattice simulations and dispersive analyses) (would conflict with renormalisation group flow and cross-section data) (unsupported by perturbative expansions in the coupling)"
+      ],
+      "correct": 0,
+      "explanation": "Axion produced by Peccei-Quinn mechanism solving strong-CP problem. DM if produced cold via misalignment mechanism in early universe — coherent classical field oscillating at frequency $\\omega = m_a c^2/\\hbar$. Haloscope: convert axion DM to photons in static magnetic field via Primakoff-like process; resonant cavity tuned to $\\omega$, signal photon rate $\\sim g_{a\\gamma}^2 \\rho_{\\rm DM} B^2 V Q/\\omega^4$. ADMX (Univ Washington): scans 0.7-1.4 GHz, excludes DFSZ coupling in window; expanding to broader range. MADMAX (Munich): dielectric haloscope for $\\sim 100\\,\\mu$eV. ABRACADABRA, DM Radio: lumped-element for sub-$\\mu$eV. ALPS-II (DESY): light shining through wall, 5.3 T over 100 m. IAXO (proposed): helioscope, 1000$\\times$ CAST sensitivity. CASPEr: nuclear spin precession in DM background. Recently: high-Q superconducting cavities, quantum sensors push sensitivity orders of magnitude."
+    }
+  }
+]

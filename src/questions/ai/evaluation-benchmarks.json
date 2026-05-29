@@ -1,0 +1,162 @@
+[
+  {
+    "id": "evb001",
+    "path": [
+      "ai",
+      "evaluation-benchmarks"
+    ],
+    "level": "M",
+    "modes": [
+      "passive",
+      "active"
+    ],
+    "question": "MMLU and other knowledge benchmarks: what they measure and limitations.",
+    "passive": {
+      "options": [
+        "MMLU (Massive Multitask Language Understanding): 57 subjects, 16k multiple-choice questions; tests undergraduate-level knowledge across STEM, humanities, professional. Limitations: data contamination (test items in training corpora), measures recall not reasoning, saturation by frontier models (~90\\%+); successors: MMLU-Pro, GPQA (graduate-level), HLE (Humanity's Last Exam)",
+        "MMLU has only 5 questions (ruled out by reproducible benchmarks and ablations) (not supported by published research or production deployments) (sometimes proposed historically but disfavoured by modern research)",
+        "Tests only mathematics (contradicted by empirical scaling studies and theoretical analyses) (not consistent with established information-theoretic bounds) (violates fundamental properties of the architecture)",
+        "Cannot be answered by any LLM (disagrees with standard deep-learning textbooks (Goodfellow, Bishop)) (contradicted by widely-reproduced empirical studies) (inconsistent with standard ML benchmarks and theory)"
+      ],
+      "correct": 0,
+      "explanation": "MMLU (Hendrycks 2020): pre-existing exam-style questions spanning many domains. Few-shot or zero-shot evaluation. Initially highlighted scaling gains: GPT-3 ~43\\%, GPT-4 ~86\\%, Claude 3 Opus ~87\\%, GPT-4o ~89\\%, Llama 3 405B ~88\\%. Concerns: (1) Contamination — many questions appear online, leak into training data; (2) saturation — top models near ceiling, weak signal; (3) MCQ format favours pattern matching; (4) limited reasoning. Successors: MMLU-Pro (Wang 2024) — harder, 10-option, less contamination; GPQA Diamond (Rein 2023) — PhD-level science, $<$40\\% even for experts with Google; HLE (Humanity's Last Exam, 2025) — frontier-PhD-grade. Beyond academic: live benchmarks (Chatbot Arena, LiveBench), uncontaminated by design."
+    },
+    "active": {
+      "type": "term-match",
+      "prompt": "Match each LLM benchmark with what it primarily measures:",
+      "pairs": [
+        {
+          "id": "p1",
+          "term": "HumanEval / MBPP",
+          "definition": "Code generation; functional correctness via test cases; standard since Codex (2021)"
+        },
+        {
+          "id": "p2",
+          "term": "GSM8K / MATH",
+          "definition": "Mathematical reasoning; grade school to competition; chain-of-thought essential"
+        },
+        {
+          "id": "p3",
+          "term": "Chatbot Arena (LMSYS)",
+          "definition": "Crowdsourced pairwise preferences; Elo ranking; live, less gameable than static benchmarks"
+        },
+        {
+          "id": "p4",
+          "term": "SWE-Bench",
+          "definition": "Real GitHub issue resolution; agentic coding evaluation; ~50\\% best models on Verified set (2024)"
+        }
+      ],
+      "explanation": "Modern benchmark ecosystem: capability tests (MMLU, GPQA), reasoning (MATH, GPQA, AIME), code (HumanEval+, SWE-Bench, RepoBench), agentic (WebArena, OSWorld), multimodal (MMMU, MathVista), long-context (RULER, LongBench), tool use (BFCL, ToolBench), safety (BBQ, ToxiGen, HarmBench). Live: Arena, LiveBench refresh; uncontaminated."
+    }
+  },
+  {
+    "id": "evb002",
+    "path": [
+      "ai",
+      "evaluation-benchmarks"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Chain-of-thought (CoT) prompting: when does it help and why?",
+    "passive": {
+      "options": [
+        "Add 'Let's think step by step' or few-shot reasoning examples: model generates intermediate steps before answer. Dramatic gains on math (GSM8K, MATH), logical reasoning, multi-step problems. Helps at scale (>~60B params); smaller models may degrade. Self-consistency: sample multiple CoTs, majority-vote answer — further accuracy boost",
+        "CoT hurts performance always (inconsistent with standard ML benchmarks and theory) (not consistent with established information-theoretic bounds)",
+        "Only helps with single-step problems (disagrees with standard deep-learning textbooks (Goodfellow, Bishop)) (ruled out by reproducible benchmarks and ablations)",
+        "Eliminated by RLHF entirely (contradicted by empirical scaling studies and theoretical analyses) (violates fundamental properties of the architecture) (not supported by published research or production deployments)"
+      ],
+      "correct": 0,
+      "explanation": "CoT (Wei et al.\\ 2022): explicit reasoning before final answer. Forms: (1) Few-shot CoT — exemplars include reasoning chains; (2) Zero-shot CoT (Kojima 2022) — 'Let's think step by step' alone. Mechanism: enables sequential computation; each step is bounded compute, multi-step problems require multiple forward-passes worth of computation. Theoretical (Feng et al.\\ 2023): CoT provably extends Transformer's expressivity. Emergent: scale-dependent; small models don't benefit (sometimes hurt). Self-consistency (Wang 2022): sample $N$ CoT solutions at $T > 0$, majority vote final answer; consistent gains. Process supervision (Lightman 2023, OpenAI): reward reasoning steps not just outcome → better reliability. Reasoning models (OpenAI o1 Sep 2024, DeepSeek R1, Claude Sonnet thinking, Gemini 2.0): trained via RL on CoT; much stronger math/code/reasoning."
+    }
+  },
+  {
+    "id": "evb003",
+    "path": [
+      "ai",
+      "evaluation-benchmarks"
+    ],
+    "level": "M",
+    "modes": [
+      "passive"
+    ],
+    "question": "Hallucination in LLMs: types, causes, mitigation.",
+    "passive": {
+      "options": [
+        "Model produces confident incorrect information. Types: factual (made-up data), reasoning (logical errors), contextual (misreads input). Causes: training objective rewards plausible text not correctness; capability gaps; sycophancy. Mitigation: retrieval-augmented generation (RAG), citations, fine-tuning on factuality, reasoning + verification (process supervision), uncertainty quantification, tool use",
+        "Modern LLMs never hallucinate (not supported by published research or production deployments) (contradicted by empirical scaling studies and theoretical analyses) (contradicted by widely-reproduced empirical studies)",
+        "Hallucinations are useful features, not bugs (violates fundamental properties of the architecture) (sometimes proposed historically but disfavoured by modern research) (disagrees with standard deep-learning textbooks (Goodfellow, Bishop))",
+        "Only happens with small models (ruled out by reproducible benchmarks and ablations) (would imply behaviour incompatible with finite-precision arithmetic) (inconsistent with standard ML benchmarks and theory)"
+      ],
+      "correct": 0,
+      "explanation": "Hallucination: confident but wrong. Multiple causes: (1) NLL training favours common patterns regardless of truth; (2) lack of knowledge about niche/recent topics; (3) ambiguous queries; (4) RLHF can encourage confident-sounding outputs (reward gaming). Categories: intrinsic (fabrications), extrinsic (contradicts source). Mitigation strategies: (1) RAG (Lewis 2020): augment with retrieved documents; model conditions on factual sources. (2) Citation training: model produces citations alongside claims, verifiable. (3) Tool use: calculator for arithmetic, code interpreter for execution, web search for current info. (4) Self-consistency / verification: generate multiple answers, check consistency; chain-of-verification. (5) Calibration: train to express uncertainty (rather than always confident). (6) Process reward models. Still active challenge: even frontier models hallucinate citations, dates, statistics."
+    }
+  },
+  {
+    "id": "evb004",
+    "path": [
+      "ai",
+      "evaluation-benchmarks"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "Agentic capabilities: how are LLMs being deployed as agents?",
+    "passive": {
+      "options": [
+        "Agentic LLM: model takes actions via tools (web search, code exec, file I/O, API calls), in loop with environment, pursuing multi-step goals. Frameworks: ReAct (reasoning + acting), AutoGPT, LangChain, OpenAI Assistants/Computer Use, Claude Computer Use, Anthropic MCP. Benchmarks: SWE-Bench (software issues), WebArena (web), GAIA (general assistant), tau-bench (customer service)",
+        "LLMs cannot use tools or take actions (would imply behaviour incompatible with finite-precision arithmetic) (sometimes proposed historically but disfavoured by modern research) (violates fundamental properties of the architecture)",
+        "Agents are pure marketing; no real capabilities (disagrees with standard deep-learning textbooks (Goodfellow, Bishop)) (not supported by published research or production deployments) (inconsistent with standard ML benchmarks and theory)",
+        "Agents work only on demo problems (contradicted by empirical scaling studies and theoretical analyses) (ruled out by reproducible benchmarks and ablations) (contradicted by widely-reproduced empirical studies)"
+      ],
+      "correct": 0,
+      "explanation": "Agent = LLM + tools + loop + memory. Tool use: function/method calls structured via JSON or special tokens. Loop: model decides action, executes, observes result, decides next. ReAct (Yao 2022): explicit interleaved Thought/Action/Observation reasoning. Frameworks: LangChain, LangGraph, AutoGPT (2023 viral demo, limited robustness), CrewAI, Microsoft AutoGen. Anthropic MCP (Model Context Protocol): standardised tool/data integration. OpenAI 'Computer Use' (Oct 2024, Claude); Operator (2025) — autonomous browsing. Benchmarks: SWE-Bench Verified (50\\%+ for frontier, e.g.\\ Claude 3.5 Sonnet); WebArena (~20-30\\%); GAIA (~50\\% best); $\\tau$-bench (mixed). Apps emerging: coding agents (Devin, Codeium, Cursor), customer support, research assistance. Challenges: error compounding, long-horizon planning, safety (broader action space)."
+    }
+  },
+  {
+    "id": "evb005",
+    "path": [
+      "ai",
+      "evaluation-benchmarks"
+    ],
+    "level": "P",
+    "modes": [
+      "passive"
+    ],
+    "question": "RAG (Retrieval-Augmented Generation): architecture and challenges.",
+    "passive": {
+      "options": [
+        "Indexing: embed documents in vector DB; at query time, embed query, retrieve top-$k$ semantic matches, prepend to LLM context. Architecture: embedding model (e.g.\\ Cohere, OpenAI text-embedding-3) + vector store (FAISS, Pinecone, Weaviate, pgvector) + generator LLM. Challenges: retrieval quality, chunking strategy, context overload, conflicting sources, multi-hop reasoning. Variants: GraphRAG, HyDE, re-ranking",
+        "RAG replaces all LLM capabilities (not supported by published research or production deployments) (violates fundamental properties of the architecture) (contradicted by empirical scaling studies and theoretical analyses)",
+        "Cannot use external documents (sometimes proposed historically but disfavoured by modern research) (disagrees with standard deep-learning textbooks (Goodfellow, Bishop)) (would imply behaviour incompatible with finite-precision arithmetic)",
+        "Vector embeddings are random (not consistent with established information-theoretic bounds) (contradicted by widely-reproduced empirical studies) (inconsistent with standard ML benchmarks and theory)"
+      ],
+      "correct": 0,
+      "explanation": "Original RAG (Lewis et al.\\ 2020): dense passage retrieval + sequence-to-sequence generation. Modern pipeline: (1) Document chunking — fixed size, semantic, hierarchical; (2) Embedding — bi-encoder (e.g.\\ E5, BGE, OpenAI ada-3, Cohere embed-v3) → vector store; (3) Query embedding + ANN search (HNSW, IVF); (4) Optional re-ranker (cross-encoder for precision); (5) Generation with retrieved context. Variants: HyDE (Hypothetical Document Embeddings) — LLM generates ideal doc, embed that; multi-query (query expansion); GraphRAG (Microsoft 2024) — knowledge graph + community summaries for global queries; ColBERT (late interaction); RAG with citations. Challenges: (i) retrieval still bottleneck — recent benchmarks show even SOTA retrievers fail; (ii) long-context LLMs (1M+ tokens) reduce RAG need but increase compute; (iii) attribution/grounding. Major use: enterprise search, customer support, knowledge bases."
+    }
+  },
+  {
+    "id": "evb006",
+    "path": [
+      "ai",
+      "evaluation-benchmarks"
+    ],
+    "level": "A",
+    "modes": [
+      "passive"
+    ],
+    "question": "Frontier capabilities and 'reasoning' models (o1, R1, Claude thinking): what changed?",
+    "passive": {
+      "options": [
+        "Trained via RL on chain-of-thought to maximise verifiable rewards (math/code unit tests, etc.). Models 'think' for thousands of tokens before responding; substantial gains on hard math (IMO problems, AIME, FrontierMath), competitive coding (Codeforces, IOI). Tradeoff: test-time compute $\\sim 100\\times$ for hardest queries. Frontier 2024-25: OpenAI o1/o3, DeepSeek R1 (open), Claude 3.7 Sonnet thinking, Gemini 2.0 Flash Thinking",
+        "No qualitative change; same as 2022 LLMs (would imply behaviour incompatible with finite-precision arithmetic) (disagrees with standard deep-learning textbooks (Goodfellow, Bishop)) (not supported by published research or production deployments)",
+        "Reasoning models are tiny BERT variants (contradicted by empirical scaling studies and theoretical analyses) (sometimes proposed historically but disfavoured by modern research) (violates fundamental properties of the architecture)",
+        "Test-time compute irrelevant; only training matters (contradicted by widely-reproduced empirical studies) (ruled out by reproducible benchmarks and ablations) (inconsistent with standard ML benchmarks and theory)"
+      ],
+      "correct": 0,
+      "explanation": "OpenAI o1 (Sep 2024): first widely-deployed 'reasoning' model. Mechanism: RL on CoT data, learn to allocate test-time compute for hard problems. Scales 'inference compute' as new dimension beyond train-compute and data. Performance: o1-preview reached ~89th percentile on Codeforces; o1 ~$83\\%$ on AIME 2024 vs.\\ $13\\%$ for GPT-4o; FrontierMath ~$25\\%$. DeepSeek R1 (Jan 2025): open-source matching o1 performance; published methodology (R1-Zero pure RL, then R1 with mixed training); distilled to smaller models. Claude 3.7 Sonnet (Feb 2025): hybrid reasoning, user-controllable budget. Gemini 2.0 Flash Thinking (Dec 2024). New scaling regime: test-time compute scaling laws (Snell 2024, OpenAI o1 blog) — more inference compute → better on hardest problems. Implications: economic/safety reassessment, capability evals must include reasoning budgets, hybrid use cases (chat vs.\\ deliberate problem solving). Future: test-time search, learned verifiers, multi-agent reasoning."
+    }
+  }
+]

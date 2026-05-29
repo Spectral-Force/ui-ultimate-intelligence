@@ -105,6 +105,30 @@ import neutrinoPhysics       from './physics/neutrino-physics.json'
 import cpViolation           from './physics/cp-violation.json'
 import precisionEw           from './physics/precision-ew.json'
 import beyondSm              from './physics/beyond-sm.json'
+import specialRelativity     from './physics/special-relativity.json'
+import generalRelativity     from './physics/general-relativity.json'
+import schwarzschildKerr     from './physics/schwarzschild-kerr.json'
+import gravitationalWaves    from './physics/gravitational-waves.json'
+import relativisticKinematics from './physics/relativistic-kinematics.json'
+import equivalencePrinciple  from './physics/equivalence-principle.json'
+import linearisedGravity     from './physics/linearised-gravity.json'
+import testsOfGr             from './physics/tests-of-gr.json'
+import frwCosmology          from './physics/frw-cosmology.json'
+import inflation             from './physics/inflation.json'
+import cmbPhysics            from './physics/cmb-physics.json'
+import bbn                   from './physics/bbn.json'
+import darkMatterDetection   from './physics/dark-matter-detection.json'
+import baryogenesis          from './physics/baryogenesis.json'
+import cosmicRays            from './physics/cosmic-rays.json'
+import largeScaleStructure   from './physics/large-scale-structure.json'
+import aiNeuralNetworks      from './ai/neural-networks.json'
+import aiDeepArchitectures   from './ai/deep-learning-architectures.json'
+import aiTransformers        from './ai/transformers.json'
+import aiTrainingOptimisation from './ai/training-optimisation.json'
+import aiReinforcementLearning from './ai/reinforcement-learning.json'
+import aiGenerativeModels    from './ai/generative-models.json'
+import aiAlignmentSafety     from './ai/alignment-safety.json'
+import aiEvaluationBenchmarks from './ai/evaluation-benchmarks.json'
 
 export const allQuestions = [
   ...dopplerCooling,
@@ -214,6 +238,30 @@ export const allQuestions = [
   ...cpViolation,
   ...precisionEw,
   ...beyondSm,
+  ...specialRelativity,
+  ...generalRelativity,
+  ...schwarzschildKerr,
+  ...gravitationalWaves,
+  ...relativisticKinematics,
+  ...equivalencePrinciple,
+  ...linearisedGravity,
+  ...testsOfGr,
+  ...frwCosmology,
+  ...inflation,
+  ...cmbPhysics,
+  ...bbn,
+  ...darkMatterDetection,
+  ...baryogenesis,
+  ...cosmicRays,
+  ...largeScaleStructure,
+  ...aiNeuralNetworks,
+  ...aiDeepArchitectures,
+  ...aiTransformers,
+  ...aiTrainingOptimisation,
+  ...aiReinforcementLearning,
+  ...aiGenerativeModels,
+  ...aiAlignmentSafety,
+  ...aiEvaluationBenchmarks,
 ]
 
 /**
